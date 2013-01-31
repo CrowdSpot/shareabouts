@@ -72,9 +72,15 @@ Option         |Type      |Default   |Description
 ### Extra Layer Options
 
 You can add additional overlays on top of your base layer. To do so,
-add to the "layers" array.  This array should match the configuration format 
+add to the "layers" array.  This array should match the configuration format
 for [Argo](https://github.com/openplans/argo/wiki/Configuration-Guide) layer
 options.
+
+A sample configuration for Argo layers can be found in the `overlays`
+flavor [config file](https://github.com/openplans/shareabouts/blob/master/src/flavors/overlays/config.yml#L24).
+The data used in that example can also be found in the flavor under the
+[*/static/layers/*](https://github.com/openplans/shareabouts/tree/master/src/flavors/overlays/static/layers)
+folder.
 
 
 ### Place Types
@@ -166,6 +172,44 @@ label, but it also is used when validating your form, so if optional
 is omitted or set to false, the user will get an error if they don't
 provide a value.
 
+The *label* setting can also be used for a place item. It is used as the label
+for that input value when it is displayed in the place detail view after it
+has been saved.
+
+**NOTE** There are three special place input properties: `submitter_name`, `name`,
+and `location_type`. These are specially displayed on the place detail view and
+therefore ignore the *label* setting.
+
+##### Attaching images to places
+
+You can attach images to places by configuring an input of type `file`. The
+configuration should look like this:
+
+    items:
+      - inputfile_label: Add an Image
+        type: file
+        name: my_image
+        attrs:
+          - key: accept
+            value: image/*
+
+This will generate markup that looks similar to this:
+
+    <label for="place-my_image"></label>
+    <span class="fileinput-container ">
+      <span>Add an Image</span>
+      <input id="place-my_image" name="my_image" type="file" accept="image/*">
+    </span>
+
+You can restyle the image input by overriding the `.fileinput-container` class
+in `custom.css` in your flavor.
+
+**NOTE** This does not currently support multiple file inputs or inputs types
+other than images.
+
+**NOTE** All images are proportionally resized with a max size of 800 pixels and
+converted to JPEGs.
+
 ##### Choosing a place type
 
 If you have only one *place type* (see above), you'll want to specify
@@ -189,8 +233,6 @@ choose which type they're adding, then use a select input, like so:
         - Landmark
         - Park
         - School
-
-
 
 Once a Place has been created, users can click on it and see a form to
 add more information. There are two parts to this: a simple Support
@@ -243,35 +285,37 @@ submit_btn_txt       | string  | Text on the submit button itself.
 action_text          | string  | Past-tense verb for display in the activity view, eg. "supported"
 
 
-### Interface Text
+### Translating Interface Text
 
-Much of the text in Shareabouts can be customized via the Django
-localization (translation) machinery.  Even if you're only creating a
-site in english, this is useful to change various strings used on the
-site.
+The text in Shareabouts can be translated via the Django
+localization (translation) machinery.
 
-*TODO* update this to reference the new flavor-specific django.po
-files, and make sure those work.
+To mark text in your configuration (flavor) as available to be
+translated, wrap the text in `_(` and `)`.  For example, in the following
+snippet, `Button Label` will be available for translation, but `survey_type`
+will not:
 
-The translations file is
-src/sa_web/locale/en_US/LC_MESSAGES/django.po
-You can edit this file with any text editor,
-or with any tool that supports .po files, such as
-[poedit](http://www.poedit.net/).
+    label: _(Button Label)
+    type_name: survey_type
 
-Edit the translations as desired, save it, then run this command:
+To generate a translation template, run the following from your flavor
+directory:
 
-    cd src/sa_web
-	../manage.py compilemessages
+    <project_src_root>/manage.py flavormessages --locale en_US
 
-A few notable messages you will definitely want to edit:
+Do this for each language you want your map to be available in. For the
+locale, use a locale name as specified in Django's documentation:
+https://docs.djangoproject.com/en/dev/topics/i18n/#term-locale-name
 
-* msgid "App Title"
+Once your messages files are generated, fill in any translations that should
+be made.  If you leave a translation blank, the original string will be used.
 
-* msgid "App Description"
+To apply your translations, run the following from your flavor directory:
 
-* msgid "App Name"
+    <project_src_root>/manage.py compilemessages
 
+That's it! The compilemessages task is run automatically for the DotCloud and
+Heroku deployments.
 
 ### Pages and Links
 

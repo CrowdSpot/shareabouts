@@ -37,7 +37,7 @@ var Shareabouts = Shareabouts || {};
       // Call reset after the views are created, since they're all going to
       // be listening to reset.
       this.collection.reset(options.places);
-      this.activities.reset(options.activity);
+      this.activities.fetch({data: {limit: 20}})
 
       // Start tracking the history
       var historyOptions = {pushState: true};

@@ -4,7 +4,8 @@ var Shareabouts = Shareabouts || {};
   S.PlaceFormView = Backbone.View.extend({
     // View responsible for the form for adding and editing places.
     events: {
-      'submit form': 'onSubmit'
+      'submit form': 'onSubmit',
+      'change input[type="file"]': 'onInputFileChange'
     },
     initialize: function(){
       S.TemplateHelpers.overridePlaceTypeConfig(this.options.placeConfig.items,
@@ -13,15 +14,10 @@ var Shareabouts = Shareabouts || {};
 
       // Bind model events
       this.model.on('error', this.onError, this);
-      this.model.on('change', this.onChange, this);
-
-      // Cache the place types
-      this.placeTypes = _.keys(this.options.placeTypes);
     },
     render: function(){
       // Augment the model data with place types for the drop down
       var data = _.extend({
-        place_types: this.placeTypes,
         place_config: this.options.placeConfig
       }, this.model.toJSON());
 
@@ -30,9 +26,6 @@ var Shareabouts = Shareabouts || {};
     },
     remove: function() {
       this.unbind();
-    },
-    onChange: function() {
-      this.render();
     },
     onError: function(model, res) {
       // TODO handle model errors!
@@ -44,7 +37,7 @@ var Shareabouts = Shareabouts || {};
           center = this.options.appView.getCenter();
 
       // Get values from the form
-      _.each(self.$('form').serializeArray(), function(item, i) {
+      _.each(this.$('form').serializeArray(), function(item, i) {
         attrs[item.name] = item.value;
       });
 
@@ -56,13 +49,53 @@ var Shareabouts = Shareabouts || {};
 
       return attrs;
     },
+    onInputFileChange: function(evt) {
+      var self = this,
+          file,
+          attachment;
+
+      if(evt.target.files && evt.target.files.length) {
+        file = evt.target.files[0];
+
+        this.$('.fileinput-name').text(file.name);
+        S.Util.fileToCanvas(file, function(canvas) {
+          canvas.toBlob(function(blob) {
+            var fieldName = $(evt.target).attr('name'),
+                data = {
+                  name: fieldName,
+                  blob: blob,
+                  url: canvas.toDataURL('image/jpeg')
+                };
+
+            attachment = self.model.attachmentCollection.find(function(model) {
+              return model.get('name') === fieldName;
+            });
+
+            if (_.isUndefined(attachment)) {
+              self.model.attachmentCollection.add(data);
+            } else {
+              attachment.set(data);
+            }
+          }, 'image/jpeg');
+        }, {
+          // TODO: make configurable
+          maxWidth: 800,
+          maxHeight: 800,
+          canvas: true
+        });
+      }
+    },
     onSubmit: function(evt) {
       var router = this.options.router,
-          model = this.model;
+          model = this.model,
+          // Should not include any files
+          attrs = this.getAttrs(),
+          $fileInputs;
 
       evt.preventDefault();
+
       // Save and redirect
-      this.model.save(this.getAttrs(), {
+      this.model.save(attrs, {
         success: function() {
           router.navigate('/place/' + model.id, {trigger: true});
         },

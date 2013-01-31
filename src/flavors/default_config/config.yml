@@ -1,11 +1,3 @@
-# The Shareabouts API dataset username & name used by this map.
-# You MUST change this after creating a dataset.
-api_root: http://shareaboutsapi-civicworks.dotcloud.com/api/v1/
-dataset: demo-user/demo-data
-
-# And the associated API key.
-dataset_api_key: YOUR_KEY_HERE
-
 # Settings for the app
 app:
   # HTML Title
@@ -13,7 +5,7 @@ app:
   # Header name
   name: Shareabouts
   # Meta description that will show up in Google search results
-  meta_description: Shareabouts is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.
+  meta_description: _(Shareabouts is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.)
 
 # Settings for map and layer configs
 map:
@@ -27,22 +19,25 @@ map:
     minZoom: 10
     maxZoom: 17
   base_layer:
-    url: http://{s}.tiles.mapbox.com/v3/mapbox.mapbox-streets/{z}/{x}/{y}.png
+    url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
     attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
   layers: []
 
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  Landmark:
+  landmark:
     default: blue
     focused: red
-  Park:
+    label: _(Landmark)
+  park:
     default: blue
     focused: red
-  School:
+    label: _(Park)
+  school:
     default: blue
     focused: red
+    label: _(School)
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
@@ -73,92 +68,103 @@ activity:
   # Optional. Activity is supported by default. Set to false to disable.
   enabled: true
   # How often to refresh the activity list, in milliseconds.
-  interval: 5000
+  interval: 30000
 
 place:
   adding_supported: true
-  add_button_label: Add a Place
-  action_text: added
-  title: Tell us more...
-  action_text: created
-  anonymous_name: Someone
-  submit_button_label: Submit
+  add_button_label: _(Add a Place)
+  action_text: _(added)
+  title: _(Tell us more...)
+  action_text: _(created)
+  anonymous_name: _(Someone)
+  submit_button_label: _(Submit)
   items:
-    - prompt: Location Name
+    - prompt: _(Location Name)
       type: text
       name: name
       attrs:
         - key: placeholder
-          value: Location Name
+          value: _(Location Name)
         - key: size
           value: 30
-    - prompt: Location Type
+    - prompt: _(Location Type)
       type: select
       options:
-        - Landmark
-        - Park
-        - School
+        - label: _(Landmark)
+          value: landmark
+        - label: _(Park)
+          value: park
+        - label: _(School)
+          value: school
       name: location_type
-    - prompt: Your Name
+    - prompt: _(Image)
+      inputfile_label: _(Add an Image)
+      type: file
+      name: my_image
+      optional: true
+      attrs:
+        - key: accept
+          value: image/*
+    - prompt: _(Your Name)
       type: text
       name: submitter_name
       optional: true
       attrs:
         - key: placeholder
-          value: Name
+          value: _(Name)
         - key: size
           value: 30
-    - prompt: Description
+    - prompt: _(Description)
       type: textarea
       name: description
       optional: true
       attrs:
         - key: placeholder
-          value: Description...
+          value: _(Description...)
 
 survey:
   submission_type: comments
 
-  # Response display config
+  # Response config
   show_responses: true
-  response_name: comment
-  response_plural_name: comments
-  action_text: commented on
-  anonymous_name: Someone
+  response_name: _(comment)
+  response_plural_name: _(comments)
+  action_text: _(commented on)
+  anonymous_name: _(Someone)
 
   # Survey form config
-  title: Leave a Comment
-  form_link_text: Leave a Comment
-  submit_btn_text: Comment
+  title: _(Leave a Comment)
+  form_link_text: _(Leave a Comment)
+  submit_btn_text: _(Comment)
   items:
-    - prompt: Comment
-      label: Comment
+    - prompt: _(Comment)
+      label: _(Comment)
       type: textarea
       name: comment
-    - prompt: Your Name
+    - prompt: _(Your Name)
       type: text
       name: submitter_name
 
 support:
   submission_type: support
-  submit_btn_text: Support This!
-  action_text: "supported"
-  anonymous_name: Someone
+  submit_btn_text: _(Support This!)
+  action_text: supported
+  anonymous_name: _(Someone)
 
 pages:
-  - title: About
+  - title: _(About)
     slug: about
     url: /static/pages/overview.html
     start_page: true
 
-  - title: "Why Shareabouts?"
+  - title: _(Why Shareabouts?)
     slug: why
     url: /static/pages/why.html
 
-  - title: Features
+  - title: _(Features)
     slug: features
     url: /static/pages/features.html
 
-  - title: OpenPlans
+  - title: _(Feedback)
     external: true
-    url: http://www.openplans.org
+    url: https://openplans.zendesk.com/anonymous_requests/new

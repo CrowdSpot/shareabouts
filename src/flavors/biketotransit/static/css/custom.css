@@ -32,6 +32,7 @@
 #site-title a:link,
 #site-title a:visited {
   margin-top: 0.5em;
+  margin-bottom: 7px;
   font-size: 0.4em;
   display: block;
   width: 8em;
@@ -156,5 +157,13 @@ a.add-place:hover {
 }
 
 .response-label-i_would_bike_here {
+  display: none;
+}
+
+/* =Read-only map
+-------------------------------------------------------------- */
+
+.survey .reply-link,
+.survey #reply {
   display: none;
 }

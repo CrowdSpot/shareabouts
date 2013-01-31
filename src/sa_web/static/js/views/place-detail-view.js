@@ -30,7 +30,6 @@ var Shareabouts = Shareabouts || {};
                 self.options.placeConfig.pretty_datetime_format);
             },
             items: items,
-            survey_config: this.options.surveyConfig,
             autolink: function() {
               return function(text, render) {
                 // we want to call render to make sure things are escaped,
@@ -38,12 +37,25 @@ var Shareabouts = Shareabouts || {};
                 // so that autoLink works properly
                 return render(text).replace(new RegExp('&#x2F;', 'g'), '/').autoLink({target: '_blank', rel: 'nofollow'});
               }
-            }
-          }, this.model.toJSON());
+            },
+            survey_config: this.options.surveyConfig
+          }, this.model.toJSON()),
+          icon;
 
       data.submitter_name = this.model.get('submitter_name') ||
         this.options.placeConfig.anonymous_name;
 
+      icon = this.options.placeTypes[data.location_type].focused;
+      data.icon = {
+        url: icon.options.iconUrl,
+        width: icon.options.iconSize.x,
+        height: icon.options.iconSize.x,
+        anchorX: icon.options.iconAnchor.x,
+        anchorY: icon.options.iconAnchor.y
+      };
+
+      // Augment the template data with the attachments list
+      data.attachments = this.model.attachmentCollection.toJSON();
 
       this.$el.html(ich['place-detail'](data));
 
@@ -51,7 +63,6 @@ var Shareabouts = Shareabouts || {};
       this.$('.survey').html(this.surveyView.render().$el);
       // Fetch for submissions and automatically update the element
       this.model.responseCollection.fetch();
-
 
       this.$('.support').html(this.supportView.render().$el);
       // Fetch for submissions and automatically update the element
@@ -68,5 +79,4 @@ var Shareabouts = Shareabouts || {};
       this.render();
     }
   });
-
 })(Shareabouts, jQuery, Shareabouts.Util.console);
