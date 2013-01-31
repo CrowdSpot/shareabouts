@@ -26,10 +26,6 @@ map:
     zoom: 14
     minZoom: 10
     maxZoom: 17
-<<<<<<< HEAD
-=======
-    maxBounds: [ [-37.833203, 144.9337], [-37.799853, 144.980769] ]
->>>>>>> parent of dadbeb6... Updated myecocity maxbounds
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/aisey.map-u8fegfjt/{z}/{x}/{y}.png
     attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
