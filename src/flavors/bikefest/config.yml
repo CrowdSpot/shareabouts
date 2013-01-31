@@ -161,6 +161,7 @@ place:
           value: 30
     - prompt: Spot Type
       type: select
+      name: location_type
       options:
         - Sweet Spot
         - Hot Spot
@@ -170,11 +171,10 @@ place:
       inputfile_label: _(Add an Image)      
       type: file
       name: my_image
+      optional: true
       attrs:
         - key: accept
           value: image/*
-        - key: required
-          value: required
       name: location_type
     - prompt: Your Name
       type: text
