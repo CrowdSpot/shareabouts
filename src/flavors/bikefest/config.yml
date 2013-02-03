@@ -13,7 +13,7 @@ app:
   # Header name
   name: Bikefest 
   # Meta description that will show up in Google search results
-  meta_description: CrowdSpot is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.
+  meta_description: Bikefest 2013 Crowdspot lets you share your favourite Melbourne bicycle spots. CrowdSpot is an interactive map used to crowdsource and visualise public data inputs.
 
 # Settings for map and layer configs
 map:
