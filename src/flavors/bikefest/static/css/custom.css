@@ -66,21 +66,13 @@ a:hover {
 
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
-#site-title a, #site-title a:link, #site-title a:visited, #site-title a:hover {
-  color: #3350a3;
-  font-family: "proxima-nova", sans-serif;
-  font-weight: 200;
+#site-title {
+  background: url("images/bikefest-logotype-325x55.png") no-repeat
+center;
+  background-size: contain;
+  width: 232px;
+  text-indent: -133337px;
 }
-
-#site-title::before {
-  content: ' ';
-  background: url("images/bikefest-logo-47x53.png");
-  width: 47px;
-  height: 53px;
-  float: left;
-  margin: 10px 20px 0 0;
-}
-
 
 @media only screen and (min-width: 1024px) { /* ticker is visible */
   #site-title {
@@ -89,7 +81,7 @@ a:hover {
 }
 @media only screen and (min-width: 1300px) {
   #site-title {
-    width: 324px;
+    width: 325px;
   }
 }
 
