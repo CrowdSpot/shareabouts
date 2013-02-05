@@ -264,10 +264,6 @@ pages:
   - title: FAQs
     slug: faqs
     url: /static/pages/features.html
-    
-  - title: Bikefest
-    external: true
-    url: http://http://www.melbournebikefest.com.au
 
   - title: CrowdSpot
     external: true
