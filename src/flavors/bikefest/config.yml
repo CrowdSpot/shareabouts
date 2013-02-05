@@ -34,10 +34,10 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  Sweet Spot:
+  Food/drink Spot:
     default: orange
     focused: focused
-  Hot Spot:
+  Activity Spot:
     default: blue
     focused: focused
   Beauty Spot:
@@ -163,8 +163,8 @@ place:
       type: select
       name: location_type
       options:
-        - Sweet Spot
-        - Hot Spot
+        - Food/drink Spot
+        - Activity Spot
         - Beauty Spot
         - Shop Spot
     - prompt: Add an Image
@@ -237,13 +237,13 @@ pages:
         external: true
         url: /
 
-      - title: Sweet Spots
+      - title: Food/drink Spots
         external: true
-        url: /sweet spot
+        url: /food/drink spot
 
-      - title: Hot Spots
+      - title: Activity Spots
         external: true
-        url: /hot spot
+        url: /activity spot
 
       - title: Beauty Spots
         external: true
