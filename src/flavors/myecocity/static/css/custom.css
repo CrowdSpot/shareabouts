@@ -57,6 +57,23 @@ a:hover {
 #site-header a:hover {
 }
 
+@media only screen and (min-width: 1024px) {
+  #pages-nav-container:before {
+    content: '';
+    display: block;
+    background: transparent url('images/CoM-logo-72x55.png') no-repeat center;
+    float: right;
+    width: 72px;
+    height: 55px;
+    margin-top: 5px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  #pages-nav-container:before {
+    margin-top: 12px;
+  }
+}
 
 /* =Logo
 -------------------------------------------------------------- */
