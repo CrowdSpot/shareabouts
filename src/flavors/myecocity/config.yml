@@ -265,6 +265,3 @@ pages:
     slug: faqs
     url: /static/pages/features.html
 
-  - title: CrowdSpot
-    external: true
-    url: http://www.crowdspot.com.au
