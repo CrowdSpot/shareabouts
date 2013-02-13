@@ -23,7 +23,7 @@ map:
     center:
       lat: -37.81361
       lng: 144.96306
-    zoom: 11
+    zoom: 12
     minZoom: 10
     maxZoom: 17
   base_layer:
