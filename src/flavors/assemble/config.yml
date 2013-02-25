@@ -134,7 +134,7 @@ place:
           value: Type name here
         - key: size
           value: 30
-    - prompt: Name Your Spot
+    - prompt: Spot Name
       type: text
       name: name
       attrs:
@@ -142,7 +142,7 @@ place:
           value: Spot Name
         - key: size
           value: 30
-    - prompt: Spot Type
+    - prompt: Spot Category
       type: select
       options:
         - Food Spot
@@ -150,6 +150,15 @@ place:
         - Shop Spot
         - Make Spot
       name: location_type
+    - prompt: Add an Image
+      inputfile_label: _(Add an Image)      
+      type: file
+      name: my_image
+      optional: true
+      attrs:
+        - key: accept
+          value: image/*
+      name: location_type  
     - prompt: Description
       type: textarea
       name: description
