@@ -134,6 +134,15 @@ place:
         - Bike Share Spot
         - Public Toilet
       name: location_type
+    - prompt: Add an Image
+      inputfile_label: _(Add an Image)      
+      type: file
+      name: my_image
+      optional: true
+      attrs:
+        - key: accept
+          value: image/*
+      name: location_type   
     - prompt: Description
       type: textarea
       name: description
