@@ -208,7 +208,7 @@ pages:
     slug: why
     url: /static/pages/why.html
 
-  - title: "Special Launch Offer!"
-    slug: offer
+  - title: "Contact"
+    slug: contact
     url: /static/pages/features.html
 
