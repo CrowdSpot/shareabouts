@@ -1,0 +1,351 @@
+/*
+ * This CSS file follows the default Shareabouts style.css.
+ * All rules herein will override the default Shareabouts styles.
+ * NOTE: "With great power comes great responsibility."
+ */
+
+/* =Base Typography
+-------------------------------------------------------------- */
+
+body, select, input, textarea {
+  background: #eeeeef;
+  font-family: "proxima-nova", sans-serif ;
+  color: #555;
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 100;
+}
+
+
+
+/* =Links
+-------------------------------------------------------------- */
+
+a, a:active, a:visited {
+  color: rgb(119, 119, 119);
+}
+
+a:hover {
+  color: rgb(85, 85, 85);
+}
+
+
+/* =The Site Header
+-------------------------------------------------------------- */
+
+#site-header {
+  height: auto;
+  
+  background: #eeeeef;
+  color: #555;
+  border-top: #ff1609 3px solid;
+     -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  
+  background-image: url("images/hr.png");
+  background-repeat: repeat-x;
+  background-position: bottom;   	
+}
+
+#site-header a, #site-header a:active, #site-header a:visited {
+}
+
+#site-header a:hover {
+}
+
+
+/* =Logo
+-------------------------------------------------------------- */
+
+/* NOTE: Adjust the #site-title font size in the link
+ * (not in the #site-title itself) using the em unit,
+ * as to not break it scaling via media queries. */
+
+
+/* If not using bg-size contain, the heights are 52, 65, 78 */
+#site-title {
+  background: url('images/crowdspot-logo-horizontal-324x53.png') no-repeat
+center;
+  background-size: contain;
+  width: 232px;
+  text-indent: -133337px;
+}
+
+
+@media only screen and (min-width: 1024px) { /* ticker is visible */
+  #site-title {
+    width: 278px;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  #site-title {
+    width: 324px;
+  }
+}
+
+/* =Mobile Navigation Button
+-------------------------------------------------------------- */
+
+/* NOTE: Override the Mobile Navigation Button with caution.
+ * The Helvetica stack produces a good icon. */
+
+a#nav-bttn {
+  background: #ededed;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.1);
+  
+  margin-top: 0.2em;
+  padding-bottom: 6px;
+}
+
+a#nav-bttn:link,
+a#nav-bttn:visited {
+  background: #ededed;
+/*  color: #bf00bf;*/
+/*  background: #ffbfff;*/
+/*  font-family: "Helvetica Neue", Arial, Helvetica, serif;*/
+}
+
+a#nav-bttn:hover {
+  background: #ededed;
+/*  color: #ffbfff;*/
+/*  background: #fff;*/
+}
+
+
+/* =Navigation Menu
+-------------------------------------------------------------- */
+
+#access {
+  background: transparent;
+  border: none;
+}
+
+#access li {
+/*  border-bottom: 2px solid #994c99;*/
+}
+
+#access a {
+  background: none;
+  padding: 0 15px;
+  
+  color: rgb(119, 119, 119);
+	text-shadow: none;
+	font-weight: 400;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+#access a:visited, #access a:active, #access a:link {
+  color: rgb(119, 119, 119);
+}
+
+#access a:hover {
+  color: rgb(30, 30, 30);
+  text-decoration: none;
+  box-shadow: none;
+  background: none;
+}
+
+
+/* XXX: need some way to know where we are */
+/*#access a:visited, #access a:active, #access a:link {
+  color: #555;
+  font-weight: bold; 
+  background: url("images/nav-pin.png") center no-repeat transparent;
+  margin-bottom: 2px;
+}*/
+
+#access ul ul {
+  background: #eeeeef;
+}
+
+#access ul ul a {
+  background: #eeeeef;
+}
+
+
+/* =The Big Button to Add A New Point
+-------------------------------------------------------------- */
+
+a.add-place {
+  background-color: #ff1609;
+  border-radius: 5px;
+/*  color: #eee;*/
+/*  text-shadow: none;*/
+}
+
+a.add-place:hover {
+/*  background-color: #e500e5;*/
+/*  color: #fff;*/
+}
+
+
+/* =Close Content Button
+-------------------------------------------------------------- */
+
+/* NOTE: Override the Close Button font within the span. The link should
+ * remain the Helvetica stack, as it produces a good X close icon. */
+
+a.close-bttn {
+/*  color: #ff40ff;*/
+/*  background-color: #fff;*/
+/*  border-color: #ffbfff;*/
+/*  font-family: "Helvetica Neue", Arial, Helvetica, serif;*/
+}
+
+a.close-bttn:hover {
+/*  color: #e500e5;*/
+/*  background-color: #fff;*/
+/*  border-color: #e500e5;*/
+}
+a.close-bttn span {
+  /*  font-family: Impact, sans-serif;*/
+}
+
+
+/* =Forms
+-------------------------------------------------------------- */
+
+label {
+/*  color: #806080;*/
+}
+
+input[type=text],
+textarea {
+/*  border: 1px solid #000; */
+}
+
+.required {
+/*  color: red;*/
+}
+
+.bttn {
+  background-color: #ff1609;
+  border-radius: 5px;
+/*  color: #eee;*/
+/*  background-color: #ff40ff;*/
+/*  text-shadow: none;*/
+}
+
+.bttn:hover {
+/*  color: #fff;*/
+/*  background-color: #e500e5;*/
+}
+
+a.reply-link {
+/*  color: #1e5395;*/
+/*  background: #eef8fd;*/
+}
+
+a.reply-link:hover {
+/*  color: #fff;*/
+/*  background-color: #e500e5;*/
+}
+
+
+/* =Voting & Social Promotion
+-------------------------------------------------------------- */
+.promotion {
+/*  background-color: #bf8fbf;*/
+}
+
+#user_support label {
+/*  color: #ff80ff;*/
+/*  background-color: #fff;*/
+}
+
+#user_support:hover label,
+#user_support label:hover {
+/*  color: #e500e5;*/
+}
+
+
+/* =The Ticker
+-------------------------------------------------------------- */
+
+#ticker {
+  background: transparent;
+}
+
+ul.recent-points {
+  color: inherit;
+}
+
+.recent-points li {
+  border-bottom: 1px solid #aaa;
+}
+
+.recent-points li:hover {
+  background: transparent;
+}
+
+.recent-points a {
+  color: rgb(119, 119, 119);
+}
+
+.recent-points li:hover a,
+.recent-points a:hover {
+  color: rgb(85, 85, 85);
+}
+
+#powered-by {
+  background: #eeeeef;
+  color: rgb(119, 119, 119);
+}
+
+#powered-by a {
+  font-family: inherit;
+  font-weight: 200;
+  color: rgba(0,0,0,0);
+  
+  background: url('images/crowdspot-logo-horizontal-256x41.png') no-repeat
+center 5px;
+  background-size: contain;
+  width: 256px;
+}
+
+#powered-by a:hover {
+  color: rgba(0,0,0,0);
+}
+
+
+
+/* =Media Queries
+-------------------------------------------------------------- */
+
+@media only screen and (min-width: 768px) { /* menu is visible */
+  #access {
+/*    border: 0;*/
+/*    background: transparent;*/
+  }
+}
+
+@media only screen and (min-width: 1024px) { /* ticker is visible */
+}
+
+@media only screen and (min-width: 1300px) {
+}
+
+
+/** HIDE THE FEEDBACK TAB **/
+#zenbox_tab {
+  display: none !important;
+}
+
+/* Custom Pages
+-------------------------------------------------------------- */
+
+#about .legend img {
+  float: left;
+}
+
+#about .legend {
+  font-size: 16px;
+}
+/* =Individual Pages
+-------------------------------------------------------------- */
+
