@@ -17,3 +17,6 @@ httpagentparser
 
 # Config
 pyyaml
+
+# added by tom
+fandjango

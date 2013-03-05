@@ -93,6 +93,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'sa_web.middleware.CacheRequestBody',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'fandjango.middleware.FacebookMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -129,10 +130,13 @@ INSTALLED_APPS = (
     # 3rd-party reusaple apps
     'mustachejs',
     'compressor',
+    
+    # 3rd party, added by tom
+    'fandjango',
 
     # Project apps
     'sa_web',
-    'proxy',
+    'proxy'
 )
 
 # Use a test runner that does not use a database.
@@ -230,3 +234,8 @@ if 'CONFIG' not in SHAREABOUTS:
 if 'PACKAGE' not in SHAREABOUTS:
     SHAREABOUTS['PACKAGE'] = '.'.join(['flavors', flavor])
     INSTALLED_APPS = (SHAREABOUTS['PACKAGE'],) + INSTALLED_APPS
+
+## FOR FACEBOOK
+FACEBOOK_APPLICATION_ID = "587420731271079"
+FACEBOOK_APPLICATION_SECRET_KEY = "e2ba4e6c6e83b124af5e3042450f12c6"
+FACEBOOK_APPLICATION_NAMESPACE = ""
