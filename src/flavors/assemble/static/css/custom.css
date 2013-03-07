@@ -8,7 +8,7 @@
 -------------------------------------------------------------- */
 
 body, select, input, textarea {
-  background: #eeeeef;
+  background: #fdeade;
   font-family: "proxima-nova", sans-serif ;
   color: #555;
 }
@@ -38,9 +38,9 @@ a:hover {
 #site-header {
   height: auto;
   
-  background: #eeeeef;
+  background: #fdeade;
   color: #555;
-  border-top: #ff1609 3px solid;
+  border-top: rgb(20,75,30) 6px solid;
      -moz-box-shadow: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -160,11 +160,11 @@ a#nav-bttn:hover {
 }*/
 
 #access ul ul {
-  background: #eeeeef;
+  background: #fdeade;
 }
 
 #access ul ul a {
-  background: #eeeeef;
+  background: #fdeade;
 }
 
 
@@ -293,7 +293,7 @@ ul.recent-points {
 }
 
 #powered-by {
-  background: #eeeeef;
+  background: #fdeade;
   color: rgb(119, 119, 119);
 }
 
