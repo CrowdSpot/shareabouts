@@ -1,4 +1,3 @@
-
 /*
  * This CSS file follows the default Shareabouts style.css.
  * All rules herein will override the default Shareabouts styles.
@@ -57,24 +56,6 @@ a:hover {
 #site-header a:hover {
 }
 
-@media only screen and (min-width: 1024px) {
-  #pages-nav-container:before {
-    content: '';
-    display: block;
-    background: transparent url('images/CoM-logo-199x55.png') no-repeat center;
-    float: right;
-    width: 199px;
-    height: 55px;
-    margin-top: 5px;
-  }
-}
-
-@media only screen and (min-width: 1300px) {
-  #pages-nav-container:before {
-    margin-top: 12px;
-  }
-}
-
 
 /* =Logo
 -------------------------------------------------------------- */
@@ -86,7 +67,7 @@ a:hover {
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
 #site-title {
-  background: url('images/myecocity-header-520x41.png') no-repeat
+  background: url('images/crowdspot-logo-horizontal-324x53.png') no-repeat
 center;
   background-size: contain;
   width: 232px;
@@ -96,12 +77,12 @@ center;
 
 @media only screen and (min-width: 1024px) { /* ticker is visible */
   #site-title {
-    width: 360px;
+    width: 278px;
   }
 }
 @media only screen and (min-width: 1300px) {
   #site-title {
-    width: 520px;
+    width: 324px;
   }
 }
 
@@ -368,14 +349,3 @@ center 5px;
 /* =Individual Pages
 -------------------------------------------------------------- */
 
-
-#what-are-spots img {
-  float: left;
-  margin-right: 20px;
-}
-
-#what-are-spots p {
-  clear: both;
-  overflow: hidden;
-  margin-bottom: 10px;
-}
