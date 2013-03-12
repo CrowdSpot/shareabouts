@@ -92,7 +92,7 @@ place:
     - prompt: Spot Type
       type: select
       options:
-        - Car Share Spot
+        - Blood Donor Centre
       name: location_type      
     - prompt: Blood Donor Centre
       type: text
