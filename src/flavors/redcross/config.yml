@@ -9,9 +9,9 @@ dataset_api_key: YWY1YjMyNzU5YjRiZDljOTQwMGM0Nzhm
 # Settings for the app
 app:
   # HTML Title
-  title: Car Share demo
+  title: Australian Red Cross Blood Service
   # Header name
-  name: Car Share demo
+  name: Australian Red Cross Blood Service
   # Meta description that will show up in Google search results
   meta_description: CrowdSpot is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.
 
@@ -21,8 +21,8 @@ map:
   geolocation_onload: true
   options:
     center:
-      lat: 37.779636
-      lng: -122.417794
+      lat: -37.813827
+      lng: 144.963387
     zoom: 14
     minZoom: 10
     maxZoom: 17
@@ -34,7 +34,7 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  Car Share Spot:
+  Blood Donor Centre:
     default: red
     focused: focused
 
@@ -86,10 +86,10 @@ place:
       name: submitter_name
       attrs:
         - key: placeholder
-          value: Type name here
+          value: Australian Red Cross Blood Service
         - key: size
           value: 30
-    - prompt: Short Description
+    - prompt: Blood Donor Centre
       type: text
       name: name
       attrs:
@@ -97,18 +97,29 @@ place:
           value: Eg. On the corner of X and Y 
         - key: size
           value: 30
-    - prompt: Spot Type
-      type: select
-      options:
-        - Car Share Spot
+    - prompt: Add an Image
+      inputfile_label: _(Add an Image)      
+      type: file
+      name: my_image
+      optional: true
+      attrs:
+        - key: accept
+          value: image/*
       name: location_type
-    - prompt: Description
+    - prompt: Address
+      type: textarea
+      name: address
+      optional: true
+      attrs:
+        - key: placeholder
+          value: Type Address..
+    - prompt: Operating hours
       type: textarea
       name: description
       optional: true
       attrs:
         - key: placeholder
-          value: Description...
+          value: Type operating hours..
 
 survey:
   submission_type: comments
