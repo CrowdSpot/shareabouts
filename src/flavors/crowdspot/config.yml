@@ -37,12 +37,6 @@ place_types:
   Wifi Spot:
     default: red
     focused: focused
-  Bike Share Spot:
-    default: blue
-    focused: focused
-  Public Toilet:
-    default: green
-    focused: focused
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
@@ -131,8 +125,6 @@ place:
       type: select
       options:
         - Wifi Spot
-        - Bike Share Spot
-        - Public Toilet
       name: location_type
     - prompt: Add an Image
       inputfile_label: _(Add an Image)      
@@ -185,24 +177,6 @@ pages:
     slug: about
     url: /static/pages/overview.html
     start_page: true
-
-  - title: Filter Spots
-    pages:
-      - title: All
-        external: true
-        url: /
-
-      - title: Wifi Spots
-        external: true
-        url: /wifi spot
-
-      - title: Bike Share Spots
-        external: true
-        url: /bike share spot
-
-      - title: Public Toilets
-        external: true
-        url: /public toilet
 
   - title: "Why CrowdSpot?"
     slug: why
