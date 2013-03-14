@@ -98,7 +98,7 @@ activity:
 
 place:
   adding_supported: true
-  add_button_label: Add a Spot
+  add_button_label: Confirm location
   action_text: added
   title: Tell us more...
   action_text: created
