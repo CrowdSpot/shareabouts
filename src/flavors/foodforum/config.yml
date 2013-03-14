@@ -34,13 +34,13 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  Community Gardens:
+  Community Garden:
     default: orange
     focused: focused
-  Farmers Markets:
+  Farmers Market:
     default: blue
     focused: focused
-  Farms:
+  Farm:
     default: green
     focused: focused
 
@@ -114,9 +114,9 @@ place:
     - prompt: Spot Type
       type: select
       options:
-        - Community Gardens
-        - Farmers Markets
-        - Farms
+        - Community Garden
+        - Farmers Market
+        - Farm
       name: location_type
     - prompt: Name Your Spot
       type: text
@@ -186,11 +186,11 @@ pages:
     url: /static/pages/overview.html
     start_page: true
 
-  - title: "Why CrowdSpot?"
+  - title: "The Spots"
     slug: why
     url: /static/pages/why.html
 
-  - title: "Contact"
+  - title: "FAQs"
     slug: contact
     url: /static/pages/features.html
 
