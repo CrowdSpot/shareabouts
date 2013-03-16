@@ -35,10 +35,10 @@ map:
 # The values map the place type to map icons (defined below).
 place_types:
   Food Spot:
-    default: red
+    default: assemble
     focused: focused
   Drink Spot:
-    default: blue
+    default: assemblegreen
     focused: focused
   Shop Spot:
     default: green
@@ -50,8 +50,8 @@ place_types:
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
-  red:
-    iconUrl: /static/css/images/master-pin-red.png
+  assemble:
+    iconUrl: /static/css/images/master-pin-assemble.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -62,8 +62,8 @@ place_type_icons:
     iconAnchor:
       x: 42
       y: 42
-  blue:
-    iconUrl: /static/css/images/master-pin-blue.png
+  assemblegreen:
+    iconUrl: /static/css/images/master-pin-assemblegreen.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
