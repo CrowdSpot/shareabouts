@@ -37,7 +37,7 @@ place_types:
   Community Garden:
     default: orange
     focused: focused
-  Farmers Market:
+  Local Market:
     default: blue
     focused: focused
   Farm:
@@ -115,7 +115,7 @@ place:
       type: select
       options:
         - Community Garden
-        - Farmers Market
+        - Local Market
         - Farm
       name: location_type
     - prompt: Name Your Spot
@@ -193,4 +193,8 @@ pages:
   - title: "FAQs"
     slug: contact
     url: /static/pages/features.html
+    
+  - title: CrowdSpot
+    external: true
+    url: http://www.crowdspot.com.au
 
