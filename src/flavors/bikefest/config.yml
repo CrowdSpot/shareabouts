@@ -225,42 +225,8 @@ pages:
   - title: About
     slug: about
     url: /static/pages/overview.html
-    start_page: true
-
+    start_page: false
   - title: The Spots
     slug: why
     url: /static/pages/why.html
-
-  - title: Filter Spots    
-    pages:
-      - title: All
-        external: true
-        url: /
-
-      - title: Food/drink Spots
-        external: true
-        url: /food/drink spot
-
-      - title: Activity Spots
-        external: true
-        url: /activity spot
-
-      - title: Beauty Spots
-        external: true
-        url: /beauty toilet
-
-      - title: Shop Spots
-        external: true
-        url: /shop spot
  
-  - title: FAQs
-    slug: faqs
-    url: /static/pages/features.html
-
-  - title: Bikefest
-    external: true
-    url: http://www.melbournebikefest.com.au
-
-  - title: CrowdSpot
-    external: true
-    url: http://www.crowdspot.com.au
