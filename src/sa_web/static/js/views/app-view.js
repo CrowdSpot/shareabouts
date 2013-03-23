@@ -156,6 +156,7 @@ var Shareabouts = Shareabouts || {};
         this.placeFormView.$('textarea, input').not('[type="hidden"]').first().focus();
         this.showNewPin();
         this.hideAddButton();
+        this.hideInstructions(true);
       }
     },
     onRemovePlace: function(model) {
@@ -207,6 +208,7 @@ var Shareabouts = Shareabouts || {};
         this.destroyNewModels();
         this.hideCenterPoint();
         this.hideAddButton();
+        this.hideInstructions(true);
         map.panTo(this.getOffsetCenter(L.latLng(location.lat, location.lng)));
 
         // Focus the one we're looking
