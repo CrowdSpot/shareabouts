@@ -173,8 +173,8 @@ support:
   anonymous_name: Someone
 
 pages:
-  - title: About
-    slug: about
+  - title: Welcome
+    slug: welcome
     url: /static/pages/overview.html
     start_page: true
 
