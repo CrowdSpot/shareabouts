@@ -404,7 +404,7 @@ a.add-place:before {
   margin: -32px 0 0 -32px;
   pointer-events: none;
   z-index: 11;
-  opacity: 1.0;
+  opacity: 0.6;
   -webkit-transition: opacity 0.25s;
   -moz-transition: opacity 0.25s;
   -o-transition: opacity 0.25s;
