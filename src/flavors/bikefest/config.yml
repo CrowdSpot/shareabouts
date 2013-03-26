@@ -203,9 +203,6 @@ survey:
   anonymous_name: Someone
 
   # Survey form config
-  title: Leave a Comment
-  form_link_text: Leave a Comment
-  submit_btn_text: Comment
   items:
     - prompt: Comment
       label: Comment
