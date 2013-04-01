@@ -9,9 +9,9 @@ dataset_api_key: YWY1YjMyNzU5YjRiZDljOTQwMGM0Nzhm
 # Settings for the app
 app:
   # HTML Title
-  title: CrowdSpot demo
+  title: The Age BikeSpot
   # Header name
-  name: CrowdSpot demo
+  name: The Age BikeSpot
   # Meta description that will show up in Google search results
   meta_description: CrowdSpot is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.
 
@@ -34,27 +34,18 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  Wifi Spot:
+  My Accident Spot:
     default: red
+    focused: focused
+  Safe Riding Spot:
+    default: green
     focused: focused
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
   red:
-    iconUrl: /static/css/images/wifi-pin-red.png
-    shadowUrl: /static/css/images/master-pin-shadow.png
-    iconSize:
-      width: 85
-      height: 41
-    shadowSize:
-      width: 42
-      height: 85
-    iconAnchor:
-      x: 42
-      y: 42
-  blue:
-    iconUrl: /static/css/images/bike-pin-red.png
+    iconUrl: /static/css/images/master-pin-red.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -66,7 +57,7 @@ place_type_icons:
       x: 42
       y: 42
   green:
-    iconUrl: /static/css/images/toilet-pin-red.png
+    iconUrl: /static/css/images/master-pin-green.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -105,14 +96,6 @@ place:
   anonymous_name: Someone
   submit_button_label: Submit
   items:
-    - prompt: Your Name
-      type: text
-      name: submitter_name
-      attrs:
-        - key: placeholder
-          value: Type name here
-        - key: size
-          value: 30
     - prompt: Name Your Spot
       type: text
       name: name
@@ -124,8 +107,16 @@ place:
     - prompt: Spot Type
       type: select
       options:
-        - Wifi Spot
-      name: location_type
+        - My Accident Spot
+        - Safe Riding Spot
+      name: location_type  
+    - prompt: What happened?
+      type: textarea
+      name: description
+      optional: true
+      attrs:
+        - key: placeholder
+          value: Describe here what happened...
     - prompt: Add an Image
       inputfile_label: _(Add an Image)      
       type: file
@@ -134,14 +125,23 @@ place:
       attrs:
         - key: accept
           value: image/*
-      name: location_type   
-    - prompt: Description
-      type: textarea
-      name: description
-      optional: true
+      name: location_type 
+    - prompt: Your Name
+      type: text
+      name: submitter_name
       attrs:
         - key: placeholder
-          value: Description...
+          value: Type name here
+        - key: size
+          value: 30
+    - prompt: Your Email
+      type: text
+      name: private- submitter_email
+      attrs:
+        - key: placeholder
+          value: Type email here
+        - key: size
+          value: 30
 
 survey:
   submission_type: comments
