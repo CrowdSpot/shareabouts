@@ -136,7 +136,7 @@ place:
           value: 30
     - prompt: Your Email
       type: text
-      name: private- submitter_email
+      name: private-submitter_email
       attrs:
         - key: placeholder
           value: Type email here
