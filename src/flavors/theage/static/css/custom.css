@@ -292,9 +292,14 @@ ul.recent-points {
   color: rgb(85, 85, 85);
 }
 
+#ticker {
+  border-bottom: none;
+}
+
 #powered-by {
   background: #eeeeef;
   color: rgb(119, 119, 119);
+  height: auto;
 }
 
 #powered-by a {
