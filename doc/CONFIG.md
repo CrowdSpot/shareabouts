@@ -11,8 +11,11 @@ for your dataset, as you'll use it later. You will also need the API
 key for this dataset, which you can get from the "API Keys" tab of the
 manage UI.
 
+If you're using the OpenPlans API server, it's
+[api.shareabouts.org](http://api.shareabouts.org) and the API manager is
+[api.shareabouts.org/manage](http://api.shareabouts.org/manage).
 
-Step 1: Create a Flavor
+Step 1: Create a flavor
 -----------------------
 
 A "flavor" is a particular configuration of Shareabouts.
@@ -20,26 +23,29 @@ A "flavor" is a particular configuration of Shareabouts.
 Copy the *flavors/default_config* folder to a new subdirectory
 of *flavors/*.  Name it whatever you want.
 
+
+Step 2: Set up your local settings
+-----------------------
+
 Copy the *project/local_settings.py.template* file to
-*project/local_settings.py*  and edit the new file, changing
-SHAREABOUTS_FLAVOR to the name of the flavor directory you just
+*project/local_settings.py*.
+
+Edit the new file, changing SHAREABOUTS_FLAVOR to the name of the flavor directory you just
 created.
 
-Your flavor directory contains a *config.yml* file that you will be
-editing throughout the rest of these instructions.
-
-
-### Dataset
-
-Enter your username and dataset, along with your API key, into the
-config.yml file.  The `dataset` attribute is composed of both your
-username and the short-name of the dataset:
-
-    dataset: username/dataset-slug
+Also update DATASET_ROOT, and DATASET_KEY. Get this info from your API server.
 
 **NOTE: You don't want to check the API key information in to your
 repository, as anyone would be able to write to your data using your
 API key.**
+
+
+Step 3: Edit your flavor
+-----------------------
+
+Your flavor directory contains a *config.yml* file that you will be
+editing throughout the rest of these instructions. Once you're done with config and local testing,
+[deploy](https://github.com/openplans/shareabouts/blob/master/doc/DEPLOY.md).
 
 ### The Map
 
@@ -271,7 +277,18 @@ Here's an example:
       - prompt: Your Name
         type: text
         name: submitter_name
+      - prompt: Your Email
+        type: text
+        name: private-submitter_email
 
+##### Collecting Private Data
+
+Sometimes you'll want to collect data from users that you don't want to make
+available to the world (e.g., users' email addresses). You can mark data that
+is meant to be private with a `private-` prefix. This data will be available
+to you through the Shareabouts admin interface, but will not be shown through
+in your map. See the section on [survey form configuration](#survey-form-configuration)
+for an example.
 
 #### Support Form Configuration
 
@@ -298,6 +315,11 @@ will not:
     label: _(Button Label)
     type_name: survey_type
 
+You can also translate the content in your pages. Surround any text that you
+would like to be translatable with `{{#_}}` and `{{/_}}`. For example:
+
+    <h2>{{#_}}About{{/_}}</h2>
+
 To generate a translation template, run the following from your flavor
 directory:
 
@@ -317,25 +339,61 @@ To apply your translations, run the following from your flavor directory:
 That's it! The compilemessages task is run automatically for the DotCloud and
 Heroku deployments.
 
+### Choosing a Language
+
+By default, Shareabouts will try to infer the target user's language from their
+browser settings. If you would like them to be able to explicitly select the
+interface language, you can configure a language selector in the application's
+title bar.
+
+Specify the available languages by adding this section to your configuration:
+
+    languages:
+      - code: en
+        label: I Speak English
+
+      - code: es
+        label: Hablo Español
+
+      - code: hi
+        label: मैं हिंदी बोलते हैं
+
+The `code` should be one of the [ISO-639-1 language codes](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes),
+and the `label` should be the string that you want to appear in the language
+selector drop-down menu. Note that the language labels should not be marked for
+translation, and should be written in the target language.
+
+Don't forget to [translate your interface text](#translating-interface-text)
+into each of your desired target languages.
+
+For more information on language codes, see the [Django documentation](https://docs.djangoproject.com/en/1.3/topics/i18n/#term-language-code).
+
 ### Pages and Links
 
 Shareabouts allows you to create multiple static pages, linked from
 the top navigation bar. To create a page:
 
-* To add a page to the navigaton bar, first add a title, slug, and url
+* To add a page to the navigaton bar, first add a *title*, and *slug*
   to the "pages" array in config.yml.  For example:
 
-    - title: About
-      slug: about
-      url: /static/pages/about.html
-	  start_page: true
+        - title: About
+          slug: about
+      	  start_page: true
 
   The *start_page* option allows specifying that this page should be
   open when people first visit the site. If omitted, it defaults to false.
 
-* Create the page content (as HTML) in the file pointed to by the url.
-  For the given example, you would edit the content in
-  src/sa_web/static/pages/features.html.
+* Create the page content (as HTML). Shareabouts will look for your content
+  in a file in your flavor called *jstemplates/pages/about.html*. The filename
+  matches the slug by default. If you want to use a different name for your
+  page file, you can specify a *name* attribute as well, e.g.:
+
+        - title: About
+          slug: about
+          name: new
+      	  start_page: true
+
+  In this example, your file will be found at *jstemplates/pages/new.html*.
 
 You can also add links to external sites to the navigation bar.  To do
 this, simply add a title and url to the "pages" array in config.yml, and
@@ -344,6 +402,10 @@ set the "external" property to "true".  For example:
     - title: OpenPlans
       url: http://www.openplans.org/
       external: true
+
+**Note: Do not include `<script>` tags in your pages. If you want to do custom
+  scripting from within your flavor, add your scripts to the includes template
+  (*templates/includes.html*).**
 
 ### Styling
 

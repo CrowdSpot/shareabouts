@@ -18,7 +18,7 @@ underlying Shareabouts API server.
 
 The Shareabouts API is *not* part of this package. You'll need to
 install that separately, or its authors (OpenPlans) would be happy to
-host your API for you - details to come.
+host your API for you. Go to [api.shareabouts.org](http://api.shareabouts.org) and request access.
 
 For more about the parts of Shareabouts,
 see [the architecture documentation](ARCHITECTURE.md).
@@ -81,10 +81,10 @@ back-end API service.  To do so, you will want clone the
 
 For example, in another terminal session, do this:
 
-  git clone https://github.com/openplans/shareabouts-api
-  cd shareabouts-api
+    git clone https://github.com/openplans/shareabouts-api
+    cd shareabouts-api
 
-Then read its own install documentation, in doc/README.md.
+Then read its own install documentation, in `doc/README.md`.
 You'll want to run it on a separate port; we usually use 8001.
 
 Configuration
