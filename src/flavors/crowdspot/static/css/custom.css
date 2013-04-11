@@ -313,6 +313,11 @@ center 5px;
 }
 
 
+/* Instructions */
+#instructions p {
+  background: #eeeeef;
+}
+
 
 /* =Media Queries
 -------------------------------------------------------------- */

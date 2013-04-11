@@ -175,14 +175,14 @@ support:
 pages:
   - title: Welcome
     slug: welcome
-    url: /static/pages/overview.html
+    name: overview
     start_page: true
 
   - title: "Why CrowdSpot?"
     slug: why
-    url: /static/pages/why.html
+    name: why
 
   - title: "Contact"
     slug: contact
-    url: /static/pages/features.html
+    name: features
 

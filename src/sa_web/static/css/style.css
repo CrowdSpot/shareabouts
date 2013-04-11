@@ -519,6 +519,10 @@ a.add-place:hover + #centerpoint,
 #instructions p {
   background: white;
   padding: 10px;
+  border-radius: 3px;
+   -moz-box-shadow: -4px 4px 0 rgba(85, 85, 85, 0.5);
+-webkit-box-shadow: -4px 4px 0 rgba(85, 85, 85, 0.5);
+        box-shadow: -4px 4px 0 rgba(85, 85, 85, 0.5);
 }
 
 #instructions .arrow {
