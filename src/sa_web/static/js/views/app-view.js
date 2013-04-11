@@ -246,6 +246,10 @@ var Shareabouts = Shareabouts || {};
       map.panTo(this.getOffsetCenter(map.getCenter()));
     },
     showAddButton: function() {
+      // don't show the add button until they've seen the instructions
+      if (!this.instructionsShown)
+        return;
+        
       this.$addButton.show();
     },
     hideAddButton: function() {
@@ -258,13 +262,27 @@ var Shareabouts = Shareabouts || {};
       this.$centerpoint.hide();
     },
     showInstructions: function() {
-      this.$instructions.show();
+      var self = this;
+      
+      if (self.instructionsShown)
+        return;
+      
+      self.$instructions.show();
+      
+      // if the instructions are still visible after 300ms, don't show them again.
+      setTimeout(function() {
+        if (self.$instructions.is(':visible')) {
+          self.instructionsShown = true;
+        }
+      }, 500);
     },
     hideInstructions: function(instant) {
       if (instant)
         this.$instructions.hide();
       else
         this.$instructions.fadeOut();
+      
+      this.showAddButton();
     },
     hidePanel: function() {
       this.unfocusAllPlaces();
