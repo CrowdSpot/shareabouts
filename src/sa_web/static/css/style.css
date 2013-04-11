@@ -503,6 +503,32 @@ a.add-place:hover + #centerpoint,
   top: -20px;
 }
 
+#instructions {
+  display: none;
+  width: 150px;
+  height: 120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -58px 0 0 -200px;
+  pointer-events: none;
+  z-index: 11;
+}
+
+#instructions p {
+  background: white;
+  padding: 10px;
+}
+
+#instructions .arrow {
+  position: absolute;
+  left: 75px;
+  bottom: 0;
+  width: 109px;
+  height: 47px;
+  background: transparent url(images/arrow.png) 0 0 no-repeat scroll;
+}
+
 /* Content */
 #content {
   background: #fff;
