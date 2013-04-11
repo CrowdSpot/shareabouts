@@ -407,7 +407,7 @@ a.add-place:before {
   margin: -32px 0 0 -32px;
   pointer-events: none;
   z-index: 11;
-  opacity: 0.6;
+  opacity: 0.7;
   -webkit-transition: opacity 0.25s;
   -moz-transition: opacity 0.25s;
   -o-transition: opacity 0.25s;
@@ -503,6 +503,7 @@ a.add-place:hover + #centerpoint,
   top: -20px;
 }
 
+/* instructions -- help for new users */
 #instructions {
   display: none;
   width: 150px;
@@ -1046,9 +1047,6 @@ ul.recent-points {
   }
   a.add-place:before {
     content: "";
-  }
-  #centerpoint {
-    opacity: 0.25;
   }
   #content {
     position: absolute;
