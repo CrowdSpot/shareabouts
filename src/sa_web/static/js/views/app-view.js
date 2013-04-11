@@ -269,12 +269,12 @@ var Shareabouts = Shareabouts || {};
       
       self.$instructions.show();
       
-      // if the instructions are still visible after 300ms, don't show them again.
+      // if the instructions are still visible after 1s, don't show them again.
       setTimeout(function() {
         if (self.$instructions.is(':visible')) {
           self.instructionsShown = true;
         }
-      }, 500);
+      }, 1000);
     },
     hideInstructions: function(instant) {
       if (instant)
