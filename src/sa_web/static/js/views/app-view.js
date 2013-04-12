@@ -122,6 +122,9 @@ var Shareabouts = Shareabouts || {};
       this.$centerpoint.addClass('dragging');
       
       // fade the instructions out (and don't show them again)
+      if (self.$instructions.is(':visible')) {
+        self.instructionsShown = true;
+      }
       this.hideInstructions();
     },
     onMapMoveEnd: function(evt) {
@@ -268,13 +271,6 @@ var Shareabouts = Shareabouts || {};
         return;
       
       self.$instructions.show();
-      
-      // if the instructions are still visible after 1s, don't show them again.
-      setTimeout(function() {
-        if (self.$instructions.is(':visible')) {
-          self.instructionsShown = true;
-        }
-      }, 1000);
     },
     hideInstructions: function(instant) {
       if (instant)
