@@ -23,8 +23,8 @@ map:
     center:
       lat: -37.81361
       lng: 144.96306
-    zoom: 14
-    minZoom: 10
+    zoom: 10
+    minZoom: 5
     maxZoom: 17
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/aisey.map-u8fegfjt/{z}/{x}/{y}.png
