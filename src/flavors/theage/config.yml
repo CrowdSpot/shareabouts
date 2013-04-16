@@ -23,7 +23,7 @@ map:
     center:
       lat: -37.81361
       lng: 144.96306
-    zoom: 10
+    zoom: 13
     minZoom: 5
     maxZoom: 17
   base_layer:
@@ -34,10 +34,10 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  My Accident Spot:
+  Crash Spot:
     default: red
     focused: focused
-  Safe Riding Spot:
+  Good Riding Spot:
     default: green
     focused: focused
 
@@ -45,7 +45,7 @@ place_types:
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
   red:
-    iconUrl: /static/css/images/master-pin-red.png
+    iconUrl: /static/css/images/bike-pin-red.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -91,29 +91,42 @@ place:
   adding_supported: true
   add_button_label: Add a Spot
   action_text: added
-  title: Tell us more...
+  title: Tell us your story...
   action_text: created
   anonymous_name: Someone
   submit_button_label: Submit
   items:
-    - prompt: Name Your Spot
+    - prompt: Where is your crash spot or safe riding spot?
       type: text
       name: name
       attrs:
         - key: placeholder
-          value: Spot Name
+          value: Eg. Corner of X and Y street
         - key: size
           value: 30
     - prompt: Spot Type
       type: select
       options:
-        - My Accident Spot
-        - Safe Riding Spot
-      name: location_type  
+        - Crash Spot
+        - Good Riding Spot
+      name: location_type
+    - prompt: If a crash spot, what was the cause?
+      type: select
+      options:
+        - Inadequate infrastructure
+        - Motorist fault
+        - Pedestrian fault
+        - Bicyclist fault 
+    - prompt: If a crash spot, how severe was it?
+      type: select
+      options:
+        - Minor (could ride on)
+        - Serious (medical attention required)
+        - Major (hospitalised)  
     - prompt: What happened?
       type: textarea
       name: description
-      optional: true
+      optional: false
       attrs:
         - key: placeholder
           value: Describe here what happened...
@@ -139,9 +152,14 @@ place:
       name: private-submitter_email
       attrs:
         - key: placeholder
-          value: Type email here
+          value: Your email is kept confidential and used to feedback results
         - key: size
           value: 30
+    - prompt: Are you willing to be contacted by The Age about your story?
+      type: select
+      options:
+        - Yes please
+        - No thanks
 
 survey:
   submission_type: comments
@@ -178,11 +196,11 @@ pages:
     name: overview
     start_page: true
 
-  - title: "Why CrowdSpot?"
+  - title: "Why?"
     slug: why
     name: why
 
-  - title: "Contact"
-    slug: contact
+  - title: "FAQs"
+    slug: faqs
     name: features
 
