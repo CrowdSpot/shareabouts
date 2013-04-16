@@ -228,12 +228,12 @@ support:
 pages:
   - title: About
     slug: about
-    url: /static/pages/overview.html
+    name: overview
     start_page: true
 
   - title: The Spots
     slug: spots
-    url: /static/pages/why.html
+    name: why
 
   - title: Filter Spots
     pages:
@@ -263,5 +263,5 @@ pages:
 
   - title: FAQs
     slug: faqs
-    url: /static/pages/features.html
+    name: features
 
