@@ -138,16 +138,16 @@ a#nav-bttn:hover {
 /* =Navigation Menu
 -------------------------------------------------------------- */
 
-#access {
+#site-header .access {
   background: transparent;
   border: none;
 }
 
-#access li {
+#site-header .access li {
 /*  border-bottom: 2px solid #994c99;*/
 }
 
-#access a {
+#site-header .access a {
   background: none;
   padding: 0 15px;
   
@@ -158,11 +158,12 @@ a#nav-bttn:hover {
 	text-transform: uppercase;
 }
 
-#access a:visited, #access a:active, #access a:link {
+#site-header .access a:visited, #site-header .access a:active, 
+  #site-header .access a:link {
   color: rgb(119, 119, 119);
 }
 
-#access a:hover {
+#site-header .access a:hover {
   color: rgb(30, 30, 30);
   text-decoration: none;
   box-shadow: none;
@@ -178,11 +179,11 @@ a#nav-bttn:hover {
   margin-bottom: 2px;
 }*/
 
-#access ul ul {
+#site-header .access ul ul {
   background: #eeeeef;
 }
 
-#access ul ul a {
+#site-header .access ul ul a {
   background: #eeeeef;
 }
 
@@ -314,7 +315,12 @@ ul.recent-points {
 #powered-by {
   background: #eeeeef;
   color: rgb(119, 119, 119);
+  line-height: 2em;
+  height: 2em;
 }
+
+#ticker {
+  border-bottom: 2em;
 
 #powered-by a {
   font-family: inherit;
@@ -322,7 +328,7 @@ ul.recent-points {
   color: rgba(0,0,0,0);
   
   background: url('images/crowdspot-logo-horizontal-256x41.png') no-repeat
-center 5px;
+center center;
   background-size: contain;
   width: 256px;
 }
@@ -331,6 +337,10 @@ center 5px;
   color: rgba(0,0,0,0);
 }
 
+/* Instructions */
+#instructions p {
+  background: #eeeeef;
+}
 
 
 /* =Media Queries
