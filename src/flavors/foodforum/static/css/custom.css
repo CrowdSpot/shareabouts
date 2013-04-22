@@ -312,13 +312,16 @@ ul.recent-points {
   color: rgb(85, 85, 85);
 }
 
+#ticker {
+  border-bottom: none;
+}
+
 #powered-by {
   background: #eeeeef;
   color: rgb(119, 119, 119);
   line-height: 2em;
   height: 2em;
 }
-
 #ticker {
   border-bottom: 2em;
 }  
@@ -337,6 +340,7 @@ center center;
 #powered-by a:hover {
   color: rgba(0,0,0,0);
 }
+
 
 /* Instructions */
 #instructions p {
