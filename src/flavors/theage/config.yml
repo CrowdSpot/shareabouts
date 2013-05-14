@@ -23,9 +23,10 @@ map:
     center:
       lat: -37.81361
       lng: 144.96306
-    zoom: 13
+    zoom: 14
     minZoom: 5
     maxZoom: 17
+    maxBounds: [ [-38.069717, 144.390564], [-37.516262, 145.415039] ]
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/aisey.map-u8fegfjt/{z}/{x}/{y}.png
     attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
@@ -37,7 +38,7 @@ place_types:
   Crash Spot:
     default: red
     focused: focused
-  Good Riding Spot:
+  Safe Riding Spot:
     default: green
     focused: focused
 
@@ -45,7 +46,7 @@ place_types:
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
   red:
-    iconUrl: /static/css/images/bike-pin-red.png
+    iconUrl: /static/css/images/firstaid-pin-red.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -57,7 +58,7 @@ place_type_icons:
       x: 42
       y: 42
   green:
-    iconUrl: /static/css/images/master-pin-green.png
+    iconUrl: /static/css/images/tick-pin-green.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -108,7 +109,7 @@ place:
       type: select
       options:
         - Crash Spot
-        - Good Riding Spot
+        - Safe Riding Spot
       name: location_type
     - prompt: If a crash spot, what was the cause?
       type: select
@@ -122,7 +123,15 @@ place:
       options:
         - Minor (could ride on)
         - Serious (medical attention required)
-        - Major (hospitalised)  
+        - Major (hospitalised)
+    - prompt: What year was this crash?
+      type: text
+      name: Year
+      attrs:
+        - key: placeholder
+          value: Type year here...
+        - key: size
+          value: 30  
     - prompt: What happened?
       type: textarea
       name: description
@@ -196,11 +205,12 @@ pages:
     name: overview
     start_page: true
 
-  - title: "Why?"
-    slug: why
-    name: why
-
   - title: "FAQs"
     slug: faqs
     name: features
+  
+  - title: "Contact"
+    slug: contact
+    name: why
+
 
