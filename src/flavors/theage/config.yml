@@ -92,7 +92,7 @@ place:
   adding_supported: true
   add_button_label: Add a Spot
   action_text: added
-  title: Tell us your story...
+  title: Tell us about your bike crash story or safe riding spot...
   action_text: created
   anonymous_name: Someone
   submit_button_label: Submit
@@ -127,6 +127,7 @@ place:
     - prompt: What year was this crash?
       type: text
       name: Year
+      optional: true
       attrs:
         - key: placeholder
           value: Type year here...
@@ -183,7 +184,7 @@ survey:
   # Survey form config
   title: Leave a Comment
   form_link_text: Leave a Comment
-  submit_btn_text: Comment
+  submit_btn_text: Submit Comment
   items:
     - prompt: Comment
       label: Comment
@@ -192,6 +193,9 @@ survey:
     - prompt: Your Name
       type: text
       name: submitter_name
+    - prompt: Your email (optional)
+      type: text
+      name: private-submitter_email
 
 support:
   submission_type: support
