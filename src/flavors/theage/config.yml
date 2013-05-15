@@ -213,7 +213,7 @@ pages:
   - title: Welcome
     slug: welcome
     name: overview
-    start_page: true
+    start_page: false
 
   - title: "FAQs"
     slug: faqs
