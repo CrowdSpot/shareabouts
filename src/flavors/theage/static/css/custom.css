@@ -251,6 +251,10 @@ a.reply-link:hover {
   display: none;
 }
 
+.response-value-private-submitter_email {
+  display: none;
+}
+
 
 /* =Voting & Social Promotion
 -------------------------------------------------------------- */

@@ -117,7 +117,8 @@ place:
         - Inadequate infrastructure
         - Motorist fault
         - Pedestrian fault
-        - Bicyclist fault 
+        - Other bicyclist fault 
+        - My own fault
     - prompt: If a crash spot, how severe was it?
       type: select
       options:
@@ -186,6 +187,11 @@ survey:
   form_link_text: Leave a Comment
   submit_btn_text: Submit Comment
   items:
+    - prompt: Do you know this spot?
+      type: select
+      options:
+        - Agree 
+        - Disagree
     - prompt: Comment
       label: Comment
       type: textarea
