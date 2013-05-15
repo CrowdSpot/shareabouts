@@ -8,7 +8,7 @@
 -------------------------------------------------------------- */
 
 body, select, input, textarea {
-  background: #eeeeef;
+  background: rgb(255, 255, 255);
   font-family: "proxima-nova", sans-serif ;
   color: #555;
 }
@@ -38,9 +38,9 @@ a:hover {
 #site-header {
   height: auto;
   
-  background: #eeeeef;
+  background: rgb(255,255,255);
   color: #555;
-  border-top: #ff1609 3px solid;
+  border-top: rgb(19,69,142) 4px solid;
      -moz-box-shadow: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -161,11 +161,11 @@ a#nav-bttn:hover {
 }*/
 
 #site-header .access ul ul {
-  background: #eeeeef;
+  background: rgb(255, 255, 255);
 }
 
 #site-header .access ul ul a {
-  background: #eeeeef;
+  background: rgb(255, 255, 255);
 }
 
 
@@ -173,7 +173,7 @@ a#nav-bttn:hover {
 -------------------------------------------------------------- */
 
 a.add-place {
-  background-color: #ff1609;
+  background-color: rgb(19,69,142);
   border-radius: 5px;
 /*  color: #eee;*/
 /*  text-shadow: none;*/
@@ -225,7 +225,7 @@ textarea {
 }
 
 .bttn {
-  background-color: #ff1609;
+  background-color: rgb(19,69,142);
   border-radius: 5px;
 /*  color: #eee;*/
 /*  background-color: #ff40ff;*/
@@ -301,12 +301,8 @@ ul.recent-points {
   color: rgb(85, 85, 85);
 }
 
-#ticker {
-  border-bottom: none;
-}
-
 #powered-by {
-  background: #eeeeef;
+  background: rgb(255, 255, 255);
   color: rgb(119, 119, 119);
   line-height: 2em;
   height: 2em;
