@@ -247,6 +247,10 @@ a.reply-link:hover {
 /*  background-color: #e500e5;*/
 }
 
+.place-value-private-sumitter_email {
+  display: none;
+}
+
 
 /* =Voting & Social Promotion
 -------------------------------------------------------------- */
