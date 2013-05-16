@@ -25,7 +25,7 @@ map:
       lng: 144.96306
     zoom: 14
     minZoom: 5
-    maxZoom: 17
+    maxZoom: 20
     maxBounds: [ [-38.069717, 144.390564], [-37.516262, 145.415039] ]
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/aisey.map-u8fegfjt/{z}/{x}/{y}.png
@@ -97,21 +97,13 @@ place:
   anonymous_name: Someone
   submit_button_label: Submit
   items:
-    - prompt: Where is your crash spot or safe riding spot?
-      type: text
-      name: name
-      attrs:
-        - key: placeholder
-          value: Eg. Corner of X and Y street
-        - key: size
-          value: 30
     - prompt: Spot Type
       type: select
       options:
         - Crash Spot
         - Safe Riding Spot
       name: location_type
-    - prompt: If a crash spot, what was the cause?
+    - prompt: If a Crash Spot, what was the main cause?
       type: select
       options:
         - Inadequate infrastructure
@@ -119,28 +111,35 @@ place:
         - Pedestrian fault
         - Other bicyclist fault 
         - My own fault
-    - prompt: If a crash spot, how severe was it?
+    - prompt: If a Crash Spot, how severe was it?
       type: select
       options:
         - Minor (could ride on)
         - Serious (medical attention required)
         - Major (hospitalised)
     - prompt: What year was this crash?
-      type: text
-      name: Year
-      optional: true
-      attrs:
-        - key: placeholder
-          value: Type year here...
-        - key: size
-          value: 30  
-    - prompt: What happened?
+      type: select
+      options:
+        - 2013
+        - 2012
+        - 2011
+        - 2010
+        - 2009
+        - 2008
+        - 2007
+        - 2006
+        - 2005
+        - 2004
+        - 2003
+        - 2002
+        - Before 2002 
+    - prompt: Tell us more...
       type: textarea
       name: description
-      optional: false
+      optional: True
       attrs:
         - key: placeholder
-          value: Describe here what happened...
+          value: 
     - prompt: Add an Image
       inputfile_label: _(Add an Image)      
       type: file
@@ -150,14 +149,23 @@ place:
         - key: accept
           value: image/*
       name: location_type 
-    - prompt: Your Name
+    - prompt: First Name
       type: text
       name: submitter_name
       attrs:
         - key: placeholder
-          value: Type name here
+          value: Type first name here
         - key: size
           value: 30
+    - prompt: Last Name
+      type: text
+      name: submitter_name
+      optional: true
+      attrs:
+        - key: placeholder
+          value: Type last name here
+        - key: size
+          value: 30      
     - prompt: Your Email
       type: text
       name: private-submitter_email
@@ -187,11 +195,11 @@ survey:
   form_link_text: Leave a Comment
   submit_btn_text: Submit Comment
   items:
-    - prompt: Do you know this spot?
+    - prompt: Have you also had a crash here?
       type: select
       options:
-        - Agree 
-        - Disagree
+        - 'Yes' 
+        - 'No'
     - prompt: Comment
       label: Comment
       type: textarea
@@ -205,15 +213,15 @@ survey:
 
 support:
   submission_type: support
-  submit_btn_text: Support This!
-  action_text: "supported"
+  submit_btn_text: Support this!
+  action_text: "Supported"
   anonymous_name: Someone
 
 pages:
   - title: Welcome
     slug: welcome
     name: overview
-    start_page: false
+    start_page: true
 
   - title: "FAQs"
     slug: faqs
