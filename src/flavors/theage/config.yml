@@ -159,7 +159,7 @@ place:
           value: 30
     - prompt: Last Name
       type: text
-      name: submitter_name
+      name: last_name
       optional: true
       attrs:
         - key: placeholder

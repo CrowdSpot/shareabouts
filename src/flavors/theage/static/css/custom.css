@@ -85,7 +85,7 @@ a:hover {
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
 #site-title {
-  background: url('....') no-repeat
+  background: url('images/cycle_stories_dink-620x85.png') no-repeat
 center;
   background-size: contain;
   width: 232px;
