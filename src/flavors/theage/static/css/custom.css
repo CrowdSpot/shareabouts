@@ -386,3 +386,7 @@ center center;
 /* =Individual Pages
 -------------------------------------------------------------- */
 
+#user_support > label {
+  background: transparent;
+  padding: 10px;
+}
