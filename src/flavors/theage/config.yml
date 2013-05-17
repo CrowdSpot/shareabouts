@@ -195,11 +195,6 @@ survey:
   form_link_text: Leave a Comment
   submit_btn_text: Submit Comment
   items:
-    - prompt: Have you also had a crash here?
-      type: select
-      options:
-        - 'Yes' 
-        - 'No'
     - prompt: Comment
       label: Comment
       type: textarea

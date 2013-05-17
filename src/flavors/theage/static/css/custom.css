@@ -387,8 +387,8 @@ center center;
 -------------------------------------------------------------- */
 
 #user_support > label {
-  background: transparent;
+  background-image:none;
   padding: 10px;
 }
 
-#user_support input[type=checkbox]:checked ~ label { background: transparent }
+#user_support input[type=checkbox]:checked ~ label { background-image:none }
