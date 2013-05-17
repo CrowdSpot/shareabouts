@@ -390,3 +390,5 @@ center center;
   background: transparent;
   padding: 10px;
 }
+
+#user_support input[type=checkbox]:checked ~ label { background: transparent }

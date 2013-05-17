@@ -213,8 +213,8 @@ survey:
 
 support:
   submission_type: support
-  submit_btn_text: Support this!
-  action_text: "Supported"
+  submit_btn_text: Crashed at this spot
+  action_text: "also crashed at this spot"
   anonymous_name: Someone
 
 pages:
