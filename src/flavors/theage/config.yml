@@ -9,9 +9,9 @@ dataset_api_key: YWY1YjMyNzU5YjRiZDljOTQwMGM0Nzhm
 # Settings for the app
 app:
   # HTML Title
-  title: The Age Bike Crash Stories
+  title: Cycle Stories
   # Header name
-  name: The Age Bike Crash Stories
+  name: Cycle Stories
   # Meta description that will show up in Google search results
   meta_description: CrowdSpot is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.
 
@@ -106,6 +106,7 @@ place:
     - prompt: If a Crash Spot, what was the main cause?
       type: select
       options:
+        - ...
         - Inadequate infrastructure
         - Motorist fault
         - Pedestrian fault
@@ -114,12 +115,14 @@ place:
     - prompt: If a Crash Spot, how severe was it?
       type: select
       options:
+        - ...
         - Minor (could ride on)
         - Serious (medical attention required)
         - Major (hospitalised)
     - prompt: What year was this crash?
       type: select
       options:
+        - ...
         - 2013
         - 2012
         - 2011
