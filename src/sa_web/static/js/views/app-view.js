@@ -271,11 +271,11 @@ var Shareabouts = Shareabouts || {};
       if (self.instructionsShown)
         return;
       
-      self.$instructions.show();
+      self.$instructions.css('display', null).addClass('show');
     },
     hideInstructions: function(instant) {
       if (instant)
-        this.$instructions.hide();
+        this.$instructions.removeClass('show');
       else
         this.$instructions.fadeOut();
       

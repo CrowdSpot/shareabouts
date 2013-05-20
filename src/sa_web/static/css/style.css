@@ -516,6 +516,12 @@ a.add-place:hover + #centerpoint,
   z-index: 11;
 }
 
+@media only screen and (min-width: 768px) {
+  #instructions.show {
+    display: block;
+  }
+}
+
 #instructions p {
   background: white;
   padding: 10px;
