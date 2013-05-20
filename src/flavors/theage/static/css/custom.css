@@ -280,6 +280,16 @@ a.reply-link:hover {
 /*  background-color: #bf8fbf;*/
 }
 
+.promotion .sharing::before {
+  content: 'Share:';
+  float: left;
+  margin-right: 10px;
+  
+  font-weight: bold;
+  line-height: 35px;
+}
+
+
 #user_support label {
 /*  color: #ff80ff;*/
 /*  background-color: #fff;*/
@@ -289,6 +299,16 @@ a.reply-link:hover {
 #user_support label:hover {
 /*  color: #e500e5;*/
 }
+
+#user_support > label {
+  background-image: none;
+  padding: 10px;
+}
+
+#user_support input[type=checkbox]:checked ~ label { 
+  background-image: none;
+}
+
 
 
 /* =The Ticker
@@ -389,9 +409,3 @@ center center;
 /* =Individual Pages
 -------------------------------------------------------------- */
 
-#user_support > label {
-  background-image:none;
-  padding: 10px;
-}
-
-#user_support input[type=checkbox]:checked ~ label { background-image:none }
