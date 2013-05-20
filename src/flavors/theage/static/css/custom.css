@@ -337,7 +337,10 @@ ul.recent-points {
   background: url('images/crowdspot-logo-horizontal-256x41.png') no-repeat
 center center;
   background-size: contain;
-  width: 256px;
+  
+  display: inline-block;
+  width: 100px;
+  height: 25px;
 }
 
 #powered-by a:hover {
