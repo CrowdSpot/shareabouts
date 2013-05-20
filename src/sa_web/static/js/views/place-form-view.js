@@ -97,6 +97,7 @@ var Shareabouts = Shareabouts || {};
       // Save and redirect
       this.model.save(attrs, {
         success: function() {
+          S.justSubmitted = true;
           router.navigate('/place/' + model.id, {trigger: true});
         },
         wait: true
