@@ -250,10 +250,6 @@ var Shareabouts = Shareabouts || {};
       map.panTo(this.getOffsetCenter(map.getCenter()));
     },
     showAddButton: function() {
-      // don't show the add button until they've seen the instructions
-      if (!this.instructionsShown)
-        return;
-        
       this.$addButton.show();
     },
     hideAddButton: function() {
@@ -272,6 +268,8 @@ var Shareabouts = Shareabouts || {};
         return;
       
       self.$instructions.css('display', null).addClass('show');
+      // also add a class to the add button, indicating that we are instructing
+      self.$addButton.addClass('instructionsShowing');
     },
     hideInstructions: function(instant) {
       if (instant)
@@ -279,7 +277,7 @@ var Shareabouts = Shareabouts || {};
       else
         this.$instructions.fadeOut();
       
-      this.showAddButton();
+      this.$addButton.removeClass('instructionsShowing');
     },
     hidePanel: function() {
       this.unfocusAllPlaces();

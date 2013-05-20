@@ -520,6 +520,9 @@ a.add-place:hover + #centerpoint,
   #instructions.show {
     display: block;
   }
+  #add-place.instructionsShowing {
+    display: none !important;
+  }
 }
 
 #instructions p {
