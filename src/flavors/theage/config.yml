@@ -157,7 +157,7 @@ place:
       name: submitter_name
       attrs:
         - key: placeholder
-          value: Type first name here
+          value: Type first name here...
         - key: size
           value: 30
     - prompt: Last Name
@@ -166,7 +166,7 @@ place:
       optional: true
       attrs:
         - key: placeholder
-          value: Type last name here
+          value: Type last name here...
         - key: size
           value: 30      
     - prompt: Your Email
@@ -174,7 +174,7 @@ place:
       name: private-submitter_email
       attrs:
         - key: placeholder
-          value: Your email is kept confidential and used to feedback results
+          value: Kept confidential and used for feedback
         - key: size
           value: 30
     - prompt: Are you willing to be contacted by The Age about your story?
@@ -208,6 +208,9 @@ survey:
     - prompt: Your email (optional)
       type: text
       name: private-submitter_email
+      attrs:
+        - key: placeholder
+          value: Kept confidential and used for feedback
 
 support:
   submission_type: support
