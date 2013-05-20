@@ -60,10 +60,10 @@ a:hover {
   #pages-nav-container:before {
     content: '';
     display: block;
-    background: transparent url('images/crowdspot-logo-horizontal-324x53.png') no-repeat center;
+    background: transparent url('images/crowdspot-logo-horizontal-256x41.png') no-repeat center;
     float: right;
-    width: 324px;
-    height: 53px;
+    width: 256px;
+    height: 41px;
     margin-top: 5px;
   }
 }
@@ -85,7 +85,7 @@ a:hover {
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
 #site-title {
-  background: url('images/cycle_stories_dink-620x85.png') no-repeat
+  background: url('images/cycle_stories_dink-620x113.png') no-repeat
 center;
   background-size: contain;
   width: 232px;
