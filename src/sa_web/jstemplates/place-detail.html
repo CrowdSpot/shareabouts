@@ -38,7 +38,9 @@
           </div>
           {{/ items }}
         </section>
-
-        {{#survey_config}}
-        <section class="survey"></section>
-        {{/survey_config}}
+        
+        {{^thanks}}
+          {{#survey_config}}
+          <section class="survey"></section>
+          {{/survey_config}}
+        {{/thanks}}
