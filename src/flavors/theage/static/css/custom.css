@@ -281,6 +281,16 @@ a.reply-link:hover {
   display: none;
 }
 
+/* =Thank you message
+-------------------------------------------------------------- */
+.thanks {
+  font-weight: bold;
+  text-align: center;
+  background-color: #fdf9e5;
+  border: 1px solid #e4d2b7;
+  position: relative;
+  padding: 0.75em 0.75em 0.75em 0.75em;
+}  
 
 /* =Voting & Social Promotion
 -------------------------------------------------------------- */
