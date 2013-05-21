@@ -516,7 +516,7 @@ a.add-place:hover + #centerpoint,
   z-index: 11;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 350px) {
   #instructions.show {
     display: block;
   }
