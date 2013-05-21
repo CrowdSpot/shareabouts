@@ -112,6 +112,7 @@ place:
         - Pedestrian fault
         - Other bicyclist fault 
         - My own fault
+      name: cause
     - prompt: If a Crash Spot, how severe was it?
       type: select
       options:
@@ -119,6 +120,7 @@ place:
         - Minor (could ride on)
         - Serious (medical attention required)
         - Major (hospitalised)
+      name: severity
     - prompt: What year was this crash?
       type: select
       options:
@@ -136,6 +138,7 @@ place:
         - 2003
         - 2002
         - Before 2002 
+      name: year
     - prompt: Tell us more...
       type: textarea
       name: description
@@ -178,6 +181,7 @@ place:
         - key: size
           value: 30
     - prompt: Are you willing to be contacted by The Age about your story?
+      name: private-can_contact
       type: select
       options:
         - Yes please

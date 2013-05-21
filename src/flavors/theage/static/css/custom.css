@@ -409,3 +409,7 @@ center center;
 /* =Individual Pages
 -------------------------------------------------------------- */
 
+.place-value-cause:before {
+  content: 'Cause: ';
+  font-weight: bold;
+}
