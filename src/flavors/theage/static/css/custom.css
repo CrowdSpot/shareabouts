@@ -299,7 +299,7 @@ a.reply-link:hover {
 }
 
 .promotion .sharing::before {
-  content: 'Share:';
+  content: 'Share #cyclestories:';
   float: left;
   margin-right: 10px;
   
