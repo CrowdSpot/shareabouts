@@ -20,13 +20,13 @@ def deploy():
 
     #check_clean()
     chownvhost()
-    stopservices()
+    #stopservices()
     pull()
     #    requirements()
     chownvhost()
     #    syncdb()
     #    migrate()
-    startservices()
+    #startservices()
 
 
 @task
