@@ -2,7 +2,7 @@
 import os
 import subprocess
 
-from fabric.api import abort, env, hide, local, prefix, task
+from fabric.api import abort, env, hide, local, prefix, put, task
 from fabric.context_managers import cd, lcd
 from fabric.decorators import runs_once
 from fabric.operations import run, sudo
@@ -326,3 +326,26 @@ def listroles():
 
     print 'I know about the following roles: %s' % \
         ', '.join(env.vhosts.keys())
+
+
+@task
+def maintenance():
+    """Puts site into maintenance mode.
+
+    Does not prevent ELB health check from working, so will not
+    trigger removal of app server from pool.
+    """
+
+    if os.path.exists(os.path.join(PROJECT_PATH, 'maintenance.html')):
+        put(os.path.join(PROJECT_PATH, 'maintenance.html'),
+            '%s/static/maintenance.html' % env.vhosts[env.vhost]['vhostpath'])
+
+
+@task
+def maintenanceoff():
+    """Brings site out of maintenance mode.
+    """
+
+    maint_file_path = "%s/static/maintenance.html" % \
+        env.vhosts[env.vhost]['vhostpath']
+    run("test -f %s && rm -f %s || true" % (maint_file_path, maint_file_path))
