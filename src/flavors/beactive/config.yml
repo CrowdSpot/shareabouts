@@ -21,14 +21,14 @@ map:
   geolocation_onload: true
   options:
     center:
-      lat: -37.81361
-      lng: 144.96306
+      lat: -36.791364
+      lng: 144.24364
     zoom: 14
     minZoom: 5
     maxZoom: 20
-    maxBounds: [ [-38.069717, 144.390564], [-37.516262, 145.415039] ]
+    maxBounds: [ [-36.80365, 144.225756], [-36.784954, 144.255367] ]
   base_layer:
-    url: http://{s}.tiles.mapbox.com/v3/aisey.map-u8fegfjt/{z}/{x}/{y}.png
+    url: http://{s}.tiles.mapbox.com/v3/visualvoice.BNDOtest/{z}/{x}/{y}.png
     attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
   layers: []
 
