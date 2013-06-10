@@ -319,14 +319,6 @@ a.reply-link:hover {
 /*  color: #e500e5;*/
 }
 
-#user_support > label {
-  background-image: none;
-  padding: 10px;
-}
-
-#user_support input[type=checkbox]:checked ~ label { 
-  background-image: none;
-}
 
 
 
