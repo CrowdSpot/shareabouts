@@ -18,12 +18,12 @@ app:
 # Settings for map and layer configs
 map:
   geolocation_enabled: true
-  geolocation_onload: true
+  geolocation_onload: false
   options:
     center:
       lat: -36.791364
       lng: 144.24364
-    zoom: 14
+    zoom: 18
     minZoom: 5
     maxZoom: 20
     maxBounds: [ [-36.80365, 144.225756], [-36.784954, 144.255367] ]
@@ -35,18 +35,18 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  Crash Spot:
+  Game Spot:
     default: red
     focused: focused
-  Safe Riding Spot:
+  Beauty Spot:
     default: green
-    focused: focused
+    focused: focused 
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
   red:
-    iconUrl: /static/css/images/bike-pin-red.png
+    iconUrl: /static/css/images/master-pin-red.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -58,7 +58,7 @@ place_type_icons:
       x: 42
       y: 42
   green:
-    iconUrl: /static/css/images/tick-pin-green.png
+    iconUrl: /static/css/images/master-pin-green.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -92,7 +92,7 @@ place:
   adding_supported: true
   add_button_label: Add a Spot
   action_text: added
-  title: Tell us about your bike crash story or safe riding spot...
+  title: Tell us more...
   action_text: created
   anonymous_name: Someone
   submit_button_label: Submit
@@ -100,45 +100,17 @@ place:
     - prompt: Spot Type
       type: select
       options:
-        - Crash Spot
-        - Safe Riding Spot
+        - Game Spot
+        - Beauty Spot
       name: location_type
-    - prompt: If a Crash Spot, what was the main cause?
-      type: select
-      options:
-        - ...
-        - Inadequate infrastructure
-        - Motorist fault
-        - Pedestrian fault
-        - Other bicyclist fault 
-        - My own fault
-      name: cause
-    - prompt: If a Crash Spot, how severe was it?
-      type: select
-      options:
-        - ...
-        - Minor (could ride on)
-        - Serious (medical attention required)
-        - Major (hospitalised)
-      name: severity
-    - prompt: What year was this crash?
-      type: select
-      options:
-        - ...
-        - 2013
-        - 2012
-        - 2011
-        - 2010
-        - 2009
-        - 2008
-        - 2007
-        - 2006
-        - 2005
-        - 2004
-        - 2003
-        - 2002
-        - Before 2002 
-      name: year
+    - prompt: Add an Image
+      inputfile_label: _(Add an Image)      
+      type: file
+      name: my_image
+      attrs:
+        - key: accept
+          value: image/*
+      name: location_type 
     - prompt: Tell us more...
       type: textarea
       name: description
@@ -146,15 +118,6 @@ place:
       attrs:
         - key: placeholder
           value: 
-    - prompt: Add an Image
-      inputfile_label: _(Add an Image)      
-      type: file
-      name: my_image
-      optional: true
-      attrs:
-        - key: accept
-          value: image/*
-      name: location_type 
     - prompt: First Name
       type: text
       name: submitter_name
@@ -180,12 +143,6 @@ place:
           value: Kept confidential and used for feedback
         - key: size
           value: 30
-    - prompt: Are you willing to be contacted by The Age about your story?
-      name: private-can_contact
-      type: select
-      options:
-        - Yes please
-        - No thanks
 
 survey:
   submission_type: comments
@@ -218,8 +175,8 @@ survey:
 
 support:
   submission_type: support
-  submit_btn_text: Crashed at this spot
-  action_text: "also crashed at this spot"
+  submit_btn_text: like this spot
+  action_text: "also loves this spot"
   anonymous_name: Someone
 
 pages:
