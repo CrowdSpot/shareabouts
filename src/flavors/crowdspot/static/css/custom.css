@@ -299,7 +299,6 @@ ul.recent-points {
   line-height: 2em;
   height: 2em;
 }
-
 #ticker {
   border-bottom: 2em;
 }
@@ -317,8 +316,6 @@ center center;
   width: 100px;
   height: 25px;
 }
-
-
 
 #powered-by a:hover {
   color: rgba(0,0,0,0);
