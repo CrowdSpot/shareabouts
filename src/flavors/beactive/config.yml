@@ -37,12 +37,21 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  Game Spot:
+  Imagine Spot:
     default: red
     focused: focused
-  Beauty Spot:
+  Explore Spot:
     default: green
-    focused: focused 
+    focused: focused
+  Play Spot:
+    default: orange
+    focused: focused  
+  Connect Spot:
+    default: blue
+    focused: focused
+  Make it better:
+    default: pink
+    focused: focused    
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
@@ -71,6 +80,42 @@ place_type_icons:
     iconAnchor:
       x: 42
       y: 42
+  orange:
+    iconUrl: /static/css/images/master-pin-orange.png
+    shadowUrl: /static/css/images/master-pin-shadow.png
+    iconSize:
+      width: 85
+      height: 41
+    shadowSize:
+      width: 42
+      height: 85
+    iconAnchor:
+      x: 42
+      y: 42
+  blue:
+    iconUrl: /static/css/images/master-pin-blue.png
+    shadowUrl: /static/css/images/master-pin-shadow.png
+    iconSize:
+      width: 85
+      height: 41
+    shadowSize:
+      width: 42
+      height: 85
+    iconAnchor:
+      x: 42
+      y: 42
+  pink:
+    iconUrl: /static/css/images/master-pin-pink.png
+    shadowUrl: /static/css/images/master-pin-shadow.png
+    iconSize:
+      width: 85
+      height: 41
+    shadowSize:
+      width: 42
+      height: 85
+    iconAnchor:
+      x: 42
+      y: 42     
   focused:
     iconUrl: /static/css/images/marker-focused.png
     shadowUrl: /static/css/images/marker-shadow.png
@@ -102,8 +147,11 @@ place:
     - prompt: Spot Type
       type: select
       options:
-        - Game Spot
-        - Beauty Spot
+        - Imagine Spot
+        - Explore Spot
+        - Play Spot
+        - Connect Spot
+        - Make it better
       name: location_type
     - prompt: Add an Image
       inputfile_label: _(Add an Image)      
@@ -187,12 +235,12 @@ pages:
     name: overview
     start_page: true
 
+  - title: The Spots
+    slug: spots
+    name: why
+  
   - title: "FAQs"
     slug: faqs
     name: features
-  
-  - title: "Contact"
-    slug: contact
-    name: why
 
 
