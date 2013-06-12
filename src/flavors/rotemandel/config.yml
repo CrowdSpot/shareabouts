@@ -74,7 +74,7 @@ place_type_icons:
       x: 42
       y: 42
   orange:
-    iconUrl: /static/css/images/master-pin-green.png
+    iconUrl: /static/css/images/master-pin-orange.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -86,7 +86,7 @@ place_type_icons:
       x: 42
       y: 42
   blue:
-    iconUrl: /static/css/images/master-pin-green.png
+    iconUrl: /static/css/images/master-pin-blue.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
