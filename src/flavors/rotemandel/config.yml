@@ -171,12 +171,6 @@ survey:
     - prompt: Your Name
       type: text
       name: submitter_name
-    - prompt: Your email (optional)
-      type: text
-      name: private-submitter_email
-      attrs:
-        - key: placeholder
-          value: Kept confidential and used for feedback
 
 support:
   submission_type: support
@@ -189,28 +183,6 @@ pages:
     slug: welcome
     name: overview
     start_page: true
-
-  - title: Filter Spots
-    pages:
-      - title: All
-        external: true
-        url: /
-
-      - title: Accomodation Spots
-        external: true
-        url: /accomodation spot
-
-      - title: Food Spots
-        external: true
-        url: /food spot
-
-      - title: Night Spots
-        external: true
-        url: /night spot
-
-      - title: Official Spots
-        external: true
-        url: /official spot
 
   - title: "FAQs"
     slug: faqs
