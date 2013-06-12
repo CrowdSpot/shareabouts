@@ -63,8 +63,8 @@ a:hover {
     display: block;
     background: transparent url('images/cogblogo-220x58.jpg') no-repeat center;
     float: right;
-    width: 220px;
-    height: 58px;
+    width: 256px;
+    height: 60px;
     margin-top: 5px;
   }
 }
