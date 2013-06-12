@@ -144,6 +144,14 @@ place:
   anonymous_name: Someone
   submit_button_label: Submit
   items:
+    - prompt: Short Description
+      type: text
+      name: name
+      attrs:
+        - key: placeholder
+          value: Eg. Name of activity, game, etc.
+        - key: size
+          value: 30 
     - prompt: Spot Type
       type: select
       options:
