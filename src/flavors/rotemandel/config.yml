@@ -147,13 +147,13 @@ place:
       optional: True
       attrs:
         - key: placeholder
-          value: 
+          value: Give more detail. Who, what, why, etc. 
     - prompt: Your name
       type: text
       name: submitter_name
       attrs:
         - key: placeholder
-          value: Type you name here...
+          value: Type your name here...
         - key: size
           value: 30
 
