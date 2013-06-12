@@ -181,7 +181,7 @@ survey:
 support:
   submission_type: support
   submit_btn_text: like this spot
-  action_text: "also loves this spot"
+  action_text: "also likes this spot"
   anonymous_name: Someone
 
 pages:
@@ -190,12 +190,30 @@ pages:
     name: overview
     start_page: true
 
+  - title: Filter Spots
+    pages:
+      - title: All
+        external: true
+        url: /
+
+      - title: Accomodation Spots
+        external: true
+        url: /accomodation spot
+
+      - title: Food Spots
+        external: true
+        url: /food spot
+
+      - title: Night Spots
+        external: true
+        url: /night spot
+
+      - title: Official Spots
+        external: true
+        url: /official spot
+
   - title: "FAQs"
     slug: faqs
     name: features
-  
-  - title: "Contact"
-    slug: contact
-    name: why
 
 

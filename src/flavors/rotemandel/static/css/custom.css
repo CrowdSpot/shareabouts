@@ -64,7 +64,7 @@ a:hover {
     background: transparent url('images/crowdspot-logo-horizontal-200x32.png') no-repeat center;
     float: right;
     width: 256px;
-    height: 50px;
+    height: 60px;
     margin-top: 5px;
   }
 }
@@ -90,6 +90,7 @@ a:hover {
 center;
   background-size: contain;
   width: 232px;
+  height: 60px;
   text-indent: -133337px;
 }
 
