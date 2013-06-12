@@ -41,7 +41,7 @@ a:hover {
   
   background: rgb(255,255,255);
   color: #555;
-  border-top: rgb(162,12,19) 4px solid;
+  border-top: rgb(19,69,142) 4px solid;
      -moz-box-shadow: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -61,10 +61,10 @@ a:hover {
   #pages-nav-container:before {
     content: '';
     display: block;
-    background: transparent url('images/cogblogo-220x58.jpg') no-repeat center;
+    background: transparent url('images/crowdspot-logo-horizontal-200x32.png') no-repeat center;
     float: right;
     width: 256px;
-    height: 60px;
+    height: 50px;
     margin-top: 5px;
   }
 }
@@ -86,7 +86,7 @@ a:hover {
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
 #site-title {
-  background: url('PLACE IMAGE TITLE HERE') no-repeat
+  background: url('images/rotemandel.png') no-repeat
 center;
   background-size: contain;
   width: 232px;
@@ -192,7 +192,7 @@ a#nav-bttn:hover {
 -------------------------------------------------------------- */
 
 a.add-place {
-  background-color: rgb(162,12,19);
+  background-color: rgb(19,69,142);
   border-radius: 5px;
 /*  color: #eee;*/
 /*  text-shadow: none;*/
@@ -244,7 +244,7 @@ textarea {
 }
 
 .bttn {
-  background-color: rgb(162,12,19);
+  background-color: rgb(19,69,142);
   border-radius: 5px;
 /*  color: #eee;*/
 /*  background-color: #ff40ff;*/
