@@ -139,7 +139,6 @@ place:
         - Accomodation Spot
         - Food Spot
         - Night Spot
-        - Official Spot
       name: location_type
     - prompt: Whats happening here?
       type: textarea
