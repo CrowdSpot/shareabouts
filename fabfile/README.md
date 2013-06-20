@@ -1,1 +1,0 @@
-# CrowdSpot fabric deployment
