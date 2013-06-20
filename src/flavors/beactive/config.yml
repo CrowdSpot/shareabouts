@@ -26,13 +26,10 @@ map:
     zoom: 18
     minZoom: 5
     maxZoom: 20
-    maxBounds: [ [-36.80365, 144.225756], [-36.784954, 144.255367] ]
+    maxBounds: [ [-36.831409, 144.215377], [-36.766598, 144.257856] ]
   base_layer:
-    url: http://{s}.tiles.mapbox.com/v3/visualvoice.BNDOtest/{z}/{x}/{y}.png
+    url: http://{s}.tiles.mapbox.com/v3/visualvoice.map-5yruu0y1/{z}/{x}/{y}.png
     attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-  layers:
-    - id: 'streets'
-      url: http://{s}.tiles.mapbox.com/v3/visualvoice.map-ft06pnfr/{z}/{x}/{y}.png 
 
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
