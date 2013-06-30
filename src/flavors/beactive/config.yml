@@ -26,7 +26,7 @@ map:
     zoom: 18
     minZoom: 5
     maxZoom: 20
-    maxBounds: [ [-36.831409, 144.215377], [-36.766598, 144.257856] ]
+    maxBounds: [ [-36.846865, 144.190572], [-36.768867, 144.276145] ]
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/visualvoice.map-5yruu0y1/{z}/{x}/{y}.png
     attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
