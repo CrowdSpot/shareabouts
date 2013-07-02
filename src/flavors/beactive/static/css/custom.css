@@ -301,7 +301,7 @@ a.reply-link:hover {
 }
 
 .promotion .sharing::before {
-  content: 'Share #beactive:';
+  content: 'Share #trailblazer:';
   float: left;
   margin-right: 10px;
   
