@@ -136,7 +136,7 @@ place:
   adding_supported: true
   add_button_label: Add a Spot
   action_text: added
-  title: Tell us more...
+  title: Show us how you enjoy the Bendigo Creek Trail in Kangaroo Flat...
   action_text: created
   anonymous_name: Someone
   submit_button_label: Submit
@@ -166,16 +166,9 @@ place:
         - key: accept
           value: image/*
       name: location_type 
-    - prompt: Tell us more...
-      type: textarea
-      name: description
-      optional: True
-      attrs:
-        - key: placeholder
-          value: 
-    - prompt: First Name
+    - prompt: First Name (To win a prize, you must complete the mandatory fields below)
       type: text
-      name: submitter_name
+      name: private-submitter_name
       attrs:
         - key: placeholder
           value: Type first name here...
@@ -231,7 +224,7 @@ survey:
 support:
   submission_type: support
   submit_btn_text: like this spot
-  action_text: "also loves this spot"
+  action_text: "also likes this spot"
   anonymous_name: Someone
 
 pages:
