@@ -267,15 +267,15 @@ a.reply-link:hover {
 /*  background-color: #e500e5;*/
 }
 
+.place-value-private-submitter_name {
+  display: none;
+}
+
 .place-value-private-submitter_email {
   display: none;
 }
 
 .place-value-private-last_name {
-  display: none;
-}
-
-.place-value-private-can_contact {
   display: none;
 }
 

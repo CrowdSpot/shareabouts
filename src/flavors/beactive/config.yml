@@ -168,7 +168,7 @@ place:
       name: location_type 
     - prompt: First Name (To win a prize, you must complete the mandatory fields below)
       type: text
-      name: private-submitter_name
+      name: submitter_name
       attrs:
         - key: placeholder
           value: Type first name here...
