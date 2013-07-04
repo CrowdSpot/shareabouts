@@ -165,7 +165,14 @@ place:
       attrs:
         - key: accept
           value: image/*
-      name: location_type 
+      name: location_type
+    - prompt: Tell us more...
+      type: textarea
+      name: description
+      optional: True
+      attrs:
+        - key: placeholder
+          value:    
     - prompt: First Name (To win a prize, you must complete the mandatory fields below)
       type: text
       name: submitter_name
