@@ -426,3 +426,8 @@ center center;
   content: 'Description: ';
   font-weight: bold;
 }
+
+/* A little hack because we can't alter the text */
+.close-bttn > span:after {
+  content: ' to open map';
+}
