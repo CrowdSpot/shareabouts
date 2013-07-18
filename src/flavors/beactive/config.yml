@@ -46,7 +46,7 @@ place_types:
   Connect Spot:
     default: blue
     focused: focused
-  Make it better:
+  Make it better Spot:
     default: pink
     focused: focused    
 
@@ -156,7 +156,7 @@ place:
         - Explore Spot
         - Play Spot
         - Connect Spot
-        - Make it better
+        - Make it better Spot
       name: location_type
     - prompt: Add an Image
       inputfile_label: _(Add an Image)      
@@ -180,16 +180,15 @@ place:
         - key: placeholder
           value: Type first name here...
         - key: size
-          value: 30
-    - prompt: Last Name
+          value: 30  
+    - prompt: Your Suburb
       type: text
-      name: private-last_name
-      optional: true
+      name: private-suburb
       attrs:
         - key: placeholder
-          value: Type last name here...
+          value: Type your suburb here...
         - key: size
-          value: 30      
+          value: 30          
     - prompt: Your Email
       type: text
       name: private-submitter_email
@@ -198,6 +197,12 @@ place:
           value: Kept confidential and used for feedback
         - key: size
           value: 30
+    - prompt: "*"I agree to the Terms & Conditions on the FAQs page
+      name: private-suburb
+      type: select
+      options:
+        - 'Yes' 
+        - 'No'   
 
 survey:
   submission_type: comments
