@@ -198,7 +198,7 @@ place:
         - key: size
           value: 30
     - prompt: I agree to the Terms & Conditions on the FAQs page
-      name: private-suburb
+      name: private-agree
       type: select
       options:
         - 'Yes' 
