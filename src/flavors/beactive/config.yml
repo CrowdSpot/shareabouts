@@ -197,7 +197,7 @@ place:
           value: Kept confidential and used for feedback
         - key: size
           value: 30
-    - prompt: "*"I agree to the Terms & Conditions on the FAQs page
+    - prompt: I agree to the Terms & Conditions on the FAQs page
       name: private-suburb
       type: select
       options:
