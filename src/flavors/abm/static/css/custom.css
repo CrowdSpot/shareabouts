@@ -6,7 +6,7 @@
 
 
 /* SHUT IT DOWN LEMON */
-#new_response, #user_support, .promotion {
+#new_response, #user_support, .promotion, .survey {
   display: none !important;
 }
 
