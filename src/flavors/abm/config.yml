@@ -9,24 +9,24 @@ dataset_api_key: YWY1YjMyNzU5YjRiZDljOTQwMGM0Nzhm
 # Settings for the app
 app:
   # HTML Title
-  title: Cycle Stories
+  title: Port Phillip Bay Data Collection
   # Header name
-  name: Cycle Stories
+  name: Port Phillip Bay Data Collection
   # Meta description that will show up in Google search results
   meta_description: CrowdSpot is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.
 
 # Settings for map and layer configs
 map:
-  geolocation_enabled: true
+  geolocation_enabled: false
   geolocation_onload: false
   options:
     center:
-      lat: -37.81361
-      lng: 144.96306
-    zoom: 14
-    minZoom: 5
+      lat: -38.071879
+      lng: 144.871216
+    zoom: 10
+    minZoom: 10
     maxZoom: 20
-    maxBounds: [ [-38.069717, 144.390564], [-37.516262, 145.415039] ]
+    maxBounds:
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/aisey.map-u8fegfjt/{z}/{x}/{y}.png
     attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
@@ -35,18 +35,27 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  Crash Spot:
+  Strategy or Plan:
     default: red
     focused: focused
-  Safe Riding Spot:
+  Spatial Data (GIS):
     default: green
     focused: focused
+  Image:
+    default: orange
+    focused: focused
+  Technical Report:
+    default: blue
+    focused: focused
+  Other:
+    default: pink
+    focused: focused        
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
   red:
-    iconUrl: /static/css/images/bike-pin-red.png
+    iconUrl: /static/css/images/master-pin-red.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -58,7 +67,7 @@ place_type_icons:
       x: 42
       y: 42
   green:
-    iconUrl: /static/css/images/tick-pin-green.png
+    iconUrl: /static/css/images/master-pin-green.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -69,6 +78,42 @@ place_type_icons:
     iconAnchor:
       x: 42
       y: 42
+  orange:
+    iconUrl: /static/css/images/master-pin-orange.png
+    shadowUrl: /static/css/images/master-pin-shadow.png
+    iconSize:
+      width: 85
+      height: 41
+    shadowSize:
+      width: 42
+      height: 85
+    iconAnchor:
+      x: 42
+      y: 42
+  blue:
+    iconUrl: /static/css/images/master-pin-blue.png
+    shadowUrl: /static/css/images/master-pin-shadow.png
+    iconSize:
+      width: 85
+      height: 41
+    shadowSize:
+      width: 42
+      height: 85
+    iconAnchor:
+      x: 42
+      y: 42
+  pink:
+    iconUrl: /static/css/images/master-pin-pink.png
+    shadowUrl: /static/css/images/master-pin-shadow.png
+    iconSize:
+      width: 85
+      height: 41
+    shadowSize:
+      width: 42
+      height: 85
+    iconAnchor:
+      x: 42
+      y: 42             
   focused:
     iconUrl: /static/css/images/marker-focused.png
     shadowUrl: /static/css/images/marker-shadow.png
@@ -92,60 +137,75 @@ place:
   adding_supported: true
   add_button_label: Add a Spot
   action_text: added
-  title: Tell us about your bike crash story or safe riding spot...
+  title: Tell us more...
   action_text: created
   anonymous_name: Someone
   submit_button_label: Submit
   items:
+    - prompt: Short Description
+      type: text
+      name: name
+      attrs:
+        - key: placeholder
+          value: Eg. 2013 coastal strategy
+        - key: size
+          value: 30
+    - prompt: Your council
+      type: select
+      options:
+        - ...
+        - Geelong
+        - Queenscliffe
+        - Bayside
+        - Melbourne
+        - Kingston
+        - Wyndham
+        - Mornington
+        - Frankston
+        - Hobsons Bay
+      name: submitter_name
     - prompt: Spot Type
       type: select
       options:
-        - Crash Spot
-        - Safe Riding Spot
+        - Strategy or Plan
+        - Spatial Data (GIS)
+        - Image
+        - Technical Report
+        - Other
       name: location_type
-    - prompt: If a Crash Spot, what was the main cause?
-      type: select
-      options:
-        - ...
-        - Inadequate infrastructure
-        - Motorist fault
-        - Pedestrian fault
-        - Other bicyclist fault 
-        - My own fault
-      name: cause
-    - prompt: If a Crash Spot, how severe was it?
-      type: select
-      options:
-        - ...
-        - Minor (could ride on)
-        - Serious (medical attention required)
-        - Major (hospitalised)
-      name: severity
-    - prompt: What year was this crash?
-      type: select
-      options:
-        - ...
-        - 2013
-        - 2012
-        - 2011
-        - 2010
-        - 2009
-        - 2008
-        - 2007
-        - 2006
-        - 2005
-        - 2004
-        - 2003
-        - 2002
-        - Before 2002 
-      name: year
     - prompt: Tell us more...
       type: textarea
       name: description
       optional: True
       attrs:
         - key: placeholder
-          value: 
+          value:  
+    - prompt: Timing
+      type: select
+      options:
+        - ...
+        - Current
+        - Recent
+        - Historic
+        - Future
+      name: timing
+    - prompt: Is this information public?
+      type: select
+      options:
+        - ...
+        - 'Yes'
+        - No (Confidential)
+        - No (Copyright)
+        - No, just not sure 
+      name: public 
+    - prompt: If a file or document, please provide web link
+      type: text
+      name: link
+      attrs:
+        - key: placeholder
+          value: Type web link here (include http:// for hyperlink)
+        - key: size
+          value: 30   
     - prompt: Add an Image
       inputfile_label: _(Add an Image)      
       type: file
@@ -154,38 +214,21 @@ place:
       attrs:
         - key: accept
           value: image/*
-      name: location_type 
-    - prompt: First Name
-      type: text
-      name: submitter_name
-      attrs:
-        - key: placeholder
-          value: Type first name here...
-        - key: size
-          value: 30
-    - prompt: Last Name
-      type: text
-      name: private-last_name
-      optional: true
-      attrs:
-        - key: placeholder
-          value: Type last name here...
-        - key: size
-          value: 30      
+      name: location_type       
     - prompt: Your Email
       type: text
-      name: private-submitter_email
+      name: submitter_email
       attrs:
         - key: placeholder
-          value: Kept confidential and used for feedback
+          value: Type email here...
         - key: size
           value: 30
-    - prompt: Are you willing to be contacted by The Age about your story?
-      name: private-can_contact
+    - prompt: Please contact me for more information
+      name: contact
       type: select
       options:
-        - Yes please
-        - No thanks
+        - Yes please 
+        - No thanks 
 
 survey:
   submission_type: comments
@@ -211,7 +254,7 @@ survey:
       name: submitter_name
     - prompt: Your email (optional)
       type: text
-      name: private-submitter_email
+      name: submitter_email
       attrs:
         - key: placeholder
           value: Kept confidential and used for feedback

@@ -85,7 +85,7 @@ a:hover {
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
 #site-title {
-  background: url('images/cycle_stories_ndink-620x113.png') no-repeat
+  background: url('images/ppbdc.png') no-repeat
 center;
   background-size: contain;
   width: 232px;
@@ -299,7 +299,7 @@ a.reply-link:hover {
 }
 
 .promotion .sharing::before {
-  content: 'Share #cyclestories:';
+  content: 'Share:';
   float: left;
   margin-right: 10px;
   
@@ -427,18 +427,8 @@ center center;
 /* =Individual Pages
 -------------------------------------------------------------- */
 
-.place-value-cause:before {
-  content: 'Cause: ';
-  font-weight: bold;
-}
-
-.place-value-severity:before {
-  content: 'Severity: ';
-  font-weight: bold;
-}
-
-.place-value-year:before {
-  content: 'Year: ';
+.place-value-submitter_name:before {
+  content: 'Council: ';
   font-weight: bold;
 }
 
@@ -446,3 +436,29 @@ center center;
   content: 'Description: ';
   font-weight: bold;
 }
+
+.place-value-timing:before {
+  content: 'Timing: ';
+  font-weight: bold;
+}
+
+.place-value-public:before {
+  content: 'Is this public?: ';
+  font-weight: bold;
+}
+
+.place-value-link:before {
+  content: 'Link: ';
+  font-weight: bold;
+}
+
+.place-value-submitter_email:before {
+  content: 'Email contact: ';
+  font-weight: bold;
+}
+
+.place-value-contact:before {
+  content: 'Contact me: ';
+  font-weight: bold;
+}
+
