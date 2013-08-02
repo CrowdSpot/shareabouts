@@ -142,7 +142,7 @@ place:
   anonymous_name: Someone
   submit_button_label: Submit
   items:
-    - prompt: Short Description
+    - prompt: Information Title
       type: text
       name: name
       attrs:
@@ -150,20 +150,6 @@ place:
           value: Eg. 2013 coastal strategy
         - key: size
           value: 30
-    - prompt: Your council
-      type: select
-      options:
-        - ...
-        - Geelong
-        - Queenscliffe
-        - Bayside
-        - Melbourne
-        - Kingston
-        - Wyndham
-        - Mornington
-        - Frankston
-        - Hobsons Bay
-      name: submitter_name
     - prompt: Spot Type
       type: select
       options:
@@ -173,14 +159,30 @@ place:
         - Technical Report
         - Other
       name: location_type
-    - prompt: Tell us more...
-      type: textarea
-      name: description
-      optional: True
-      attrs:
-        - key: placeholder
-          value:  
-    - prompt: Timing
+    - prompt: Your organisation
+      type: select
+      options:
+        - ...
+        - Geelong
+        - Queenscliffe
+        - Bayside
+        - Melbourne
+        - Kingston
+        - Wyndham
+        - Mornington Pen
+        - Frankston
+        - Hobsons Bay
+        - ABM
+        - PoMC
+        - Parks
+        - DEPI
+        - EPA
+        - CCB
+        - CMA
+        - DTPLI
+        - Other
+      name: submitter_name
+    - prompt: Period created
       type: select
       options:
         - ...
@@ -188,7 +190,7 @@ place:
         - Recent
         - Historic
         - Future
-      name: timing
+      name: timing 
     - prompt: Is this information public?
       type: select
       options:
@@ -197,24 +199,29 @@ place:
         - No (Confidential)
         - No (Copyright)
         - No, just not sure 
-      name: public 
+      name: public
+    - prompt: If not public, are willing to be contacted for more information?
+      name: contact
+      type: select
+      options:
+        - 'Yes' 
+        - 'No'     
+    - prompt: Tell us more...
+      type: textarea
+      name: description
+      optional: True
+      attrs:
+        - key: placeholder
+          value:   
     - prompt: If a file or document, please provide web link
       type: text
       name: link
+      optional: True
       attrs:
         - key: placeholder
-          value: Type web link here (include http:// for hyperlink)
+          value: Include 'http://' to hyperlink
         - key: size
-          value: 30   
-    - prompt: Add an Image
-      inputfile_label: _(Add an Image)      
-      type: file
-      name: my_image
-      optional: true
-      attrs:
-        - key: accept
-          value: image/*
-      name: location_type       
+          value: 30         
     - prompt: Your Email
       type: text
       name: submitter_email
@@ -223,12 +230,15 @@ place:
           value: Type email here...
         - key: size
           value: 30
-    - prompt: Please contact me for more information
-      name: contact
-      type: select
-      options:
-        - Yes please 
-        - No thanks 
+    - prompt: Add an Image
+      inputfile_label: _(Add an Image)      
+      type: file
+      name: my_image
+      optional: true
+      attrs:
+        - key: accept
+          value: image/*
+      name: location_type      
 
 survey:
   submission_type: comments
@@ -241,23 +251,7 @@ survey:
   anonymous_name: Someone
 
   # Survey form config
-  title: Leave a Comment
-  form_link_text: Leave a Comment
-  submit_btn_text: Submit Comment
-  items:
-    - prompt: Comment
-      label: Comment
-      type: textarea
-      name: comment
-    - prompt: Your Name
-      type: text
-      name: submitter_name
-    - prompt: Your email (optional)
-      type: text
-      name: submitter_email
-      attrs:
-        - key: placeholder
-          value: Kept confidential and used for feedback
+
 
 support:
   submission_type: support
@@ -266,7 +260,7 @@ support:
   anonymous_name: Someone
 
 pages:
-  - title: Welcome
+  - title: About
     slug: welcome
     name: overview
     start_page: true
