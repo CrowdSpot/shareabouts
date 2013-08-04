@@ -444,7 +444,7 @@ center center;
 -------------------------------------------------------------- */
 
 .place-value-format:before {
-  content: 'This information record is ';
+  content: 'This information is a ';
   font-weight:400;
 }
 
