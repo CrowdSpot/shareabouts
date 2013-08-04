@@ -285,15 +285,11 @@ a.reply-link:hover {
   display: none;
 }
 
-.place-value-private-can_contact {
+.place-value-can_contact {
   display: none;
 }
 
 .response-value-private-submitter_email {
-  display: none;
-}
-
-.response-value-contact {
   display: none;
 }
 

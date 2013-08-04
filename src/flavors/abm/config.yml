@@ -225,7 +225,7 @@ place:
         - key: size
           value: 30    
     - prompt: Send a copy of public or corporate electronic file by email to bcotter@mav.asn.au or choose 'yes' for him to contact you?
-      name: contact
+      name: can_contact
       type: select
       options:
         - ...
