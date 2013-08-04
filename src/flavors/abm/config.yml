@@ -230,7 +230,7 @@ place:
       options:
         - ...
         - 'Yes'                 
-    - prompt: Your Email
+    - prompt: Your Email (required)
       type: text
       name: submitter_email
       attrs:
