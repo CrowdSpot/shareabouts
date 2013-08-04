@@ -201,7 +201,7 @@ place:
         - Public
         - Corporate (Confidential)
         - Corporate (Licenced)
-        - not known 
+        - not sure 
       name: public
     - prompt: What File Format is the information in?
       type: select
