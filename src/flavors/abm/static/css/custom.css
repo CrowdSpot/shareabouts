@@ -293,6 +293,10 @@ a.reply-link:hover {
   display: none;
 }
 
+.response-value-contact {
+  display: none;
+}
+
 /* =Thank you message
 -------------------------------------------------------------- */
 .thanks {
@@ -439,38 +443,33 @@ center center;
 /* =Individual Pages
 -------------------------------------------------------------- */
 
-.place-value-submitter_name:before {
-  content: 'Council: ';
-  font-weight: bold;
+.place-value-format:before {
+  content: 'This information record is ';
+  font-weight:400;
 }
 
 .place-value-description:before {
-  content: 'Description: ';
-  font-weight: bold;
+  content: 'Additional information: ';
+  font-weight:400;
 }
 
 .place-value-timing:before {
-  content: 'Timing: ';
-  font-weight: bold;
+  content: 'Period created: ';
+  font-weight:400;
 }
 
 .place-value-public:before {
-  content: 'Is this public?: ';
-  font-weight: bold;
+  content: 'This information is ';
+  font-weight:400;
 }
 
 .place-value-link:before {
-  content: 'Link: ';
-  font-weight: bold;
+  content: 'The web link is ';
+  font-weight:400;
 }
 
 .place-value-submitter_email:before {
-  content: 'Email contact: ';
-  font-weight: bold;
-}
-
-.place-value-contact:before {
-  content: 'Contact me: ';
-  font-weight: bold;
+  content: 'The information is available from ';
+  font-weight:400;
 }
 

@@ -137,7 +137,7 @@ place:
   adding_supported: true
   add_button_label: Add a Spot
   action_text: added
-  title: Tell us more...
+  title: Tell us more...Add information about any data or documents that you have (or have knowledge of) which will aid the Port Phillip Bay data collection task.
   action_text: created
   anonymous_name: Someone
   submit_button_label: Submit
@@ -150,9 +150,10 @@ place:
           value: Eg. 2013 coastal strategy
         - key: size
           value: 30
-    - prompt: Spot Type
+    - prompt: Information Type
       type: select
       options:
+        - ...
         - Strategy or Plan
         - Spatial Data (GIS)
         - Image
@@ -187,34 +188,34 @@ place:
       type: select
       options:
         - ...
-        - Current
-        - Recent
+        - 2010-2013
+        - 2000-2009
+        - Pre 2000
         - Historic
-        - Future
+        - Not known
       name: timing 
-    - prompt: Is this information public?
+    - prompt: Is this information available to the public or part of corporate information?
       type: select
       options:
         - ...
-        - 'Yes'
-        - No (Confidential)
-        - No (Copyright)
-        - No, just not sure 
+        - Public
+        - Corporate (Confidential)
+        - Corporate (Licenced)
+        - not known 
       name: public
-    - prompt: If not public, are willing to be contacted for more information?
-      name: contact
+    - prompt: What File Format is the information in?
       type: select
       options:
-        - 'Yes' 
-        - 'No'     
-    - prompt: Tell us more...
-      type: textarea
-      name: description
-      optional: True
-      attrs:
-        - key: placeholder
-          value:   
-    - prompt: If a file or document, please provide web link
+        - ...
+        - word or PDF document
+        - spreadsheet
+        - database
+        - GIS layer/file
+        - hard copy only
+        - photo or image 
+        - Other
+      name: format 
+    - prompt: If it is a public electronic file please provide weblink (if available)
       type: text
       name: link
       optional: True
@@ -222,7 +223,13 @@ place:
         - key: placeholder
           value: Include 'http://' to hyperlink
         - key: size
-          value: 30         
+          value: 30    
+    - prompt: Send a copy of public or corporate electronic file by email to bcotter@mav.asn.au or choose 'yes' for him to contact you?
+      name: contact
+      type: select
+      options:
+        - ...
+        - 'Yes'                 
     - prompt: Your Email
       type: text
       name: submitter_email
@@ -231,7 +238,14 @@ place:
           value: Type email here...
         - key: size
           value: 30
-    - prompt: Add an Image
+    - prompt: Tell us more...comments or anything else of value
+      type: textarea
+      name: description
+      optional: True
+      attrs:
+        - key: placeholder
+          value:       
+    - prompt: If you have an image, upload here
       inputfile_label: _(Add an Image)      
       type: file
       name: my_image
