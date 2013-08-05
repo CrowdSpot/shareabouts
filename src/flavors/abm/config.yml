@@ -153,7 +153,7 @@ place:
     - prompt: Information Type
       type: select
       options:
-        - ...
+        - Please choose
         - Strategy or Plan
         - Spatial Data (GIS)
         - Image
@@ -163,7 +163,7 @@ place:
     - prompt: Your organisation
       type: select
       options:
-        - ...
+        - Please choose
         - Geelong
         - Queenscliffe
         - Bayside
@@ -187,7 +187,7 @@ place:
     - prompt: Period created
       type: select
       options:
-        - ...
+        - Please choose
         - 2010-2013
         - 2000-2009
         - Pre 2000
@@ -197,7 +197,7 @@ place:
     - prompt: Is this information available to the public or part of corporate information?
       type: select
       options:
-        - ...
+        - Please choose
         - Public
         - Corporate (Confidential)
         - Corporate (Licenced)
@@ -206,7 +206,7 @@ place:
     - prompt: What File Format is the information in?
       type: select
       options:
-        - ...
+        - Please choose
         - word or PDF document
         - spreadsheet
         - database
@@ -224,11 +224,11 @@ place:
           value: Include 'http://' to hyperlink
         - key: size
           value: 30    
-    - prompt: Send a copy of public or corporate electronic file by email to bcotter@mav.asn.au or choose 'yes' for him to contact you?
+    - prompt: Send a copy of public or corporate electronic file by email to bcotter@mav.asn.au or choose 'yes' for Bernie to contact you?
       name: can_contact
       type: select
       options:
-        - ...
+        - N/A
         - 'Yes'                 
     - prompt: Your Email (required)
       type: text
