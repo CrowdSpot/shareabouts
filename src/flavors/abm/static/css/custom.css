@@ -71,10 +71,10 @@ a:hover {
   #pages-nav-container:before {
     content: '';
     display: block;
-    background: transparent url('images/crowdspot-logo-horizontal-200x32.png') no-repeat center;
+    background: transparent url('images/abm_crowdspot1.png') no-repeat center;
     float: right;
-    width: 256px;
-    height: 50px;
+    width: 293px;
+    height: 56px;
     margin-top: 5px;
   }
 }
@@ -96,7 +96,7 @@ a:hover {
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
 #site-title {
-  background: url('images/ppbdc.png') no-repeat
+  background: url('images/ppbii.png') no-repeat
 center;
   background-size: contain;
   width: 232px;

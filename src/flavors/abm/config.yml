@@ -279,6 +279,10 @@ pages:
     slug: welcome
     name: overview
     start_page: true
+    
+  - title: Spots  
+    slug: spots
+    name: spots
 
   - title: "FAQs"
     slug: faqs
