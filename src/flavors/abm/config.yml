@@ -244,7 +244,7 @@ place:
       attrs:
         - key: placeholder
           value:       
-    - prompt: If you have an image, upload here
+    - prompt: If you have an image, upload here. Please see FAQs if any issues. 
       inputfile_label: _(Add an Image)      
       type: file
       name: my_image
