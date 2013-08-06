@@ -181,6 +181,7 @@ place:
         - CCB
         - CMA
         - DTPLI
+        - VCC
         - Other
       name: submitter_name
     - prompt: Period created
