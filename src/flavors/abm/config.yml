@@ -115,7 +115,7 @@ place_type_icons:
       x: 42
       y: 42             
   focused:
-    iconUrl: /static/css/images/marker-focused.png
+    iconUrl: /static/css/images/black-marker-plus.png
     shadowUrl: /static/css/images/marker-shadow.png
     iconSize:
       width: 25
