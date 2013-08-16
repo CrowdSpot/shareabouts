@@ -1,8 +1,8 @@
 These instructions apply only to the "Shareabouts Web" application.
 If you are also building and installing the Shareabouts API yourself,
-it has its own documentation.
+it has its own documentation. If you'd rather use OpenPlans' hosted API, [contact us](api.shareabouts.org).
 
-You can of course deploy to any server that supports Django.
+You can deploy to any server that supports Django, but using a PaaS providers and our instructions below may be easier. 
 
 Deploying to a PaaS provider
 ----------------------------
@@ -18,9 +18,9 @@ From the root Shareabouts directory...
 
   *DotCloud*
 
-         dotcloud create <instance name>
+         dotcloud create <instance name> -f live
 
-  This will create the application on DotCloud and prompt you connect it to your current directory: `Connect the current directory to "<instance name>"?` If you choose yes, this application will become your default and you can ignore the `-A <instance name>` flags below.
+  This will create the application on DotCloud using the live flavor, and prompt you connect it to your current directory: `Connect the current directory to "<instance name>"?` If you choose yes, this application will become your default and you can ignore the `-A <instance name>` flags below.
 
   *Heroku*
 
