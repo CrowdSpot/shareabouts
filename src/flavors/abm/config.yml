@@ -38,7 +38,7 @@ place_types:
   Strategy or Plan:
     default: red
     focused: focused
-  Spatial Data:
+  Spatial Data (GIS):
     default: green
     focused: focused
   Image:
@@ -154,7 +154,7 @@ place:
       type: select
       options:
         - Strategy or Plan
-        - Spatial Data
+        - Spatial Data (GIS)
         - Image
         - Technical Report
         - Other
@@ -285,32 +285,6 @@ pages:
   - title: Spots  
     slug: spots
     name: spots
-    
-  - title: Filter Spots
-    pages:
-      - title: All
-        external: true
-        url: /
-
-      - title: Strategy or Plan
-        external: true
-        url: /strategy or plan
-
-      - title: Spatial Data
-        external: true
-        url: /spatial data
-
-      - title: Technical Report
-        external: true
-        url: /technical report
-
-      - title: Image
-        external: true
-        url: /image
-
-      - title: Other
-        external: true
-        url: /other 
 
   - title: "FAQs"
     slug: faqs
