@@ -57,13 +57,13 @@ a:hover {
 #site-header a:hover {
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1200px) {
   #pages-nav-container:before {
     content: '';
     display: block;
-    background: transparent url('images/cogb-logo-landscape.png') no-repeat center;
+    background: transparent url('images/vichealth_cogb.png') no-repeat center;
     float: right;
-    width: 200px;
+    width: 515px;
     height: 59px;
     margin-top: 5px;
   }
