@@ -211,7 +211,7 @@ survey:
       name: submitter_name
     - prompt: Your email (optional)
       type: text
-      name: private-submitter_email
+      name: submitter_email
       attrs:
         - key: placeholder
           value: Kept confidential and used for feedback
