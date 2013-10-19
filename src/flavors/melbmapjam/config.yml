@@ -18,7 +18,7 @@ app:
 # Settings for map and layer configs
 map:
   geolocation_enabled: true
-  geolocation_onload: true
+  geolocation_onload: false
   options:
     center:
       lat: -37.81361
@@ -26,6 +26,7 @@ map:
     zoom: 14
     minZoom: 10
     maxZoom: 17
+    maxBounds: [ [-38.069717, 144.390564], [-37.516262, 145.415039] ]
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/aisey.map-u8fegfjt/{z}/{x}/{y}.png
     attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
@@ -34,15 +35,27 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  Wifi Spot:
+  Finance Spot:
     default: red
     focused: focused
+  Production Spot:
+    default: blue
+    focused: focused
+  Land or Housing Spot:
+    default: green
+    focused: focused
+  Services Spot:
+    default: orange
+    focused: focused
+  Distribution Spot:
+    default: pink
+    focused: focused         
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
   red:
-    iconUrl: /static/css/images/red-pin-red.png
+    iconUrl: /static/css/images/master-pin-red.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -54,7 +67,7 @@ place_type_icons:
       x: 42
       y: 42
   blue:
-    iconUrl: /static/css/images/bike-pin-red.png
+    iconUrl: /static/css/images/master-pin-blue.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -66,7 +79,31 @@ place_type_icons:
       x: 42
       y: 42
   green:
-    iconUrl: /static/css/images/toilet-pin-red.png
+    iconUrl: /static/css/images/master-pin-green.png
+    shadowUrl: /static/css/images/master-pin-shadow.png
+    iconSize:
+      width: 85
+      height: 41
+    shadowSize:
+      width: 42
+      height: 85
+    iconAnchor:
+      x: 42
+      y: 42
+  orange:
+    iconUrl: /static/css/images/master-pin-orange.png
+    shadowUrl: /static/css/images/master-pin-shadow.png
+    iconSize:
+      width: 85
+      height: 41
+    shadowSize:
+      width: 42
+      height: 85
+    iconAnchor:
+      x: 42
+      y: 42
+  pink:
+    iconUrl: /static/css/images/master-pin-pink.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -78,7 +115,7 @@ place_type_icons:
       x: 42
       y: 42
   focused:
-    iconUrl: /static/css/images/marker-focused.png
+    iconUrl: /static/css/images/black-marker-plus.png
     shadowUrl: /static/css/images/marker-shadow.png
     iconSize:
       width: 25
@@ -105,15 +142,7 @@ place:
   anonymous_name: Someone
   submit_button_label: Submit
   items:
-    - prompt: Your Name
-      type: text
-      name: submitter_name
-      attrs:
-        - key: placeholder
-          value: Type name here
-        - key: size
-          value: 30
-    - prompt: Name Your Spot
+    - prompt: Spot Name
       type: text
       name: name
       attrs:
@@ -124,8 +153,28 @@ place:
     - prompt: Spot Type
       type: select
       options:
-        - Wifi Spot
-      name: location_type
+        - Finance Spot
+        - Production Spot
+        - Land or Housing Spot
+        - Services Spot
+        - Distribution Spot
+      name: location_type    
+    - prompt: Description
+      type: textarea
+      name: description
+      optional: true
+      attrs:
+        - key: placeholder
+          value: Description...
+    - prompt: Website
+      type: text
+      name: link
+      optional: True
+      attrs:
+        - key: placeholder
+          value: Include 'http://' to hyperlink
+        - key: size
+          value: 30       
     - prompt: Add an Image
       inputfile_label: _(Add an Image)      
       type: file
@@ -134,14 +183,15 @@ place:
       attrs:
         - key: accept
           value: image/*
-      name: location_type   
-    - prompt: Description
-      type: textarea
-      name: description
-      optional: true
+      name: location_type       
+    - prompt: Your Name
+      type: text
+      name: submitter_name
       attrs:
         - key: placeholder
-          value: Description...
+          value: Type name here
+        - key: size
+          value: 30      
 
 survey:
   submission_type: comments
@@ -167,18 +217,18 @@ survey:
       name: submitter_name
 
 support:
-  submission_type: support
-  submit_btn_text: Support This!
-  action_text: "supported"
+  submission_type: Like
+  submit_btn_text: Like This!
+  action_text: "Liked"
   anonymous_name: Someone
 
 pages:
-  - title: Welcome
+  - title: About
     slug: welcome
     name: overview
     start_page: true
 
-  - title: "Why CrowdSpot?"
+  - title: "The Spots"
     slug: why
     name: why
 
