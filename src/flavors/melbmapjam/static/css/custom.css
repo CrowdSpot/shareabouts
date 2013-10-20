@@ -266,6 +266,15 @@ a.reply-link:hover {
 /*  background-color: #bf8fbf;*/
 }
 
+.promotion .sharing::before {
+  content: 'Share #melbmapjam:';
+  float: left;
+  margin-right: 10px;
+  
+  font-weight: bold;
+  line-height: 35px;
+}
+
 #user_support label {
 /*  color: #ff80ff;*/
 /*  background-color: #fff;*/
@@ -374,4 +383,5 @@ center center;
 }
 /* =Individual Pages
 -------------------------------------------------------------- */
+
 

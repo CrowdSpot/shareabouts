@@ -142,7 +142,7 @@ place:
   anonymous_name: Someone
   submit_button_label: Submit
   items:
-    - prompt: Spot Name
+    - prompt: "What's here?"
       type: text
       name: name
       attrs:
