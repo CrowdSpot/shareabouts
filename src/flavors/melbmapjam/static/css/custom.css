@@ -267,7 +267,7 @@ a.reply-link:hover {
 }
 
 .promotion .sharing::before {
-  content: 'Share #melbmapjam:';
+  content: 'Share #mapjam:';
   float: left;
   margin-right: 10px;
   

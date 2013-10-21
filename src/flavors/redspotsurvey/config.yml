@@ -158,10 +158,13 @@ survey:
   form_link_text: Leave a Comment
   submit_btn_text: Comment
   items:
-    - prompt: Comment
-      label: Comment
-      type: textarea
-      name: comment
+    - prompt: Traffic Does Not Yield
+      type: checkbox
+      optional: true
+      name:  traffic_does_not_yield
+      attrs:
+        - key: value
+          value: Traffic Does Not Yield
     - prompt: Your Name
       type: text
       name: submitter_name

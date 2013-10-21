@@ -166,6 +166,15 @@ place:
       attrs:
         - key: placeholder
           value: Description...
+    - prompt: Address
+      type: text
+      name: Address
+      optional: True
+      attrs:
+        - key: placeholder
+          value: Type address here...
+        - key: size
+          value: 30        
     - prompt: Website
       type: text
       name: link
