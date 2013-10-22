@@ -196,6 +196,7 @@ place:
     - prompt: Your Name
       type: text
       name: submitter_name
+      optional: True
       attrs:
         - key: placeholder
           value: Type name here
@@ -244,6 +245,10 @@ pages:
   - title: "FAQs"
     slug: faqs
     name: faqs
+    
+  - title: Download Data
+    external: true
+    url: http://bit.ly/15ZkLQr
 
   - title: "Contact"
     slug: contact
