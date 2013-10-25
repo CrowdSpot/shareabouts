@@ -250,7 +250,7 @@ survey:
   # Survey form config
   title: Nominate this RedSpot
   form_link_text: Nominate this RedSpot!
-  submit_btn_text: Nominate
+  submit_btn_text: Submit Nominatation
   items:
     - prompt: 1. I generally travel through the RedSpot by
       type: select
