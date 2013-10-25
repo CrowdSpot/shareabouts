@@ -9,16 +9,16 @@ dataset_api_key: YWY1YjMyNzU5YjRiZDljOTQwMGM0Nzhm
 # Settings for the app
 app:
   # HTML Title
-  title: CrowdSpot demo
+  title: RedSpot Survey
   # Header name
-  name: CrowdSpot demo
+  name: RedSpot Survey
   # Meta description that will show up in Google search results
   meta_description: CrowdSpot is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.
 
 # Settings for map and layer configs
 map:
   geolocation_enabled: true
-  geolocation_onload: true
+  geolocation_onload: false
   options:
     center:
       lat: -37.81361
@@ -34,7 +34,7 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  Wifi Spot:
+  RedSpot:
     default: red
     focused: focused
 
@@ -42,7 +42,7 @@ place_types:
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
   red:
-    iconUrl: /static/css/images/wifi-pin-red.png
+    iconUrl: /static/css/images/master-pin-red.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -98,13 +98,131 @@ activity:
 
 place:
   adding_supported: true
-  add_button_label: Add a Spot
+  add_button_label: Add a RedSpot
   action_text: added
-  title: Tell us more...
+  title: Great work, you have located a RedSpot! Tell us more...
   action_text: created
   anonymous_name: Someone
   submit_button_label: Submit
   items:
+    - prompt: 1. I generally travel through the RedSpot by
+      type: select
+      options:
+        - Please choose
+        - Car
+        - motorbike
+        - commercial vehicle
+        - bus
+        - bicycle
+        - tram
+        - walking
+      name: mode
+    - prompt: 2. The RedSpot occurs at
+      type: select
+      options:
+        - Please choose
+        - Intersection with traffic lights
+        - Intersection, no traffic lights
+        - A section of road
+        - Railway crossing
+        - Roundabout
+        - Bus/tram stop
+        - Railway station carpark
+        - Somewhere else
+      name: occurance  
+    - prompt: 3. Where is the RedSpot?
+      type: text
+      name: name
+      optional: false
+      attrs:
+        - key: placeholder
+          value: Road name and route number (if applicable)
+        - key: size
+          value: 30   
+    - prompt: 4. In which direction(s) are the most affected vehicles travelling?
+      type: text
+      name: direction
+      attrs:
+        - key: placeholder
+          value: (E.g. West, Toorak Rd towards City)
+        - key: size
+          value: 30     
+    - prompt: 5. On which day(s) is the problem worst?   
+      type: select
+      options:
+        - Please choose
+        - Weekdays
+        - Weekends
+        - Special events
+      name: days    
+    - prompt: If special event, please specify
+      type: text
+      optional: true
+      name: event
+      attrs:
+        - key: placeholder
+          value: E.g. AFL games are on...
+        - key: size
+          value: 30 
+    - prompt: 6. During which time(s) is the problem worst?
+      type: select
+      options:
+        - Please choose
+        - Early morning, 7.00-9.30am
+        - Late morning, 9.30am-noon
+        - Midday, noon-3.00pm
+        - School pickup, 3.00-4.00pm
+        - Late afternoon, 4.00-6.30pm
+        - Evening, 6.30-9.00pm
+        - Night, 9.00pm-7.00am
+      name: time
+    - prompt: 7. Which statement(s) best describe the problem(s) at this location
+      type: select
+      options:
+        - Please choose
+        - Through traffic congestion/long queues
+        - Difficult or congested right turning movements
+        - Difficult or congested left turning movements
+        - Long delays at rail crossing
+        - Poor co-ordination of traffic lights
+        - Blockages such as parked cars and buses
+        - Lights not green for long enough
+        - Long delays at pedestrian crossings
+        - Carpark congested
+      name: time
+    - prompt: If other or more than one, please specify
+      type: text
+      optional: true
+      name: othertime
+      attrs:
+        - key: placeholder
+          value: Type here...
+        - key: size
+          value: 30
+    - prompt: 8. In general, how does congestion affect your behaviour?
+      type: select
+      options:
+        - Please choose
+        - It makes me see 'red'
+        - I am less patient when I drive
+        - I am use alternative routes (e.g. local streets)
+        - I leave earlier or later to avoid the congestion
+        - I switched to cycling, public transport or walking
+        - I switched to driving a car
+        - I switched to a motorbike or scooter
+        - I only make the absolutely necessary trips
+        - It affects the way I vote
+        - It has no effect
+      name: behaviour
+    - prompt: If other or more than one, please specify
+      type: text
+      optional: true
+      name: otherbehaviour
+      attrs:
+        - key: placeholder
+          value: Type here...
+        - key: size
+          value: 30                    
     - prompt: Your Name
       type: text
       name: submitter_name
@@ -113,58 +231,149 @@ place:
           value: Type name here
         - key: size
           value: 30
-    - prompt: Name Your Spot
-      type: text
-      name: name
-      attrs:
-        - key: placeholder
-          value: Spot Name
-        - key: size
-          value: 30
     - prompt: Spot Type
       type: select
       options:
-        - Wifi Spot
-      name: location_type
-    - prompt: Add an Image
-      inputfile_label: _(Add an Image)      
-      type: file
-      name: my_image
-      optional: true
-      attrs:
-        - key: accept
-          value: image/*
-      name: location_type   
-    - prompt: Description
-      type: textarea
-      name: description
-      optional: true
-      attrs:
-        - key: placeholder
-          value: Description...
+        - RedSpot
+      name: location_type  
 
 survey:
   submission_type: comments
 
   # Response display config
   show_responses: true
-  response_name: comment
-  response_plural_name: comments
-  action_text: commented on
+  response_name: nominate
+  response_plural_name: nominations
+  action_text: nominated
   anonymous_name: Someone
 
   # Survey form config
-  title: Leave a Comment
-  form_link_text: Leave a Comment
-  submit_btn_text: Comment
+  title: Nominate this RedSpot
+  form_link_text: Nominate this RedSpot!
+  submit_btn_text: Nominate
   items:
-    - prompt: Traffic Does Not Yield
-      type: checkbox
-      optional: true
-      name:  traffic_does_not_yield
+    - prompt: 1. I generally travel through the RedSpot by
+      type: select
+      options:
+        - Please choose
+        - Car
+        - motorbike
+        - commercial vehicle
+        - bus
+        - bicycle
+        - tram
+        - walking
+      name: mode
+    - prompt: 2. The RedSpot occurs at
+      type: select
+      options:
+        - Please choose
+        - Intersection with traffic lights
+        - Intersection, no traffic lights
+        - A section of road
+        - Railway crossing
+        - Roundabout
+        - Bus/tram stop
+        - Railway station carpark
+        - Somewhere else
+      name: occurance    
+    - prompt: 3. In which direction(s) are the most affected vehicles travelling?
+      type: text
+      name: direction
       attrs:
-        - key: value
-          value: Traffic Does Not Yield
+        - key: placeholder
+          value: (E.g. West, Toorak Rd towards City)
+        - key: size
+          value: 30     
+    - prompt: 4. On which day(s) is the problem worst?   
+      type: select
+      options:
+        - Please choose
+        - Weekdays
+        - Weekends
+        - Special events
+      name: days    
+    - prompt: If special event, please specify
+      type: text
+      optional: true
+      name: event
+      attrs:
+        - key: placeholder
+          value: E.g. AFL games are on...
+        - key: size
+          value: 30 
+    - prompt: 5. During which time(s) is the problem worst?
+      type: select
+      options:
+        - Please choose
+        - Early morning, 7.00-9.30am
+        - Late morning, 9.30am-noon
+        - Midday, noon-3.00pm
+        - School pickup, 3.00-4.00pm
+        - Late afternoon, 4.00-6.30pm
+        - Evening, 6.30-9.00pm
+        - Night, 9.00pm-7.00am
+      name: time
+    - prompt: 6. Which statement(s) best describe the problem(s) at this location
+      type: select
+      options:
+        - Please choose
+        - Through traffic congestion/long queues
+        - Difficult or congested right turning movements
+        - Difficult or congested left turning movements
+        - Long delays at rail crossing
+        - Poor co-ordination of traffic lights
+        - Blockages such as parked cars and buses
+        - Lights not green for long enough
+        - Long delays at pedestrian crossings
+        - Carpark congested
+      name: time
+    - prompt: If other or more than one, please specify
+      type: text
+      optional: true
+      name: othertime
+      attrs:
+        - key: placeholder
+          value: Type here...
+        - key: size
+          value: 30
+    - prompt: 7. In general, how does congestion affect your behaviour?
+      type: select
+      options:
+        - Please choose
+        - It makes me see 'red'
+        - I am less patient when I drive
+        - I am use alternative routes (e.g. local streets)
+        - I leave earlier or later to avoid the congestion
+        - I switched to cycling, public transport or walking
+        - I switched to driving a car
+        - I switched to a motorbike or scooter
+        - I only make the absolutely necessary trips
+        - It affects the way I vote
+        - It has no effect
+      name: behaviour
+    - prompt: If other or more than one, please specify
+      type: text
+      optional: true
+      name: otherbehaviour
+      attrs:
+        - key: placeholder
+          value: Type here...
+        - key: size
+          value: 30                    
+    - prompt: Your Name
+      type: text
+      name: submitter_name
+      attrs:
+        - key: placeholder
+          value: Type name here
+        - key: size
+          value: 30
+    - prompt: Spot Type
+      type: select
+      options:
+        - RedSpot
+      name: location_type  
     - prompt: Your Name
       type: text
       name: submitter_name
