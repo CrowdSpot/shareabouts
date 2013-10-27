@@ -4,6 +4,12 @@
  * NOTE: "With great power comes great responsibility."
  */
 
+/* SHUT IT DOWN LEMON */
+#user_support {
+  display: none !important;
+}
+
+
 /* =Base Typography
 -------------------------------------------------------------- */
 
@@ -253,6 +259,16 @@ a.reply-link:hover {
 .promotion {
 /*  background-color: #bf8fbf;*/
 }
+
+.promotion .sharing::before {
+  content: 'Share: #redspotsurvey';
+  float: left;
+  margin-right: 10px;
+  
+  font-weight: bold;
+  line-height: 35px;
+}
+
 
 #user_support label {
 /*  color: #ff80ff;*/
