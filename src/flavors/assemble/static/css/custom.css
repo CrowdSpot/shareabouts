@@ -38,7 +38,7 @@ a:hover {
 #site-header {
   height: auto;
   
-  background: #fdeade;
+  background: #fdeadf;
   color: #555;
   border-top: rgb(20,75,30) 6px solid;
      -moz-box-shadow: none;
@@ -104,7 +104,7 @@ center;
  * The Helvetica stack produces a good icon. */
 
 a#nav-bttn {
-  background: #ededed;
+  background: #144a1e;
   border-radius: 4px;
   border: 1px solid rgba(0,0,0,0.1);
   
@@ -114,7 +114,7 @@ a#nav-bttn {
 
 a#nav-bttn:link,
 a#nav-bttn:visited {
-  background: #ededed;
+  background: #144a1e;
 /*  color: #bf00bf;*/
 /*  background: #ffbfff;*/
 /*  font-family: "Helvetica Neue", Arial, Helvetica, serif;*/
@@ -172,7 +172,7 @@ a#nav-bttn:hover {
 }*/
 
 #site-header .access ul ul {
-  background: #fdeade;
+  background: #fdeadf;
 }
 
 #site-header .access ul ul a {
@@ -184,8 +184,8 @@ a#nav-bttn:hover {
 -------------------------------------------------------------- */
 
 a.add-place {
-  background-color: #144B1E;
-  border-radius: 5px;
+  background-color: #144a1e;
+  border-radius: 3px;
 /*  color: #eee;*/
 /*  text-shadow: none;*/
 }
@@ -236,8 +236,8 @@ textarea {
 }
 
 .bttn {
-  background-color: #ff1609;
-  border-radius: 5px;
+  background-color: #144a1e;
+  border-radius: 3px;
 /*  color: #eee;*/
 /*  background-color: #ff40ff;*/
 /*  text-shadow: none;*/
@@ -314,7 +314,7 @@ ul.recent-points {
 }
 
 #powered-by {
-  background: #eeeeef;
+  background: #fdeade;
   color: rgb(119, 119, 119);
   line-height: 2em;
   height: 2em;
@@ -344,7 +344,7 @@ center center;
 
 /* Instructions */
 #instructions p {
-  background: #eeeeef;
+  background: #fdeade;
 }
 
 
