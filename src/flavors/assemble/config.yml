@@ -235,6 +235,10 @@ pages:
   - title: "The Spots"
     slug: why
     name: why
+    
+  - title: "FAQS"
+    slug: faqs
+    name: faqs  
 
   - title: "Contact"
     slug: contact
