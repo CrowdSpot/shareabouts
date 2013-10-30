@@ -25,7 +25,7 @@ map:
       lng: 144.96306
     zoom: 14
     minZoom: 10
-    maxZoom: 17
+    maxZoom: 18
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/crowdspot1.map-5z4qlsey/{z}/{x}/{y}.png
     attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
@@ -141,7 +141,7 @@ place:
   anonymous_name: Someone
   submit_button_label: Submit
   items:
-    - prompt: What is here?
+    - prompt: "What's located at this spot?"
       type: text
       name: name
       attrs:
@@ -149,9 +149,10 @@ place:
           value: Spot Name
         - key: size
           value: 30
-    - prompt: Spot Type
+    - prompt: What type of spot is this?
       type: select
       options:
+        - Please choose
         - Food Spot
         - Shop Spot
         - See Spot
@@ -167,23 +168,23 @@ place:
         - key: accept
           value: image/*
       name: location_type 
-    - prompt: What is the address?
+    - prompt: If you know the web or physical address type it here..
       type: text
       name: address
       optional: true
       attrs:
         - key: placeholder
-          value: Type the address here...    
+          value: Use http:// to hyperlink...    
     - prompt: What do you love about this spot?
-      type: textarea
-      name: description
+      type: text
+      name: love
       optional: true
       attrs:
         - key: placeholder
           value: Type here...
-    - prompt: Any reccomendations?
-      type: textarea
-      name: description
+    - prompt: Any recomendations?
+      type: text
+      name: recommendations
       optional: true
       attrs:
         - key: placeholder
@@ -222,8 +223,8 @@ survey:
 
 support:
   submission_type: support
-  submit_btn_text: Support This!
-  action_text: "supported"
+  submit_btn_text: Like This!
+  action_text: "liked"
   anonymous_name: Someone
 
 pages:

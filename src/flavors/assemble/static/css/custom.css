@@ -383,3 +383,12 @@ center center;
 /* =Individual Pages
 -------------------------------------------------------------- */
 
+.place-value-love:before {
+  content: 'Love: ';
+  font-weight: bold;
+}
+
+.place-value-recommendations:before {
+  content: 'Recommendations: ';
+  font-weight: bold;
+}
