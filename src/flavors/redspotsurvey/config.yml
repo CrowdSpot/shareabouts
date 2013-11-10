@@ -189,11 +189,11 @@ place:
         - Lights not green for long enough
         - Long delays at pedestrian crossings
         - Carpark congested
-      name: time
+      name: problem
     - prompt: If other or more than one, please specify
       type: text
       optional: true
-      name: othertime
+      name: otherproblem
       attrs:
         - key: placeholder
           value: Type here...
@@ -368,15 +368,7 @@ survey:
         - key: placeholder
           value: Type name here
         - key: size
-          value: 30
-    - prompt: Spot Type
-      type: select
-      options:
-        - RedSpot
-      name: location_type  
-    - prompt: Your Name
-      type: text
-      name: submitter_name
+          value: 30 
 
 support:
   submission_type: support

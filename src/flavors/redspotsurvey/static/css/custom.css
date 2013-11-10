@@ -253,6 +253,94 @@ a.reply-link:hover {
 /*  background-color: #e500e5;*/
 }
 
+.place-value-mode {
+  display: none;
+}
+
+.place-value-occurance {
+  display: none;
+}
+
+.place-value-direction {
+  display: none;
+}
+
+.place-value-days {
+  display: none;
+}
+
+.place-value-event {
+  display: none;
+}
+
+.place-value-time {
+  display: none;
+}
+
+.place-value-problem {
+  display: none;
+}
+
+.place-value-otherproblem {
+  display: none;
+}
+
+.place-value-behaviour {
+  display: none;
+}
+
+.place-value-otherbehaviour {
+  display: none;
+}
+
+.place-value-submitter_name {
+  display: none;
+}
+
+.response-value-mode {
+  display: none;
+}
+
+.response-value-occurance {
+  display: none;
+}
+
+.response-value-direction {
+  display: none;
+}
+
+.response-value-days {
+  display: none;
+}
+
+.response-value-event {
+  display: none;
+}
+
+.response-value-time {
+  display: none;
+}
+
+.response-value-problem {
+  display: none;
+}
+
+.response-value-otherproblem {
+  display: none;
+}
+
+.response-value-behaviour {
+  display: none;
+}
+
+.response-value-otherbehaviour {
+  display: none;
+}
+
+.response-value-submitter_name {
+  display: none;
+}
+
 
 /* =Voting & Social Promotion
 -------------------------------------------------------------- */
