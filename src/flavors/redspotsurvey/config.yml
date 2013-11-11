@@ -242,7 +242,7 @@ survey:
 
   # Response display config
   show_responses: true
-  response_name: nominate
+  response_name: nomination
   response_plural_name: nominations
   action_text: nominated
   anonymous_name: Someone
