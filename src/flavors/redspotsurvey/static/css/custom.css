@@ -5,10 +5,9 @@
  */
 
 /* SHUT IT DOWN LEMON */
-#user_support {
+#user_support, .survey .survey-header, .survey .responses {
   display: none !important;
 }
-
 
 /* =Base Typography
 -------------------------------------------------------------- */
