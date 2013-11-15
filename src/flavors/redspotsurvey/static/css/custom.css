@@ -5,7 +5,7 @@
  */
 
 /* SHUT IT DOWN LEMON */
-#user_support, .survey .responses {
+.survey .responses {
   display: none !important;
 }
 
