@@ -21,10 +21,10 @@ map:
   geolocation_onload: false
   options:
     center:
-      lat: -37.81361
-      lng: 144.96306
-    zoom: 14
-    minZoom: 10
+      lat: -37.471043
+      lng: 144.996132
+    zoom: 8
+    minZoom: 8
     maxZoom: 17
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/aisey.map-u8fegfjt/{z}/{x}/{y}.png
