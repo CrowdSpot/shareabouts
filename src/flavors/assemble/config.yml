@@ -167,14 +167,28 @@ place:
       attrs:
         - key: accept
           value: image/*
-      name: location_type 
-    - prompt: If you know the web or physical address type it here..
+      name: location_type
+    - prompt: Photographer name/credit
+      type: credit
+      name: credit
+      optional: true
+      attrs:
+        - key: placeholder
+          value: Type here..    
+    - prompt: If you know the website type it here..
+      type: text
+      name: website
+      optional: true
+      attrs:
+        - key: placeholder
+          value: Use http:// to hyperlink...
+    - prompt: What about the physical address?
       type: text
       name: address
       optional: true
       attrs:
         - key: placeholder
-          value: Use http:// to hyperlink...    
+          value: Type address here...            
     - prompt: What do you love about this spot?
       type: text
       name: love

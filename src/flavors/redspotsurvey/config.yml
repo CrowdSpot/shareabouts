@@ -327,7 +327,7 @@ survey:
         - Lights not green for long enough
         - Long delays at pedestrian crossings
         - Carpark congested
-      name: time
+      name: problem
     - prompt: If other or more than one, please specify
       type: text
       optional: true

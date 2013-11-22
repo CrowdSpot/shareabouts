@@ -8,10 +8,12 @@
 -------------------------------------------------------------- */
 
 body, select, input, textarea {
-  background: #fdeade;
+  background: rgb(253,216,201);
   font-family: "proxima-nova", sans-serif ;
-  color: #555;
+  color: #000000;
 }
+
+label { color: black }
 
 
 h1,h2,h3,h4,h5,h6 {
@@ -24,11 +26,11 @@ h1,h2,h3,h4,h5,h6 {
 -------------------------------------------------------------- */
 
 a, a:active, a:visited {
-  color: rgb(119, 119, 119);
+  color: rgba(0,0,0,1);
 }
 
 a:hover {
-  color: rgb(85, 85, 85);
+  color: rgba(0,0,0,1);
 }
 
 
@@ -38,8 +40,8 @@ a:hover {
 #site-header {
   height: auto;
   
-  background: #fdeadf;
-  color: #555;
+  background: rgb(253,216,201);
+  color: #000000;
   border-top: rgb(20,75,30) 6px solid;
      -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -78,10 +80,10 @@ a:hover {
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
 #site-title {
-  background: url('images/assemble-logo-369x82.png') no-repeat
+  background: url('images/assemble-logo-300x38.png') no-repeat
 center;
   background-size: contain;
-  width: 232px;
+  width: 250px;
   text-indent: -133337px;
 }
 
@@ -121,7 +123,7 @@ a#nav-bttn:visited {
 }
 
 a#nav-bttn:hover {
-  background: #ededed;
+  background: #eeeeee;
 /*  color: #ffbfff;*/
 /*  background: #fff;*/
 }
@@ -143,7 +145,7 @@ a#nav-bttn:hover {
   background: none;
   padding: 0 15px;
   
-  color: rgb(119, 119, 119);
+  color: rgba(0,0,0,1);
 	text-shadow: none;
 	font-weight: 400;
 	letter-spacing: 1px;
@@ -152,11 +154,11 @@ a#nav-bttn:hover {
 
 #site-header .access a:visited, #site-header .access a:active, 
   #site-header .access a:link {
-  color: rgb(119, 119, 119);
+  color: rgba(0,0,0,1);
 }
 
 #site-header .access a:hover {
-  color: rgb(30, 30, 30);
+  color: rgba(0,0,0,1);
   text-decoration: none;
   box-shadow: none;
   background: none;
@@ -172,11 +174,11 @@ a#nav-bttn:hover {
 }*/
 
 #site-header .access ul ul {
-  background: #fdeadf;
+  background: rgb(253,216,201);
 }
 
 #site-header .access ul ul a {
-  background: #fdeade;
+  background: rgb(253,216,201);
 }
 
 
@@ -305,17 +307,17 @@ ul.recent-points {
 }
 
 .recent-points a {
-  color: rgb(119, 119, 119);
+  color: rgba(0,0,0,1);
 }
 
 .recent-points li:hover a,
 .recent-points a:hover {
-  color: rgb(85, 85, 85);
+  color: rgba(0,0,0,1);
 }
 
 #powered-by {
-  background: #fdeade;
-  color: rgb(119, 119, 119);
+  background: rgb(253,216,201);
+  color: rgba(0,0,0,1);
   line-height: 2em;
   height: 2em;
 }
@@ -344,7 +346,7 @@ center center;
 
 /* Instructions */
 #instructions p {
-  background: #fdeade;
+  background: rgb(253,216,201);
 }
 
 
@@ -382,6 +384,11 @@ center center;
 }
 /* =Individual Pages
 -------------------------------------------------------------- */
+
+.place-value-credit:before {
+  content: 'Credit: ';
+  font-weight: bold;
+}
 
 .place-value-love:before {
   content: 'Love: ';
