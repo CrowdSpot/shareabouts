@@ -54,7 +54,7 @@ place_types:
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
   red:
-    iconUrl: /static/css/images/master-pin-red.png
+    iconUrl: /static/css/images/ap-food-red.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -66,7 +66,7 @@ place_type_icons:
       x: 42
       y: 42
   blue:
-    iconUrl: /static/css/images/master-pin-green.png
+    iconUrl: /static/css/images/ap-see-blue.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -78,7 +78,7 @@ place_type_icons:
       x: 42
       y: 42
   green:
-    iconUrl: /static/css/images/master-pin-blue.png
+    iconUrl: /static/css/images/ap-shopping-green.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -90,7 +90,7 @@ place_type_icons:
       x: 42
       y: 42
   orange:
-    iconUrl: /static/css/images/master-pin-orange.png
+    iconUrl: /static/css/images/ap-make-orange.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -101,8 +101,8 @@ place_type_icons:
     iconAnchor:
       x: 42
       y: 42   
-  orange:
-    iconUrl: /static/css/images/master-pin-pink.png
+  pink:
+    iconUrl: /static/css/images/ap-play-pink.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
