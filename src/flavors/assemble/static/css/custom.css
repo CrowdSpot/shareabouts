@@ -38,11 +38,11 @@ a:hover {
 -------------------------------------------------------------- */
 
 #site-header {
-  height: auto;
+  height: 150;
   
   background: rgb(253,229,213);
   color: #000000;
-  border-bottom: rgb(20,75,30) 6px solid;
+  border-bottom: rgb(20,75,30) 4px solid;
      -moz-box-shadow: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -58,14 +58,14 @@ a:hover {
 #site-header a:hover {
 }
 
-@media only screen and (min-width: 910px) {
+@media only screen and (min-width: 1024px) {
   #pages-nav-container:before {
     content: '';
     display: block;
     background: transparent url('images/crowdspot-logo-horizontal-200x32-black.png') no-repeat center;
     float: right;
     width: 256px;
-    height: 50px;
+    height: 60px;
     margin-top: 5px;
   }
 }
@@ -84,13 +84,14 @@ a:hover {
 center;
   background-size: contain;
   width: 250px;
+  height: 65px;
   text-indent: -133337px;
 }
 
 
 @media only screen and (min-width: 1024px) { /* ticker is visible */
   #site-title {
-    width: 278px;
+    width: 300px;
   }
 }
 @media only screen and (min-width: 1300px) {
