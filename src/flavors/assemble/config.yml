@@ -210,7 +210,15 @@ place:
         - key: placeholder
           value: Type name here
         - key: size
-          value: 30      
+          value: 30
+    - prompt: Your Email
+      type: text
+      name: email
+      attrs:
+        - key: placeholder
+          value: Your email will be kept confidential
+        - key: size
+          value: 30             
 
 survey:
   submission_type: comments

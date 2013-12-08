@@ -400,3 +400,8 @@ center center;
   content: 'Recommendations: ';
   font-weight: bold;
 }
+
+.place-value-address:before {
+  content: 'Address: ';
+  font-weight: bold;
+}
