@@ -255,7 +255,7 @@ pages:
     name: overview
     start_page: true
 
-  - title: "The Spots"
+  - title: "Spots + Filter"
     slug: why
     name: why
     
