@@ -127,20 +127,13 @@ place:
         - Tram Spot
         - Train Spot
       name: location_type
-    - prompt: "What's happening here?"
+    - prompt: "Describe What's happening here?"
       type: text
       name: issue
       optional: true
       attrs:
         - key: placeholder
-          value: Type issue here...    
-    - prompt: What do we need to do?
-      type: text
-      name: solution
-      optional: true
-      attrs:
-        - key: placeholder
-          value: Type solution here...       
+          value: Type description here...        
     - prompt: Add an Image
       inputfile_label: _(Add an Image)      
       type: file
