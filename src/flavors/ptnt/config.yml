@@ -119,7 +119,7 @@ place:
           value: Spot Name
         - key: size
           value: 30
-    - prompt: What transport mode does it relate to?
+    - prompt: What transport mode does this spot relate to?
       type: select
       options:
         - Please choose
@@ -127,8 +127,8 @@ place:
         - Tram Spot
         - Train Spot
       name: location_type
-    - prompt: "Describe What's happening here?"
-      type: text
+    - prompt: "Describe what's happening here?"
+      type: textarea
       name: issue
       optional: true
       attrs:
@@ -150,7 +150,7 @@ place:
       attrs:
         - key: placeholder
           value: Use http:// to hyperlink...   
-    - prompt: Your Name
+    - prompt: Your name or organisation
       type: text
       name: submitter_name
       attrs:
@@ -158,7 +158,7 @@ place:
           value: Type name here
         - key: size
           value: 30
-    - prompt: Your Email
+    - prompt: Your email
       type: text
       name: submitter_email
       attrs:
