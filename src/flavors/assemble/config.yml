@@ -213,7 +213,7 @@ place:
           value: 30
     - prompt: Your Email
       type: text
-      name: submitter_email
+      name: private-submitter_email
       attrs:
         - key: placeholder
           value: Your email will be kept confidential
