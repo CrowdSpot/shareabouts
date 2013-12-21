@@ -209,10 +209,6 @@ pages:
   - title: "FAQS"
     slug: faqs
     name: faqs  
-    
-  - title: "Supporters"
-    slug: supporters
-    name: supporters
 
   - title: "Contact"
     slug: contact
