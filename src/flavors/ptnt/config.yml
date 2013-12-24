@@ -127,10 +127,9 @@ place:
         - Tram Spot
         - Train Spot
       name: location_type
-    - prompt: "Describe what's happening here?"
+    - prompt: "What improvements would you like to see here?"
       type: textarea
       name: issue
-      optional: true
       attrs:
         - key: placeholder
           value: Type description here...        
