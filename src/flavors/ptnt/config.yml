@@ -116,7 +116,7 @@ place:
       name: name
       attrs:
         - key: placeholder
-          value: Spot Name
+          value: Station, landmark, intersection, etc.
         - key: size
           value: 30
     - prompt: What transport mode does this spot relate to?
