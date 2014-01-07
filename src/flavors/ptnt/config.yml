@@ -141,14 +141,7 @@ place:
       attrs:
         - key: accept
           value: image/*
-      name: location_type   
-    - prompt: Is there a related website?
-      type: text
-      name: website
-      optional: true
-      attrs:
-        - key: placeholder
-          value: Use http:// to hyperlink...   
+      name: location_type    
     - prompt: Your name or organisation
       type: text
       name: submitter_name
