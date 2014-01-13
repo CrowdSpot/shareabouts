@@ -184,9 +184,9 @@ survey:
 
 support:
   submission_type: support
-  submit_btn_text: Support This!
-  action_text: "supported"
-  anonymous_name: Someone
+  submit_btn_text: Support this!
+  action_text: "voted for"
+  anonymous_name: A supporter
 
 pages:
   - title: Welcome
