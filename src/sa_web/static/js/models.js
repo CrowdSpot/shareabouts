@@ -1,4 +1,4 @@
-/*global _ Backbone jQuery */
+/*global _, Backbone, jQuery */
 
 var Shareabouts = Shareabouts || {};
 
@@ -21,76 +21,160 @@ var Shareabouts = Shareabouts || {};
     };
   };
 
-  S.ShareaboutsApiModel = Backbone.Model.extend({
-    sync: function(method, model, options) {
-      var data = model.toJSON();
+  S.PaginatedCollection = Backbone.Collection.extend({
+    resultsAttr: 'results',
 
-      delete data.created_datetime;
-      delete data.dataset;
-      delete data.id;
-      delete data.updated_datetime;
+    parse: function(response) {
+      this.metadata = response.metadata;
+      return response[this.resultsAttr];
+    },
+
+    fetchNextPage: function(success, error) {
+      var collection = this;
+
+      if (this.metadata.next) {
+        collection.fetch({
+          remove: false,
+          url: collection.metadata.next,
+          success: success,
+          error: error
+        });
+      }
+    },
+
+    fetchAllPages: function(options) {
+      var self = this,
+          onFirstPageSuccess, onPageComplete,
+          onPageSuccess, onPageError,
+          onAllSuccess, onAnyError,
+          attemptedPages = 0, totalPages = 1;
 
       options = options || {};
-      options.contentType = 'application/json';
-      options.data = JSON.stringify(data);
+      options.data = options.data || {};
 
-      Backbone.sync(method, model, options);
+      if (options.error) {
+        onAnyError = _.once(options.error);
+      }
+
+      onFirstPageSuccess = function(obj, data) {
+        // Calculate the total number of pages based on the size of the rist
+        // page, assuming all pages except the last will be the same size.
+        var pageSize = data[self.resultsAttr].length, i;
+        totalPages = Math.ceil(data.metadata.length / pageSize);
+
+        if (options.success) {
+          onAllSuccess = _.after(totalPages, options.success);
+        }
+
+        // Fetch all the rest of the pages in parallel.
+        if (data.metadata.next) {
+          for (i = 2; i <= totalPages; i++) {
+            self.fetch(_.defaults({
+              remove: false,
+              data: _.defaults({ page: i }, options.data),
+              complete: onPageComplete,
+              success: onPageSuccess,
+              error: onPageError
+            }, options));
+          }
+        }
+
+        onPageSuccess.apply(this, arguments);
+      };
+
+      onPageComplete = function() {
+        attemptedPages++;
+        if (options.pageComplete) { options.pageComplete.apply(this, arguments); }
+        if (attemptedPages === totalPages && options.complete) { options.complete.apply(this, arguments); }
+      };
+
+      onPageSuccess = function() {
+        if (options.pageSuccess) { options.pageSuccess.apply(this, arguments); }
+        if (onAllSuccess) { onAllSuccess.apply(this, arguments); }
+      };
+
+      onPageError = function() {
+        if (options.pageError) { options.pageError.apply(this, arguments); }
+        if (onAnyError) { onAnyError.apply(this, arguments); }
+      };
+
+      this.fetch(_.defaults({
+        // Note that success gets called before complete, which is imprtant
+        // because complete should know whether correct total number of pages.
+        // However, if the request for the first page fails, complete will
+        // assume one page.
+        success: onFirstPageSuccess,
+        error: onPageError,
+        complete: onPageComplete
+      }, options));
     }
   });
 
-  S.SubmissionModel = S.ShareaboutsApiModel.extend({
-    url: function() {
-      // This is to make Django happy. I'm sad to have to add it.
-      var url = S.SubmissionModel.__super__.url.call(this);
-      url += url.charAt(url.length-1) === '/' ? '' : '/';
-
-      return url;
-    }
-  });
-
-  S.SubmissionCollection = Backbone.Collection.extend({
+  S.SubmissionCollection = S.PaginatedCollection.extend({
     initialize: function(models, options) {
       this.options = options;
     },
 
-    model: S.SubmissionModel,
-
     url: function() {
       var submissionType = this.options.submissionType,
-          placeId = this.options.placeModel.id;
+          placeId = this.options.placeModel && this.options.placeModel.id;
+
+      if (!submissionType) { throw new Error('submissionType option' +
+                                                     ' is required.'); }
 
       if (!placeId) { throw new Error('Place model id is not defined. You ' +
-                                      'must save the Place before saving ' +
+                                      'must save the place before saving ' +
                                       'its ' + submissionType + '.'); }
 
-      return '/api/places/' + placeId + '/' + submissionType + '/';
-    }
+      return '/api/places/' + placeId + '/' + submissionType;
+    },
+
+    comparator: 'created_datetime'
   });
 
-  S.PlaceModel = S.ShareaboutsApiModel.extend({
-    initialize: function(attributes, options) {
-      this.responseCollection = new S.SubmissionCollection([], {
-        placeModel: this,
-        submissionType: options.responseType
-      });
+  S.PlaceModel = Backbone.Model.extend({
+    initialize: function() {
+      var attachmentData;
 
-      this.supportCollection = new S.SubmissionCollection([], {
-        placeModel: this,
-        submissionType: options.supportType
-      });
+      this.submissionSets = {};
 
-      var attachmentData = this.get('attachments') || [];
+      _.each(this.get('submission_sets'), function(submissions, name) {
+        var models = [];
+
+        // It's a summary if it's not an array of objects
+        if (_.isArray(submissions)) {
+          models = submissions;
+        }
+
+        this.submissionSets[name] = new S.SubmissionCollection(models, {
+          submissionType: name,
+          placeModel: this
+        });
+      }, this);
+
+      attachmentData = this.get('attachments') || [];
       this.attachmentCollection = new S.AttachmentCollection(attachmentData, {
         thingModel: this
+      });
+
+      this.attachmentCollection.each(function(attachment) {
+        attachment.set({saved: true});
       });
     },
 
     set: function(key, val, options) {
       var args = normalizeModelArguments(key, val, options);
 
-      if (_.isArray(args.attrs.attachments) && this.attachmentCollection && !args.options.ignoreAttachnments) {
+      if (_.isArray(args.attrs.attachments) && this.attachmentCollection && !args.options.ignoreAttachments) {
         this.attachmentCollection.reset(args.attrs.attachments);
       }
+
+      _.each(args.attrs.submission_sets, function(submissions, name) {
+        // It's a summary if it's not an array of objects
+        if (this.submissionSets && this.submissionSets[name] && _.isArray(submissions)) {
+          this.submissionSets[name].reset(submissions);
+        }
+      }, this);
 
       return S.PlaceModel.__super__.set.call(this, args.attrs, args.options);
     },
@@ -118,7 +202,7 @@ var Shareabouts = Shareabouts || {};
         self.saveAttachments();
       }
 
-      options.ignoreAttachnments = true;
+      options.ignoreAttachments = true;
       S.PlaceModel.__super__.save.call(this, attrs, options);
     },
 
@@ -128,34 +212,85 @@ var Shareabouts = Shareabouts || {};
           attachment.save();
         }
       });
+    },
+
+    parse: function(response) {
+      var properties = _.clone(response.properties);
+      properties.geometry = _.clone(response.geometry);
+      return properties;
+    },
+
+    sync: function(method, model, options) {
+      var attrs;
+
+      if (method === 'create' || method === 'update') {
+        attrs = {
+          'type': 'Feature',
+          'geometry': model.get('geometry'),
+          'properties': _.omit(model.toJSON(), 'geometry')
+        };
+
+        options.data = JSON.stringify(attrs);
+        options.contentType = 'application/json';
+      }
+
+      return Backbone.sync(method, model, options);
     }
   });
 
-  S.PlaceCollection = Backbone.Collection.extend({
-    url: '/api/places/',
+  S.PlaceCollection = S.PaginatedCollection.extend({
+    url: '/api/places',
     model: S.PlaceModel,
+    resultsAttr: 'features',
 
-    initialize: function(models, options) {
-      this.options = options;
+    fetchByIds: function(ids, options) {
+      var base = _.result(this, 'url');
+
+      if (ids.length === 1) {
+        this.fetchById(ids[0], options);
+      } else {
+        ids = _.map(ids, function(id) { return encodeURIComponent(id); });
+        options = options ? _.clone(options) : {};
+        options.url = base + (base.charAt(base.length - 1) === '/' ? '' : '/') + ids.join(',');
+
+        this.fetch(_.extend(
+          {remove: false},
+          options
+        ));
+      }
     },
 
-    add: function(models, options) {
-      // Pass the submissionType into each PlaceModel so that it makes its way
-      // to the SubmissionCollections
-      options = options || {};
-      options.responseType = this.options && this.options.responseType;
-      options.supportType = this.options && this.options.supportType;
-      return S.PlaceCollection.__super__.add.call(this, models, options);
+    fetchById: function(id, options) {
+      options = options ? _.clone(options) : {};
+      var self = this,
+          place = new S.PlaceModel(),
+          success = options.success;
+
+      place.id = id;
+      place.collection = self;
+
+      options.success = function() {
+        var args = Array.prototype.slice.call(arguments);
+        self.add(place);
+        if (success) {
+          success.apply(this, args);
+        }
+      };
+      place.fetch(options);
     }
   });
 
   // This does not support editing at this time, which is why it is not a
   // ShareaboutsModel
   S.AttachmentModel = Backbone.Model.extend({
-    idAttr: 'name',
+    idAttribute: 'name',
 
     initialize: function(attributes, options) {
       this.options = options;
+    },
+
+    isNew: function() {
+      return this.get('saved') !== true;
     },
 
     // TODO: We should be overriding sync instead of save here. The only
@@ -170,6 +305,7 @@ var Shareabouts = Shareabouts || {};
 
     _attachBlob: function(blob, name, options) {
       var formData = new FormData(),
+          self = this,
           progressHandler = S.Util.wrapHandler('progress', this, options.progress),
           myXhr = $.ajaxSettings.xhr();
 
@@ -188,7 +324,19 @@ var Shareabouts = Shareabouts || {};
           return myXhr;
         },
         //Ajax events
-        success: options.success,
+        success: function() {
+          var args = Array.prototype.slice.call(arguments);
+
+          // Set the save attribute on the incoming data so that we know it's
+          // not new.
+          args[0].saved = true;
+          self.set({saved: true});
+
+          if (options.success) {
+            options.success.apply(this, args);
+          }
+
+        },
         error: options.error,
         // Form data
         data: formData,
@@ -211,15 +359,22 @@ var Shareabouts = Shareabouts || {};
       var thingModel = this.options.thingModel,
           thingUrl = thingModel.url();
 
-      return thingUrl + '/attachments/';
+      return thingUrl + '/attachments';
     }
   });
 
-  S.ActivityCollection = Backbone.Collection.extend({
-    url: '/api/activity/'
+  S.ActionCollection = S.PaginatedCollection.extend({
+    url: '/api/actions',
+    comparator: function(a, b) {
+      if (a.get('created_datetime') > b.get('created_datetime')) {
+        return -1;
+      } else {
+        return 1;
+      }
+    }
   });
 
-}(Shareabouts, jQuery, Shareabouts.Util.console));
+}(Shareabouts, jQuery));
 
 /*global jQuery */
 

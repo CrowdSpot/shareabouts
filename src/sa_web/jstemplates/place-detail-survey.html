@@ -5,15 +5,20 @@
             {{^ has_single_response }}{{ survey_config.response_plural_name }}{{/ has_single_response }}
           </h4>
 
-          <a href="#reply" class="reply-link">{{ survey_config.form_link_text }}</a>
+          <a href="#reply" class="reply-link btn btn-small">{{ survey_config.form_link_text }}</a>
 
-          <ol class="responses">
+          <ol class="responses unstyled-list">
             {{#responses}}
             <li>
               <article class="response">
                 <header class="response-header clearfix">
                   {{#_}}<strong class="response-submitter">
-                    {{ submitter_name }}
+                    {{#if submitter}}
+                      <img src="{{ submitter.avatar_url }}" class="avatar" /> {{ submitter.name }}
+                    {{^}}
+                      <!-- TODO: FIXME: don't hardcode image URL -->
+                      <img src="/static/css/images/user-50.png" class="avatar" /> {{ submitter_name }}
+                    {{/if}}
                   </strong>
                   <span class="response-date">
                     around {{ pretty_created_datetime }}
@@ -39,30 +44,49 @@
 
           <div id="reply">
             <h4 class="reply-header">{{ title }}</h4>
-            <form id="new_response" class="new_response" action="#" method="post">
+            <form id="new_response" class="new_response clearfix" action="#" method="post">
               <input type="hidden" name="visible" value="on">
 
               <fieldset>
               {{#survey_config.items}}
 
                 <div class="survey-field survey-field-{{ name }}">
+                  {{#is_authenticated}}
+                    {{^is_submitter_name}}
+                    <label class="survey-label survey-label-{{ name }}" for="survey-{{ name }}">
+                      {{#_}}{{ prompt }}{{# optional }} (optional){{/ optional }}{{/_}}
+                    </label>
+                    {{/is_submitter_name}}
+                  {{^}}
                   <label class="survey-label survey-label-{{ name }}" for="survey-{{ name }}">
                     {{#_}}{{ prompt }}{{# optional }} (optional){{/ optional }}{{/_}}
                   </label>
+                  {{/is_authenticated}}
 
                   <div class="survey-widgets survey-widgets-{{ name }}">
                     {{#is_input}}
-                    <input id="survey-{{ name }}" name="{{ name }}" type="{{ type }}" {{#attrs}} {{ key }}="{{ value }}"{{/attrs}}>
-
+                      {{#is_submitter_name}}
+                        {{#is_authenticated}}
+                        {{^}}
+                          <input id="survey-{{ name }}" name="{{ name }}" type="{{ type }}" {{#attrs}} {{ key }}="{{ value }}"{{/attrs}}>
+                        {{/is_authenticated}}
+                      {{^}}
+                        <input id="survey-{{ name }}" name="{{ name }}" type="{{ type }}" {{#attrs}} {{ key }}="{{ value }}"{{/attrs}}>
+                      {{/is_submitter_name}}
                     {{/is_input}}
+
                     {{#is_textarea}}
                     <textarea id="survey-{{ name }}" name="{{ name }}"{{#attrs}} {{ key }}="{{ value }}"{{/attrs}}></textarea>
                     {{/is_textarea}}
                     {{#is_select}}
                     <select id="survey-{{ name }}" name="{{ name }}" type="{{ type }}" {{#attrs}} {{ key }}="{{ value }}"{{/attrs}}>
-                      {{# options }}
-                        <option value="{{.}}">{{.}}</option>
-                      {{/ options }}
+                    {{# options }}
+                      {{#if label}}
+                      <option value="{{value}}">{{label}}</option>
+                      {{else}}
+                      <option value="{{.}}">{{.}}</option>
+                      {{/if}}
+                    {{/ options }}
                     </select>
                     {{/is_select}}
                   </div>
@@ -71,6 +95,14 @@
               {{/survey_config.items}}
               </fieldset>
 
-              <input name="commit" type="submit" value="{{ survey_config.submit_btn_text }}" class="bttn">
+              <input name="commit" type="submit" value="{{ survey_config.submit_btn_text }}" class="btn btn-primary submit-btn">
+
+              {{#is_authenticated}}
+                <p class="signed-in-as"><img src="{{ current_user "avatar_url" }}" class="avatar" /> {{ current_user "name" }}. <a class="" href="/users/logout/">Log Out</a></p>
+              {{^}}
+              {{/is_authenticated}}
+
+              <div class="form-spinner"></div>
+
             </form>
           </div>

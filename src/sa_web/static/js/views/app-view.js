@@ -1,10 +1,27 @@
+/*globals _ jQuery L Backbone Handlebars */
+
 var Shareabouts = Shareabouts || {};
 
 (function(S, $, console){
+  // Spinner options
+  S.bigSpinnerOptions = {
+    lines: 13, length: 0, width: 10, radius: 30, corners: 1, rotate: 0,
+    direction: 1, color: '#000', speed: 1, trail: 60, shadow: false,
+    hwaccel: false, className: 'spinner', zIndex: 2e9, top: 'auto',
+    left: 'auto'
+  };
+
+  S.smallSpinnerOptions = {
+    lines: 13, length: 0, width: 3, radius: 10, corners: 1, rotate: 0,
+    direction: 1, color: '#000', speed: 1, trail: 60, shadow: false,
+    hwaccel: false, className: 'spinner', zIndex: 2e9, top: 'auto',
+    left: 'auto'
+  };
+
   S.AppView = Backbone.View.extend({
     events: {
       'click #add-place': 'onClickAddPlaceBtn',
-      'click .close-bttn': 'onClickClosePanelBtn'
+      'click .close-btn': 'onClickClosePanelBtn'
     },
     initialize: function(){
       // Boodstrapped data from the page
@@ -24,11 +41,16 @@ var Shareabouts = Shareabouts || {};
       this.collection.on('remove', this.onRemovePlace, this);
 
       // Only append the tools to add places (if supported)
-      $('#map-container').append(ich['add-places'](this.options.placeConfig));
+      $('#map-container').append(Handlebars.templates['add-places'](this.options.placeConfig));
 
       this.pagesNavView = (new S.PagesNavView({
               el: '#pages-nav-container',
               pagesConfig: this.options.pagesConfig,
+              router: this.options.router
+            })).render();
+
+      this.authNavView = (new S.AuthNavView({
+              el: '#auth-nav-container',
               router: this.options.router
             })).render();
 
@@ -63,10 +85,9 @@ var Shareabouts = Shareabouts || {};
       // Cache panel elements that we use a lot
       this.$panel = $('#content');
       this.$panelContent = $('#content article');
-      this.$panelCloseBtn = $('.close-bttn');
+      this.$panelCloseBtn = $('.close-btn');
       this.$centerpoint = $('#centerpoint');
-      this.$instructions = $('#instructions');
-      this.$addButton = $('#add-place');
+      this.$addButton = $('#add-place-btn-container');
 
       // Bind to map move events so we can style our center points
       // with utmost awesomeness.
@@ -84,59 +105,24 @@ var Shareabouts = Shareabouts || {};
       this.showAddButton();
       this.showCenterPoint();
     },
-    // Get the appropriate center, depending on the visibility of the
-    // content panel
+    // Get the center of the map
     getCenter: function() {
-      if (this.$panel.is(':visible')) {
-          return this.getFocusedCenter();
-      } else {
-        return this.mapView.map.getCenter();
-      }
-    },
-    // Okay, so this is really confusing but here goes. We have three things
-    // we're talking about:
-    //   - map center: the real center of the map
-    //   - offset center: the lat/lng of what will be the map center after you
-    //     open the content panel
-    //   - focused center: the lat/lng of the former map center after we open
-    //     the content panel and reposition the map
-    getFocusedCenter: function() {
-      var map = this.mapView.map,
-          centerLatLng = map.getCenter(),
-          centerPoint = map.latLngToLayerPoint(centerLatLng),
-          mapSize = map.getSize(),
-          offsetPoint = L.point(centerPoint.x - mapSize.x * this.offsetRatio.x,
-                                    centerPoint.y - mapSize.y * this.offsetRatio.y);
-      return map.layerPointToLatLng(offsetPoint);
-    },
-    getOffsetCenter: function(latLng) {
-      var map = this.mapView.map,
-          mapSize = map.getSize(),
-          pos = map.latLngToLayerPoint(latLng);
-
-      return map.layerPointToLatLng(
-        L.point(pos.x + this.offsetRatio.x * mapSize.x,
-                pos.y + this.offsetRatio.y * mapSize.y) );
+      return this.mapView.map.getCenter();
     },
     onMapMoveStart: function(evt) {
       this.$centerpoint.addClass('dragging');
-      
-      // fade the instructions out (and don't show them again)
-      if (this.$instructions.is(':visible')) {
-        this.instructionsShown = true;
-      }
-      
-      this.hideInstructions();
     },
     onMapMoveEnd: function(evt) {
       this.$centerpoint.removeClass('dragging');
     },
     onClickAddPlaceBtn: function(evt) {
       evt.preventDefault();
+      S.Util.log('USER', 'map', 'new-place-btn-click');
       this.options.router.navigate('/place/new', {trigger: true});
     },
     onClickClosePanelBtn: function(evt) {
       evt.preventDefault();
+      S.Util.log('USER', 'panel', 'close-btn-click');
       this.options.router.navigate('/', {trigger: true});
     },
     // This gets called for every model that gets added to the place
@@ -156,11 +142,8 @@ var Shareabouts = Shareabouts || {};
 
         this.$panel.removeClass().addClass('place-form');
         this.showPanel(this.placeFormView.render().$el);
-        // Autofocus on the first input element
-        this.placeFormView.$('textarea, input').not('[type="hidden"]').first().focus();
         this.showNewPin();
         this.hideAddButton();
-        this.hideInstructions(true);
       }
     },
     onRemovePlace: function(model) {
@@ -197,57 +180,110 @@ var Shareabouts = Shareabouts || {};
       // Called by the router
       this.collection.add({});
     },
-    viewPlace: function(model) {
-      var map = this.mapView.map,
-          location, placeDetailView;
+    viewPlace: function(model, zoom) {
+      var self = this,
+          onPlaceFound, onPlaceNotFound, modelId;
 
-      if (model) {
-        // Called by the router
-        location = model.get('location');
-        placeDetailView = this.getPlaceDetailView(model);
+      onPlaceFound = function(model) {
+        var map = self.mapView.map,
+            layer, center, placeDetailView;
 
-        this.$panel.removeClass().addClass('place-detail place-detail-' + model.id);
-        this.showPanel(placeDetailView.render().$el);
-        this.hideNewPin();
-        this.destroyNewModels();
-        this.hideCenterPoint();
-        this.hideAddButton();
-        this.hideInstructions(true);
-        map.panTo(this.getOffsetCenter(L.latLng(location.lat, location.lng)));
+        // If this model is a duplicate of one that already exists in the
+        // places collection, it may not correspond to a layerView. For this
+        // case, get the model that's actually in the places collection.
+        if (_.isUndefined(self.mapView.layerViews[model.cid])) {
+          model = self.places.get(model.id);
+        }
+
+        layer = self.mapView.layerViews[model.cid].layer;
+        placeDetailView = self.getPlaceDetailView(model);
+        center = layer.getLatLng ? layer.getLatLng() : layer.getBounds().getCenter();
+
+        self.$panel.removeClass().addClass('place-detail place-detail-' + model.id);
+        self.showPanel(placeDetailView.render().$el);
+        self.hideNewPin();
+        self.destroyNewModels();
+        self.hideCenterPoint();
+        self.hideAddButton();
+
+        if (zoom) {
+          if (layer.getLatLng) {
+            map.setView(center, map.getMaxZoom()-1, {animate: true});
+          } else {
+            map.fitBounds(layer.getBounds());
+          }
+
+        } else {
+          map.panTo(center, {animate: true});
+        }
 
         // Focus the one we're looking
         model.trigger('focus');
+      };
+
+      onPlaceNotFound = function() {
+        self.options.router.navigate('/');
+      };
+
+      // If we get a PlaceModel then show it immediately.
+      if (model instanceof S.PlaceModel) {
+        onPlaceFound(model);
+        return;
+      }
+
+      // Otherwise, assume we have a model ID.
+      modelId = model;
+      model = this.places.get(modelId);
+
+      // If the model was found in the places, go ahead and use it.
+      if (model) {
+        onPlaceFound(model);
+
+      // Otherwise, fetch and use the result.
       } else {
-        this.options.router.navigate('/');
+        this.places.fetchById(modelId, {
+          success: onPlaceFound,
+          error: onPlaceNotFound
+        });
       }
     },
     viewPage: function(slug) {
       var pageConfig = _.find(this.options.pagesConfig, function(pageConfig) {
-        return pageConfig.slug ===  slug;
-      });
+            return pageConfig.slug ===  slug;
+          }),
+          pageTemplateName = 'pages/' + (pageConfig.name || pageConfig.slug),
+          pageHtml = Handlebars.templates[pageTemplateName]({config: this.options.config});
 
       this.$panel.removeClass().addClass('page page-' + slug);
-      this.showPanel(ich['pages/' + (pageConfig.name || pageConfig.slug)]);
+      this.showPanel(pageHtml);
 
       this.hideNewPin();
       this.destroyNewModels();
       this.hideCenterPoint();
       this.hideAddButton();
-      this.hideInstructions(true);
     },
     showPanel: function(markup) {
+      var map = this.mapView.map;
+
       this.unfocusAllPlaces();
 
       this.$panelContent.html(markup);
       this.$panel.show();
 
+      this.$panelContent.scrollTop(0);
+      // Scroll to the top of window when showing new content on mobile. Does
+      // nothing on desktop.
+      window.scrollTo(0, 0);
+
+      $('body').addClass('content-visible');
+      map.invalidateSize({ pan:false });
+
       $(S).trigger('panelshow', [this.options.router, Backbone.history.getFragment()]);
+      S.Util.log('APP', 'panel-state', 'open');
     },
     showNewPin: function() {
       var map = this.mapView.map;
-
       this.$centerpoint.show().addClass('newpin');
-      map.panTo(this.getOffsetCenter(map.getCenter()));
     },
     showAddButton: function() {
       this.$addButton.show();
@@ -261,29 +297,15 @@ var Shareabouts = Shareabouts || {};
     hideCenterPoint: function() {
       this.$centerpoint.hide();
     },
-    showInstructions: function() {
-      var self = this;
-      
-      if (self.instructionsShown)
-        return;
-      
-      self.$instructions.css('display', null).addClass('show');
-      // also add a class to the add button, indicating that we are instructing
-      self.$addButton.addClass('instructionsShowing');
-    },
-    hideInstructions: function(instant) {
-      if (instant)
-        this.$instructions.removeClass('show');
-      else
-        this.$instructions.fadeOut();
-      
-      this.$addButton.removeClass('instructionsShowing');
-    },
     hidePanel: function() {
+      var map = this.mapView.map;
+
       this.unfocusAllPlaces();
       this.$panel.hide();
-      
-      this.showInstructions();
+      $('body').removeClass('content-visible');
+      map.invalidateSize({ pan:false });
+
+      S.Util.log('APP', 'panel-state', 'closed');
     },
     hideNewPin: function() {
       this.showCenterPoint();
@@ -307,4 +329,4 @@ var Shareabouts = Shareabouts || {};
       this.mapView.render();
     }
   });
-})(Shareabouts, jQuery, Shareabouts.Util.console);
+}(Shareabouts, jQuery, Shareabouts.Util.console));

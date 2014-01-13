@@ -1,3 +1,5 @@
+/*globals L Backbone _ jQuery */
+
 var Shareabouts = Shareabouts || {};
 
 (function(S, $, console){
@@ -20,7 +22,7 @@ var Shareabouts = Shareabouts || {};
       this.initLayer();
     },
     initLayer: function() {
-      var location;
+      var geom;
 
       // Handle if an existing place type does not match the list of available
       // place types.
@@ -33,10 +35,21 @@ var Shareabouts = Shareabouts || {};
 
       // Don't draw new places. They are shown by the centerpoint in the app view
       if (!this.model.isNew()) {
-        location = this.model.get('location');
-        this.latLng = L.latLng(location.lat, location.lng);
+        geom = this.model.get('geometry');
 
-        this.layer = L.marker(this.latLng, {icon: this.placeType['default']});
+        this.styleRule = L.Argo.getStyleRule(this.model.toJSON(), this.placeType.rules);
+
+        if (geom.type === 'Point') {
+          this.latLng = L.latLng(geom.coordinates[1], geom.coordinates[0]);
+          if (this.styleRule.icon) {
+            this.layer = L.marker(this.latLng, {icon: L.icon(this.styleRule.icon)});
+          } else {
+            this.layer = L.circleMarker(this.latLng, this.styleRule.style);
+          }
+        } else {
+          this.layer = L.GeoJSON.geometryToLayer(geom);
+          this.layer.setStyle(this.styleRule.style);
+        }
 
         // Focus on the marker onclick
         this.layer.on('click', this.onMarkerClick, this);
@@ -64,19 +77,51 @@ var Shareabouts = Shareabouts || {};
         } else {
           this.hide();
         }
+      } else {
+        this.show();
       }
     },
     onMarkerClick: function() {
+      S.Util.log('USER', 'map', 'place-marker-click', this.model.getLoggingDetails());
       this.options.router.navigate('/place/' + this.model.id, {trigger: true});
     },
+    
+    isStyledWithIcon: function() {
+      return (
+        this.styleRule.icon &&
+        this.model.get('geometry').type == 'Point'
+      );
+    },
+    hasFocusIconToggle: function() {
+      return (
+        this.styleRule.icon &&
+        this.styleRule.focus_icon &&
+        this.model.get('geometry').type == 'Point'
+      );
+    },
+    hasFocusStyleToggle: function() {
+      return (
+        this.styleRule.style &&
+        this.styleRule.focus_style
+      );
+    },
+
     focus: function() {
-      if (this.placeType) {
-        this.setIcon(this.placeType.focused);
+      if (this.styleRule) {
+        if (this.hasFocusIconToggle()) {
+          this.setIcon(L.icon(this.styleRule.focus_icon));
+        } else if (this.hasFocusStyleToggle()) {
+          this.layer.setStyle(this.styleRule.focus_style);
+        }
       }
     },
     unfocus: function() {
-      if (this.placeType) {
-        this.setIcon(this.placeType['default']);
+      if (this.styleRule) {
+        if (this.hasFocusIconToggle()) {
+          this.setIcon(L.icon(this.styleRule.icon));
+        } else if (this.hasFocusStyleToggle()) {
+          this.layer.setStyle(this.styleRule.style);
+        }
       }
     },
     remove: function() {
@@ -98,4 +143,4 @@ var Shareabouts = Shareabouts || {};
     }
   });
 
-})(Shareabouts, jQuery, Shareabouts.Util.console);
+}(Shareabouts, jQuery, Shareabouts.Util.console));

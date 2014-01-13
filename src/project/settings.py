@@ -18,6 +18,8 @@ DATABASES = {
     }
 }
 
+ALLOWED_HOSTS = ['*']
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -89,6 +91,17 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.request",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+
+    "project.context_processors.settings_context",
+)
+
 MIDDLEWARE_CLASSES = (
     'sa_web.middleware.CacheRequestBody',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -128,7 +141,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 
     # 3rd-party reusaple apps
-    'mustachejs',
+    'jstemplate',
     'compressor',
 
     # Project apps
@@ -141,7 +154,7 @@ TEST_RUNNER = 'sa_web.test_runner.DatabaselessTestSuiteRunner'
 
 # Shareabouts flavor config
 SHAREABOUTS = {
-    'FLAVOR': 'default_config',
+    'FLAVOR': 'default',
     # The name of the flavor. Optional, but useful for using the default settings.
 
     'DATASET_ROOT': 'http://api.shareabouts.org/api/v1/datasets/demo-user/demo-data/',

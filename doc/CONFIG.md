@@ -20,7 +20,7 @@ Step 1: Create a flavor
 
 A "flavor" is a particular configuration of Shareabouts.
 
-Copy the *flavors/default_config* folder to a new subdirectory
+Copy the *flavors/default* folder to a new subdirectory
 of *flavors/*.  Name it whatever you want.
 
 
@@ -30,14 +30,16 @@ Step 2: Set up your local settings
 Copy the *project/local_settings.py.template* file to
 *project/local_settings.py*.
 
-Edit the new file, changing SHAREABOUTS_FLAVOR to the name of the flavor directory you just
+Edit the new file, changing `SHAREABOUTS_FLAVOR` to the name of the flavor directory you just
 created.
 
-Also update DATASET_ROOT, and DATASET_KEY. Get this info from your API server.
+Also update `DATASET_ROOT`, and `DATASET_KEY`. Get this info from your API server. In `DATASET_ROOT`, change _v1_ to _v2_.
 
 **NOTE: You don't want to check the API key information in to your
 repository, as anyone would be able to write to your data using your
 API key.**
+
+If after completing setup you see [a screen like this](https://f.cloud.github.com/assets/146749/1627911/d5e82492-56fe-11e3-89d7-9d6b35f10c6b.png) when saving or supporting a place or submitting a reply, then you probably have you dataset key set incorrectly in your settings.
 
 
 Step 3: Edit your flavor
@@ -92,30 +94,10 @@ folder.
 ### Place Types
 
 Shareabouts can handle multiple types of Place. To set up the types
-syou're interested in, edit config.yml and add an item to the
-place_types mapping, like so:
+syou're interested in, edit config.yml and add items to the `place_types` 
+section. Each Place value should match a location_type. 
 
-    place_types:
-      Landmark:
-        default: blue
-        focused: red
-
-The name of this type is "Landmark", and we've identified by name two
-icon configurations to use when this place type is selected or not.
-These icons are configured in the separate place_type_icons section,
-like so:
-
-    place_type_icons:
-      blue:
-        iconUrl: /static/css/images/feature-point.png
-        iconSize:
-          width: 17
-          height: 18
-        iconAnchor:
-          x: 9
-          y: 9
-
-The properties of icons are as per the Leaflet docs, see http://leaflet.cloudmade.com/reference.html#icon
+Look at the config.yml for examples of styling Places. The properties of icons are as per the Leaflet docs, see http://leaflet.cloudmade.com/reference.html#icon
 But briefly:
 
 The *iconUrl* is relative to the root of the website. Put the corresponding
@@ -173,10 +155,14 @@ generate the following HTML:
      name="submitter_name"
 	 size="30" placeholder="Type Your Name Here">
 
-The *optional* setting adds some text to the form
-label, but it also is used when validating your form, so if optional
-is omitted or set to false, the user will get an error if they don't
-provide a value.
+The *optional* setting can be used to indicate optional items.
+* with `optional: true`, the user sees _(optional)_ added to the form
+label. The setting has no other effect.
+* with `optional:` omitted, users can leave form items blank, and will not see the _(optional)_
+label. You may prefer this if all your items are optional.
+
+To make an item required, use the `attr` section to set `key: required` and  `value: true`. We're using HTML5 validation, so browsers handle this differently
+(or [not at all](http://caniuse.com/form-validation)).
 
 The *label* setting can also be used for a place item. It is used as the label
 for that input value when it is displayed in the place detail view after it
@@ -403,9 +389,9 @@ set the "external" property to "true".  For example:
       url: http://www.openplans.org/
       external: true
 
-**Note: Do not include `<script>` tags in your pages. If you want to do custom
+**NOTE** Do not include `<script>` tags in your pages. If you want to do custom
   scripting from within your flavor, add your scripts to the includes template
-  (*templates/includes.html*).**
+  (_templates/includes.html_).
 
 ### Styling
 

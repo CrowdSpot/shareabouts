@@ -1,10 +1,13 @@
+/*globals jQuery _ Handlebars Backbone */
+
 var Shareabouts = Shareabouts || {};
 
 (function(S, $, console){
   S.PagesNavView = Backbone.View.extend({
     events: {
       'click .internal-menu-item a': 'onPageLinkClick',
-      'click #nav-bttn': 'onMobileNavClick'
+      'click #nav-btn': 'onMobileNavClick',
+      'click #sign-in-btn': 'onAuthNavClick'
     },
 
     render: function() {
@@ -12,8 +15,8 @@ var Shareabouts = Shareabouts || {};
             pages: this.options.pagesConfig,
             has_pages: (this.options.pagesConfig.length > 0)
           },
-          $template = ich['pages-nav'](data);
-      this.$el.html($template);
+          template = Handlebars.templates['pages-nav'](data);
+      this.$el.html(template);
 
       return this;
     },
@@ -24,12 +27,19 @@ var Shareabouts = Shareabouts || {};
       $('.access').removeClass('expose');
       // Load the content
       this.options.router.navigate(evt.target.getAttribute('href'), {trigger: true});
+      S.Util.log('USER', 'page-menu', 'click-link', evt.target.getAttribute('href') + " -- " + evt.target.textContent);
     },
 
     onMobileNavClick: function(evt) {
       evt.preventDefault();
       $('.access').toggleClass('expose');
+      S.Util.log('USER', 'page-menu', ($('.access').hasClass('expose') ? 'show' : 'hide') + '-mobile-nav');
+    },
+
+    onAuthNavClick: function(evt) {
+      evt.preventDefault();
+      $('.sign-in-menu').toggleClass('expose');
     }
   });
 
-})(Shareabouts, jQuery, Shareabouts.Util.console);
+}(Shareabouts, jQuery, Shareabouts.Util.console));
