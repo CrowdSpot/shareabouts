@@ -15,6 +15,11 @@ app:
   # Meta description that will show up in Google search results
   meta_description: CrowdSpot is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.
 
+  # When the map loads, existing places will be loaded in chunks. By default,
+  # the size of the chunks will be a reasonable default dictated by the API
+  # server. If you would like to override the chunk size, use this setting:
+  # places_page_size: 100
+
 # Settings for map and layer configs
 map:
   geolocation_enabled: true
@@ -26,75 +31,73 @@ map:
     zoom: 13
     minZoom: 12
     maxZoom: 18
-  base_layer:
-    url: http://{s}.tiles.mapbox.com/v3/aisey.ggk2hf20/{z}/{x}/{y}.png
-    attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-  layers: []
+  layers:
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.ggk2hf20/{z}/{x}/{y}.png
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
 
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
   Bus Spot:
-    default: orange
-    focused: focused
-  Tram Spot:
-    default: blue
-    focused: focused
-  Train Spot:
-    default: green
-    focused: focused
+    label: _(Bus Spot)
+    rules:
+      - condition: '"{{location_type}}" === "Bus Spot"'
+        # Display landmarks as icons
+        
+        icon:
+          iconUrl: /static/css/images/bus.png
+          iconSize: [85, 41]
+          shadowUrl: /static/css/images/master-pin-shadow.png 
+          shadowSize: [42,85]
+          iconAnchor: [42, 42]
+        focus_icon:
+          iconUrl: /static/css/images/marker-focused.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+
+  landmark:
+    label: _(Tram Spot)
+    rules:
+      - condition: '"{{location_type}}" === "Tram Spot"'
+        # Display landmarks as icons
+
+        icon:
+          iconUrl: /static/css/images/tram.png
+          iconSize: [85, 41]
+          shadowUrl: /static/css/images/master-pin-shadow.png 
+          shadowSize: [42,85]
+          iconAnchor: [42, 42]
+        focus_icon:
+          iconUrl: /static/css/images/marker-focused.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+          
+  landmark:
+    label: _(Train Spot)
+    rules:
+      - condition: '"{{location_type}}" === "Train Spot"'
+        # Display landmarks as icons
+
+        icon:
+          iconUrl: /static/css/images/train.png
+          iconSize: [85, 41]
+          shadowUrl: /static/css/images/master-pin-shadow.png 
+          shadowSize: [42,85]
+          iconAnchor: [42, 42]
+        focus_icon:
+          iconUrl: /static/css/images/marker-focused.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]       
+          
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
-place_type_icons:
-  orange:
-    iconUrl: /static/css/images/bus.png
-    shadowUrl: /static/css/images/master-pin-shadow.png
-    iconSize:
-      width: 85
-      height: 41
-    shadowSize:
-      width: 42
-      height: 85
-    iconAnchor:
-      x: 42
-      y: 42
-  blue:
-    iconUrl: /static/css/images/tram.png
-    shadowUrl: /static/css/images/master-pin-shadow.png
-    iconSize:
-      width: 85
-      height: 41
-    shadowSize:
-      width: 42
-      height: 85
-    iconAnchor:
-      x: 42
-      y: 42
-  green:
-    iconUrl: /static/css/images/train.png
-    shadowUrl: /static/css/images/master-pin-shadow.png
-    iconSize:
-      width: 85
-      height: 41
-    shadowSize:
-      width: 42
-      height: 85
-    iconAnchor:
-      x: 42
-      y: 42     
-  focused:
-    iconUrl: /static/css/images/marker-focused.png
-    shadowUrl: /static/css/images/marker-shadow.png
-    iconSize:
-      width: 25
-      height: 41
-    shadowSize:
-      width: 41
-      height: 41
-    iconAnchor:
-      x: 12
-      y: 41
 
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
@@ -104,12 +107,12 @@ activity:
 
 place:
   adding_supported: true
-  add_button_label: Add a Spot
-  action_text: added
-  title: Tell us more...
-  action_text: created
-  anonymous_name: Someone
-  submit_button_label: Submit
+  add_button_label: _(Add a Spot)
+  action_text: _(added)
+  title: _(Tell us more...)
+  action_text: _(created)
+  anonymous_name: _(Someone)
+  submit_button_label: _(Submit)
   items:
     - prompt: "What's here?"
       type: text
@@ -142,7 +145,7 @@ place:
         - key: accept
           value: image/*
       name: location_type    
-    - prompt: Your name or organisation
+    - prompt: Your Name or Organisation
       type: text
       name: submitter_name
       attrs:
@@ -185,8 +188,8 @@ survey:
 support:
   submission_type: support
   submit_btn_text: Support This!
-  action_text: "supported"
-  anonymous_name: Someone
+  action_text: "votes for"
+  anonymous_name: A supporter
 
 pages:
   - title: Welcome
