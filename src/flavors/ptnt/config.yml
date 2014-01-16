@@ -24,7 +24,7 @@ map:
       lat: -37.81361
       lng: 144.96306
     zoom: 12
-    minZoom: 12
+    minZoom: 10
     maxZoom: 18
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/aisey.ggk2hf20/{z}/{x}/{y}.png
