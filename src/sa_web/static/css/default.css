@@ -27,7 +27,7 @@ body {
 }
 body, select, input, textarea {
   color: #555;
-  font-family: "Helvetica Neue", Arial, Helvetica, serif;
+  font-family: "proxima-nova", Arial, Helvetica, serif;
 }
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.25em 0;
@@ -93,7 +93,7 @@ hr {
   display: inline-block;
   *display: inline;
   *zoom: 1;
-  padding: 0.325em 0.625em;
+  padding: 0;
   margin-bottom: 0;
   text-align: center;
   vertical-align: middle;
@@ -113,20 +113,20 @@ hr {
 .btn-primary,
 .btn-primary:visited,
 .btn-primary:link {
-  background-color: #00aaff;
+  background-color: rgb(80,193,91);
   color: #fff;
 }
 .btn-primary:hover {
-  background-color: #007fbf;
+  background-color: #209b07;
 }
 .btn-secondary,
 .btn-secondary:visited,
 .btn-secondary:link {
-  background-color: #ccc;
+  background-color: rgb(80,193,91);
   color: #007fbf;
 }
 .btn-secondary:hover {
-  background-color: #007fbf;
+  background-color: #209b07;
   color: #fff;
 }
 .btn-disabled,
@@ -274,7 +274,7 @@ img {
 #site-title {
   color: #eee;
   font-size: 1em;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Proxima Nova', cursive;
   font-weight: 700;
   text-shadow: 1px -1px 1px rgba(0,0,0,0.5);
   float: left;
@@ -339,7 +339,7 @@ img {
 .user-menu {
 }
 #sign-in-btn {
-  color: #a3c7d9;
+  color: rgba(0,0,0,1);
   font-size: 0.75em;
   text-transform: uppercase;
   text-align: center;
@@ -942,7 +942,7 @@ ul.recent-points {
   text-align: center;
 }
 a.shareabouts-logo {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Proxima Nova', cursive;
   font-weight: bold;
   font-size: 1.325em;
   color: #a3c7d9;
@@ -953,16 +953,6 @@ a.shareabouts-logo:hover {
   color: #fff;
   border-bottom: 1px solid #ccc;
 }
-#powered-by a.openplans-logo {
-  color: #ffb885;
-  font-weight: bold;
-  text-decoration: none;
-}
-#powered-by a.openplans-logo:hover {
-  color: #fff;
-  border-bottom: 1px solid #ccc;
-}
-
 
 /* =Unsupported Browsers
 -------------------------------------------------------------- */
@@ -1237,7 +1227,7 @@ a.close-unsupported-overlay {
     bottom: 0;
     left: 0;
     z-index: 14;
-    padding: 0.25em;
+    padding: 0;
     box-shadow: 0 -0.325em rgba(0,0,0,0.1);
     height: 1.75em;
     -webkit-box-sizing: border-box;

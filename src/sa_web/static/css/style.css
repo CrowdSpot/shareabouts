@@ -53,7 +53,7 @@ body, select, input, textarea {
   /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
   color: #444;
   /* set your base font here, to apply evenly */
-  font-family: "Helvetica Neue", Arial, Helvetica, serif;
+  font-family: "Proxima Nova", Arial, Helvetica, serif;
 }
 /* Headers (h1,h2,etc) have no default font-size or margin,
    you'll want to define those yourself. */
@@ -178,7 +178,7 @@ body {
 
 /* Logo */
 #site-title {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Proxima Nova', cursive;
   font-size: 3em;
   font-weight: bold;
   text-shadow: 1px -1px 0 rgba(0, 0, 0, 0.5);
@@ -967,15 +967,6 @@ ul.recent-points {
   text-decoration: none;
 }
 #powered-by a.shareabouts-logo:hover {
-  color: #fff;
-  border-bottom: 1px solid #ccc;
-}
-#powered-by a.openplans-logo {
-  color: #ffb885;
-  font-weight: bold;
-  text-decoration: none;
-}
-#powered-by a.openplans-logo:hover {
   color: #fff;
   border-bottom: 1px solid #ccc;
 }
