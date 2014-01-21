@@ -100,7 +100,7 @@ hr {
   cursor: pointer;
   color: #007fbf;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: none;
   background-color: #a3c7d9;
   box-shadow: -0.25em 0.25em 0 rgba(0,0,0,0.1);
   font-weight: 600;
@@ -166,7 +166,7 @@ fieldset {
 }
 label {
   font-size: 0.75em;
-  text-transform: uppercase;
+  text-transform: none;
   color: #999;
   margin-right: 0.5em;
 }
@@ -274,7 +274,7 @@ img {
 #site-title {
   color: #eee;
   font-size: 1em;
-  font-family: 'Proxima Nova', cursive;
+  font-family: 'proxima-nova', cursive;
   font-weight: 700;
   text-shadow: 1px -1px 1px rgba(0,0,0,0.5);
   float: left;
@@ -942,7 +942,7 @@ ul.recent-points {
   text-align: center;
 }
 a.shareabouts-logo {
-  font-family: 'Proxima Nova', cursive;
+  font-family: 'proxima-nova', cursive;
   font-weight: bold;
   font-size: 1.325em;
   color: #a3c7d9;
