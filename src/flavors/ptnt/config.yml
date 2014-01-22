@@ -181,6 +181,12 @@ survey:
     - prompt: Your Name
       type: text
       name: submitter_name
+    - prompt: Your email
+      type: text
+      name: private-submitter_email
+      attrs:
+        - key: placeholder
+          value: Kept confidential and used for feedback
 
 support:
   submission_type: support
