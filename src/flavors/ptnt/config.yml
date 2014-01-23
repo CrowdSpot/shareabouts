@@ -167,20 +167,26 @@ survey:
   response_name: comment
   response_plural_name: comments
   action_text: commented on
-  anonymous_name: Someone
+  anonymous_name: A supporter
 
   # Survey form config
   title: Leave a Comment
   form_link_text: Leave a Comment
-  submit_btn_text: Comment
+  submit_btn_text: Submit comment
   items:
     - prompt: Comment
       label: Comment
       type: textarea
       name: comment
+      attrs:
+        - key: placeholder
+          value: Type comment here..
     - prompt: Your Name
       type: text
       name: submitter_name
+      attrs:
+        - key: placeholder
+          value: Type name here..
     - prompt: Your email
       type: text
       name: private-submitter_email
