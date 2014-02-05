@@ -57,6 +57,16 @@ var Shareabouts = Shareabouts || {};
       var $form = this.$('form'),
           attrs = S.Util.getAttrs($form);
 
+      // simple required validation
+      var errors = '';
+      _.each(this.options.surveyConfig.items, function(item) {
+        if (! item.optional && ! attrs[item.name]) {
+          errors = errors + item.prompt + " is required. ";
+        }
+      });
+      if (errors)
+        return alert(errors);
+          
       // Create a model with the attributes from the form
       this.collection.create(attrs);
 

@@ -52,14 +52,14 @@
 
                   <div class="survey-widgets survey-widgets-{{ name }}">
                     {{#is_input}}
-                    <input id="survey-{{ name }}" name="{{ name }}" type="{{ type }}" {{#attrs}} {{ key }}="{{ value }}"{{/attrs}}>
+                    <input id="survey-{{ name }}" name="{{ name }}" type="{{ type }}" {{#attrs}} {{ key }}="{{ value }}"{{/attrs}} {{^optional}}required="true"{{/optional}}>
 
                     {{/is_input}}
                     {{#is_textarea}}
-                    <textarea id="survey-{{ name }}" name="{{ name }}"{{#attrs}} {{ key }}="{{ value }}"{{/attrs}}></textarea>
+                    <textarea id="survey-{{ name }}" name="{{ name }}"{{#attrs}} {{ key }}="{{ value }}"{{/attrs}} {{^optional}}required="true"{{/optional}}></textarea>
                     {{/is_textarea}}
                     {{#is_select}}
-                    <select id="survey-{{ name }}" name="{{ name }}" type="{{ type }}" {{#attrs}} {{ key }}="{{ value }}"{{/attrs}}>
+                    <select id="survey-{{ name }}" name="{{ name }}" type="{{ type }}" {{#attrs}} {{ key }}="{{ value }}"{{/attrs}} {{^optional}}required="true"{{/optional}}>
                       {{# options }}
                         <option value="{{.}}">{{.}}</option>
                       {{/ options }}

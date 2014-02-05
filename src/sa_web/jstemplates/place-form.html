@@ -24,7 +24,7 @@
               {{/is_textarea}}
 
               {{#is_select}}
-              <select id="place-{{ name }}" name="{{ name }}" type="{{ type }}" {{#attrs}} {{ key }}="{{ value }}"{{/attrs}}>
+              <select id="place-{{ name }}" name="{{ name }}" type="{{ type }}" {{#attrs}} {{ key }}="{{ value }}"{{/attrs}} {{^optional}}required="true"{{/optional}}>
                 {{# options }}
                   {{#label}}
                   <option value="{{value}}">{{label}}</option>
