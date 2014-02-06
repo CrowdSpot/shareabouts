@@ -181,6 +181,11 @@ a#nav-bttn:hover {
   background: rgb(246,246,246);
 }
 
+div
+{
+  cursor: move;
+}
+
 
 /* =The Big Button to Add A New Point
 -------------------------------------------------------------- */
