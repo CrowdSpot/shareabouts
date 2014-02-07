@@ -9,9 +9,9 @@ dataset_api_key: YWY1YjMyNzU5YjRiZDljOTQwMGM0Nzhm
 # Settings for the app
 app:
   # HTML Title
-  title: Public Transport Not Traffic
+  title: City Road Master Plan
   # Header name
-  name: Public Transport Not Traffic
+  name: City Road Master Plan
   # Meta description that will show up in Google search results
   meta_description: CrowdSpot is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.
 
@@ -21,11 +21,11 @@ map:
   geolocation_onload: false
   options:
     center:
-      lat: -37.81361
-      lng: 144.96306
-    zoom: 12
+      lat: -37.82476
+      lng: 144.963525
+    zoom: 16
     minZoom: 10
-    maxZoom: 18
+    maxZoom: 19
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/aisey.ggk2hf20/{z}/{x}/{y}.png
     attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
@@ -34,21 +34,18 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  Bus Spot:
-    default: orange
+  Issue Spot:
+    default: issue
     focused: focused
-  Tram Spot:
+  Opportunity Spot:
     default: blue
-    focused: focused
-  Train Spot:
-    default: green
     focused: focused
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
-  orange:
-    iconUrl: /static/css/images/bus.png
+  issue:
+    iconUrl: /static/css/images/firstaid-pin-red.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -59,20 +56,8 @@ place_type_icons:
     iconAnchor:
       x: 42
       y: 42
-  blue:
-    iconUrl: /static/css/images/tram.png
-    shadowUrl: /static/css/images/master-pin-shadow.png
-    iconSize:
-      width: 85
-      height: 41
-    shadowSize:
-      width: 42
-      height: 85
-    iconAnchor:
-      x: 42
-      y: 42
-  green:
-    iconUrl: /static/css/images/train.png
+  opportunity:
+    iconUrl: /static/css/images/tick-pin-green.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -106,7 +91,7 @@ place:
   adding_supported: true
   add_button_label: Add a Spot
   action_text: added
-  title: Tell us more...
+  title: Tell us about your experience of City Road..
   action_text: created
   anonymous_name: Someone
   submit_button_label: Submit
@@ -119,15 +104,14 @@ place:
           value: Station, stop, landmark, etc.
         - key: size
           value: 30
-    - prompt: What transport mode does this spot relate to?
+    - prompt: Is this spot an issue or opportunity?
       type: select
       options:
         - Please choose
-        - Bus Spot
-        - Tram Spot
-        - Train Spot
+        - Issue Spot
+        - Opportunity Spot
       name: location_type
-    - prompt: "What improvements would you like to see here?"
+    - prompt: "Please describe what's happening here?"
       type: textarea
       name: issue
       attrs:
@@ -142,7 +126,52 @@ place:
         - key: accept
           value: image/*
       name: location_type    
-    - prompt: Your name or organisation
+    - prompt: Age
+      type: select
+      options:
+        - Please choose
+        - "< 14"
+        - "15-19"
+        - "20-24"
+        - "25-34"
+        - "35-44"
+        - "45-54"
+        - "55-64"
+        - "65-74"
+        - ">75"
+      name: age   
+    - prompt: Transport mode
+      type: select
+      options:
+        - Please choose
+        - Pedestrian
+        - Bicycle
+        - Public Transport
+        - Car (as driver)
+        - Car (as passenger)
+      name: mode 
+    - prompt: Why are you here?
+      type: select
+      options:
+        - Please choose
+        - Resident
+        - Business owner
+        - Worker
+        - Commuter
+      name: purpose  
+    - prompt: How did this experience make you feel?
+      type: select
+      options:
+        - Please choose
+        - Frustrated
+        - Confused
+        - Angry
+        - Unsafe
+        - Sad
+        - Happy
+        - Neutral
+      name: purpose   
+    - prompt: Your name
       type: text
       name: submitter_name
       attrs:
