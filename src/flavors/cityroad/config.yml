@@ -38,7 +38,7 @@ place_types:
     default: issue
     focused: focused
   Opportunity Spot:
-    default: blue
+    default: opportunity
     focused: focused
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
