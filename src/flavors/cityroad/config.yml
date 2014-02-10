@@ -49,7 +49,7 @@ place_type_icons:
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
-      height: 41
+      height: 42
     shadowSize:
       width: 42
       height: 85
@@ -61,7 +61,7 @@ place_type_icons:
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
-      height: 41
+      height: 42
     shadowSize:
       width: 42
       height: 85
