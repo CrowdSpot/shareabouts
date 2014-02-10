@@ -45,7 +45,7 @@ place_types:
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
   issue:
-    iconUrl: /static/css/images/firstaid-pin-red.png
+    iconUrl: /static/css/images/cross-pin-red.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -113,10 +113,22 @@ place:
       name: location_type
     - prompt: "Please describe what's happening here?"
       type: textarea
-      name: issue
+      name: description
       attrs:
         - key: placeholder
-          value: Type description here...        
+          value: Type description here...         
+    - prompt: How did this experience make you feel?
+      type: select
+      options:
+        - Please choose
+        - Frustrated
+        - Confused
+        - Angry
+        - Unsafe
+        - Sad
+        - Happy
+        - Neutral
+      name: emotion
     - prompt: Add an Image
       inputfile_label: _(Add an Image)      
       type: file
@@ -125,7 +137,26 @@ place:
       attrs:
         - key: accept
           value: image/*
-      name: location_type    
+      name: location_type 
+    - prompt: Why are you here?
+      type: select
+      options:
+        - Please choose
+        - Resident
+        - Business owner
+        - Worker
+        - Commuter
+      name: purpose 
+    - prompt: Transport mode
+      type: select
+      options:
+        - Please choose
+        - Pedestrian
+        - Bicycle
+        - Public Transport
+        - Car (as driver)
+        - Car (as passenger)
+      name: mode     
     - prompt: Age
       type: select
       options:
@@ -140,37 +171,6 @@ place:
         - "65-74"
         - ">75"
       name: age   
-    - prompt: Transport mode
-      type: select
-      options:
-        - Please choose
-        - Pedestrian
-        - Bicycle
-        - Public Transport
-        - Car (as driver)
-        - Car (as passenger)
-      name: mode 
-    - prompt: Why are you here?
-      type: select
-      options:
-        - Please choose
-        - Resident
-        - Business owner
-        - Worker
-        - Commuter
-      name: purpose  
-    - prompt: How did this experience make you feel?
-      type: select
-      options:
-        - Please choose
-        - Frustrated
-        - Confused
-        - Angry
-        - Unsafe
-        - Sad
-        - Happy
-        - Neutral
-      name: purpose   
     - prompt: Your name
       type: text
       name: submitter_name
@@ -242,8 +242,4 @@ pages:
   - title: "FAQS"
     slug: faqs
     name: faqs  
-
-  - title: "Contact"
-    slug: contact
-    name: features
 
