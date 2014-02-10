@@ -58,7 +58,7 @@ a:hover {
 #site-header a:hover {
 }
 
-@media only screen and (min-width: 1155px) {
+@media only screen and (min-width: 1050px) {
   #pages-nav-container:before {
     content: '';
     display: block;
@@ -80,7 +80,7 @@ a:hover {
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
 #site-title {
-  background: url('images/"xxxx".jpg') no-repeat
+  background: url('images/cityroad-320x55.png') no-repeat
 center;
   background-size: contain;
   width: 250px;
@@ -269,6 +269,10 @@ a.reply-link:hover {
   display: none;
 }
 
+.place-value-age {
+  display: none;
+}
+
 
 /* =Voting & Social Promotion
 -------------------------------------------------------------- */
@@ -277,7 +281,7 @@ a.reply-link:hover {
 }
 
 .promotion .sharing::before {
-  content: 'Share #PTNotTraffic:';
+  content: 'Share #CityRoad:';
   float: left;
   margin-right: 10px;
   
@@ -394,8 +398,23 @@ center center;
 /* =Individual Pages
 -------------------------------------------------------------- */
 
-.place-value-issue:before {
-  content: "What's happening here: ";
+.place-value-description:before {
+  content: "Description: ";
+  font-weight: bold;
+}
+
+.place-value-purpose:before {
+  content: "Why you're here: ";
+  font-weight: bold;
+}
+
+.place-value-emotion:before {
+  content: "How it makes you feel: ";
+  font-weight: bold;
+}
+
+.place-value-mode:before {
+  content: "You're transport mode: ";
   font-weight: bold;
 }
 
