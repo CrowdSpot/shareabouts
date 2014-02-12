@@ -101,7 +101,7 @@ place:
       attrs:
         - key: placeholder
           value: Type description here...   
-    - prompt: Is this a negative or positive experience?
+    - prompt: Was this a negative or positive experience?
       type: select
       options:
         - Please choose
