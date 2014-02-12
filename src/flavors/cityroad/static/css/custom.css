@@ -42,7 +42,7 @@ a:hover {
   
   background: rgb(246,246,246);
   color: #000000;
-  border-top: rgb(226,0,68) 6px solid;
+  border-top: rgb(226,0,68) 3px solid;
      -moz-box-shadow: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -403,21 +403,16 @@ center center;
 }
 
 .place-value-purpose:before {
-  content: "Why you're here: ";
+  content: "I am a: ";
   font-weight: bold;
 }
 
 .place-value-emotion:before {
-  content: "How it makes you feel: ";
+  content: "This makes me feel: ";
   font-weight: bold;
 }
 
 .place-value-mode:before {
-  content: "You're transport mode: ";
-  font-weight: bold;
-}
-
-.place-value-solution:before {
-  content: "What needs to be done: ";
+  content: "I use City Road as a: ";
   font-weight: bold;
 }

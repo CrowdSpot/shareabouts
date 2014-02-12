@@ -28,23 +28,23 @@ map:
     maxZoom: 19
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/aisey.ggk2hf20/{z}/{x}/{y}.png
-    attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+    attribution: '&copy; Visualvoice contributors, CC-BY-SA'
   layers: []
 
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  Issue Spot:
-    default: issue
+  Negative:
+    default: negative
     focused: focused
-  Opportunity Spot:
-    default: opportunity
+  Positive:
+    default: positive
     focused: focused
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
-  issue:
+  negative:
     iconUrl: /static/css/images/cross-pin-red.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
@@ -56,7 +56,7 @@ place_type_icons:
     iconAnchor:
       x: 42
       y: 42
-  opportunity:
+  positive:
     iconUrl: /static/css/images/tick-pin-green.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
@@ -69,7 +69,7 @@ place_type_icons:
       x: 42
       y: 42     
   focused:
-    iconUrl: /static/css/images/marker-focused.png
+    iconUrl: /static/css/images/marker-focused-orange.png
     shadowUrl: /static/css/images/marker-shadow.png
     iconSize:
       width: 25
@@ -96,71 +96,62 @@ place:
   anonymous_name: Someone
   submit_button_label: Submit
   items:
-    - prompt: "What's here?"
-      type: text
-      name: name
-      attrs:
-        - key: placeholder
-          value: Station, stop, landmark, etc.
-        - key: size
-          value: 30
-    - prompt: Is this spot an issue or opportunity?
-      type: select
-      options:
-        - Please choose
-        - Issue Spot
-        - Opportunity Spot
-      name: location_type
-    - prompt: "Please describe what's happening here?"
-      type: textarea
+    - type: textarea
       name: description
       attrs:
         - key: placeholder
-          value: Type description here...         
-    - prompt: How did this experience make you feel?
+          value: Type description here...   
+    - prompt: Is this a negative or positive experience?
       type: select
       options:
         - Please choose
-        - Frustrated
-        - Confused
-        - Angry
-        - Unsafe
+        - Negative
+        - Positive
+      name: location_type      
+    - prompt: How did it make you feel? 
+      type: select
+      options:
+        - "Please choose (Optional)"
         - Sad
         - Happy
+        - Angry
+        - Calm
+        - Unsafe
+        - Safe
+        - Frustrated
+        - Relaxed
         - Neutral
-      name: emotion
-    - prompt: Add an Image
-      inputfile_label: _(Add an Image)      
-      type: file
-      name: my_image
-      optional: true
-      attrs:
-        - key: accept
-          value: image/*
-      name: location_type 
-    - prompt: Why are you here?
+      name: emotion 
+    - prompt: I was a... 
       type: select
       options:
-        - Please choose
-        - Resident
-        - Business owner
-        - Worker
-        - Commuter
-      name: purpose 
-    - prompt: Transport mode
-      type: select
-      options:
-        - Please choose
+        - "Please choose (Optional)"
         - Pedestrian
-        - Bicycle
-        - Public Transport
-        - Car (as driver)
-        - Car (as passenger)
-      name: mode     
-    - prompt: Age
+        - Bike rider
+        - Public transport use
+        - Motorcyclist
+        - Driver (private vehicle)
+        - Driver (work)
+        - Car Passenger
+        - Other
+      name: mode  
+    - prompt: I am a... 
       type: select
       options:
-        - Please choose
+        - "Please choose (Optional)"
+        - Resident
+        - Worker
+        - Business owner
+        - Commuter
+        - Person passing through
+        - Student
+        - Visitor
+        - Tourist
+      name: purpose 
+    - prompt: Age 
+      type: select
+      options:
+        - "Please choose (Optional)"
         - "< 14"
         - "15-19"
         - "20-24"
@@ -170,7 +161,16 @@ place:
         - "55-64"
         - "65-74"
         - ">75"
-      name: age   
+      name: age
+    - prompt: Add an Image
+      inputfile_label: _(Add an Image)      
+      type: file
+      name: my_image
+      optional: true
+      attrs:
+        - key: accept
+          value: image/*
+      name: location_type   
     - prompt: Your name
       type: text
       name: submitter_name
@@ -215,13 +215,13 @@ survey:
       name: submitter_name
       attrs:
         - key: placeholder
-          value: Type name here..
+          value: Your name will be visible
     - prompt: Your email
       type: text
       name: private-submitter_email
       attrs:
         - key: placeholder
-          value: Kept confidential and used for feedback
+          value: Your email will be kept confidential and used for feedback
 
 support:
   submission_type: support
