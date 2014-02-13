@@ -126,6 +126,7 @@ place:
     - prompt: If other, please enter 
       type: text
       name: emotionother
+      optional: true
       attrs:
         - key: placeholder
           value: Type here..
