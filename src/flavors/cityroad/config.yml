@@ -176,7 +176,7 @@ place:
       name: submitter_name
       attrs:
         - key: placeholder
-          value: Type name here
+          value: Your name will be visible
         - key: size
           value: 30
     - prompt: Your email
