@@ -282,6 +282,10 @@ a.reply-link:hover {
   display: none;
 }
 
+.place-value-emotionother {
+  display: none;
+}
+
 
 /* =Voting & Social Promotion
 -------------------------------------------------------------- */

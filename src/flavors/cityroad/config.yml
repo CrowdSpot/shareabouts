@@ -34,10 +34,10 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  negative experience:
+  Negative experience:
     default: negative
     focused: focused
-  positive experience:
+  Positive experience:
     default: positive
     focused: focused
 
@@ -45,7 +45,7 @@ place_types:
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
   negative:
-    iconUrl: /static/css/images/cross-pin-red.png
+    iconUrl: /static/css/images/sad-pin.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -57,7 +57,7 @@ place_type_icons:
       x: 42
       y: 42
   positive:
-    iconUrl: /static/css/images/tick-pin-green.png
+    iconUrl: /static/css/images/happy-pin.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -105,8 +105,8 @@ place:
       type: select
       options:
         - Please choose
-        - negative experience
-        - positive experience
+        - Negative experience
+        - Positive experience
       name: location_type      
     - prompt: How did it make you feel? 
       type: select
@@ -123,6 +123,14 @@ place:
         - Neutral
         - Other
       name: emotion 
+    - prompt: If other, please enter 
+      type: text
+      name: emotionother
+      attrs:
+        - key: placeholder
+          value: Type here..
+        - key: size
+          value: 30
     - prompt: I was a... 
       type: select
       options:
@@ -228,8 +236,8 @@ survey:
 support:
   submission_type: support
   submit_btn_text: Support this!
-  action_text: "voted for"
-  anonymous_name: A supporter
+  action_text: "supported"
+  anonymous_name: Someone
 
 pages:
   - title: Welcome
