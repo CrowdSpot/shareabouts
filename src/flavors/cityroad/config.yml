@@ -91,7 +91,7 @@ place:
   adding_supported: true
   add_button_label: Add a Spot
   action_text: added
-  title: Tell us about your experience of City Road..
+  title: Tell us about your experience of City Road.
   action_text: created
   anonymous_name: Someone
   submit_button_label: Submit
@@ -111,7 +111,7 @@ place:
     - prompt: How did it make you feel? 
       type: select
       options:
-        - "Please choose (Optional)"
+        - Please choose
         - Sad
         - Happy
         - Angry
@@ -121,11 +121,12 @@ place:
         - Frustrated
         - Relaxed
         - Neutral
+        - Other
       name: emotion 
     - prompt: I was a... 
       type: select
       options:
-        - "Please choose (Optional)"
+        - Please choose
         - Pedestrian
         - Bike rider
         - Public transport user
@@ -138,7 +139,7 @@ place:
     - prompt: I am a... 
       type: select
       options:
-        - "Please choose (Optional)"
+        - Please choose
         - Resident
         - Worker
         - Business owner
@@ -152,7 +153,7 @@ place:
     - prompt: Age 
       type: select
       options:
-        - "Please choose (Optional)"
+        - Please choose
         - "< 14"
         - "15-19"
         - "20-24"
