@@ -399,7 +399,7 @@ center center;
 -------------------------------------------------------------- */
 
 .place-value-issue:before {
-  content: "What's happening here: ";
+  content: "Improvements needed here: ";
   font-weight: bold;
 }
 
