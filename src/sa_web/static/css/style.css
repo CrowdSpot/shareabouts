@@ -515,7 +515,7 @@ a.add-place:hover + #centerpoint,
   z-index: 11;
 }
 
-@media only screen and (min-width: 675px) {
+@media only screen and (min-width: 610px) {
   #instructions.show {
     display: block;
   }
@@ -1045,7 +1045,7 @@ ul.recent-points {
     content: "";
   }
 }
-@media only screen and (min-width: 675px) { /* menu is visible */
+@media only screen and (min-width: 610px) { /* menu is visible */
   a.add-place {
     padding: 0.6em 1em;
     margin-bottom: 0;

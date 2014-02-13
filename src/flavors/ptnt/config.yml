@@ -226,7 +226,3 @@ pages:
     slug: faqs
     name: faqs  
 
-  - title: "Contact"
-    slug: contact
-    name: features
-
