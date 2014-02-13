@@ -48,10 +48,10 @@ place_types:
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
   orange:
-    iconUrl: /static/css/images/bus.png
+    iconUrl: /static/css/images/bus1.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
-      width: 85
+      width: 29
       height: 41
     shadowSize:
       width: 42
@@ -60,10 +60,10 @@ place_type_icons:
       x: 42
       y: 42
   blue:
-    iconUrl: /static/css/images/tram.png
+    iconUrl: /static/css/images/tram1.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
-      width: 85
+      width: 29
       height: 41
     shadowSize:
       width: 42
@@ -72,10 +72,10 @@ place_type_icons:
       x: 42
       y: 42
   green:
-    iconUrl: /static/css/images/train.png
+    iconUrl: /static/css/images/train1.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
-      width: 85
+      width: 29
       height: 41
     shadowSize:
       width: 42
