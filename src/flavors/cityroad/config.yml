@@ -128,7 +128,7 @@ place:
         - "Please choose (Optional)"
         - Pedestrian
         - Bike rider
-        - Public transport use
+        - Public transport user
         - Motorcyclist
         - Driver (private vehicle)
         - Driver (work)
@@ -147,6 +147,7 @@ place:
         - Student
         - Visitor
         - Tourist
+        - Other
       name: purpose 
     - prompt: Age 
       type: select
