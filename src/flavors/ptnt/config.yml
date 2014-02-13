@@ -132,7 +132,19 @@ place:
       name: issue
       attrs:
         - key: placeholder
-          value: Type description here...        
+          value: Type description here...
+    - prompt: What category is this transport improvement?
+      type: select
+      options:
+        - Please choose
+        - Access
+        - Frequency
+        - Route
+        - Safety
+        - Infrastructure
+        - Connections
+        - Speed
+      name: category        
     - prompt: Add an Image
       inputfile_label: _(Add an Image)      
       type: file
