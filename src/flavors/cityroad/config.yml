@@ -133,7 +133,7 @@ place:
         - Motorcyclist
         - Driver (private vehicle)
         - Driver (work)
-        - Car Passenger
+        - Car passenger
         - Other
       name: mode  
     - prompt: I am a... 
