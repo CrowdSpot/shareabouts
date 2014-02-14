@@ -29,7 +29,7 @@ map:
     maxBounds: [ [-37.835649, 144.940389], [-37.806834, 144.99502] ]
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/visualvoice.42c495oo/{z}/{x}/{y}.png
-    attribution: '&copy; Map by Visualvoice.com.au'
+    attribution: '&copy; Map by Visualvoice.com.au and selected data &copy City of Melbourne'
   layers: []
 
 # The keys show up in the dropdown list when you are adding a new place
