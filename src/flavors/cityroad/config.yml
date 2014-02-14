@@ -21,14 +21,15 @@ map:
   geolocation_onload: false
   options:
     center:
-      lat: -37.82476
-      lng: 144.963525
+      lat: -37.824302
+      lng: 144.96463
     zoom: 16
     minZoom: 10
     maxZoom: 19
+    maxBounds: [ [-37.835649, 144.940389], [-37.806834, 144.99502] ]
   base_layer:
-    url: http://{s}.tiles.mapbox.com/v3/aisey.ggk2hf20/{z}/{x}/{y}.png
-    attribution: '&copy; Visualvoice contributors, CC-BY-SA'
+    url: http://{s}.tiles.mapbox.com/v3/visualvoice.42c495oo/{z}/{x}/{y}.png
+    attribution: '&copy; May by Visualvoice.com.au, CC-BY-SA'
   layers: []
 
 # The keys show up in the dropdown list when you are adding a new place
