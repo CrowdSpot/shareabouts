@@ -58,13 +58,11 @@ a:hover {
 #site-header a:hover {
 }
 
-@media only screen and (min-width: 580px) and (max-width: 660px) {
-  #site-header {
-    display: none;
-  }
-  #map-container {
-	  top: 0;
-  }
+#site-header {
+display: none;
+}
+#map-container, #ticker {
+  top: 0;
 }
 
 @media only screen and (min-width: 1050px) {
