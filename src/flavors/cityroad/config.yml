@@ -28,7 +28,7 @@ map:
     maxZoom: 19
     maxBounds: [ [-37.835649, 144.940389], [-37.812462, 144.990085] ]
   base_layer:
-    url: http://{s}.tiles.mapbox.com/v3/visualvoice.42c495oo/{z}/{x}/{y}.png
+    url: http://{s}.tiles.mapbox.com/v3/visualvoice.h96j89bl/{z}/{x}/{y}.png
     attribution: '&copy; Map by Visualvoice.com.au and selected data &copy City of Melbourne'
     maxZoom: 19
 
@@ -222,7 +222,7 @@ survey:
       attrs:
         - key: placeholder
           value: Type comment here..
-    - prompt: Your Name
+    - prompt: Your Name (will be visible)
       type: text
       name: submitter_name
       attrs:
