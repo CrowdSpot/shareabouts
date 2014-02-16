@@ -222,7 +222,7 @@ survey:
       attrs:
         - key: placeholder
           value: Type comment here..
-    - prompt: Your Name (will be visible)
+    - prompt: Your Name (name will be visible)
       type: text
       name: submitter_name
       attrs:
