@@ -183,7 +183,7 @@ place:
         - key: accept
           value: image/*
       name: location_type   
-    - prompt: Your name
+    - prompt: Your name (will be visible)
       type: text
       name: submitter_name
       attrs:
@@ -222,7 +222,7 @@ survey:
       attrs:
         - key: placeholder
           value: Type comment here..
-    - prompt: Your Name (name will be visible)
+    - prompt: Your Name (will be visible)
       type: text
       name: submitter_name
       attrs:
