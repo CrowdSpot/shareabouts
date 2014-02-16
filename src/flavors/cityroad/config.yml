@@ -26,7 +26,7 @@ map:
     zoom: 16
     minZoom: 16
     maxZoom: 19
-    maxBounds: [ [-37.831107, 144.944509], [-37.814192, 144.989897] ]
+    maxBounds: [ [-37.835649, 144.940389], [-37.812462, 144.990085] ]
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/visualvoice.h96j89bl/{z}/{x}/{y}.png
     attribution: '&copy; Map by Visualvoice.com.au and selected data &copy City of Melbourne'
