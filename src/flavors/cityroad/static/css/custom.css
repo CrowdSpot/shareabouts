@@ -58,15 +58,6 @@ a:hover {
 #site-header a:hover {
 }
 
-@media only screen and (min-width: 580px) and (max-width: 660px) {
-  #site-header {
-    display: none;
-  }
-  #map-container {
-	  top: 0;
-  }
-}
-
 @media only screen and (min-width: 1050px) {
   #pages-nav-container:before {
     content: '';
@@ -93,7 +84,7 @@ a:hover {
   background: url('XXXX') no-repeat
 center;
   background-size: contain;
-  width: 250px;
+  width: 125px;
   text-indent: -133337px;
 }
 
