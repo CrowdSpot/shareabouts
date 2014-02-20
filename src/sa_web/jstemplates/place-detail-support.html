@@ -3,4 +3,6 @@
       <input type="hidden" name="visible" value="true">
       <input type="checkbox" id="support"{{# is_supporting }} checked="checked"{{/ is_supporting }}>
       <label for="support"><span class="support-count">{{ count }}</span> {{ support_config.submit_btn_text }}</label>
+      <!--PLACES-SUPPORT-HACK-->
+      <input type="text" id="email_address" placeholder="Enter your email...">
     </form>
