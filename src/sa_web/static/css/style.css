@@ -772,7 +772,8 @@ textarea {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  /* Need this for the email address field to work in chrome */
+  /*height: 100%;*/
   opacity: 0;
   -ms-filter: "alpha(opacity=0)";
   zoom: 1;
