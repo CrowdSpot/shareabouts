@@ -70,7 +70,7 @@ place_type_icons:
       x: 42
       y: 42     
   focused:
-    iconUrl: /static/css/images/marker-focused-orange.png
+    iconUrl: /static/css/images/marker-focused-yellow.png
     shadowUrl: /static/css/images/marker-shadow.png
     iconSize:
       width: 25

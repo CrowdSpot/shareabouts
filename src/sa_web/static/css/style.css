@@ -489,7 +489,7 @@ a.add-place:hover + #centerpoint,
   display: block;
   width: 25px;
   height: 41px;
-  background: transparent url(images/marker-plus-orange.png) 0 0 no-repeat scroll;
+  background: transparent url(images/marker-plus-yellow.png) 0 0 no-repeat scroll;
   position: relative;
   top: 3px;
   -webkit-transition: top 0.4s ease;
