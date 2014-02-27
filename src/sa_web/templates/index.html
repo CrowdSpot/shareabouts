@@ -149,7 +149,7 @@
       // Check official browser support.
       var userAgent = {{ user_agent_json|safe }};
 
-      if (!Shareabouts.Util.isSupported(userAgent)) {
+      if (userAgent.browser && !Shareabouts.Util.isSupported(userAgent)) {
         var userAgentData = userAgent,
             $unsupportedEl = $('.unsupported-overlay'),
             unsupportedHtml;
