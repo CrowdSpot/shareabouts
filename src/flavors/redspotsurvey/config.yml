@@ -21,9 +21,9 @@ map:
   geolocation_onload: false
   options:
     center:
-      lat: -37.471043
-      lng: 144.996132
-    zoom: 8
+      lat: -37.815141
+      lng: 144.962269
+    zoom: 13
     minZoom: 8
     maxZoom: 17
   base_layer:
@@ -34,9 +34,12 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  RedSpot:
+  Red:
     default: red
     focused: focused
+  Blue:
+    default: blue
+    focused: focused   
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
@@ -54,7 +57,7 @@ place_type_icons:
       x: 42
       y: 42
   blue:
-    iconUrl: /static/css/images/bike-pin-red.png
+    iconUrl: /static/css/images/master-pin-blue.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -105,6 +108,13 @@ place:
   anonymous_name: Someone
   submit_button_label: Submit
   items:
+    - prompt: Red or Blue
+      type: select
+      options:
+        - Please choose
+        - Red
+        - Blue
+      name: location_type  
     - prompt: 1. I generally travel through the RedSpot by
       type: select
       options:
