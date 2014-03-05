@@ -34,11 +34,11 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  Bike Spot:
-    default: red
-    focused: focused
   New Spot:
     default: blue
+    focused: focused
+  Bike Spot:
+    default: red
     focused: focused
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
@@ -114,9 +114,8 @@ place:
     - prompt: What transport mode does this spot relate to?
       type: select
       options:
-        - Please choose
-        - Bike Spot
         - New Spot
+        - Bike Spot
       name: location_type
     - prompt: "I'd primarily use this for..."
       type: select
