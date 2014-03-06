@@ -62,9 +62,9 @@ a:hover {
   #pages-nav-container:before {
     content: '';
     display: block;
-    background: transparent url('images/XXXX') no-repeat center;
+    background: transparent url('images/copp_logo60x60.png') no-repeat center;
     float: right;
-    width: 256px;
+    width: 60px;
     height: 60px;
     margin-top: 5px;
   }
@@ -273,6 +273,9 @@ a.reply-link:hover {
   display: none;
 }
 
+.place-form select[name=location_type] {
+  display: none;
+}
 
 /* =Voting & Social Promotion
 -------------------------------------------------------------- */

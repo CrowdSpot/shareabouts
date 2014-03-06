@@ -26,6 +26,7 @@ map:
     zoom: 14
     minZoom: 13
     maxZoom: 19
+    maxBounds: [ [-37.912513, 144.868416], [-37.807478, 145.060545] ]
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/aisey.h00hp8mh/{z}/{x}/{y}.png
     attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
@@ -102,7 +103,7 @@ place:
       optional: false
       attrs:
         - key: placeholder
-          value: Road, intersection, landmarl, etc.
+          value: Road, intersection, landmark, etc.
         - key: size
           value: 30 
     - prompt: "Why do you suggest this location?"
@@ -111,13 +112,13 @@ place:
       attrs:
         - key: placeholder
           value: Type description here... 
-    - prompt: What transport mode does this spot relate to?
+    - prompt: 
       type: select
       options:
         - New Spot
         - Bike Spot
       name: location_type
-    - prompt: "I'd primarily use this for..."
+    - prompt: "I'd primarily use this station for..."
       type: select
       options:
         - Please choose
@@ -126,23 +127,32 @@ place:
         - Shopping
         - Social
         - All of the above
-      name: purpose          
+      name: purpose
+    - prompt: "Which of the following most closely applies to you?"
+      type: select
+      options:
+        - Please choose
+        - I live in the City of Port Phillip
+        - I work in the City of Port Phillip
+        - I visit the City of Port Phillip
+        - Other
+      name: purpose            
     - prompt: Your name
       optional: true
       type: text
       name: submitter_name
       attrs:
         - key: placeholder
-          value: Type name here
+          value: Will be visible
         - key: size
           value: 30
-    - prompt: Your email
+    - prompt: Your email (used for feedback)
       optional: true
       type: text
       name: private-submitter_email
       attrs:
         - key: placeholder
-          value: Your email will be kept confidential
+          value: Kept confidential and used for feedback
         - key: size
           value: 30             
 
@@ -192,6 +202,10 @@ pages:
     slug: welcome
     name: overview
     start_page: true
+    
+  - title: Tips
+    slug: features
+    name: features
     
   - title: "FAQS"
     slug: faqs
