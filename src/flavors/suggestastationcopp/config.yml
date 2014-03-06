@@ -203,7 +203,7 @@ pages:
     name: overview
     start_page: true
     
-  - title: Tips
+  - title: Location Tips
     slug: features
     name: features
     
