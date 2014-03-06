@@ -136,7 +136,7 @@ place:
         - I work in the City of Port Phillip
         - I visit the City of Port Phillip
         - Other
-      name: purpose            
+      name: origin            
     - prompt: Your name
       optional: true
       type: text
@@ -180,12 +180,14 @@ survey:
           value: Type comment here..
     - prompt: Your Name
       type: text
+      optional: true
       name: submitter_name
       attrs:
         - key: placeholder
           value: Type name here..
     - prompt: Your email
       type: text
+      optional: true
       name: private-submitter_email
       attrs:
         - key: placeholder
