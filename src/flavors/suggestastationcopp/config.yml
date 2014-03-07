@@ -35,18 +35,18 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  New Spot:
-    default: blue
+  Station Suggestion:
+    default: orange
     focused: focused
   Bike Spot:
-    default: red
+    default: blue
     focused: focused
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
-  red:
-    iconUrl: /static/css/images/master-pin-red.png
+  orange:
+    iconUrl: /static/css/images/bike-orange.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -58,7 +58,7 @@ place_type_icons:
       x: 42
       y: 42
   blue:
-    iconUrl: /static/css/images/master-pin-blue.png
+    iconUrl: /static/css/images/bike-blue.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -115,7 +115,7 @@ place:
     - prompt: 
       type: select
       options:
-        - New Spot
+        - Station Suggestion
         - Bike Spot
       name: location_type
     - prompt: "I'd primarily use this station for..."
