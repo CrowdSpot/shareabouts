@@ -1,0 +1,240 @@
+# The Shareabouts API dataset username & name used by this map.
+# You MUST change this after creating a dataset.
+api_root: http://localhost:8001/api/v1/
+dataset: tom/bikespot
+
+# And the associated API key.
+dataset_api_key: YWY1YjMyNzU5YjRiZDljOTQwMGM0Nzhm
+
+# Settings for the app
+app:
+  # HTML Title
+  title: Cycle Stories
+  # Header name
+  name: Cycle Stories
+  # Meta description that will show up in Google search results
+  meta_description: CrowdSpot is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.
+
+# Settings for map and layer configs
+map:
+  geolocation_enabled: true
+  geolocation_onload: false
+  options:
+    center:
+      lat: -37.81361
+      lng: 144.96306
+    zoom: 14
+    minZoom: 5
+    maxZoom: 20
+    maxBounds: [ [-38.069717, 144.390564], [-37.516262, 145.415039] ]
+  base_layer:
+    url: http://{s}.tiles.mapbox.com/v3/aisey.map-u8fegfjt/{z}/{x}/{y}.png
+    attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+  layers: []
+
+# The keys show up in the dropdown list when you are adding a new place
+# The values map the place type to map icons (defined below).
+place_types:
+  Crash Spot:
+    default: red
+    focused: focused
+  Safe Riding Spot:
+    default: green
+    focused: focused
+
+# Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
+# for documention of each property. Any omitted property will be undefined.
+place_type_icons:
+  red:
+    iconUrl: /static/css/images/bike-pin-red.png
+    shadowUrl: /static/css/images/master-pin-shadow.png
+    iconSize:
+      width: 85
+      height: 41
+    shadowSize:
+      width: 42
+      height: 85
+    iconAnchor:
+      x: 42
+      y: 42
+  green:
+    iconUrl: /static/css/images/tick-pin-green.png
+    shadowUrl: /static/css/images/master-pin-shadow.png
+    iconSize:
+      width: 85
+      height: 41
+    shadowSize:
+      width: 42
+      height: 85
+    iconAnchor:
+      x: 42
+      y: 42
+  focused:
+    iconUrl: /static/css/images/marker-focused.png
+    shadowUrl: /static/css/images/marker-shadow.png
+    iconSize:
+      width: 25
+      height: 41
+    shadowSize:
+      width: 41
+      height: 41
+    iconAnchor:
+      x: 12
+      y: 41
+
+activity:
+  # Optional. Activity is supported by default. Set to false to disable.
+  enabled: true
+  # How often to refresh the activity list, in milliseconds.
+  interval: 5000
+
+place:
+  adding_supported: true
+  add_button_label: Add a Spot
+  action_text: added
+  title: Tell us about your bike crash story or safe riding spot...
+  action_text: created
+  anonymous_name: Someone
+  submit_button_label: Submit
+  items:
+    - prompt: Spot Type
+      type: select
+      options:
+        - Crash Spot
+        - Safe Riding Spot
+      name: location_type
+    - prompt: If a Crash Spot, what was the main cause?
+      type: select
+      options:
+        - ...
+        - Inadequate infrastructure
+        - Motorist fault
+        - Pedestrian fault
+        - Other bicyclist fault 
+        - My own fault
+      name: cause
+    - prompt: If a Crash Spot, how severe was it?
+      type: select
+      options:
+        - ...
+        - Minor (could ride on)
+        - Serious (medical attention required)
+        - Major (hospitalised)
+      name: severity
+    - prompt: What year was this crash?
+      type: select
+      options:
+        - ...
+        - 2014
+        - 2013
+        - 2012
+        - 2011
+        - 2010
+        - 2009
+        - 2008
+        - 2007
+        - 2006
+        - 2005
+        - 2004
+        - 2003
+        - 2002
+        - Before 2002 
+      name: year
+    - prompt: Tell us more...
+      type: textarea
+      name: description
+      optional: True
+      attrs:
+        - key: placeholder
+          value: 
+    - prompt: Add an Image
+      inputfile_label: _(Add an Image)      
+      type: file
+      name: my_image
+      optional: true
+      attrs:
+        - key: accept
+          value: image/*
+      name: location_type 
+    - prompt: First Name
+      type: text
+      name: submitter_name
+      attrs:
+        - key: placeholder
+          value: Type first name here...
+        - key: size
+          value: 30
+    - prompt: Last Name
+      type: text
+      name: private-last_name
+      optional: true
+      attrs:
+        - key: placeholder
+          value: Type last name here...
+        - key: size
+          value: 30      
+    - prompt: Your Email
+      type: text
+      name: private-submitter_email
+      attrs:
+        - key: placeholder
+          value: Kept confidential and used for feedback
+        - key: size
+          value: 30
+    - prompt: Are you willing to be contacted by The Age about your story?
+      name: private-can_contact
+      type: select
+      options:
+        - Yes please
+        - No thanks
+
+survey:
+  submission_type: comments
+
+  # Response display config
+  show_responses: true
+  response_name: comment
+  response_plural_name: comments
+  action_text: commented on
+  anonymous_name: Someone
+
+  # Survey form config
+  title: Leave a Comment
+  form_link_text: Leave a Comment
+  submit_btn_text: Submit Comment
+  items:
+    - prompt: Comment
+      label: Comment
+      type: textarea
+      name: comment
+    - prompt: Your Name
+      type: text
+      name: submitter_name
+    - prompt: Your email (optional)
+      type: text
+      name: private-submitter_email
+      attrs:
+        - key: placeholder
+          value: Kept confidential and used for feedback
+
+support:
+  submission_type: support
+  submit_btn_text: Crashed at this spot
+  action_text: "also crashed at this spot"
+  anonymous_name: Someone
+
+pages:
+  - title: Welcome
+    slug: welcome
+    name: overview
+    start_page: true
+
+  - title: "FAQs"
+    slug: faqs
+    name: features
+  
+  - title: "Contact"
+    slug: contact
+    name: why
+
+
