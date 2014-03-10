@@ -121,6 +121,14 @@ place:
         - Serious (medical attention required)
         - Major (hospitalised)
       name: severity
+    - prompt: If a Crash Spot, was it ever reported to police or a hospital?
+      type: select
+      options:
+        - ...
+        - "Yes"
+        - "No"
+        - Not sure
+      name: reported   
     - prompt: Tell us more...
       type: textarea
       name: description

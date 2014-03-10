@@ -281,6 +281,10 @@ a.reply-link:hover {
   display: none;
 }
 
+.response-value-reported {
+  display: none;
+}
+
 /* =Thank you message
 -------------------------------------------------------------- */
 .thanks {
