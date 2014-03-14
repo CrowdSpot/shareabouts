@@ -9,9 +9,9 @@ dataset_api_key: YWY1YjMyNzU5YjRiZDljOTQwMGM0Nzhm
 # Settings for the app
 app:
   # HTML Title
-  title: Suggest a Station
+  title: Greenlight
   # Header name
-  name: Suggest a Station
+  name: Greenlight
   # Meta description that will show up in Google search results
   meta_description: CrowdSpot is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.
 
@@ -127,10 +127,10 @@ place:
       name: issue
     - prompt: "Please share anything additional about this crossing"
       type: textarea
-      name: issue
+      name: description
       attrs:
         - key: placeholder
-          value: Type description here...      
+          value: Type description here...          
     - prompt: "I primarily use this crossing for..."
       type: select
       options:
