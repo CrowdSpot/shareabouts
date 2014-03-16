@@ -273,6 +273,10 @@ a.reply-link:hover {
   display: none;
 }
 
+.place-form select[name=location_type] {
+  display: none;
+}
+
 /* =Voting & Social Promotion
 -------------------------------------------------------------- */
 .promotion {
@@ -396,6 +400,11 @@ center center;
 }
 /* =Individual Pages
 -------------------------------------------------------------- */
+
+.place-value-issue:before {
+  content: "Main issue at this crossing: ";
+  font-weight: bold;
+}
 
 .place-value-purpose:before {
   content: "I'd use this station for: ";
