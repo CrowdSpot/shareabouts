@@ -45,7 +45,7 @@ place_types:
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
-  orange:
+  green:
     iconUrl: /static/css/images/master-pin-green.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
