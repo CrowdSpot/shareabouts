@@ -92,7 +92,7 @@ place:
   adding_supported: true
   add_button_label: Add a Spot
   action_text: added
-  title: Tell us more...
+  title: Where do you find it hard to cross the street?
   action_text: created
   anonymous_name: Someone
   submit_button_label: Submit
@@ -112,44 +112,13 @@ place:
         - Greenlight Spot
         - Feedback Spot
       name: location_type
-    - prompt: "What is the main issue at this crossing?"
-      type: select
-      options:
-        - Please choose
-        - Waiting too long for the greenman
-        - The greenman signal is not long enough to cross
-        - The crossing is in the wrong spot
-        - There are trip hazards 
-        - Does not comply with the Disability Discrimination Act
-        - The pedestrian waiting area is too small
-        - When crossing, pedestrians come into conflict with other vehicles
-        - Other
-      name: issue
     - prompt: "Please share anything additional about this crossing"
       type: textarea
+      optional: true
       name: description
       attrs:
         - key: placeholder
-          value: Type description here...          
-    - prompt: "I primarily use this crossing for..."
-      type: select
-      options:
-        - Please choose
-        - Work
-        - School
-        - Shopping
-        - Social
-        - All of the above
-      name: purpose
-    - prompt: "Which of the following most closely applies to you?"
-      type: select
-      options:
-        - Please choose
-        - I live in the City of Port Phillip
-        - I work in the City of Port Phillip
-        - I visit the City of Port Phillip
-        - Other
-      name: origin            
+          value: Type description here...                      
     - prompt: Your name
       optional: true
       type: text
