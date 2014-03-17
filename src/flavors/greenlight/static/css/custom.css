@@ -4,6 +4,11 @@
  * NOTE: "With great power comes great responsibility."
  */
 
+/* SHUT IT DOWN LEMON */
+.survey .responses {
+  display: none !important;
+}
+
 /* =Base Typography
 -------------------------------------------------------------- */
 
@@ -269,7 +274,43 @@ a.reply-link:hover {
   display: none;
 }
 
+.place-value-issue {
+  display: none;
+}
+
+.place-value-issueother {
+  display: none;
+}
+
+.place-value-purpose {
+  display: none;
+}
+
 .place-value-origin {
+  display: none;
+}
+
+.place-value-description {
+  display: none;
+}
+
+.response-value-issue {
+  display: none;
+}
+
+.response-value-issueother {
+  display: none;
+}
+
+.response-value-purpose {
+  display: none;
+}
+
+.response-value-description {
+  display: none;
+}
+
+.response-value-origin {
   display: none;
 }
 

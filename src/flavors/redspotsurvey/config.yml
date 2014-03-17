@@ -241,11 +241,6 @@ place:
           value: Type name here
         - key: size
           value: 30
-    - prompt: Spot Type
-      type: select
-      options:
-        - RedSpot
-      name: location_type  
 
 survey:
   submission_type: comments

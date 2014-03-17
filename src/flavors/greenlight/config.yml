@@ -184,23 +184,64 @@ survey:
 
   # Response display config
   show_responses: true
-  response_name: comment
-  response_plural_name: comments
-  action_text: commented on
+  response_name: feedback submissions
+  response_plural_name: feedback submissions
+  action_text: provided feedback on
   anonymous_name: A supporter
 
   # Survey form config
-  title: Leave a Comment
-  form_link_text: Leave a Comment
-  submit_btn_text: Submit comment
+  title: Provide feedback on this crossing
+  form_link_text: Please provide feedback on this crossing
+  submit_btn_text: Submit feedback
   items:
-    - prompt: Comment
-      label: Comment
-      type: textarea
-      name: comment
+    - prompt: "What is the main issue at this crossing?"
+      type: select
+      options:
+        - Please choose
+        - Waiting too long for the greenman
+        - The greenman signal is not long enough to cross
+        - The crossing is in the wrong spot
+        - There are trip hazards 
+        - Does not comply with the Disability Discrimination Act 1992
+        - The pedestrian waiting area is too small
+        - When crossing, pedestrians come into conflict with other vehicles
+        - Other
+      name: issue
+    - prompt: If other, please enter 
+      type: text
+      name: issueother
+      optional: true
       attrs:
         - key: placeholder
-          value: Type comment here..
+          value: Type here..
+        - key: size
+          value: 30  
+    - prompt: "I primarily use this crossing for..."
+      type: select
+      options:
+        - Please choose
+        - Work
+        - School
+        - Shopping
+        - Social
+        - All of the above
+      name: purpose 
+    - prompt: "Please share anything additional about this crossing"
+      type: textarea
+      optional: true
+      name: description
+      attrs:
+        - key: placeholder
+          value: Type description here... 
+    - prompt: "Which of the following most closely applies to you?"
+      type: select
+      options:
+        - Please choose
+        - I live in the City of Port Phillip
+        - I work in the City of Port Phillip
+        - I visit the City of Port Phillip
+        - Other
+      name: origin 
     - prompt: Your Name
       type: text
       optional: true
