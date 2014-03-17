@@ -120,11 +120,20 @@ place:
         - The greenman signal is not long enough to cross
         - The crossing is in the wrong spot
         - There are trip hazards 
-        - Does not comply with the Disability Discrimination Act
+        - Does not comply with the Disability Discrimination Act 1992
         - The pedestrian waiting area is too small
         - When crossing, pedestrians come into conflict with other vehicles
         - Other
       name: issue
+    - prompt: If other, please enter 
+      type: text
+      name: issueother
+      optional: true
+      attrs:
+        - key: placeholder
+          value: Type here..
+        - key: size
+          value: 30  
     - prompt: "I primarily use this crossing for..."
       type: select
       options:
