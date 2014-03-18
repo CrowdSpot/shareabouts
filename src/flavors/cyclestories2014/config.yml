@@ -132,6 +132,7 @@ place:
       type: select
       options:
         - ...
+        - 2014
         - 2013
         - 2012
         - 2011
