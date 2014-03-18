@@ -23,7 +23,7 @@ map:
     center:
       lat: -37.81361
       lng: 144.96306
-    zoom: 14
+    zoom: 13
     minZoom: 5
     maxZoom: 20
     maxBounds: [ [-38.069717, 144.390564], [-37.516262, 145.415039] ]
