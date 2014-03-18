@@ -103,6 +103,13 @@ place:
         - Crash Spot
         - Safe Riding Spot
       name: location_type
+    - prompt: Tell us more...
+      type: textarea
+      name: description
+      optional: True
+      attrs:
+        - key: placeholder
+          value: 
     - prompt: If a Crash Spot, what was the main cause?
       type: select
       options:
@@ -129,13 +136,6 @@ place:
         - "No"
         - Not sure
       name: reported   
-    - prompt: Tell us more...
-      type: textarea
-      name: description
-      optional: True
-      attrs:
-        - key: placeholder
-          value: 
     - prompt: Add an Image
       inputfile_label: _(Add an Image)      
       type: file
