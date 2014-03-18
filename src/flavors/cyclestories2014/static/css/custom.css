@@ -450,3 +450,8 @@ center center;
   content: 'Description: ';
   font-weight: bold;
 }
+
+.place-value-reported:before {
+  content: 'Story reported to police or road authority: ';
+  font-weight: bold;
+}
