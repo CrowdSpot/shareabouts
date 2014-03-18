@@ -452,6 +452,6 @@ center center;
 }
 
 .place-value-reported:before {
-  content: 'Story reported to police or road authority: ';
+  content: 'Crash reported to police, hospital or road authority: ';
   font-weight: bold;
 }
