@@ -184,8 +184,8 @@ survey:
 
   # Response display config
   show_responses: true
-  response_name: feedback submissions
-  response_plural_name: feedback submissions
+  response_name: feedback submission/s
+  response_plural_name: feedback submission/s
   action_text: provided feedback on
   anonymous_name: A supporter
 
