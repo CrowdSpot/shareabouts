@@ -290,6 +290,10 @@ a.reply-link:hover {
   display: none;
 }
 
+.place-value-age {
+  display: none;
+}
+
 .place-value-description {
   display: none;
 }
@@ -311,6 +315,10 @@ a.reply-link:hover {
 }
 
 .response-value-origin {
+  display: none;
+}
+
+.response-value-age {
   display: none;
 }
 
