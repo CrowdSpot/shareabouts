@@ -116,13 +116,13 @@ place:
       type: select
       options:
         - Please choose
-        - Waiting too long for the greenman
-        - The greenman signal is not long enough to cross
-        - The crossing is in the wrong spot
-        - There are trip hazards 
-        - Does not comply with the Disability Discrimination Act 1992
-        - The pedestrian waiting area is too small
-        - When crossing, pedestrians come into conflict with other vehicles
+        - Waiting too long
+        - Not enough time to cross
+        - It is in the wrong spot
+        - Trip hazards 
+        - Disability Discrimination Act 1992
+        - Waiting area too small
+        - Conflict with other vehicles
         - Other
       name: issue
     - prompt: If other, please enter 
@@ -212,13 +212,13 @@ survey:
       type: select
       options:
         - Please choose
-        - Waiting too long for the greenman
-        - The greenman signal is not long enough to cross
-        - The crossing is in the wrong spot
-        - There are trip hazards 
-        - Does not comply with the Disability Discrimination Act 1992
-        - The pedestrian waiting area is too small
-        - When crossing, pedestrians come into conflict with other vehicles
+        - Waiting too long
+        - Not enough time to cross
+        - It is in the wrong spot
+        - Trip hazards 
+        - Disability Discrimination Act 1992
+        - Waiting area too small
+        - Conflict with other vehicles
         - Other
       name: issue
     - prompt: If other, please enter 
