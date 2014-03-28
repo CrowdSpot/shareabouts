@@ -5,7 +5,8 @@ var Shareabouts = Shareabouts || {};
     // View responsible for the form for adding and editing places.
     events: {
       'submit form': 'onSubmit',
-      'change input[type="file"]': 'onInputFileChange'
+      'change input[type="file"]': 'onInputFileChange',
+      'change select[name=location_type]': 'onLocationTypeChange'
     },
     initialize: function(){
       S.TemplateHelpers.overridePlaceTypeConfig(this.options.placeConfig.items,
@@ -20,7 +21,7 @@ var Shareabouts = Shareabouts || {};
       var data = _.extend({
         place_config: this.options.placeConfig
       }, this.model.toJSON());
-
+      
       this.$el.html(ich['place-form'](data));
       return this;
     },
@@ -48,6 +49,21 @@ var Shareabouts = Shareabouts || {};
       };
 
       return attrs;
+    },
+    // update the form with a class indicating the location type
+    onLocationTypeChange: function(evt) {
+      var self = this, $form = self.$('form');
+      var lt_config = _.find(self.options.placeConfig.items, function(item) {
+        return item.name === 'location_type'
+      });
+      var labelToClass = function(s) { return s.replace(/\W+/, '-')};
+      // remove any existing classes
+      _.each(lt_config.options, function(option) {
+        $form.removeClass(labelToClass(option));
+      });
+      
+      // add the new class
+      $form.addClass(labelToClass($(evt.target).val()));
     },
     onInputFileChange: function(evt) {
       var self = this,
