@@ -56,7 +56,7 @@ var Shareabouts = Shareabouts || {};
       var lt_config = _.find(self.options.placeConfig.items, function(item) {
         return item.name === 'location_type'
       });
-      var labelToClass = function(s) { return s.replace(/\W+/, '-')};
+      var labelToClass = function(s) { return s.replace(/\W+/, '-').toLowerCase(); };
       // remove any existing classes
       _.each(lt_config.options, function(option) {
         $form.removeClass(labelToClass(option));
