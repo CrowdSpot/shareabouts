@@ -43,6 +43,9 @@ place_types:
   Train Spot:
     default: green
     focused: focused
+  Bike Spot:
+    default: red
+    focused: focused
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
@@ -82,7 +85,19 @@ place_type_icons:
       height: 85
     iconAnchor:
       x: 42
-      y: 42     
+      y: 42
+  red:
+    iconUrl: /static/css/images/bike-pin-red.png
+    shadowUrl: /static/css/images/master-pin-shadow.png
+    iconSize:
+      width: 85
+      height: 41
+    shadowSize:
+      width: 42
+      height: 85
+    iconAnchor:
+      x: 42
+      y: 42          
   focused:
     iconUrl: /static/css/images/marker-focused.png
     shadowUrl: /static/css/images/marker-shadow.png
@@ -111,7 +126,7 @@ place:
   anonymous_name: Someone
   submit_button_label: Submit
   items:
-    - prompt: "What's here?"
+    - prompt: "Where is this?"
       type: text
       name: name
       attrs:
@@ -126,14 +141,28 @@ place:
         - Bus Spot
         - Tram Spot
         - Train Spot
+        - Bike Spot
       name: location_type
-    - prompt: "What improvements would you like to see here?"
-      type: textarea
-      name: issue
-      attrs:
-        - key: placeholder
-          value: Type description here...
-    - prompt: What category is this transport improvement?
+    - prompt: What is stopping you from using the train more often?
+      type: select
+      options:
+        - Please choose
+        - wrong location
+        - Frequency
+        - Route
+        - Infrastructure
+        - Connections
+      name: bus_barriers    
+    - prompt: What is stopping you from using the train more often?
+      type: select
+      options:
+        - Please choose
+        - Route
+        - Infrastructure
+        - Connections
+        - Speed
+      name: tram_barriers   
+    - prompt: What is stopping you from using the train more often?
       type: select
       options:
         - Please choose
@@ -144,7 +173,15 @@ place:
         - Infrastructure
         - Connections
         - Speed
-      name: category        
+      name: train_barriers
+    - prompt: What is stopping you from using the bike more often?
+      type: select
+      options:
+        - Please choose
+        - No parking
+        - Safety
+        - Lack of infrastructure
+      name: bike_barriers          
     - prompt: Add an Image
       inputfile_label: _(Add an Image)      
       type: file

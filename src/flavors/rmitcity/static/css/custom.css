@@ -265,6 +265,37 @@ a.reply-link:hover {
 /*  background-color: #e500e5;*/
 }
 
+
+/* =Hiding questions in new forms
+-------------------------------------------------------------- */
+
+.place-form.bus-spot {
+
+input[name=description] {
+	    display: none;
+	  }
+	}
+
+
+.place-form-bus_barriers {
+  display: none;
+}
+
+.place-form-tram_barriers {
+  display: none;
+}
+
+.place-form-train_barriers {
+  display: none;
+}
+
+.place-form-bike_barriers {
+  display: none;
+}
+	
+/* =Hiding responses in existing spots
+-------------------------------------------------------------- */
+
 .place-value-private-submitter_email {
   display: none;
 }
@@ -272,7 +303,6 @@ a.reply-link:hover {
 .place-value-category {
   display: none;
 }
-
 
 /* =Voting & Social Promotion
 -------------------------------------------------------------- */
