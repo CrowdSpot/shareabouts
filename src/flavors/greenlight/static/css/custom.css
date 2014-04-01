@@ -63,7 +63,7 @@ a:hover {
 #site-header a:hover {
 }
 
-@media only screen and (min-width: 1155px) {
+@media only screen and (min-width: 1050px) {
   #pages-nav-container:before {
     content: '';
     display: block;
