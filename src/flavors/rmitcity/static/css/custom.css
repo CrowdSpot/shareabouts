@@ -274,11 +274,44 @@ a.reply-link:hover {
   display: none;
 }
 
-
 .place-form.bus-spot label[for=place-bus_barriers],
   .place-form.bus-spot select[name=bus_barriers] {
   display: block;
 }
+
+.place-form label[for=place-tram_barriers],
+  .place-form select[name=tram_barriers] {
+  display: none;
+}
+
+.place-form.tram-spot label[for=place-tram_barriers],
+  .place-form.tram-spot select[name=tram_barriers] {
+  display: block;
+}
+
+.place-form label[for=place-train_barriers],
+  .place-form select[name=train_barriers] {
+  display: none;
+}
+
+.place-form.train-spot label[for=place-train_barriers],
+  .place-form.train-spot select[name=train_barriers] {
+  display: block;
+}
+
+.place-form label[for=place-bike_barriers],
+  .place-form select[name=bike_barriers] {
+  display: none;
+}
+
+.place-form.bike-spot label[for=place-bike_barriers],
+  .place-form.bike-spot select[name=bike_barriers] {
+  display: block;
+}
+
+
+
+
 /*
 .place-form-tram_barriers {
   display: none;
