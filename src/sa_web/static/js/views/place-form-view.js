@@ -30,7 +30,7 @@ var Shareabouts = Shareabouts || {};
     },
     onError: function(model, res) {
       // TODO handle model errors!
-      console.log('oh no errors!!', model, res);
+      console.log('oh no errors!!', JSON.stringify(model), JSON.stringify(res));
     },
     // Get the attributes from the form
     getAttrs: function() {
