@@ -366,6 +366,22 @@ a.reply-link:hover {
   display: block;
 }
 
+.place-detail .tram-spot .place-value-tram_barriers {
+  display: block;
+}
+
+.place-detail .train-spot .place-value-train_barriers {
+  display: block;
+}
+
+.place-detail .bike-spot .place-value-bike_barriers {
+  display: block;
+}
+
+.place-detail .walk-spot .place-value-walk_barriers {
+  display: block;
+}
+
 
 /* =Voting & Social Promotion
 -------------------------------------------------------------- */
