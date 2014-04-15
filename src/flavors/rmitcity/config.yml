@@ -24,12 +24,13 @@ map:
       lat: -37.808569
       lng: 144.963366
     zoom: 16
-    minZoom: 12
-    maxZoom: 18
+    minZoom: 14
+    maxZoom: 20
+    maxBounds: [ [-37.847799, 144.914407], [-37.791117, 144.993371] ]
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/aisey.hpk0c219/{z}/{x}/{y}.png
     attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-  layers: []
+    maxZoom: 20
 
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
