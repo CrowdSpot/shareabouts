@@ -27,6 +27,7 @@ var Shareabouts = Shareabouts || {};
 
           data = _.extend({
             place_type_label: placeType ? (placeType.label || location_type) : null,
+            place_type_class: placeType ? S.Util.classify(placeType.label || location_type) : '',
             permalink: window.location.toString(),
             pretty_created_datetime: function() {
               return S.Util.getPrettyDateTime(this.created_datetime,

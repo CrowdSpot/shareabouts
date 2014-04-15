@@ -219,6 +219,10 @@ var Shareabouts = Shareabouts || {};
       destroy: function(name) {
         this.save(name,'',-1);
       }
+    },
+    
+    classify: function(string) { 
+      return string.replace(/\W+/, '-').toLowerCase();
     }
   };
 }(Shareabouts));
