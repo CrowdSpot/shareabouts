@@ -21,13 +21,13 @@ map:
   geolocation_onload: false
   options:
     center:
-      lat: -37.81361
-      lng: 144.96306
-    zoom: 12
-    minZoom: 10
+      lat: -37.808569
+      lng: 144.963366
+    zoom: 16
+    minZoom: 12
     maxZoom: 18
   base_layer:
-    url: http://{s}.tiles.mapbox.com/v3/aisey.hk263lfm/{z}/{x}/{y}.png
+    url: http://{s}.tiles.mapbox.com/v3/aisey.hpk0c219/{z}/{x}/{y}.png
     attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
   layers: []
 
@@ -45,6 +45,9 @@ place_types:
     focused: focused
   Bike Spot:
     default: red
+    focused: focused
+  Walk Spot:
+    default: pink
     focused: focused
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
@@ -97,7 +100,19 @@ place_type_icons:
       height: 85
     iconAnchor:
       x: 42
-      y: 42          
+      y: 42 
+  pink:
+    iconUrl: /static/css/images/master-pin-pink.png
+    shadowUrl: /static/css/images/master-pin-shadow.png
+    iconSize:
+      width: 85
+      height: 41
+    shadowSize:
+      width: 42
+      height: 85
+    iconAnchor:
+      x: 42
+      y: 42             
   focused:
     iconUrl: /static/css/images/marker-focused.png
     shadowUrl: /static/css/images/marker-shadow.png
@@ -142,46 +157,78 @@ place:
         - Tram Spot
         - Train Spot
         - Bike Spot
+        - Walk Spot
       name: location_type
     - prompt: What is stopping you from using the bus more often?
       type: select
       options:
         - Please choose
-        - wrong location
-        - Frequency
-        - Route
-        - Infrastructure
-        - Connections
+        - No stop or station within walking distance
+        - Poor waiting facilities at stop or station
+        - Feel unsafe at stop or station
+        - Limited or infrequent services
+        - Poor connections with RMIT
+        - Limited or no provision at station for park and ride
       name: bus_barriers    
     - prompt: What is stopping you from using the tram more often?
       type: select
       options:
         - Please choose
-        - Route
-        - Infrastructure
-        - Connections
-        - Speed
+        - No stop or station within walking distance
+        - Poor waiting facilities at stop or station
+        - Feel unsafe at stop or station
+        - Limited or infrequent services
+        - Poor connections with RMIT
+        - Limited or no provision at station for park and ride
       name: tram_barriers   
     - prompt: What is stopping you from using the train more often?
       type: select
       options:
         - Please choose
-        - Access
-        - Frequency
-        - Route
-        - Safety
-        - Infrastructure
-        - Connections
-        - Speed
+        - No stop or station within walking distance
+        - Poor waiting facilities at stop or station
+        - Feel unsafe at stop or station
+        - Limited or infrequent services
+        - Poor connections with RMIT
+        - Limited or no provision at station for park and ride
       name: train_barriers
     - prompt: What is stopping you from using the bike more often?
       type: select
       options:
         - Please choose
-        - No parking
-        - Safety
-        - Lack of infrastructure
-      name: bike_barriers          
+        - Poorly maintained bicycle lanes
+        - No bicycle lanes
+        - Unsafe or inappropriate bicycle lanes
+        - Bicycle lane ends unexpectedly
+        - Limited or no provision at intersections
+        - Lack of wayfinding or signage
+        - Bicycle lane blocked
+        - Negative behaviour of other road users
+        - High risk of car dooring (narrow or no lane)
+        - Limited or no bicycle parking
+      name: bike_barriers 
+    - prompt: What is stopping you from walking more often?
+      type: select
+      options:
+        - Please choose
+        - Poorly maintained footpaths
+        - Poor lighting
+        - No crossing facilities
+        - Limited time to cross at traffic signals
+        - Unattractive walking route
+        - Lack of wayfindingor signage
+        - Footpath blocked
+        - Negative behaviour of other road users
+        - No footpaths
+        - Poor or no provision for people with disabilities
+      name: walk_barriers
+    - prompt: "Please share anything additional about this spot"
+      type: textarea
+      optional: true
+      name: description
+      attrs:
+        - key: placeholder
+          value: Type description here...           
     - prompt: Add an Image
       inputfile_label: _(Add an Image)      
       type: file
@@ -191,8 +238,9 @@ place:
         - key: accept
           value: image/*
       name: location_type    
-    - prompt: Your name or organisation
+    - prompt: Your name
       type: text
+      optional: true
       name: submitter_name
       attrs:
         - key: placeholder
@@ -201,6 +249,7 @@ place:
           value: 30
     - prompt: Your email
       type: text
+      optional: true
       name: private-submitter_email
       attrs:
         - key: placeholder
@@ -232,12 +281,14 @@ survey:
           value: Type comment here..
     - prompt: Your Name
       type: text
+      optional: true
       name: submitter_name
       attrs:
         - key: placeholder
           value: Type name here..
     - prompt: Your email
       type: text
+      optional: true
       name: private-submitter_email
       attrs:
         - key: placeholder
