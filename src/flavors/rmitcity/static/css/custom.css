@@ -342,25 +342,8 @@ a.reply-link:hover {
   display: none;
 }
 
-.place-value-bus_barriers {
-  display: none;
-}
 
-.place-value-tram_barriers {
-  display: none;
-}
 
-.place-value-train_barriers {
-  display: none;
-}
-
-.place-value-bike_barriers {
-  display: none;
-}
-
-.place-value-walk_barriers {
-  display: none;
-}
 
 .place-detail .bus-spot .place-value-bus_barriers {
   display: block;
