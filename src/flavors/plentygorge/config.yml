@@ -9,11 +9,11 @@ dataset_api_key: YWY1YjMyNzU5YjRiZDljOTQwMGM0Nzhm
 # Settings for the app
 app:
   # HTML Title
-  title: Public Transport Not Traffic
+  title: Plenty Gorge Park
   # Header name
-  name: Public Transport Not Traffic
+  name: Plenty Gorge Park
   # Meta description that will show up in Google search results
-  meta_description: CrowdSpot is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.
+  meta_description: CrowdSpot specialise in map-based community engagement. Gather crowd sourced public input to collect data on locations in a social, engaging process.
 
 # Settings for map and layer configs
 map:
@@ -21,26 +21,26 @@ map:
   geolocation_onload: false
   options:
     center:
-      lat: -37.81361
-      lng: 144.96306
-    zoom: 12
+      lat: -37.6495776829716
+      lng: 145.10433197021484
+    zoom: 13
     minZoom: 10
     maxZoom: 18
   base_layer:
-    url: http://{s}.tiles.mapbox.com/v3/aisey.ggk2hf20/{z}/{x}/{y}.png
+    url: http://{s}.tiles.mapbox.com/v3/aisey.i02j1dp7/{z}/{x}/{y}.png
     attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
   layers: []
 
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  Bus Spot:
+  Activity Spot:
     default: orange
     focused: focused
-  Tram Spot:
+  Idea Spot:
     default: blue
     focused: focused
-  Train Spot:
+  Like Spot:
     default: green
     focused: focused
 
@@ -48,7 +48,7 @@ place_types:
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
   orange:
-    iconUrl: /static/css/images/bus.png
+    iconUrl: /static/css/images/master-pin-orange.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -60,7 +60,7 @@ place_type_icons:
       x: 42
       y: 42
   blue:
-    iconUrl: /static/css/images/tram.png
+    iconUrl: /static/css/images/master-pin-blue.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -72,7 +72,7 @@ place_type_icons:
       x: 42
       y: 42
   green:
-    iconUrl: /static/css/images/train.png
+    iconUrl: /static/css/images/master-pin-green.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -111,40 +111,37 @@ place:
   anonymous_name: Someone
   submit_button_label: Submit
   items:
-    - prompt: "What's here?"
+    - prompt: "Where is this spot?"
       type: text
       name: name
       attrs:
         - key: placeholder
-          value: Station, stop, landmark, etc.
+          value: Street, landmark, building, etc.
         - key: size
           value: 30
-    - prompt: What transport mode does this spot relate to?
+    - prompt: What type of spot is this?
       type: select
       options:
         - Please choose
-        - Bus Spot
-        - Tram Spot
-        - Train Spot
+        - Activity Spot
+        - Idea Spot
+        - Like Spot
       name: location_type
-    - prompt: "What improvements would you like to see here?"
+    - prompt: "Please provide any additional information about this spot?"
       type: textarea
+      optional: true
       name: issue
       attrs:
         - key: placeholder
-          value: Type description here...
-    - prompt: What category is this transport improvement?
+          value: Type here...
+    - prompt: Do you...
       type: select
       options:
         - Please choose
-        - Access
-        - Frequency
-        - Route
-        - Safety
-        - Infrastructure
-        - Connections
-        - Speed
-      name: category        
+        - Live in the area
+        - Visit the area
+        - Work in the area
+      name: category         
     - prompt: Add an Image
       inputfile_label: _(Add an Image)      
       type: file
@@ -154,22 +151,29 @@ place:
         - key: accept
           value: image/*
       name: location_type    
-    - prompt: Your name or organisation
+    - prompt: Your name
       type: text
       name: submitter_name
       attrs:
         - key: placeholder
-          value: Type name here
+          value: Will be visible...
         - key: size
           value: 30
     - prompt: Your email
+      optional: true
       type: text
       name: private-submitter_email
       attrs:
         - key: placeholder
-          value: Your email will be kept confidential
+          value: Kept confidential and used for feedback
         - key: size
-          value: 30             
+          value: 30
+    - prompt: Your postcode
+      type: text
+      name: postcode
+      attrs:
+        - key: placeholder
+          value: Type postcode here..                    
 
 survey:
   submission_type: comments
@@ -209,8 +213,8 @@ survey:
 support:
   submission_type: support
   submit_btn_text: Support this!
-  action_text: "voted for"
-  anonymous_name: A supporter
+  action_text: "supported"
+  anonymous_name: Someone
 
 pages:
   - title: Welcome

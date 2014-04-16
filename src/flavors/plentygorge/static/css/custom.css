@@ -8,12 +8,12 @@
 -------------------------------------------------------------- */
 
 body, select, input, textarea {
-  background: rgb(246,246,246);
+  background: rgb(255,255,255);
   font-family: "proxima-nova", sans-serif ;
-  color: #000000;
+  color: #284e36;
 }
 
-label { color: black }
+label { color: #284e36 }
 
 
 h1,h2,h3,h4,h5,h6 {
@@ -40,9 +40,9 @@ a:hover {
 #site-header {
   height: auto;
   
-  background: rgb(246,246,246);
+  background: rgb(255,255,255);
   color: #000000;
-  border-top: rgb(253,193,14) 6px solid;
+  border-top: rgb(40,78,54) 3px solid;
      -moz-box-shadow: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -62,7 +62,7 @@ a:hover {
   #pages-nav-container:before {
     content: '';
     display: block;
-    background: transparent url('images/crowdspot-logo-horizontal-200x32.png') no-repeat center;
+    background: transparent url('images/pvlogo_238x55.png') no-repeat center;
     float: right;
     width: 256px;
     height: 60px;
@@ -80,7 +80,7 @@ a:hover {
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
 #site-title {
-  background: url('images/ptnt.jpg') no-repeat
+  background: url('images/INSERT HEADER IMAGE HERE') no-repeat
 center;
   background-size: contain;
   width: 250px;
@@ -116,7 +116,7 @@ a#nav-bttn {
 
 a#nav-bttn:link,
 a#nav-bttn:visited {
-  background: rgb(253,193,14);
+  background: rgb(40,78,54);
 /*  color: #bf00bf;*/
 /*  background: #ffbfff;*/
 /*  font-family: "Helvetica Neue", Arial, Helvetica, serif;*/
@@ -174,11 +174,11 @@ a#nav-bttn:hover {
 }*/
 
 #site-header .access ul ul {
-  background: rgb(246,246,246);
+  background: rgb(255,255,255);
 }
 
 #site-header .access ul ul a {
-  background: rgb(246,246,246);
+  background: rgb(255,255,255);
 }
 
 div
@@ -191,7 +191,7 @@ div
 -------------------------------------------------------------- */
 
 a.add-place {
-  background-color: rgb(98,199,114);
+  background-color: rgb(40,78,54);
   border-radius: 3px;
 /*  color: #eee;*/
 /*  text-shadow: none;*/
@@ -243,7 +243,7 @@ textarea {
 }
 
 .bttn {
-  background-color: rgb(98,199,114);
+  background-color: rgb(40,78,54);
   border-radius: 3px;
 /*  color: #eee;*/
 /*  background-color: #ff40ff;*/
@@ -281,7 +281,7 @@ a.reply-link:hover {
 }
 
 .promotion .sharing::before {
-  content: 'Share #PTNotTraffic:';
+  content: 'Share #plentygorge:';
   float: left;
   margin-right: 10px;
   
@@ -329,7 +329,7 @@ ul.recent-points {
 }
 
 #powered-by {
-  background: rgb(246,246,246);
+  background: rgb(255,255,255);
   color: rgba(0,0,0,1);
   line-height: 2em;
   height: 2em;
