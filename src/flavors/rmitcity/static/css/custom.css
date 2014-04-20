@@ -506,5 +506,29 @@ center center;
 }
 /* =Individual Pages
 -------------------------------------------------------------- */
+.place-value-bus_barriers:before {
+  content: "Issue: ";
+  font-weight: bold;
+}
+
+.place-value-tram_barriers:before {
+  content: "Issue: ";
+  font-weight: bold;
+}
+
+.place-value-train_barriers:before {
+  content: "Issue: ";
+  font-weight: bold;
+}
+
+.place-value-bike_barriers:before {
+  content: "Issue: ";
+  font-weight: bold;
+}
+
+.place-value-walk_barriers:before {
+  content: "Issue: ";
+  font-weight: bold;
+}
 
 
