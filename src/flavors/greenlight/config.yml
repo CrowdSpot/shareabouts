@@ -204,8 +204,8 @@ survey:
   anonymous_name: A supporter
 
   # Survey form config
-  title: Provide feedback on this crossing
-  form_link_text: Please provide feedback on this crossing
+  title: Feedback is now closed
+  form_link_text: Feedback is now closed
   submit_btn_text: Submit feedback
   items:
     - prompt: "What is the main issue at this crossing?"

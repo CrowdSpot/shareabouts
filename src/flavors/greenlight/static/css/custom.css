@@ -5,7 +5,7 @@
  */
 
 /* SHUT IT DOWN LEMON */
-.survey .responses {
+.survey .responses, #centerpoint, #add-place, #new_response, #instructions {
   display: none !important;
 }
 
