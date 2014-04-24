@@ -42,7 +42,7 @@ a:hover {
   
   background: rgb(246,246,246);
   color: #000000;
-  border-top: #ff1609 3px solid;
+  border-top: rgb(229,0,28) 3px solid;
      -moz-box-shadow: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -62,7 +62,7 @@ a:hover {
   #pages-nav-container:before {
     content: '';
     display: block;
-    background: transparent url('images/XXXXX') no-repeat center;
+    background: transparent url('images/rmit_university.png') no-repeat center;
     float: right;
     width: 256px;
     height: 60px;
@@ -80,7 +80,7 @@ a:hover {
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
 #site-title {
-  background: url('INSERT PROJECT HEADER HERE') no-repeat
+  background: url('images/rmitcityheader.png') no-repeat
 center;
   background-size: contain;
   width: 250px;
@@ -116,7 +116,7 @@ a#nav-bttn {
 
 a#nav-bttn:link,
 a#nav-bttn:visited {
-  background: rgb(253,193,14);
+  background: rgb(229,0,28);
 /*  color: #bf00bf;*/
 /*  background: #ffbfff;*/
 /*  font-family: "Helvetica Neue", Arial, Helvetica, serif;*/
@@ -191,7 +191,7 @@ div
 -------------------------------------------------------------- */
 
 a.add-place {
-  background-color: #ff1609;
+  background-color: rgb(229,0,28);
   border-radius: 3px;
 /*  color: #eee;*/
 /*  text-shadow: none;*/
@@ -243,7 +243,7 @@ textarea {
 }
 
 .bttn {
-  background-color: #ff1609;
+  background-color: rgb(229,0,28);
   border-radius: 3px;
 /*  color: #eee;*/
 /*  background-color: #ff40ff;*/
@@ -530,5 +530,4 @@ center center;
   content: "Issue: ";
   font-weight: bold;
 }
-
 

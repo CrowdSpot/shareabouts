@@ -165,39 +165,51 @@ place:
       options:
         - Please choose
         - No stop or station within walking distance
-        - Poor waiting facilities at stop or station
-        - Feel unsafe at stop or station
-        - Limited or infrequent services
-        - Poor connections with RMIT
+        - Poor waiting facilities at stop/station
+        - Feel unsafe at stop/station
+        - Limited or no footpath connections to stop/station
+        - Infrequent services
+        - Unreliable timetables/information
         - Limited or no provision at station for park and ride
+        - Difficult to take bicycle onboard
+        - It is expensive to use
+        - There is no capacity during the peak
       name: bus_barriers    
     - prompt: What is stopping you from using the tram more often?
       type: select
       options:
         - Please choose
         - No stop or station within walking distance
-        - Poor waiting facilities at stop or station
-        - Feel unsafe at stop or station
-        - Limited or infrequent services
-        - Poor connections with RMIT
+        - Poor waiting facilities at stop/station
+        - Feel unsafe at stop/station
+        - Limited or no footpath connections to stop/station
+        - Infrequent services
+        - Unreliable timetables/information
         - Limited or no provision at station for park and ride
+        - Difficult to take bicycle onboard
+        - It is expensive to use
+        - There is no capacity during the peak
       name: tram_barriers   
     - prompt: What is stopping you from using the train more often?
       type: select
       options:
         - Please choose
         - No stop or station within walking distance
-        - Poor waiting facilities at stop or station
-        - Feel unsafe at stop or station
-        - Limited or infrequent services
-        - Poor connections with RMIT
+        - Poor waiting facilities at stop/station
+        - Feel unsafe at stop/station
+        - Limited or no footpath connections to stop/station
+        - Infrequent services
+        - Unreliable timetables/information
         - Limited or no provision at station for park and ride
+        - Difficult to take bicycle onboard
+        - It is expensive to use
+        - There is no capacity during the peak
       name: train_barriers
     - prompt: What is stopping you from using the bike more often?
       type: select
       options:
         - Please choose
-        - Poorly maintained bicycle lanes
+        - Limited or no bicycle lanes
         - No bicycle lanes
         - Unsafe or inappropriate bicycle lanes
         - Bicycle lane ends unexpectedly
@@ -205,7 +217,7 @@ place:
         - Lack of wayfinding or signage
         - Bicycle lane blocked
         - Negative behaviour of other road users
-        - High risk of car dooring (narrow or no lane)
+        - High risk of car dooring (narrow/no lane)
         - Limited or no bicycle parking
       name: bike_barriers 
     - prompt: What is stopping you from walking more often?
@@ -213,15 +225,14 @@ place:
       options:
         - Please choose
         - Poorly maintained footpaths
-        - Poor lighting
-        - No crossing facilities
+        - Limited or no crossing facilities
         - Limited time to cross at traffic signals
         - Unattractive walking route
-        - Lack of wayfindingor signage
+        - Limited or no wayfinding signage
         - Footpath blocked
         - Negative behaviour of other road users
-        - No footpaths
-        - Poor or no provision for people with disabilities
+        - Limited or no footpaths
+        - Limited or no provision for people with disabilities
       name: walk_barriers
     - prompt: "Please share anything additional about this spot"
       type: textarea
