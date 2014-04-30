@@ -273,6 +273,10 @@ a.reply-link:hover {
   display: none;
 }
 
+.place-value-postcode {
+  display: none;
+}
+
 
 /* =Voting & Social Promotion
 -------------------------------------------------------------- */
@@ -399,7 +403,7 @@ center center;
 -------------------------------------------------------------- */
 
 .place-value-issue:before {
-  content: "Improvements needed here: ";
+  content: "Description: ";
   font-weight: bold;
 }
 
