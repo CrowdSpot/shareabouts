@@ -160,7 +160,7 @@ place:
         - Bike Spot
         - Walk Spot
       name: location_type
-    - prompt: What is stopping you from using the bus more often?
+    - prompt: Which of the following barriers best applies to this spot?
       type: select
       options:
         - Please choose
@@ -175,7 +175,7 @@ place:
         - It is expensive to use
         - There is no capacity during the peak
       name: bus_barriers    
-    - prompt: What is stopping you from using the tram more often?
+    - prompt: Which of the following barriers best applies to this spot?
       type: select
       options:
         - Please choose
@@ -190,7 +190,7 @@ place:
         - It is expensive to use
         - There is no capacity during the peak
       name: tram_barriers   
-    - prompt: What is stopping you from using the train more often?
+    - prompt: Which of the following barriers best applies to this spot?
       type: select
       options:
         - Please choose
@@ -205,7 +205,7 @@ place:
         - It is expensive to use
         - There is no capacity during the peak
       name: train_barriers
-    - prompt: What is stopping you from using the bike more often?
+    - prompt: Which of the following barriers best applies to this spot?
       type: select
       options:
         - Please choose
@@ -220,7 +220,7 @@ place:
         - High risk of car dooring (narrow/no lane)
         - Limited or no bicycle parking
       name: bike_barriers 
-    - prompt: What is stopping you from walking more often?
+    - prompt: Which of the following barriers best applies to this spot?
       type: select
       options:
         - Please choose
