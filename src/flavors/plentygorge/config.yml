@@ -41,14 +41,14 @@ place_types:
     default: blue
     focused: focused
   Like Spot:
-    default: green
+    default: yellow
     focused: focused
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
   orange:
-    iconUrl: /static/css/images/master-pin-orange.png
+    iconUrl: /static/css/images/plenty_gorge_active.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -60,7 +60,7 @@ place_type_icons:
       x: 42
       y: 42
   blue:
-    iconUrl: /static/css/images/master-pin-blue.png
+    iconUrl: /static/css/images/plenty_gorge_idea.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -71,8 +71,8 @@ place_type_icons:
     iconAnchor:
       x: 42
       y: 42
-  green:
-    iconUrl: /static/css/images/master-pin-green.png
+  yellow:
+    iconUrl: /static/css/images/plenty_gorge_like.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85

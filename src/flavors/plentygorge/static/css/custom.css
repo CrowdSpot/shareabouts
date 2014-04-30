@@ -10,10 +10,10 @@
 body, select, input, textarea {
   background: rgb(255,255,255);
   font-family: "proxima-nova", sans-serif ;
-  color: #284e36;
+  color: #2C373E;
 }
 
-label { color: #284e36 }
+label { color: #2C373E }
 
 
 h1,h2,h3,h4,h5,h6 {
