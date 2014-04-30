@@ -4,6 +4,11 @@
  * NOTE: "With great power comes great responsibility."
  */
 
+/* SHUT IT DOWN LEMON */
+.survey .responses, #centerpoint, #add-place, #new_response, #instructions {
+  display: none !important;
+}
+
 /* =Base Typography
 -------------------------------------------------------------- */
 
