@@ -126,7 +126,7 @@ place:
         - High risk of car dooring (narrow/no lane)
         - Limited or no bicycle parking
       name: bike_barriers 
-    - prompt: What is stopping you from walking more often?
+    - prompt: Which of the following barriers best applies to this spot?
       type: select
       options:
         - Please choose
