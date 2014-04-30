@@ -1,0 +1,533 @@
+/*
+ * This CSS file follows the default Shareabouts style.css.
+ * All rules herein will override the default Shareabouts styles.
+ * NOTE: "With great power comes great responsibility."
+ */
+
+/* =Base Typography
+-------------------------------------------------------------- */
+
+body, select, input, textarea {
+  background: rgb(254,254,254);
+  font-family: "proxima-nova", sans-serif ;
+  color: #000000;
+}
+
+label { color: black }
+
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 100;
+}
+
+
+
+/* =Links
+-------------------------------------------------------------- */
+
+a, a:active, a:visited {
+  color: rgba(0,0,0,1);
+}
+
+a:hover {
+  color: rgba(0,0,0,1);
+}
+
+
+/* =The Site Header
+-------------------------------------------------------------- */
+
+#site-header {
+  height: auto;
+  
+  background: rgb(254,254,254);
+  color: #000000;
+  border-top: rgb(0,51,101) 3px solid;
+     -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  
+  background-image: url("images/hr.png");
+  background-repeat: repeat-x;
+  background-position: bottom;   	
+}
+
+#site-header a, #site-header a:active, #site-header a:visited {
+}
+
+#site-header a:hover {
+}
+
+@media only screen and (min-width: 1155px) {
+  #pages-nav-container:before {
+    content: '';
+    display: block;
+    background: transparent url('images/araratlogo.jpg') no-repeat center;
+    float: right;
+    width: 256px;
+    height: 60px;
+    margin-top: 5px;
+  }
+}
+
+/* =Logo
+-------------------------------------------------------------- */
+
+/* NOTE: Adjust the #site-title font size in the link
+ * (not in the #site-title itself) using the em unit,
+ * as to not break it scaling via media queries. */
+
+
+/* If not using bg-size contain, the heights are 52, 65, 78 */
+#site-title {
+  background: url('images/PROJECTHEADER.png') no-repeat
+center;
+  background-size: contain;
+  width: 250px;
+  text-indent: -133337px;
+}
+
+
+@media only screen and (min-width: 1024px) { /* ticker is visible */
+  #site-title {
+    width: 300px;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  #site-title {
+    width: 324px;
+  }
+}
+
+/* =Mobile Navigation Button
+-------------------------------------------------------------- */
+
+/* NOTE: Override the Mobile Navigation Button with caution.
+ * The Helvetica stack produces a good icon. */
+
+a#nav-bttn {
+  background: rgb(246,246,246);
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.1);
+  
+  margin-top: 0.2em;
+  padding-bottom: 6px;
+}
+
+a#nav-bttn:link,
+a#nav-bttn:visited {
+  background: rgb(229,0,28);
+/*  color: #bf00bf;*/
+/*  background: #ffbfff;*/
+/*  font-family: "Helvetica Neue", Arial, Helvetica, serif;*/
+}
+
+a#nav-bttn:hover {
+  background: #eeeeee;
+/*  color: #ffbfff;*/
+/*  background: #fff;*/
+}
+
+
+/* =Navigation Menu
+-------------------------------------------------------------- */
+
+#site-header .access {
+  background: transparent;
+  border: none;
+}
+
+#site-header .access li {
+/*  border-bottom: 2px solid #994c99;*/
+}
+
+#site-header .access a {
+  background: none;
+  padding: 0 15px;
+  
+  color: rgba(0,0,0,1);
+	text-shadow: none;
+	font-weight: 400;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+#site-header .access a:visited, #site-header .access a:active, 
+  #site-header .access a:link {
+  color: rgba(0,0,0,1);
+}
+
+#site-header .access a:hover {
+  color: rgba(0,0,0,1);
+  text-decoration: none;
+  box-shadow: none;
+  background: none;
+}
+
+
+/* XXX: need some way to know where we are */
+/*#access a:visited, #access a:active, #access a:link {
+  color: #555;
+  font-weight: bold; 
+  background: url("images/nav-pin.png") center no-repeat transparent;
+  margin-bottom: 2px;
+}*/
+
+#site-header .access ul ul {
+  background: rgb(254,254,254);
+}
+
+#site-header .access ul ul a {
+  background: rgb(254,254,254);
+}
+
+div
+{
+  cursor: move;
+}
+
+
+/* =The Big Button to Add A New Point
+-------------------------------------------------------------- */
+
+a.add-place {
+  background-color: rgb(0,51,101);
+  border-radius: 3px;
+/*  color: #eee;*/
+/*  text-shadow: none;*/
+}
+
+a.add-place:hover {
+/*  background-color: #e500e5;*/
+/*  color: #fff;*/
+}
+
+
+/* =Close Content Button
+-------------------------------------------------------------- */
+
+/* NOTE: Override the Close Button font within the span. The link should
+ * remain the Helvetica stack, as it produces a good X close icon. */
+
+a.close-bttn {
+/*  color: #ff40ff;*/
+/*  background-color: #fff;*/
+/*  border-color: #ffbfff;*/
+/*  font-family: "Helvetica Neue", Arial, Helvetica, serif;*/
+}
+
+a.close-bttn:hover {
+/*  color: #e500e5;*/
+/*  background-color: #fff;*/
+/*  border-color: #e500e5;*/
+}
+a.close-bttn span {
+  /*  font-family: Impact, sans-serif;*/
+}
+
+
+/* =Forms
+-------------------------------------------------------------- */
+
+label {
+/*  color: #806080;*/
+}
+
+input[type=text],
+textarea {
+/*  border: 1px solid #000; */
+}
+
+.required {
+/*  color: red;*/
+}
+
+.bttn {
+  background-color: rgb(0,51,101);
+  border-radius: 3px;
+/*  color: #eee;*/
+/*  background-color: #ff40ff;*/
+/*  text-shadow: none;*/
+}
+
+.bttn:hover {
+/*  color: #fff;*/
+/*  background-color: #e500e5;*/
+}
+
+a.reply-link {
+/*  color: #1e5395;*/
+/*  background: #eef8fd;*/
+}
+
+a.reply-link:hover {
+/*  color: #fff;*/
+/*  background-color: #e500e5;*/
+}
+
+
+/* =Hiding questions in new forms
+-------------------------------------------------------------- */
+
+.place-form label[for=place-bus_barriers],
+  .place-form select[name=bus_barriers] {
+  display: none;
+}
+
+.place-form.bus-spot label[for=place-bus_barriers],
+  .place-form.bus-spot select[name=bus_barriers] {
+  display: block;
+}
+
+.place-form label[for=place-tram_barriers],
+  .place-form select[name=tram_barriers] {
+  display: none;
+}
+
+.place-form.tram-spot label[for=place-tram_barriers],
+  .place-form.tram-spot select[name=tram_barriers] {
+  display: block;
+}
+
+.place-form label[for=place-train_barriers],
+  .place-form select[name=train_barriers] {
+  display: none;
+}
+
+.place-form.train-spot label[for=place-train_barriers],
+  .place-form.train-spot select[name=train_barriers] {
+  display: block;
+}
+
+.place-form label[for=place-bike_barriers],
+  .place-form select[name=bike_barriers] {
+  display: none;
+}
+
+.place-form.bike-spot label[for=place-bike_barriers],
+  .place-form.bike-spot select[name=bike_barriers] {
+  display: block;
+}
+
+.place-form label[for=place-walk_barriers],
+  .place-form select[name=walk_barriers] {
+  display: none;
+}
+
+.place-form.walk-spot label[for=place-walk_barriers],
+  .place-form.walk-spot select[name=walk_barriers] {
+  display: block;
+}
+
+
+
+
+/*
+.place-form-tram_barriers {
+  display: none;
+}
+
+.place-form-train_barriers {
+  display: none;
+}
+
+.place-form-bike_barriers {
+  display: none;
+}
+*/	
+/* =Hiding responses in existing spots
+-------------------------------------------------------------- */
+
+.place-value-private-submitter_email {
+  display: none;
+}
+
+.place-value-bus_barriers {
+  display: none;
+}
+
+.place-value-tram_barriers {
+  display: none;
+}
+
+.place-value-train_barriers {
+  display: none;
+}
+
+.place-value-bike_barriers {
+  display: none;
+}
+
+.place-value-walk_barriers {
+  display: none;
+}
+
+.place-detail .bus-spot .place-value-bus_barriers {
+  display: block;
+}
+
+.place-detail .tram-spot .place-value-tram_barriers {
+  display: block;
+}
+
+.place-detail .train-spot .place-value-train_barriers {
+  display: block;
+}
+
+.place-detail .bike-spot .place-value-bike_barriers {
+  display: block;
+}
+
+.place-detail .walk-spot .place-value-walk_barriers {
+  display: block;
+}
+
+
+/* =Voting & Social Promotion
+-------------------------------------------------------------- */
+.promotion {
+/*  background-color: #bf8fbf;*/
+}
+
+.promotion .sharing::before {
+  content: 'Share:';
+  float: left;
+  margin-right: 10px;
+  
+  font-weight: bold;
+  line-height: 35px;
+}
+
+#user_support label {
+/*  color: #ff80ff;*/
+/*  background-color: #fff;*/
+}
+
+#user_support:hover label,
+#user_support label:hover {
+/*  color: #e500e5;*/
+}
+
+
+/* =The Ticker
+-------------------------------------------------------------- */
+
+#ticker {
+  background: transparent;
+}
+
+ul.recent-points {
+  color: inherit;
+}
+
+.recent-points li {
+  border-bottom: 1px solid #aaa;
+}
+
+.recent-points li:hover {
+  background: transparent;
+}
+
+.recent-points a {
+  color: rgba(0,0,0,1);
+}
+
+.recent-points li:hover a,
+.recent-points a:hover {
+  color: rgba(0,0,0,1);
+}
+
+#powered-by {
+  background: rgb(254,254,254);
+  color: rgba(0,0,0,1);
+  line-height: 2em;
+  height: 2em;
+}
+#ticker {
+  border-bottom: 2em;
+}
+
+#powered-by a {
+  font-family: inherit;
+  font-weight: 200;
+  color: rgba(0,0,0,0);
+  
+  background: url('images/crowdspot-logo-horizontal-256x41.png') no-repeat
+center center;
+  background-size: contain;
+ 
+  display: inline-block;
+  width: 100px;
+  height: 25px;
+}
+
+#powered-by a:hover {
+  color: rgba(0,0,0,0);
+}
+
+
+/* Instructions */
+#instructions p {
+  background: rgb(255,255,255);
+}
+
+
+/* =Media Queries
+-------------------------------------------------------------- */
+
+@media only screen and (min-width: 768px) { /* menu is visible */
+  #access {
+/*    border: 0;*/
+/*    background: transparent;*/
+  }
+}
+
+@media only screen and (min-width: 1024px) { /* ticker is visible */
+}
+
+@media only screen and (min-width: 1300px) {
+}
+
+
+/** HIDE THE FEEDBACK TAB **/
+#zenbox_tab {
+  display: none !important;
+}
+
+/* Custom Pages
+-------------------------------------------------------------- */
+
+#about .legend img {
+  float: left;
+}
+
+#about .legend {
+  font-size: 16px;
+}
+/* =Individual Pages
+-------------------------------------------------------------- */
+.place-value-bus_barriers:before {
+  content: "Issue: ";
+  font-weight: bold;
+}
+
+.place-value-tram_barriers:before {
+  content: "Issue: ";
+  font-weight: bold;
+}
+
+.place-value-train_barriers:before {
+  content: "Issue: ";
+  font-weight: bold;
+}
+
+.place-value-bike_barriers:before {
+  content: "Issue: ";
+  font-weight: bold;
+}
+
+.place-value-walk_barriers:before {
+  content: "Issue: ";
+  font-weight: bold;
+}
+
