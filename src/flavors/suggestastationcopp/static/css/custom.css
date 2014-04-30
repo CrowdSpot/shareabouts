@@ -4,8 +4,8 @@
  * NOTE: "With great power comes great responsibility."
  */
 
-/* SHUT IT DOWN LEMON */
-.survey .responses, #centerpoint, #add-place, #new_response, #instructions {
+ /* SHUT IT DOWN LEMON */
+#centerpoint, #add-place, #new_response, #instructions {
   display: none !important;
 }
 
@@ -289,7 +289,7 @@ a.reply-link:hover {
 }
 
 .promotion .sharing::before {
-  content: '#suggestastation:';
+  content: 'Share:';
   float: left;
   margin-right: 10px;
   
