@@ -101,7 +101,7 @@ place:
       name: name
       attrs:
         - key: placeholder
-          value: Station, stop, landmark, etc.
+          value: Street, intersection, landmark, etc.
         - key: size
           value: 30
     - prompt: Does this spot relate to walking or bike riding?
