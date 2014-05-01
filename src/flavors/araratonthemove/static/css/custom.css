@@ -522,7 +522,7 @@ center center;
 }
 
 .place-value-bike_barriers:before {
-  content: "Issue: ";
+  content: "Barrier: ";
   font-weight: bold;
 }
 
