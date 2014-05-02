@@ -264,7 +264,7 @@ place:
         - key: accept
           value: image/*
       name: location_type
-    - prompt: Your Student No.
+    - prompt: Your Staff or Student ID
       type: text
       name: student_number
       attrs:
