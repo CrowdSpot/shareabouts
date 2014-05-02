@@ -137,7 +137,7 @@ place:
   adding_supported: true
   add_button_label: Add a Spot
   action_text: added
-  title: "Tell us about the barriers you face when travelling by sustainable modes to RMIT's City campus. If you use multiple modes choose the mode at this location."
+  title: "Tell us about the barriers you face when travelling by sustainable modes to RMIT's City campus"
   action_text: created
   anonymous_name: Someone
   submit_button_label: Submit
