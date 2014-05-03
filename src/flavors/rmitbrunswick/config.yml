@@ -21,8 +21,8 @@ map:
   geolocation_onload: false
   options:
     center:
-      lat: -37.766677
-      lng: 144.962076
+      lat: -37.772410
+      lng: 144.961154
     zoom: 16
     minZoom: 14
     maxZoom: 20

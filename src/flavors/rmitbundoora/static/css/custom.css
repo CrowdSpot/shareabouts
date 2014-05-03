@@ -80,7 +80,7 @@ a:hover {
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
 #site-title {
-  background: url('images/rmitcityheader4.png') no-repeat
+  background: url('images/rmitbundooraheader.png') no-repeat
 center;
   background-size: contain;
   width: 250px;
