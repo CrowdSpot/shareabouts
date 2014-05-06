@@ -86,7 +86,7 @@ place_type_icons:
     iconAnchor:
       x: 42
       y: 42 
-  yellow:
+  red:
     iconUrl: /static/css/images/cross-pin-red.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
