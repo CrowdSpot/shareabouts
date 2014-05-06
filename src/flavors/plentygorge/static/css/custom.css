@@ -290,6 +290,16 @@ a.reply-link:hover {
   display: block;
 }
 
+.place-form label[for=place-text_dislike],
+  .place-form textarea[name=text_dislike] {
+  display: none;
+}
+
+.place-form.like-spot label[for=place-text_dislike],
+  .place-form.like-spot textarea[name=text_dislike] {
+  display: block;
+}
+
 .place-form label[for=place-text_activity],
   .place-form textarea[name=text_activity] {
   display: none;

@@ -37,6 +37,9 @@ place_types:
   Like Spot:
     default: yellow
     focused: focused
+  Dislike Spot:
+    default: red
+    focused: focused  
   Activity Spot:
     default: orange
     focused: focused
@@ -82,7 +85,19 @@ place_type_icons:
       height: 85
     iconAnchor:
       x: 42
-      y: 42     
+      y: 42 
+  yellow:
+    iconUrl: /static/css/images/cross-pin-red.png
+    shadowUrl: /static/css/images/master-pin-shadow.png
+    iconSize:
+      width: 85
+      height: 41
+    shadowSize:
+      width: 42
+      height: 85
+    iconAnchor:
+      x: 42
+      y: 42       
   focused:
     iconUrl: /static/css/images/marker-focused.png
     shadowUrl: /static/css/images/marker-shadow.png
@@ -116,6 +131,7 @@ place:
       options:
         - Please choose
         - Like Spot
+        - Dislike Spot
         - Activity Spot
         - Idea Spot
       name: location_type
@@ -133,7 +149,14 @@ place:
       name: text_like
       attrs:
         - key: placeholder
-          value: Type here...   
+          value: Type here...  
+    - prompt: "What do you dislike at this spot?"
+      type: textarea
+      optional: true
+      name: text_dislike
+      attrs:
+        - key: placeholder
+          value: Type here...       
     - prompt: "What activity do you do at this spot?"
       type: textarea
       optional: true
