@@ -34,14 +34,14 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
+  Like Spot:
+    default: yellow
+    focused: focused
   Activity Spot:
     default: orange
     focused: focused
   Idea Spot:
     default: blue
-    focused: focused
-  Like Spot:
-    default: yellow
     focused: focused
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
@@ -106,34 +106,48 @@ place:
   adding_supported: true
   add_button_label: Add a Spot
   action_text: added
-  title: Tell us more...
+  title: Tell us about your spot! Is it something you like or dislike at Plenty Gorge, an activity you do here or your great idea for an improvement?
   action_text: created
   anonymous_name: Someone
   submit_button_label: Submit
   items:
+    - prompt: What type of spot is this?
+      type: select
+      options:
+        - Please choose
+        - Like Spot
+        - Activity Spot
+        - Idea Spot
+      name: location_type
     - prompt: "Where is this spot?"
       type: text
       name: name
       attrs:
         - key: placeholder
-          value: Street, landmark, building, etc.
+          value: Street, landmark, area, etc.
         - key: size
           value: 30
-    - prompt: What type of spot is this?
-      type: select
-      options:
-        - Please choose
-        - Activity Spot
-        - Idea Spot
-        - Like Spot
-      name: location_type
-    - prompt: "Please provide any additional information about this spot?"
+    - prompt: "What do you like at this spot?"
       type: textarea
       optional: true
-      name: issue
+      name: text_like
+      attrs:
+        - key: placeholder
+          value: Type here...   
+    - prompt: "What activity do you do at this spot?"
+      type: textarea
+      optional: true
+      name: text_activity
       attrs:
         - key: placeholder
           value: Type here...
+    - prompt: "What's your great idea for this spot?"
+      type: textarea
+      optional: true
+      name: text_idea
+      attrs:
+        - key: placeholder
+          value: Type here...           
     - prompt: Do you...
       type: select
       options:
