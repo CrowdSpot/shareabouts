@@ -281,32 +281,32 @@ a.reply-link:hover {
 -------------------------------------------------------------- */
 
 .place-form label[for=place-text_like],
-  .place-form select[name=text_like] {
+  .place-form textarea[name=text_like] {
   display: none;
 }
 
 .place-form.like-spot label[for=place-text_like],
-  .place-form.like-spot select[name=text_like] {
+  .place-form.like-spot textarea[name=text_like] {
   display: block;
 }
 
 .place-form label[for=place-text_activity],
-  .place-form select[name=text_activity] {
+  .place-form textarea[name=text_activity] {
   display: none;
 }
 
 .place-form.activity-spot label[for=place-text_activity],
-  .place-form.activity-spot select[name=text_activity] {
+  .place-form.activity-spot textarea[name=text_activity] {
   display: block;
 }
 
 .place-form label[for=place-text_idea],
-  .place-form select[name=text_idea] {
+  .place-form textarea[name=text_idea] {
   display: none;
 }
 
 .place-form.idea-spot label[for=place-text_idea],
-  .place-form.idea-spot select[name=text_idea] {
+  .place-form.idea-spot textarea[name=text_idea] {
   display: block;
 }
 
