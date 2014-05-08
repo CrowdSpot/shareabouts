@@ -295,8 +295,8 @@ a.reply-link:hover {
   display: none;
 }
 
-.place-form.like-spot label[for=place-text_dislike],
-  .place-form.like-spot textarea[name=text_dislike] {
+.place-form.dislike-spot label[for=place-text_dislike],
+  .place-form.dislike-spot textarea[name=text_dislike] {
   display: block;
 }
 
