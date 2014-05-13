@@ -80,10 +80,11 @@ a:hover {
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
 #site-title {
-  background: url('images/INSERT HEADER IMAGE HERE') no-repeat
+  background: url('images/pgp_header.png') no-repeat
 center;
   background-size: contain;
   width: 250px;
+  
   text-indent: -133337px;
 }
 
