@@ -196,7 +196,7 @@ place:
       attrs:
         - key: placeholder
           value: Type here...
-    - prompt: Any recomendations?
+    - prompt: Any recommendations?
       type: text
       name: recommendations
       optional: true
