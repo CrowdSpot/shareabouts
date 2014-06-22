@@ -205,6 +205,15 @@ place:
           value: Kept confidential and used for feedback
         - key: size
           value: 30
+    - prompt: How often do you visit the park?
+      type: select
+      options:
+        - Please choose
+        - More than once a week
+        - Weekly
+        - Monthly
+        - Infrequently
+      name: often       
     - prompt: Your postcode
       type: text
       name: postcode
@@ -259,11 +268,11 @@ pages:
     name: overview
     start_page: true
 
-  - title: "Spots + Filter"
+  - title: "Spot Types"
     slug: why
     name: why
     
-  - title: "FAQS"
+  - title: "Frequently Asked Quesitons"
     slug: faqs
     name: faqs  
 

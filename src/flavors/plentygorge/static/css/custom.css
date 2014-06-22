@@ -62,7 +62,7 @@ a:hover {
   #pages-nav-container:before {
     content: '';
     display: block;
-    background: transparent url('images/pvlogo_238x55.png') no-repeat center;
+    background: transparent url('images/pv_state_logos_v1.png') no-repeat center;
     float: right;
     width: 256px;
     height: 60px;
@@ -80,7 +80,7 @@ a:hover {
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
 #site-title {
-  background: url('images/pgp_header.png') no-repeat
+  background: url('images/pg_header_simple.png') no-repeat
 center;
   background-size: contain;
   width: 250px;
@@ -271,6 +271,10 @@ a.reply-link:hover {
 }
 
 .place-value-category {
+  display: none;
+}
+
+.place-value-often {
   display: none;
 }
 
