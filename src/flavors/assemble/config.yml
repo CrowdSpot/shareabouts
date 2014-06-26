@@ -28,7 +28,7 @@ map:
     maxZoom: 18
   base_layer:
     url: http://{s}.tiles.mapbox.com/v3/crowdspot1.map-5z4qlsey/{z}/{x}/{y}.png
-    attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+    attribution: '<a href="http://assemblepapers-bttf.crowdspot.com.au/" target="_blank">OPEN MAP FULL SCREEN</a>&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
   layers: []
 
 # The keys show up in the dropdown list when you are adding a new place
