@@ -27,7 +27,7 @@ map:
     minZoom: 8
     maxZoom: 17
   base_layer:
-    url: http://{s}.tiles.mapbox.com/v3/aisey.h00hp8mh/{z}/{x}/{y}.png
+    url: http://{s}.tiles.mapbox.com/v3/aisey.ink4cf15/{z}/{x}/{y}.png
     attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
   layers: []
 
