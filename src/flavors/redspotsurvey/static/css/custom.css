@@ -61,18 +61,6 @@ a:hover {
 #site-header a:hover {
 }
 
-@media only screen and (min-width: 1155px) {
-  #pages-nav-container:before {
-    content: '';
-    display: block;
-    background: transparent url('images/dandenong_logo.png') no-repeat center;
-    float: right;
-    width: 256px;
-    height: 60px;
-    margin-top: 5px;
-  }
-}
-
 
 /* =Logo
 -------------------------------------------------------------- */
@@ -84,7 +72,7 @@ a:hover {
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
 #site-title {
-  background: url('images/dandenong_logo.png') no-repeat
+  background: url('images/cgd_logo.png') no-repeat
 center;
   background-size: contain;
   width: 232px;
