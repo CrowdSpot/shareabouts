@@ -13,7 +13,7 @@
 -------------------------------------------------------------- */
 
 body, select, input, textarea {
-  background: #eeeeef;
+  background: #ffffff;
   font-family: "proxima-nova", sans-serif ;
   color: #555;
 }
@@ -43,7 +43,7 @@ a:hover {
 #site-header {
   height: auto;
   
-  background: #eeeeef;
+  background: #ffffff;
   color: #555;
   border-top: #ff1609 3px solid;
      -moz-box-shadow: none;
@@ -348,7 +348,7 @@ a.reply-link:hover {
 }
 
 .promotion .sharing::before {
-  content: 'Share: #redspotsurvey';
+  content: 'Share:';
   float: left;
   margin-right: 10px;
   
@@ -397,7 +397,7 @@ ul.recent-points {
 }
 
 #powered-by {
-  background: #eeeeef;
+  background: #ffffff;
   color: rgb(119, 119, 119);
   line-height: 2em;
   height: 2em;
