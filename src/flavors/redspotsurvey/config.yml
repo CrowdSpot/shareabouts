@@ -35,17 +35,17 @@ map:
 # The values map the place type to map icons (defined below).
 place_types:
   Red:
-    default: red
+    default: green
     focused: focused
   Blue:
-    default: blue
+    default: yellow
     focused: focused   
 
 # Defines place icons. See http://leaflet.cloudmade.com/reference.html#icon
 # for documention of each property. Any omitted property will be undefined.
 place_type_icons:
-  red:
-    iconUrl: /static/css/images/master-pin-red.png
+  green:
+    iconUrl: /static/css/images/master-pin-green.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -56,8 +56,8 @@ place_type_icons:
     iconAnchor:
       x: 42
       y: 42
-  blue:
-    iconUrl: /static/css/images/master-pin-blue.png
+  yellow:
+    iconUrl: /static/css/images/master-pin-yellow.png
     shadowUrl: /static/css/images/master-pin-shadow.png
     iconSize:
       width: 85
@@ -112,8 +112,8 @@ place:
       type: select
       options:
         - Please choose
-        - Red
-        - Blue
+        - green
+        - yellow
       name: location_type  
     - prompt: 1. I generally travel throughmby
       type: select
