@@ -5,7 +5,7 @@
  */
 
   /* SHUT IT DOWN LEMON */
-#centerpoint, #add-place, #new_response, #instructions {
+#centerpoint, #new_response, #instructions {
   display: none !important;
 }
 
