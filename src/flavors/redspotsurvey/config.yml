@@ -108,12 +108,12 @@ place:
   anonymous_name: Someone
   submit_button_label: Submit
   items:
-    - prompt: Green or Yellows
+    - prompt: Green or Yellow
       type: select
       options:
         - Please choose
-        - green
-        - yellow
+        - Green
+        - Yellow
       name: location_type  
     - prompt: 1. I generally travel throughmby
       type: select
