@@ -101,9 +101,9 @@ activity:
 
 place:
   adding_supported: true
-  add_button_label: Add a RedSpot
+  add_button_label: Add a Spot
   action_text: added
-  title: Great work, you have located a RedSpot! Tell us more...
+  title: Tell us more about your spot in Dandenong...
   action_text: created
   anonymous_name: Someone
   submit_button_label: Submit
@@ -115,7 +115,7 @@ place:
         - Red
         - Blue
       name: location_type  
-    - prompt: 1. I generally travel through the RedSpot by
+    - prompt: 1. I generally travel throughmby
       type: select
       options:
         - Please choose
@@ -127,7 +127,7 @@ place:
         - tram
         - walking
       name: mode
-    - prompt: 2. The RedSpot occurs at
+    - prompt: 2. The spot occurs at
       type: select
       options:
         - Please choose
@@ -154,7 +154,7 @@ place:
       name: direction
       attrs:
         - key: placeholder
-          value: (E.g. West, Toorak Rd towards City)
+          value: (E.g. Foster St)
         - key: size
           value: 30     
     - prompt: 5. On which day(s) is the problem worst?   
@@ -171,7 +171,7 @@ place:
       name: event
       attrs:
         - key: placeholder
-          value: E.g. AFL games are on...
+          value: E.g. Cultural festival
         - key: size
           value: 30 
     - prompt: 6. During which time(s) is the problem worst?
