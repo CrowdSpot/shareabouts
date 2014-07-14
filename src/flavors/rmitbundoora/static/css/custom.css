@@ -272,10 +272,9 @@ a.reply-link:hover {
   display: none;
 }
 
-.place-student_number {
+.place-value-private-student_number {
   display: none;
 }
-
 
 .place-form label[for=place-bus_barriers],
   .place-form select[name=bus_barriers] {
