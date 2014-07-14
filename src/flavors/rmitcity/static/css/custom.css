@@ -338,7 +338,12 @@ a.reply-link:hover {
 /* =Hiding responses in existing spots
 -------------------------------------------------------------- */
 
+
 .place-value-private-submitter_email {
+  display: none;
+}
+
+.place-student_number {
   display: none;
 }
 

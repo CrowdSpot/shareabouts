@@ -342,6 +342,10 @@ a.reply-link:hover {
   display: none;
 }
 
+.place-student_number {
+  display: none;
+}
+
 .place-value-bus_barriers {
   display: none;
 }
