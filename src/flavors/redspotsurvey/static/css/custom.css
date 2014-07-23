@@ -29,7 +29,7 @@ h1,h2,h3,h4,h5,h6 {
 -------------------------------------------------------------- */
 
 a, a:active, a:visited {
-  color: #fff;
+  color: rgb(119, 119, 119);
 }
 
 a:hover {
@@ -43,7 +43,7 @@ a:hover {
 #site-header {
   height: auto;
   
-  background: rgb(12, 88, 166);
+  background: #fff;
   color: #555;
   border-top: rgb(22, 160, 72) 3px solid;
      -moz-box-shadow: none;
