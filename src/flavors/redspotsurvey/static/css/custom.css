@@ -43,9 +43,9 @@ a:hover {
 #site-header {
   height: auto;
   
-  background: #ffffff;
+  background: rgb(13, 88, 166);
   color: #555;
-  border-top: #ff1609 3px solid;
+  border-top: rgb(22, 160, 72) 3px solid;
      -moz-box-shadow: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -72,7 +72,7 @@ a:hover {
 
 /* If not using bg-size contain, the heights are 52, 65, 78 */
 #site-title {
-  background: url('images/cgd_logo.png') no-repeat
+  background: url('images/bcc_logo.png') no-repeat
 center;
   background-size: contain;
   width: 232px;
@@ -178,7 +178,7 @@ a#nav-bttn:hover {
 -------------------------------------------------------------- */
 
 a.add-place {
-  background-color: #ff1609;
+  background-color: rgb(22, 160, 72);
   border-radius: 5px;
 /*  color: #eee;*/
 /*  text-shadow: none;*/
