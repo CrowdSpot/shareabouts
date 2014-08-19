@@ -24,7 +24,7 @@ map:
       lat: -37.808569
       lng: 144.963366
     zoom: 16
-    minZoom: 14
+    minZoom: 12
     maxZoom: 20
     maxBounds: [ [-37.847799, 144.914407], [-37.791117, 144.993371] ]
   base_layer:
