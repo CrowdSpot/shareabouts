@@ -155,6 +155,8 @@ survey:
 
   # Response config
   show_responses: true
+  # Set to true if the user should only submit a survey once
+  single_submission: false
   response_name: _(comment)
   response_plural_name: _(comments)
   action_text: _(commented on)
@@ -174,6 +176,7 @@ survey:
     - prompt: _(Your Name)
       type: text
       name: submitter_name
+      sticky: true
 
 support:
   submission_type: support

@@ -23,7 +23,7 @@ var Shareabouts = Shareabouts || {};
         place_config: this.options.placeConfig,
         user_token: this.options.userToken,
         current_user: S.currentUser
-      }, this.model.toJSON());
+      }, S.stickyFieldValues, this.model.toJSON());
 
       this.$el.html(Handlebars.templates['place-form'](data));
       return this;
@@ -139,6 +139,8 @@ var Shareabouts = Shareabouts || {};
       });
       if (errors)
         return alert(errors);
+
+      S.Util.setStickyFields(attrs, S.Config.survey.items, S.Config.place.items);
 
       // Save and redirect
       this.model.save(attrs, {

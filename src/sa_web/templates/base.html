@@ -3,6 +3,7 @@
 {% load i18n %}
 {% load shareabouts_utils %}
 {% load url from future %}
+{% get_current_language as LANGUAGE_CODE %}
 
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
@@ -69,27 +70,7 @@
     {% endif %}
 
     {% if config.languages %}
-    <div id="language-picker">
-      <nav class="access" role="article">
-        <ul class="menu">
-          <li class="menu-item">
-            {% get_language_info for LANGUAGE_CODE as language %}
-            <a class="current-language {{ LANGUAGE_CODE }} btn btn-block">{{ language.name_local }} ⌄</a>
-
-            <form action="{% url 'set_language' %}" method="post">
-              {% csrf_token %}
-              <ul class="menu">
-                {% for language in config.languages %}
-                <li class="menu-item">
-                  <button type="submit" name="language" value="{{ language.code }}" class="{{ language.code }} btn btn-block">{{ language.label }}</button>
-                </li>
-                {% endfor %}
-              </ul>
-            </form>
-          </li>
-        </ul>
-      </nav>
-    </div> <!-- .language-picker -->
+      {% include 'language_picker.html' %}
     {% endif %}
 
   </header>
@@ -151,7 +132,7 @@
   <script src="{{settings.COMPRESS_URL}}libs/backbone.js"></script>
   <script src="{{settings.COMPRESS_URL}}libs/backbone.marionette.js"></script>
   <script src="{{settings.COMPRESS_URL}}libs/handlebars-1.0.0.js"></script>
-  <script src="{{settings.COMPRESS_URL}}libs/moment.min.js"></script>
+  <script src="{{settings.COMPRESS_URL}}libs/moment-with-locales.min.js"></script>
   <script src="{{settings.COMPRESS_URL}}libs/json2.js"></script>
   <script src="{{settings.COMPRESS_URL}}libs/leaflet.argo.js"></script>
   <script src="{{settings.COMPRESS_URL}}libs/binaryajax.js"></script>
@@ -171,6 +152,8 @@
   {% endcompress %}
 
   <script>
+    moment.locale('{{LANGUAGE_CODE}}');
+
     $(function() {
       // Check official browser support.
       var userAgent = {{ user_agent_json|safe }};
@@ -239,8 +222,6 @@
   {% handlebarsjs 'pages/*' precompile %}
 
   <script type="text/javascript">
-  // moment.lang({{locale}});
-
   (function(S, $){
     // Boostrapping the place types and their icons
     S.Config = {
@@ -289,6 +270,8 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', '{{ settings.GOOGLE_ANALYTICS_ID }}', '{{ settings.GOOGLE_ANALYTICS_DOMAIN|default:"auto" }}');
+    // Set the language-code
+    ga('set', 'dimension2', '{{ LANGUAGE_CODE }}');
   </script>
   {% endif %}
 

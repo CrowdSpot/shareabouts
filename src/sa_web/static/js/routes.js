@@ -11,7 +11,8 @@ var Shareabouts = Shareabouts || {};
       'place/:id/response/:response_id': 'viewPlace',
       'place/:id/edit': 'editPlace',
       'list': 'showList',
-      'page/:slug': 'viewPage'
+      'page/:slug': 'viewPage',
+      ':zoom/:lat/:lng': 'viewMap'
     },
 
     initialize: function(options) {
@@ -70,10 +71,8 @@ var Shareabouts = Shareabouts || {};
       Backbone.history.start(historyOptions);
 
       // Load the default page only if there is no page already in the url
-      if (Backbone.history.getFragment() === '') {
-        startPageConfig = _.find(options.pagesConfig, function(pageConfig) {
-          return pageConfig.start_page === true;
-        });
+      if (this.isMapRoute(Backbone.history.getFragment())) {
+        startPageConfig = S.Util.findPageConfig(options.pagesConfig, {start_page: true});
 
         if (startPageConfig && startPageConfig.slug) {
           this.navigate('page/' + startPageConfig.slug, {trigger: true});
@@ -89,8 +88,8 @@ var Shareabouts = Shareabouts || {};
       return root + fragment;
     },
 
-    viewMap: function() {
-      this.appView.viewMap();
+    viewMap: function(zoom, lat, lng) {
+      this.appView.viewMap(zoom, lat, lng);
     },
 
     newPlace: function() {
@@ -109,6 +108,16 @@ var Shareabouts = Shareabouts || {};
 
     showList: function() {
       this.appView.showListView();
+    },
+
+    isMapRoute: function(fragment) {
+      // This is a little hacky. I attempted to use Backbone.history.handlers,
+      // but there is currently no way to map the route, at this point
+      // transformed into a regex, back to the route name. This may change
+      // in the future.
+      return (fragment === '' || (fragment.indexOf('place') === -1 &&
+        fragment.indexOf('page') === -1 &&
+        fragment.indexOf('list') === -1));
     }
   });
 

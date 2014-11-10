@@ -47,6 +47,20 @@ var Shareabouts = Shareabouts || {};
       return attrs;
     },
 
+    findPageConfig: function(pagesConfig, properties) {
+      // Search the first level for the page config
+      var pageConfig = _.findWhere(pagesConfig, properties);
+      // If we got a hit, return the page config
+      if (pageConfig) return pageConfig;
+      // Otherwise, search deeper in each nested page config
+      for (var i = 0; i < pagesConfig.length; ++i) {
+        if (pagesConfig[i].pages) {
+          pageConfig = this.findPageConfig(pagesConfig[i].pages, properties);
+          if (pageConfig) return pageConfig;
+        }
+      }
+    },
+
     isSupported: function(userAgent) {
       switch (userAgent.browser.name) {
         case 'Chrome':
@@ -64,6 +78,46 @@ var Shareabouts = Shareabouts || {};
       }
 
       return false;
+    },
+
+    // NOTE this is not in Shareabouts.js
+    // this will be "mobile" or "desktop", as defined in default.css
+    getPageLayout: function() {
+      // not IE8
+      if (window.getComputedStyle) {
+        return window.getComputedStyle(document.body,':after').getPropertyValue('content');
+      }
+
+      // IE8
+      return 'desktop';
+    },
+
+    // NOTE this is not in Shareabouts.js
+    // Keeps a cache of "sticky" form fields in memory. This cache is set when
+    // the user submits a place or survey form, and is used to prepopulate both
+    // forms. NOTE that the cache is shared between both forms, so, for example,
+    // `submitter_name` in both places will have a shared default value (if
+    // sticky: true in config.yml).
+    setStickyFields: function(data, surveyItemsConfig, placeItemsConfig) {
+      // Make an array of sticky field names
+      var stickySurveyItemNames = _.pluck(_.filter(surveyItemsConfig, function(item) {
+            return item.sticky; }), 'name'),
+          stickyPlaceItemNames = _.pluck(_.filter(placeItemsConfig, function(item) {
+            return item.sticky; }), 'name'),
+          // Array of both place and survey sticky field names
+          stickyItemNames = _.union(stickySurveyItemNames, stickyPlaceItemNames);
+
+      // Create the cache
+      if (!S.stickyFieldValues) {
+        S.stickyFieldValues = {};
+      }
+
+      _.each(stickyItemNames, function(name) {
+        // Check for existence of the key, not the truthiness of the value
+        if (name in data) {
+          S.stickyFieldValues[name] = data[name];
+        }
+      });
     },
 
     // ====================================================
@@ -88,7 +142,8 @@ var Shareabouts = Shareabouts || {};
             'center-lng': 'metric2',
             'zoom': 'metric3',
 
-            'panel-state': 'dimension1'
+            'panel-state': 'dimension1',
+            'language-code': 'dimension2'
           };
 
       switch (firstArg.toLowerCase()) {
