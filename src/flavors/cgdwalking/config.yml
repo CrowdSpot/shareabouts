@@ -49,7 +49,7 @@ map:
 place_types:
   like:
     index: 0
-    label: _(Walking spot I like)
+    label: _(Like Spots)
     rules:
       - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -81,7 +81,7 @@ place_types:
           iconAnchor: [12, 41]
   issue:
     index: 1
-    label: _(Walking spot I don't like)
+    label: _(Dislike Spots)
     rules:
       - condition: '"{{location_type}}" === "issue" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -439,7 +439,7 @@ pages:
       - title: _(Like Spots)
         url: /filter/like
         external: true
-      - title: _(Issue Spots)
+      - title: _(Dislike Spots)
         url: /filter/issue
         external: true
       - title: _(Idea Spots)
