@@ -113,7 +113,7 @@ place_types:
           iconAnchor: [12, 41]
   idea:
     index: 2
-    label: _(Idea Spot)
+    label: _(Idea Spots)
     rules:
       - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -165,7 +165,7 @@ place:
   location_item_name: location
 
   items:
-    - prompt: _(Does this spot have a name? (ie park, street name, landmark, etc.))
+    - prompt: _(What is the name of this spot? (ie park, street name, landmark, etc.))
       type: text
       name: name
       attrs:
@@ -210,7 +210,7 @@ place:
           value: Unattractive walking route   
         - label: _(Limited or no wayfinding signage)
           value: Limited or no wayfinding signage  
-        - label: _(Poor Lighting)
+        - label: _(Poor lighting)
           value: Poor Lighting  
         - label: _(Limited or no footpaths)
           value: Limited or no footpaths
@@ -277,7 +277,7 @@ place:
           value: transport
         - label: _(Fun)
           value: fun
-        - label: _(social)
+        - label: _(Social)
           value: social  
         - label: _(Other)
           value: other    
