@@ -264,8 +264,7 @@ place:
         - label: _(Never)
           value: never        
       name: frequency
-      attrs:
-        - key: required         
+      optional: true        
     - prompt: _(What is the main reason you walk here?)
       type: select
       options:
@@ -282,8 +281,7 @@ place:
         - label: _(Other)
           value: other    
       name: reason
-      attrs:
-        - key: required
+      optional: true
     - prompt: _(If 'other' please type below)
       type: text
       name: other_reason
@@ -309,8 +307,7 @@ place:
         - label: _(All of the above)
           value: All     
       name: time
-      attrs:
-        - key: required
+      optional: true
     - prompt: _(Who do you usually walk with at this spot?)
       type: select
       options:
@@ -327,8 +324,7 @@ place:
         - label: _(Walking group)
           value: group     
       name: with_who
-      attrs:
-        - key: required
+      optional: true
     - prompt: _(How old are you?)
       type: select
       options:
@@ -353,8 +349,7 @@ place:
         - label: _(>75)
           value: '>75'          
       name: age
-      attrs:
-        - key: required
+      optional: true
     - prompt: _(Your gender)
       type: select
       options:
@@ -367,8 +362,7 @@ place:
         - label: _(Other)
           value: other        
       name: gender
-      attrs:
-        - key: required                                      
+      optional: true                                     
     - prompt: _(Your name (optional))
       type: text
       name: submitter_name
