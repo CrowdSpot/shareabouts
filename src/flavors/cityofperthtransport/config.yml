@@ -277,17 +277,17 @@ place:
         - label: _(Choose One)
           value: ''
         - label: _(Walk Issue Spot)
-          value: Walk
+          value: walk
         - label: _(Bike Issue Spot)
-          value: Bike
+          value: bike
         - label: _(Bus Issue Spot)
-          value: Bus
+          value: bus
         - label: _(Train Issue Spot)
-          value: Train
+          value: train
         - label: _(Like Spot)
-          value: Like
+          value: like
         - label: _(Idea Spot)
-          value: Idea       
+          value: idea       
       name: location_type
       attrs:
         - key: required
