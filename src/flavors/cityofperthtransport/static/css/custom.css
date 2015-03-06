@@ -341,6 +341,26 @@ a.close-btn {
   display: block;
 }
 
+.place-form label[for=place-like_mode],
+  .place-form [name=like_mode]{
+  display: none;
+}
+
+.place-form.like label[for=place-like_mode],
+  .place-form.like [name=like_mode] {
+  display: block;
+}
+
+.place-form label[for=place-idea_mode],
+  .place-form [name=idea_mode]{
+  display: none;
+}
+
+.place-form.idea label[for=place-idea_mode],
+  .place-form.idea [name=idea_mode] {
+  display: block;
+}
+
 
 
 

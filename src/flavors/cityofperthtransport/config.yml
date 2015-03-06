@@ -353,7 +353,7 @@ place:
       type: select
       options: 
         - label: _(Choose One)
-          value: ''
+          value: '' 
         - label: _(No stop or station within walking distance)
           value: No stop or station within walking distance
         - label: _(Poor waiting facilities at stop/station)
@@ -407,6 +407,44 @@ place:
           value: Other            
       name: train_issue
       optional: true
+    - prompt: _(What transport mode does this Like Spot best relate to?)
+      type: select
+      options: 
+        - label: _(Choose One)
+          value: ''
+        - label: _(Walking Like Spot)
+          value: walk
+        - label: _(Bicycle Like Spot)
+          value: bike
+        - label: _(Bus Like Spot)
+          value: bus
+        - label: _(Train Like Spot)
+          value: train 
+        - label: _(Car Like Spot)
+          value: car  
+        - label: _(Other)
+          value: other            
+      name: like_mode
+      optional: true  
+    - prompt: _(What transport mode does this Idea Spot best relate to?)
+      type: select
+      options: 
+        - label: _(Choose One)
+          value: ''
+        - label: _(Walking Idea)
+          value: walk
+        - label: _(Bicycle Idea)
+          value: bike
+        - label: _(Bus Idea)
+          value: bus
+        - label: _(Train Idea)
+          value: train
+        - label: _(Car Idea)
+          value: car  
+        - label: _(Other)
+          value: other            
+      name: idea_mode
+      optional: true   
     - prompt: _(If 'other', please type below.)
       type: text
       name: issue_other
