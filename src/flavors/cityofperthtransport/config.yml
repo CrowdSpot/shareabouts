@@ -412,16 +412,16 @@ place:
       options: 
         - label: _(Choose One)
           value: ''
-        - label: _(Walking Like Spot)
-          value: walk
-        - label: _(Bicycle Like Spot)
-          value: bike
-        - label: _(Bus Like Spot)
-          value: bus
-        - label: _(Train Like Spot)
-          value: train 
-        - label: _(Car Like Spot)
-          value: car  
+        - label: _(Walking)
+          value: Walking Like Spot
+        - label: _(Bike)
+          value: Bike Like Spot
+        - label: _(Bus)
+          value: Bus Like Spot
+        - label: _(Train)
+          value: Train Like Spot 
+        - label: _(Car)
+          value: Car Like Spot  
         - label: _(Other)
           value: other            
       name: like_mode
@@ -431,16 +431,16 @@ place:
       options: 
         - label: _(Choose One)
           value: ''
-        - label: _(Walking Idea)
-          value: walk
-        - label: _(Bicycle Idea)
-          value: bike
-        - label: _(Bus Idea)
-          value: bus
-        - label: _(Train Idea)
-          value: train
-        - label: _(Car Idea)
-          value: car  
+        - label: _(Walking)
+          value: Walking Idea!
+        - label: _(Bike)
+          value: Bike Idea!
+        - label: _(Bus)
+          value: Bus Idea!
+        - label: _(Train)
+          value: Train Idea!
+        - label: _(Car)
+          value: Car Idea!  
         - label: _(Other)
           value: other            
       name: idea_mode
