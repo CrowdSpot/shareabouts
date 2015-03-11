@@ -12,6 +12,7 @@ var Shareabouts = Shareabouts || {};
       'place/:id/edit': 'editPlace',
       'list': 'showList',
       'page/:slug': 'viewPage'
+      ':zoom/:lat/:lng': 'viewMap'
     },
 
     initialize: function(options) {
@@ -89,8 +90,8 @@ var Shareabouts = Shareabouts || {};
       return root + fragment;
     },
 
-    viewMap: function() {
-      this.appView.viewMap();
+    viewMap: function(zoom, lat, lng) {
+      this.appView.viewMap(zoom, lat, lng);  
     },
 
     newPlace: function() {
