@@ -254,7 +254,7 @@ place:
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(What do you think about Transport in the city of Perth?)
+  title: _(What do you think about Transport in the City of Perth?)
   action_text: _(added)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
@@ -586,16 +586,16 @@ pages:
         url: /
         external: true
       - title: _(Walking Issue Spots)
-        url: /filter/issue
+        url: /filter/walk
         external: true
       - title: _(Bike Issue Spots)
-        url: /filter/issue
+        url: /filter/bike
         external: true
       - title: _(Bus Issue Spots)
-        url: /filter/issue
+        url: /filter/bus
         external: true
       - title: _(Train Issue Spots)
-        url: /filter/issue
+        url: /filter/train
         external: true        
       - title: _(Like Spots)
         url: /filter/like
