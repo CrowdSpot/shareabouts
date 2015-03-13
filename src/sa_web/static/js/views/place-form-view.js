@@ -8,7 +8,7 @@ var Shareabouts = Shareabouts || {};
     events: {
       'submit form': 'onSubmit',
       'change input[type="file"]': 'onInputFileChange',
-      'change select[name=location_type]': 'onLocationTypeChange'
+      'change select': 'onSelectChange'
     },
     initialize: function(){
       S.TemplateHelpers.overridePlaceTypeConfig(this.options.placeConfig.items,
@@ -67,19 +67,26 @@ var Shareabouts = Shareabouts || {};
       return attrs;
     },
     // update the form with a class indicating the location type
-    onLocationTypeChange: function(evt) {
+    onSelectChange: function(evt) {
       var self = this, $form = self.$('form');
-      var lt_config = _.find(self.options.placeConfig.items, function(item) {
-        return item.name === 'location_type'
+      var selectName = $(evt.target).attr('name');
+      var selectConfig = _.find(self.options.placeConfig.items, function(item) {
+        return item.name === selectName;
       });
       
+      var prefix = '';
+      
+      if (selectName !== 'location_type') {
+        prefix = S.Util.classify(selectName) + '-';
+      }
+      
       // remove any existing classes
-      _.each(lt_config.options, function(option) {
-        $form.removeClass(S.Util.classify(option.value));
+      _.each(selectConfig.options, function(option) {
+        $form.removeClass(prefix + S.Util.classify(option.value));
       });
       
       // add the new class
-      $form.addClass(S.Util.classify($(evt.target).val()));
+      $form.addClass(prefix + S.Util.classify($(evt.target).val()));
     },
     onInputFileChange: function(evt) {
       var self = this,
