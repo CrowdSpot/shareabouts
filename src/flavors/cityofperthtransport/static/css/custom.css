@@ -268,6 +268,16 @@ a.close-btn {
   display: block;
 }
 
+.place-form label[for=place-car_issue],
+  .place-form [name=car_issue]{
+  display: none;
+}
+
+.place-form.car label[for=place-car_issue],
+  .place-form.car [name=car_issue] {
+  display: block;
+}
+
 .place-form label[for=place-issue_other],
   .place-form [name=issue_other]{
   display: none;
@@ -293,6 +303,10 @@ a.close-btn {
   display: block;
 }
 
+.place-form.car label[for=place-issue_other],
+  .place-form.car [name=issue_other] {
+  display: block;
+}
 
 
 .place-form label[for=place-issue_description],
@@ -382,6 +396,9 @@ label small {
   #map-container {
 	  top: 0;
   }
+  .activity-enabled #ticker {
+    display: none;
+  }
   
 @media only screen and (min-height: 440px) and (max-width: 60em) {
   #map {
@@ -391,7 +408,7 @@ label small {
 
 @media only screen and (min-height: 568px) and (max-width: 60em) {
   #map {
-    height: 500px;
+    height: 570px;
   }
 }
 

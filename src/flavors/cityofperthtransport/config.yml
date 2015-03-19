@@ -175,9 +175,41 @@ place_types:
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
-          iconAnchor: [12, 41]                        
-  like:
+          iconAnchor: [12, 41] 
+  car:
     index: 4
+    label: _(Car Issue Spot)
+    rules:
+      - condition: '"{{location_type}}" === "car" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#1174FF'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "car" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/master-pin-red-car.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "car" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]                                
+  like:
+    index: 5
     label: _(Like Spot)
     rules:
       - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 12 && {{layer.focused}} === false'
@@ -209,7 +241,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   idea:
-    index: 5
+    index: 6
     label: _(Idea Spot)
     rules:
       - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 12 && {{layer.focused}} === false'
@@ -284,6 +316,8 @@ place:
           value: bus
         - label: _(Train Issue Spot)
           value: train
+        - label: _(Car Issue Spot)
+          value: car  
         - label: _(Like Spot)
           value: like
         - label: _(Idea Spot)
@@ -325,8 +359,6 @@ place:
       options: 
         - label: _(Choose One)
           value: ''
-        - label: _(Limited or no bicycle lanes)
-          value: Limited or no bicycle lanes
         - label: _(No bicycle lanes)
           value: No bicycle lanes
         - label: _(Unsafe or inappropriate bicycle lanes)
@@ -366,10 +398,6 @@ place:
           value: Infrequent services 
         - label: _(Unreliable timetables/information)
           value: Unreliable timetables/information  
-        - label: _(Limited or no provision at station for park and ride)
-          value: Limited or no provision at station for park and ride
-        - label: _(Difficult to take bicycle onboard)
-          value: Difficult to take bicycle onboard
         - label: _(It is expensive to use)
           value: It is expensive to use
         - label: _(There is no capacity during the peak)
@@ -396,8 +424,6 @@ place:
         - label: _(Unreliable timetables/information)
           value: Unreliable timetables/information  
         - label: _(Limited or no provision at station for park and ride)
-          value: Limited or no provision at station for park and ride
-        - label: _(Difficult to take bicycle onboard)
           value: Difficult to take bicycle onboard
         - label: _(It is expensive to use)
           value: It is expensive to use
@@ -407,6 +433,25 @@ place:
           value: Other            
       name: train_issue
       optional: true
+    - prompt: _(What is the issue at this car spot?)
+      type: select
+      options: 
+        - label: _(Choose One)
+          value: ''
+        - label: _(Congestion)
+          value: Congestion
+        - label: _(Emissions)
+          value: Emissions
+        - label: _(Noise)
+          value: Noise 
+        - label: _(Speeding traffic)
+          value: Speeding traffic 
+        - label: _(Heavy traffic (trucks))
+          value: Heavy traffic  
+        - label: _(Other)
+          value: Other            
+      name: car_issue
+      optional: true  
     - prompt: _(What transport mode does this Like Spot best relate to?)
       type: select
       options: 
@@ -596,7 +641,10 @@ pages:
         external: true
       - title: _(Train Issue Spots)
         url: /filter/train
-        external: true        
+        external: true
+      - title: _(Car Issue Spots)
+        url: /filter/car
+        external: true            
       - title: _(Like Spots)
         url: /filter/like
         external: true
