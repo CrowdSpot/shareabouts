@@ -84,7 +84,7 @@ place_types:
     index: 1
     label: _(Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "issue" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -94,7 +94,7 @@ place_types:
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "like" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "issue" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -103,7 +103,7 @@ place_types:
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
-      - condition: '"{{location_type}}" === "like" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "issue" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -197,20 +197,18 @@ place:
           value: ''
         - label: _(No bicycle lanes)
           value: No bicycle lanes
-        - label: _(Unsafe or inappropriate bicycle lanes)
-          value: Unsafe or inappropriate bicycle lanes 
+        - label: _(Unsafe bicycle lanes)
+          value: Unsafe bicycle lanes 
         - label: _(Bicycle lane ends unexpectedly)
-          value: Bicycle lane ends unexpectedly  
-        - label: _(Limited or no provision at intersections)
-          value: Limited or no provision at intersections  
+          value: Bicycle lane ends unexpectedly   
         - label: _(Lack of wayfinding or signage)
           value: Lack of wayfinding or signage  
         - label: _(Bicycle lane blocked)
           value: Bicycle lane blocked
         - label: _(Negative behaviour of other road users)
           value: Negative behaviour of other road users
-        - label: _(High risk of car dooring (narrow/no lane))
-          value: High risk of car dooring (narrow/no lane)
+        - label: _(High risk of car dooring)
+          value: High risk of car dooring)
         - label: _(Limited or no bicycle parking)
           value: Limited or no bicycle parking  
         - label: _(Other)
@@ -263,7 +261,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe here...) 
-    - prompt: _(What emerging issues should be addressed as part of the draft Bicycle Plan 2016-2020?)
+    - prompt: _(What emerging issues should be addressed as part of the draft Bicycle Plan?)
       type: textarea
       name: emerging_issues
       optional: true
