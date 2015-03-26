@@ -332,10 +332,10 @@ place:
           value: ''
         - label: _(Poorly maintained footpaths)
           value: Poorly maintained footpaths
-        - label: _(Limited or no crossing facilities)
-          value: Limited or no crossing facilities
-        - label: _(Limited time to cross at traffic signals)
-          value: Limited time to cross at traffic signals 
+        - label: _(No crossing facilities)
+          value: No crossing facilities
+        - label: _(Limited time to cross at signal)
+          value: Limited time to cross at signal 
         - label: _(Unattractive walking route)
           value: Unattractive walking route   
         - label: _(Limited or no wayfinding signage)
@@ -344,8 +344,8 @@ place:
           value: Poor Lighting  
         - label: _(Limited or no footpaths)
           value: Limited or no footpaths
-        - label: _(Limited or no provision for people with disabilities)
-          value: Limited or no provision for people with disabilities
+        - label: _(Limited or no disability access)
+          value: Limited or no disability access
         - label: _(Limited shelter)
           value: Limited shelter
         - label: _(Limited seating)
@@ -361,20 +361,16 @@ place:
           value: ''
         - label: _(No bicycle lanes)
           value: No bicycle lanes
-        - label: _(Unsafe or inappropriate bicycle lanes)
-          value: Unsafe or inappropriate bicycle lanes 
+        - label: _(Unsafe bicycle lanes)
+          value: Unsafe bicycle lanes 
         - label: _(Bicycle lane ends unexpectedly)
           value: Bicycle lane ends unexpectedly  
-        - label: _(Limited or no provision at intersections)
-          value: Limited or no provision at intersections  
         - label: _(Lack of wayfinding or signage)
           value: Lack of wayfinding or signage  
         - label: _(Bicycle lane blocked)
           value: Bicycle lane blocked
-        - label: _(Negative behaviour of other road users)
-          value: Negative behaviour of other road users
-        - label: _(High risk of car dooring (narrow/no lane))
-          value: High risk of car dooring (narrow/no lane)
+        - label: _(High risk of car dooring)
+          value: High risk of car dooring)
         - label: _(Limited or no bicycle parking)
           value: Limited or no bicycle parking  
         - label: _(Other)
@@ -386,22 +382,22 @@ place:
       options: 
         - label: _(Choose One)
           value: '' 
-        - label: _(No stop or station within walking distance)
-          value: No stop or station within walking distance
-        - label: _(Poor waiting facilities at stop/station)
-          value: Poor waiting facilities at stop/station
-        - label: _(Feel unsafe at stop/station)
-          value: Feel unsafe at stop/station 
-        - label: _(Limited or no footpath connections to stop/station)
-          value: Limited or no footpath connections to stop/station  
+        - label: _(No stop within walking distance)
+          value: No stop within walking distance
+        - label: _(Poor waiting facilities at stop)
+          value: Poor waiting facilities at stop
+        - label: _(Feel unsafe at stop or station)
+          value: Feel unsafe at stop or station 
+        - label: _(Limited footpath access to stop)
+          value: Limited footpath access to stop  
         - label: _(Infrequent services)
           value: Infrequent services 
-        - label: _(Unreliable timetables/information)
-          value: Unreliable timetables/information  
-        - label: _(It is expensive to use)
-          value: It is expensive to use
-        - label: _(There is no capacity during the peak)
-          value: There is no capacity during the peak  
+        - label: _(Unreliable scheduling)
+          value: Unreliable scheduling  
+        - label: _(Too expensive to use)
+          value: Too expensive to use
+        - label: _(No capacity during the peak)
+          value: No capacity during the peak  
         - label: _(Other)
           value: Other             
       name: bus_issue
@@ -411,24 +407,24 @@ place:
       options: 
         - label: _(Choose One)
           value: ''
-        - label: _(No stop or station within walking distance)
-          value: No stop or station within walking distance
-        - label: _(Poor waiting facilities at stop/station)
-          value: Poor waiting facilities at stop/station
-        - label: _(Feel unsafe at stop/station)
-          value: Feel unsafe at stop/station 
-        - label: _(Limited or no footpath connections to stop/station)
-          value: Limited or no footpath connections to stop/station  
+        - label: _(No stop within walking distance)
+          value: No stop within walking distance
+        - label: _(Poor waiting facilities at stop)
+          value: Poor waiting facilities at stop
+        - label: _(Feel unsafe at stop or station)
+          value: Feel unsafe at stop or station 
+        - label: _(Limited footpath access to stop)
+          value: Limited footpath access to stop  
         - label: _(Infrequent services)
           value: Infrequent services 
-        - label: _(Unreliable timetables/information)
-          value: Unreliable timetables/information  
-        - label: _(Limited or no provision at station for park and ride)
-          value: Difficult to take bicycle onboard
+        - label: _(Unreliable scheduling)
+          value: Unreliable scheduling  
+        - label: _(Limited or no park and ride)
+          value: Limited or no park and ride
         - label: _(It is expensive to use)
           value: It is expensive to use
-        - label: _(There is no capacity during the peak)
-          value: There is no capacity during the peak  
+        - label: _(No capacity during the peak)
+          value: No capacity during the peak  
         - label: _(Other)
           value: Other            
       name: train_issue
