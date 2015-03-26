@@ -290,7 +290,7 @@ label small {
 
 
 
-@media only screen and (min-width: 360px) and (max-width: 480px) {
+@media only screen and (min-width: 250px) and (max-width: 480px) {
 #site-title a:link, #site-title a:visited {
   display: block;
   font-size: 1.2em;
