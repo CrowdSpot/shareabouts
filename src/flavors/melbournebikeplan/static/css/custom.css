@@ -234,6 +234,8 @@ a.close-btn {
 }
 
 
+
+
 /* =Hiding questions in new forms
 -------------------------------------------------------------- */
 
@@ -288,15 +290,18 @@ label small {
 
 
 
-@media only screen and (min-width: 390px) and (max-width: 405px) {
+@media only screen and (min-width: 360px) and (max-width: 480px) {
 #site-title a:link, #site-title a:visited {
   display: block;
-  font-size: 1.5em;
+  font-size: 1.2em;
   line-height: 1.25;
   margin-left: 0.25em;
   text-decoration: none;
   color: #646464;
   }
+.has-pages #site-title {
+  margin-left: -2.75em;
+  }  
 }
 
 @media only screen and (min-width: 740px) and (max-width: 748px) {
