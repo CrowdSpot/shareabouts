@@ -361,8 +361,8 @@ support:
   anonymous_name: _(Someone)
 
 pages:
-  - title: _(Welcome)
-    slug: welcome
+  - title: _(About)
+    slug: About
     name: overview
     start_page: true
     
@@ -370,7 +370,7 @@ pages:
     slug: why
     url: /static/pages/why.html
     
-  - title: _(Filter Spots ⌄)
+  - title: _(Filter ⌄)
     pages:
       - title: _(Show All)
         url: /
