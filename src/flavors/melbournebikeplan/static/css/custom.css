@@ -85,7 +85,7 @@ CrowdSpot Grey (text) #585A59
   background: url('images/bikeplan_header3.png') no-repeat 
 center;
   background-size: contain;
-  width: 500px;
+  width: 437px;
   text-indent: -133337px;
 }
 
@@ -225,6 +225,15 @@ a.close-btn {
   display: none;
 }
 
+.place-value-postcode {
+  display: none;
+}
+
+.place-value-location_route {
+  display: none;
+}
+
+
 /* =Hiding questions in new forms
 -------------------------------------------------------------- */
 
@@ -276,6 +285,19 @@ label small {
 
 /* =Media Queries
 -------------------------------------------------------------- */
+
+
+
+@media only screen and (min-width: 390px) and (max-width: 405px) {
+#site-title a:link, #site-title a:visited {
+  display: block;
+  font-size: 1.5em;
+  line-height: 1.25;
+  margin-left: 0.25em;
+  text-decoration: none;
+  color: #646464;
+  }
+}
 
 @media only screen and (min-width: 740px) and (max-width: 748px) {
   #site-header {

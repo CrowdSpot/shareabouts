@@ -50,7 +50,7 @@ map:
 place_types:
   idea:
     index: 0
-    label: _(Idea Spots)
+    label: _(Idea Spot)
     rules:
       - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -82,7 +82,7 @@ place_types:
           iconAnchor: [12, 41]
   issue:
     index: 1
-    label: _(Issue Spots)
+    label: _(Issue Spot)
     rules:
       - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -114,7 +114,7 @@ place_types:
           iconAnchor: [12, 41]                         
   like:
     index: 2
-    label: _(Like Spots)
+    label: _(Like Spot)
     rules:
       - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -181,12 +181,12 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Something I like)
-          value: like
+        - label: _(An idea)
+          value: idea
         - label: _(An issue)
           value: issue
-        - label: _(An idea)
-          value: idea       
+        - label: _(Something I like)
+          value: like
       name: location_type
       attrs:
         - key: required        
@@ -230,9 +230,9 @@ place:
         - label: _(Choose One)
           value: ''
         - label: _(Single Location)
-          value: Single
+          value: Single Location
         - label: _(Section of bicycle route)
-          value: Route         
+          value: Route        
       name: location_route
       optional: true                                         
     - prompt: _(Please describe where this section is..)
@@ -310,7 +310,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please type postcode here...)                                             
-    - prompt: _(Your name (optional))
+    - prompt: _(Your name)
       type: text
       name: submitter_name
       optional: true
@@ -319,7 +319,7 @@ place:
           value: _(Type name)
         - key: size
           value: 30     
-    - prompt: _(Your email (optional))
+    - prompt: _(Your email)
       type: text
       name: private-submitter_email
       optional: true
