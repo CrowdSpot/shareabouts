@@ -403,6 +403,7 @@ label small {
   .activity-enabled #ticker {
     display: none;
   }
+}  
   
 @media only screen and (min-height: 440px) and (max-width: 60em) {
   #map {
