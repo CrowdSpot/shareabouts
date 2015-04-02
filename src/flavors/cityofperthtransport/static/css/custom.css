@@ -405,7 +405,7 @@ label small {
   }
 }  
 
-@media only screen and (min-width: 250px) and (max-width: 480px) {
+@media only screen and (min-width: 250px) and (max-width: 430px) {
 #site-title a:link, #site-title a:visited {
   display: block;
   font-size: 1.6em;
@@ -422,7 +422,7 @@ label small {
   
 @media only screen and (min-height: 440px) and (max-width: 60em) {
   #map {
-    height: 250px;
+    height: 440px;
   }
 }
 
