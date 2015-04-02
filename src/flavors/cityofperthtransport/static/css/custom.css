@@ -418,12 +418,6 @@ label small {
     margin-left: -2.75em;
   }
 }
-
-@media only screen and (min-height: 250px) and (max-width: 60em) {
-  #map {
-    height: 250px;
-  }
-}
   
 @media only screen and (min-height: 440px) and (max-width: 60em) {
   #map {
@@ -432,6 +426,12 @@ label small {
 }
 
 @media only screen and (min-height: 568px) and (max-width: 60em) {
+  #map {
+    height: 250px;
+  }
+}
+
+@media only screen and (min-height: 569px) and (max-width: 60em) {
   #map {
     height: 570px;
   }
