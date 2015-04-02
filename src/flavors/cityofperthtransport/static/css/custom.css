@@ -419,7 +419,7 @@ label small {
   }
 }
 
-@media only screen and (min-height: 320px) and (max-width: 60em) {
+@media only screen and (min-height: 250px) and (max-width: 60em) {
   #map {
     height: 250px;
   }
