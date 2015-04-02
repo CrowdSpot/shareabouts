@@ -425,13 +425,13 @@ label small {
   }
 }
 
-@media only screen and (min-height: 568px) and (max-width: 60em) {
+@media only screen and (min-height: 565px) and (max-width: 60em) {
   #map {
     height: 250px;
   }
 }
 
-@media only screen and (min-height: 569px) and (max-width: 60em) {
+@media only screen and (min-height: 579px) and (max-width: 60em) {
   #map {
     height: 570px;
   }
