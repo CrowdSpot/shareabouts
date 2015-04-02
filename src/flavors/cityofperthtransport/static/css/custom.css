@@ -417,11 +417,13 @@ label small {
   .has-pages #site-title {
     margin-left: -2.75em;
   }
-  #map {
-    height: 250px;
-  }  
 }
 
+@media only screen and (min-height: 320px) and (max-width: 60em) {
+  #map {
+    height: 250px;
+  }
+}
   
 @media only screen and (min-height: 440px) and (max-width: 60em) {
   #map {
