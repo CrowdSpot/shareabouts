@@ -417,29 +417,23 @@ label small {
   .has-pages #site-title {
     margin-left: -2.75em;
   }
-}
+}  
   
 @media only screen and (min-height: 440px) and (max-width: 60em) {
+  #map {
+    height: 300px;
+  }
+}
+
+@media only screen and (min-height: 545px) and (max-width: 60em) {
   #map {
     height: 440px;
   }
 }
 
-@media only screen and (min-height: 565px) and (max-width: 60em) {
-  #map {
-    height: 250px;
-  }
-}
-
-@media only screen and (min-height: 579px) and (max-width: 60em) {
-  #map {
-    height: 570px;
-  }
-}
-
 @media only screen and (min-width: 768px) and (max-width: 60em) {
   #map {
-    height: 400px;
+    height: 440px;
   }
 }  
 
