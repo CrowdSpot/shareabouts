@@ -342,7 +342,7 @@ place:
           value: ''
         - label: _(An idea)
           value: idea
-        - label: _(*An issue)
+        - label: _(An issue)
           value: issue
         - label: _(Something I like)
           value: like
@@ -367,10 +367,10 @@ place:
         - label: _(Negative behaviour of other road users)
           value: Negative behaviour of other road users
         - label: _(High risk of car dooring)
-          value: High risk of car dooring)
+          value: High risk of car dooring
         - label: _(Limited or no bicycle parking)
           value: Limited or no bicycle parking  
-        - label: _(Other**)
+        - label: _(Other)
           value: Other             
       name: location_bikeissue
       optional: true  
@@ -388,7 +388,7 @@ place:
           value: ''
         - label: _(Single location)
           value: Single Location
-        - label: _(Section of bicycle route***)
+        - label: _(Section of bicycle route)
           value: Route        
       name: location_route
       optional: true                                         
