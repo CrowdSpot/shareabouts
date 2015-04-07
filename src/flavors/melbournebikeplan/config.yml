@@ -240,11 +240,11 @@ place_types:
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
-  bikehoops:
+  bikeparking:
     index: 6
     label: _(Bike Parking)
     rules:
-      - condition: '"{{location_type}}" === "bikehoops" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "bikeparking" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -254,16 +254,16 @@ place_types:
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "bikehoops" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "bikeparking" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/bikehoops1.png
+          iconUrl: /static/css/images/bikeparking.png
           shadowUrl: /static/css/images/master-pin-shadow.png
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
-      - condition: '"{{location_type}}" === "bikehoops" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "bikeparking" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -290,7 +290,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/comlgaboundary.png
+          iconUrl: /static/css/images/comlgaboundary1.png
           shadowUrl: /static/css/images/master-pin-shadow.png
           iconSize: [85, 41]
           iconAnchor: [42, 42]
@@ -318,7 +318,7 @@ place:
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(What do you think about bike riding in the City of Melbourne?)
+  title: _(How can we make cycling in the city better?)
   action_text: _(added)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
@@ -342,7 +342,7 @@ place:
           value: ''
         - label: _(An idea)
           value: idea
-        - label: _(An issue)
+        - label: _(*An issue)
           value: issue
         - label: _(Something I like)
           value: like
@@ -370,7 +370,7 @@ place:
           value: High risk of car dooring)
         - label: _(Limited or no bicycle parking)
           value: Limited or no bicycle parking  
-        - label: _(Other)
+        - label: _(Other**)
           value: Other             
       name: location_bikeissue
       optional: true  
@@ -386,9 +386,9 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Single Location)
+        - label: _(Single location)
           value: Single Location
-        - label: _(Section of bicycle route)
+        - label: _(Section of bicycle route***)
           value: Route        
       name: location_route
       optional: true                                         
@@ -406,7 +406,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Eg.more detail about what you like, what the issue is or the idea you would love to see..)
-    - prompt: _(If possible, please try adding an image of this spot)
+    - prompt: _(If possible, please add an image of this spot)
       inputfile_label: _(Add Image)
       type: file
       name: my_image
@@ -420,28 +420,14 @@ place:
       optional: true
       attrs:
         - key: placeholder
-          value: _(Please describe here...) 
-    - prompt: _(Our current goals are to 1) Plan and deiver a connected cycling network 2) Build high quality routes for local cycling trips 3) Increase participation in cycling and 4) Make cycling safer. What should the goals be for the next plan?)
-      type: textarea
-      name: initiatives
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Please describe here...) 
-    - prompt: _(What key initiatives would help us achieve this?)
-      type: textarea
-      name: emerging_issues
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Please describe here...)                                                       
+          value: _(Please describe here...)                                                     
     - prompt: _(How old are you?)
       type: select
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(< 14)
-          value: '<14'
+        - label: _(< 15)
+          value: '<15'
         - label: _(15-19)
           value: 15-19
         - label: _(20-24)
@@ -460,14 +446,45 @@ place:
           value: '>75'          
       name: age
       optional: true
+    - prompt: _(Gender)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Male)
+          value: Male
+        - label: _(Female)
+          value: Female
+        - label: _(Other Identity)
+          value: Other Identity       
+      name: gender
+      optional: true
     - prompt: _(Your home postcode)
       type: text
       name: postcode
       optional: true
       attrs:
         - key: placeholder
-          value: _(Please type postcode here...)                                             
-    - prompt: _(Your name)
+          value: _(Please type postcode here...)   
+    - prompt: _(How do you participate in the City of Melbourne)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Resident)
+          value: Resident
+        - label: _(Ratepayer)
+          value: Ratepayer
+        - label: _(Worker)
+          value: Worker
+        - label: _(Student)
+          value: Student 
+        - label: _(Visitor)
+          value: Visitor  
+        - label: _(Business Owner)
+          value: Business Owner         
+      name: gender                                                   
+    - prompt: _(User name)
       type: text
       name: submitter_name
       optional: true
@@ -523,7 +540,7 @@ pages:
   - title: _(About)
     slug: About
     name: overview
-    start_page: false
+    start_page: true
     
   - title: _(FAQs)
     slug: why
