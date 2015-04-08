@@ -31,7 +31,7 @@ map:
     zoom: 14
     minZoom: 14
     maxZoom: 18
-    maxBounds: [ [-32.04533283885849, 115.73753356933594], [-31.88280525596735, 115.96893310546875] ]
+    maxBounds: [ [-32.028422, 115.772369], [-31.901216, 115.933846] ]
   layers:
     - url: http://{s}.tiles.mapbox.com/v3/aisey.lfp2i2mg/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
@@ -272,8 +272,40 @@ place_types:
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
-  council:
+  boat:
     index: 7
+    label: _(Boat Issue Spot)
+    rules:
+      - condition: '"{{location_type}}" === "boat" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#1174FF'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "boat" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/master-pin-red-boat.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "boat" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  council:
+    index: 8
     label: _(Council Boundary)
     rules:
       - condition: '"{{location_type}}" === "council" && {{map.zoom}} < 12 && {{layer.focused}} === false'
@@ -349,7 +381,9 @@ place:
         - label: _(Train Issue Spot)
           value: train
         - label: _(Car Issue Spot)
-          value: car  
+          value: car
+        - label: _(Boat Issue Spot)
+          value: boat     
         - label: _(Like Spot)
           value: like
         - label: _(Idea Spot)
@@ -480,6 +514,27 @@ place:
           value: Other            
       name: car_issue
       optional: true  
+    - prompt: _(What is the issue at this boat spot?)
+      type: select
+      options: 
+        - label: _(Choose One)
+          value: ''
+        - label: _(Poor waiting facilities)
+          value: Poor waiting facilities
+        - label: _(Feel unsafe)
+          value: Feel unsafe  
+        - label: _(Infrequent services)
+          value: Infrequent services 
+        - label: _(Unreliable scheduling)
+          value: Unreliable scheduling  
+        - label: _(Too expensive to use)
+          value: Too expensive to use
+        - label: _(No capacity during the peak)
+          value: No capacity during the peak  
+        - label: _(Other)
+          value: Other            
+      name: boat_issue
+      optional: true    
     - prompt: _(What transport mode does this Like Spot best relate to?)
       type: select
       options: 
@@ -495,6 +550,8 @@ place:
           value: Train Like Spot 
         - label: _(Car)
           value: Car Like Spot  
+        - label: _(Boat)
+          value: Boat Like Spot    
         - label: _(Other)
           value: other            
       name: like_mode
@@ -514,6 +571,8 @@ place:
           value: Train Idea!
         - label: _(Car)
           value: Car Idea!  
+        - label: _(Boat)
+          value: Boat Idea!  
         - label: _(Other)
           value: other            
       name: idea_mode
@@ -672,7 +731,10 @@ pages:
         external: true
       - title: _(Car Issue Spots)
         url: /filter/car
-        external: true            
+        external: true
+      - title: _(Boat Issue Spots)
+        url: /filter/boat
+        external: true                
       - title: _(Like Spots)
         url: /filter/like
         external: true

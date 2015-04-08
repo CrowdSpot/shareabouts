@@ -282,6 +282,19 @@ a.close-btn {
   display: block;
 }
 
+.place-form label[for=place-boat_issue],
+  .place-form [name=boat_issue]{
+  display: none;
+}
+
+.place-form.boat label[for=place-boat_issue],
+  .place-form.boat [name=boat_issue] {
+  display: block;
+}
+
+
+
+
 .place-form label[for=place-issue_other],
   .place-form [name=issue_other]{
   display: none;
@@ -312,6 +325,11 @@ a.close-btn {
   display: block;
 }
 
+.place-form.boat label[for=place-issue_other],
+  .place-form.boat [name=issue_other] {
+  display: block;
+}
+
 
 .place-form label[for=place-issue_description],
   .place-form [name=issue_description]{
@@ -337,7 +355,6 @@ a.close-btn {
   .place-form.train [name=issue_description] {
   display: block;
 }
-
 
 .place-form label[for=place-like_description],
   .place-form [name=like_description]{
