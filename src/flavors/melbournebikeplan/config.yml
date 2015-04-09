@@ -483,7 +483,8 @@ place:
           value: Visitor  
         - label: _(Business Owner)
           value: Business Owner         
-      name: gender                                                   
+      name: connection
+      optional: true                                                   
     - prompt: _(User name)
       type: text
       name: submitter_name
