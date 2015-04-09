@@ -577,7 +577,7 @@ place:
           value: other            
       name: idea_mode
       optional: true   
-    - prompt: _(If 'other', please type below.)
+    - prompt: _(If 'other', please type below)
       type: text
       name: issue_other
       optional: true
@@ -650,7 +650,7 @@ place:
           value: visit           
       name: connection
       optional: true                                           
-    - prompt: _(Your name (optional))
+    - prompt: _(Your name)
       type: text
       name: submitter_name
       optional: true
@@ -659,7 +659,7 @@ place:
           value: _(Type name)
         - key: size
           value: 30     
-    - prompt: _(Your email (optional))
+    - prompt: _(Your email)
       type: text
       name: private-submitter_email
       optional: true
@@ -717,30 +717,30 @@ pages:
       - title: _(Show All)
         url: /
         external: true
-      - title: _(Walking Issue Spots)
-        url: /filter/walk
-        external: true
-      - title: _(Bike Issue Spots)
-        url: /filter/bike
-        external: true
-      - title: _(Bus Issue Spots)
-        url: /filter/bus
-        external: true
-      - title: _(Train Issue Spots)
-        url: /filter/train
-        external: true
-      - title: _(Car Issue Spots)
-        url: /filter/car
-        external: true
-      - title: _(Boat Issue Spots)
-        url: /filter/boat
-        external: true                
       - title: _(Like Spots)
         url: /filter/like
         external: true
       - title: _(Idea Spots)
         url: /filter/idea
         external: true   
+      - title: _(Walk Spots)
+        url: /filter/walk
+        external: true
+      - title: _(Bike Spots)
+        url: /filter/bike
+        external: true
+      - title: _(Bus Spots)
+        url: /filter/bus
+        external: true
+      - title: _(Train Spots)
+        url: /filter/train
+        external: true
+      - title: _(Car Spots)
+        url: /filter/car
+        external: true
+      - title: _(Boat Spots)
+        url: /filter/boat
+        external: true                
 
 notifications:
   on_new_place: true
