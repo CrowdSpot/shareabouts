@@ -33,7 +33,7 @@ map:
     maxZoom: 18
     maxBounds: [ [-37.941876, 144.714997], [-37.739797, 145.087427] ]
   layers:
-    - url: http://{s}.tiles.mapbox.com/v3/aisey.lge52cje/{z}/{x}/{y}.png
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.lm9h37a2/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
     - url: /static/data/philadelphia.geojson
       type: json
@@ -374,7 +374,7 @@ place:
           value: Other             
       name: location_bikeissue
       optional: true  
-    - prompt: _(If 'other', please type below...)
+    - prompt: _(Please type 'other' below...)
       type: text
       name: other
       optional: true
