@@ -192,6 +192,15 @@ a.close-btn {
 /* =Existing Spots
 -------------------------------------------------------------- */
 
+.place-value-description_more:before {
+  content: "Description: ";
+  font-weight: bold;
+}
+
+.place-value-help_ride_more:before {
+  content: "Thing to help you ride more: ";
+  font-weight: bold;
+}
 
 .place-value-frequency {
   display: none;
