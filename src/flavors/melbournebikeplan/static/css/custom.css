@@ -189,24 +189,6 @@ a.close-btn {
   text-shadow: none;
 }
 
-/* Map*/
-  #map-container {
-    position: absolute;
-    top: 5em; /* height of #site-header */
-    right: 0;
-    bottom: 1.75em;
-    left: 0;
-  }
-  .content-visible #map-container {
-    right: auto;
-    left: 18em;
-    margin-left: -18em;
-    width: 40%;
-  }
-  .activity-enabled.content-visible #map-container {
-    width: 42%;
-  }
-
 /* =Existing Spots
 -------------------------------------------------------------- */
 
@@ -319,10 +301,18 @@ label small {
   margin-left: -2.75em;
   }  
 }
+
+@media only screen and (min-width: 740px) and (max-width: 748px) {
+  #site-header {
+    display: none;
+  }
+  #map-container {
+	  top: 0;
+  }
   
 @media only screen and (min-height: 440px) and (max-width: 60em) {
   #map {
-    height: 300px;
+    height: 250px;
   }
 }
 
@@ -337,22 +327,6 @@ label small {
     height: 400px;
   }
 }  
-
-/* Content */
-  #content {
-    padding: 0;
-    position: absolute;
-    top: 5em;
-    right: 0;
-    bottom: 1.75em;
-    left: 40%;
-    overflow: visible;
-    box-shadow: -0.15em 0 0 rgba(0,0,0,0.1);
-  }
-  .activity-enabled #content {
-    left: 42%;
-    right: 18em;
-  }
 
 
 @media only screen and (min-width: 768px) {
