@@ -301,18 +301,10 @@ label small {
   margin-left: -2.75em;
   }  
 }
-
-@media only screen and (min-width: 740px) and (max-width: 748px) {
-  #site-header {
-    display: none;
-  }
-  #map-container {
-	  top: 0;
-  }
   
 @media only screen and (min-height: 440px) and (max-width: 60em) {
   #map {
-    height: 250px;
+    height: 300px;
   }
 }
 
@@ -326,7 +318,6 @@ label small {
   #map {
     height: 400px;
   }
-}  
 
 
 @media only screen and (min-width: 768px) {
