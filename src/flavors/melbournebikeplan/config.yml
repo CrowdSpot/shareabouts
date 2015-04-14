@@ -493,7 +493,18 @@ place:
         - key: placeholder
           value: _(Type name)
         - key: size
-          value: 30     
+          value: 30 
+    - prompt: _(Would you like to receive email updates?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Yes)
+          value: Yes
+        - label: _(No)
+          value: No     
+      name: optin
+      optional: true          
     - prompt: _(Your email)
       type: text
       name: private-submitter_email
@@ -541,7 +552,7 @@ pages:
   - title: _(About)
     slug: About
     name: overview
-    start_page: false
+    start_page: true
     
   - title: _(FAQs)
     slug: why
