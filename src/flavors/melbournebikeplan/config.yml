@@ -399,13 +399,13 @@ place:
       attrs:
         - key: placeholder
           value: _(Eg.from X to X, etc.)
-    - prompt: _(Please tell us more about this spot..)
+    - prompt: _(Please tell us more about this spot.)
       type: textarea
       name: description_more
       optional: true
       attrs:
         - key: placeholder
-          value: _(Eg.more detail about what you like, what the issue is or the idea you would love to see..)
+          value: _(Eg.more detail about what you like, what the issue is or the idea you would love to see...)
     - prompt: _(If possible, please add an image of this spot)
       inputfile_label: _(Add Image)
       type: file
@@ -414,7 +414,7 @@ place:
       attrs:
         - key: accept
           value: image/*         
-    - prompt: _(When you think about riding a bike in Melbourne what one thing would help you to ride more often or start riding?)
+    - prompt: _(When you think about riding a bike in Melbourne, what one thing would help you to ride more often or start riding?)
       type: textarea
       name: help_ride_more
       optional: true
@@ -500,7 +500,7 @@ place:
       optional: true
       attrs:
         - key: placeholder
-          value: _(Email address)
+          value: _(To receive project updates)
         - key: size
           value: 30      
 
