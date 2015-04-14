@@ -541,7 +541,7 @@ pages:
   - title: _(About)
     slug: About
     name: overview
-    start_page: true
+    start_page: false
     
   - title: _(FAQs)
     slug: why
