@@ -28,7 +28,7 @@ map:
     center:
       lat: -31.953506
       lng: 115.855344
-    zoom: 14
+    zoom: 15
     minZoom: 14
     maxZoom: 18
     maxBounds: [ [-32.028422, 115.772369], [-31.901216, 115.933846] ]
@@ -52,17 +52,17 @@ place_types:
     index: 0
     label: _(Idea Spot)
     rules:
-      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
-          color: '#FF039D'
+          color: '#FDCB14'
           radius: 5
           weight: 1
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -84,17 +84,17 @@ place_types:
     index: 1
     label: _(Like Spot)
     rules:
-      - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
-          color: '#FF1609'
+          color: '#45BA00'
           radius: 5
           weight: 1
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "like" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "like" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -116,7 +116,7 @@ place_types:
     index: 2
     label: _(Walking Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "walk" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "walk" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -126,7 +126,7 @@ place_types:
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "walk" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "walk" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -148,17 +148,17 @@ place_types:
     index: 3
     label: _(Bike Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "bike" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "bike" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
-          color: '#1174FF'
+          color: '#FF1609'
           radius: 5
           weight: 1
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "bike" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "bike" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -180,17 +180,17 @@ place_types:
     index: 4
     label: _(Bus Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "bus" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "bus" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
-          color: '#1174FF'
+          color: '#FF1609'
           radius: 5
           weight: 1
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "bus" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "bus" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -212,17 +212,17 @@ place_types:
     index: 5
     label: _(Train Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "train" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "train" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
-          color: '#1174FF'
+          color: '#FF1609'
           radius: 5
           weight: 1
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "train" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "train" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -244,17 +244,17 @@ place_types:
     index: 6
     label: _(Car Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "car" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "car" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
-          color: '#1174FF'
+          color: '#FF1609'
           radius: 5
           weight: 1
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "car" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "car" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -276,17 +276,17 @@ place_types:
     index: 7
     label: _(Boat Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "boat" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "boat" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
-          color: '#1174FF'
+          color: '#FF1609'
           radius: 5
           weight: 1
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "boat" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "boat" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -372,6 +372,10 @@ place:
       options:
         - label: _(Choose One)
           value: ''
+        - label: _(Idea Spot)
+          value: idea 
+        - label: _(Like Spot)
+          value: like      
         - label: _(Walk Issue Spot)
           value: walk
         - label: _(Bike Issue Spot)
@@ -383,11 +387,7 @@ place:
         - label: _(Car Issue Spot)
           value: car
         - label: _(Boat Issue Spot)
-          value: boat     
-        - label: _(Like Spot)
-          value: like
-        - label: _(Idea Spot)
-          value: idea       
+          value: boat       
       name: location_type
       attrs:
         - key: required
@@ -717,11 +717,11 @@ pages:
       - title: _(Show All)
         url: /
         external: true
-      - title: _(Like Spots)
-        url: /filter/like
-        external: true
       - title: _(Idea Spots)
         url: /filter/idea
+        external: true
+      - title: _(Like Spots)
+        url: /filter/like
         external: true   
       - title: _(Walk Spots)
         url: /filter/walk
