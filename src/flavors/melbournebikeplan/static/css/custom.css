@@ -4,6 +4,11 @@
  * NOTE: "With great power comes great responsibility."
  */
 
+ /* SHUT IT DOWN LEMON */
+#add-place-btn-container, #new_response {
+  display: none !important;
+}
+
 COLOR PALETTE...
 
 Perth dark red #B31D2C
@@ -19,7 +24,10 @@ CrowdSpot Grey (text) #585A59
 */
 
 
-
+ /* SHUT IT DOWN LEMON */
+#add-place-btn-container, #new_response {
+  display: none !important;
+}
 
 
 /* =Base Styles
