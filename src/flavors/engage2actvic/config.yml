@@ -1,0 +1,267 @@
+# Settings for the app
+app:
+  # HTML Title
+  title: Engage2Act Victoria
+  # Header name
+  name: Engage2Act Victoria
+  # Meta description that will show up in Google search results
+  meta_description: _(CrowdSpot creates custom maps that allow people to give input on geogrpahic locations. Use it to collect data in a social, engaging process.)
+
+  # When the map loads, existing places will be loaded in chunks. By default,
+  # the size of the chunks will be a reasonable default dictated by the API
+  # server. If you would like to override the chunk size, use this setting:
+  # places_page_size: 100
+
+  # Optional. List view is supported by default. Set to false to disable.
+  # list_enabled: false
+
+# Settings for map and layer configs
+map:
+  geolocation_enabled: true
+  geolocation_onload: false
+
+  geocoding_enabled: false
+  geocode_field_label: _(Enter the street name and suburb...)
+  geocode_bounding_box: [39.830159, -75.478821, 40.167331, -74.781189]  # top, left, bottom, right
+
+  options:
+    center:
+      lat: -37.81337782546829
+      lng: 144.96253967285156
+    zoom: 13
+    minZoom: 12
+    maxZoom: 17
+    maxBounds: [ [-37.95177804684794, 144.6947479248047], [-37.666429212090605, 145.22964477539062] ]
+  layers:
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.m6kf0ojc/{z}/{x}/{y}.png
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+    - url: /static/data/philadelphia.geojson
+      type: json
+      rules:
+        - condition: 'true'
+          style:
+            color: "#444"
+            opacity: 0.6
+            fillOpacity: 0.1
+            weight: 1
+
+# The keys show up in the dropdown list when you are adding a new place
+# The values map the place type to map icons (defined below).
+place_types:
+  idea:
+    index: 0
+    label: _(Idea Spot)
+    rules:
+      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#FDCB14'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/master-pin-yellow-idea.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "idea" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  like:
+    index: 1
+    label: _(Like Spot)
+    rules:
+      - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#45BA00'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "like" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/master-pin-green-tick.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "like" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]                              
+                          
+activity:
+  # Optional. Activity is supported by default. Set to false to disable.
+  enabled: true
+  # How often to refresh the activity list, in milliseconds.
+  interval: 30000
+
+place:
+  adding_supported: true
+  add_button_label: _(Add a Spot)
+  # Labels for the buttons that toggle the map and list views
+  show_list_button_label: _(List All Spots)
+  show_map_button_label: _(Show the Map)
+  action_text: _(added)
+  title: _(What project would you like to profile?)
+  action_text: _(added)
+  anonymous_name: _(Someone)
+  submit_button_label: _(Submit)
+
+  location_item_name: location
+
+  items:
+    - prompt: _(What is the name of this spot?)
+      type: text
+      name: name
+      attrs:
+        - key: placeholder
+          value: _(Project name, community, etc.)
+        - key: size
+          value: 30
+        - key: required
+    - prompt: _(What type of spot is this?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Idea Spot)
+          value: idea 
+        - label: _(Like Spot)
+          value: like            
+      name: location_type
+      attrs:
+        - key: required                                    
+    - prompt: _(Please tell us more about this spot?)
+      type: textarea
+      name: description
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Please describe the issue, what you like or idea for this spot...)                       
+    - prompt: _(If possible, please try adding an image of this spot)
+      inputfile_label: _(Add Image)
+      type: file
+      name: my_image
+      optional: true
+      attrs:
+        - key: accept
+          value: image/*                                                     
+    - prompt: _(Your name)
+      type: text
+      name: submitter_name
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Type name)
+        - key: size
+          value: 30     
+    - prompt: _(Your email)
+      type: text
+      name: private-submitter_email
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Email address)
+        - key: size
+          value: 30      
+
+survey:
+  submission_type: comments
+
+  # Response config
+  show_responses: true
+  response_name: _(comment)
+  response_plural_name: _(comments)
+  action_text: _(commented on)
+  anonymous_name: _(Someone)
+
+  # Survey form config
+  title: _(Leave a Comment)
+  form_link_text: _(Leave a Comment)
+  submit_btn_text: _(Comment)
+  items:
+    - prompt: _(Comment)
+      label: _(Comment)
+      type: textarea
+      name: comment
+      attrs:
+        - key: required
+    - prompt: _(Your Name)
+      type: text
+      name: submitter_name
+
+support:
+  submission_type: support
+  submit_btn_text: _(Support)
+  response_name: _(support)
+  response_plural_name: _(supports)
+  action_text: supported
+  anonymous_name: _(Someone)
+
+pages:
+  - title: _(About)
+    slug: about
+    name: overview
+    start_page: true
+    
+  - title: _(FAQs)
+    slug: why
+    url: /static/pages/why.html
+    
+  - title: _(Filter ⌄)
+    pages:
+      - title: _(Show All)
+        url: /
+        external: true
+      - title: _(Idea Spots)
+        url: /filter/idea
+        external: true
+      - title: _(Like Spots)
+        url: /filter/like
+        external: true   
+      - title: _(Walk Spots)
+        url: /filter/walk
+        external: true
+      - title: _(Bike Spots)
+        url: /filter/bike
+        external: true
+      - title: _(Bus Spots)
+        url: /filter/bus
+        external: true
+      - title: _(Train Spots)
+        url: /filter/train
+        external: true
+      - title: _(Car Spots)
+        url: /filter/car
+        external: true
+      - title: _(Boat Spots)
+        url: /filter/boat
+        external: true                
+
+notifications:
+  on_new_place: true
+  submitter_email_field: private-submitter_email

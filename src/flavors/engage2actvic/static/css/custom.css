@@ -61,7 +61,7 @@ CrowdSpot Grey (text) #585A59
 }
 
 #site-header {
-  background-color: #EBECEB;
+  background-color: #ffffff;
   box-shadow: 0 5px 10px rgba(85, 85, 85, 0.5), inset 0 -3px 0
 }
 
@@ -82,7 +82,7 @@ CrowdSpot Grey (text) #585A59
   }
 
 #site-title {
-  background: url('images/Map_bannerv4.png') no-repeat 
+  background: url('images/engage2act_logo.png') no-repeat 
 center;
   background-size: contain;
   width: 440px;
@@ -135,7 +135,7 @@ center;
 -------------------------------------------------------------- */
 
 #ticker {
-  background: #EBECEB;
+  background: #ffffff;
   box-shadow: -5px 0 10px rgba(85, 85, 85, 0.5);
 }
 
