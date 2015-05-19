@@ -93,7 +93,7 @@ place:
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(1. When acting in your primary role, what services/activities do you access on foot within a 5-10 minute walk? Select service from menu options and complete checklist questionnaire below)
+  title: _(Tell us more...)
   action_text: _(created)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
@@ -101,44 +101,16 @@ place:
   location_item_name: location
 
   items:
-    - prompt: _(a) Fresh Foods)
-      type: select
-      options:
-        - label: _(Please select)
-          value: ''
-        - label: _(Yes)
-          value: yes
-        - label: _(No)
-          value: no
-      name: yesorno
-    - prompt: _(If not, how do you get these items?)
-      type: select
-      options:
-        - label: _(Please select)
-          value: ''
-        - label: _(bike)
-          value: bike
-        - label: _(PT)
-          value: pt
-        - label: _(car)
-          value: car  
-        - label: _(delivery)
-          value: delivery   
-      name: ifnot 
-    - prompt: _(How often?)
-      type: select
-      options:
-        - label: _(Please select)
-          value: ''
-        - label: _(daily)
-          value: daily
-        - label: _(Once a week)
-          value: once
-        - label: _(twice a week)
-          value: twice  
-        - label: _(once a month)
-          value: month   
-      name: ifnot    
+    - prompt: What is the most important?
+      type: checkbox
+      options: 
+        - label:_(How often?)
+        - value: label
+        - label:_(How often?)
+        - value: label
+        - label:_(How often?)
+        - value: label
+      name: ifnot     
     - prompt: _(Where from?)
       type: text
       name: wherefrom
