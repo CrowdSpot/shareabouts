@@ -48,8 +48,40 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  car:
+  legend:
     index: 0
+    label: _(MAP LEGEND)
+    rules:
+      - condition: '"{{location_type}}" === "car" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#FF1609'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "car" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/legend.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "car" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  car:
+    index: 1
     label: _(Car Issue Spot)
     rules:
       - condition: '"{{location_type}}" === "car" && {{map.zoom}} < 15 && {{layer.focused}} === false'
@@ -81,7 +113,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   walk:
-    index: 1
+    index: 2
     label: _(Walking Issue Spot)
     rules:
       - condition: '"{{location_type}}" === "walk" && {{map.zoom}} < 15 && {{layer.focused}} === false'
@@ -113,7 +145,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   bike:
-    index: 2
+    index: 3
     label: _(Bike Issue Spot)
     rules:
       - condition: '"{{location_type}}" === "bike" && {{map.zoom}} < 15 && {{layer.focused}} === false'
@@ -145,7 +177,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   bus:
-    index: 3
+    index: 4
     label: _(Bus Issue Spot)
     rules:
       - condition: '"{{location_type}}" === "bus" && {{map.zoom}} < 15 && {{layer.focused}} === false'
@@ -177,7 +209,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   train:
-    index: 4
+    index: 5
     label: _(Train Issue Spot)
     rules:
       - condition: '"{{location_type}}" === "train" && {{map.zoom}} < 15 && {{layer.focused}} === false'
@@ -209,7 +241,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]  
   tram:        
-    index: 5
+    index: 6
     label: _(Tram Issue Spot)
     rules:
       - condition: '"{{location_type}}" === "tram" && {{map.zoom}} < 15 && {{layer.focused}} === false'
@@ -241,7 +273,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]                                 
   like:
-    index: 6
+    index: 7
     label: _(Like Spot)
     rules:
       - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 15 && {{layer.focused}} === false'
@@ -273,7 +305,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   idea:
-    index: 7
+    index: 8
     label: _(Idea Spot)
     rules:
       - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 15 && {{layer.focused}} === false'
@@ -306,7 +338,7 @@ place_types:
           iconAnchor: [12, 41]
           
   comlgaboundary:
-    index: 8
+    index: 9
     label: _(Council Boundary)
     rules:
       - condition: '"{{location_type}}" === "comlgaboundary" && {{map.zoom}} < 12 && {{layer.focused}} === false'
@@ -339,7 +371,7 @@ place_types:
           iconAnchor: [12, 41]
           
   vicroads:
-    index: 9
+    index: 10
     label: _(VicRoads Roads)
     rules:
       - condition: '"{{location_type}}" === "comlgaboundary" && {{map.zoom}} < 12 && {{layer.focused}} === false'
@@ -725,7 +757,7 @@ place:
       name: route11
       optional: true
     - prompt: _( - Route 86 tram upgrade)
-      type: select
+      type: select 
       options:
         - label: _(Choose One)
           value: ''
