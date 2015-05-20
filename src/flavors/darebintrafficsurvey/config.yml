@@ -904,9 +904,9 @@ survey:
     - prompt: _(Your email)
       type: text
       name: private-submitter_email
-    - prompt: _(Your phone number)
+    - prompt: _(Your phone number - to enter prize draw)
       type: text
-      name: phone 
+      name: private-phone 
 
 support:
   submission_type: support

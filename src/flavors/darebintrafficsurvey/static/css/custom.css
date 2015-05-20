@@ -28,12 +28,6 @@ CrowdSpot Grey (text) #585A59
   display: none !important;
 }
 
- /* SHUT IT DOWN LEMON */
-input#place-priority_text {
-  display: none !important;
-}
-
-
 .list-toggle-nav {
   display: none;
   float: right;
@@ -44,7 +38,20 @@ input#place-priority_text {
   font-size: 1.15em;
 }
 
+ /* SHUT IT DOWN LEMON */
+input#place-priority_text {
+  display: none !important;
+}
 
+ /* SHUT IT DOWN LEMON */
+response-value response-value-private-submitter_email {
+  display: none !important;
+}
+
+ /* SHUT IT DOWN LEMON */
+response-value response-value-private-phone {
+  display: none !important;
+}
 
 
 /* =Base Styles
