@@ -258,6 +258,34 @@ a.close-btn {
   display: none;
 }
 
+.place-value-reservoir {
+  display: none;
+}
+
+.place-value-bell {
+  display: none;
+}
+
+.place-value-grange {
+  display: none;
+}
+
+.place-value-route11 {
+  display: none;
+}
+
+.place-value-route86 {
+  display: none;
+}
+
+.place-value-chandler {
+  display: none;
+}
+
+.place-value-stgeorges {
+  display: none;
+}
+
 
 
 /* =Hiding questions in new forms
