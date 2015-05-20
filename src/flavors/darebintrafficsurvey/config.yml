@@ -604,27 +604,155 @@ place:
       attrs:
         - key: accept
           value: image/*  
-    - prompt: _(Which single project do you think is the 'most' important focus for the State Government to deliver to support Darebin City Council? )
+    - prompt: _(What do think should be the most important fcous for the State Government to deliver to support Darebin City Council? Please rank 1 to 7 on the follwing issues, where 1 is the highest priotiy.)
+      name: priority_text
+    - prompt: _(Road and rail separation at Reservoir Junction)
       type: select
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Road and rail separation at Reservoir Junction)
-          value: Road and rail separation at Reservoir Junction
-        - label: _(Road and rail separation at Bell St, Preston)
-          value: Road and rail separation at Bell St, Prestonon)
-        - label: _(Road and rail separation at Grange Rd, Alphington)
-          value: Road and rail separation at Grange Rd, Alphington
-        - label: _(Route 11 tram upgrade)
-          value: Route 11 tram upgrade       
-        - label: _(Route 86 tram upgrade)
-          value: Route 86 tram upgrade 
-        - label: _(Chandler Highway Duplication)
-          value: Chandler Highway Duplication 
-        - label: _(St Georges Rd Shared Path Upgrade)
-          value: St Georges Rd Shared Path Upgrade         
+        - label: _(1)
+          value: 1
+        - label: _(2)
+          value: 2)
+        - label: _(3)
+          value: 3
+        - label: _(4)
+          value: 4       
+        - label: _(5)
+          value: 5 
+        - label: _(6)
+          value: 6 
+        - label: _(7)
+          value: 7         
       name: project
-      optional: true                                                                         
+      optional: true
+    - prompt: _(Road and rail separation at Bell St, Preston)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(1)
+          value: 1
+        - label: _(2)
+          value: 2)
+        - label: _(3)
+          value: 3
+        - label: _(4)
+          value: 4       
+        - label: _(5)
+          value: 5 
+        - label: _(6)
+          value: 6 
+        - label: _(7)
+          value: 7        
+      name: project
+      optional: true
+    - prompt: _(Road and rail separation at Grange Rd, Alphington)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(1)
+          value: 1
+        - label: _(2)
+          value: 2)
+        - label: _(3)
+          value: 3
+        - label: _(4)
+          value: 4       
+        - label: _(5)
+          value: 5 
+        - label: _(6)
+          value: 6 
+        - label: _(7)
+          value: 7        
+      name: project
+      optional: true
+    - prompt: _(Route 11 tram upgrade)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(1)
+          value: 1
+        - label: _(2)
+          value: 2)
+        - label: _(3)
+          value: 3
+        - label: _(4)
+          value: 4       
+        - label: _(5)
+          value: 5 
+        - label: _(6)
+          value: 6 
+        - label: _(7)
+          value: 7        
+      name: project
+      optional: true
+    - prompt: _(Route 86 tram upgrade)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(1)
+          value: 1
+        - label: _(2)
+          value: 2)
+        - label: _(3)
+          value: 3
+        - label: _(4)
+          value: 4       
+        - label: _(5)
+          value: 5 
+        - label: _(6)
+          value: 6 
+        - label: _(7)
+          value: 7        
+      name: project
+      optional: true
+    - prompt: _(Chandler Highway Duplication)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(1)
+          value: 1
+        - label: _(2)
+          value: 2)
+        - label: _(3)
+          value: 3
+        - label: _(4)
+          value: 4       
+        - label: _(5)
+          value: 5 
+        - label: _(6)
+          value: 6 
+        - label: _(7)
+          value: 7        
+      name: project
+      optional: true 
+    - prompt: _(St Georges Rd Shared Path Upgrade)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(1)
+          value: 1
+        - label: _(2)
+          value: 2)
+        - label: _(3)
+          value: 3
+        - label: _(4)
+          value: 4       
+        - label: _(5)
+          value: 5 
+        - label: _(6)
+          value: 6 
+        - label: _(7)
+          value: 7        
+      name: project
+      optional: true                                                                                 
     - prompt: _(How old are you?)
       type: select
       options:

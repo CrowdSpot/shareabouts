@@ -24,7 +24,12 @@ CrowdSpot Grey (text) #585A59
 
 
  /* SHUT IT DOWN LEMON */
-.list-toggle-btn, .list-toggle-btn:visited, .list-toggle-btn:link {
+.list-toggle-btn, .list-toggle-btn:visited, .list-toggle-btn:link input#place-priority_text {
+  display: none !important;
+}
+
+ /* SHUT IT DOWN LEMON */
+input#place-priority_text {
   display: none !important;
 }
 
