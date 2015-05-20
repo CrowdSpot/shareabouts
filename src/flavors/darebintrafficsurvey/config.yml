@@ -900,13 +900,7 @@ survey:
         - key: required
     - prompt: _(Your Name)
       type: text
-      name: submitter_name
-    - prompt: _(Your email)
-      type: text
-      name: private-submitter_email
-    - prompt: _(Your phone number - to enter prize draw)
-      type: text
-      name: private-phone 
+      name: submitter_name 
 
 support:
   submission_type: support
