@@ -637,8 +637,9 @@ place:
       attrs:
         - key: accept
           value: image/*  
-    - prompt: _(5. What do think should be the most important focus for the State Government to deliver to support Darebin City Council? Please rank 1 to 7 on the follwing issues, where 1 is the highest priotiy.)
+    - prompt: _(5. What do think should be the most important focus for the State Government to deliver to support Darebin City Council? Please rank the follwing issues 1 to 7, where 1 is your highest priotiy.)
       name: priority_text
+      optional: true
     - prompt: _( - Road and rail separation at Reservoir Junction)
       type: select
       options:
@@ -866,7 +867,7 @@ place:
           value: _(To receive project updates)
         - key: size
           value: 30 
-    - prompt: _(12. To enter the prize draw please provide your contact phone number)
+    - prompt: _(12. Phone number - to enter the prize draw)
       type: text
       name: phone
       optional: true
