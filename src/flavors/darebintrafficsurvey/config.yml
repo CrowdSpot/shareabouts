@@ -336,6 +336,39 @@ place_types:
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+          
+  vicroads:
+    index: 9
+    label: _(VicRoads Roads)
+    rules:
+      - condition: '"{{location_type}}" === "comlgaboundary" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#FF039D'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "comlgaboundary" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/vicroads_roads.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "comlgaboundary" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
           iconAnchor: [12, 41]                 
                           
 activity:
@@ -359,7 +392,7 @@ place:
   location_item_name: location
 
   items:
-    - prompt: _(What is the name of this spot?)
+    - prompt: _(1. What is the name of this spot?)
       type: text
       name: name
       attrs:
@@ -368,7 +401,7 @@ place:
         - key: size
           value: 30
         - key: required
-    - prompt: _(What type of spot is this?)
+    - prompt: _(2. What type of spot is this?)
       type: select
       options:
         - label: _(Choose One)
@@ -392,7 +425,7 @@ place:
       name: location_type
       attrs:
         - key: required
-    - prompt: _(What is the issue at this car spot?)
+    - prompt: _(2a. What is the issue at this car spot?)
       type: select
       options: 
         - label: _(Choose One)
@@ -415,7 +448,7 @@ place:
           value: Other            
       name: car_issue
       optional: true    
-    - prompt: _(What is the issue at this walking spot?)
+    - prompt: _(2a. What is the issue at this walking spot?)
       type: select
       options: 
         - label: _(Choose One)
@@ -444,7 +477,7 @@ place:
           value: Other             
       name: walk_issue
       optional: true
-    - prompt: _(What is the  issue at this bike spot?)
+    - prompt: _(2a. What is the  issue at this bike spot?)
       type: select
       options: 
         - label: _(Choose One)
@@ -467,7 +500,7 @@ place:
           value: Other             
       name: bike_issue
       optional: true
-    - prompt: _(What is the issue at this bus spot?)
+    - prompt: _(2a. What is the issue at this bus spot?)
       type: select
       options: 
         - label: _(Choose One)
@@ -490,7 +523,7 @@ place:
           value: Other             
       name: bus_issue
       optional: true     
-    - prompt: _(What is the issue at this train spot?)
+    - prompt: _(2a. What is the issue at this train spot?)
       type: select
       options: 
         - label: _(Choose One)
@@ -515,7 +548,7 @@ place:
           value: Other            
       name: train_issue
       optional: true
-    - prompt: _(What is the issue at this tram spot?)
+    - prompt: _(2a. What is the issue at this tram spot?)
       type: select
       options: 
         - label: _(Choose One)
@@ -540,7 +573,7 @@ place:
           value: Other            
       name: tram_issue
       optional: true
-    - prompt: _(What transport mode does this Like Spot best relate to?)
+    - prompt: _(2a. What transport mode does this Like Spot best relate to?)
       type: select
       options: 
         - label: _(Choose One)
@@ -561,7 +594,7 @@ place:
           value: other            
       name: like_mode
       optional: true  
-    - prompt: _(What transport mode does this Idea Spot best relate to?)
+    - prompt: _(2a. What transport mode does this Idea Spot best relate to?)
       type: select
       options: 
         - label: _(Choose One)
@@ -589,14 +622,14 @@ place:
       attrs:
         - key: placeholder
           value: _('Other' issue here...)                                                            
-    - prompt: _(Please describe the spot in more detail?)
+    - prompt: _(3. Please describe the spot in more detail?)
       type: textarea
       name: description_more
       optional: true
       attrs:
         - key: placeholder
           value: _(Eg.more detail about what you like, what the issue is or the idea you would love to see...)
-    - prompt: _(If possible, please add an image of this spot)
+    - prompt: _(4. If possible, please add an image of this spot)
       inputfile_label: _(Add Image)
       type: file
       name: my_image
@@ -604,9 +637,9 @@ place:
       attrs:
         - key: accept
           value: image/*  
-    - prompt: _(What do think should be the most important fcous for the State Government to deliver to support Darebin City Council? Please rank 1 to 7 on the follwing issues, where 1 is the highest priotiy.)
+    - prompt: _(5. What do think should be the most important focus for the State Government to deliver to support Darebin City Council? Please rank 1 to 7 on the follwing issues, where 1 is the highest priotiy.)
       name: priority_text
-    - prompt: _(Road and rail separation at Reservoir Junction)
+    - prompt: _( - Road and rail separation at Reservoir Junction)
       type: select
       options:
         - label: _(Choose One)
@@ -625,9 +658,9 @@ place:
           value: 6 
         - label: _(7)
           value: 7         
-      name: project
+      name: reservoir
       optional: true
-    - prompt: _(Road and rail separation at Bell St, Preston)
+    - prompt: _( - Road and rail separation at Bell St, Preston)
       type: select
       options:
         - label: _(Choose One)
@@ -646,9 +679,9 @@ place:
           value: 6 
         - label: _(7)
           value: 7        
-      name: project
+      name: bellstreet
       optional: true
-    - prompt: _(Road and rail separation at Grange Rd, Alphington)
+    - prompt: _( - Road and rail separation at Grange Rd, Alphington)
       type: select
       options:
         - label: _(Choose One)
@@ -667,9 +700,9 @@ place:
           value: 6 
         - label: _(7)
           value: 7        
-      name: project
+      name: grangeroad
       optional: true
-    - prompt: _(Route 11 tram upgrade)
+    - prompt: _( - Route 11 tram upgrade)
       type: select
       options:
         - label: _(Choose One)
@@ -688,9 +721,9 @@ place:
           value: 6 
         - label: _(7)
           value: 7        
-      name: project
+      name: route11
       optional: true
-    - prompt: _(Route 86 tram upgrade)
+    - prompt: _( - Route 86 tram upgrade)
       type: select
       options:
         - label: _(Choose One)
@@ -709,9 +742,9 @@ place:
           value: 6 
         - label: _(7)
           value: 7        
-      name: project
+      name: route86
       optional: true
-    - prompt: _(Chandler Highway Duplication)
+    - prompt: _( - Chandler Highway Duplication)
       type: select
       options:
         - label: _(Choose One)
@@ -730,9 +763,9 @@ place:
           value: 6 
         - label: _(7)
           value: 7        
-      name: project
+      name: chandler
       optional: true 
-    - prompt: _(St Georges Rd Shared Path Upgrade)
+    - prompt: _( - St Georges Rd Shared Path Upgrade)
       type: select
       options:
         - label: _(Choose One)
@@ -751,9 +784,9 @@ place:
           value: 6 
         - label: _(7)
           value: 7        
-      name: project
+      name: stgeorges
       optional: true                                                                                 
-    - prompt: _(How old are you?)
+    - prompt: _(6. How old are you?)
       type: select
       options:
         - label: _(Choose One)
@@ -778,7 +811,7 @@ place:
           value: '>75'          
       name: age
       optional: true
-    - prompt: _(Your gender)
+    - prompt: _(7. Your gender)
       type: select
       options:
         - label: _(Choose One)
@@ -791,14 +824,14 @@ place:
           value: Other Identity       
       name: gender
       optional: true
-    - prompt: _(Your home postcode)
+    - prompt: _(8. Your home postcode)
       type: text
       name: postcode
       optional: true
       attrs:
         - key: placeholder
           value: _(Please type postcode here...)   
-    - prompt: _(How do you mostly participate in the City of Darebin?)
+    - prompt: _(9. How do you mostly participate in the City of Darebin?)
       type: select
       options:
         - label: _(Choose One)
@@ -815,7 +848,7 @@ place:
           value: I travel through Darebin         
       name: connection
       optional: true                                                   
-    - prompt: _(Your name)
+    - prompt: _(10. Your name)
       type: text
       name: submitter_name
       optional: true
@@ -824,7 +857,7 @@ place:
           value: _(Type name)
         - key: size
           value: 30        
-    - prompt: _(Your email)
+    - prompt: _(11. Your email)
       type: text
       name: private-submitter_email
       optional: true
@@ -833,7 +866,7 @@ place:
           value: _(To receive project updates)
         - key: size
           value: 30 
-    - prompt: _(To enter the prize draw please provide your contact phone number)
+    - prompt: _(12. To enter the prize draw please provide your contact phone number)
       type: text
       name: phone
       optional: true

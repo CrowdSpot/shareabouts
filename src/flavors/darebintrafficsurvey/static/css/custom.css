@@ -222,7 +222,6 @@ a.close-btn {
   font-weight: bold;
 }
 
-
 .place-value-frequency {
   display: none;
 }
@@ -236,10 +235,6 @@ a.close-btn {
 }
 
 .place-value-time {
-  display: none;
-}
-
-.place-value-with_who {
   display: none;
 }
 
@@ -259,11 +254,7 @@ a.close-btn {
   display: none;
 }
 
-.place-value-location_route {
-  display: none;
-}
-
-.place-value-optin {
+.place-value-phone {
   display: none;
 }
 
