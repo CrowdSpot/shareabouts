@@ -54,6 +54,13 @@ response-value response-value-private-phone {
 }
 
 
+
+.drag-marker-instructions.is-visuallyhidden {
+  position: relative !important;
+}
+
+
+
 /* =Base Styles
 -------------------------------------------------------------- */
 

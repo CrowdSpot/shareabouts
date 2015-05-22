@@ -881,7 +881,7 @@ place:
           value: I travel through Darebin         
       name: connection
       optional: true                                                   
-    - prompt: _(10. Your name (will be visible))
+    - prompt: _(10. Screen name)
       type: text
       name: submitter_name
       optional: true
