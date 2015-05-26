@@ -66,7 +66,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/master-pin-yellow-idea.png
+          iconUrl: /static/css/images/e2z-pin.png
           shadowUrl: /static/css/images/master-pin-shadow.png
           iconSize: [85, 41]
           iconAnchor: [42, 42]
@@ -116,7 +116,7 @@ place:
       name: name
       attrs:
         - key: placeholder
-          value: _(Project name, community, etc.)
+          value: _(Type organisation here, etc.)
         - key: size
           value: 30
         - key: required    
@@ -158,33 +158,33 @@ place:
         - label: _(Please select)
           value: ''
         - label: _(Yes)
-          value: yes
+          value: yep
         - label: _(No)
-          value: No
-      name: working 
-    - prompt: _(Would you be willing to speak about this project?)
+          value: nope
+      name: location_working 
+    - prompt: _(Great, would you be willing to speak about this project?)
       type: select
       options:
         - label: _(Please select)
           value: ''
-        - label: _(Yes)
+        - label: _(Yeah sure)
           value: yes
-        - label: _(No)
-          value: No
+        - label: _(No thanks)
+          value: no
       name: willing
-    - prompt: _(You you know someone who would be willing to speak about this project?)
+    - prompt: _(Thats ok. Can you nominate someone to speak about this project?)
       type: select
       options:
         - label: _(Please select)
           value: ''
-        - label: _(Yes)
-          value: yes
-        - label: _(No)
-          value: No
-      name: someone 
-    - prompt: _(Great, what is their name?)
+        - label: _(Yep)
+          value: yep
+        - label: _(Nope)
+          value: nope
+      name: location_someone 
+    - prompt: _(Great, please type their name below)
       type: text
-      name: name
+      name: theirname
       optional: true
       attrs:
         - key: placeholder
@@ -206,7 +206,7 @@ place:
       optional: true
       attrs:
         - key: placeholder
-          value: _(Type name)
+          value: _(Type organisation name)
         - key: size
           value: 30            
     - prompt: _(Your email)
@@ -215,7 +215,7 @@ place:
       optional: true
       attrs:
         - key: placeholder
-          value: _(Email address)
+          value: _(To communicate with you about the event)
         - key: size
           value: 30      
 
@@ -260,37 +260,7 @@ pages:
     
   - title: _(FAQs)
     slug: why
-    url: /static/pages/why.html
-    
-  - title: _(Filter ⌄)
-    pages:
-      - title: _(Show All)
-        url: /
-        external: true
-      - title: _(Idea Spots)
-        url: /filter/idea
-        external: true
-      - title: _(Like Spots)
-        url: /filter/like
-        external: true   
-      - title: _(Walk Spots)
-        url: /filter/walk
-        external: true
-      - title: _(Bike Spots)
-        url: /filter/bike
-        external: true
-      - title: _(Bus Spots)
-        url: /filter/bus
-        external: true
-      - title: _(Train Spots)
-        url: /filter/train
-        external: true
-      - title: _(Car Spots)
-        url: /filter/car
-        external: true
-      - title: _(Boat Spots)
-        url: /filter/boat
-        external: true                
+    url: /static/pages/why.html               
 
 notifications:
   on_new_place: true

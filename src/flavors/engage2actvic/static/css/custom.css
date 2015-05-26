@@ -232,172 +232,51 @@ a.close-btn {
 /* =Hiding questions in new forms
 -------------------------------------------------------------- */
 
-.place-form label[for=place-walk_issue],
-  .place-form [name=walk_issue]{
+.place-form label[for=place-description_route],
+  .place-form [name=description_route]{
   display: none;
 }
 
-.place-form.walk label[for=place-walk_issue],
-  .place-form.walk [name=walk_issue] {
+.place-form.location_route-route label[for=place-description_route],
+  .place-form.location_route-route [name=description_route] {
   display: block;
 }
 
-.place-form label[for=place-bike_issue],
-  .place-form [name=bike_issue]{
+
+.place-form label[for=place-willing],
+  .place-form [name=willing]{
   display: none;
 }
 
-.place-form.bike label[for=place-bike_issue],
-  .place-form.bike [name=bike_issue] {
+.place-form.location_working-yep label[for=place-willing],
+  .place-form.location_working-yep [name=willing] {
   display: block;
 }
 
-.place-form label[for=place-bus_issue],
-  .place-form [name=bus_issue]{
+
+
+.place-form label[for=place-location_someone],
+  .place-form [name=location_someone]{
   display: none;
 }
 
-.place-form.bus label[for=place-bus_issue],
-  .place-form.bus [name=bus_issue] {
+.place-form.location_working-nope label[for=place-location_someone],
+  .place-form.location_working-nope [name=location_someone] {
   display: block;
 }
 
-.place-form label[for=place-train_issue],
-  .place-form [name=train_issue]{
+
+
+.place-form label[for=place-theirname],
+  .place-form [name=theirname]{
   display: none;
 }
 
-.place-form.train label[for=place-train_issue],
-  .place-form.train [name=train_issue] {
+
+.place-form.location_someone-yep label[for=place-theirname],
+  .place-form.location_someone-yep [name=theirname] {
   display: block;
 }
-
-.place-form label[for=place-car_issue],
-  .place-form [name=car_issue]{
-  display: none;
-}
-
-.place-form.car label[for=place-car_issue],
-  .place-form.car [name=car_issue] {
-  display: block;
-}
-
-.place-form label[for=place-boat_issue],
-  .place-form [name=boat_issue]{
-  display: none;
-}
-
-.place-form.boat label[for=place-boat_issue],
-  .place-form.boat [name=boat_issue] {
-  display: block;
-}
-
-
-
-
-.place-form label[for=place-issue_other],
-  .place-form [name=issue_other]{
-  display: none;
-}
-
-.place-form.walk label[for=place-issue_other],
-  .place-form.walk [name=issue_other] {
-  display: block;
-}
-
-.place-form.bike label[for=place-issue_other],
-  .place-form.bike [name=issue_other] {
-  display: block;
-}
-
-.place-form.bus label[for=place-issue_other],
-  .place-form.bus [name=issue_other] {
-  display: block;
-}
-
-.place-form.train label[for=place-issue_other],
-  .place-form.train [name=issue_other] {
-  display: block;
-}
-
-.place-form.car label[for=place-issue_other],
-  .place-form.car [name=issue_other] {
-  display: block;
-}
-
-.place-form.boat label[for=place-issue_other],
-  .place-form.boat [name=issue_other] {
-  display: block;
-}
-
-
-.place-form label[for=place-issue_description],
-  .place-form [name=issue_description]{
-  display: none;
-}
-
-.place-form.walk label[for=place-issue_description],
-  .place-form.walk [name=issue_description] {
-  display: block;
-}
-
-.place-form.bike label[for=place-issue_description],
-  .place-form.bike [name=issue_description] {
-  display: block;
-}
-
-.place-form.bus label[for=place-issue_description],
-  .place-form.bus [name=issue_description] {
-  display: block;
-}
-
-.place-form.train label[for=place-issue_description],
-  .place-form.train [name=issue_description] {
-  display: block;
-}
-
-.place-form label[for=place-like_description],
-  .place-form [name=like_description]{
-  display: none;
-}
-
-.place-form.like label[for=place-like_description],
-  .place-form.like [name=like_description] {
-  display: block;
-}
-
-.place-form label[for=place-idea_description],
-  .place-form [name=idea_description]{
-  display: none;
-}
-
-.place-form.idea label[for=place-idea_description],
-  .place-form.idea [name=idea_description] {
-  display: block;
-}
-
-.place-form label[for=place-like_mode],
-  .place-form [name=like_mode]{
-  display: none;
-}
-
-.place-form.like label[for=place-like_mode],
-  .place-form.like [name=like_mode] {
-  display: block;
-}
-
-.place-form label[for=place-idea_mode],
-  .place-form [name=idea_mode]{
-  display: none;
-}
-
-.place-form.idea label[for=place-idea_mode],
-  .place-form.idea [name=idea_mode] {
-  display: block;
-}
-
-
-
 
 /* =Hiding (optional) in survey form
 -------------------------------------------------------------- */
