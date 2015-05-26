@@ -191,41 +191,37 @@ a.close-btn {
 
 /* =Existing Spots
 -------------------------------------------------------------- */
+.place-value-stage:before {
+  content: "Project Stage: ";
+  font-weight: bold;
+}
 
+.place-value-description:before {
+  content: "Description: ";
+  font-weight: bold;
+}
 
-.place-value-frequency {
+.place-value-location_willing {
   display: none;
 }
 
-.place-value-reason {
+.place-value-willing {
   display: none;
 }
 
-.place-value-other_reason {
+.place-value-location_someone {
   display: none;
 }
 
-.place-value-time {
+.place-value-location_working {
   display: none;
 }
 
-.place-value-with_who {
+.place-value-theirname {
   display: none;
 }
 
-.place-value-age {
-  display: none;
-}
-
-.place-value-gender {
-  display: none;
-}
-
-.place-value-connection {
-  display: none;
-}
-
-.place-value-postcode {
+.place-value-organisation {
   display: none;
 }
 

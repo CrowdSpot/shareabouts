@@ -124,7 +124,19 @@ place:
       name: location_type
       attrs:
         - key: value
-          value: project                                   
+          value: project
+    - prompt: _(What stage is this project currently at?)
+      type: select
+      options:
+        - label: _(Please select)
+          value: ''
+        - label: _(Early stage planning)
+          value: Early stage planning
+        - label: _(Current)
+          value: Current
+        - label: _(Complete)
+          value: Complete 
+      name: stage                                         
     - prompt: _(Please tell us more about this project?)
       type: textarea
       name: description
@@ -139,21 +151,10 @@ place:
       optional: true
       attrs:
         - key: accept
-          value: image/* 
-    - prompt: _(What stage is this project currently at?)
-      type: select
-      options:
-        - label: _(Please select)
-          value: ''
-        - label: _(Early stage planning)
-          value: Early stage planning
-        - label: _(Currently engaging community)
-          value: current
-        - label: _(Engagement complete)
-          value: complete 
-      name: stage  
+          value: image/*  
     - prompt: _(Are you working on this project?)
       type: select
+      optional: true
       options:
         - label: _(Please select)
           value: ''
@@ -164,6 +165,7 @@ place:
       name: location_working 
     - prompt: _(Great, would you be willing to speak about this project?)
       type: select
+      optional: true
       options:
         - label: _(Please select)
           value: ''
@@ -174,6 +176,7 @@ place:
       name: willing
     - prompt: _(Thats ok. Can you nominate someone to speak about this project?)
       type: select
+      optional: true
       options:
         - label: _(Please select)
           value: ''
