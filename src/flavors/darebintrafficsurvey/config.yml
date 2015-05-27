@@ -892,7 +892,7 @@ pages:
       - title: _(Likes)
         url: /filter/like
         external: true
-      - title: _(Ideass)
+      - title: _(Ideas)
         url: /filter/idea
         external: true    
 
