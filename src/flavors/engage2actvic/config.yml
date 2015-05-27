@@ -28,8 +28,8 @@ map:
     center:
       lat: -37.81337782546829
       lng: 144.96253967285156
-    zoom: 13
-    minZoom: 12
+    zoom: 14
+    minZoom: 13
     maxZoom: 17
     maxBounds: [ [-37.95177804684794, 144.6947479248047], [-37.666429212090605, 145.22964477539062] ]
   layers:
@@ -52,7 +52,7 @@ place_types:
     index: 0
     label: _(Project Spot)
     rules:
-      - condition: '"{{location_type}}" === "project" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "project" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -137,7 +137,7 @@ place:
         - label: _(Complete)
           value: Complete 
       name: stage                                         
-    - prompt: _(Please tell us more about this project?)
+    - prompt: _(Please tell us a little more about this project and how the community are (or have been) being engaged in experiencing change?)
       type: textarea
       name: description
       optional: true
@@ -211,7 +211,16 @@ place:
         - key: placeholder
           value: _(Type organisation name)
         - key: size
-          value: 30            
+          value: 30
+    - prompt: _(Your phone number)
+      type: text
+      name: phone
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Type phone number)
+        - key: size
+          value: 30                   
     - prompt: _(Your email)
       type: text
       name: private-submitter_email
