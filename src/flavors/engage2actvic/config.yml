@@ -52,7 +52,7 @@ place_types:
     index: 0
     label: _(Project Spot)
     rules:
-      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "project" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -62,7 +62,7 @@ place_types:
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "project" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -71,7 +71,7 @@ place_types:
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
-      - condition: '"{{location_type}}" === "idea" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "project" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
