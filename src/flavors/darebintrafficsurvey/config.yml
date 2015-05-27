@@ -75,14 +75,14 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/markers/marker-f95016.png
+          iconUrl: /static/css/images/markers/marker-f39914.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   car:
     index: 1
-    label: _(Car Issue Spot)
+    label: _(Car Issue)
     rules:
       - condition: '"{{location_type}}" === "car" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -107,14 +107,14 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/markers/marker-f95016.png
+          iconUrl: /static/css/images/markers/marker-f39914.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   walk:
     index: 2
-    label: _(Walking Issue Spot)
+    label: _(Walking Issue)
     rules:
       - condition: '"{{location_type}}" === "walk" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -139,14 +139,14 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/markers/marker-f95016.png
+          iconUrl: /static/css/images/markers/marker-f39914.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   bike:
     index: 3
-    label: _(Bike Issue Spot)
+    label: _(Bike Issue)
     rules:
       - condition: '"{{location_type}}" === "bike" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -171,14 +171,14 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/markers/marker-f95016.png
+          iconUrl: /static/css/images/markers/marker-f39914.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   bus:
     index: 4
-    label: _(Bus Issue Spot)
+    label: _(Bus Issue)
     rules:
       - condition: '"{{location_type}}" === "bus" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -203,14 +203,14 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/markers/marker-f95016.png
+          iconUrl: /static/css/images/markers/marker-f39914.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   train:
     index: 5
-    label: _(Train Issue Spot)
+    label: _(Train Issue)
     rules:
       - condition: '"{{location_type}}" === "train" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -235,14 +235,14 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/markers/marker-f95016.png
+          iconUrl: /static/css/images/markers/marker-f39914.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]  
   tram:        
     index: 6
-    label: _(Tram Issue Spot)
+    label: _(Tram Issue)
     rules:
       - condition: '"{{location_type}}" === "tram" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -267,7 +267,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/markers/marker-f95016.png
+          iconUrl: /static/css/images/markers/marker-f39914.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
@@ -299,7 +299,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/markers/marker-f95016.png
+          iconUrl: /static/css/images/markers/marker-f39914.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
@@ -331,7 +331,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/markers/marker-f95016.png
+          iconUrl: /static/css/images/markers/marker-f39914.png
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
@@ -411,7 +411,7 @@ activity:
 
 place:
   adding_supported: true
-  add_button_label: _(Add a Spot)
+  add_button_label: _(Click to Add a Location)
   # Labels for the buttons that toggle the map and list views
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
@@ -654,170 +654,76 @@ place:
       attrs:
         - key: placeholder
           value: _('Other' issue here...)                                                            
-    - prompt: _(3. Please describe the spot in more detail?)
+    - prompt: _(3. Please describe your concern or idea in more detail?)
       type: textarea
       name: description_more
       optional: true
       attrs:
         - key: placeholder
           value: _(Eg.more detail about what you like, what the issue is or the idea you would love to see...)
-    - prompt: _(4. If possible, please add an image of this spot)
-      inputfile_label: _(Add Image)
+    - prompt: _(4. Upload image of location (if possible))
+      inputfile_label: _(Click here to add image)
       type: file
       name: my_image
       optional: true
       attrs:
         - key: accept
           value: image/*  
+    - prompt: _(The following questions are optional, please only enter these details once.)
+      name: optional_text
+      optional: true      
     - prompt: _(5. What do think should be the most important focus for the State Government to deliver to support Darebin City Council? Please rank the follwing issues 1 to 7, where 1 is your highest priotiy.)
       name: priority_text
       optional: true
-    - prompt: _( - Road and rail separation at Reservoir Junction)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(1)
-          value: 1
-        - label: _(2)
-          value: 2
-        - label: _(3)
-          value: 3
-        - label: _(4)
-          value: 4       
-        - label: _(5)
-          value: 5 
-        - label: _(6)
-          value: 6 
-        - label: _(7)
-          value: 7         
+    - prompt: _(Road and rail separation at Reservoir Junction)
+      type: text
+      optional: true         
       name: reservoir
+      attrs:
+        - key: placeholder
+          value: _(Enter a number from 1-7 to rank this project)
       optional: true
-    - prompt: _( - Road and rail separation at Bell St, Preston)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(1)
-          value: 1
-        - label: _(2)
-          value: 2
-        - label: _(3)
-          value: 3
-        - label: _(4)
-          value: 4       
-        - label: _(5)
-          value: 5 
-        - label: _(6)
-          value: 6 
-        - label: _(7)
-          value: 7        
+    - prompt: _(Road and rail separation at Bell St, Preston)
+      type: text        
       name: bell
+      attrs:
+        - key: placeholder
+          value: _(Enter a number from 1-7 to rank this project)
       optional: true
-    - prompt: _( - Road and rail separation at Grange Rd, Alphington)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(1)
-          value: 1
-        - label: _(2)
-          value: 2
-        - label: _(3)
-          value: 3
-        - label: _(4)
-          value: 4       
-        - label: _(5)
-          value: 5 
-        - label: _(6)
-          value: 6 
-        - label: _(7)
-          value: 7        
+    - prompt: _(Road and rail separation at Grange Rd, Alphington)
+      type: text
       name: grange
+      attrs:
+        - key: placeholder
+          value: _(Enter a number from 1-7 to rank this project)
       optional: true
-    - prompt: _( - Route 11 tram upgrade)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(1)
-          value: 1
-        - label: _(2)
-          value: 2
-        - label: _(3)
-          value: 3
-        - label: _(4)
-          value: 4       
-        - label: _(5)
-          value: 5 
-        - label: _(6)
-          value: 6 
-        - label: _(7)
-          value: 7        
+    - prompt: _(Route 11 tram upgrade)
+      type: text      
       name: route11
+      attrs:
+        - key: placeholder
+          value: _(Enter a number from 1-7 to rank this project)
       optional: true
-    - prompt: _( - Route 86 tram upgrade)
-      type: select 
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(1)
-          value: 1
-        - label: _(2)
-          value: 2
-        - label: _(3)
-          value: 3
-        - label: _(4)
-          value: 4       
-        - label: _(5)
-          value: 5 
-        - label: _(6)
-          value: 6 
-        - label: _(7)
-          value: 7        
+    - prompt: _(Route 86 tram upgrade)
+      type: text        
       name: route86
+      attrs:
+        - key: placeholder
+          value: _(Enter a number from 1-7 to rank this project)
       optional: true
-    - prompt: _( - Chandler Highway Duplication)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(1)
-          value: 1
-        - label: _(2)
-          value: 2
-        - label: _(3)
-          value: 3
-        - label: _(4)
-          value: 4       
-        - label: _(5)
-          value: 5 
-        - label: _(6)
-          value: 6 
-        - label: _(7)
-          value: 7        
+    - prompt: _(Chandler Highway Duplication)
+      type: text        
       name: chandler
+      attrs:
+        - key: placeholder
+          value: _(Enter a number from 1-7 to rank this project)
       optional: true 
-    - prompt: _( - St Georges Rd Shared Path Upgrade)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(1)
-          value: 1
-        - label: _(2)
-          value: 2
-        - label: _(3)
-          value: 3
-        - label: _(4)
-          value: 4       
-        - label: _(5)
-          value: 5 
-        - label: _(6)
-          value: 6 
-        - label: _(7)
-          value: 7        
+    - prompt: _(St Georges Rd Shared Path Upgrade)
+      type: text        
       name: stgeorges
+      attrs:
+        - key: placeholder
+          value: _(Enter a number from 1-7 to rank this project)
       optional: true                                                                                 
     - prompt: _(6. How old are you?)
       type: select
@@ -881,7 +787,7 @@ place:
           value: I travel through Darebin         
       name: connection
       optional: true                                                   
-    - prompt: _(10. Screen name)
+    - prompt: _(10. Screen name - This will be appear with your comment on the map (Optional))
       type: text
       name: submitter_name
       optional: true
@@ -890,7 +796,7 @@ place:
           value: _(Type name)
         - key: size
           value: 30        
-    - prompt: _(11. Your email)
+    - prompt: _(11. Your email - If you would like to receive project updates)
       type: text
       name: private-submitter_email
       optional: true
@@ -899,7 +805,7 @@ place:
           value: _(To receive project updates)
         - key: size
           value: 30 
-    - prompt: _(12. Phone number - to enter the prize draw to win a $300 Darebin prize pack)
+    - prompt: _(12. Phone number - we’d like to show our appreciation by offering you the chance to win a $300 Darebin prize pack)
       type: text
       name: phone
       optional: true
@@ -943,10 +849,18 @@ support:
   anonymous_name: _(Someone)
 
 pages:
-  - title: _(About)
-    slug: About
+  - title: _(Home)
+    slug: Home
     name: overview
     start_page: true
+    
+  - title: _(Instructions)
+    slug: instructions
+    url: /static/pages/instructions.html
+    
+  - title: _(More Information)
+    slug: moreinfo
+    url: /static/pages/moreinfo.html
     
   - title: _(FAQs)
     slug: why
@@ -957,28 +871,28 @@ pages:
       - title: _(Show All)
         url: /
         external: true
-      - title: _(Car Spots)
+      - title: _(Car Issues)
         url: /filter/car
         external: true  
-      - title: _(Walk Spots)
+      - title: _(Walking Issues)
         url: /filter/walk
         external: true
-      - title: _(Bike Spots)
+      - title: _(Bike Issues)
         url: /filter/bike
         external: true
-      - title: _(Bus Spots)
+      - title: _(Bus Issues)
         url: /filter/bus
         external: true
-      - title: _(Train Spots)
+      - title: _(Train Issues)
         url: /filter/train
         external: true
-      - title: _(Tram Spots)
+      - title: _(Tram Issues)
         url: /filter/tram
         external: true
-      - title: _(Like Spots)
+      - title: _(Like Issues)
         url: /filter/like
         external: true
-      - title: _(Idea Spots)
+      - title: _(Idea Issues)
         url: /filter/idea
         external: true    
 
