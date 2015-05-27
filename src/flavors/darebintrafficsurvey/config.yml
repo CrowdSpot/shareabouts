@@ -889,10 +889,10 @@ pages:
       - title: _(Tram Issues)
         url: /filter/tram
         external: true
-      - title: _(Like Issues)
+      - title: _(Likes)
         url: /filter/like
         external: true
-      - title: _(Idea Issues)
+      - title: _(Ideass)
         url: /filter/idea
         external: true    
 
