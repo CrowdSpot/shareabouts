@@ -858,6 +858,10 @@ pages:
     slug: instructions
     url: /static/pages/instructions.html
     
+  - title: _(General Feedback)
+    slug: generalfeedback
+    url: /static/pages/geenralfeedback.html
+    
   - title: _(More Information)
     slug: moreinfo
     url: /static/pages/moreinfo.html
