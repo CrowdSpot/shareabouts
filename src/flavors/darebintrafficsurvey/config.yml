@@ -274,7 +274,7 @@ place_types:
           iconAnchor: [12, 41]                                 
   like:
     index: 7
-    label: _(Like Spot)
+    label: _(Like Location)
     rules:
       - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -306,7 +306,7 @@ place_types:
           iconAnchor: [12, 41]
   idea:
     index: 8
-    label: _(Idea Spot)
+    label: _(Idea Location)
     rules:
       - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -424,7 +424,7 @@ place:
   location_item_name: location
 
   items:
-    - prompt: _(1. What is the name of this spot?)
+    - prompt: _(1. What is the name of this location?)
       type: text
       name: name
       attrs:
@@ -433,7 +433,7 @@ place:
         - key: size
           value: 30
         - key: required
-    - prompt: _(2. What type of spot is this?)
+    - prompt: _(2. What type of location is this?)
       type: select
       options:
         - label: _(Choose One)
@@ -450,14 +450,14 @@ place:
           value: train   
         - label: _(Tram Issue)
           value: tram
-        - label: _(Like Spot)
+        - label: _(Like Location)
           value: like
-        - label: _(Idea Spot)
+        - label: _(Idea Location)
           value: idea         
       name: location_type
       attrs:
         - key: required
-    - prompt: _(2a. What is the issue at this car spot?)
+    - prompt: _(2a. What is the issue at this car location?)
       type: select
       options: 
         - label: _(Choose One)
@@ -480,7 +480,7 @@ place:
           value: Other            
       name: car_issue
       optional: true    
-    - prompt: _(2a. What is the issue at this walking spot?)
+    - prompt: _(2a. What is the issue at this walking location?)
       type: select
       options: 
         - label: _(Choose One)
@@ -509,7 +509,7 @@ place:
           value: Other             
       name: walk_issue
       optional: true
-    - prompt: _(2a. What is the  issue at this bike spot?)
+    - prompt: _(2a. What is the  issue at this bike location?)
       type: select
       options: 
         - label: _(Choose One)
@@ -532,7 +532,7 @@ place:
           value: Other             
       name: bike_issue
       optional: true
-    - prompt: _(2a. What is the issue at this bus spot?)
+    - prompt: _(2a. What is the issue at this bus location?)
       type: select
       options: 
         - label: _(Choose One)
@@ -555,7 +555,7 @@ place:
           value: Other             
       name: bus_issue
       optional: true     
-    - prompt: _(2a. What is the issue at this train spot?)
+    - prompt: _(2a. What is the issue at this train location?)
       type: select
       options: 
         - label: _(Choose One)
@@ -580,7 +580,7 @@ place:
           value: Other            
       name: train_issue
       optional: true
-    - prompt: _(2a. What is the issue at this tram spot?)
+    - prompt: _(2a. What is the issue at this tram location?)
       type: select
       options: 
         - label: _(Choose One)
@@ -849,18 +849,10 @@ support:
   anonymous_name: _(Someone)
 
 pages:
-  - title: _(Home)
+  - title: _(Instructions)
     slug: Home
     name: overview
     start_page: true
-    
-  - title: _(Instructions)
-    slug: instructions
-    url: /static/pages/instructions.html
-    
-  - title: _(General Feedback)
-    slug: generalfeedback
-    url: /static/pages/geenralfeedback.html
     
   - title: _(More Information)
     slug: moreinfo

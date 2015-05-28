@@ -43,6 +43,16 @@ input#place-priority_text {
   display: none !important;
 }
 
+ /* SHUT IT DOWN LEMON */
+div.support {
+  display: none !important;
+}
+
+ /* SHUT IT DOWN LEMON */
+ul.recent-points.unstyled-list {
+  display: none !important;
+}
+
 
 input#place-reservoir {
   width: 50%;
@@ -396,6 +406,7 @@ h2 {
   display: block;
 }
 
+
 .place-form label[for=place-bike_issue],
   .place-form [name=bike_issue]{
   display: none;
@@ -405,6 +416,7 @@ h2 {
   .place-form.bike [name=bike_issue] {
   display: block;
 }
+
 
 .place-form label[for=place-bus_issue],
   .place-form [name=bus_issue]{
@@ -416,6 +428,7 @@ h2 {
   display: block;
 }
 
+
 .place-form label[for=place-train_issue],
   .place-form [name=train_issue]{
   display: none;
@@ -426,6 +439,7 @@ h2 {
   display: block;
 }
 
+
 .place-form label[for=place-tram_issue],
   .place-form [name=tram_issue]{
   display: none;
@@ -435,6 +449,7 @@ h2 {
   .place-form.tram [name=tram_issue] {
   display: block;
 }
+
 
 .place-form label[for=place-car_issue],
   .place-form [name=car_issue]{
