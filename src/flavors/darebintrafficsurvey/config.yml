@@ -411,7 +411,7 @@ activity:
 
 place:
   adding_supported: true
-  add_button_label: _(Click to Add a Location)
+  add_button_label: _(Add a Location)
   # Labels for the buttons that toggle the map and list views
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
@@ -519,13 +519,13 @@ place:
         - label: _(Unsafe bicycle lanes)
           value: Unsafe bicycle lanes 
         - label: _(Bicycle lane ends unexpectedly)
-          value: Bicycle lane ends unexpectedly  
+          value: Bicycle lane ends unexpectedly
+        - label: _(Car dooring risk)
+          value: Car dooring risk    
         - label: _(Lack of wayfinding or signage)
           value: Lack of wayfinding or signage  
         - label: _(Bicycle lane blocked)
           value: Bicycle lane blocked
-        - label: _(High risk of car dooring)
-          value: High risk of car dooring)
         - label: _(Limited or no bicycle parking)
           value: Limited or no bicycle parking  
         - label: _(Other)
@@ -668,126 +668,8 @@ place:
       optional: true
       attrs:
         - key: accept
-          value: image/*  
-    - prompt: _(The following questions are optional, please only enter these details once.)
-      name: optional_text
-      optional: true      
-    - prompt: _(5. What do think should be the most important focus for the State Government to deliver to support Darebin City Council? Please rank the follwing issues 1 to 7, where 1 is your highest priotiy.)
-      name: priority_text
-      optional: true
-    - prompt: _(Road and rail separation at Reservoir Junction)
-      type: text
-      optional: true         
-      name: reservoir
-      attrs:
-        - key: placeholder
-          value: _(Enter a number from 1-7 to rank this project)
-      optional: true
-    - prompt: _(Road and rail separation at Bell St, Preston)
-      type: text        
-      name: bell
-      attrs:
-        - key: placeholder
-          value: _(Enter a number from 1-7 to rank this project)
-      optional: true
-    - prompt: _(Road and rail separation at Grange Rd, Alphington)
-      type: text
-      name: grange
-      attrs:
-        - key: placeholder
-          value: _(Enter a number from 1-7 to rank this project)
-      optional: true
-    - prompt: _(Route 11 tram upgrade)
-      type: text      
-      name: route11
-      attrs:
-        - key: placeholder
-          value: _(Enter a number from 1-7 to rank this project)
-      optional: true
-    - prompt: _(Route 86 tram upgrade)
-      type: text        
-      name: route86
-      attrs:
-        - key: placeholder
-          value: _(Enter a number from 1-7 to rank this project)
-      optional: true
-    - prompt: _(Chandler Highway Duplication)
-      type: text        
-      name: chandler
-      attrs:
-        - key: placeholder
-          value: _(Enter a number from 1-7 to rank this project)
-      optional: true 
-    - prompt: _(St Georges Rd Shared Path Upgrade)
-      type: text        
-      name: stgeorges
-      attrs:
-        - key: placeholder
-          value: _(Enter a number from 1-7 to rank this project)
-      optional: true                                                                                 
-    - prompt: _(6. How old are you?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(< 15)
-          value: '<15'
-        - label: _(15-19)
-          value: 15-19
-        - label: _(20-24)
-          value: 20-24
-        - label: _(25-34)
-          value: 25-34
-        - label: _(35-44)
-          value: 35-44
-        - label: _(45-54)
-          value: 45-54
-        - label: _(55-64)
-          value: 55-64
-        - label: _(65-74)
-          value: 65-74
-        - label: _(>75)
-          value: '>75'          
-      name: age
-      optional: true
-    - prompt: _(7. Your gender)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Male)
-          value: Male
-        - label: _(Female)
-          value: Female
-        - label: _(Other Identity)
-          value: Other Identity       
-      name: gender
-      optional: true
-    - prompt: _(8. Your home postcode)
-      type: text
-      name: postcode
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Please type postcode here...)   
-    - prompt: _(9. How do you mostly participate in the City of Darebin?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(I live in Darebin)
-          value: I live in Darebin
-        - label: _(I work in Darebin)
-          value: I work in Darebin
-        - label: _(I study in Darebin)
-          value: I study in Darebin Darebin
-        - label: _(I visit Darebin)
-          value: I visit Darebin
-        - label: _(I travel through Darebin)
-          value: I travel through Darebin         
-      name: connection
-      optional: true                                                   
-    - prompt: _(10. Screen name - This will be appear with your comment on the map (Optional))
+          value: image/*                                                          
+    - prompt: _(5. Screen name - This will be appear with your comment on the map (Optional))
       type: text
       name: submitter_name
       optional: true
@@ -795,25 +677,7 @@ place:
         - key: placeholder
           value: _(Type name)
         - key: size
-          value: 30        
-    - prompt: _(11. Your email - If you would like to receive project updates)
-      type: text
-      name: private-submitter_email
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(To receive project updates)
-        - key: size
-          value: 30 
-    - prompt: _(12. Phone number - we’d like to show our appreciation by offering you the chance to win a $300 Darebin prize pack)
-      type: text
-      name: phone
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Enter your phone number)
-        - key: size
-          value: 30           
+          value: 30                   
 
 survey:
   submission_type: comments
