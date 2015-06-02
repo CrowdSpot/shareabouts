@@ -241,6 +241,10 @@ a.close-btn {
   display: none;
 }
 
+.place-value-phone {
+  display: none;
+}
+
 /* =Hiding questions in new forms
 -------------------------------------------------------------- */
 
