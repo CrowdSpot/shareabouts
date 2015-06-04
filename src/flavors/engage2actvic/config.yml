@@ -137,7 +137,7 @@ place:
         - label: _(Complete)
           value: Complete 
       name: stage                                         
-    - prompt: _(Please tell us a little more about this project and if possible how the community are (or have been) being engaged in experiencing change?)
+    - prompt: _(Please tell us a little more about this project and if possible, how the community are (or have been) being engaged in experiencing change?)
       type: textarea
       name: description
       optional: true
