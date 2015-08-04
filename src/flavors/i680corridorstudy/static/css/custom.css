@@ -211,25 +211,9 @@ a.close-btn {
 /* =Existing Spots
 -------------------------------------------------------------- */
 
-
-.place-value-frequency {
-  display: none;
-}
-
-.place-value-reason {
-  display: none;
-}
-
-.place-value-other_reason {
-  display: none;
-}
-
-.place-value-time {
-  display: none;
-}
-
-.place-value-with_who {
-  display: none;
+.place-value-description:before {
+  content: "Description: ";
+  font-weight: bold;
 }
 
 .place-value-age {
@@ -240,11 +224,11 @@ a.close-btn {
   display: none;
 }
 
-.place-value-connection {
+.place-value-homezip {
   display: none;
 }
 
-.place-value-postcode {
+.place-value-workzip {
   display: none;
 }
 
