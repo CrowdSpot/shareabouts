@@ -557,6 +557,7 @@ place:
           value: image/*          
     - prompt: _(How old are you?)
       type: select
+      sticky: true
       options:
         - label: _(Choose One)
           value: ''
@@ -582,6 +583,7 @@ place:
       optional: true
     - prompt: _(Your gender)
       type: select
+      sticky: true
       options:
         - label: _(Choose One)
           value: ''
@@ -624,6 +626,7 @@ place:
           value: 30     
     - prompt: _(Your email)
       type: text
+      sticky: true
       name: private-submitter_email
       optional: true
       attrs:
