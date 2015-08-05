@@ -66,7 +66,7 @@ map:
 place_types:
   legend:
     index: 0
-    label: _(Map Legend)
+    label: _(MAP LEGEND)
     rules:
       - condition: '"{{location_type}}" === "car" && {{map.zoom}} < 15 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -320,6 +320,69 @@ place_types:
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
+  collisions:
+    index: 8
+    label: _(Fwy Collisions)
+    rules:
+      - condition: '"{{location_type}}" === "collisions" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#FF1609'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "collisions" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/hospital.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "collisions" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41] 
+  nospots:
+    label: _(No spots)
+    rules:
+      - condition: '"{{location_type}}" === "collisions" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#FF1609'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "collisions" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/collisions.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "collisions" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]            
                              
                           
 activity:
@@ -682,6 +745,9 @@ pages:
     pages:
       - title: _(Show All)
         url: /
+        external: true
+      - title: _(Show None)
+        url: /filter/nospots
         external: true
       - title: _(Idea Spots)
         url: /filter/idea
