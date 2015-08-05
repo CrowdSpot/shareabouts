@@ -208,6 +208,18 @@ a.close-btn {
   transition: top 0.4s ease;
 }
 
+/* =legend
+-------------------------------------------------------------- */
+.legend li {
+  line-height: 26px;
+}
+
+.legend img {
+  max-height: 33px;
+  vertical-align: middle;
+}
+
+
 /* =Existing Spots
 -------------------------------------------------------------- */
 
@@ -411,51 +423,7 @@ label small {
 }
 
 /* =Media Queries
--------------------------------------------------------------- */
-
-@media only screen and (min-width: 715px) and (max-width: 755px) {
-  #site-header {
-    display: none;
-  }
-  #map-container {
-	  top: 0;
-  }
-  .activity-enabled #ticker {
-    display: none;
-  }
-}  
-
-@media only screen and (min-width: 250px) and (max-width: 430px) {
-  #site-title a:link, #site-title a:visited {
-    display: block;
-    font-size: 1.6em;
-    line-height: 1.25;
-    margin-left: 0.25em;
-    text-decoration: none;
-    color: #646464;
-  }
-  .has-pages #site-title {
-    margin-left: -2.75em;
-  }
-}  
-  
-@media only screen and (min-height: 440px) and (max-width: 60em) {
-  #map {
-    height: 300px;
-  }
-}
-
-@media only screen and (min-height: 545px) and (max-width: 60em) {
-  #map {
-    height: 440px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 60em) {
-  #map {
-    height: 440px;
-  }
-}  
+-------------------------------------------------------------- */  
 
 @media only screen and (min-width: 768px) {
 }
@@ -465,3 +433,4 @@ label small {
 
 @media only screen and (min-width: 1300px) {
 }
+
