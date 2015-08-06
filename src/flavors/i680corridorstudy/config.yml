@@ -100,7 +100,7 @@ place_types:
     index: 1
     label: _(Idea Spot)
     rules:
-      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -132,7 +132,7 @@ place_types:
     index: 2
     label: _(Like Spot)
     rules:
-      - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -164,7 +164,7 @@ place_types:
     index: 3
     label: _(Walking Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "walk" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "walk" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -196,7 +196,7 @@ place_types:
     index: 4
     label: _(Bike Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "bike" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "bike" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -228,7 +228,7 @@ place_types:
     index: 5
     label: _(Bus Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "bus" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "bus" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -260,7 +260,7 @@ place_types:
     index: 6
     label: _(Light Rail Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "lightrail" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "lightrail" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -292,7 +292,7 @@ place_types:
     index: 7
     label: _(Car Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "car" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "car" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -324,7 +324,7 @@ place_types:
     index: 8
     label: _(Fwy Collisions)
     rules:
-      - condition: '"{{location_type}}" === "collisions" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "collisions" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -355,7 +355,7 @@ place_types:
   nospots:
     label: _(No spots)
     rules:
-      - condition: '"{{location_type}}" === "collisions" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "collisions" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
