@@ -674,7 +674,8 @@ place:
           value: _(Your work ZIP code)
         - key: size
           value: 30           
-      name: workzip                                              
+      name: workzip
+      optional: true                                              
     - prompt: _(Your name)
       type: text
       name: submitter_name
