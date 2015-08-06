@@ -458,8 +458,6 @@ place:
           value: Limited or no footpaths
         - label: _(Limited or no disability access)
           value: Limited or no disability access
-        - label: _(Limited shelter)
-          value: Limited shelter
         - label: _(Limited seating)
           value: Limited seating  
         - label: _(Other)
@@ -475,8 +473,8 @@ place:
           value: No bicycle lanes
         - label: _(Unsafe bicycle lanes)
           value: Unsafe bicycle lanes 
-        - label: _(Bicycle lane ends unexpectedly)
-          value: Bicycle lane ends unexpectedly  
+        - label: _(Bicycle lane ends)
+          value: Bicycle lane ends  
         - label: _(Lack of wayfinding or signage)
           value: Lack of wayfinding or signage  
         - label: _(Bicycle lane blocked)
