@@ -323,7 +323,7 @@ place_types:
           iconAnchor: [12, 41]
   collisions:
     index: 8
-    label: _(Fwy Collisions)
+    label: _(Collisions)
     rules:
       - condition: '"{{location_type}}" === "collisions" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
