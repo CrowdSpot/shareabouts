@@ -84,7 +84,7 @@ CrowdSpot Grey (text) #585A59
   }
 
 #site-title {
-  background: url('images/i680studyheader.png') no-repeat 
+  background: url('images/i680study-01.png') no-repeat 
 center;
   background-size: contain;
   width: 440px;
@@ -413,7 +413,6 @@ a.close-btn {
 
 
 
-
 /* =Hiding (optional) in survey form
 -------------------------------------------------------------- */
 
@@ -421,6 +420,18 @@ label small {
   text-transform: none;
   display: none;
 }
+
+
+/* =Hiding geolocator
+-------------------------------------------------------------- */
+a.locate-me{
+  display: none !important;
+}
+
+#map.leaflet-container {
+  font: 14px/1.5 "Proxima Nova", Arial, Helvetica, sans-serif;
+}
+
 
 /* =Media Queries
 -------------------------------------------------------------- */  
