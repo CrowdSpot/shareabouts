@@ -21,17 +21,35 @@ var Shareabouts = Shareabouts || {};
       self.map = L.map(self.el, self.options.mapConfig.options);
       self.placeLayers = L.layerGroup();
 
+      self.mapLayers = { base: {}, overlay: {} };
+
       // Add layers defined in the config file
       _.each(self.options.mapConfig.layers, function(config){
+        var layer;
         // type is required by Argo for fetching data, so it's a pretty good
         // Argo indicator. Argo is this by the way: https://github.com/openplans/argo/
         if (config.type) {
-          L.argo(config.url, config).addTo(self.map);
+          layer = L.argo(config.url, config);
         } else {
           // Assume a tile layer
-          L.tileLayer(config.url, config).addTo(self.map);
+          layer = L.tileLayer(config.url, config);
+        }
+        if (config.display != false) {
+          layer.addTo(self.map);
+        }
+        if (typeof config.layer_control !== 'undefined') {
+          if (config.layer_control.type === 'overlay') {
+            self.mapLayers.overlay[config.layer_control.name] = layer;
+          } else {
+            self.mapLayers.base[config.layer_control.name] = layer;
+          }
         }
       });
+      if (!$.isEmptyObject(self.mapLayers.base) || !$.isEmptyObject(self.mapLayers.overlay)) {
+        var basemaps = !$.isEmptyObject(self.mapLayers.base) ? self.mapLayers.base : null;
+        var overlays = !$.isEmptyObject(self.mapLayers.overlay) ? self.mapLayers.overlay : null;
+        L.control.layers(basemaps, overlays).addTo(self.map);
+      }
 
       // Remove default prefix
       self.map.attributionControl.setPrefix('');

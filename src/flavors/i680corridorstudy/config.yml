@@ -50,17 +50,23 @@ map:
     maxZoom: 18
     maxBounds: [ [37.259761, -122.028564], [37.524762, -121.735408] ]
   layers:
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.n400g66c/{z}/{x}/{y}.png
+      layer_control:
+        type: basemap
+        name: 'Mapbox Outdoor Layer' 
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>' 
     - url: http://{s}.tiles.mapbox.com/v3/aisey.mmoi91dl/{z}/{x}/{y}.png
-      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-    - url: /static/data/philadelphia.geojson
-      type: json
-      rules:
+      layer_control:
+        type: basemap
+        name: 'Mapbox Emerald Layer'
+        rules:
         - condition: 'true'
-          style:
-            color: "#444"
-            opacity: 0.6
-            fillOpacity: 0.1
-            weight: 1
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.i680corridorstudy_collisions/{z}/{x}/{y}.png
+      layer_control:
+        type: overlay
+        name: 'Collisions Layer'
+      display: false
 
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
