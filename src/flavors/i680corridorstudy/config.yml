@@ -1,9 +1,9 @@
 # Settings for the app
 app:
   # HTML Title
-  title: I-680 Corridor Study
+  title: I680 Corridor Study
   # Header name
-  name: I-680 Corridor Study
+  name: I680 Corridor Study
   # Meta description that will show up in Google search results
   meta_description: _(CrowdSpot creates custom maps that allow people to give input on geogrpahic locations. Use it to collect data in a social, engaging process.)
 
@@ -49,24 +49,9 @@ map:
     minZoom: 13
     maxZoom: 18
     maxBounds: [ [37.259761, -122.028564], [37.524762, -121.735408] ]
-  layers:
-    - url: http://{s}.tiles.mapbox.com/v3/aisey.n400g66c/{z}/{x}/{y}.png
-      layer_control:
-        type: basemap
-        name: 'Mapbox Outdoor Layer' 
-      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>' 
+  layers: 
     - url: http://{s}.tiles.mapbox.com/v3/aisey.mmoi91dl/{z}/{x}/{y}.png
-      layer_control:
-        type: basemap
-        name: 'Mapbox Emerald Layer'
-        rules:
-        - condition: 'true'
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-    - url: http://{s}.tiles.mapbox.com/v3/aisey.i680corridorstudy_collisions/{z}/{x}/{y}.png
-      layer_control:
-        type: overlay
-        name: 'Collisions Layer'
-      display: false
 
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
@@ -327,38 +312,6 @@ place_types:
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
-  collisions:
-    index: 8
-    label: _(Collisions)
-    rules:
-      - condition: '"{{location_type}}" === "collisions" && {{map.zoom}} < 14 && {{layer.focused}} === false'
-        # Display landmarks as circles (vectors) when zoomed out
-
-        style:
-          color: '#FF1609'
-          radius: 5
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.7
-
-      - condition: '"{{location_type}}" === "collisions" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
-        # Display landmarks as icons when zoomed in
-
-        icon:
-          iconUrl: /static/css/images/hospital.png
-          shadowUrl: /static/css/images/master-pin-shadow.png
-          iconSize: [85, 41]
-          iconAnchor: [42, 42]
-
-      - condition: '"{{location_type}}" === "collisions" && {{layer.focused}} === true'
-        # Display landmarks as icons when zoomed in
-
-        icon:
-          iconUrl: /static/css/images/markers/marker-f95016.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41] 
   nospots:
     label: _(No spots)
     rules:
@@ -623,45 +576,23 @@ place:
       attrs:
         - key: accept
           value: image/*          
-    - prompt: _(How old are you?)
+    - prompt: _(Which mode of transportation do you mostly use for your commute?)
       type: select
       sticky: true
       options:
         - label: _(Choose One)
-          value: ''
-        - label: _(< 14)
-          value: '<14'
-        - label: _(15-19)
-          value: 15-19
-        - label: _(20-24)
-          value: 20-24
-        - label: _(25-34)
-          value: 25-34
-        - label: _(35-44)
-          value: 35-44
-        - label: _(45-54)
-          value: 45-54
-        - label: _(55-64)
-          value: 55-64
-        - label: _(65-74)
-          value: 65-74
-        - label: _(>75)
-          value: '>75'          
-      name: age
-      optional: true
-    - prompt: _(Your gender)
-      type: select
-      sticky: true
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Male)
-          value: male
-        - label: _(Female)
-          value: female
-        - label: _(Other)
-          value: other        
-      name: gender
+          value: ''     
+        - label: _(Walk)
+          value: walk
+        - label: _(Bike)
+          value: bike
+        - label: _(Bus)
+          value: bus
+        - label: _(Light Rail)
+          value: lightrail   
+        - label: _(Car)
+          value: car       
+      name: commute_mode
       optional: true
     - prompt: _(What is the ZIP code where you live?)
       sticky: true
