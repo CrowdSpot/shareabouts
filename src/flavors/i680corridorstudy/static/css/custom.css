@@ -108,6 +108,15 @@ center;
   font-size: 1.1em;
 }
 
+
+#pages-nav-container, #language-picker {
+  height: 100%;
+  float: left;
+  margin-right: -163px;
+  margin-left: 156px;
+}
+
+
 /* Navigation Button */
 #nav-btn {
   background: #6f6f6f;
@@ -226,14 +235,6 @@ a.close-btn {
 .place-value-description:before {
   content: "Description: ";
   font-weight: bold;
-}
-
-.place-value-age {
-  display: none;
-}
-
-.place-value-gender {
-  display: none;
 }
 
 .place-value-homezip {
@@ -424,9 +425,7 @@ label small {
 
 /* =Hiding geolocator
 -------------------------------------------------------------- */
-a.locate-me{
-  display: none !important;
-}
+
 
 #map.leaflet-container {
   font: 14px/1.5 "Proxima Nova", Arial, Helvetica, sans-serif;
