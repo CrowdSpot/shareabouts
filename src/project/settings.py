@@ -4,7 +4,7 @@ import os.path
 
 HERE = os.path.abspath(os.path.join(os.path.dirname(__file__)))
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
