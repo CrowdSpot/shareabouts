@@ -14,23 +14,7 @@ app:
 
   # Optional. List view is supported by default. Set to false to disable.
   # list_enabled: false
-  
-  
-languages:
-  - code: en
-    label: English
-
-  - code: es
-    label: Español
-    
-  - code: zh
-    label: Chinese
-    
-  - code: vi
-    label: Vietnamese
-    
-  - code: ko
-    label: Korean  
+ 
 
 # Settings for map and layer configs
 map:
@@ -575,7 +559,26 @@ place:
       optional: true
       attrs:
         - key: accept
-          value: image/*          
+          value: image/* 
+    - prompt: _(Would you like to see the HOV Express Lanes extended into Santa Clara County along the I-680 corridor?)
+      type: select
+      sticky: true
+      optional: true
+      options:
+        - label: _(Choose One)
+          value: ''     
+        - label: _(Yes)
+          value: Yes
+        - label: _(No)
+          value: No 
+      name: location_express    
+    - prompt: _(If 'No', why?)
+      type: text
+      name: nowhy
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Please type here..)                   
     - prompt: _(Which mode of transportation do you mostly use for your commute?)
       type: select
       sticky: true
@@ -591,7 +594,9 @@ place:
         - label: _(Light Rail)
           value: lightrail   
         - label: _(Car)
-          value: car       
+          value: car
+        - label: _(Other)
+          value: other       
       name: commute_mode
       optional: true
     - prompt: _(What is the ZIP code where you live?)
@@ -669,10 +674,15 @@ support:
   anonymous_name: _(Someone)
 
 pages:
-  - title: _(About)
-    slug: about
+  - title: _(Welcome)
+    slug: welcome
     name: overview
     start_page: true
+    
+  - title: _(More information)
+    slug: moreinfo
+    name: moreinfo
+    url: /static/pages/moreinfo.html
     
   - title: _(FAQs)
     slug: why

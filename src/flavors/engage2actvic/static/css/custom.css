@@ -254,16 +254,6 @@ a.close-btn {
 /* =Hiding questions in new forms
 -------------------------------------------------------------- */
 
-.place-form label[for=place-description_route],
-  .place-form [name=description_route]{
-  display: none;
-}
-
-.place-form.location_route-route label[for=place-description_route],
-  .place-form.location_route-route [name=description_route] {
-  display: block;
-}
-
 
 .place-form label[for=place-willing],
   .place-form [name=willing]{
