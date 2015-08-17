@@ -402,8 +402,8 @@ place:
           value: Limited or no footpaths
         - label: _(Limited or no disability access)
           value: Limited or no disability access
-        - label: _(Limited seating)
-          value: Limited seating  
+        - label: _(Unsafe)
+          value: Unsafe  
         - label: _(Other)
           value: Other             
       name: walk_issue
@@ -423,8 +423,8 @@ place:
           value: Lack of wayfinding or signage  
         - label: _(Bicycle lane blocked)
           value: Bicycle lane blocked
-        - label: _(High risk of car dooring)
-          value: High risk of car dooring)
+        - label: _(High risk of collision)
+          value: High risk of collision)
         - label: _(Limited or no bicycle parking)
           value: Limited or no bicycle parking  
         - label: _(Other)
@@ -440,16 +440,14 @@ place:
           value: No stop within walking distance
         - label: _(Poor waiting facilities at stop)
           value: Poor waiting facilities at stop
-        - label: _(Feel unsafe at stop or station)
-          value: Feel unsafe at stop or station 
+        - label: _(Unsafe stop or station)
+          value: Unsafe stop or station 
         - label: _(Limited footpath access to stop)
           value: Limited footpath access to stop  
         - label: _(Infrequent services)
           value: Infrequent services 
         - label: _(Unreliable scheduling)
           value: Unreliable scheduling  
-        - label: _(Too expensive to use)
-          value: Too expensive to use
         - label: _(No capacity during the peak)
           value: No capacity during the peak  
         - label: _(Other)
@@ -463,8 +461,8 @@ place:
           value: ''
         - label: _(Congestion)
           value: Congestion
-        - label: _(Emissions)
-          value: Emissions
+        - label: _(Unsafe)
+          value: Unsafe
         - label: _(Noise)
           value: Noise 
         - label: _(Speeding traffic)
@@ -479,21 +477,23 @@ place:
       type: select
       options: 
         - label: _(Choose One)
-          value: ''
-        - label: _(Poor waiting facilities)
-          value: Poor waiting facilities
-        - label: _(Feel unsafe)
-          value: Feel unsafe  
+          value: '' 
+        - label: _(No stop within walking distance)
+          value: No stop within walking distance
+        - label: _(Poor waiting facilities at stop)
+          value: Poor waiting facilities at stop
+        - label: _(Unsafe stop or station)
+          value: Unsafe stop or station 
+        - label: _(Limited footpath access to stop)
+          value: Limited footpath access to stop  
         - label: _(Infrequent services)
           value: Infrequent services 
         - label: _(Unreliable scheduling)
           value: Unreliable scheduling  
-        - label: _(Too expensive to use)
-          value: Too expensive to use
         - label: _(No capacity during the peak)
           value: No capacity during the peak  
         - label: _(Other)
-          value: Other            
+          value: Other           
       name: lightrail_issue
       optional: true    
     - prompt: _(What transport mode does this Like Spot best relate to?)
@@ -507,8 +507,8 @@ place:
           value: Bike Like Spot
         - label: _(Bus)
           value: Bus Like Spot
-        - label: _(Train)
-          value: Train Like Spot
+        - label: _(Caropool)
+          value: Carpool
         - label: _(Lightrail)
           value: Lightrail Like Spot        
         - label: _(Car)
@@ -528,8 +528,8 @@ place:
           value: Bike Idea!
         - label: _(Bus)
           value: Bus Idea!
-        - label: _(Train)
-          value: Train Idea!
+        - label: _(Caropool)
+          value: Carpool Idea!
         - label: _(Lightrail)
           value: Lightrail Idea!     
         - label: _(Car)
