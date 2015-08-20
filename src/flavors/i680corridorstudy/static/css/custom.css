@@ -248,65 +248,59 @@ a.close-btn {
 /* =Hiding questions in new forms
 -------------------------------------------------------------- */
 
-.place-form label[for=place-walk_issue],
-  .place-form [name=walk_issue]{
+.place-form label[for=place-location_walk_issue],
+  .place-form [name=location_walk_issue]{
   display: none;
 }
 
-.place-form.walk label[for=place-walk_issue],
-  .place-form.walk [name=walk_issue] {
+.place-form.walk label[for=place-location_walk_issue],
+  .place-form.walk [name=location_walk_issue] {
   display: block;
 }
 
-.place-form label[for=place-bike_issue],
-  .place-form [name=bike_issue]{
+
+.place-form label[for=place-location_bike_issue],
+  .place-form [name=location_bike_issue]{
   display: none;
 }
 
-.place-form.bike label[for=place-bike_issue],
-  .place-form.bike [name=bike_issue] {
+.place-form.bike label[for=place-location_bike_issue],
+  .place-form.bike [name=location_bike_issue] {
   display: block;
 }
 
-.place-form label[for=place-bus_issue],
-  .place-form [name=bus_issue]{
+
+.place-form label[for=place-location_bus_issue],
+  .place-form [name=location_bus_issue]{
   display: none;
 }
 
-.place-form.bus label[for=place-bus_issue],
-  .place-form.bus [name=bus_issue] {
+.place-form.bus label[for=place-location_bus_issue],
+  .place-form.bus [name=location_bus_issue] {
   display: block;
 }
 
-.place-form label[for=place-train_issue],
-  .place-form [name=train_issue]{
+.place-form label[for=place-location_car_issue],
+  .place-form [name=location_car_issue]{
   display: none;
 }
 
-.place-form.train label[for=place-train_issue],
-  .place-form.train [name=train_issue] {
+.place-form.car label[for=place-location_car_issue],
+  .place-form.car [name=location_car_issue] {
   display: block;
 }
 
-.place-form label[for=place-car_issue],
-  .place-form [name=car_issue]{
+.place-form label[for=place-location_lightrail_issue],
+  .place-form [name=location_lightrail_issue]{
   display: none;
 }
 
-.place-form.car label[for=place-car_issue],
-  .place-form.car [name=car_issue] {
+.place-form.lightrail label[for=place-location_lightrail_issue],
+  .place-form.lightrail [name=location_lightrail_issue] {
   display: block;
 }
 
-.place-form label[for=place-lightrail_issue],
-  .place-form [name=lightrail_issue]{
-  display: none;
-}
 
-.place-form.lightrail label[for=place-lightrail_issue],
-  .place-form.lightrail [name=lightrail_issue] {
-  display: block;
-}
 
 
 
@@ -316,61 +310,37 @@ a.close-btn {
   display: none;
 }
 
-.place-form.walk label[for=place-issue_other],
-  .place-form.walk [name=issue_other] {
-  display: block;
-}
-
-.place-form.bike label[for=place-issue_other],
-  .place-form.bike [name=issue_other] {
-  display: block;
-}
-
-.place-form.bus label[for=place-issue_other],
-  .place-form.bus [name=issue_other] {
-  display: block;
-}
-
-.place-form.train label[for=place-issue_other],
-  .place-form.train [name=issue_other] {
-  display: block;
-}
-
-.place-form.car label[for=place-issue_other],
-  .place-form.car [name=issue_other] {
-  display: block;
-}
-
-.place-form.lightrail label[for=place-issue_other],
-  .place-form.lightrail [name=issue_other] {
+.place-form.location_walk_issue-other label[for=place-issue_other],
+  .place-form.location_walk_issue-other [name=issue_other] {
   display: block;
 }
 
 
-.place-form label[for=place-issue_description],
-  .place-form [name=issue_description]{
-  display: none;
-}
-
-.place-form.walk label[for=place-issue_description],
-  .place-form.walk [name=issue_description] {
+.place-form.location_bike_issue-other label[for=place-issue_other],
+  .place-form.location_bike_issue-other [name=issue_other] {
   display: block;
 }
 
-.place-form.bike label[for=place-issue_description],
-  .place-form.bike [name=issue_description] {
+
+.place-form.location_bus_issue-other label[for=place-issue_other],
+  .place-form.location_bus_issue-other [name=issue_other] {
   display: block;
 }
 
-.place-form.bus label[for=place-issue_description],
-  .place-form.bus [name=issue_description] {
+
+.place-form.location_car_issue-other label[for=place-issue_other],
+  .place-form.location_car_issue-other [name=issue_other] {
   display: block;
 }
 
-.place-form.train label[for=place-issue_description],
-  .place-form.train [name=issue_description] {
+.place-form.location_lightrail_issue-other label[for=place-issue_other],
+  .place-form.location_lightrail_issue-other [name=issue_other] {
   display: block;
 }
+
+
+
+
 
 .place-form label[for=place-like_description],
   .place-form [name=like_description]{
@@ -411,6 +381,24 @@ a.close-btn {
   .place-form.idea [name=idea_mode] {
   display: block;
 }
+
+
+
+
+
+
+
+
+.place-form label[for=place-other],
+  .place-form [name=other]{
+  display: none;
+}
+
+.place-form.location_commutemode-other label[for=place-other],
+  .place-form.location_commutemode-other [name=other] {
+  display: block;
+}
+
 
 
 
