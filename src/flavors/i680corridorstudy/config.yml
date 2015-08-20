@@ -342,7 +342,7 @@ place:
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(What are your transportation issues and ideas along the I-680 corridor??)
+  title: _(What are your transportation issues and ideas along the I-680 corridor?)
   action_text: _(added)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
@@ -359,7 +359,7 @@ place:
         - key: size
           value: 30
         - key: required
-    - prompt: _(What type of spot is this?(required))
+    - prompt: _(What type of spot is this? (required))
       type: select
       options:
         - label: _(Choose One)
@@ -393,20 +393,18 @@ place:
         - label: _(Limited time to cross at signal)
           value: Limited time to cross at signal 
         - label: _(Unattractive walking route)
-          value: Unattractive walking route   
+          value: Unattractive walking route  
         - label: _(Limited or no wayfinding signage)
           value: Limited or no wayfinding signage  
         - label: _(Poor lighting)
-          value: Poor Lighting  
+          value: Poor Lighting      
         - label: _(Limited or no footpaths)
           value: Limited or no footpaths
-        - label: _(Limited or no disability access)
-          value: Limited or no disability access
         - label: _(Unsafe)
           value: Unsafe  
         - label: _(Other)
           value: Other             
-      name: walk_issue
+      name: location_walk_issue
       optional: true
     - prompt: _(What is the  issue at this bike spot?)
       type: select
@@ -429,7 +427,7 @@ place:
           value: Limited or no bicycle parking  
         - label: _(Other)
           value: Other             
-      name: bike_issue
+      name: location_bike_issue
       optional: true
     - prompt: _(What is the issue at this bus spot?)
       type: select
@@ -441,9 +439,7 @@ place:
         - label: _(Poor waiting facilities at stop)
           value: Poor waiting facilities at stop
         - label: _(Unsafe stop or station)
-          value: Unsafe stop or station 
-        - label: _(Limited footpath access to stop)
-          value: Limited footpath access to stop  
+          value: Unsafe stop or station  
         - label: _(Infrequent services)
           value: Infrequent services 
         - label: _(Unreliable scheduling)
@@ -452,7 +448,7 @@ place:
           value: No capacity during the peak  
         - label: _(Other)
           value: Other             
-      name: bus_issue
+      name: location_bus_issue
       optional: true     
     - prompt: _(What is the issue at this car spot?)
       type: select
@@ -471,7 +467,7 @@ place:
           value: Heavy traffic  
         - label: _(Other)
           value: Other            
-      name: car_issue
+      name: location_car_issue
       optional: true  
     - prompt: _(What is the issue at this Light Rail spot?)
       type: select
@@ -483,9 +479,7 @@ place:
         - label: _(Poor waiting facilities at stop)
           value: Poor waiting facilities at stop
         - label: _(Unsafe stop or station)
-          value: Unsafe stop or station 
-        - label: _(Limited footpath access to stop)
-          value: Limited footpath access to stop  
+          value: Unsafe stop or station  
         - label: _(Infrequent services)
           value: Infrequent services 
         - label: _(Unreliable scheduling)
@@ -494,7 +488,7 @@ place:
           value: No capacity during the peak  
         - label: _(Other)
           value: Other           
-      name: lightrail_issue
+      name: location_lightrail_issue
       optional: true    
     - prompt: _(What transport mode does this Like Spot best relate to?)
       type: select
@@ -507,10 +501,8 @@ place:
           value: Bike Like Spot
         - label: _(Bus)
           value: Bus Like Spot
-        - label: _(Caropool)
-          value: Carpool
-        - label: _(Lightrail)
-          value: Lightrail Like Spot        
+        - label: _(Light Rail)
+          value: Light Rail Like Spot        
         - label: _(Car)
           value: Car Like Spot  
         - label: _(Other)
@@ -528,10 +520,8 @@ place:
           value: Bike Idea!
         - label: _(Bus)
           value: Bus Idea!
-        - label: _(Carpool)
-          value: Carpool Idea!
-        - label: _(Lightrail)
-          value: Lightrail Idea!     
+        - label: _(Light Rail)
+          value: Light Rail Idea!     
         - label: _(Car)
           value: Car Idea!  
         - label: _(Other)
@@ -571,14 +561,15 @@ place:
           value: Yes
         - label: _(No)
           value: No 
-      name: location_express    
-    - prompt: _(If 'No', why?)
+      name: location_expresslanes    
+    - prompt: _(If no, please explain why...)
       type: text
-      name: nowhy
+      sticky: true
       optional: true
       attrs:
         - key: placeholder
-          value: _(Please type here..)                   
+          value: _(Please type here..)
+      name: why                       
     - prompt: _(Which mode of transportation do you mostly use for your commute?)
       type: select
       sticky: true
@@ -598,12 +589,12 @@ place:
         - label: _(Car)
           value: car
         - label: _(Other)
-          value: other       
-      name: commute_mode
+          value: Other       
+      name: location_commutemode
       optional: true
     - prompt: _(If other, please detail below..)
       type: text
-      name: nowhy
+      name: other
       optional: true
       attrs:
         - key: placeholder
