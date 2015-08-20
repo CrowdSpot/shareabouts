@@ -18,7 +18,7 @@ app:
 
 # Settings for map and layer configs
 map:
-  geolocation_enabled: true
+  geolocation_enabled: false
   geolocation_onload: false
 
   geocoding_enabled: false
@@ -342,7 +342,7 @@ place:
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(What do you think about Transport in Santa Clara Valley?)
+  title: _(What are your transportation issues and ideas along the I-680 corridor??)
   action_text: _(added)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
@@ -350,7 +350,7 @@ place:
   location_item_name: location
 
   items:
-    - prompt: _(What is the name of this spot?)
+    - prompt: _(What is the name of this spot? (required))
       type: text
       name: name
       attrs:
@@ -359,7 +359,7 @@ place:
         - key: size
           value: 30
         - key: required
-    - prompt: _(What type of spot is this?)
+    - prompt: _(What type of spot is this?(required))
       type: select
       options:
         - label: _(Choose One)
@@ -528,7 +528,7 @@ place:
           value: Bike Idea!
         - label: _(Bus)
           value: Bus Idea!
-        - label: _(Caropool)
+        - label: _(Carpool)
           value: Carpool Idea!
         - label: _(Lightrail)
           value: Lightrail Idea!     
@@ -560,7 +560,7 @@ place:
       attrs:
         - key: accept
           value: image/* 
-    - prompt: _(Would you like to see the HOV Express Lanes extended into Santa Clara County along the I-680 corridor?)
+    - prompt: _(Would you like to see the existing carpool/express lanes south of Calaveras Blvd extended further along the I-680 corridor?)
       type: select
       sticky: true
       optional: true
@@ -591,6 +591,8 @@ place:
           value: bike
         - label: _(Bus)
           value: bus
+        - label: _(Carpool)
+          value: carpool  
         - label: _(Light Rail)
           value: lightrail   
         - label: _(Car)
@@ -599,6 +601,13 @@ place:
           value: other       
       name: commute_mode
       optional: true
+    - prompt: _(If other, please detail below..)
+      type: text
+      name: nowhy
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Please type here..)  
     - prompt: _(What is the ZIP code where you live?)
       sticky: true
       type: text
