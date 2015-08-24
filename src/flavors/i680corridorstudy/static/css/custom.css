@@ -241,6 +241,10 @@ a.close-btn {
   display: none;
 }
 
+.place-value-why {
+  display: none;
+}
+
 .place-value-location_commutemode {
   display: none;
 }
