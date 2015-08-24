@@ -396,8 +396,8 @@ place:
           value: Unattractive walking route  
         - label: _(Limited or no wayfinding signage)
           value: Limited or no wayfinding signage
-        - label: _(Poor disabled access)
-          value: Poor disabled access     
+        - label: _(Poor access for disabilities)
+          value: Poor access for disabilities     
         - label: _(Poor lighting)
           value: Poor Lighting      
         - label: _(Limited or no footpaths)
