@@ -237,6 +237,14 @@ a.close-btn {
   font-weight: bold;
 }
 
+.place-value-location_expresslanes {
+  display: none;
+}
+
+.place-value-location_commutemode {
+  display: none;
+}
+
 .place-value-homezip {
   display: none;
 }
