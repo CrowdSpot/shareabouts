@@ -5,7 +5,7 @@ app:
   # Header name
   name: I680 Corridor Study
   # Meta description that will show up in Google search results
-  meta_description: _(CrowdSpot creates custom maps that allow people to give input on geogrpahic locations. Use it to collect data in a social, engaging process.)
+  meta_description: _(CrowdSpot creates custom maps that allow people to collaborate on giving input for geographic locations. Use it to collect data in a social, engaging process.)
 
   # When the map loads, existing places will be loaded in chunks. By default,
   # the size of the chunks will be a reasonable default dictated by the API
