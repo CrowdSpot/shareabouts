@@ -439,20 +439,16 @@ label small {
 
 
 
-@media only screen and (min-width: 320px) and (max-width: 450px) {
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
  
   
 .access li:last-child {
     display: none;
   }
-
-
-@media only screen and (min-width: 760px) and (max-width: 770px) {
  
   
-.access li:last-child {
-    display: none;
-  }
+
+
 
 
 
@@ -460,6 +456,7 @@ label small {
 
 
 @media only screen and (min-width: 768px) {
+
 }
 
 @media only screen and (min-width: 1024px) {
