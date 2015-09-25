@@ -5,6 +5,12 @@
  */
 
 
+ /* SHUT IT DOWN LEMON */
+#add-place-btn-container, #new_response {
+  display: none !important;
+}
+
+
 
 COLOR PALETTE...
 
@@ -19,12 +25,6 @@ CrowdSpot Red #FF1609
 CrowdSpot Green #45BA00
 CrowdSpot Grey (text) #585A59
 */
-
-
- /* SHUT IT DOWN LEMON */
-#add-place-btn-container, #new_response {
-  display: none !important;
-}
 
 
 /* =Base Styles
