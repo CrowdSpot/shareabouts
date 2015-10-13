@@ -101,50 +101,22 @@ place:
   location_item_name: location
 
   items:
-    - prompt: What is the most important?
-      type: checkbox
-      options: 
-        - label:_(How often?)
-        - value: label
-        - label:_(How often?)
-        - value: label
-        - label:_(How often?)
-        - value: label
-      name: ifnot     
-    - prompt: _(Where from?)
+    - prompt: _(What is the name of this spot? (ie park, street name, landmark, etc.))
       type: text
-      name: wherefrom
+      name: name
+      attrs:
+        - key: placeholder
+          value: _(Street, Intersection, Park, Landmark, etc.)
+        - key: size
+          value: 30
+        - key: required
+    - prompt: _(Why this spot?)
+      type: textarea
+      name: description
       optional: true
       attrs:
         - key: placeholder
-          value: _(Type here...) 
-    - prompt: _(Why do you travel to get these items?)
-      type: text
-      name: wherefrom
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Type here...)  
-    - prompt: _(b) Groceries)
-      type: select
-      options:
-        - label: _(Please select)
-          value: ''
-        - label: _(Yes)
-          value: yes
-        - label: _(No)
-          value: no
-      name: yesorno
-    - prompt: _(c) Medical)
-      type: select
-      options:
-        - label: _(Please select)
-          value: ''
-        - label: _(Yes)
-          value: yes
-        - label: _(No)
-          value: no
-      name: yesorno                          
+          value: _(Please describe why you would like WiFI at this spot...)                     
     - prompt: _(Your Name)
       type: text
       name: submitter_name
