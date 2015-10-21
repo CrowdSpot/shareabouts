@@ -51,7 +51,7 @@ place_types:
     index: 0
     label: _(Idea Spot)
     rules:
-      - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -61,7 +61,7 @@ place_types:
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "like" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -70,7 +70,7 @@ place_types:
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
-      - condition: '"{{location_type}}" === "like" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "idea" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -115,7 +115,7 @@ place_types:
     index: 2
     label: _(Like Spot)
     rules:
-      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -125,7 +125,7 @@ place_types:
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "like" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -134,7 +134,7 @@ place_types:
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
-      - condition: '"{{location_type}}" === "idea" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "like" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
