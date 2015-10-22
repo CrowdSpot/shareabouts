@@ -398,8 +398,8 @@ support:
   anonymous_name: _(Someone)
 
 pages:
-  - title: _(About)
-    slug: about
+  - title: _(Welcome)
+    slug: welcome
     name: overview
     start_page: true
     
