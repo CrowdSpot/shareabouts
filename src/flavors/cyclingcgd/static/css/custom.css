@@ -311,11 +311,6 @@ a.close-btn {
   display: block;
 }
 
-.place-form.like label[for=place-with_who],
-  .place-form.like [name=with_who] {
-  display: block;
-}
-
 .place-form.like label[for=place-age],
   .place-form.like [name=age] {
   display: block;
@@ -327,6 +322,35 @@ a.close-btn {
 }
 
 
+.place-form.idea label[for=place-other_reason],
+  .place-form.idea [name=other_reason] {
+  display: block;
+}
+
+.place-form.idea label[for=place-frequency],
+  .place-form.idea [name=frequency] {
+  display: block;
+}
+
+.place-form.idea label[for=place-reason],
+  .place-form.idea [name=reason] {
+  display: block;
+}
+
+.place-form.idea label[for=place-time],
+  .place-form.idea [name=time] {
+  display: block;
+}
+
+.place-form.idea label[for=place-age],
+  .place-form.idea [name=age] {
+  display: block;
+}
+
+.place-form.like label[for=place-gender],
+  .place-form.like [name=gender] {
+  display: block;
+}
 
 
 .place-form.issue label[for=place-other_reason],
@@ -346,11 +370,6 @@ a.close-btn {
 
 .place-form.issue label[for=place-time],
   .place-form.issue [name=time] {
-  display: block;
-}
-
-.place-form.issue label[for=place-with_who],
-  .place-form.issue [name=with_who] {
   display: block;
 }
 
