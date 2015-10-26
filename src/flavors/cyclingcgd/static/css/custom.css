@@ -347,8 +347,8 @@ a.close-btn {
   display: block;
 }
 
-.place-form.like label[for=place-gender],
-  .place-form.like [name=gender] {
+.place-form.idea label[for=place-gender],
+  .place-form.idea [name=gender] {
   display: block;
 }
 
