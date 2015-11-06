@@ -281,7 +281,7 @@ place:
           value: sometimes          
       name: age
       optional: true                                     
-    - prompt: _(Please try adding an image of this space)
+    - prompt: _(Please add an image of this space if you have one)
       inputfile_label: _(Add Image)
       type: file
       name: my_image
@@ -314,7 +314,21 @@ place:
           value: '>75'          
       name: age
       sticky: true
-      optional: true                            
+      optional: true
+    - prompt: _(Your age)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Male)
+          value: male
+        - label: _(Female)
+          value: female
+        - label: _(Other)
+          value: other        
+      name: gender
+      sticky: true
+      optional: true                               
     - prompt: _(Your suburb or town)
       sticky: true
       type: text
@@ -402,7 +416,10 @@ pages:
         external: true
       - title: _(Poor Spaces)
         url: /filter/poor
-        external: true               
+        external: true
+      - title: _(New Space Ideas)
+        url: /filter/idea
+        external: true                
 
 notifications:
   on_new_place: true
