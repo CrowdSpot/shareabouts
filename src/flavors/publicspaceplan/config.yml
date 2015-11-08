@@ -171,17 +171,17 @@ place_types:
     index: 4
     label: _(New Space Idea)
     rules:
-      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 14 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
-          color: '#45BA00'
+          color: '#FEC500'
           radius: 5
           weight: 1
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -279,7 +279,7 @@ place:
           value: no
         - label: _(Sometimes)
           value: sometimes          
-      name: age
+      name: safety
       optional: true                                     
     - prompt: _(Please add an image of this space if you have one)
       inputfile_label: _(Add Image)
@@ -315,7 +315,7 @@ place:
       name: age
       sticky: true
       optional: true
-    - prompt: _(Your age)
+    - prompt: _(Your gender)
       type: select
       options:
         - label: _(Choose One)

@@ -233,11 +233,15 @@ a.close-btn {
   font-weight: bold;
 }
 
-.place-value-why {
+.place-value-age {
   display: none;
 }
 
-.place-value-suburb {
+.place-value-gender {
+  display: none;
+}
+
+.place-value-safety {
   display: none;
 }
 
