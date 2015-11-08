@@ -75,17 +75,17 @@ place_types:
     index: 1
     label: _(Great Space)
     rules:
-      - condition: '"{{location_type}}" === "great" && {{map.zoom}} < 14 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "great" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
-          color: '#FDCB14'
+          color: '#45BA00'
           radius: 5
           weight: 1
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "great" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "great" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -107,17 +107,17 @@ place_types:
     index: 2
     label: _(Ok Space)
     rules:
-      - condition: '"{{location_type}}" === "ok" && {{map.zoom}} < 14 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "ok" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
-          color: '#45BA00'
+          color: '#EC611A'
           radius: 5
           weight: 1
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "ok" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "ok" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -139,17 +139,17 @@ place_types:
     index: 3
     label: _(Poor Space)
     rules:
-      - condition: '"{{location_type}}" === "poor" && {{map.zoom}} < 14 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "poor" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
-          color: '#45BA00'
+          color: '#FF1609'
           radius: 5
           weight: 1
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "poor" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "poor" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
