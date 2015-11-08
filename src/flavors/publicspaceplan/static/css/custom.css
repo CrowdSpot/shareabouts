@@ -228,10 +228,6 @@ a.close-btn {
 /* =Existing Spots
 -------------------------------------------------------------- */
 
-.place-value-description:before {
-  content: "Description: ";
-  font-weight: bold;
-}
 
 .place-value-age {
   display: none;
@@ -242,6 +238,10 @@ a.close-btn {
 }
 
 .place-value-safety {
+  display: none;
+}
+
+.place-value-subrub {
   display: none;
 }
 

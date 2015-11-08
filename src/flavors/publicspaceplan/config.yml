@@ -337,7 +337,7 @@ place:
           value: _(suburb)
         - key: size
           value: 30           
-      name: postcode
+      name: suburb
       optional: true                                              
     - prompt: _(Your name)
       type: text
