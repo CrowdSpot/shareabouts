@@ -110,6 +110,11 @@ place:
         - key: size
           value: 30
         - key: required
+    - type: hidden
+      name: location_type
+      attrs:
+        - key: value
+          value: wifi    
     - prompt: _(Why this spot?)
       type: textarea
       name: description
