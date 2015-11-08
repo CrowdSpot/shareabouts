@@ -311,7 +311,7 @@ var Shareabouts = Shareabouts || {};
       // Never set the placeFormView's latLng until the user does it with a
       // drag event (below)
       if (this.placeFormView && this.placeFormView.center) {
-        this.setPlaceFormViewLatLng(11);
+        this.setPlaceFormViewLatLng(ll);
       }
       if (this.hasBodyClass('content-visible') === false) {
         this.setLocationRoute(zoom, ll.lat, ll.lng);
