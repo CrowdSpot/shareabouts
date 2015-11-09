@@ -23,7 +23,7 @@ map:
 
   geocoding_enabled: false
   geocode_field_label: _(Enter the street name and suburb...)
-  geocode_bounding_box: [39.830159, -75.478821, 40.167331, -74.781189]  # top, left, bottom, right
+  geocode_bounding_box: [-37.147182, 143.819274, -36.275278, 144.98657200000002]  # top, left, bottom, right
 
   options:
     center:
@@ -32,6 +32,7 @@ map:
     zoom: 12
     minZoom: 11
     maxZoom: 18
+    maxBounds: [ [-37.153979, 143.755668], [-36.169663, 144.949188] ]
   layers: 
     - url: http://{s}.tiles.mapbox.com/v3/aisey.o14jc3gl/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
@@ -250,10 +251,10 @@ place:
     - prompt: _(Why did you give this rating?)
       type: textarea
       name: description
-      optional: true
       attrs:
         - key: placeholder
           value: _(Please describe...)
+        - key: required  
     - prompt: _(What activities do you currently do or want to do here?)
       type: textarea
       name: activities
