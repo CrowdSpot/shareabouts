@@ -34,7 +34,7 @@ map:
     maxZoom: 18
     maxBounds: [ [-37.153979, 143.755668], [-36.169663, 144.949188] ]
   layers: 
-    - url: http://{s}.tiles.mapbox.com/v3/aisey.o14jc3gl/{z}/{x}/{y}.png
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.o46phkdl/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
 
 # The keys show up in the dropdown list when you are adding a new place
