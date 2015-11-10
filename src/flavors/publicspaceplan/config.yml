@@ -254,7 +254,6 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe...)
-        - key: required  
     - prompt: _(What activities do you currently do or want to do here?)
       type: textarea
       name: activities
@@ -400,7 +399,7 @@ survey:
 
 support:
   submission_type: support
-  submit_btn_text: _(Support)
+  submit_btn_text: _(Like)
   response_name: _(support)
   response_plural_name: _(supports)
   action_text: supported
