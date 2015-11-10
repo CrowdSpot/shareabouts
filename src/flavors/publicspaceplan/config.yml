@@ -251,6 +251,7 @@ place:
     - prompt: _(Why did you give this rating?)
       type: textarea
       name: description
+      optional: true
       attrs:
         - key: placeholder
           value: _(Please describe...)
