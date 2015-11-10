@@ -245,6 +245,11 @@ a.close-btn {
   display: none;
 }
 
+.place-value-location_updates {
+  display: none;
+}
+
+
 /* =Hiding questions in new forms
 -------------------------------------------------------------- */
 
