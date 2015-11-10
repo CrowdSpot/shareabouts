@@ -34,7 +34,7 @@ map:
     maxZoom: 18
     maxBounds: [ [-37.153979, 143.755668], [-36.169663, 144.949188] ]
   layers: 
-    - url: http://{s}.tiles.mapbox.com/v3/aisey.o47nc6o6/{z}/{x}/{y}.png
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.o4e2jif3/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
 
 # The keys show up in the dropdown list when you are adding a new place
@@ -281,7 +281,7 @@ place:
         - label: _(Sometimes)
           value: sometimes          
       name: safety
-      optional: true                                     
+      optional: true                                      
     - prompt: _(Please add an image of this space if you have one)
       inputfile_label: _(Add Image)
       type: file
@@ -349,8 +349,20 @@ place:
         - key: placeholder
           value: _(Type name)
         - key: size
-          value: 30     
-    - prompt: _(Your email)
+          value: 30
+    - prompt: _(Would you like to stay informed about this project?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Yes - please send updates)
+          value: yesplease 
+        - label: _(No thanks - no emails please)
+          value: nothanks
+      name: location_updates
+      optional: true
+      sticky: true                  
+    - prompt: _(Please type your email below)
       type: text
       sticky: true
       name: private-submitter_email
@@ -359,7 +371,7 @@ place:
         - key: placeholder
           value: _(Email address)
         - key: size
-          value: 30      
+          value: 30                
 
 survey:
   submission_type: comments

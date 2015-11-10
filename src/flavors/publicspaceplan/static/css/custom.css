@@ -266,6 +266,8 @@ a.close-btn {
 
 
 
+
+
 .place-form.great label[for=place-description],
   .place-form.great [name=description] {
   display: block;
@@ -325,6 +327,18 @@ a.close-btn {
 
 
 
+
+
+
+.place-form label[for=place-private-submitter_email],
+  .place-form [name=private-submitter_email]{
+  display: none;
+}
+
+.place-form.location_updates-yesplease label[for=place-private-submitter_email],
+  .place-form.location_updates-yesplease [name=private-submitter_email] {
+  display: block;
+}
 
 
 
