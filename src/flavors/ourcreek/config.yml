@@ -306,7 +306,8 @@ place:
           value: pt
         - label: _(Car)
           value: car  
-      name: transport_mode 
+      name: transport_mode
+      optional: true 
     - prompt: _(Is this a positive or negative Transport Spot of the creek?)
       type: select
       options:
