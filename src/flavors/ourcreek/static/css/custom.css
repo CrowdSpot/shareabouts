@@ -1,0 +1,428 @@
+/*
+ * This CSS file follows the default Shareabouts style.css.
+ * All rules herein will override the default Shareabouts styles.
+ * NOTE: "With great power comes great responsibility."
+ */
+
+
+
+
+COLOR PALETTE...
+
+Green/Blue #0E716A
+Orange #EC611A
+Light grey #C0C0A2
+
+
+CrowdSpot Red #FF1609
+CrowdSpot Green #45BA00
+CrowdSpot Grey (text) #585A59
+*/
+
+
+/* =Base Styles
+-------------------------------------------------------------- */
+
+/* Buttons */
+.btn,
+.btn:visited,
+.btn:link {
+  font-weight: 600;
+  border: 0;
+}
+
+.btn-primary,
+.btn-primary:visited,
+.btn-primary:link {
+  background-color: #0e6f6d;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #575958;
+}
+.btn-secondary,
+.btn-secondary:visited,
+.btn-secondary:link {
+/*  background-color: #ccc;*/
+/*  color: #007fbf;*/
+}
+.btn-secondary:hover {
+/*  background-color: #007fbf;*/
+/*  color: #fff;*/
+}
+
+/* Links */
+a, a:active, a:visited {
+  color: #f08927;
+}
+a:hover {
+  color: #C8C8C8;
+}
+a:hover, a:active {
+  outline: none;
+}
+
+
+/* =Header
+-------------------------------------------------------------- */
+
+#site-header {
+  border-top: #0E716A 3px solid;
+}
+
+#site-header {
+  background-color: #ffffff;
+  box-shadow: 0 5px 10px rgba(85, 85, 85, 0.5), inset 0 -3px 0
+}
+
+.access li:hover > ul,
+  .access li:hover > form > ul {
+    display: block;
+    background: #ccc;
+    box-shadow: -0.25em 0.25em 0 rgba(0,0,0,0.1);
+    border: 3px solid rgba(0,0,0,0.05);
+    border-radius: 0;
+    margin: -3px -60px 0 0;
+    padding: 3px 0 0 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+#site-title {
+  background: url('images/header_ourcreek4.png') no-repeat 
+center;
+  background-size: contain;
+  width: 440px;
+  text-indent: -133337px;
+}
+
+.site-name {
+  font-size: 0.45em;
+  float: left;
+  line-height: 1.1;
+  background-color: #26A0DA;
+  position: relative;
+  top: -0.6em;
+}
+
+.has-pages #site-title {
+  margin-left: -0.75em;
+}
+
+.access {
+  font-size: 1.1em;
+}
+
+
+#pages-nav-container, #language-picker {
+  height: 100%;
+  float: left;
+  margin-right: -163px;
+  margin-left: 35px;
+}
+
+
+/* Navigation Button */
+#nav-btn {
+  background: #6f6f6f;
+  color: #bbb;
+  font-size: 2em;
+  line-height: 0.7;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: -1px 1px 1px rgba(0,0,0,0.25);
+  float: left;
+  width: .8em;
+  padding: 0.125em 0;
+  position: absolute;
+  border-radius: 2.5px;
+  left: 0.25em;
+  top: 0.25em;
+}
+
+/* =Colophon
+-------------------------------------------------------------- */
+
+#colophon {
+  box-shadow: inset 0 5px 10px rgba(85, 85, 85, 0.25);
+}  
+
+/* =The Ticker
+-------------------------------------------------------------- */
+
+#ticker {
+  background: #ffffff;
+  box-shadow: -5px 0 10px rgba(85, 85, 85, 0.5);
+}
+
+.recent-points a {
+    color: #585A59;
+    text-decoration: none;
+    float: left;
+    border-top: 1px solid #888;
+    border-bottom: 1px solid #666;
+    padding: 0.5em 0.5em 0.5em 0.75em;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* =Content: Pages & Places
+-------------------------------------------------------------- */
+
+#content {
+  background: #fff;
+}
+
+/* Close Button */
+a.close-btn {
+  background: #fff;
+}
+
+
+
+/* =List View
+-------------------------------------------------------------- */
+
+#list-container {
+  background: #eee;
+}
+
+.list-toggle-btn,
+  .list-toggle-btn:visited,
+  .list-toggle-btn:link {
+    background-color: #0E6D6C;
+ }
+ 
+.list-toggle-btn:hover {
+    background-color: #585A59;
+    color: #fff;
+  }   
+  
+
+/* =Map
+-------------------------------------------------------------- */
+
+/* Drag Marker Instructions (for adding a new place) */
+.drag-marker-instructions,
+.drag-marker-warning {
+  background-color: #3E74BF;
+  color: #fff;
+  text-shadow: none;
+}
+.drag-marker-warning {
+  background-color: #FF1609;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* =newpin marker
+-------------------------------------------------------------- */
+
+#centerpoint.newpin .marker {
+  display: block;
+  width: 25px;
+  height: 41px;
+  background: transparent url(images/markers/marker-f39914.png) 0 0 no-repeat scroll;
+  position: relative;
+  top: 3px;
+  -webkit-transition: top 0.4s ease;
+  -moz-transition: top 0.4s ease;
+  -o-transition: top 0.4s ease;
+  -ms-transition: top 0.4s ease;
+  transition: top 0.4s ease;
+}
+
+/* =legend
+-------------------------------------------------------------- */
+.legend li {
+  line-height: 26px;
+}
+
+.legend img {
+  max-height: 33px;
+  vertical-align: middle;
+}
+
+
+/* =Existing Spots
+-------------------------------------------------------------- */
+
+
+.place-value-age {
+  display: none;
+}
+
+.place-value-gender {
+  display: none;
+}
+
+.place-value-safety {
+  display: none;
+}
+
+.place-value-suburb {
+  display: none;
+}
+
+.place-value-location_updates {
+  display: none;
+}
+
+
+/* =Hiding questions in new forms
+-------------------------------------------------------------- */
+
+.place-form label[for=place-enviro_pos_neg],
+  .place-form [name=enviro_pos_neg]{
+  display: none;
+}
+
+.place-form.environment label[for=place-enviro_pos_neg],
+  .place-form.environment [name=enviro_pos_neg] {
+  display: block;
+}
+
+
+
+.place-form label[for=place-transport_pos_neg],
+  .place-form [name=transport_pos_neg]{
+  display: none;
+}
+
+.place-form.transport label[for=place-transport_pos_neg],
+  .place-form.transport [name=transport_pos_neg] {
+  display: block;
+}
+
+.place-form label[for=place-transport_mode],
+  .place-form [name=transport_mode]{
+  display: none;
+}
+
+.place-form.transport label[for=place-transport_mode],
+  .place-form.transport [name=transport_mode] {
+  display: block;
+}
+
+
+
+.place-form label[for=place-descriptions_environment],
+  .place-form [name=descriptions_environment]{
+  display: none;
+}
+.place-form label[for=place-descriptions_transport],
+  .place-form [name=descriptions_transport]{
+  display: none;
+}
+.place-form label[for=place-descriptions_history],
+  .place-form [name=descriptions_history]{
+  display: none;
+}
+.place-form label[for=place-descriptions_attraction],
+  .place-form [name=descriptions_attraction]{
+  display: none;
+}
+.place-form label[for=place-descriptions_idea],
+  .place-form [name=descriptions_idea]{
+  display: none;
+}
+
+.place-form.environment label[for=place-descriptions_environment],
+  .place-form.environment [name=descriptions_environment] {
+  display: block;
+}
+
+.place-form.transport label[for=place-descriptions_transport],
+  .place-form.transport [name=descriptions_transport] {
+  display: block;
+}
+
+.place-form.history label[for=place-descriptions_history],
+  .place-form.history [name=descriptions_history] {
+  display: block;
+}
+
+.place-form.attraction label[for=place-descriptions_attraction],
+  .place-form.attraction [name=descriptions_attraction] {
+  display: block;
+}
+
+.place-form.idea label[for=place-descriptions_idea],
+  .place-form.idea [name=descriptions_idea] {
+  display: block;
+}
+
+
+
+
+
+.place-form label[for=place-private-submitter_email],
+  .place-form [name=private-submitter_email]{
+  display: none;
+}
+
+.place-form.location_updates-yesplease label[for=place-private-submitter_email],
+  .place-form.location_updates-yesplease [name=private-submitter_email] {
+  display: block;
+}
+
+
+
+
+/* =Hiding (optional) in survey form
+-------------------------------------------------------------- */
+
+label small {
+  text-transform: none;
+  display: none;
+}
+
+
+/* =Hiding geolocator
+-------------------------------------------------------------- */
+
+
+#map.leaflet-container {
+  font: 14px/1.5 "Proxima Nova", Arial, Helvetica, sans-serif;
+}
+
+
+/* =Media Queries
+-------------------------------------------------------------- */  
+
+
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
+ 
+  
+.access li:last-child {
+    display: none;
+  }
+}
+
+.goog-te-gadget:last-child {
+    display: none;
+  }
+
+.goog-te-gadget .goog-te-combo:last-child {
+    display: none;
+  }
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (min-width: 1300px) {
+}
+
