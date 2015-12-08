@@ -56,6 +56,10 @@ var Shareabouts = Shareabouts || {};
         self.toggleListView();
       });
 
+      $(document).on('click', '.activity-item a', function(evt) {
+        window.app.clearLocationTypeFilter();
+      });
+
       // Globally capture clicks. If they are internal and not in the pass
       // through list, route them through Backbone's navigate method.
       $(document).on('click', 'a[href^="/"]', function(evt) {
@@ -67,7 +71,8 @@ var Shareabouts = Shareabouts || {};
         if (($link.attr('rel') === 'internal' ||
              href === '/' ||
              href.indexOf('/place') === 0 ||
-             href.indexOf('/page') === 0) &&
+             href.indexOf('/page') === 0 ||
+             href.indexOf('/filter') === 0) &&
              !evt.altKey && !evt.ctrlKey && !evt.metaKey && !evt.shiftKey) {
           evt.preventDefault();
 
@@ -242,6 +247,12 @@ var Shareabouts = Shareabouts || {};
       this.activities.fetch({reset: true});
     },
 
+    getListRoutes: function() {
+       // Return a list of the routes that are allowed to show the list view.
+       // Navigating to any other route will automatically hide the list view.
+      return ['showList', 'filterMap'];
+    },
+
     isAddingPlace: function(model) {
       return this.$panel.is(":visible") && this.$panel.hasClass('place-form');
     },
@@ -329,6 +340,11 @@ var Shareabouts = Shareabouts || {};
       evt.preventDefault();
       S.Util.log('USER', 'panel', 'close-btn-click');
       this.options.router.navigate('/', {trigger: true});
+      if (this.mapView.locationTypeFilter) {
+        this.options.router.navigate('filter/' + this.mapView.locationTypeFilter, {trigger: true});
+      } else {
+        this.options.router.navigate('/', {trigger: true});
+      }
     },
     // This gets called for every model that gets added to the place
     // collection, not just new ones.
