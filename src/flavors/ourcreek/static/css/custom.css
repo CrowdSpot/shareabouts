@@ -262,7 +262,11 @@ a.close-btn {
   display: none;
 }
 
-.place-value-safety {
+.place-value-transport_pos_neg {
+  display: none;
+}
+
+.place-value-transport_mode {
   display: none;
 }
 

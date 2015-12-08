@@ -502,8 +502,8 @@ pages:
       - title: _(History Spots)
         url: /filter/history
         external: true
-      - title: _(Like Spots)
-        url: /filter/like
+      - title: _(Attraction Spots)
+        url: /filter/attraction
         external: true
       - title: _(Idea Spots)
         url: /filter/idea
