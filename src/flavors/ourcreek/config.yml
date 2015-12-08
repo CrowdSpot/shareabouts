@@ -490,8 +490,8 @@ pages:
     
   - title: _(Filter)
     pages:
-      - title: _(Show All)
-        url: /
+      - title: _(All)
+        url: /filter/all
         external: true
       - title: _(Environment Spots)
         url: /filter/environment
