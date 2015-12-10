@@ -1,0 +1,384 @@
+# Settings for the app
+app:
+  # HTML Title
+  title: BikeSpot Project
+  # Header name
+  name: Bikespot Project
+  # Meta description that will show up in Google search results
+  meta_description: _(CrowdSpot creates custom maps that allow people to collaborate on giving input for geographic locations. Use it to collect data in a social, engaging process.)
+
+  # When the map loads, existing places will be loaded in chunks. By default,
+  # the size of the chunks will be a reasonable default dictated by the API
+  # server. If you would like to override the chunk size, use this setting:
+  # places_page_size: 100
+
+  # Optional. List view is supported by default. Set to false to disable.
+  # list_enabled: false
+ 
+
+# Settings for map and layer configs
+map:
+  geolocation_enabled: false
+  geolocation_onload: false
+
+  geocoding_enabled: false
+  geocode_field_label: _(Enter the street name and suburb...)
+  geocode_bounding_box: [-37.147182, 143.819274, -37.275679, 145.676826]  # top, left, bottom, right
+
+  options:
+    center:
+      lat: -37.813726
+      lng: 144.965189
+    zoom: 13
+    minZoom: 11
+    maxZoom: 18
+    maxBounds: [ [-38.344339, 144.133819], [-37.297218, 145.886697] ]
+  layers: 
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.a902d297/{z}/{x}/{y}.png
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.bikepaths/{z}/{x}/{y}.png
+      layer_control:
+        type: overlay
+        name: 'Bike Lanes'
+      display: false  
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'     
+
+# The keys show up in the dropdown list when you are adding a new place
+# The values map the place type to map icons (defined below).
+place_types:
+  legend:
+    index: 0
+    label: _(SPOT TYPES)
+    rules:
+      - condition: '"{{location_type}}" === "car" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#FF1609'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "car" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/legend.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "car" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f39914.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  safe:
+    index: 1
+    label: _(Safe Spot)
+    rules:
+      - condition: '"{{location_type}}" === "safe" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#45BA00'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "safe" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/bikespot-pin-green-tick.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "safe" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  unsafe:
+    index: 2
+    label: _(Unsafe Spot)
+    rules:
+      - condition: '"{{location_type}}" === "unsafe" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#EC611A'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "unsafe" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/bikespot-pin-orange-x.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "unsafe" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]                 
+                            
+                          
+activity:
+  # Optional. Activity is supported by default. Set to false to disable.
+  enabled: true
+  # How often to refresh the activity list, in milliseconds.
+  interval: 30000
+
+place:
+  adding_supported: true
+  add_button_label: _(Add a Spot)
+  # Labels for the buttons that toggle the map and list views
+  show_list_button_label: _(List All Spots)
+  show_map_button_label: _(Show the Map)
+  action_text: _(added)
+  title: _(Tell us about where you feel safe or unsafe riding...)
+  action_text: _(added)
+  anonymous_name: _(Someone)
+  submit_button_label: _(Submit)
+
+  location_item_name: location
+
+  items:
+    - prompt: _(What is the name of this spot?)
+      type: text
+      name: name
+      attrs:
+        - key: placeholder
+          value: _(Street, Park, Landmark, etc.)
+        - key: size
+          value: 30
+        - key: required
+    - prompt: _(Is this a 'Safe Spot' or 'Unsafe Spot'?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Safe Spot)
+          value: safe 
+        - label: _(Unsafe Spot)
+          value: unsafe       
+      name: location_type
+      attrs:
+        - key: required 
+    - prompt: _(On a scale of 1-3, how safe do you feel at this Spot?)
+      type: select
+      optional: true
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(3 - Does not get better than this!)
+          value: 3
+        - label: _(2 - Sweet ride)
+          value: 2
+        - label: _(1 - This is pretty good)
+          value: 1                
+      name: feel_safe
+    - prompt: _(On a scale of 1-3, how unsafe do you feel at this Spot?)
+      type: select
+      optional: true
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(3 - Just feared for my life!)
+          value: 3
+        - label: _(2 - Stress levels rising)
+          value: 2
+        - label: _(1 - Oh...not good)
+          value: 1        
+      name: feel_unsafe                                       
+    - prompt: _(Why do you feel safe or unsafe here?)
+      type: textarea
+      name: description
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Please describe...)                                                        
+    - prompt: _(Please add an image of this spot if you have one)
+      inputfile_label: _(Add Image)
+      type: file
+      name: my_image
+      optional: true
+      attrs:
+        - key: accept
+          value: image/*
+    - prompt: _(What is the main purpose you ride here?)
+      type: select
+      optional: true
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Commuting)
+          value: commute
+        - label: _(Recreational)
+          value: recreational
+        - label: _(Training)
+          value: training        
+      name: purpose
+    - prompt: _(How would you describe your level of riding confidence?)
+      type: select
+      optional: true
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Strong and fearless)
+          value: strong_and_earless
+        - label: _(Enthused and confident)
+          value: enthused_and_confident
+        - label: _(Interested but concerned)
+          value: interested_but_concerned         
+      name: rider_type
+      sticky: true           
+    - prompt: _(Your age)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(< 14)
+          value: '<14'
+        - label: _(15-19)
+          value: 15-19
+        - label: _(20-24)
+          value: 20-24
+        - label: _(25-34)
+          value: 25-34
+        - label: _(35-44)
+          value: 35-44
+        - label: _(45-54)
+          value: 45-54
+        - label: _(55-64)
+          value: 55-64
+        - label: _(65-74)
+          value: 65-74
+        - label: _(>75)
+          value: '>75'          
+      name: age
+      sticky: true
+      optional: true
+    - prompt: _(Your gender)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Male)
+          value: male
+        - label: _(Female)
+          value: female
+        - label: _(Other)
+          value: other        
+      name: gender
+      sticky: true
+      optional: true                                                                            
+    - prompt: _(Your name)
+      type: text
+      name: submitter_name
+      sticky: true
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Type name)
+        - key: size
+          value: 30
+    - prompt: _(Would you like to stay informed about this project?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Yes - please send updates)
+          value: yesplease 
+        - label: _(No thanks - no emails please)
+          value: nothanks
+      name: location_updates
+      optional: true
+      sticky: true                  
+    - prompt: _(Please type your email below)
+      type: text
+      sticky: true
+      name: private-submitter_email
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Email address)
+        - key: size
+          value: 30                
+
+survey:
+  submission_type: comments
+
+  # Response config
+  show_responses: true
+  response_name: _(comment)
+  response_plural_name: _(comments)
+  action_text: _(commented on)
+  anonymous_name: _(Someone)
+
+  # Survey form config
+  title: _(Leave a Comment)
+  form_link_text: _(Leave a Comment)
+  submit_btn_text: _(Comment)
+  items:
+    - prompt: _(What do you think of this spot? Do you agree? Any advice or tips for this spot?)
+      label: _(Comment)
+      type: textarea
+      name: comment
+      attrs:
+        - key: required
+    - prompt: _(Your Name)
+      type: text
+      name: submitter_name
+
+support:
+  submission_type: support
+  submit_btn_text: _(Like)
+  response_name: _(like)
+  response_plural_name: _(likes)
+  action_text: liked
+  anonymous_name: _(Someone)
+
+pages:
+  - title: _(Welcome)
+    slug: welcome
+    name: overview
+    start_page: true
+    
+  - title: _(Filter)
+    pages:
+      - title: _(Show All)
+        url: /
+        external: true
+      - title: _(Safe Spots)
+        url: /filter/safe
+        external: true
+      - title: _(Unsafe Spots)
+        url: /filter/unsafe
+        external: true  
+                         
+
+notifications:
+  on_new_place: true
+  submitter_email_field: private-submitter_email
