@@ -234,11 +234,11 @@ place:
         - label: _(Choose One)
           value: ''
         - label: _(Commuting)
-          value: commute
+          value: Commuting
         - label: _(Recreational)
-          value: recreational
+          value: Recreational
         - label: _(Training)
-          value: training        
+          value: Training        
       name: purpose
     - prompt: _(How would you describe your level of riding confidence?)
       type: select

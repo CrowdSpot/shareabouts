@@ -255,6 +255,10 @@ a.close-btn {
   display: none;
 }
 
+.place-value-location_updates {
+  display: none;
+}
+
 .place-value-description:before {
   content: "Description: ";
   font-weight: bold;
@@ -270,6 +274,7 @@ a.close-btn {
   content: "Rider type: ";
   font-weight: bold;
 }
+
 
 
 /* =Hiding questions in new forms
