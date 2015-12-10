@@ -337,8 +337,8 @@ label small {
 
 a.leaflet-control-layers-toggle {
     background-image: url(images/bikelanes.png);
-    background-size: contain;
-    width: 138px;
+    background-size: inherit;
+    width: 118px;
     height: 28px;
 }
 

@@ -193,11 +193,11 @@ place:
         - label: _(Choose One)
           value: ''
         - label: _(3 - Does not get better than this!)
-          value: 3
+          value: Does not get better than this!
         - label: _(2 - Sweet ride)
-          value: 2
+          value: Sweet ride
         - label: _(1 - This is pretty good)
-          value: 1                
+          value: This is pretty good                
       name: feel_safe
     - prompt: _(On a scale of 1-3, how unsafe do you feel at this Spot?)
       type: select
@@ -206,11 +206,11 @@ place:
         - label: _(Choose One)
           value: ''
         - label: _(3 - Just feared for my life!)
-          value: 3
+          value: Just feared for my life!
         - label: _(2 - Stress levels rising)
-          value: 2
+          value: Stress levels rising
         - label: _(1 - Oh...not good)
-          value: 1        
+          value: Oh...not good        
       name: feel_unsafe                                       
     - prompt: _(Why do you feel safe or unsafe here?)
       type: textarea
@@ -247,11 +247,11 @@ place:
         - label: _(Choose One)
           value: ''
         - label: _(Strong and fearless)
-          value: strong_and_earless
+          value: Strong and fearless
         - label: _(Enthused and confident)
-          value: enthused_and_confident
+          value: Enthused and confident
         - label: _(Interested but concerned)
-          value: interested_but_concerned         
+          value: interested but concerned         
       name: rider_type
       sticky: true           
     - prompt: _(Your age)
@@ -354,10 +354,10 @@ survey:
 
 support:
   submission_type: support
-  submit_btn_text: _(Like)
-  response_name: _(like)
-  response_plural_name: _(likes)
-  action_text: liked
+  submit_btn_text: _(Support)
+  response_name: _(support)
+  response_plural_name: _(supports)
+  action_text: supported
   anonymous_name: _(Someone)
 
 pages:
