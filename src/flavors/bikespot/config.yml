@@ -209,7 +209,7 @@ place:
           value: Just feared for my life!
         - label: _(2 - Stress levels rising)
           value: Stress levels rising
-        - label: _(1 - Oh...not good)
+        - label: _(1 - A bit tricky)
           value: Oh...not good        
       name: feel_unsafe                                       
     - prompt: _(Why do you feel safe or unsafe here?)
@@ -233,25 +233,33 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Commuting)
-          value: Commuting
-        - label: _(Recreational)
-          value: Recreational
-        - label: _(Training)
-          value: Training        
+        - label: _(Work)
+          value: Work
+        - label: _(Shopping)
+          value: Shopping
+        - label: _(School)
+          value: School
+        - label: _(Exercise)
+          value: Exercise
+        - label: _(Social)
+          value: Social
+        - label: _(All purposes)
+          value: all                
       name: purpose
-    - prompt: _(How would you describe your level of riding confidence?)
+    - prompt: _(Please choose the option below that best describes your level of riding confidence?)
       type: select
       optional: true
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Strong and fearless)
-          value: Strong and fearless
-        - label: _(Enthused and confident)
-          value: Enthused and confident
-        - label: _(Interested but concerned)
-          value: interested but concerned         
+        - label: _(Very confident in all conditions)
+          value: Very confident in all conditions
+        - label: _(Confident but cautious)
+          value: Confident but cautious
+        - label: _(Not confident riding on the road)
+          value: Not confident riding on the road
+        - label: _(I want to ride more but am too concerned)
+          value: I want to ride more but am too concerned         
       name: rider_type
       sticky: true           
     - prompt: _(Your age)
