@@ -33,7 +33,7 @@ map:
     maxZoom: 18
     maxBounds: [ [-32.028422, 115.772369], [-31.901216, 115.933846] ]
   layers:
-    - url: http://{s}.tiles.mapbox.com/v3/aisey.lfp2i2mg/{z}/{x}/{y}.png
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.l4l5a9ig/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
     - url: /static/data/philadelphia.geojson
       type: json
