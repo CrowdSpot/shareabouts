@@ -302,14 +302,14 @@ place:
       name: gender
       sticky: true
       optional: true                                                                            
-    - prompt: _(Your name)
+    - prompt: _(Your name or username)
       type: text
       name: submitter_name
       sticky: true
       optional: true
       attrs:
         - key: placeholder
-          value: _(Type name)
+          value: _(This name will be visible)
         - key: size
           value: 30
     - prompt: _(Would you like to stay informed about this project?)
