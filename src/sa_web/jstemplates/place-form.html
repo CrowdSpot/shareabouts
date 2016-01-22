@@ -71,6 +71,15 @@
               <!--<![endif]-->
               {{/is_file}}
 
+              {{#is_multi_checkbox}}
+                {{#checkboxes}}
+                  <label class="multi-checkbox" for="multi-checkbox-{{name}}">
+                    <input type="checkbox" id="multi-checkbox-{{name}}" name="{{name}}" value="1">
+                    {{label}}
+                  </label>
+                {{/checkboxes}}
+              {{/is_multi_checkbox}}
+
               {{#if help_text }}
               <div class="help-text place-{{ name }}-help-text">{{ help_text }}</div>
               {{/if}}

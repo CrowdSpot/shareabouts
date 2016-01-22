@@ -139,7 +139,22 @@ place:
         - key: placeholder
           value: _(Email address)
         - key: size
-          value: 30      
+          value: 30
+    - prompt: _(Features)
+      type: multi-checkbox
+      name: features
+      optional: true
+      checkboxes:
+        - name: mad_jumps
+          label: Mad jumps
+        - name: sick_rails
+          label: Sick rails
+        - name: half-pipes
+          label: Half Pipes
+        - name: long_board_friendly
+          label: Long Board Friendly
+        - name: friday_specials
+          label: Friday Specials
 
 survey:
   submission_type: comments
