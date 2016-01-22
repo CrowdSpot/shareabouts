@@ -238,6 +238,9 @@ textarea {
   height: 6.5em;
   resize: none;
 }
+label.multi-checkbox {
+  display: block;
+}
 .form-submitted input:invalid,
 .form-submitted textarea:invalid,
 .form-submitted select:invalid {
