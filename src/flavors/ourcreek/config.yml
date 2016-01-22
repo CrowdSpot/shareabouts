@@ -138,7 +138,7 @@ place_types:
           iconAnchor: [12, 41]
   history:
     index: 3
-    label: _(History Spot)
+    label: _(History and Stories Spot)
     rules:
       - condition: '"{{location_type}}" === "history" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -273,7 +273,7 @@ place:
           value: environment 
         - label: _(Transport Spot)
           value: transport      
-        - label: _(History Spot)
+        - label: _(History and Stories Spot)
           value: history
         - label: _(Attraction Spot)
           value: attraction
@@ -282,79 +282,258 @@ place:
       name: location_type
       attrs:
         - key: required
-    - prompt: _(Is this a positive or negative Environmet Spot of the creek?)
-      type: select
+    - prompt: _(What do you particularly like about the environment at this spot?)
+      type: multi-checkbox
       options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Positive)
-          value: positive 
-        - label: _(Negative)
-          value: negative       
-      name: enviro_pos_neg
-      optional: true
-    - prompt: _(What transport mode does this transport spot most relate to?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Walking)
-          value: walking 
-        - label: _(Bike riding)
-          value: bike      
-        - label: _(Public Transport)
-          value: pt
-        - label: _(Car)
-          value: car  
-      name: transport_mode
-      optional: true 
-    - prompt: _(Is this a positive or negative Transport Spot of the creek?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Positive)
-          value: positive 
-        - label: _(Negative)
-          value: negative       
-      name: transport_pos_neg
-      optional: true                                         
-    - prompt: _(Please tell us more about this Environment Spot?)
+        - label: _(Heron)
+          value: Heron 
+        - label: _(Ducks)
+          value: Ducks 
+        - label: _(Water hens (Moorhe, Coot))
+          value: Waterhens 
+        - label: _(Other birds)
+          value: Otherbirds  
+        - label: _(Frogs)
+          value: frogs 
+        - label: _(Water plants)
+          value: Waterplants
+        - label: _(Shrubs and bushes)
+          value: shrubsandbushes 
+        - label: _(Water/creek)
+          value: watercreek
+        - label: _(Other)
+          value: other             
+      name: location_like_environment
+      required: true
+    - prompt: _(Please specify Other)
+      sticky: true
+      type: text
+      attrs:
+        - key: placeholder
+          value: _(Please type other)
+        - key: size
+          value: 30           
+      name: other_like_environment
+      optional: true   
+    - prompt: _(Please tell us a bit more about why you like the environment at this spot)
       type: textarea
       name: descriptions_environment
       optional: true
       attrs:
         - key: placeholder
           value: _(Please describe...)
-    - prompt: _(Please tell us more about this Transport Spot?)
+    - prompt: _(Please tell us about anything about the environment at this spot you would like to see improved)
+      type: textarea
+      name: improve_environment
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Please describe...)
+    - prompt: _(Please tell us your ideas for improving this section of the creek in terms of access / using it for transport)
       type: textarea
       name: descriptions_transport
       optional: true
       attrs:
         - key: placeholder
-          value: _(Please describe...)
-    - prompt: _(Please tell us more about this Hsitory Spot?)
+          value: _(Please describe...) 
+    - prompt: _(When accessing or travelling along this section of the creek, how safe do you feel?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Very safe)
+          value: Very safe 
+        - label: _(Safe)
+          value: Safe      
+        - label: _(Neither)
+          value: Neither
+        - label: _(Unsafe)
+          value: Unsafe
+        - label: _(Very unsafe)
+          value: Very unsafe 
+        - label: _(Don’t know)
+          value: Don’t know     
+      name: safe_transport
+      optional: true                          
+    - prompt: _(How do you usually access / travel along the creek?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Car)
+          value: Car 
+        - label: _(Bicycle)
+          value: Bicycle      
+        - label: _(Walk / jog / run)
+          value: walkjogrun
+        - label: _(Other)
+          value: Other  
+      name: access_transport
+      optional: true
+    - prompt: _(How often do you visit the creek at this location?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(5-7 days a week)
+          value: 5-7 days a week 
+        - label: _(2-4 days a week)
+          value: 2-4 days a week      
+        - label: _(Weekly)
+          value: Weekly
+        - label: _(Fortnightly)
+          value: Fortnightly  
+        - label: _(Monthly)
+          value: Monthly 
+        - label: _(Less often)
+          value: Less often 
+        - label: _(Never)
+          value: Never
+      name: frequency_transport
+      optional: true 
+    - prompt: _(For what purpose do you access / travel along the creek?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Commuting to and from work or school)
+          value: Commuting    
+        - label: _(Leisure)
+          value: Leisure
+        - label: _(Other)
+          value: other  
+      name: purpose_transport
+      optional: true
+    - prompt: _(Who do you usually visit this spot on the creek with?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Just me)
+          value: Just me    
+        - label: _(Dog)
+          value: Dog
+        - label: _(Children)
+          value: Children
+        - label: _(Partner)
+          value: Partner
+        - label: _(Friends)
+          value: Friends
+        - label: _(Other)
+          value: other  
+      name: visitwith_transport
+      optional: true                                                      
+    - prompt: _(Please tell us your story about this spot on the creek)
       type: textarea
       name: descriptions_history
       optional: true
       attrs:
         - key: placeholder
           value: _(Please share any history or stories about the creek...)
-    - prompt: _(Please tell us more about this Attraction Spot?)
+    - prompt: _(Please tell us what attracts you to this spot on the creek)
       type: textarea
       name: descriptions_attraction
       optional: true
       attrs:
         - key: placeholder
-          value: _(Please tell us about any of your favourite things along the creek...)
-    - prompt: _(Please tell us more about this Idea Spot?)
+          value: _(Please describe...)
+    - prompt: _(Please tell us your ideas for things that would attract you to use this space more)
+      type: textarea
+      name: ideas_attraction
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Please describe...)  
+    - prompt: _(What activities do you participate in at this location?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Bike riding)
+          value: Bike riding    
+        - label: _(Bird watching)
+          value: Bird watching
+        - label: _(Dog walking)
+          value: Dog walking
+        - label: _(Exercise)
+          value: Exercise
+        - label: _(Photography)
+          value: Photography
+        - label: _(Playground)
+          value: Playground
+        - label: _(Relaxing)
+          value: Relaxing
+        - label: _(Sport)
+          value: Sport
+        - label: _(Other)
+          value: other        
+      name: activities_attraction
+      optional: true
+    - prompt: _(How often do you visit the creek at this location?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(5-7 days a week)
+          value: 5-7 days a week 
+        - label: _(2-4 days a week)
+          value: 2-4 days a week      
+        - label: _(Weekly)
+          value: Weekly
+        - label: _(Fortnightly)
+          value: Fortnightly  
+        - label: _(Monthly)
+          value: Monthly 
+        - label: _(Less often)
+          value: Less often 
+        - label: _(Never)
+          value: Never
+      name: frequency_attraction
+      optional: true
+    - prompt: _(Who do you usually visit this spot on the creek with?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Just me)
+          value: Just me    
+        - label: _(Dog)
+          value: Dog
+        - label: _(Children)
+          value: Children
+        - label: _(Partner)
+          value: Partner
+        - label: _(Friends)
+          value: Friends
+        - label: _(Other)
+          value: other  
+      name: visitwith_attraction
+      optional: true               
+    - prompt: _(If you could change one thing about the creek at this spot, what would it be?)
       type: textarea
       name: descriptions_idea
       optional: true
       attrs:
         - key: placeholder
-          value: _(Please share any great ideas you have for the creek...)                                                                          
-    - prompt: _(Please add an image if you have one)
+          value: _(Please describe...)
+    - prompt: _(How would you categorise this change?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Infrastructure upgrade)
+          value: Infrastructure upgrade    
+        - label: _(New infrastructure)
+          value: New infrastructure
+        - label: _(Maintenance)
+          value: Maintenance
+        - label: _(Landscaping)
+          value: Landscaping
+        - label: _(Other )
+          value: Other   
+      name: change_idea
+      optional: true                                                                                  
+    - prompt: _(If you have a photo you would like to upload, please use the button.)
       inputfile_label: _(Add Image)
       type: file
       name: my_image
@@ -367,24 +546,22 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(< 14)
-          value: '<14'
-        - label: _(15-19)
-          value: 15-19
-        - label: _(20-24)
-          value: 20-24
+        - label: _(14-17)
+          value: 14-17
+        - label: _(18-24)
+          value: 18-24
         - label: _(25-34)
           value: 25-34
-        - label: _(35-44)
-          value: 35-44
-        - label: _(45-54)
-          value: 45-54
-        - label: _(55-64)
-          value: 55-64
-        - label: _(65-74)
-          value: 65-74
-        - label: _(>75)
-          value: '>75'          
+        - label: _(35-49)
+          value: 35-49
+        - label: _(50-59)
+          value: 50-59
+        - label: _(60-69)
+          value: 60-69
+        - label: _(70-84)
+          value: 70-84
+        - label: _(85+)
+          value: 85+        
       name: age
       sticky: true
       optional: true
@@ -402,7 +579,7 @@ place:
       name: gender
       sticky: true
       optional: true                               
-    - prompt: _(Your suburb or town)
+    - prompt: _(In which suburb do you live?)
       sticky: true
       type: text
       attrs:
