@@ -43,35 +43,6 @@ place_types:
   legend:
     index: 0
     label: _(SPOT TYPES)
-    rules:
-      - condition: '"{{location_type}}" === "car" && {{map.zoom}} < 15 && {{layer.focused}} === false'
-        # Display landmarks as circles (vectors) when zoomed out
-
-        style:
-          color: '#FF1609'
-          radius: 5
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.7
-
-      - condition: '"{{location_type}}" === "car" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
-        # Display landmarks as icons when zoomed in
-
-        icon:
-          iconUrl: /static/css/images/legend.png
-          shadowUrl: /static/css/images/master-pin-shadow.png
-          iconSize: [85, 41]
-          iconAnchor: [42, 42]
-
-      - condition: '"{{location_type}}" === "car" && {{layer.focused}} === true'
-        # Display landmarks as icons when zoomed in
-
-        icon:
-          iconUrl: /static/css/images/markers/marker-f39914.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
   environment:
     index: 1
     label: _(Environment Spot)
