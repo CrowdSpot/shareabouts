@@ -17,13 +17,13 @@
 
             {{# place_config.items }}
 
-            <p class="{{ type }}">
+            <p class="{{ type }}" id="fields-{{ name }}">
               {{#is_authenticated}}
                 {{^is_submitter_name}}
-                <label for="place-{{ name }}">{{ prompt }} {{# optional }}<small>({{#_}}optional{{/_}})</small>{{/ optional }}</label>
+                <label for="place-{{ name }}">{{{ prompt }}} {{# optional }}<small>({{#_}}optional{{/_}})</small>{{/ optional }}</label>
                 {{/is_submitter_name}}
               {{^}}
-              <label for="place-{{ name }}">{{ prompt }} {{# optional }}<small>({{#_}}optional{{/_}})</small>{{/ optional }}</label>
+              <label for="place-{{ name }}">{{{ prompt }}} {{# optional }}<small>({{#_}}optional{{/_}})</small>{{/ optional }}</label>
               {{/is_authenticated}}
 
 
@@ -75,7 +75,7 @@
                 {{#checkboxes}}
                   <label class="multi-checkbox" for="multi-checkbox-{{name}}">
                     <input type="checkbox" id="multi-checkbox-{{name}}" name="{{name}}" value="1">
-                    {{label}}
+                    {{{label}}}
                   </label>
                 {{/checkboxes}}
               {{/is_multi_checkbox}}

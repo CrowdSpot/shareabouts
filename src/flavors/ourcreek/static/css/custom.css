@@ -254,6 +254,11 @@ a.close-btn {
 -------------------------------------------------------------- */
 
 
+#place-instructions {
+  display: none;
+}
+
+
 .place-value-location_like_environment {
   display: none;
 }
@@ -326,13 +331,16 @@ a.close-btn {
 /* =Hiding questions in new forms
 -------------------------------------------------------------- */
 
-.place-form label[for=place-location_like_environment],
-  .place-form [name=location_like_environment]{
-  display: none;
+.place-form #fields-location_like_environment {
+	display: none;
 }
 
-.place-form label[for=place-other_like_environment],
-  .place-form [name=other_like_environment]{
+.place-form.environment #fields-location_like_environment {
+  display: block;
+}
+
+.place-form label[for=place-other_location_like_environment],
+  .place-form [name=other_location_like_environment]{
   display: none;
 }
 
@@ -346,14 +354,21 @@ a.close-btn {
   display: none;
 }
 
+.place-form label[for=place-improve_environment],
+  .place-form [name=improve_environment]{
+  display: none;
+}
+
+
+
 
 .place-form.environment label[for=place-location_like_environment],
   .place-form.environment [name=location_like_environment] {
   display: block;
 }
 
-.place-form.location_like_environment-other label[for=place-other_like_environment],
-  .place-form.location_like_environment-other [name=other_like_environment] {
+.place-form.environment label[for=place-other_location_like_environment],
+  .place-form.environment [name=other_location_like_environment] {
   display: block;
 }
 
@@ -380,9 +395,20 @@ a.close-btn {
   display: none;
 }
 
-.place-form label[for=place-access_transport],
-  .place-form [name=access_transport]{
+.place-form #fields-access_transport {
   display: none;
+}
+
+.place-form.transport #fields-access_transport {
+  display: block;
+}
+
+.place-form #fields-other_access_transport {
+  display: none;
+}
+
+.place-form.transport #fields-other_access_transport {
+  display: block;
 }
 
 .place-form label[for=place-frequency_transport],
@@ -390,13 +416,19 @@ a.close-btn {
   display: none;
 }
 
-.place-form label[for=place-purpose_transport],
-  .place-form [name=purpose_transport]{
+.place-form #fields-purpose_transport {
   display: none;
 }
 
-.place-form label[for=place-visitwith_transport],
-  .place-form [name=visitwith_transport]{
+.place-form #fields-other_purpose_transport {
+  display: none;
+}
+
+.place-form #fields-visitwith_transport {
+  display: none;
+}
+
+.place-form #fields-other_visitwith_transport {
   display: none;
 }
 
@@ -410,23 +442,24 @@ a.close-btn {
   display: block;
 }
 
-.place-form.transport label[for=place-access_transport],
-  .place-form.transport [name=access_transport] {
-  display: block;
-}
-
 .place-form.transport label[for=place-frequency_transport],
   .place-form.transport [name=frequency_transport] {
   display: block;
 }
 
-.place-form.transport label[for=place-purpose_transport],
-  .place-form.transport [name=purpose_transport] {
+.place-form.transport #fields-purpose_transport {
   display: block;
 }
 
-.place-form.transport label[for=place-visitwith_transport],
-  .place-form.transport [name=visitwith_transport] {
+.place-form.transport #fields-other_purpose_transport {
+  display: block;
+}
+
+.place-form.transport #fields-visitwith_transport {
+  display: block;
+}
+
+.place-form.transport #fields-other_visitwith_transport {
   display: block;
 }
 
@@ -455,9 +488,20 @@ a.close-btn {
   display: none;
 }
 
-.place-form label[for=place-activities_attraction],
-  .place-form [name=activities_attraction]{
+.place-form #fields-activities_attraction {
   display: none;
+}
+
+.place-form #fields-other_activities_attraction {
+  display: none;
+}
+
+.place-form.attraction #fields-activities_attraction {
+  display: block;
+}
+
+.place-form.attraction #fields-other_activities_attraction {
+  display: block;
 }
 
 .place-form label[for=place-frequency_attraction],
@@ -467,6 +511,11 @@ a.close-btn {
 
 .place-form label[for=place-visitwith_attraction],
   .place-form [name=visitwith_attraction]{
+  display: none;
+}
+
+.place-form label[for=place-other_visitwith_attraction],
+  .place-form [name=other_visitwith_attraction]{
   display: none;
 }
 
@@ -480,11 +529,6 @@ a.close-btn {
   display: block;
 }
 
-.place-form.attraction label[for=place-activities_attraction],
-  .place-form.attraction [name=activities_attraction] {
-  display: block;
-}
-
 .place-form.attraction label[for=place-frequency_attraction],
   .place-form.attraction [name=frequency_attraction] {
   display: block;
@@ -492,6 +536,11 @@ a.close-btn {
 
 .place-form.attraction label[for=place-visitwith_attraction],
   .place-form.attraction [name=visitwith_attraction] {
+  display: block;
+}
+
+.place-form.attraction label[for=place-other_visitwith_attraction],
+  .place-form.attraction [name=other_visitwith_attraction] {
   display: block;
 }
 
@@ -508,8 +557,11 @@ a.close-btn {
   display: none;
 }
 
-.place-form label[for=place-change_idea],
-  .place-form [name=change_idea]{
+.place-form #fields-change_idea {
+  display: none;
+}
+
+.place-form #fields-other_change_idea {
   display: none;
 }
 
@@ -518,8 +570,11 @@ a.close-btn {
   display: block;
 }
 
-.place-form.idea label[for=place-change_idea],
-  .place-form.idea [name=change_idea] {
+.place-form.idea #fields-change_idea {
+  display: block;
+}
+
+.place-form.idea #fields-other_change_idea {
   display: block;
 }
 
