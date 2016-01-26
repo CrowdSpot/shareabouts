@@ -263,6 +263,10 @@ a.close-btn {
   display: none;
 }
 
+.place-value-other_location_like_environment {
+  display: none;
+}
+
 .place-value-improve_environment {
   display: none;
 }
@@ -276,6 +280,10 @@ a.close-btn {
   display: none;
 }
 
+.place-value-other_access_transport {
+  display: none;
+}
+
 .place-value-frequency_transport {
   display: none;
 }
@@ -284,16 +292,27 @@ a.close-btn {
   display: none;
 }
 
+.place-value-other_visitwith_transport {
+  display: none;
+}
+
 .place-value-purpose_transport {
   display: none;
 }
 
+.place-value-other_purpose_transport {
+  display: none;
+}
 
 .place-value-ideas_attraction {
   display: none;
 }
 
 .place-value-activities_attraction {
+  display: none;
+}
+
+.place-value-other_activities_attraction {
   display: none;
 }
 
@@ -305,8 +324,16 @@ a.close-btn {
   display: none;
 }
 
+.place-value-other_visitwith_attraction {
+  display: none;
+}
+
 
 .place-value-change_idea {
+  display: none;
+}
+
+.place-value-other_change_idea {
   display: none;
 }
 

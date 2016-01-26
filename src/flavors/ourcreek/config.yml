@@ -585,7 +585,8 @@ place:
         - key: accept
           value: image/*
     - prompt: _(<i>So we can group your responses together with other people for analysis, please tell us a little about yourself.<br>This information will not appear on the map and will not be used to identify you in accordance with our <a href="http://mvcc.vic.gov.au/surveyprivacy" target="new">Privacy Policy.</a></i>)
-      name: instructions          
+      name: instructions
+      optional: true          
     - prompt: _(Your age)
       type: select
       options:
