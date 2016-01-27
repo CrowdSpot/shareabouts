@@ -14,7 +14,7 @@ app:
 
   # Optional. List view is supported by default. Set to false to disable.
   # list_enabled: false
- 
+
 
 # Settings for map and layer configs
 map:
@@ -33,7 +33,7 @@ map:
     minZoom: 14
     maxZoom: 18
     maxBounds: [ [-37.862356, 144.831557], [-37.672215, 145.002172] ]
-  layers: 
+  layers:
     - url: http://{s}.tiles.mapbox.com/v3/aisey.o838am6m/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
 
@@ -202,9 +202,9 @@ place_types:
           shadowUrl: /static/css/images/marker-shadow.png
           iconSize: [25, 41]
           shadowSize: [41, 41]
-          iconAnchor: [12, 41]                     
-                            
-                          
+          iconAnchor: [12, 41]
+
+
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
   enabled: true
@@ -241,15 +241,15 @@ place:
         - label: _(Choose One)
           value: ''
         - label: _(Environment Spot)
-          value: environment 
+          value: environment
         - label: _(Transport Spot)
-          value: transport      
+          value: transport
         - label: _(History and Stories Spot)
           value: history
         - label: _(Attraction Spot)
           value: attraction
         - label: _(Idea Spot)
-          value: idea  
+          value: idea
       name: location_type
       attrs:
         - key: required
@@ -257,23 +257,23 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(Heron)
-          name: Heron 
+          value: heron
         - label: _(Ducks)
-          name: Ducks 
+          value: ducks
         - label: _(Water hens (Moorhe, Coot))
-          name: Waterhens 
+          value: waterhens
         - label: _(Other birds)
-          name: Otherbirds  
+          value: otherbirds
         - label: _(Frogs)
-          name: frogs 
+          value: frogs
         - label: _(Water plants)
-          name: Waterplants
+          value: waterplants
         - label: _(Shrubs and bushes)
-          name: shrubsandbushes 
+          value: shrubsandbushes
         - label: _(Water/creek)
-          name: watercreek
+          value: watercreek
         - label: _(Other)
-          name: other             
+          value: other
       name: location_like_environment
       optional: true
     - prompt: _(<i>Please specify Other</i>)
@@ -282,9 +282,9 @@ place:
         - key: placeholder
           value: _(Type here)
         - key: size
-          value: 30           
+          value: 30
       name: other_location_like_environment
-      optional: true    
+      optional: true
     - prompt: _(Please tell us a bit more about why you like the environment at this spot)
       type: textarea
       name: descriptions_environment
@@ -305,37 +305,37 @@ place:
       optional: true
       attrs:
         - key: placeholder
-          value: _(Please describe...) 
+          value: _(Please describe...)
     - prompt: _(When accessing or travelling along this section of the creek, how safe do you feel?)
       type: select
       options:
         - label: _(Choose One)
           value: ''
         - label: _(Very safe)
-          value: Very safe 
+          value: Very_safe
         - label: _(Safe)
-          value: Safe      
+          value: Safe
         - label: _(Neither)
           value: Neither
         - label: _(Unsafe)
           value: Unsafe
         - label: _(Very unsafe)
-          value: Very unsafe 
+          value: Very unsafe
         - label: _(Don’t know)
-          value: Don’t know     
+          value: Don’t know
       name: safe_transport
-      optional: true                          
+      optional: true
     - prompt: _(How do you usually access / travel along the creek?)
       type: multi-checkbox
       checkboxes:
         - label: _(Car)
-          value: Car 
+          value: car
         - label: _(Bicycle)
-          value: Bicycle      
+          value: bicycle
         - label: _(Walk / jog / run)
           value: walkjogrun
         - label: _(Other)
-          value: Other  
+          value: other
       name: access_transport
       optional: true
     - prompt: _(<i>Please specify Other</i>)
@@ -344,39 +344,39 @@ place:
         - key: placeholder
           value: _(Type here)
         - key: size
-          value: 30           
+          value: 30
       name: other_access_transport
-      optional: true  
+      optional: true
     - prompt: _(How often do you visit the creek at this location?)
       type: select
       options:
         - label: _(Choose One)
           value: ''
         - label: _(5-7 days a week)
-          value: 5-7 days a week 
+          value: 5-7 days a week
         - label: _(2-4 days a week)
-          value: 2-4 days a week      
+          value: 2-4 days a week
         - label: _(Weekly)
           value: Weekly
         - label: _(Fortnightly)
-          value: Fortnightly  
+          value: Fortnightly
         - label: _(Monthly)
-          value: Monthly 
+          value: Monthly
         - label: _(Less often)
-          value: Less often 
+          value: Less often
         - label: _(Never)
           value: Never
       name: frequency_transport
-      optional: true 
+      optional: true
     - prompt: _(For what purpose do you access / travel along the creek?)
       type: multi-checkbox
       checkboxes:
         - label: _(Commuting to and from work or school)
-          value: Commuting    
+          value: Commuting
         - label: _(Leisure)
           value: Leisure
         - label: _(Other)
-          value: other  
+          value: other
       name: purpose_transport
       optional: true
     - prompt: _(<i>Please specify Other</i>)
@@ -385,14 +385,14 @@ place:
         - key: placeholder
           value: _(Type here)
         - key: size
-          value: 30           
+          value: 30
       name: other_purpose_transport
-      optional: true   
+      optional: true
     - prompt: _(Who do you usually visit this spot on the creek with?)
       type: multi-checkbox
       checkboxes:
         - label: _(Just me)
-          value: Just me    
+          value: Just me
         - label: _(Dog)
           value: Dog
         - label: _(Children)
@@ -402,7 +402,7 @@ place:
         - label: _(Friends)
           value: Friends
         - label: _(Other)
-          value: other  
+          value: other
       name: visitwith_transport
       optional: true
     - prompt: _(<i>Please specify Other</i>)
@@ -411,9 +411,9 @@ place:
         - key: placeholder
           value: _(Type here)
         - key: size
-          value: 30           
+          value: 30
       name: other_visitwith_transport
-      optional: true                                                          
+      optional: true
     - prompt: _(Please tell us your story about this spot on the creek)
       type: textarea
       name: descriptions_history
@@ -434,12 +434,12 @@ place:
       optional: true
       attrs:
         - key: placeholder
-          value: _(Please describe...)  
+          value: _(Please describe...)
     - prompt: _(What activities do you participate in at this location?)
       type: multi-checkbox
       checkboxes:
         - label: _(Bike riding)
-          value: Bike riding    
+          value: Bike riding
         - label: _(Bird watching)
           value: Bird watching
         - label: _(Dog walking)
@@ -455,7 +455,7 @@ place:
         - label: _(Sport)
           value: Sport
         - label: _(Other)
-          value: other        
+          value: other
       name: activities_attraction
       optional: true
     - prompt: _(<i>Please specify Other</i>)
@@ -464,26 +464,26 @@ place:
         - key: placeholder
           value: _(Type here)
         - key: size
-          value: 30           
+          value: 30
       name: other_activities_attraction
-      optional: true   
+      optional: true
     - prompt: _(How often do you visit the creek at this location?)
       type: select
       options:
         - label: _(Choose One)
           value: ''
         - label: _(5-7 days a week)
-          value: 5-7 days a week 
+          value: 5-7 days a week
         - label: _(2-4 days a week)
-          value: 2-4 days a week      
+          value: 2-4 days a week
         - label: _(Weekly)
           value: Weekly
         - label: _(Fortnightly)
-          value: Fortnightly  
+          value: Fortnightly
         - label: _(Monthly)
-          value: Monthly 
+          value: Monthly
         - label: _(Less often)
-          value: Less often 
+          value: Less often
         - label: _(Never)
           value: Never
       name: frequency_attraction
@@ -494,7 +494,7 @@ place:
         - label: _(Choose One)
           value: ''
         - label: _(Just me)
-          value: Just me    
+          value: Just me
         - label: _(Dog)
           value: Dog
         - label: _(Children)
@@ -504,7 +504,7 @@ place:
         - label: _(Friends)
           value: Friends
         - label: _(Other)
-          value: other  
+          value: other
       name: visitwith_attraction
       optional: true
     - prompt: _(<i>Please specify Other</i>)
@@ -513,9 +513,9 @@ place:
         - key: placeholder
           value: _(Type here)
         - key: size
-          value: 30           
+          value: 30
       name: other_visitwith_attraction
-      optional: true                 
+      optional: true
     - prompt: _(If you could change one thing about the creek at this spot, what would it be?)
       type: textarea
       name: descriptions_idea
@@ -527,7 +527,7 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(Infrastructure upgrade)
-          value: Infrastructure upgrade    
+          value: Infrastructure upgrade
         - label: _(New infrastructure)
           value: New infrastructure
         - label: _(Maintenance)
@@ -535,7 +535,7 @@ place:
         - label: _(Landscaping)
           value: Landscaping
         - label: _(Other)
-          value: Other   
+          value: Other
       name: change_idea
       optional: true
     - prompt: _(<i>Please specify Other</i>)
@@ -544,9 +544,9 @@ place:
         - key: placeholder
           value: _(Type here)
         - key: size
-          value: 30           
+          value: 30
       name: other_change_idea
-      optional: true                                                                                    
+      optional: true
     - prompt: _(If you have a photo you would like to upload, please use the button.)
       inputfile_label: _(Add Image)
       type: file
@@ -557,7 +557,7 @@ place:
           value: image/*
     - prompt: _(<i>So we can group your responses together with other people for analysis, please tell us a little about yourself.<br>This information will not appear on the map and will not be used to identify you in accordance with our <a href="http://mvcc.vic.gov.au/surveyprivacy" target="new">Privacy Policy.</a></i>)
       name: instructions
-      optional: true          
+      optional: true
     - prompt: _(Your age)
       type: select
       options:
@@ -578,7 +578,7 @@ place:
         - label: _(70-84)
           value: 70-84
         - label: _(85+)
-          value: 85+        
+          value: 85+
       name: age
       sticky: true
       optional: true
@@ -592,10 +592,10 @@ place:
         - label: _(Female)
           value: female
         - label: _(Other)
-          value: other         
+          value: other
       name: gender
       sticky: true
-      optional: true                               
+      optional: true
     - prompt: _(In which suburb do you live?)
       sticky: true
       type: text
@@ -603,9 +603,9 @@ place:
         - key: placeholder
           value: _(Type Suburb here)
         - key: size
-          value: 30           
+          value: 30
       name: suburb
-      optional: true                                              
+      optional: true
     - prompt: _(Your name or username)
       type: text
       name: submitter_name
@@ -622,12 +622,12 @@ place:
         - label: _(Choose One)
           value: ''
         - label: _(Yes - please send updates)
-          value: yesplease 
+          value: yesplease
         - label: _(No thanks - no emails please)
           value: nothanks
       name: location_updates
       optional: true
-      sticky: true                  
+      sticky: true
     - prompt: _(Please type your email below)
       type: text
       sticky: true
@@ -637,7 +637,7 @@ place:
         - key: placeholder
           value: _(Email address)
         - key: size
-          value: 30                
+          value: 30
 
 survey:
   submission_type: comments
@@ -677,11 +677,11 @@ pages:
     slug: welcome
     name: overview
     start_page: true
-    
+
   - title: _(Go to Suburb)
     slug: suburb
     url: /static/pages/suburb.html
-    
+
   - title: _(Filter)
     pages:
       - title: _(All)
@@ -701,8 +701,8 @@ pages:
         external: true
       - title: _(Idea Spots)
         url: /filter/idea
-        external: true   
-                         
+        external: true
+
 
 notifications:
   on_new_place: true
