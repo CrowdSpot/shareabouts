@@ -254,10 +254,13 @@ a.close-btn {
 -------------------------------------------------------------- */
 
 
-#place-instructions {
+#place-public_responses {
   display: none;
 }
 
+#place-instructions {
+  display: none;
+}
 
 .place-value-location_like_environment {
   display: none;
@@ -417,8 +420,8 @@ a.close-btn {
   display: none;
 }
 
-.place-form label[for=place-safe_transport],
-  .place-form [name=safe_transport]{
+.place-form label[for=place-location_safe_transport],
+  .place-form [name=location_safe_transport]{
   display: none;
 }
 
@@ -464,8 +467,8 @@ a.close-btn {
   display: block;
 }
 
-.place-form.transport label[for=place-safe_transport],
-  .place-form.transport [name=safe_transport] {
+.place-form.transport label[for=place-location_safe_transport],
+  .place-form.transport [name=location_safe_transport] {
   display: block;
 }
 
@@ -536,9 +539,12 @@ a.close-btn {
   display: none;
 }
 
-.place-form label[for=place-visitwith_attraction],
-  .place-form [name=visitwith_attraction]{
+.place-form #fields-visitwith_attraction {
   display: none;
+}
+
+.place-form.attraction #fields-visitwith_attraction {
+  display: block;
 }
 
 .place-form label[for=place-other_visitwith_attraction],
@@ -558,11 +564,6 @@ a.close-btn {
 
 .place-form.attraction label[for=place-frequency_attraction],
   .place-form.attraction [name=frequency_attraction] {
-  display: block;
-}
-
-.place-form.attraction label[for=place-visitwith_attraction],
-  .place-form.attraction [name=visitwith_attraction] {
   display: block;
 }
 
@@ -605,8 +606,32 @@ a.close-btn {
   display: block;
 }
 
+.place-form label[for=place-future_vision_idea],
+  .place-form [name=future_vision_idea]{
+  display: none;
+}
+
+.place-form.idea label[for=place-future_vision_idea],
+  .place-form.idea [name=future_vision_idea] {
+  display: block;
+}
 
 
+
+.place-form label[for=place-safety_description],
+  .place-form [name=safety_description]{
+  display: none;
+}
+
+.place-form.location_safe_transport-safe label[for=place-safety_description],
+  .place-form.location_safe_transport-safe [name=safety_description] {
+  display: block;
+}
+
+.place-form.location_safe_transport-unsafe label[for=place-safety_description],
+  .place-form.location_safe_transport-unsafe [name=safety_description] {
+  display: block;
+}
 
 
 

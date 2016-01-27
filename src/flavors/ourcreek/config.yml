@@ -226,7 +226,10 @@ place:
   location_item_name: location
 
   items:
-    - prompt: _(What is the name of this spot?)
+    - prompt: _(Your answers will not be visible to the public, unless otherwise stated in the question text.)
+      name: public_responses
+      optional: true 
+    - prompt: _(What is the name of this spot?<br><i>This text will be visible to the public on the map</i>)
       type: text
       name: name
       attrs:
@@ -253,7 +256,7 @@ place:
       name: location_type
       attrs:
         - key: required
-    - prompt: _(What do you particularly like about the environment at this spot?)
+    - prompt: _(What do you particularly like about the environment at this spot?<br><i>You can choose more than one</i>)
       type: multi-checkbox
       checkboxes:
         - label: _(Heron)
@@ -285,7 +288,7 @@ place:
           value: 30           
       name: other_location_like_environment
       optional: true    
-    - prompt: _(Please tell us a bit more about why you like the environment at this spot)
+    - prompt: _(Please tell us a bit more about why you like the environment at this spot<br><i>This text will be visible to the public on the map</i>)
       type: textarea
       name: descriptions_environment
       optional: true
@@ -299,7 +302,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe...)
-    - prompt: _(Please tell us your ideas for improving this section of the creek in terms of access / using it for transport)
+    - prompt: _(Please tell us your ideas for improving this section of the creek in terms of access / using it for transport<br><i>This text will be visible to the public on the map</i>)
       type: textarea
       name: descriptions_transport
       optional: true
@@ -323,9 +326,16 @@ place:
           value: Very unsafe 
         - label: _(Don’t know)
           value: Don’t know     
-      name: safe_transport
-      optional: true                          
-    - prompt: _(How do you usually access / travel along the creek?)
+      name: location_safe_transport
+      optional: true
+    - prompt: _(What is it that makes you feel unsafe in this section of the creek?)
+      type: textarea
+      name: safety_description
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Please describe...)                            
+    - prompt: _(How do you usually access / travel along the creek?<br><i>You can choose more than one</i>)
       type: multi-checkbox
       checkboxes:
         - label: _(Car)
@@ -368,18 +378,22 @@ place:
           value: Never
       name: frequency_transport
       optional: true 
-    - prompt: _(For what purpose do you access / travel along the creek?)
+    - prompt: _(For what purpose do you access / travel along the creek?<br><i>You can choose more than one</i>)
       type: multi-checkbox
       checkboxes:
         - label: _(Commuting to and from work or school)
           value: Commuting    
         - label: _(Leisure)
           value: Leisure
+        - label: _(Getting to the shops)
+          value: Shops    
+        - label: _(Visiting friends)
+          value: Friends  
         - label: _(Other)
           value: other  
       name: purpose_transport
       optional: true
-    - prompt: _(<i>Please specify Other</i>)
+    - prompt: _(<i>Please specify Other</i><br><i>You can choose more than one</i>)
       type: text
       attrs:
         - key: placeholder
@@ -388,7 +402,7 @@ place:
           value: 30           
       name: other_purpose_transport
       optional: true   
-    - prompt: _(Who do you usually visit this spot on the creek with?)
+    - prompt: _(Who do you usually visit this spot on the creek with?<br><i>You can choose more than one</i>)
       type: multi-checkbox
       checkboxes:
         - label: _(Just me)
@@ -414,14 +428,14 @@ place:
           value: 30           
       name: other_visitwith_transport
       optional: true                                                          
-    - prompt: _(Please tell us your story about this spot on the creek)
+    - prompt: _(Please tell us your story about this spot on the creek<br><i>This text will be visible to the public on the map</i>)
       type: textarea
       name: descriptions_history
       optional: true
       attrs:
         - key: placeholder
           value: _(Please share any history or stories about the creek...)
-    - prompt: _(Please tell us what attracts you to this spot on the creek)
+    - prompt: _(Please tell us what attracts you to this spot on the creek<br><i>This text will be visible to the public on the map</i>)
       type: textarea
       name: descriptions_attraction
       optional: true
@@ -435,7 +449,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe...)  
-    - prompt: _(What activities do you participate in at this location?)
+    - prompt: _(What activities do you participate in at this location?<br><i>You can choose more than one</i>)
       type: multi-checkbox
       checkboxes:
         - label: _(Bike riding)
@@ -488,9 +502,9 @@ place:
           value: Never
       name: frequency_attraction
       optional: true
-    - prompt: _(Who do you usually visit this spot on the creek with?)
-      type: select
-      options:
+    - prompt: _(Who do you usually visit this spot on the creek with?<br><i>You can choose more than one</i>)
+      type: multi-checkbox
+      checkboxes:
         - label: _(Choose One)
           value: ''
         - label: _(Just me)
@@ -516,14 +530,14 @@ place:
           value: 30           
       name: other_visitwith_attraction
       optional: true                 
-    - prompt: _(If you could change one thing about the creek at this spot, what would it be?)
+    - prompt: _(If you could change one thing about the creek at this spot, what would it be?<br><i>This text will be visible to the public on the map</i>)
       type: textarea
       name: descriptions_idea
       optional: true
       attrs:
         - key: placeholder
           value: _(Please describe...)
-    - prompt: _(How would you categorise this change?)
+    - prompt: _(How would you categorise this change?<br><i>You can choose more than one</i>)
       type: multi-checkbox
       checkboxes:
         - label: _(Infrastructure upgrade)
@@ -537,7 +551,7 @@ place:
         - label: _(Other)
           value: Other   
       name: change_idea
-      optional: true
+      optional: true  
     - prompt: _(<i>Please specify Other</i>)
       type: text
       attrs:
@@ -546,15 +560,14 @@ place:
         - key: size
           value: 30           
       name: other_change_idea
-      optional: true                                                                                    
-    - prompt: _(If you have a photo you would like to upload, please use the button.)
-      inputfile_label: _(Add Image)
-      type: file
-      name: my_image
+      optional: true    
+    - prompt: _(Ideally, what would you like the creek to look like in 50 years’ time?<br><i>This text will be visible to the public on the map</i>)
+      type: textarea
+      name: future_vision_idea
       optional: true
       attrs:
-        - key: accept
-          value: image/*
+        - key: placeholder
+          value: _(Please describe...)                                                                                  
     - prompt: _(<i>So we can group your responses together with other people for analysis, please tell us a little about yourself.<br>This information will not appear on the map and will not be used to identify you in accordance with our <a href="http://mvcc.vic.gov.au/surveyprivacy" target="new">Privacy Policy.</a></i>)
       name: instructions
       optional: true          
