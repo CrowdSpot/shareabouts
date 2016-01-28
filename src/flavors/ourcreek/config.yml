@@ -260,23 +260,23 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(Heron)
-          name: Heron 
+          value: heron 
         - label: _(Ducks)
-          name: Ducks 
+          value: ducks 
         - label: _(Water hens (Moorhe, Coot))
-          name: Waterhens 
+          value: waterhens 
         - label: _(Other birds)
-          name: Otherbirds  
+          value: otherbirds  
         - label: _(Frogs)
-          name: frogs 
+          value: frogs 
         - label: _(Water plants)
-          name: Waterplants
+          value: waterplants
         - label: _(Shrubs and bushes)
-          name: shrubsandbushes 
+          value: shrubsandbushes 
         - label: _(Water/creek)
-          name: watercreek
+          value: watercreek
         - label: _(Other)
-          name: other             
+          value: other             
       name: location_like_environment
       optional: true
     - prompt: _(<i>Please specify Other</i>)
@@ -339,13 +339,13 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(Car)
-          value: Car 
+          value: car 
         - label: _(Bicycle)
-          value: Bicycle      
+          value: bicycle      
         - label: _(Walk / jog / run)
           value: walkjogrun
         - label: _(Other)
-          value: Other  
+          value: other  
       name: access_transport
       optional: true
     - prompt: _(<i>Please specify Other</i>)
