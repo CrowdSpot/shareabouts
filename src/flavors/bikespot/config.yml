@@ -218,7 +218,8 @@ place:
       optional: true
       attrs:
         - key: placeholder
-          value: _(Please describe...)                                                        
+          value: _(Please describe...) 
+        - key: required                                                         
     - prompt: _(Please add an image of this spot if you have one)
       inputfile_label: _(Add Image)
       type: file
@@ -228,11 +229,9 @@ place:
         - key: accept
           value: image/*
     - prompt: _(What is the main purpose you ride here?)
-      type: select
+      type: multi-checkbox
       optional: true
-      options:
-        - label: _(Choose One)
-          value: ''
+      checkboxes:
         - label: _(Work)
           value: Work
         - label: _(Shopping)
@@ -252,8 +251,8 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Very confident in all conditions)
-          value: Very confident in all conditions
+        - label: _(Very confident)
+          value: Very confident
         - label: _(Confident but cautious)
           value: Confident but cautious
         - label: _(Not confident riding on the road)
@@ -348,7 +347,7 @@ survey:
   # Survey form config
   title: _(Leave a Comment)
   form_link_text: _(Leave a Comment)
-  submit_btn_text: _(Comment)
+  submit_btn_text: _(Submit Comment)
   items:
     - prompt: _(What do you think of this spot? Do you agree? Any advice or tips for this spot?)
       label: _(Comment)
@@ -359,6 +358,7 @@ survey:
     - prompt: _(Your Name)
       type: text
       name: submitter_name
+      sticky: true
 
 support:
   submission_type: support
