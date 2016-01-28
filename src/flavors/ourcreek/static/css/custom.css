@@ -274,8 +274,11 @@ a.close-btn {
   display: none;
 }
 
+.place-value-location_safe_transport {
+  display: none;
+}
 
-.place-value-safe_transport {
+.place-value-safety_description {
   display: none;
 }
 
