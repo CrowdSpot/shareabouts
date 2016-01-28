@@ -46,12 +46,38 @@ var Shareabouts = Shareabouts || {};
     },
     // Get the attributes from the form
     getAttrs: function() {
-      var attrs = {},
+      var self = this,
+          attrs = {},
           locationAttr = this.options.placeConfig.location_item_name;
 
       // Get values from the form
       _.each(this.$('form').serializeArray(), function(item, i) {
-        attrs[item.name] = item.value;
+        var name = item.name,
+            value = item.value;
+
+        // Check if the item appears in a multi-checkbox
+        _.each(self.options.placeConfig.items, function(configItem, x) {
+          if(configItem.is_multi_checkbox &&
+             configItem.checkboxes.filter(function(checkbox) {
+               return checkbox.name == item.name;
+             }).length > 0
+          ) {
+
+            // This field belongs to a multi-checkbox, values are to be submitted in a list.
+            name = configItem.name;
+
+            if(attrs.hasOwnProperty(name)) {
+              value = attrs[name];
+            } else {
+              value = new Array();
+            }
+            value.push(item.name);
+
+          }
+        });
+
+        attrs[name] = value;
+
       });
 
       // Get the location attributes from the map
