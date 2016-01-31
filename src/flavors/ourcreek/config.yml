@@ -263,7 +263,7 @@ place:
           value: heron 
         - label: _(Ducks)
           value: ducks 
-        - label: _(Water hens (Moorhed, Coot))
+        - label: _(Water hens (Moorhen, Coot))
           value: waterhens 
         - label: _(Other birds)
           value: otherbirds  
