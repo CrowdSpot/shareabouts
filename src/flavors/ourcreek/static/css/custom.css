@@ -626,11 +626,6 @@ a.close-btn {
   display: none;
 }
 
-.place-form.location_safe_transport-safe label[for=place-safety_description],
-  .place-form.location_safe_transport-safe [name=safety_description] {
-  display: block;
-}
-
 .place-form.location_safe_transport-unsafe label[for=place-safety_description],
   .place-form.location_safe_transport-unsafe [name=safety_description] {
   display: block;
