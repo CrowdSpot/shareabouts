@@ -173,7 +173,7 @@ place:
           value: _(Street, Park, Landmark, etc.)
         - key: size
           value: 30
-        - key: required
+        - key: required  
     - prompt: _(Is this a 'Safe Spot' or 'Unsafe Spot'?)
       type: select
       options:
@@ -185,34 +185,37 @@ place:
           value: unsafe       
       name: location_type
       attrs:
-        - key: required 
-    - prompt: _(On a scale of 1-3, how safe do you feel at this Spot?)
+        - key: required
+    - prompt: _(<strong>Safety rating</strong>)
+      name: safety_rating
+      optional: true           
+    - prompt: _(On a scale of 1-3 (<i>where 3 is most safe</i>), how safe do you feel at this Spot?)
       type: select
       optional: true
       options:
         - label: _(Choose One)
           value: ''
         - label: _(3 - Does not get better than this!)
-          value: Does not get better than this!
+          value: 3 - Does not get better than this!
         - label: _(2 - Sweet ride)
-          value: Sweet ride
+          value: 2 - Sweet ride
         - label: _(1 - This is pretty good)
-          value: This is pretty good                
+          value: 1 - This is pretty good                
       name: feel_safe
-    - prompt: _(On a scale of 1-3, how unsafe do you feel at this Spot?)
+    - prompt: _(On a scale of 1-3 (<i>where 3 is most unsafe</i>), how unsafe do you feel at this Spot?)
       type: select
       optional: true
       options:
         - label: _(Choose One)
           value: ''
         - label: _(3 - Just feared for my life!)
-          value: Just feared for my life!
+          value: 3 - Just feared for my life!
         - label: _(2 - Stress levels rising)
-          value: Stress levels rising
+          value: 2 - Stress levels rising
         - label: _(1 - A bit tricky)
-          value: Oh...not good        
+          value: 1 - Oh...not good        
       name: feel_unsafe                                       
-    - prompt: _(Why do you feel safe or unsafe here?)
+    - prompt: _(Why do you feel safe or unsafe here?<br><i>This will be visible to the public</i>)
       type: textarea
       name: description
       optional: true

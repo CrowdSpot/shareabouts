@@ -266,16 +266,13 @@ a.close-btn {
 
 
 
-
-
-.place-value-description:before {
-  content: "Description: ";
+.place-value-safety_rating:before {
+  content: "Safety rating: ";
   font-weight: bold;
 }
 
-
-.place-value-purpose:before {
-  content: "Riding purpose: ";
+.place-value-description:before {
+  content: "Description: ";
   font-weight: bold;
 }
 
@@ -286,9 +283,22 @@ a.close-btn {
 
 
 
+
+
+
+
+
+
 /* =Hiding questions in new forms
 -------------------------------------------------------------- */
 
+#place-safety_rating {
+  display: none;
+}
+
+#fields-safety_rating {
+  display: none;
+}
 
 .place-form label[for=place-feel_safe],
   .place-form [name=feel_safe]{
