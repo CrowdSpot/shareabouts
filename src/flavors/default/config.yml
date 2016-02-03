@@ -80,7 +80,7 @@ place_types:
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
   corridor:
-    label: _(Bicycle Corridors)
+    label: _(Bicycle Corridor)
     rules:
       - condition: '"{{location_type}}" === "corridor" && {{map.zoom}} < 10 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -147,7 +147,7 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Bicycle Corridors)
+        - label: _(Bicycle Corridor)
           value: corridor 
         - label: _(Issue Spot)
           value: issue       
