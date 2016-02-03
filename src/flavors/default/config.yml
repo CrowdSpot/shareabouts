@@ -79,6 +79,38 @@ place_types:
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
+  ideas:
+    index: 0
+    label: _(Idea Spot)
+    rules:
+      - condition: '"{{location_type}}" === "ideas" && {{map.zoom}} < 13 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#FF1609'
+          radius: 3
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 1
+
+      - condition: '"{{location_type}}" === "ideas" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/master-pin-yellow-idea.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "ideas" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]        
   corridor:
     label: _(Bicycle Corridor)
     rules:
@@ -142,13 +174,13 @@ place:
         - key: size
           value: 30
         - key: required
-    - prompt: _(What is the name of this spot? (ie park, street name, landmark, etc.))
+    - prompt: _(What type of spot is this?)
       type: select
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Bicycle Corridor)
-          value: corridor 
+        - label: _(Idea Spot)
+          value: ideas
         - label: _(Issue Spot)
           value: issue       
       name: location_type
