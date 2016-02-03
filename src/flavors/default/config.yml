@@ -29,10 +29,10 @@ map:
       lat: -37.813239 
       lng: 144.964431
     zoom: 13
-    minZoom: 10
-    maxZoom: 17
+    minZoom: 5
+    maxZoom: 15
   layers:
-    - url: http://{s}.tiles.mapbox.com/v3/aisey.map-u8fegfjt/{z}/{x}/{y}.png
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.o71mak9p/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
     - url: /static/data/philadelphia.geojson
       type: json
@@ -47,10 +47,11 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  wifi:
-    label: _(Wifi Spot)
+  issue:
+    index: 0
+    label: _(Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "wifi" && {{map.zoom}} < 13 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "issue" && {{map.zoom}} < 13 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -60,16 +61,16 @@ place_types:
           opacity: 0.9
           fillOpacity: 1
 
-      - condition: '"{{location_type}}" === "wifi" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "issue" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/master-pin-wifi.png
+          iconUrl: /static/css/images/master-pin-red.png
           shadowUrl: /static/css/images/master-pin-shadow.png
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
-      - condition: '"{{location_type}}" === "wifi" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "issue" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -78,6 +79,37 @@ place_types:
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
+  corridor:
+    label: _(Bicycle Corridors)
+    rules:
+      - condition: '"{{location_type}}" === "corridor" && {{map.zoom}} < 10 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#FF1609'
+          radius: 3
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 1
+
+      - condition: '"{{location_type}}" === "corridor" && {{map.zoom}} >= 10 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/master-pin-red-bike.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "corridor" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]          
 
 
 activity:
@@ -110,18 +142,33 @@ place:
         - key: size
           value: 30
         - key: required
-    - type: hidden
+    - prompt: _(What is the name of this spot? (ie park, street name, landmark, etc.))
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Bicycle Corridors)
+          value: corridor 
+        - label: _(Issue Spot)
+          value: issue       
       name: location_type
       attrs:
-        - key: value
-          value: wifi    
+        - key: required    
     - prompt: _(Why this spot?)
       type: textarea
       name: description
       optional: true
       attrs:
         - key: placeholder
-          value: _(Please describe why you would like WiFI at this spot...)                     
+          value: _(Please describe why you would like WiFI at this spot...) 
+    - prompt: _(Please add an image of this spot if you have one)
+      inputfile_label: _(Add Image)
+      type: file
+      name: my_image
+      optional: true
+      attrs:
+        - key: accept
+          value: image/*                          
     - prompt: _(Your Name)
       type: text
       name: submitter_name
@@ -140,21 +187,6 @@ place:
           value: _(Email address)
         - key: size
           value: 30
-    - prompt: _(Features)
-      type: multi-checkbox
-      name: features
-      optional: true
-      checkboxes:
-        - name: mad_jumps
-          label: Mad jumps
-        - name: sick_rails
-          label: Sick rails
-        - name: half-pipes
-          label: Half Pipes
-        - name: long_board_friendly
-          label: Long Board Friendly
-        - name: friday_specials
-          label: Friday Specials
 
 survey:
   submission_type: comments
