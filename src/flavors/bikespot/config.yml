@@ -324,8 +324,7 @@ place:
         - label: _(No thanks - no emails please)
           value: nothanks
       name: location_updates
-      optional: true
-      sticky: true                  
+      optional: true                
     - prompt: _(Please type your email below)
       type: text
       sticky: true
