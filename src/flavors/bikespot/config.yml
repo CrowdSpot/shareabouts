@@ -32,7 +32,7 @@ map:
     zoom: 13
     minZoom: 11
     maxZoom: 18
-    maxBounds: [ [-38.344339, 144.133819], [-37.297218, 145.886697] ]
+    maxBounds: [ [-38.679768, 144.111196], [-37.297218, 145.886697] ]
   layers: 
     - url: http://{s}.tiles.mapbox.com/v3/aisey.a902d297/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
