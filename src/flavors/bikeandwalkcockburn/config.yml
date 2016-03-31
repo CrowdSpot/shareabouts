@@ -132,7 +132,7 @@ place_types:
     index: 2
     label: _(Bike Like Spot)
     rules:
-      - condition: '"{{location_type}}" === "bikelike" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "bikelike" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -164,7 +164,7 @@ place_types:
     index: 3
     label: _(Walk Like Spot)
     rules:
-      - condition: '"{{location_type}}" === "walklike" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "walklike" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -196,7 +196,7 @@ place_types:
     index: 4
     label: _(Bike Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "bike" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "bike" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -228,7 +228,7 @@ place_types:
     index: 5
     label: _(Walking Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "walk" && {{map.zoom}} < 15 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "walk" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
