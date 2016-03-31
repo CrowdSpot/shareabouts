@@ -321,46 +321,6 @@ a.close-btn {
   display: block;
 }
 
-.place-form label[for=place-bus_issue],
-  .place-form [name=bus_issue]{
-  display: none;
-}
-
-.place-form.bus label[for=place-bus_issue],
-  .place-form.bus [name=bus_issue] {
-  display: block;
-}
-
-.place-form label[for=place-train_issue],
-  .place-form [name=train_issue]{
-  display: none;
-}
-
-.place-form.train label[for=place-train_issue],
-  .place-form.train [name=train_issue] {
-  display: block;
-}
-
-.place-form label[for=place-car_issue],
-  .place-form [name=car_issue]{
-  display: none;
-}
-
-.place-form.car label[for=place-car_issue],
-  .place-form.car [name=car_issue] {
-  display: block;
-}
-
-.place-form label[for=place-boat_issue],
-  .place-form [name=boat_issue]{
-  display: none;
-}
-
-.place-form.boat label[for=place-boat_issue],
-  .place-form.boat [name=boat_issue] {
-  display: block;
-}
-
 
 
 
@@ -400,70 +360,57 @@ a.close-btn {
 }
 
 
-.place-form label[for=place-issue_description],
-  .place-form [name=issue_description]{
+
+
+.place-form label[for=place-description_idea],
+  .place-form [name=description_idea]{
   display: none;
 }
 
-.place-form.walk label[for=place-issue_description],
-  .place-form.walk [name=issue_description] {
+.place-form.bikeidea label[for=place-description_idea],
+  .place-form.bikeidea [name=description_idea] {
   display: block;
 }
 
-.place-form.bike label[for=place-issue_description],
-  .place-form.bike [name=issue_description] {
+.place-form.walkidea label[for=place-description_idea],
+  .place-form.walkidea [name=description_idea] {
   display: block;
 }
 
-.place-form.bus label[for=place-issue_description],
-  .place-form.bus [name=issue_description] {
-  display: block;
-}
 
-.place-form.train label[for=place-issue_description],
-  .place-form.train [name=issue_description] {
-  display: block;
-}
 
-.place-form label[for=place-like_description],
-  .place-form [name=like_description]{
+.place-form label[for=place-description_like],
+  .place-form [name=description_like]{
   display: none;
 }
 
-.place-form.like label[for=place-like_description],
-  .place-form.like [name=like_description] {
+.place-form.bikelike label[for=place-description_like],
+  .place-form.bikelike [name=description_like] {
   display: block;
 }
 
-.place-form label[for=place-idea_description],
-  .place-form [name=idea_description]{
+.place-form.walklike label[for=place-description_like],
+  .place-form.walklike [name=description_like] {
+  display: block;
+}
+
+
+.place-form label[for=place-description_issue],
+  .place-form [name=description_issue]{
   display: none;
 }
 
-.place-form.idea label[for=place-idea_description],
-  .place-form.idea [name=idea_description] {
+
+.place-form.bike label[for=place-description_issue],
+  .place-form.bike [name=description_issue] {
   display: block;
 }
 
-.place-form label[for=place-like_mode],
-  .place-form [name=like_mode]{
-  display: none;
-}
-
-.place-form.like label[for=place-like_mode],
-  .place-form.like [name=like_mode] {
+.place-form.walk label[for=place-description_issue],
+  .place-form.walk [name=description_issue] {
   display: block;
 }
 
-.place-form label[for=place-idea_mode],
-  .place-form [name=idea_mode]{
-  display: none;
-}
-
-.place-form.idea label[for=place-idea_mode],
-  .place-form.idea [name=idea_mode] {
-  display: block;
-}
 
 
 
