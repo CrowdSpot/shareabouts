@@ -17,6 +17,11 @@ Light grey #C0C0A2
 CrowdSpot Red #FF1609
 CrowdSpot Green #45BA00
 CrowdSpot Grey (text) #585A59
+
+Cockburn light blue #0f70ad
+Cockburn dark blue #083d63
+
+
 */
 
 
@@ -45,7 +50,7 @@ body, select, input, textarea {
 .btn-primary,
 .btn-primary:visited,
 .btn-primary:link {
-  background-color: #1D9835;
+  background-color: #0f70ad;
   color: #fff;
 }
 .btn-primary:hover {
@@ -54,12 +59,12 @@ body, select, input, textarea {
 .btn-secondary,
 .btn-secondary:visited,
 .btn-secondary:link {
-/*  background-color: #ccc;*/
-/*  color: #007fbf;*/
+  background-color: #083d63;
+  color: #fff;
 }
 .btn-secondary:hover {
-/*  background-color: #007fbf;*/
-/*  color: #fff;*/
+  background-color: #585A59;
+  color: #fff;
 }
 
 /* Links */
@@ -86,11 +91,11 @@ a, a:active, a:visited {
 -------------------------------------------------------------- */
 
 #site-header {
-  border-top: #1D9835 3px solid;
+  border-top: #083d63 3px solid;
 }
 
 #site-header {
-  background-color: #ffffff;
+  background-color: #0f70ad;
   box-shadow: 0 5px 10px rgba(85, 85, 85, 0.5), inset 0 -3px 0
 }
 
@@ -111,7 +116,7 @@ a, a:active, a:visited {
   }
 
 #site-title {
-  background: url('images/XXXXXXXX.png') no-repeat 
+  background: url('images/cockburn_header.png') no-repeat 
 center;
   background-size: contain;
   width: 440px;
@@ -202,7 +207,7 @@ a.close-btn {
 .list-toggle-btn,
   .list-toggle-btn:visited,
   .list-toggle-btn:link {
-    background-color: #1D9835;
+    background-color: #083d63;
  }
  
 .list-toggle-btn:hover {
@@ -217,7 +222,7 @@ a.close-btn {
 /* Drag Marker Instructions (for adding a new place) */
 .drag-marker-instructions,
 .drag-marker-warning {
-  background-color: #3E74BF;
+  background-color: #0f70ad;
   color: #fff;
   text-shadow: none;
 }

@@ -226,7 +226,7 @@ place_types:
           iconAnchor: [12, 41]
   walk:
     index: 5
-    label: _(Walking Issue Spot)
+    label: _(Walk Issue Spot)
     rules:
       - condition: '"{{location_type}}" === "walk" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -521,17 +521,23 @@ pages:
       - title: _(Show All)
         url: /
         external: true
-      - title: _(Idea Spots)
-        url: /filter/idea
+      - title: _(Bike Idea Spots)
+        url: /filter/bikeidea
         external: true
-      - title: _(Like Spots)
-        url: /filter/like
-        external: true   
-      - title: _(Walk Spots)
-        url: /filter/walk
+      - title: _(Walk Idea Spots)
+        url: /filter/walkidea
+        external: true  
+      - title: _(Bike Like Spots)
+        url: /filter/bikelike
         external: true
-      - title: _(Bike Spots)
+      - title: _(Walk Like Spots)
+        url: /filter/walklike
+        external: true       
+      - title: _(Bike Issue Spots)
         url: /filter/bike
+        external: true
+      - title: _(Walk Issue Spots)
+        url: /filter/walk
         external: true               
 
 notifications:
