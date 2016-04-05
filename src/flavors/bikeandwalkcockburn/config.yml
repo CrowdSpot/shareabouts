@@ -388,23 +388,75 @@ place:
       attrs:
         - key: accept
           value: image/* 
-    - prompt: _(What is the main purpose you walk or ride here?)
-      type: multi-checkbox
+    - prompt: _(What is the main purpose you ride or walk here?)
+      type: select
       optional: true
-      checkboxes:
-        - label: _(Work)
-          value: Work
-        - label: _(Shopping)
-          value: Shopping
-        - label: _(School)
-          value: School
-        - label: _(Exercise)
-          value: Exercise
-        - label: _(Social)
-          value: Social
-        - label: _(All purposes)
-          value: all                
-      name: purpose               
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(To get to work)
+          value: To get to work
+        - label: _(To get to the shops)
+          value: To get to the shops
+        - label: _(To get to school)
+          value: To get to school
+        - label: _(To access public transport)
+          value: To access public transport
+        - label: _(To get to sport or recreation facilities)
+          value: To get to sport or recreation facilities
+        - label: _(Leisurely for recreation)
+          value: Leisurely for recreation
+        - label: _(For exercise or sports training)
+          value: For exercise or sports training                 
+      name: purpose
+    - prompt: _(Please choose the option below that best describes your level of riding confidence?)
+      type: select
+      optional: true
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Very confident)
+          value: Very confident
+        - label: _(Confident but cautious)
+          value: Confident but cautious
+        - label: _(Not confident riding on the road)
+          value: Not confident riding on the road
+        - label: _(I want to ride more but am too concerned)
+          value: I want to ride more but am too concerned         
+      name: rider_type
+      sticky: true
+    - prompt: _(How would you categorise yourself as a walker?)
+      type: select
+      optional: true
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Regular transport walker to shops/school/work)
+          value: Regular transport walker to shops/school/work
+        - label: _(Recreational walker)
+          value: Recreational walker  
+        - label: _(Dog walker)
+          value: Dog walker
+        - label: _(Family with children or pram)
+          value: Family with children or pram
+        - label: _(Assisted walker -wheelchair, gopher or other walking aid)
+          value: Assisted walker -wheelchair, gopher or other walking aid          
+      name: walker_type
+      sticky: true
+    - prompt: _(What is our connection to the City of Cockburn?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(I live here)
+          value: live
+        - label: _(I work here)
+          value: work
+        - label: _(I visit here)
+          value: visit           
+      name: connection
+      optional: true
+      sticky: true                       
     - prompt: _(How old are you?)
       type: select
       options:

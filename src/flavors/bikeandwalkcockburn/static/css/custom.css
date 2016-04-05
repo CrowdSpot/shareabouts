@@ -264,6 +264,17 @@ a.close-btn {
 /* =Existing Spots
 -------------------------------------------------------------- */
 
+.place-value-rider_type {
+  display: none;
+}
+
+.place-value-walker_type {
+  display: none;
+}
+
+.place-value-connection {
+  display: none;
+}
 
 .place-value-age {
   display: none;
@@ -418,6 +429,48 @@ a.close-btn {
 
 
 
+.place-form label[for=place-rider_type],
+  .place-form [name=rider_type]{
+  display: none;
+}
+
+.place-form.bikeidea label[for=place-rider_type],
+  .place-form.bikeidea [name=rider_type] {
+  display: block;
+}
+
+.place-form.bikelike label[for=place-rider_type],
+  .place-form.bikelike [name=rider_type] {
+  display: block;
+}
+
+.place-form.bike label[for=place-rider_type],
+  .place-form.bike [name=rider_type] {
+  display: block;
+}
+
+
+
+
+.place-form label[for=place-walker_type],
+  .place-form [name=walker_type]{
+  display: none;
+}
+
+.place-form.walkidea label[for=place-walker_type],
+  .place-form.walkidea [name=walker_type] {
+  display: block;
+}
+
+.place-form.walklike label[for=place-walker_type],
+  .place-form.walklike [name=walker_type] {
+  display: block;
+}
+
+.place-form.walk label[for=place-walker_type],
+  .place-form.walk [name=walker_type] {
+  display: block;
+}
 
 
 
