@@ -497,6 +497,7 @@ place:
           value: '>75'          
       name: age
       optional: true
+      sticky: true
     - prompt: _(Your gender)
       type: select
       options:
@@ -509,9 +510,11 @@ place:
         - label: _(Other)
           value: other        
       name: gender
-      optional: true                                           
+      optional: true
+      sticky: true                                           
     - prompt: _(Your name)
       type: text
+      sticky: true
       name: submitter_name
       optional: true
       attrs:
