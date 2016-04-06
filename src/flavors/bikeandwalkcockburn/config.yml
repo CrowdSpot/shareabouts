@@ -400,10 +400,16 @@ place:
           value: shopping
         - label: _(To get to school or uni)
           value: To get to school or uni
-        - label: _(Leisure or exercise)
-          value: Leisure or exercise
-        - label: _(Social)
-          value: Social 
+        - label: _(To access public transport)
+          value: To access public transport
+        - label: _(To get to sport or recreation facilities)
+          value: To get to sport or recreation facilities
+        - label: _(To visit family or friends)
+          value: To visit family or friends   
+        - label: _(Leisurely for recreation)
+          value: Leisurely for recreation
+        - label: _(For exercise or sports training)
+          value: For exercise or sports training
         - label: _(Other)
           value: other                  
       name: location_purpose
