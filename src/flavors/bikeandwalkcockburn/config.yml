@@ -394,21 +394,28 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(To get to work)
-          value: To get to work
-        - label: _(To get to the shops)
-          value: To get to the shops
-        - label: _(To get to school)
-          value: To get to school
-        - label: _(To access public transport)
-          value: To access public transport
-        - label: _(To get to sport or recreation facilities)
-          value: To get to sport or recreation facilities
-        - label: _(Leisurely for recreation)
-          value: Leisurely for recreation
-        - label: _(For exercise or sports training)
-          value: For exercise or sports training                 
-      name: purpose
+        - label: _(Work)
+          value: work
+        - label: _(Shopping)
+          value: shopping
+        - label: _(To get to school or uni)
+          value: To get to school or uni
+        - label: _(Leisure or exercise)
+          value: Leisure or exercise
+        - label: _(Social)
+          value: Social 
+        - label: _(Other)
+          value: other                  
+      name: location_purpose
+    - prompt: _(<i>Please specify Other</i>)
+      type: text
+      attrs:
+        - key: placeholder
+          value: _(Type here)
+        - key: size
+          value: 30           
+      name: other_purpose
+      optional: true   
     - prompt: _(Please choose the option below that best describes your level of riding confidence?)
       type: select
       optional: true
@@ -437,6 +444,8 @@ place:
           value: Recreational walker  
         - label: _(Dog walker)
           value: Dog walker
+        - label: _(Jogger or runner)
+          value: Jogger or runner  
         - label: _(Family with children or pram)
           value: Family with children or pram
         - label: _(Assisted walker -wheelchair, gopher or other walking aid)

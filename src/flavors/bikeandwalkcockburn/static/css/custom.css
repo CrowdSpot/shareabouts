@@ -341,43 +341,6 @@ a.close-btn {
 
 
 
-.place-form label[for=place-issue_other],
-  .place-form [name=issue_other]{
-  display: none;
-}
-
-.place-form.walk label[for=place-issue_other],
-  .place-form.walk [name=issue_other] {
-  display: block;
-}
-
-.place-form.bike label[for=place-issue_other],
-  .place-form.bike [name=issue_other] {
-  display: block;
-}
-
-.place-form.bus label[for=place-issue_other],
-  .place-form.bus [name=issue_other] {
-  display: block;
-}
-
-.place-form.train label[for=place-issue_other],
-  .place-form.train [name=issue_other] {
-  display: block;
-}
-
-.place-form.car label[for=place-issue_other],
-  .place-form.car [name=issue_other] {
-  display: block;
-}
-
-.place-form.boat label[for=place-issue_other],
-  .place-form.boat [name=issue_other] {
-  display: block;
-}
-
-
-
 
 .place-form label[for=place-description_idea],
   .place-form [name=description_idea]{
@@ -425,6 +388,18 @@ a.close-btn {
 
 .place-form.walk label[for=place-description_issue],
   .place-form.walk [name=description_issue] {
+  display: block;
+}
+
+
+
+.place-form label[for=place-other_purpose],
+  .place-form [name=other_purpose]{
+  display: none;
+}
+
+.place-form.location_purpose-other label[for=place-other_purpose],
+  .place-form.location_purpose-other [name=other_purpose] {
   display: block;
 }
 
