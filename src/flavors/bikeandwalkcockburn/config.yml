@@ -380,7 +380,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe the issue at this spot...)                       
-    - prompt: _(If possible, please try adding an image of this spot<br><i>Eg. Google Streetview image</i>)
+    - prompt: _(If possible, please try adding an image of this spot<br><i>Eg. Photo or Google Streetview image</i>)
       inputfile_label: _(Add Image)
       type: file
       name: my_image
@@ -537,6 +537,7 @@ place:
     - prompt: _(Your email)
       type: text
       name: private-submitter_email
+      sticky: true
       optional: true
       attrs:
         - key: placeholder
