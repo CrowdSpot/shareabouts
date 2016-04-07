@@ -31,7 +31,7 @@ map:
     zoom: 14
     minZoom: 13
     maxZoom: 18
-    maxBounds: [ [-32.242732, 115.638222], [-31.859740, 116.106069] ]
+    maxBounds: [ [-32.242732, 115.638222], [-32.018504, 115.984259] ]
   layers:
     - url: http://{s}.tiles.mapbox.com/v3/aisey.p9n38ib0/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
@@ -380,7 +380,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe the issue at this spot...)                       
-    - prompt: _(If possible, please try adding an image of this spot)
+    - prompt: _(If possible, please try adding an image of this spot<br><i>Eg. Google Streetview image</i>)
       inputfile_label: _(Add Image)
       type: file
       name: my_image
@@ -532,7 +532,8 @@ place:
         - label: _(No thanks - no emails please)
           value: nothanks
       name: location_updates
-      optional: true           
+      optional: true
+      sticky: true           
     - prompt: _(Your email)
       type: text
       name: private-submitter_email
