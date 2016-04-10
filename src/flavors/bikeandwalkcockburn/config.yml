@@ -458,7 +458,7 @@ place:
           value: Assisted walker -wheelchair, gopher or other walking aid          
       name: walker_type
       sticky: true
-    - prompt: _(What is our connection to the City of Cockburn?)
+    - prompt: _(What is your connection to the City of Cockburn?)
       type: select
       options:
         - label: _(Choose One)
