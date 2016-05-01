@@ -4,7 +4,10 @@
  * NOTE: "With great power comes great responsibility."
  */
 
-
+ /* SHUT IT DOWN LEMON */
+#add-place-btn-container, #new_response {
+  display: none !important;
+}
 
 
 COLOR PALETTE...
