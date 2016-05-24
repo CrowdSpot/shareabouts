@@ -29,8 +29,9 @@ map:
       lat: -37.664064
       lng: 144.423505
     zoom: 16
-    minZoom: 15
+    minZoom: 16
     maxZoom: 17
+    maxBounds: [ [-37.682436, 144.389936], [-37.644895, 144.453394] ]
   layers:
     - url: http://{s}.tiles.mapbox.com/v3/aisey.06h54dda/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
