@@ -1,0 +1,416 @@
+# Settings for the app
+app:
+  # HTML Title
+  title: Halletts Way
+  # Header name
+  name: Halletts Way
+  # Meta description that will show up in Google search results
+  meta_description: _(CrowdSpot creates custom maps that allow people to give input on geogrpahic locations. Use it to collect data in a social, engaging process.)
+
+  # When the map loads, existing places will be loaded in chunks. By default,
+  # the size of the chunks will be a reasonable default dictated by the API
+  # server. If you would like to override the chunk size, use this setting:
+  # places_page_size: 100
+
+  # Optional. List view is supported by default. Set to false to disable.
+  # list_enabled: false
+
+# Settings for map and layer configs
+map:
+  geolocation_enabled: false
+  geolocation_onload: false
+
+  geocoding_enabled: false
+  geocode_field_label: _(Enter the street name and suburb...)
+  geocode_bounding_box: [39.830159, -75.478821, 40.167331, -74.781189]  # top, left, bottom, right
+
+  options:
+    center:
+      lat: -37.664064
+      lng: 144.423505
+    zoom: 16
+    minZoom: 15
+    maxZoom: 17
+  layers:
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.06h54dda/{z}/{x}/{y}.png
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.p9n38ib0/{z}/{x}/{y}.png
+      layer_control:
+        type: baselayer
+        name: 'Streets'
+      display: false
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.06h54dda//{z}/{x}/{y}.png
+      layer_control:
+        type: baselayer
+        name: 'Satellite'
+      display: true      
+      
+# The keys show up in the dropdown list when you are adding a new place
+# The values map the place type to map icons (defined below).
+place_types:
+  walk:
+    index: 0
+    label: _(Walk Spot)
+    rules:
+      - condition: '"{{location_type}}" === "walk" && {{map.zoom}} < 16 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#FFA500'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "walk" && {{map.zoom}} >= 16 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/master-pin-orange-walk.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "walk" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  bike:
+    index: 1
+    label: _(Bike Spot)
+    rules:
+      - condition: '"{{location_type}}" === "bike" && {{map.zoom}} < 14 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#33CC99'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "bike" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/master-pin-teal-bike.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "bike" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]        
+  car:
+    index: 2
+    label: _(Car Spot)
+    rules:
+      - condition: '"{{location_type}}" === "car" && {{map.zoom}} < 14 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#3399FF'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "car" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/master-pin-blue-car.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "car" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  landscape:
+    index: 3
+    label: _(Landscape Spot)
+    rules:
+      - condition: '"{{location_type}}" === "landscape" && {{map.zoom}} < 14 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#FFA500'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "landscape" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/master-pin-green-leaf.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "landscape" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]                                                 
+                          
+activity:
+  # Optional. Activity is supported by default. Set to false to disable.
+  enabled: true
+  # How often to refresh the activity list, in milliseconds.
+  interval: 30000
+
+place:
+  adding_supported: true
+  add_button_label: _(Add a Spot)
+  # Labels for the buttons that toggle the map and list views
+  show_list_button_label: _(List All Spots)
+  show_map_button_label: _(Show the Map)
+  action_text: _(added)
+  title: _(What do you think about transport along Halletts Way?)
+  action_text: _(added)
+  anonymous_name: _(Someone)
+  submit_button_label: _(Submit)
+
+  location_item_name: location
+
+  items:
+    - prompt: _(What is the name of this spot?)
+      type: text
+      name: name
+      attrs:
+        - key: placeholder
+          value: _(Intersection, Landmark, Experience, etc.)
+        - key: size
+          value: 30
+        - key: required
+    - prompt: _(What type of spot is this?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Walk Spot)
+          value: walk 
+        - label: _(Bike Spot)
+          value: bike
+        - label: _(Car Spot)
+          value: car 
+        - label: _(Landscape Spot)
+          value: landscape             
+      name: location_type
+      attrs:
+        - key: required
+    - prompt: _(Please tell us more about this spot?)
+      type: textarea
+      name: description
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Eg. Share your experience and what would make it safer?)           
+    - prompt: _(Please give a safety rating for walking along Halletts Way<br><i>(10 is the most safe and 1 is the least safe)</i>)
+      type: select
+      options: 
+        - label: _(Choose One)
+          value: ''
+        - label: _(10)
+          value: 10
+        - label: _(9)
+          value: 9
+        - label: _(8)
+          value: 8 
+        - label: _(7)
+          value: 7
+        - label: _(6)
+          value: 6
+        - label: _(5)
+          value: 5
+        - label: _(4)
+          value: 4
+        - label: _(3)
+          value: 3
+        - label: _(2)
+          value: 2
+        - label: _(1)
+          value: 1                           
+      name: walk_rating
+      optional: true
+    - prompt: _(Please give a safety rating for bike riding along Halletts Way<br><i>(10 is the most safe and 1 is the least safe)</i>)
+      type: select
+      options: 
+        - label: _(Choose One)
+          value: ''
+        - label: _(10)
+          value: 10
+        - label: _(9)
+          value: 9
+        - label: _(8)
+          value: 8 
+        - label: _(7)
+          value: 7
+        - label: _(6)
+          value: 6
+        - label: _(5)
+          value: 5
+        - label: _(4)
+          value: 4
+        - label: _(3)
+          value: 3
+        - label: _(2)
+          value: 2
+        - label: _(1)
+          value: 1                           
+      name: bike_rating
+      optional: true
+    - prompt: _(Please give a safety rating for driving along Halletts Way<br><i>(10 is the most safe and 1 is the least safe)</i>)
+      type: select
+      options: 
+        - label: _(Choose One)
+          value: ''
+        - label: _(10)
+          value: 10
+        - label: _(9)
+          value: 9
+        - label: _(8)
+          value: 8 
+        - label: _(7)
+          value: 7
+        - label: _(6)
+          value: 6
+        - label: _(5)
+          value: 5
+        - label: _(4)
+          value: 4
+        - label: _(3)
+          value: 3
+        - label: _(2)
+          value: 2
+        - label: _(1)
+          value: 1                           
+      name: car_rating
+      optional: true                          
+    - prompt: _(If possible, please try adding an image of this spot<br><i>Eg. Photo or Google Streetview image</i>)
+      inputfile_label: _(Add Image)
+      type: file
+      name: my_image
+      optional: true
+      attrs:
+        - key: accept
+          value: image/*                                                                  
+    - prompt: _(Your name)
+      type: text
+      sticky: true
+      name: submitter_name
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Type name)
+        - key: size
+          value: 30          
+    - prompt: _(Your email)
+      type: text
+      name: private-submitter_email
+      sticky: true
+      attrs:
+        - key: placeholder
+          value: _(Email address)
+        - key: size
+          value: 30
+        - key: required    
+    - prompt: _(Your phone number (Optional))
+      type: text
+      name: phone
+      sticky: true
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Type here...)
+        - key: size
+          value: 30           
+
+survey:
+  submission_type: comments
+
+  # Response config
+  show_responses: true
+  response_name: _(comment)
+  response_plural_name: _(comments)
+  action_text: _(commented on)
+  anonymous_name: _(Someone)
+
+  # Survey form config
+  title: _(Leave a Comment)
+  form_link_text: _(Leave a Comment)
+  submit_btn_text: _(Comment)
+  items:
+    - prompt: _(Comment)
+      label: _(Comment)
+      type: textarea
+      name: comment
+      attrs:
+        - key: required
+    - prompt: _(Your Name)
+      type: text
+      name: submitter_name
+
+support:
+  submission_type: support
+  submit_btn_text: _(Support)
+  response_name: _(support)
+  response_plural_name: _(supports)
+  action_text: supported
+  anonymous_name: _(Someone)
+
+pages:
+  - title: _(About)
+    slug: about
+    name: overview
+    start_page: true
+    
+  - title: _(FAQs)
+    slug: why
+    url: /static/pages/why.html
+    
+  - title: _(Filter ⌄)
+    pages:
+      - title: _(Show All)
+        url: /
+        external: true
+      - title: _(Walk Spots)
+        url: /filter/walk
+        external: true
+      - title: _(Bike Spots)
+        url: /filter/bike
+        external: true  
+      - title: _(Car Spots)
+        url: /filter/car
+        external: true
+      - title: _(Landscape Spots)
+        url: /filter/landscape
+        external: true                     
+
+notifications:
+  on_new_place: true
+  submitter_email_field: private-submitter_email
