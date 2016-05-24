@@ -32,7 +32,7 @@ map:
     minZoom: 5
     maxZoom: 15
   layers:
-    - url: http://{s}.tiles.mapbox.com/v3/aisey.o71mak9p/{z}/{x}/{y}.png
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.07akmk5f/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
     - url: /static/data/philadelphia.geojson
       type: json
