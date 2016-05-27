@@ -445,7 +445,10 @@ pages:
         external: true
       - title: _(Landscape Spots)
         url: /filter/landscape
-        external: true                     
+        external: true
+      - title: _(Liveability Spots)
+        url: /filter/liveability
+        external: true                        
 
 notifications:
   on_new_place: true
