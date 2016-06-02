@@ -48,7 +48,7 @@ map:
     - url: http://{s}.tiles.mapbox.com/v3/aisey.Cockburn_bikelanes/{z}/{x}/{y}.png
       layer_control:
         type: overlay
-        name: 'Bike Lanes'
+        name: 'Bike Paths'
       display: false  
     - url: http://{s}.tiles.mapbox.com/v3/aisey.Cockburn_bikeparking/{z}/{x}/{y}.png
       layer_control:
