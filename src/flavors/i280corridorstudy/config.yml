@@ -18,7 +18,7 @@ app:
 
 # Settings for map and layer configs
 map:
-  geolocation_enabled: false
+  geolocation_enabled: true
   geolocation_onload: false
 
   geocoding_enabled: true
@@ -450,28 +450,7 @@ place:
         - label: _(Other)
           value: Other            
       name: location_car_issue
-      optional: true  
-    - prompt: _(What is the issue at this Light Rail spot?)
-      type: select
-      options: 
-        - label: _(Choose One)
-          value: '' 
-        - label: _(No stop within walking distance)
-          value: No stop within walking distance
-        - label: _(Poor waiting facilities at stop)
-          value: Poor waiting facilities at stop
-        - label: _(Unsafe stop or station)
-          value: Unsafe stop or station  
-        - label: _(Infrequent services)
-          value: Infrequent services 
-        - label: _(Unreliable scheduling)
-          value: Unreliable scheduling  
-        - label: _(No capacity during the peak)
-          value: No capacity during the peak  
-        - label: _(Other)
-          value: Other           
-      name: location_lightrail_issue
-      optional: true    
+      optional: true   
     - prompt: _(What transport mode does this Like Spot best relate to?)
       type: select
       options: 
@@ -527,27 +506,7 @@ place:
       optional: true
       attrs:
         - key: accept
-          value: image/* 
-    - prompt: _(Would you like to see the existing carpool/express lanes south of Calaveras Blvd extended further along the I-680 corridor?)
-      type: select
-      sticky: true
-      optional: true
-      options:
-        - label: _(Choose One)
-          value: ''     
-        - label: _(Yes)
-          value: Yess
-        - label: _(No)
-          value: Nope 
-      name: location_expresslanes    
-    - prompt: _(If no, please explain why...)
-      type: text
-      sticky: true
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Please type here..)
-      name: why                       
+          value: image/*                         
     - prompt: _(Which mode of transportation do you mostly use for your commute?)
       type: select
       sticky: true
@@ -655,11 +614,6 @@ pages:
     name: overview
     start_page: true
     
-  - title: _(More information)
-    slug: moreinfo
-    name: moreinfo
-    url: /static/pages/moreinfo.html
-    
   - title: _(FAQs)
     slug: why
     url: /static/pages/why.html
@@ -686,9 +640,6 @@ pages:
         external: true
       - title: _(Bus Spots)
         url: /filter/bus
-        external: true
-      - title: _(Light Rail Spots)
-        url: /filter/lighrail
         external: true
       - title: _(Car Spots)
         url: /filter/car
