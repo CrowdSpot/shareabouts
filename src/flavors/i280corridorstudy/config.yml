@@ -614,6 +614,10 @@ pages:
     name: overview
     start_page: true
     
+  - title: _(Interchanges)
+    slug: interchanges
+    url: /static/pages/interchanges.html
+    
   - title: _(FAQs)
     slug: why
     url: /static/pages/why.html
