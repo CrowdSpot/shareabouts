@@ -5,7 +5,7 @@
  */
 
 
-
+/*
 
 COLOR PALETTE...
 
@@ -45,11 +45,14 @@ body, select, input, textarea {
 .btn-primary,
 .btn-primary:visited,
 .btn-primary:link {
-  background-color: #1D9835;
+  background-color: #FF00FF;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   color: #fff;
+  transition: all 0.5s ease;
 }
 .btn-primary:hover {
-  background-color: #575958;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  background-color: #FC13FF;
 }
 .btn-secondary,
 .btn-secondary:visited,
@@ -86,11 +89,13 @@ a, a:active, a:visited {
 -------------------------------------------------------------- */
 
 #site-header {
-  border-top: #1D9835 3px solid;
+  border-top: #FF00FF 3px solid;
 }
 
 #site-header {
   background-color: #ffffff;
+  /* Rectangle 1: */
+  background-image: linear-gradient(90deg, #FFFFFF 20%, #2AAF32 30%, #D9C51A 40%, #DB32B0 50%, #FFFFFF 71%);
   box-shadow: 0 5px 10px rgba(85, 85, 85, 0.5), inset 0 -3px 0
 }
 
@@ -111,7 +116,7 @@ a, a:active, a:visited {
   }
 
 #site-title {
-  background: url('images/Bikespot_Header2.png') no-repeat 
+  background: url('images/finnspotlogo.svg') no-repeat 
 center;
   background-size: contain;
   width: 440px;
@@ -202,7 +207,7 @@ a.close-btn {
 .list-toggle-btn,
   .list-toggle-btn:visited,
   .list-toggle-btn:link {
-    background-color: #1D9835;
+    background-color: #FF00FF;
  }
  
 .list-toggle-btn:hover {
@@ -232,9 +237,9 @@ a.close-btn {
 
 #centerpoint.newpin .marker {
   display: block;
-  width: 25px;
+  width: 27px;
   height: 41px;
-  background: transparent url(images/markers/marker-f39914.png) 0 0 no-repeat scroll;
+  background: transparent url(images/newspot.svg) 0 0 no-repeat scroll;
   position: relative;
   top: 3px;
   -webkit-transition: top 0.4s ease;
@@ -244,8 +249,21 @@ a.close-btn {
   transition: top 0.4s ease;
 }
 
+.spot-type-title {
+  text-align: center;
+  padding: 1em;
+  color: #000000;
+  background-color: #DBDBDB;
+  border-bottom: 2px solid #8C8C8C;
+  margin-bottom: 1em;
+}
+
 /* =legend
 -------------------------------------------------------------- */
+.legend {
+  border-top: 0;
+  padding-bottom: 1em;
+}
 .legend li {
   line-height: 26px;
 }
