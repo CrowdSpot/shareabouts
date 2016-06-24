@@ -1,155 +1,104 @@
-/*
- * This CSS file follows the default Shareabouts style.css.
- * All rules herein will override the default Shareabouts styles.
- * NOTE: "With great power comes great responsibility."
- */
-
-
-/*
-
-COLOR PALETTE...
-
-Green/Blue #0E716A
-Orange #EC611A
-Light grey #C0C0A2
-
-
-CrowdSpot Red #FF1609
-CrowdSpot Green #45BA00
-CrowdSpot Grey (text) #585A59
-*/
-
-
-
-/* Typography */
-
-body, select, input, textarea {
+@media only screen and (min-width: 600px) {
+  #content {
+    background-color: #ffc0cb;
+  }
+}
+body,
+select,
+input,
+textarea {
   color: #555;
   font-family: "Proxima Nova", Arial, Helvetica, serif;
 }
-
-
-
-
-/* =Base Styles
--------------------------------------------------------------- */
-
-/* Buttons */
 .btn,
 .btn:visited,
 .btn:link {
   font-weight: 600;
   border: 0;
 }
-
 .btn-primary,
 .btn-primary:visited,
 .btn-primary:link {
-  background-color: #FF00FF;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  background-color: #f0f;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
   color: #fff;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 .btn-primary:hover {
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
-  background-color: #FC13FF;
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+  background-color: #fc13ff;
 }
 .btn-secondary,
 .btn-secondary:visited,
 .btn-secondary:link {
-/*  background-color: #ccc;*/
-/*  color: #007fbf;*/
+  background-color: #ff0062;
+  color: #fff;
 }
-.btn-secondary:hover {
-/*  background-color: #007fbf;*/
-/*  color: #fff;*/
+a,
+a:active,
+a:visited {
+  color: #0092d7;
 }
-
-/* Links */
-
-
-a, a:active, a:visited {
-  color: #0092D7;
-}
-
 .recent-points a {
-    color: #585A59;
-    text-decoration: none;
-    float: left;
-    border-top: 1px solid #888;
-    border-bottom: 1px solid #666;
-    padding: 0.5em 0.5em 0.5em 0.75em;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  color: #585a59;
+  text-decoration: none;
+  float: left;
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #666;
+  padding: 0.5em 0.5em 0.5em 0.75em;
+  width: 100%;
+  box-sizing: border-box;
 }
-
-/* =Header
--------------------------------------------------------------- */
-
 #site-header {
-  border-top: #FF00FF 3px solid;
+  border-top: #f0f 3px solid;
+  background-color: #fff;
+  background-image: -webkit-linear-gradient(left, #fff 20%, #2aaf32 30%, #d9c51a 40%, #db32b0 50%, #fff 71%);
+  background-image: linear-gradient(90deg, #fff 20%, #2aaf32 30%, #d9c51a 40%, #db32b0 50%, #fff 71%);
+  box-shadow: 0 5px 10px rgba(85,85,85,0.5), inset 0 -3px 0;
 }
-
-#site-header {
-  background-color: #ffffff;
-  /* Rectangle 1: */
-  background-image: linear-gradient(90deg, #FFFFFF 20%, #2AAF32 30%, #D9C51A 40%, #DB32B0 50%, #FFFFFF 71%);
-  box-shadow: 0 5px 10px rgba(85, 85, 85, 0.5), inset 0 -3px 0
-}
-
 .access li:hover > ul,
-  .access li:hover > form > ul {
-    display: block;
-    background: #ccc;
-    box-shadow: -0.25em 0.25em 0 rgba(0,0,0,0.1);
-    border: 3px solid rgba(0,0,0,0.05);
-    border-radius: 0;
-    margin: -3px -60px 0 0;
-    padding: 3px 0 0 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 2;
-    overflow: hidden;
-  }
-
+.access li:hover > form > ul {
+  display: block;
+  background: #ccc;
+  box-shadow: none;
+  border: 0px solid rgba(0,0,0,0.05);
+  border-radius: 0;
+  margin: -3px -60px 0 0;
+  padding: 3px 0 0 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+  overflow: hidden;
+}
 #site-title {
-  background: url('images/finnspotlogo.svg') no-repeat 
-center;
+  background: url("images/finnspotlogo.svg") no-repeat center;
   background-size: contain;
   width: 440px;
   text-indent: -133337px;
 }
-
 .site-name {
   font-size: 0.45em;
   float: left;
   line-height: 1.1;
-  background-color: #26A0DA;
+  background-color: #26a0da;
   position: relative;
   top: -0.6em;
 }
-
 .has-pages #site-title {
   margin-left: -0.75em;
 }
-
 .access {
   font-size: 1.1em;
 }
-
-
-#pages-nav-container, #language-picker {
+#pages-nav-container,
+#language-picker {
   height: 100%;
   float: left;
   margin-right: -163px;
   margin-left: 35px;
 }
-
-
-/* Navigation Button */
 #nav-btn {
   background: #6f6f6f;
   color: #bbb;
@@ -159,107 +108,73 @@ center;
   text-align: center;
   text-shadow: -1px 1px 1px rgba(0,0,0,0.25);
   float: left;
-  width: .8em;
+  width: 0.8em;
   padding: 0.125em 0;
   position: absolute;
   border-radius: 2.5px;
   left: 0.25em;
   top: 0.25em;
 }
-
-/* =Colophon
--------------------------------------------------------------- */
-
 #colophon {
-  box-shadow: inset 0 5px 10px rgba(85, 85, 85, 0.25);
-}  
-
-/* =The Ticker
--------------------------------------------------------------- */
-
-#ticker {
-  background: #ffffff;
-  box-shadow: -5px 0 10px rgba(85, 85, 85, 0.5);
+  box-shadow: inset 0 5px 10px rgba(85,85,85,0.25);
 }
-
-
-/* =Content: Pages & Places
--------------------------------------------------------------- */
-
+#ticker {
+  background: #fff;
+  box-shadow: -5px 0 10px rgba(85,85,85,0.5);
+}
 #content {
   background: #fff;
 }
-
-/* Close Button */
 a.close-btn {
   background: #fff;
 }
-
-
-
-/* =List View
--------------------------------------------------------------- */
-
+a.leaflet-control-layers-toggle {
+  background-image: url("images/bikelanes.png");
+  background-size: inherit;
+  width: 118px;
+  height: 28px;
+}
 #list-container {
   background: #eee;
 }
-
 .list-toggle-btn,
-  .list-toggle-btn:visited,
-  .list-toggle-btn:link {
-    background-color: #FF00FF;
- }
- 
+.list-toggle-btn:visited,
+.list-toggle-btn:link {
+  background-color: #f0f;
+}
 .list-toggle-btn:hover {
-    background-color: #575958;
-    color: #fff;
-  }   
-  
-
-/* =Map
--------------------------------------------------------------- */
-
-/* Drag Marker Instructions (for adding a new place) */
+  background-color: #575958;
+  color: #fff;
+}
 .drag-marker-instructions,
 .drag-marker-warning {
-  background-color: #3E74BF;
+  background-color: #3e74bf;
   color: #fff;
   text-shadow: none;
 }
 .drag-marker-warning {
-  background-color: #FF1609;
+  background-color: #ff1609;
   color: #fff;
   text-shadow: none;
 }
-
-/* =newpin marker
--------------------------------------------------------------- */
-
 #centerpoint.newpin .marker {
   display: block;
   width: 27px;
   height: 41px;
-  background: transparent url(images/newspot.svg) 0 0 no-repeat scroll;
+  background: transparent url("images/newspot.svg") 0 0 no-repeat scroll;
   position: relative;
   top: 3px;
   -webkit-transition: top 0.4s ease;
-  -moz-transition: top 0.4s ease;
-  -o-transition: top 0.4s ease;
-  -ms-transition: top 0.4s ease;
   transition: top 0.4s ease;
 }
-
 .spot-type-title {
   text-align: center;
   padding: 1em;
-  color: #000000;
-  background-color: #DBDBDB;
-  border-bottom: 2px solid #8C8C8C;
+  color: #000;
+  background-color: #dbdbdb;
+  border-bottom: 2px solid #8c8c8c;
   margin-bottom: 1em;
 }
-
-/* =legend
--------------------------------------------------------------- */
 .legend {
   border-top: 0;
   padding-bottom: 1em;
@@ -267,165 +182,84 @@ a.close-btn {
 .legend li {
   line-height: 26px;
 }
-
 .legend img {
   max-height: 33px;
   vertical-align: middle;
 }
-
-
-/* =Existing Spots
--------------------------------------------------------------- */
-
-
 .place-value-age {
   display: none;
 }
-
 .place-value-gender {
   display: none;
 }
-
 .place-value-location_updates {
   display: none;
 }
-
-
-
-
 .place-value-safety_rating:before {
   content: "Safety rating: ";
   font-weight: bold;
 }
-
 .place-value-description:before {
   content: "Description: ";
   font-weight: bold;
 }
-
 .place-value-rider_type:before {
   content: "Rider type: ";
   font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
-/* =Hiding questions in new forms
--------------------------------------------------------------- */
-
 #place-safety_rating {
   display: none;
 }
-
 #fields-safety_rating {
   display: none;
 }
-
 .place-form label[for=place-feel_safe],
-  .place-form [name=feel_safe]{
+.place-form [name=feel_safe] {
   display: none;
 }
-
 .place-form.safe label[for=place-feel_safe],
-  .place-form.safe [name=feel_safe] {
+.place-form.safe [name=feel_safe] {
   display: block;
 }
-
-
-
 .place-form label[for=place-feel_unsafe],
-  .place-form [name=feel_unsafe]{
+.place-form [name=feel_unsafe] {
   display: none;
 }
-
 .place-form.unsafe label[for=place-feel_unsafe],
-  .place-form.unsafe [name=feel_unsafe] {
+.place-form.unsafe [name=feel_unsafe] {
   display: block;
 }
-
-
-
-
-
 .place-form label[for=place-private-submitter_email],
-  .place-form [name=private-submitter_email]{
+.place-form [name=private-submitter_email] {
   display: none;
 }
-
 .place-form.location_updates-yesplease label[for=place-private-submitter_email],
-  .place-form.location_updates-yesplease [name=private-submitter_email] {
+.place-form.location_updates-yesplease [name=private-submitter_email] {
   display: block;
 }
-
-
-
-
-/* =Hiding (optional) in survey form
--------------------------------------------------------------- */
-
 label small {
   text-transform: none;
   display: none;
 }
-
-
-/* =Hiding geolocator
--------------------------------------------------------------- */
-
-
 #map.leaflet-container {
   font: 14px/1.5 "Proxima Nova", Arial, Helvetica, sans-serif;
 }
-
-
-/* layers control */
-
-a.leaflet-control-layers-toggle {
-    background-image: url(images/bikelanes.png);
-    background-size: inherit;
-    width: 118px;
-    height: 28px;
+@media only screen and (max-width: 960px) {
+  #site-header {
+    background-image: -webkit-linear-gradient(left, #fff 60%, #2aaf32 70%, #d9c51a 80%, #db32b0 90%, #fff 100%);
+    background-image: linear-gradient(90deg, #fff 60%, #2aaf32 70%, #d9c51a 80%, #db32b0 90%, #fff 100%);
+  }
 }
-
-
-
-
-/* =Media Queries
--------------------------------------------------------------- */  
-
-
-
-
-
 @media only screen and (min-width: 320px) and (max-width: 1024px) {
- 
-  
-.access li:last-child {
+  .access li:last-child {
     display: none;
   }
 }
-
 .goog-te-gadget:last-child {
-    display: none;
-  }
-
+  display: none;
+}
 .goog-te-gadget .goog-te-combo:last-child {
-    display: none;
-  }
-
-@media only screen and (min-width: 768px) {
-
+  display: none;
 }
 
-@media only screen and (min-width: 1024px) {
-}
-
-@media only screen and (min-width: 1300px) {
-}
-
+/*# sourceMappingURL=custom.css.map */
