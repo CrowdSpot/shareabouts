@@ -1,0 +1,76 @@
+#site-header
+	border-top #FF00FF 3px solid
+	background-color #ffffff
+	background-image linear-gradient(90deg, #FFFFFF 20%, #2AAF32 30%, #D9C51A 40%, #DB32B0 50%, #FFFFFF 71%)
+	box-shadow 0 5px 10px rgba(85, 85, 85, 0.5), inset 0 -3px 0
+
+.access li:hover > ul,
+  .access li:hover > form > ul
+	display inline
+	background #ccc
+	box-shadow none
+	border 0px solid rgba(0,0,0,0.05)
+	border-radius 0
+	margin -3px -60px 0 0
+	padding 3px 0 0 0
+	position absolute
+	top 100%
+	left 0
+	z-index 2
+	overflow hidden
+	
+.access .menu-item a:hover
+	background #464847
+
+#site-title
+	background url('images/finnspotlogo.svg') no-repeat center
+	background-size contain
+	width 440px
+	text-indent -133337px
+
+.site-name
+	font-size 0.45em
+	float left
+	line-height 1.1
+	background-color #26A0DA
+	position relative
+	top -0.6em
+
+.has-pages
+	#site-title
+		margin-left -0.75em
+
+.access
+	font-size 1.1em
+
+#pages-nav-container, #language-picker
+	height 100%
+	float left
+	margin-right -163px
+	margin-left 35px
+
+#nav-btn
+	background #6f6f6f
+	color #bbb
+	font-size 2em
+	line-height 0.7
+	text-decoration none
+	text-align center
+	text-shadow -1px 1px 1px rgba(0,0,0,0.25)
+	float left
+	width .8em
+	padding 0.125em 0
+	position absolute
+	border-radius 2.5px
+	left 0.25em
+	top 0.25em
+	
+@media only screen and (max-width: 960px)
+	#site-header
+		background-image linear-gradient(90deg, #FFFFFF 60%, #2AAF32 70%, #D9C51A 80%, #DB32B0 90%, #FFFFFF 100%)
+		
+@media only screen and (min-width: 320px) and (max-width: 1024px)
+	.access
+		li
+			&:last-child
+				display none

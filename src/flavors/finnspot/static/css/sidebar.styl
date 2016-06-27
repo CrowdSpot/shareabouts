@@ -1,0 +1,68 @@
+.recent-points
+	a
+		color #585A59
+		text-decoration none
+		float left
+		border-top 1px solid #888
+		border-bottom 1px solid #666
+		padding 0.5em 0.5em 0.5em 0.75em
+		width 100%
+		-webkit-box-sizing border-box
+		-moz-box-sizing border-box
+		box-sizing border-box
+
+#colophon
+	box-shadow inset 0 5px 10px rgba(85, 85, 85, 0.25)
+
+#ticker
+	background #ffffff
+	box-shadow -5px 0 10px rgba(85, 85, 85, 0.5)
+
+#content
+	background #fff
+	
+	+above('m')
+		background pink
+
+a
+	&.close-btn
+		background #fff
+		
+		+above('m')
+			background pink
+			
+	&.leaflet-control-layers-toggle
+		background-image none
+		background-size inherit
+		width 108px
+		height 33px
+		text-decoration none
+		
+		
+		&:before
+			content: "Layers"
+			display block
+			color black
+			font-weight bold
+			padding 6px 10px
+			
+
+#list-container
+	background #eee
+
+.list-toggle-btn,
+  .list-toggle-btn:visited,
+  .list-toggle-btn:link
+	background-color #FF00FF
+
+.list-toggle-btn
+	&:hover
+		background-color #575958
+		color #fff
+		
+.goog-te-gadget
+	&:last-child
+		display none
+	.goog-te-combo
+		&:last-child
+			display none
