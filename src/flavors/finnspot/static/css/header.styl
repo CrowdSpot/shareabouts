@@ -65,11 +65,15 @@
 	left 0.25em
 	top 0.25em
 	
-@media only screen and (max-width: 960px)
+// @media only screen and (max-width: 960px)
+// 	#site-header
+// 		background-image linear-gradient(90deg, #FFFFFF 60%, #2AAF32 70%, #D9C51A 80%, #DB32B0 90%, #FFFFFF 100%)
+		
++to-width('l')
 	#site-header
 		background-image linear-gradient(90deg, #FFFFFF 60%, #2AAF32 70%, #D9C51A 80%, #DB32B0 90%, #FFFFFF 100%)
-		
-@media only screen and (min-width: 320px) and (max-width: 1024px)
+
++between('xs', 'l')
 	.access
 		li
 			&:last-child
