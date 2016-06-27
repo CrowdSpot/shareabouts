@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="39px" height="58px" viewBox="0 0 39 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.2 (29753) - http://www.bohemiancoding.com/sketch -->
+    <title>projects-spots-icon@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-781.000000, -5733.000000)" fill="#DB3833">
+            <g id="Projects" transform="translate(0.000000, 4550.000000)">
+                <g id="Group-21" transform="translate(730.000000, 1183.000000)">
+                    <path d="M65.3889281,39.5459631 L70.1255999,58 L70.4251199,58 L75.466269,39.5850825 C83.8294936,37.3178227 89.9985518,29.4636503 90,20.1221203 C89.9999999,9.00939909 81.2701862,0.000592583637 70.5010398,0 C59.7318933,-0.000592583637 51.0011487,9.00725313 51,20.1199743 C50.9990399,29.4088405 57.0976659,37.2283939 65.3889281,39.5459631 Z M66.6842399,14.7229529 C66.6790728,17.5897688 64.423636,19.9099601 61.6454515,19.9064071 C58.867267,19.9028542 56.6174104,17.576901 56.6191296,14.7100807 C56.6208487,11.8432604 58.8734933,9.52018235 61.6516799,9.52017739 C64.4310861,9.52017739 66.6842399,11.845215 66.6842399,14.7132943 L66.6842399,14.7229529 Z" id="projects-spots-icon"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

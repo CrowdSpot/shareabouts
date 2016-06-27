@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>facebook_logo_footer</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="1.0-Home_Page_V1.0_REVISED" sketch:type="MSArtboardGroup" transform="translate(-211.000000, -966.000000)" fill="#252626">
+            <g id="footer" sketch:type="MSLayerGroup" transform="translate(0.000000, 924.000000)">
+                <path d="M226.116953,42 L211.883047,42 C211.395303,42 211,42.3953015 211,42.8830439 L211,57.1168962 C211,57.6045786 211.395303,58 211.883047,58 L219.546134,58 L219.546134,51.8039454 L217.460992,51.8039454 L217.460992,49.389213 L219.546134,49.389213 L219.546134,47.6084378 C219.546134,45.5418873 220.808298,44.4165908 222.651847,44.4165908 C223.534954,44.4165908 224.293907,44.4822945 224.515058,44.5116694 L224.515058,46.6713801 L223.236468,46.6719796 C222.233883,46.6719796 222.039709,47.1483917 222.039709,47.8475131 L222.039709,49.389213 L224.43089,49.389213 L224.119576,51.8039454 L222.039709,51.8039454 L222.039709,58 L226.116953,58 C226.604637,58 227,57.6045786 227,57.1168962 L227,42.8830439 C227,42.3953015 226.604637,42 226.116953,42" id="facebook_logo_footer" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

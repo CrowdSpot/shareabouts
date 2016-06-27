@@ -65,7 +65,7 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/radspotgood.svg
-          shadowUrl: /static/css/images/master-pin-shadow.png
+          shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
@@ -74,7 +74,7 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/selectspotgood.svg
-          shadowUrl: /static/css/images/marker-shadow.png
+          shadowUrl: /static/css/images/marker-shadow.svg
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
@@ -97,7 +97,7 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/radspot.svg
-          shadowUrl: /static/css/images/master-pin-shadow.png
+          shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
@@ -106,7 +106,7 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/selectspot.svg
-          shadowUrl: /static/css/images/marker-shadow.png
+          shadowUrl: /static/css/images/marker-shadow.svg
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]                 
