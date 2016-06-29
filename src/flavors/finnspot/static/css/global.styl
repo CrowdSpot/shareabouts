@@ -2,15 +2,24 @@ body, select, input, textarea
 	color #555
 	font-family "Proxima Nova", Arial, Helvetica, serif
 
-#map
-	&.leaflet-container
-		font-size 14px/1.5
+// #map
+// 	&.leaflet-container
+// 		font-size 14px/1.5
 	
 .btn,
 .btn:visited,
 .btn:link
+	line-height 1
+	padding 0.65em
+	color white
+	background-color red
+	box-shadow 2px 2px 10px rgba(0, 0, 0, 0.5)
 	font-weight 600
 	border 0
+	transition all 0.5s ease
+	
+	&:hover
+		box-shadow 0px 0px 1px rgba(0, 0, 0, 0.2)
 	
 .btn-primary,
 .btn-primary:visited,
@@ -19,8 +28,10 @@ body, select, input, textarea
 	box-shadow 2px 2px 10px rgba(0, 0, 0, 0.5)
 	color #fff
 	transition all 0.5s ease
+	
+	&.submit-btn
+		box-shadow 1px 1px 5px rgba(0, 0, 0, 0.5)
 
-.btn-primary
 	&:hover
 		box-shadow 0px 0px 1px rgba(0, 0, 0, 0.2)
 		background-color #9900A5
@@ -28,8 +39,13 @@ body, select, input, textarea
 .btn-secondary,
 .btn-secondary:visited,
 .btn-secondary:link
+	box-shadow 2px 2px 10px rgba(0, 0, 0, 0.5)
 	background-color rgb(255, 0, 98)
 	color white
+	
+	&:hover
+		box-shadow 0px 0px 1px rgba(0, 0, 0, 0.2)
+		background-color #9900A5
 
 a, a:active, a:visited
 	color #0092D7
@@ -37,3 +53,9 @@ a, a:active, a:visited
 #powered-by a
 	background-image url(images/crowdspot-logo.svg)
 	background-position 0px 9px
+	
+.user-support
+	label
+		transition all 0.5s ease
+		background-color #E5E5E6
+			

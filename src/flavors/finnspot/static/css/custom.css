@@ -5,14 +5,23 @@ textarea {
   color: #555;
   font-family: "Proxima Nova", Arial, Helvetica, serif;
 }
-#map.leaflet-container {
-  font-size: 14px/1.5;
-}
 .btn,
 .btn:visited,
 .btn:link {
+  line-height: 1;
+  padding: 0.65em;
+  color: #fff;
+  background-color: #d13f19;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
   font-weight: 600;
   border: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.btn:hover,
+.btn:visited:hover,
+.btn:link:hover {
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
 }
 .btn-primary,
 .btn-primary:visited,
@@ -23,15 +32,29 @@ textarea {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.btn-primary:hover {
+.btn-primary.submit-btn,
+.btn-primary:visited.submit-btn,
+.btn-primary:link.submit-btn {
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+.btn-primary:hover,
+.btn-primary:visited:hover,
+.btn-primary:link:hover {
   box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
   background-color: #9900a5;
 }
 .btn-secondary,
 .btn-secondary:visited,
 .btn-secondary:link {
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
   background-color: #ff0062;
   color: #fff;
+}
+.btn-secondary:hover,
+.btn-secondary:visited:hover,
+.btn-secondary:link:hover {
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+  background-color: #9900a5;
 }
 a,
 a:active,
@@ -42,12 +65,17 @@ a:visited {
   background-image: url("images/crowdspot-logo.svg");
   background-position: 0px 9px;
 }
+.user-support label {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background-color: #e5e5e6;
+}
 #site-header {
   border-top: #f0f 3px solid;
   background-color: #fff;
   background-image: -webkit-linear-gradient(left, #fff 20%, #2aaf32 30%, #d9c51a 40%, #db32b0 50%, #fff 71%);
   background-image: linear-gradient(90deg, #fff 20%, #2aaf32 30%, #d9c51a 40%, #db32b0 50%, #fff 71%);
-  box-shadow: 0 5px 10px rgba(85,85,85,0.5), inset 0 -3px 0;
+  box-shadow: 0 5px 10px rgba(85,85,85,0.5), 0 -3px 0;
 }
 .access li:hover > ul,
 .access li:hover > form > ul {
@@ -55,7 +83,9 @@ a:visited {
   background: #ccc;
   box-shadow: none;
   border: 0px solid rgba(0,0,0,0.05);
-  border-radius: 0;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   margin: -3px -60px 0 0;
   padding: 3px 0 0 0;
   position: absolute;
@@ -63,6 +93,11 @@ a:visited {
   left: 0;
   z-index: 2;
   overflow: hidden;
+  width: 160px;
+}
+.access li:hover > ul a,
+.access li:hover > form > ul a {
+  text-align: left;
 }
 .access .menu-item a:hover {
   background: #464847;
@@ -141,26 +176,36 @@ a:visited {
 #content {
   background: #cdcdcd;
   box-shadow: none;
+  max-width: 500px;
 }
 #content article {
   box-shadow: 0 0 20px rgba(34,34,34,0.5);
   position: relative;
-  z-index: 10;
+  left: 0;
+  z-index: 100;
 }
 a.close-btn {
+  z-index: 1;
   background: #cdcdcd;
   box-shadow: none;
-  z-index: 0;
+  right: 100%;
   margin-right: 0px;
+  -webkit-transition: 0.5s background ease, 0.5s color ease;
+  transition: 0.5s background ease, 0.5s color ease;
 }
-a.leaflet-control-layers-toggle {
+a.close-btn:hover {
+  background: #fff;
+}
+a.leaflet-control-layers-toggle,
+.leaflet-retina a.leaflet-control-layers-toggle {
   background-image: none;
   background-size: inherit;
   width: 96px;
   height: 30px;
   text-decoration: none;
 }
-a.leaflet-control-layers-toggle:before {
+a.leaflet-control-layers-toggle:before,
+.leaflet-retina a.leaflet-control-layers-toggle:before {
   content: "Layers";
   display: block;
   color: #222;

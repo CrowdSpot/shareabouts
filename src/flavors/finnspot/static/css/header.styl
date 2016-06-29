@@ -2,7 +2,7 @@
 	border-top #FF00FF 3px solid
 	background-color #ffffff
 	background-image linear-gradient(90deg, #FFFFFF 20%, #2AAF32 30%, #D9C51A 40%, #DB32B0 50%, #FFFFFF 71%)
-	box-shadow 0 5px 10px rgba(85, 85, 85, 0.5), inset 0 -3px 0
+	box-shadow 0 5px 10px rgba(85, 85, 85, 0.5), 0 -3px 0
 
 .access li:hover > ul,
   .access li:hover > form > ul
@@ -10,7 +10,9 @@
 	background #ccc
 	box-shadow none
 	border 0px solid rgba(0,0,0,0.05)
-	border-radius 0
+	border-top-right-radius 5px
+	border-bottom-left-radius 5px
+	border-bottom-right-radius 5px
 	margin -3px -60px 0 0
 	padding 3px 0 0 0
 	position absolute
@@ -18,6 +20,10 @@
 	left 0
 	z-index 2
 	overflow hidden
+	width 160px
+	
+	a
+		text-align left
 	
 .access .menu-item a:hover
 	background #464847
