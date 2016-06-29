@@ -1,0 +1,84 @@
+#site-header
+	border-top primary-color 3px solid
+	background-color #ffffff
+	box-shadow 0 0px 10px rgba(85, 85, 85, 0.5)
+
+#site-title
+	background url('images/logo.svg') no-repeat center
+	background-size contain
+	background-position left center
+	width 284px
+	
+	+below('m')
+		width 180px
+
+#pages-nav-container, #language-picker
+	height 100%
+	float left
+	margin-right 0
+	margin-left 0
+	
+.access 
+	font-size 1.1em
+
+	+below(60em)
+		margin 0
+	
+	li
+		+below(60em)
+			padding-bottom 0
+		
+		&:hover
+	
+			ul
+				display inline
+				background #ccc
+				box-shadow 0 5px 10px -5px rgba(85, 85, 85, 0.5)
+				border none
+				border-top-right-radius 5px
+				border-bottom-left-radius 5px
+				border-bottom-right-radius 5px
+				margin -3px -60px 0 0
+				padding 3px 0 0 0
+				position absolute
+				top 100%
+				left 0
+				z-index 2
+				overflow hidden
+				width 160px
+				
+				a
+					text-align left
+			
+		.menu-item a:hover
+			background #464847
+			// background-color lighten(primary-color, 25%)
+
+#nav-btn
+	background #6f6f6f
+	color #bbb
+	font-size 2em
+	line-height 0.7
+	text-decoration none
+	text-align center
+	text-shadow none
+	float left
+	width .8em
+	padding 8px 7px
+	position absolute
+	border-radius 2.5px
+	left 0.25em
+	top 8px
+
++between('xs', 'l')
+	.access
+		li
+			&:last-child
+				display none
+
+.list-toggle-nav
+	margin-right 0.5em
+	
+// .has-pages
+// 	#site-title
+// 		margin-left -0.75em

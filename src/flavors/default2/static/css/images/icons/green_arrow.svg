@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="52px" height="78px" viewBox="0 0 52 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Green Arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Green-Arrow" fill="#4EAF46">
+            <polyline id="Fill-2" points="18 49 25.4137559 77.5198276 25.7295353 77.5198276 33.1432912 49.0046462 18 49"></polyline>
+            <path d="M51.1941468,26.6760668 C51.1941468,11.9430166 39.7339572,0 25.5974449,0 C11.4601895,0 0,11.9430166 0,26.6760668 C0,41.4098914 11.4601895,53.352908 25.5974449,53.352908 C39.7339572,53.352908 51.1941468,41.4098914 51.1941468,26.6760668 M20.5925281,19.5070045 C20.5925281,23.3099063 17.6353474,26.3926496 13.9871673,26.3926496 C10.3382441,26.3926496 7.38106347,23.3099063 7.38106347,19.5070045 C7.38106347,15.7048771 10.3382441,12.6229082 13.9871673,12.6229082 C17.6353474,12.6229082 20.5925281,15.7048771 20.5925281,19.5070045" id="Fill-4"></path>
+        </g>
+    </g>
+</svg>

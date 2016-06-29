@@ -1,0 +1,36 @@
+$sprite-base-font-size = 10px
+
+.sprite{{mixin}}{{^common}}(){{/common}} {
+    font-size: $sprite-base-font-size;
+    vertical-align: middle;
+    line-height: 1;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+}
+
+.sprite{{mixin}}{{^common}}(){{/common}} {
+    background-repeat: no-repeat;
+    background-image: url(img/iconsprites/sprite.svg);
+    background-size: {{spriteWidth}}em*(1/$sprite-base-font-size) {{spriteHeight}}em*(1/$sprite-base-font-size);
+}
+
+.no-svg .sprite{{mixin}}{{^common}}(){{/common}} {
+    background-image: url(img/iconsprites/sprite.png);
+}
+
+{{#shapes}}{{#selector.shape}}{{expression}}{{^last}},
+{{/last}}{{/selector.shape}} {
+    background-position: {{position.absolute.x}}em*(1/$sprite-base-font-size) {{position.absolute.y}}em*(1/$sprite-base-font-size);{{^common}}
+    .{{mixin}}();{{/common}}{{#dimensions.inline}}
+    width: {{width.outer}}em*(1/$sprite-base-font-size);
+    height: {{height.outer}}em*(1/$sprite-base-font-size);{{/dimensions.inline}}
+}{{#dimensions.extra}}
+
+{{#selector.dimensions}}{{expression}}{{^last}},
+{{/last}}{{/selector.dimensions}} {
+    width: {{width.outer}}em*(1/$sprite-base-font-size);
+    height: {{height.outer}}em*(1/$sprite-base-font-size);
+}{{/dimensions.extra}}
+
+{{/shapes}}
