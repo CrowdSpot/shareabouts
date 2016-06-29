@@ -176,7 +176,6 @@ a:visited {
 #content {
   background: #cdcdcd;
   box-shadow: none;
-  max-width: 500px;
 }
 #content article {
   box-shadow: 0 0 20px rgba(34,34,34,0.5);
