@@ -12,36 +12,31 @@ textarea {
   padding: 0.65em;
   color: #fff;
   background-color: #f70000;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
   font-weight: 600;
   border: 0;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: box-shadow 0.5s ease, background-color 0.5s ease;
+  transition: box-shadow 0.5s ease, background-color 0.5s ease;
 }
 .btn:hover,
 .btn:visited:hover,
 .btn:link:hover {
   background-color: #ff3a3a;
-  box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3) inset;
 }
 .btn-primary,
 .btn-primary:visited,
 .btn-primary:link {
   background-color: #f70000;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
   color: #fff;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-.btn-primary.submit-btn,
-.btn-primary:visited.submit-btn,
-.btn-primary:link.submit-btn {
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  -webkit-transition: box-shadow 0.5s ease, background-color 0.5s ease;
+  transition: box-shadow 0.5s ease, background-color 0.5s ease;
 }
 .btn-secondary,
 .btn-secondary:visited,
 .btn-secondary:link {
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
   background-color: #f70000;
   color: #fff;
 }
@@ -62,8 +57,8 @@ a:visited {
 }
 .user-support:hover label {
   color: #222;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: color 0.5s ease, background-color 0.5s ease;
+  transition: color 0.5s ease, background-color 0.5s ease;
   background-color: transparent;
 }
 .user-support label {
