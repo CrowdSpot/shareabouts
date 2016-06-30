@@ -1,0 +1,433 @@
+# Settings for the app
+app:
+  # HTML Title
+  title: Bendigo Freight Study
+  # Header name
+  name: Bendigo Freight Study
+  # Meta description that will show up in Google search results
+  meta_description: _(Check out this spot along Moonee Ponds Creek. Add your own Spot and contribute to the Moonee Ponds Creek Master Plan.)
+
+  # When the map loads, existing places will be loaded in chunks. By default,
+  # the size of the chunks will be a reasonable default dictated by the API
+  # server. If you would like to override the chunk size, use this setting:
+  # places_page_size: 100
+
+  # Optional. List view is supported by default. Set to false to disable.
+  # list_enabled: false
+
+
+# Settings for map and layer configs
+map:
+  geolocation_enabled: false
+  geolocation_onload: false
+
+  geocoding_enabled: false
+  geocode_field_label: _(Enter the street name and suburb...)
+  geocode_bounding_box: [-37.147182, 143.819274, -36.275278, 144.98657200000002]  # top, left, bottom, right
+
+  options:
+    center:
+      lat: -36.76323
+      lng: 144.30267
+    zoom: 13
+    minZoom: 12
+    maxZoom: 18
+  layers:
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.0b5n1olp/{z}/{x}/{y}.png
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+
+# The keys show up in the dropdown list when you are adding a new place
+# The values map the place type to map icons (defined below).
+place_types:
+  legend:
+    index: 0
+    label: _(SPOT TYPES)
+  inbound:
+    index: 1
+    label: _(Inbound Spot)
+    rules:
+      - condition: '"{{location_type}}" === "inbound" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#45BA00'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "inbound" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/master-pin-green-leaf.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "inbound" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  outbound:
+    index: 2
+    label: _(Outbound Spot)
+    rules:
+      - condition: '"{{location_type}}" === "outbound" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#EC611A'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "outbound" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/master-pin-green-wheel.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "outbound" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+  issue:
+    index: 3
+    label: _(Freight Issue Spot)
+    rules:
+      - condition: '"{{location_type}}" === "issue" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#FF1609'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "issue" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/master-pin-red-history.png
+          shadowUrl: /static/css/images/master-pin-shadow.png
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "issue" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-f95016.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+
+activity:
+  # Optional. Activity is supported by default. Set to false to disable.
+  enabled: true
+  # How often to refresh the activity list, in milliseconds.
+  interval: 30000
+
+place:
+  adding_supported: true
+  add_button_label: _(Add a Spot)
+  # Labels for the buttons that toggle the map and list views
+  show_list_button_label: _(List All Spots)
+  show_map_button_label: _(Show the Map)
+  action_text: _(added)
+  title: _(Tell us about your freight operations in Bendigo)
+  action_text: _(added)
+  anonymous_name: _(Someone)
+  submit_button_label: _(Submit)
+
+  location_item_name: location
+
+  items:
+    - prompt: _(What is the name of your Company?)
+      type: text
+      name: submitter_name
+      sticky: true
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Type name)
+        - key: size
+          value: 30
+    - prompt: _(What is the name of this spot?<br><i>This text will be visible to the public on the map</i>)
+      type: text
+      name: name
+      attrs:
+        - key: placeholder
+          value: _(Street, Park, Landmark, etc.)
+        - key: size
+          value: 30
+        - key: required
+    - prompt: _(What is the type of business is located here?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Farm)
+          value: farm
+        - label: _(Livestock exchange)
+          value: Livestock exchange
+        - label: _(Quarry or Mine)
+          value: Quarry or Mine
+        - label: _(Wholesale or Retail outlet)
+          value: Wholesale or Retail outlet
+        - label: _(Warehouse)
+          value: warehouse
+        - label: _(Processing or manufacturing)
+          value: processingormanufacturing
+        - label: _(Education)
+          value: education
+        - label: _(Health)
+          value: health
+        - label: _(Office)
+          value: office
+        - label: _(Gallery or Museum)
+          value: gallery or museum
+        - label: _(Hospitality)
+          value: hospitality
+        - label: _(Car Yard)
+          value: caryard
+      name: business_type
+      attrs:
+        - key: required
+    - prompt: _(Please choose the type of Spot at this location?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Inbound Spot)
+          value: inbound
+        - label: _(Outbound Spot)
+          value: outbound
+        - label: _(Freight Issue Spot)
+          value: issue
+      name: location_type
+      attrs:
+        - key: required
+    - prompt: _(Do you operate your own fleet of vehicles in Greater Bendigo?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(No)
+          value: no
+        - label: _(Yes)
+          value: yes
+      name: own_fleet
+      sticky: true
+      attrs:
+        - key: required
+    - prompt: _(Do you also contract other freight operators to undertake your inbound freight?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(No)
+          value: no
+        - label: _(Yes)
+          value: yes
+      name: other_freight_operators
+      attrs:
+        - key: required
+    - prompt: _(What proportion of your business’s inbound goods does your own fleet carry out? <br><strong>Please estimate percentage (%) of average monthly inbound freight task.</strong></br>)
+      type: text
+      attrs:
+        - key: placeholder
+          value: _(Type here)
+        - key: size
+          value: 30
+      name: proportion
+      optional: true
+    - prompt: _(What is the name/s of the other freight operators in use?)
+      type: textarea
+      name: other_freight_operator
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Please list the name and number of freight operators you use)
+    - prompt: _(Where does the inbound freight originate?)
+      type: multi-checkbox
+      checkboxes:
+        - label: _(City of Greater Bendigo)
+          value: cogb
+        - label: _(Regional Victoria)
+          value: regional_vic
+        - label: _(Interstate regional locations)
+          value: interstate_regional
+        - label: _(Melbourne)
+          value: melbourne
+        - label: _(Adelaide)
+          value: adelaide
+        - label: _(Sydney)
+          value: sydney
+        - label: _(Perth)
+          value: perth
+        - label: _(Brisbane)
+          value: brisbane
+        - label: _(Canberra)
+          value: canberra
+        - label: _(Darwin)
+          value: darwin
+        - label: _(Hobart)
+          value: hobart
+        - label: _(Overseas)
+          value: overseas
+      name: inbound_origin
+      optional: true
+    - prompt: _(Please select the type of facility where the goods originate?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Construction site)
+          value: Construction site
+        - label: _(Defence facility)
+          value: Defence facility
+        - label: _(Farm)
+          value: Farm
+        - label: _(Home deliveries)
+          value: Home deliveries
+        - label: _(Livestock exchange)
+          value: Livestock exchange
+        - label: _(Port)
+          value: Port
+        - label: _(Quarry/ Mine)
+          value: Quarry/ Mine
+        - label: _(Refrigerated storage facility )
+          value: Refrigerated storage facility
+        - label: _(Transport depot)
+          value: Transport depot
+        - label: _(Warehouse/ Distribution Centre)
+          value: Warehouse/ Distribution Centre
+        - label: _(Waste treatment site/facility)
+          value: Waste treatment site/facility
+        - label: _(Wholesale/retail outlet)
+          value: Wholesale/retail outlet
+        - label: _(Value-adding facility)
+          value: Value-adding facility
+        - label: _(Other)
+          value: Other
+      name: origin_facility_type
+      attrs:
+        - key: required
+    - prompt: _(<i>Please specify Other</i>)
+      type: text
+      attrs:
+        - key: placeholder
+          value: _(Type here)
+        - key: size
+          value: 30
+      name: origin_facility_type_other
+      optional: true
+    - prompt: _(Would you like to stay informed about this project?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Yes - please send updates)
+          value: yesplease
+        - label: _(No thanks - no emails please)
+          value: nothanks
+      name: location_updates
+      optional: true
+      sticky: true
+    - prompt: _(Please type your email below)
+      type: text
+      sticky: true
+      name: private-submitter_email
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Email address)
+        - key: size
+          value: 30
+
+survey:
+  submission_type: comments
+
+  # Response config
+  show_responses: true
+  response_name: _(comment)
+  response_plural_name: _(comments)
+  action_text: _(commented on)
+  anonymous_name: _(Someone)
+
+  # Survey form config
+  title: _(Leave a Comment)
+  form_link_text: _(Leave a Comment)
+  submit_btn_text: _(Comment)
+  items:
+    - prompt: _(Comment)
+      label: _(Comment)
+      type: textarea
+      name: comment
+      attrs:
+        - key: required
+    - prompt: _(Your Name)
+      type: text
+      name: submitter_name
+
+support:
+  submission_type: support
+  submit_btn_text: _(Support)
+  response_name: _(support)
+  response_plural_name: _(supports)
+  action_text: supported
+  anonymous_name: _(Someone)
+
+pages:
+  - title: _(Welcome)
+    slug: welcome
+    name: overview
+    start_page: true
+
+  - title: _(Go to Suburb)
+    slug: suburb
+    url: /static/pages/suburb.html
+
+  - title: _(Filter)
+    pages:
+      - title: _(All)
+        url: /filter/all
+        external: true
+      - title: _(Environment Spots)
+        url: /filter/environment
+        external: true
+      - title: _(Transport Spots)
+        url: /filter/transport
+        external: true
+      - title: _(History Spots)
+        url: /filter/history
+        external: true
+      - title: _(Attraction Spots)
+        url: /filter/attraction
+        external: true
+      - title: _(Idea Spots)
+        url: /filter/idea
+        external: true
+
+
+notifications:
+  on_new_place: true
+  submitter_email_field: private-submitter_email
