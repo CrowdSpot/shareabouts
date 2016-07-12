@@ -7,8 +7,8 @@
 
 COLOR PALETTE...
 
-Orange #EC611A
-Light grey #C0C0A2
+browny #B0291B
+yellow #FCC94E
 
 
 CrowdSpot Red #FF1609
@@ -31,7 +31,7 @@ CrowdSpot Grey (text) #585A59
 .btn-primary,
 .btn-primary:visited,
 .btn-primary:link {
-  background-color: #0e6f6d;
+  background-color: #45BA00;
   color: #fff;
 }
 .btn-primary:hover {
@@ -64,7 +64,7 @@ a:hover, a:active {
 -------------------------------------------------------------- */
 
 #site-header {
-  border-top: #0E716A 3px solid;
+  border-top: #B0291B 3px solid;
 }
 
 #site-header {
@@ -89,7 +89,7 @@ a:hover, a:active {
   }
 
 #site-title {
-  background: url('images/XXXX') no-repeat
+  background: url('images/bendigo_freight_header.png') no-repeat
 center;
   background-size: contain;
   width: 340px;
@@ -193,7 +193,7 @@ a.close-btn {
 .list-toggle-btn,
   .list-toggle-btn:visited,
   .list-toggle-btn:link {
-    background-color: #0E6D6C;
+    background-color: #45BA00;
  }
 
 .list-toggle-btn:hover {
@@ -250,12 +250,16 @@ a.close-btn {
 /* =Existing Spots
 -------------------------------------------------------------- */
 
-
-#place-public_responses {
+small {
+  text-transform: none;
   display: none;
 }
 
-#place-instructions {
+#place-strategic {
+  display: none;
+}
+
+#place-personal {
   display: none;
 }
 
@@ -279,272 +283,137 @@ a.close-btn {
 /* =Hiding questions in new forms
 -------------------------------------------------------------- */
 
-.place-form #fields-location_like_environment {
-	display: none;
-}
-
-.place-form.environment #fields-location_like_environment {
-  display: block;
-}
-
-.place-form label[for=place-other_location_like_environment],
-  .place-form [name=other_location_like_environment]{
+.place-form label[for=place-goods_type_waste_other],
+  .place-form [name=goods_type_waste_other]{
   display: none;
 }
 
-.place-form label[for=place-descriptions_environment],
-  .place-form [name=descriptions_environment]{
+.place-form.location_goods_type-waste label[for=place-goods_type_waste_other],
+  .place-form.location_goods_type-waste [name=goods_type_waste_other] {
+  display: block;
+}
+
+.place-form label[for=place-goods_type_other],
+  .place-form [name=goods_type_other]{
   display: none;
 }
 
-.place-form label[for=place-improve_environment],
-  .place-form [name=improve_environment]{
+.place-form.location_goods_type-other label[for=place-goods_type_other],
+  .place-form.location_goods_type-other [name=goods_type_other] {
+  display: block;
+}
+
+
+
+.place-form label[for=place-proportion_ownfleet],
+  .place-form [name=proportion_ownfleet]{
   display: none;
 }
 
-.place-form label[for=place-improve_environment],
-  .place-form [name=improve_environment]{
+.place-form.location_freight_operator-both_ownandother label[for=place-proportion_ownfleet],
+  .place-form.location_freight_operator-both_ownandother [name=proportion_ownfleet] {
+  display: block;
+}
+
+
+
+.place-form label[for=place-other_freight_operators],
+  .place-form [name=other_freight_operators]{
   display: none;
 }
 
-
-
-
-.place-form.environment label[for=place-location_like_environment],
-  .place-form.environment [name=location_like_environment] {
+.place-form.location_freight_operator-useotheroperators label[for=place-other_freight_operators],
+  .place-form.location_freight_operator-useotheroperators [name=other_freight_operators] {
   display: block;
 }
 
-.place-form.environment label[for=place-other_location_like_environment],
-  .place-form.environment [name=other_location_like_environment] {
+.place-form.location_freight_operator-both_ownandother label[for=place-other_freight_operators],
+  .place-form.location_freight_operator-both_ownandother [name=other_freight_operators] {
   display: block;
 }
 
-.place-form.environment label[for=place-descriptions_environment],
-  .place-form.environment [name=descriptions_environment] {
-  display: block;
-}
-
-.place-form.environment label[for=place-improve_environment],
-  .place-form.environment [name=improve_environment] {
-  display: block;
-}
-
-
-
-
-.place-form label[for=place-descriptions_transport],
-  .place-form [name=descriptions_transport]{
+.place-form label[for=place-origin_facility_type_other],
+  .place-form [name=origin_facility_type_other]{
   display: none;
 }
 
-.place-form label[for=place-location_safe_transport],
-  .place-form [name=location_safe_transport]{
+.place-form.location_origin_facility_type-other label[for=place-origin_facility_type_other],
+  .place-form.location_origin_facility_type-other [name=origin_facility_type_other] {
+  display: block;
+}
+
+
+
+
+
+.place-form label[for=place-route_description],
+  .place-form [name=route_description]{
   display: none;
 }
 
-.place-form #fields-access_transport {
+.place-form label[for=place-route_reason],
+  .place-form [name=route_reason]{
   display: none;
 }
 
-.place-form.transport #fields-access_transport {
-  display: block;
-}
-
-.place-form #fields-other_access_transport {
+.place-form label[for=place-underutilisation],
+  .place-form [name=underutilisation]{
   display: none;
 }
 
-.place-form.transport #fields-other_access_transport {
+.place-form.location_freight_operator-both_ownandother label[for=place-route_description],
+  .place-form.location_freight_operator-both_ownandother [name=route_description] {
   display: block;
 }
 
-.place-form label[for=place-frequency_transport],
-  .place-form [name=frequency_transport]{
+.place-form.location_freight_operator-ownfleet label[for=place-route_description],
+  .place-form.location_freight_operator-ownfleet [name=route_description] {
+  display: block;
+}
+
+.place-form.location_freight_operator-both_ownandother label[for=place-route_reason],
+  .place-form.location_freight_operator-both_ownandother [name=route_reason] {
+  display: block;
+}
+
+.place-form.location_freight_operator-ownfleet label[for=place-route_reason],
+  .place-form.location_freight_operator-ownfleet [name=route_reason] {
+  display: block;
+}
+
+.place-form.location_freight_operator-both_ownandother label[for=place-underutilisation],
+  .place-form.location_freight_operator-both_ownandother [name=underutilisation] {
+  display: block;
+}
+
+.place-form.location_freight_operator-ownfleet label[for=place-underutilisation],
+  .place-form.location_freight_operator-ownfleet [name=underutilisation] {
+  display: block;
+}
+
+
+.place-form label[for=place-shift_to_modes],
+  .place-form [name=shift_to_modes]{
   display: none;
 }
 
-.place-form #fields-purpose_transport {
+.place-form label[for=place-proportion_shift_to_modes],
+  .place-form [name=proportion_shift_to_modes]{
   display: none;
 }
 
-.place-form #fields-other_purpose_transport {
-  display: none;
-}
-
-.place-form #fields-visitwith_transport {
-  display: none;
-}
-
-.place-form #fields-other_visitwith_transport {
-  display: none;
-}
-
-.place-form.transport label[for=place-descriptions_transport],
-  .place-form.transport [name=descriptions_transport] {
+.place-form.location_mode_shift-yess label[for=place-shift_to_modes],
+  .place-form.location_mode_shift-yess [name=shift_to_modes] {
   display: block;
 }
 
-.place-form.transport label[for=place-location_safe_transport],
-  .place-form.transport [name=location_safe_transport] {
-  display: block;
-}
-
-.place-form.transport label[for=place-frequency_transport],
-  .place-form.transport [name=frequency_transport] {
-  display: block;
-}
-
-.place-form.transport #fields-purpose_transport {
-  display: block;
-}
-
-.place-form.transport #fields-other_purpose_transport {
-  display: block;
-}
-
-.place-form.transport #fields-visitwith_transport {
-  display: block;
-}
-
-.place-form.transport #fields-other_visitwith_transport {
+.place-form.location_mode_shift-yess label[for=place-proportion_shift_to_modes],
+  .place-form.location_mode_shift-yess [name=proportion_shift_to_modes] {
   display: block;
 }
 
 
 
-.place-form label[for=place-descriptions_history],
-  .place-form [name=descriptions_history]{
-  display: none;
-}
-
-.place-form.history label[for=place-descriptions_history],
-  .place-form.history [name=descriptions_history] {
-  display: block;
-}
-
-
-
-
-.place-form label[for=place-descriptions_attraction],
-  .place-form [name=descriptions_attraction]{
-  display: none;
-}
-
-.place-form label[for=place-ideas_attraction],
-  .place-form [name=ideas_attraction]{
-  display: none;
-}
-
-.place-form #fields-activities_attraction {
-  display: none;
-}
-
-.place-form #fields-other_activities_attraction {
-  display: none;
-}
-
-.place-form.attraction #fields-activities_attraction {
-  display: block;
-}
-
-.place-form.attraction #fields-other_activities_attraction {
-  display: block;
-}
-
-.place-form label[for=place-frequency_attraction],
-  .place-form [name=frequency_attraction]{
-  display: none;
-}
-
-.place-form #fields-visitwith_attraction {
-  display: none;
-}
-
-.place-form.attraction #fields-visitwith_attraction {
-  display: block;
-}
-
-.place-form label[for=place-other_visitwith_attraction],
-  .place-form [name=other_visitwith_attraction]{
-  display: none;
-}
-
-.place-form.attraction label[for=place-descriptions_attraction],
-  .place-form.attraction [name=descriptions_attraction] {
-  display: block;
-}
-
-.place-form.attraction label[for=place-ideas_attraction],
-  .place-form.attraction [name=ideas_attraction] {
-  display: block;
-}
-
-.place-form.attraction label[for=place-frequency_attraction],
-  .place-form.attraction [name=frequency_attraction] {
-  display: block;
-}
-
-.place-form.attraction label[for=place-other_visitwith_attraction],
-  .place-form.attraction [name=other_visitwith_attraction] {
-  display: block;
-}
-
-
-
-
-
-
-
-
-
-.place-form label[for=place-descriptions_idea],
-  .place-form [name=descriptions_idea]{
-  display: none;
-}
-
-.place-form #fields-change_idea {
-  display: none;
-}
-
-.place-form #fields-other_change_idea {
-  display: none;
-}
-
-.place-form.idea label[for=place-descriptions_idea],
-  .place-form.idea [name=descriptions_idea] {
-  display: block;
-}
-
-.place-form.idea #fields-change_idea {
-  display: block;
-}
-
-.place-form.idea #fields-other_change_idea {
-  display: block;
-}
-
-.place-form label[for=place-future_vision_idea],
-  .place-form [name=future_vision_idea]{
-  display: none;
-}
-
-.place-form.idea label[for=place-future_vision_idea],
-  .place-form.idea [name=future_vision_idea] {
-  display: block;
-}
-
-
-
-.place-form label[for=place-safety_description],
-  .place-form [name=safety_description]{
-  display: none;
-}
-
-.place-form.location_safe_transport-unsafe label[for=place-safety_description],
-  .place-form.location_safe_transport-unsafe [name=safety_description] {
-  display: block;
-}
 
 
 
