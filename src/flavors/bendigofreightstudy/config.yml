@@ -60,7 +60,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/master-pin-green-leaf.png
+          iconUrl: /static/css/images/master-pin-green.png
           shadowUrl: /static/css/images/master-pin-shadow.png
           iconSize: [85, 41]
           iconAnchor: [42, 42]
@@ -92,7 +92,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/master-pin-green-wheel.png
+          iconUrl: /static/css/images/master-pin-red.png
           shadowUrl: /static/css/images/master-pin-shadow.png
           iconSize: [85, 41]
           iconAnchor: [42, 42]
@@ -128,16 +128,16 @@ place:
   location_item_name: location
 
   items:
-    - prompt: _(What is the name of business and facility at this spot?)
+    - prompt: _(What is the name of the business and facility at this spot?)
       type: text
       name: name
       attrs:
         - key: placeholder
-          value: _(Street, Park, Landmark, etc.)
+          value: _(David Storage - Junortoun Warehouse)
         - key: size
           value: 30
         - key: required
-    - prompt: _(Please choose the type of Spot at this location?)
+    - prompt: _(Is this location an Inbound Spot or Outbound Spot?)
       type: select
       options:
         - label: _(Choose One)
@@ -418,10 +418,10 @@ place:
         - label: _(Choose One)
           value: ''
         - label: _(No)
-          value: no
+          value: nope
         - label: _(Yes)
-          value: yes
-      name: crtical_times
+          value: yess
+      name: location_crtical_times
       attrs:
         - key: required
     - prompt: _(Please comment on critical times during which this business must deliver to this spot)
@@ -520,16 +520,14 @@ place:
       name: location_mode_shift
       optional: true
       sticky: true
-    - prompt: _(Please type which modes below:)
-      type: text
-      sticky: true
-      name: shift_to_modes
-      optional: true
-    - prompt: _(What percentage (%) of commodities this business carries could potentially be moved into and out of Greater Bendigo by the mode you listed above?)
+    - prompt: _(Please list the alternative transport modes and the percentage (%) of commodities this business carries that could potentially be moved into and out of Greater Bendigo?)
       type: textarea
       sticky: true
       name: proportion_shift_to_modes
       optional: true
+      attrs:
+        - key: placeholder
+          value: _(Truck - 20%)
     - prompt: _(<h4><b>Personal Questions</b></h4>)
       name: personal
       optional: true
@@ -626,6 +624,10 @@ pages:
     slug: welcome
     name: overview
     start_page: true
+
+  - title: _(FAQs)
+    slug: why
+    name: why
 
   - title: _(Filter)
     pages:

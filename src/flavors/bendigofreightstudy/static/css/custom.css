@@ -275,9 +275,10 @@ small {
   display: none;
 }
 
-.place-value-location_updates {
+.place-value-suburb {
   display: none;
 }
+
 
 
 /* =Hiding questions in new forms
@@ -344,6 +345,19 @@ small {
 
 
 
+.place-form label[for=place-crtical_times_description],
+  .place-form [name=crtical_times_description]{
+  display: none;
+}
+
+.place-form.location_crtical_times-yess label[for=place-crtical_times_description],
+  .place-form.location_crtical_times-yess [name=crtical_times_description] {
+  display: block;
+}
+
+
+
+
 
 
 .place-form label[for=place-route_description],
@@ -392,20 +406,12 @@ small {
 }
 
 
-.place-form label[for=place-shift_to_modes],
-  .place-form [name=shift_to_modes]{
-  display: none;
-}
 
 .place-form label[for=place-proportion_shift_to_modes],
   .place-form [name=proportion_shift_to_modes]{
   display: none;
 }
 
-.place-form.location_mode_shift-yess label[for=place-shift_to_modes],
-  .place-form.location_mode_shift-yess [name=shift_to_modes] {
-  display: block;
-}
 
 .place-form.location_mode_shift-yess label[for=place-proportion_shift_to_modes],
   .place-form.location_mode_shift-yess [name=proportion_shift_to_modes] {
