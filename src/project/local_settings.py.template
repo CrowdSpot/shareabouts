@@ -17,8 +17,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 SHAREABOUTS = {
   'FLAVOR': 'default',
-  'DATASET_ROOT': 'http://data.shareabouts.org/api/v2/demo-user/datasets/demo-data/',
-  'DATASET_KEY': 'NTNhODE3Y2IzODlmZGZjMWU4NmU3NDhj',
+  'DATASET_ROOT': 'http://127.0.0.1:8001/api/v2/crowdspot/datasets/default-instance/',
+  'DATASET_KEY': 'MGJlYzRhMTIxNGFkNDYyMmU1ZDRmNmNk',
 }
 
 # For geocoding...
