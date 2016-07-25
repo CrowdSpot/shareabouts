@@ -38,7 +38,16 @@ map:
     # ==================
     - url: http://{s}.tiles.mapbox.com/v3/aisey.01baka7i/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.01baka7i/{z}/{x}/{y}.png
+      layer_control:
+        type: baselayer
+        name: 'Streets'
+      display: true
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.0oh26a8c/{z}/{x}/{y}.png
+      layer_control:
+        type: baselayer
+        name: 'Satellite'
+      display: false
     # Mapbox GL Layers
     # ================
     # - type: mapbox
