@@ -163,7 +163,7 @@ place_types:
     rules:
       - condition: '"{{location_type}}" === "walk" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
-
+# hi!
         style:
           color: '#FF1609'
           radius: 5
