@@ -42,11 +42,11 @@ place_types:
   legend:
     index: 0
     label: _(SPOT TYPES)
-  inbound:
+  business:
     index: 1
-    label: _(Inbound Spot)
+    label: _(Business Operation Spot)
     rules:
-      - condition: '"{{location_type}}" === "inbound" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "business" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -56,16 +56,16 @@ place_types:
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "inbound" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "business" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/master-pin-green.png
+          iconUrl: /static/css/images/master-pin-green-warehouse.png
           shadowUrl: /static/css/images/master-pin-shadow.png
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
-      - condition: '"{{location_type}}" === "inbound" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "business" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -74,11 +74,11 @@ place_types:
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
-  outbound:
+  issue:
     index: 2
-    label: _(Outbound Spot)
+    label: _(Freight Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "outbound" && {{map.zoom}} < 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "issue" && {{map.zoom}} < 12 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -88,16 +88,16 @@ place_types:
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "outbound" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "issue" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/master-pin-red.png
+          iconUrl: /static/css/images/master-pin-red-flag.png
           shadowUrl: /static/css/images/master-pin-shadow.png
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
-      - condition: '"{{location_type}}" === "outbound" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "issue" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -128,7 +128,8 @@ place:
   location_item_name: location
 
   items:
-    - prompt: _(What is the name of the business and facility at this spot?)
+
+    - prompt: _(What is the name of Business Operation Spot or Freight Issue Spot?)
       type: text
       name: name
       attrs:
@@ -137,19 +138,43 @@ place:
         - key: size
           value: 30
         - key: required
-    - prompt: _(Is this location an Inbound Spot or Outbound Spot?)
+    - prompt: _(Is this a Business Operation Spot or Freight Issue Spot?)
       type: select
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Inbound Spot)
-          value: inbound
-        - label: _(Outbound Spot)
-          value: outbound
+        - label: _(Business Operation Spot)
+          value: business
+        - label: _(Freight Issue Spot)
+          value: issue
       name: location_type
       attrs:
         - key: required
-    - prompt: _(What is the type of business is located here?)
+    - prompt: _(What is the main type of business operation is located here?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Congestion)
+          value: congestion
+        - label: _(Access)
+          value: Access
+        - label: _(Road surface)
+          value: roadsurface
+        - label: _(Low clearance)
+          value: lowclearance
+        - label: _(Other)
+          value: other
+      name: freight_issue
+      optional: true
+    - prompt: _(Please tell us more about the freight issue at this spot.)
+      type: textarea
+      name: issue_description
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Please describe the issue here)
+    - prompt: _(What is the main type of business operation is located here?)
       type: select
       options:
         - label: _(Choose One)
@@ -166,9 +191,9 @@ place:
           value: warehouse
         - label: _(Processing or manufacturing)
           value: processingormanufacturing
-        - label: _(Education)
+        - label: _(Education services)
           value: education
-        - label: _(Health)
+        - label: _(Health services)
           value: health
         - label: _(Office)
           value: office
@@ -178,10 +203,25 @@ place:
           value: hospitality
         - label: _(Car Yard)
           value: caryard
+        - label: _(Aggregating/disaggregating freight)
+          value: aggregatingordis
       name: business_type
-      attrs:
-        - key: required
-    - prompt: _(Generally, what type of goods is being received at this spot?)
+      optional: true
+    - prompt: _(Do you... <br>- Only operate your own fleet of freight vehicles<br>- Only use a frieght operator<br>- Both our own vehicles and a freight operator)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Only use our own fleet)
+          value: ownfleet
+        - label: _(Only use other freight operators)
+          value: useotheroperators
+        - label: _(Both our own fleet and other freight operators)
+          value: both_ownandother
+      name: location_freight_operator
+      sticky: true
+      optional: true
+    - prompt: _(Please select a 'type of goods' is being received at this spot? <br><i><strong>Please add a new spot at this location for each 'type of goods' you receive at this spot</strong></i></br>)
       type: select
       options:
         - label: _(Choose One)
@@ -209,8 +249,7 @@ place:
         - label: _(Other)
           value: Other
       name: location_goods_type
-      attrs:
-        - key: required
+      optional: true
     - prompt: _(Please specify type of <i>Waste Material</i>)
       type: text
       attrs:
@@ -238,21 +277,6 @@ place:
           value: 30
       name: volume
       optional: true
-    - prompt: _(Do you only operate your own fleet of freight vehicles, use a frieght operator, or both?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Yes, we only use our own fleet)
-          value: ownfleet
-        - label: _(We always use other freight operators)
-          value: useotheroperators
-        - label: _(Both)
-          value: both_ownandother
-      name: location_freight_operator
-      sticky: true
-      attrs:
-        - key: required
     - prompt: _(What proportion of your business’s inbound goods does your own fleet carry out? <br><strong>Please estimate percentage (%) of average monthly inbound freight task.</strong></br>)
       type: text
       attrs:
@@ -266,10 +290,11 @@ place:
       type: textarea
       name: other_freight_operators
       optional: true
+      sticky: true
       attrs:
         - key: placeholder
           value: _(Please list the name and number of freight operators you use)
-    - prompt: _(What city or region does the freight originate?)
+    - prompt: _(In general, what is the main city or region where this freight originates?)
       type: select
       options:
         - label: _(Choose One)
@@ -300,11 +325,9 @@ place:
           value: overseas
       name: inbound_origin
       optional: true
-    - prompt: _(Please select the type of facility where the goods originate?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
+    - prompt: _(Please select the types of facilities where these goods originate?)
+      type: multi-checkbox
+      checkboxes:
         - label: _(Construction site)
           value: Construction site
         - label: _(Defence facility)
@@ -333,19 +356,9 @@ place:
           value: Value-adding facility
         - label: _(Other)
           value: Other
-      name: location_origin_facility_type
-      attrs:
-        - key: required
-    - prompt: _(Please specify <i>Other</i>)
-      type: text
-      attrs:
-        - key: placeholder
-          value: _(Type here)
-        - key: size
-          value: 30
-      name: origin_facility_type_other
+      name: origin_facility_type
       optional: true
-    - prompt: _(What are the main route/s used to carry freight with your own fleet to this spot?)
+    - prompt: _(What is the main route/s used to carry this freight with your own fleet to this spot?)
       type: textarea
       name: route_description
       optional: true
@@ -369,6 +382,13 @@ place:
           value: Designated route
       name: route_reason
       optional: true
+    - prompt: _(If you have a potential future freight route idea, please describe this below..)
+      type: text
+      name: route_idea
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Western Highway)
     - prompt: _(What vehicle types are used to carry freight to this Spot?)
       type: select
       options:
@@ -412,7 +432,7 @@ place:
           value: 30
       name: underutilisation
       optional: true
-    - prompt: _(Are there critical times the business must receive inbound freight?)
+    - prompt: _(Are there critical times the business must receive this freight?)
       type: select
       options:
         - label: _(Choose One)
@@ -422,8 +442,7 @@ place:
         - label: _(Yes)
           value: yess
       name: location_crtical_times
-      attrs:
-        - key: required
+      optional: true
     - prompt: _(Please comment on critical times during which this business must deliver to this spot)
       type: text
       attrs:
@@ -634,11 +653,11 @@ pages:
       - title: _(All)
         url: /filter/all
         external: true
-      - title: _(Inbound Spots)
-        url: /filter/inbound
+      - title: _(Business Operation Spots)
+        url: /filter/business
         external: true
-      - title: _(Outbound Spots)
-        url: /filter/outbound
+      - title: _(Freight Issue Spots)
+        url: /filter/issue
         external: true
 
 notifications:
