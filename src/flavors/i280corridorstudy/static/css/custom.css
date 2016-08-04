@@ -202,7 +202,7 @@ a.close-btn {
 
 #centerpoint.newpin .marker {
   display: block;
-  width: 25px;
+  width: 27px;
   height: 41px;
   background: transparent url(images/newspot.svg) 0 0 no-repeat scroll;
   position: relative;
@@ -221,9 +221,9 @@ a.close-btn {
 }
 #centerpoint.newpin .shadow {
   background:  transparent url(images/master-pin-shadow.svg) -29px 2px no-repeat scroll;
-  width 100px;
+  width: 100px;
 }
-#centerpoint.newpin .dragging .shadow {
+#centerpoint.newpin.dragging .shadow {
   background: transparent url(images/master-pin-shadow.svg) -20px -2px no-repeat scroll;
 }
 
