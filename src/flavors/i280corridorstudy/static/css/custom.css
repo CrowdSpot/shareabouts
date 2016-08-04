@@ -351,6 +351,9 @@ a.close-btn {
 }
 
 
+
+
+
 .place-form label[for=place-improvement_other],
   .place-form [name=improvement_other]{
   display: none;
@@ -362,19 +365,46 @@ a.close-btn {
 }
 
 
-
-
-
-.place-form label[for=place-other],
-  .place-form [name=other]{
+.place-form label[for=place-congestion_parts_other],
+  .place-form [name=congestion_parts_other]{
   display: none;
 }
 
-.place-form.location_commutemode-other label[for=place-other],
-  .place-form.location_commutemode-other [name=other] {
+.place-form.location_congestion_parts-specifyziporcity label[for=place-congestion_parts_other],
+  .place-form.location_congestion_parts-specifyziporcity [name=congestion_parts_other] {
   display: block;
 }
 
+.place-form.location_congestion_parts-other label[for=place-congestion_parts_other],
+  .place-form.location_congestion_parts-other [name=congestion_parts_other] {
+  display: block;
+}
+
+
+
+
+
+.place-form label[for=place-commutemode_other],
+  .place-form [name=commutemode_other]{
+  display: none;
+}
+
+.place-form.location_commutemode-other label[for=place-commutemode_other],
+  .place-form.location_commutemode-other [name=commutemode_other] {
+  display: block;
+}
+
+
+
+.place-form label[for=place-private-submitter_email],
+  .place-form [name=private-submitter_email]{
+  display: none;
+}
+
+.place-form.location_updates-yesplease label[for=place-private-submitter_email],
+  .place-form.location_updates-yesplease [name=private-submitter_email] {
+  display: block;
+}
 
 
 
