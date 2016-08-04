@@ -257,9 +257,9 @@ a.close-btn {
 
 #centerpoint.newpin .marker {
   display: block;
-  width: 25px;
+  width: 27px;
   height: 41px;
-  background: transparent url(images/markers/marker-f39914.png) 0 0 no-repeat scroll;
+  background: transparent url(images/spot-add.svg) 0 0 no-repeat scroll;
   position: relative;
   top: 3px;
   -webkit-transition: top 0.4s ease;
@@ -267,6 +267,19 @@ a.close-btn {
   -o-transition: top 0.4s ease;
   -ms-transition: top 0.4s ease;
   transition: top 0.4s ease;
+}
+
+#centerpoint.newpin .x {
+  background: transparent url(images/x.svg) 0 0 no-repeat scroll;
+  width 20px;
+  height 15px;
+}
+#centerpoint.newpin .shadow {
+  background:  transparent url(images/master-pin-shadow.svg) -29px 2px no-repeat scroll;
+  width: 100px;
+}
+#centerpoint.newpin.dragging .shadow {
+  background: transparent url(images/master-pin-shadow.svg) -20px -2px no-repeat scroll;
 }
 
 /* =legend
