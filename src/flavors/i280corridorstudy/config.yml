@@ -78,7 +78,7 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/legend.png
-          shadowUrl: /static/css/images/master-pin-shadow.png
+          shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
@@ -110,7 +110,7 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/master-pin-yellow-idea.png
-          shadowUrl: /static/css/images/master-pin-shadow.png
+          shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
@@ -142,7 +142,7 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/master-pin-green-tick.png
-          shadowUrl: /static/css/images/master-pin-shadow.png
+          shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
@@ -173,7 +173,7 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/master-pin-red-walk.png
-          shadowUrl: /static/css/images/master-pin-shadow.png
+          shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
@@ -205,7 +205,7 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/master-pin-red-bike.png
-          shadowUrl: /static/css/images/master-pin-shadow.png
+          shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
@@ -237,7 +237,7 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/master-pin-red-bus.png
-          shadowUrl: /static/css/images/master-pin-shadow.png
+          shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
@@ -269,7 +269,7 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/master-pin-red-car.png
-          shadowUrl: /static/css/images/master-pin-shadow.png
+          shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
@@ -300,7 +300,7 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/collisions.png
-          shadowUrl: /static/css/images/master-pin-shadow.png
+          shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
