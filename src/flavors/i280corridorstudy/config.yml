@@ -26,9 +26,9 @@ map:
 
   options:
     center:
-      lat: 37.343457
-      lng: -122.094476
-    zoom: 14
+      lat: 37.335603
+      lng: -122.036311
+    zoom: 13
     minZoom: 13
     maxZoom: 18
     maxBounds: [ [37.222421, -122.388970], [37.584295, -121.635218] ]
@@ -46,6 +46,11 @@ map:
       layer_control:
         type: baselayer
         name: 'Satellite'
+      display: false
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.i280_bikelanes/{z}/{x}/{y}.png
+      layer_control:
+        type: overlay
+        name: 'Bicycle'
       display: false
     # Mapbox GL Layers
     # ================
@@ -708,10 +713,6 @@ pages:
     slug: welcome
     name: overview
     start_page: true
-
-  - title: _(Interchanges)
-    slug: interchanges
-    url: /static/pages/interchanges.html
 
   - title: _(FAQs)
     slug: why
