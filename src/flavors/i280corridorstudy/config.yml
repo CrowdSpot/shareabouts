@@ -26,9 +26,9 @@ map:
 
   options:
     center:
-      lat: 37.343457
-      lng: -122.094476
-    zoom: 14
+      lat: 37.335603
+      lng: -122.036311
+    zoom: 13
     minZoom: 13
     maxZoom: 18
     maxBounds: [ [37.222421, -122.388970], [37.584295, -121.635218] ]
@@ -46,6 +46,11 @@ map:
       layer_control:
         type: baselayer
         name: 'Satellite'
+      display: false
+    - url: http://{s}.tiles.mapbox.com/v3/aisey.i280_bikelanes/{z}/{x}/{y}.png
+      layer_control:
+        type: overlay
+        name: 'Bicycle'
       display: false
     # Mapbox GL Layers
     # ================
@@ -541,6 +546,33 @@ place:
       attrs:
         - key: placeholder
           value: _(Please type here..)
+    - prompt: _(Generally, what parts of I-280 take the longest time to travel?)
+      type: select
+      sticky: true
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Freeway)
+          value: Freeway
+        - label: _(Ramps)
+          value: Ramps
+        - label: _(Intersections at the freeway ramps)
+          value: Intersections at the freeway ramps
+        - label: _(Transit service)
+          value: Transit service
+        - label: _(Specify Zip Code or City)
+          value: Specifyziporcity
+        - label: _(Other)
+          value: Other
+      name: location_congestion_parts
+      optional: true
+    - prompt: _(Please specify below..)
+      type: text
+      name: congestion_parts_other
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Please type here..)
     - prompt: _(How do you travel along the I-280 corridor?)
       type: select
       sticky: true
@@ -590,7 +622,7 @@ place:
         - key: placeholder
           value: _(Please type here..)
       name: carpool_why
-    - prompt: _(Would you like Express Lanes on I-280?)
+    - prompt: _(Would you like Express Lanes on I-280?<br><i>An express lane is a lane to be used by carpoolers, motorcyclists, and clean-air vehicles (with applicable decals) for free, AND single occupant vehicles that pay a toll with a FasTrak transponder.</i>)
       type: select
       sticky: true
       options:
@@ -602,7 +634,7 @@ place:
           value: nope
       name: express
       optional: true
-    - prompt: _(Please explain why...<br><i>An express lane is a lane to be used by carpoolers, motorcyclists, and clean-air vehicles (with applicable decals) for free, AND single occupant vehicles that pay a toll with a FasTrak transponder.</i>)
+    - prompt: _(Please explain why...)
       type: text
       sticky: true
       optional: true
@@ -681,10 +713,6 @@ pages:
     slug: welcome
     name: overview
     start_page: true
-
-  - title: _(Interchanges)
-    slug: interchanges
-    url: /static/pages/interchanges.html
 
   - title: _(FAQs)
     slug: why

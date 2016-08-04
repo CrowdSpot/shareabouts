@@ -150,7 +150,7 @@ place:
       name: location_type
       attrs:
         - key: required
-    - prompt: _(What is the main type of business operation is located here?)
+    - prompt: _(What is the freight issue at this spot?)
       type: select
       options:
         - label: _(Choose One)
@@ -207,7 +207,7 @@ place:
           value: aggregatingordis
       name: business_type
       optional: true
-    - prompt: _(Do you... <br>- Only operate your own fleet of freight vehicles<br>- Only use a frieght operator<br>- Both our own vehicles and a freight operator)
+    - prompt: _(Please choose one of the following.. <br>1) We only operate your own fleet of freight vehicles<br>2) We only use a frieght operator<br>3) We use both our own vehicles and a freight operator)
       type: select
       options:
         - label: _(Choose One)
@@ -228,7 +228,7 @@ place:
           value: ''
         - label: _(Dangerous goods)
           value: Dangerous goods
-        - label: _(Food(Non-refrigerated products))
+        - label: _(Food (Non-refrigerated products))
           value: Food(Non-refrigerated products)
         - label: _(General Freight)
           value: General Freight
@@ -268,7 +268,7 @@ place:
           value: 30
       name: goods_type_other
       optional: true
-    - prompt: _(Please estimate the average monthly tonnage or volume received of this type of good)
+    - prompt: _(Please estimate the average monthly volume (eg. tonnage) of these goods received at this spot)
       type: text
       attrs:
         - key: placeholder
@@ -452,7 +452,7 @@ place:
           value: 30
       name: crtical_times_description
       optional: true
-    - prompt: _(<h4><b>Strategic Questions</b></h4>)
+    - prompt: _(<h4><b>Strategic Questions:</b></h4>)
       name: strategic
       optional: true
     - prompt: _(What are the biggest issues affecting this business’s freight operations in Greater Bendigo?)
@@ -547,7 +547,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Truck - 20%)
-    - prompt: _(<h4><b>Personal Questions</b></h4>)
+    - prompt: _(<h4><b>Other details:</b></h4>)
       name: personal
       optional: true
     - prompt: _(What is your name?)
