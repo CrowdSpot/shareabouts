@@ -4,6 +4,40 @@
  * NOTE: "With great power comes great responsibility."
  */
 
+ /* SHUT IT DOWN LEMON */
+#new_response, #survey {
+  display: none !important;
+}
+
+/* SHUT IT DOWN LEMON */
+div.support {
+ display: none !important;
+}
+
+span.survey-count {
+ display: none !important;
+}
+
+div.social {
+ display: none !important;
+}
+
+/*img.leaflet-marker-icon.leaflet-zoom-animated.leaflet-clickable {
+ display: none !important;
+}
+
+img.leaflet-marker-shadow.leaflet-zoom-animated {
+ display: none !important;
+}*/
+
+
+/* SHUT IT DOWN LEMON */
+ul.recent-points.unstyled-list {
+ display: none !important;
+}
+
+
+
 
 COLOR PALETTE...
 
@@ -263,11 +297,15 @@ small {
   display: none;
 }
 
-.place-value-age {
+.place-value-business_type {
   display: none;
 }
 
-.place-value-gender {
+.place-value-location_goods_type {
+  display: none;
+}
+
+.place-value-volume {
   display: none;
 }
 
@@ -275,14 +313,208 @@ small {
   display: none;
 }
 
-.place-value-suburb {
+.place-value-location_freight_operator {
   display: none;
 }
 
+.place-value-inbound_origin {
+  display: none;
+}
 
+.place-value-origin_facility_type {
+  display: none;
+}
+
+.place-value-vehicle_type {
+  display: none;
+}
+
+.place-value-trips_vehicle {
+  display: none;
+}
+
+.place-value-location_crtical_times {
+  display: none;
+}
+
+.place-value-goods_type_waste_other {
+  display: none;
+}
+
+.place-value-goods_type_other {
+  display: none;
+}
+
+.place-value-proportion_ownfleet {
+  display: none;
+}
+
+.place-value-other_freight_operators {
+  display: none;
+}
+
+.place-value-crtical_times_description {
+  display: none;
+}
+
+.place-value-route_idea {
+  display: none;
+}
+
+.place-value-route_reason {
+  display: none;
+}
+
+.place-value-underutilisation {
+  display: none;
+}
+
+.place-value-route_description {
+  display: none;
+}
+
+.place-value-proportion_shift_to_modes {
+  display: none;
+}
+
+.place-value-biggest_issues {
+  display: none;
+}
+
+.place-value-changes_fiveyrs {
+  display: none;
+}
+
+.place-value-changes_description {
+  display: none;
+}
+
+.place-value-location_mode_shift {
+  display: none;
+}
+
+.place-value-role {
+  display: none;
+}
+
+.place-value-location_updates {
+  display: none;
+}
 
 /* =Hiding questions in new forms
 -------------------------------------------------------------- */
+
+.place-form label[for=place-freight_issue],
+  .place-form [name=freight_issue]{
+  display: none;
+}
+
+.place-form.issue label[for=place-freight_issue],
+  .place-form.issue [name=freight_issue] {
+  display: block;
+}
+
+.place-form label[for=place-issue_description],
+  .place-form [name=issue_description]{
+  display: none;
+}
+
+.place-form.issue label[for=place-issue_description],
+  .place-form.issue [name=issue_description] {
+  display: block;
+}
+
+.place-form label[for=place-business_type],
+  .place-form [name=business_type]{
+  display: none;
+}
+
+.place-form.business label[for=place-business_type],
+  .place-form.business [name=business_type] {
+  display: block;
+}
+
+.place-form label[for=place-location_goods_type],
+  .place-form [name=location_goods_type]{
+  display: none;
+}
+
+.place-form.business label[for=place-location_goods_type],
+  .place-form.business [name=location_goods_type] {
+  display: block;
+}
+
+.place-form label[for=place-volume],
+  .place-form [name=volume]{
+  display: none;
+}
+
+.place-form.business label[for=place-volume],
+  .place-form.business [name=volume] {
+  display: block;
+}
+
+.place-form label[for=place-location_freight_operator],
+  .place-form [name=location_freight_operator]{
+  display: none;
+}
+
+.place-form.business label[for=place-location_freight_operator],
+  .place-form.business [name=location_freight_operator] {
+  display: block;
+}
+
+.place-form label[for=place-inbound_origin],
+  .place-form [name=inbound_origin]{
+  display: none;
+}
+
+.place-form.business label[for=place-inbound_origin],
+  .place-form.business [name=inbound_origin] {
+  display: block;
+}
+
+.place-form #fields-origin_facility_type {
+  display: none;
+}
+
+.place-form.business #fields-origin_facility_type {
+  display: block;
+}
+
+.place-form label[for=place-vehicle_type],
+  .place-form [name=vehicle_type]{
+  display: none;
+}
+
+.place-form.business label[for=place-vehicle_type],
+  .place-form.business [name=vehicle_type] {
+  display: block;
+}
+
+.place-form label[for=place-trips_vehicle],
+  .place-form [name=trips_vehicle]{
+  display: none;
+}
+
+.place-form.business label[for=place-trips_vehicle],
+  .place-form.business [name=trips_vehicle] {
+  display: block;
+}
+
+.place-form label[for=place-location_crtical_times],
+  .place-form [name=location_crtical_times]{
+  display: none;
+}
+
+.place-form.business label[for=place-location_crtical_times],
+  .place-form.business [name=location_crtical_times] {
+  display: block;
+}
+
+
+
+
 
 .place-form label[for=place-goods_type_waste_other],
   .place-form [name=goods_type_waste_other]{
@@ -333,16 +565,6 @@ small {
   display: block;
 }
 
-.place-form label[for=place-origin_facility_type_other],
-  .place-form [name=origin_facility_type_other]{
-  display: none;
-}
-
-.place-form.location_origin_facility_type-other label[for=place-origin_facility_type_other],
-  .place-form.location_origin_facility_type-other [name=origin_facility_type_other] {
-  display: block;
-}
-
 
 
 .place-form label[for=place-crtical_times_description],
@@ -365,6 +587,11 @@ small {
   display: none;
 }
 
+.place-form label[for=place-route_idea],
+  .place-form [name=route_idea]{
+  display: none;
+}
+
 .place-form label[for=place-route_reason],
   .place-form [name=route_reason]{
   display: none;
@@ -382,6 +609,16 @@ small {
 
 .place-form.location_freight_operator-ownfleet label[for=place-route_description],
   .place-form.location_freight_operator-ownfleet [name=route_description] {
+  display: block;
+}
+
+.place-form.location_freight_operator-ownfleet label[for=place-route_idea],
+  .place-form.location_freight_operator-ownfleet [name=route_idea] {
+  display: block;
+}
+
+.place-form.location_freight_operator-both_ownandother label[for=place-route_idea],
+  .place-form.location_freight_operator-both_ownandother [name=route_idea] {
   display: block;
 }
 
