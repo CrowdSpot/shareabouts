@@ -331,7 +331,7 @@ place:
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(What are your transportation issues and ideas along the I-680 corridor?)
+  title: _(Thank you for taking the time to tell us what improvements you would like to see on Santa Clara County’s southern segment of I-280.)
   action_text: _(added)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
@@ -517,7 +517,34 @@ place:
       attrs:
         - key: accept
           value: image/*
-    - prompt: _(Which mode of transportation do you mostly use for your commute?)
+    - prompt: _(What would you consider the most important area for improvement along I-280 Corridor?)
+      type: select
+      sticky: true
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Freeway improvements)
+          value: Freeway improvements
+        - label: _(Local roadway improvements)
+          value: Local roadway improvements
+        - label: _(Bike and pedestrian)
+          value: Bike and pedestrian
+        - label: _(Transit service)
+          value: Transit service
+        - label: _(Noise abatement)
+          value: Noise abatement
+        - label: _(Other transport issues)
+          value: Other
+      name: location_improvement
+      optional: true
+    - prompt: _(Other)
+      type: text
+      name: location_improvement_other
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Please type here..)
+    - prompt: _(How do you travel along the I-280 corridor?)
       type: select
       sticky: true
       options:
@@ -527,43 +554,45 @@ place:
           value: walk
         - label: _(Bike)
           value: bike
-        - label: _(Bus)
-          value: bus
+        - label: _(Public transit)
+          value: Publictransit
         - label: _(Carpool)
           value: carpool
-        - label: _(Car)
-          value: car
+        - label: _(Vanpool)
+          value: Vanpool
+        - label: _(Drive alone)
+          value: Drivealone
         - label: _(Other)
           value: Other
       name: location_commutemode
       optional: true
     - prompt: _(If other, please detail below..)
       type: text
-      name: other
+      name: location_commutemode_other
       optional: true
       attrs:
         - key: placeholder
           value: _(Please type here..)
-    - prompt: _(What is the ZIP code where you live?)
+    - prompt: _(Would you like carpool lanes extended on I-280?)
+      type: select
       sticky: true
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Yes)
+          value: yess
+        - label: _(No)
+          value: no
+      name: carpool
+      optional: true
+    - prompt: _(Please explain why...)
       type: text
+      sticky: true
+      optional: true
       attrs:
         - key: placeholder
-          value: _(Your home ZIP code)
-        - key: size
-          value: 30
-      name: homezip
-      optional: true
-    - prompt: _(What is the ZIP code where you work?)
-      sticky: true
-      type: text
-      attrs:
-        - key: placeholder
-          value: _(Your work ZIP code)
-        - key: size
-          value: 30
-      name: workzip
-      optional: true
+          value: _(Please type here..)
+      name: carpool_why   
     - prompt: _(Your name)
       type: text
       name: submitter_name
