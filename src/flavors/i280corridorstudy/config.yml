@@ -114,7 +114,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/master-pin-yellow-idea.png
+          iconUrl: /static/css/images/idea-spot.svg
           shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
@@ -146,7 +146,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/master-pin-green-tick.png
+          iconUrl: /static/css/images/like-spot.svg
           shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
@@ -177,7 +177,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/master-pin-red-walk.png
+          iconUrl: /static/css/images/walk-spot.svg
           shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
@@ -209,7 +209,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/master-pin-red-bike.png
+          iconUrl: /static/css/images/bike-spot.svg
           shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
@@ -241,7 +241,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/master-pin-red-bus.png
+          iconUrl: /static/css/images/bus-spot.svg
           shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
@@ -273,7 +273,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/master-pin-red-car.png
+          iconUrl: /static/css/images/car-spot.svg
           shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
