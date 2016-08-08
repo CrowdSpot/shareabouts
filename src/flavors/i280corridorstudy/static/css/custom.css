@@ -259,11 +259,31 @@ a.close-btn {
   display: none;
 }
 
-.place-value-homezip {
+.place-value-location_improvement {
   display: none;
 }
 
-.place-value-workzip {
+.place-value-location_congestion_parts {
+  display: none;
+}
+
+.place-value-carpool {
+  display: none;
+}
+
+.place-value-carpool_why {
+  display: none;
+}
+
+.place-value-express {
+  display: none;
+}
+
+.place-value-express_why {
+  display: none;
+}
+
+.place-value-location_updates {
   display: none;
 }
 
