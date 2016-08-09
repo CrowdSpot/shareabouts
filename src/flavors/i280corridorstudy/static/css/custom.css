@@ -458,6 +458,16 @@ label small {
   font: 14px/1.5 "Proxima Nova", Arial, Helvetica, sans-serif;
 }
 
+/* =Support Button
+-------------------------------------------------------------- */
+
+.user-support label {
+  background: transparent url(images/thumbs-up-empty.svg) left center no-repeat scroll;
+}
+.user-support input[type=checkbox]:checked ~ label {
+  background-image: url(images/thumbs-up-filled.svg);
+}
+
 
 /* =Media Queries
 -------------------------------------------------------------- */
