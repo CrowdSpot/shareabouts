@@ -129,15 +129,6 @@ place:
 
   items:
 
-    - prompt: _(What is the name of Business Operation Spot or Freight Issue Spot?)
-      type: text
-      name: name
-      attrs:
-        - key: placeholder
-          value: _(David Storage - Junortoun Warehouse)
-        - key: size
-          value: 30
-        - key: required
     - prompt: _(Is this a Business Operation Spot or Freight Issue Spot?)
       type: select
       options:
@@ -149,6 +140,15 @@ place:
           value: issue
       name: location_type
       attrs:
+        - key: required
+    - prompt: _(What is the name of this Business Operation Spot or Freight Issue Spot?)
+      type: text
+      name: name
+      attrs:
+        - key: placeholder
+          value: _(David Storage - Junortoun Warehouse)
+        - key: size
+          value: 30
         - key: required
     - prompt: _(What is the freight issue at this spot?)
       type: select
@@ -174,7 +174,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe the issue here)
-    - prompt: _(What is the main type of business operation is located here?)
+    - prompt: _(Which category best describes this business’s operations?)
       type: select
       options:
         - label: _(Choose One)
@@ -207,25 +207,23 @@ place:
           value: aggregatingordis
       name: business_type
       optional: true
-    - prompt: _(Please choose one of the following.. <br>1) We only operate your own fleet of freight vehicles<br>2) We only use a frieght operator<br>3) We use both our own vehicles and a freight operator)
+    - prompt: _(At this location do you... <br>1) Receive freight <br>2) Dispatch freight<br>3) Both receive and dispatch freight<br>)
       type: select
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Only use our own fleet)
-          value: ownfleet
-        - label: _(Only use other freight operators)
-          value: useotheroperators
-        - label: _(Both our own fleet and other freight operators)
-          value: both_ownandother
-      name: location_freight_operator
+        - label: _(Receive freight)
+          value: receive
+        - label: _(Dispatch Freight)
+          value: dispatch
+        - label: _(Both receive and dispatch freight)
+          value: bothreceivedispatch
+      name: location_receivedispatch
       sticky: true
       optional: true
-    - prompt: _(Please select a 'type of goods' is being received at this spot? <br><i><strong>Please add a new spot at this location for each 'type of goods' you receive at this spot</strong></i></br>)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
+    - prompt: _(Please select the 'types of freight' <strong>received</strong> at this location?)
+      type: multi-checkbox
+      checkboxes:
         - label: _(Dangerous goods)
           value: Dangerous goods
         - label: _(Food (Non-refrigerated products))
@@ -248,57 +246,11 @@ place:
           value: Waste
         - label: _(Other)
           value: Other
-      name: location_goods_type
+      name: location_goods_type_received
       optional: true
-    - prompt: _(Please specify type of <i>Waste Material</i>)
-      type: text
-      attrs:
-        - key: placeholder
-          value: _(Type here)
-        - key: size
-          value: 30
-      name: goods_type_waste_other
-      optional: true
-    - prompt: _(Please specify <i>'Other'</i> type of goods being received here)
-      type: text
-      attrs:
-        - key: placeholder
-          value: _(Type here)
-        - key: size
-          value: 30
-      name: goods_type_other
-      optional: true
-    - prompt: _(Please estimate the average monthly volume (eg. tonnage) of these goods received at this spot)
-      type: text
-      attrs:
-        - key: placeholder
-          value: _(Type here)
-        - key: size
-          value: 30
-      name: volume
-      optional: true
-    - prompt: _(What proportion of your business’s inbound goods does your own fleet carry out? <br><strong>Please estimate percentage (%) of average monthly inbound freight task.</strong></br>)
-      type: text
-      attrs:
-        - key: placeholder
-          value: _(Type here)
-        - key: size
-          value: 30
-      name: proportion_ownfleet
-      optional: true
-    - prompt: _(Please list the name and contact details of the freight company you contract to?)
-      type: textarea
-      name: other_freight_operators
-      optional: true
-      sticky: true
-      attrs:
-        - key: placeholder
-          value: _(Please list the name and number of freight operators you use)
-    - prompt: _(In general, what is the main city or region where this freight originates?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
+    - prompt: _(Please select cities or regions where this freight <strong>originates</strong>?)
+      type: multi-checkbox
+      checkboxes:
         - label: _(City of Greater Bendigo)
           value: cogb
         - label: _(Regional Victoria)
@@ -325,39 +277,140 @@ place:
           value: overseas
       name: inbound_origin
       optional: true
-    - prompt: _(Please select the types of facilities where these goods originate?)
+    - prompt: _(Please select the 'types of freight' <strong>dispatched</strong> at this location?)
       type: multi-checkbox
       checkboxes:
-        - label: _(Construction site)
-          value: Construction site
-        - label: _(Defence facility)
-          value: Defence facility
-        - label: _(Farm)
-          value: Farm
-        - label: _(Home deliveries)
-          value: Home deliveries
-        - label: _(Livestock exchange)
-          value: Livestock exchange
-        - label: _(Port)
-          value: Port
-        - label: _(Quarry/ Mine)
-          value: Quarry/ Mine
-        - label: _(Refrigerated storage facility )
-          value: Refrigerated storage facility
-        - label: _(Transport depot)
-          value: Transport depot
-        - label: _(Warehouse/ Distribution Centre)
-          value: Warehouse/ Distribution Centre
-        - label: _(Waste treatment site/facility)
-          value: Waste treatment site/facility
-        - label: _(Wholesale/retail outlet)
-          value: Wholesale/retail outlet
-        - label: _(Value-adding facility)
-          value: Value-adding facility
+        - label: _(Dangerous goods)
+          value: Dangerous goods
+        - label: _(Food (Non-refrigerated products))
+          value: Food(Non-refrigerated products)
+        - label: _(General Freight)
+          value: General Freight
+        - label: _(Grain / Fodder/fertilizer)
+          value: Grain / Fodder/fertilizer
+        - label: _(Livestock)
+          value: Livestock
+        - label: _(Quarry and mining products)
+          value: Quarry and mining products
+        - label: _(Other bulk freight )
+          value: Other bulk freight
+        - label: _(Sensitive Freight)
+          value: Sensitive Freight
+        - label: _(Steel and non-ferrous metals)
+          value: Steel and non-ferrous metals
+        - label: _(Waste material)
+          value: Waste
         - label: _(Other)
           value: Other
-      name: origin_facility_type
+      name: location_goods_type_dispatched
       optional: true
+    - prompt: _(Please select cities or regions where this freight is <strong>dispatched</strong> to?)
+      type: multi-checkbox
+      checkboxes:
+        - label: _(City of Greater Bendigo)
+          value: cogb
+        - label: _(Regional Victoria)
+          value: regional_vic
+        - label: _(Interstate regional locations)
+          value: interstate_regional
+        - label: _(Melbourne)
+          value: melbourne
+        - label: _(Adelaide)
+          value: adelaide
+        - label: _(Sydney)
+          value: sydney
+        - label: _(Perth)
+          value: perth
+        - label: _(Brisbane)
+          value: brisbane
+        - label: _(Canberra)
+          value: canberra
+        - label: _(Darwin)
+          value: darwin
+        - label: _(Hobart)
+          value: hobart
+        - label: _(Overseas)
+          value: overseas
+      name: outbound_origin
+      optional: true
+    - prompt: _(Please estimate the total average monthly volume (eg. tonnage or pallets) of freight moved to and from this location.)
+      type: text
+      attrs:
+        - key: placeholder
+          value: _(Type here)
+        - key: size
+          value: 30
+      name: volume
+      optional: true
+    - prompt: _(Are there critical times the business must receive this freight?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(No)
+          value: nope
+        - label: _(Yes)
+          value: yess
+      name: location_crtical_times
+      optional: true
+    - prompt: _(Please comment on critical times during which this business must deliver to this location)
+      type: text
+      attrs:
+        - key: placeholder
+          value: _(Type here)
+        - key: size
+          value: 30
+      name: crtical_times_description
+      optional: true
+    - prompt: _(What type of waste is removed from this location?)
+      type: text
+      attrs:
+        - key: placeholder
+          value: _(Type here)
+        - key: size
+          value: 30
+      name: waste_type
+      optional: true
+    - prompt: _(On average, how many times per month is waste removed?)
+      type: text
+      attrs:
+        - key: placeholder
+          value: _(Type here)
+        - key: size
+          value: 30
+      name: waste_remove_frequency
+      optional: true
+    - prompt: _(Please choose one of the following.. <br>1) We only operate your own fleet of freight vehicles<br>2) We only use a frieght operator<br>3) We use both our own vehicles and a freight operator)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Only use our own fleet)
+          value: ownfleet
+        - label: _(Only use other freight operators)
+          value: useotheroperators
+        - label: _(Both our own fleet and other freight operators)
+          value: both_ownandother
+      name: location_freight_operator
+      sticky: true
+      optional: true
+    - prompt: _(What proportion of your business’s inbound goods does your own fleet carry out? <br><strong>Please estimate percentage (%) of average monthly inbound freight task.</strong></br>)
+      type: text
+      attrs:
+        - key: placeholder
+          value: _(Type here)
+        - key: size
+          value: 30
+      name: proportion_ownfleet
+      optional: true
+    - prompt: _(Please list the name and contact details of the freight company you contract to?)
+      type: textarea
+      name: other_freight_operators
+      optional: true
+      sticky: true
+      attrs:
+        - key: placeholder
+          value: _(Please list the name and number of freight operators you use)
     - prompt: _(What is the main route/s used to carry this freight with your own fleet to this spot?)
       type: textarea
       name: route_description
@@ -382,18 +435,9 @@ place:
           value: Designated route
       name: route_reason
       optional: true
-    - prompt: _(If you have a potential future freight route idea, please describe this below..)
-      type: text
-      name: route_idea
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Western Highway)
     - prompt: _(What vehicle types are used to carry freight to this Spot?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
+      type: multi-checkbox
+      checkboxes:
         - label: _(Cargo-bike)
           value: Cargo-bike
         - label: _(Motorcycle)
@@ -416,7 +460,7 @@ place:
           value: Over-dimensional/over- mass vehicle
       name: vehicle_type
       optional: true
-    - prompt: _(How many trips does this vehicle take per month to this spot?)
+    - prompt: _(On average, how many freight vehicle trips per month are made to and from this location?)
       type: text
       name: trips_vehicle
       optional: true
@@ -432,30 +476,10 @@ place:
           value: 30
       name: underutilisation
       optional: true
-    - prompt: _(Are there critical times the business must receive this freight?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(No)
-          value: nope
-        - label: _(Yes)
-          value: yess
-      name: location_crtical_times
-      optional: true
-    - prompt: _(Please comment on critical times during which this business must deliver to this spot)
-      type: text
-      attrs:
-        - key: placeholder
-          value: _(Type here)
-        - key: size
-          value: 30
-      name: crtical_times_description
-      optional: true
-    - prompt: _(<h4><b>Strategic Questions:</b></h4>)
+    - prompt: _(<h4><b>Help us identify future freight opportunities</b></h4>)
       name: strategic
       optional: true
-    - prompt: _(What are the biggest issues affecting this business’s freight operations in Greater Bendigo?)
+    - prompt: _(What are the top three issues affecting your operations in Greater Bendigo?)
       type: textarea
       name: biggest_issues
       optional: true
@@ -463,24 +487,6 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe..)
-    - prompt: _(What changes do you anticipate to this business’s current operations that may impact on its freight task in Greater Bendigo in the next five (5) years?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Expansion)
-          value: Expansion
-        - label: _(Contraction)
-          value: Contraction
-        - label: _(Relocation )
-          value: Relocation
-        - label: _(Consolidation)
-          value: Consolidation
-        - label: _(Other )
-          value: Other
-      name: changes_fiveyrs
-      optional: true
-      sticky: true
     - prompt: _(Please explain further in the text box below?)
       type: textarea
       name: changes_description
@@ -489,6 +495,13 @@ place:
       attrs:
         - key: placeholder
           value: _(Please explain further..)
+    - prompt: _(If you have a potential future freight route idea, please describe this below..)
+      type: text
+      name: route_idea
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Western Highway)
     - prompt: _(What option/s below are most required to make this business’s operations in Greater Bendigo more productive and efficient?)
       type: multi-checkbox
       checkboxes:
@@ -525,28 +538,6 @@ place:
       name: safety
       optional: true
       sticky: true
-    - prompt: _(Do you think your business will benefit from shifting some of its freight to other modes of transport?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Yes)
-          value: yess
-        - label: _(No)
-          value: nope
-        - label: _(Don't know)
-          value: Don't know
-      name: location_mode_shift
-      optional: true
-      sticky: true
-    - prompt: _(Please list the alternative transport modes and the percentage (%) of commodities this business carries that could potentially be moved into and out of Greater Bendigo?)
-      type: textarea
-      sticky: true
-      name: proportion_shift_to_modes
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Truck - 20%)
     - prompt: _(<h4><b>Other details:</b></h4>)
       name: personal
       optional: true
