@@ -263,7 +263,15 @@ a.close-btn {
   display: none;
 }
 
+.place-value-improvement_other {
+  display: none;
+}
+
 .place-value-location_congestion_parts {
+  display: none;
+}
+
+.place-value-congestion_parts_other {
   display: none;
 }
 
