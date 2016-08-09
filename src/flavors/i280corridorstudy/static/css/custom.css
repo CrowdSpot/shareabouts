@@ -259,11 +259,43 @@ a.close-btn {
   display: none;
 }
 
-.place-value-homezip {
+.place-value-commutemode_other {
   display: none;
 }
 
-.place-value-workzip {
+.place-value-location_improvement {
+  display: none;
+}
+
+.place-value-improvement_other {
+  display: none;
+}
+
+.place-value-location_congestion_parts {
+  display: none;
+}
+
+.place-value-congestion_parts_other {
+  display: none;
+}
+
+.place-value-carpool {
+  display: none;
+}
+
+.place-value-carpool_why {
+  display: none;
+}
+
+.place-value-express {
+  display: none;
+}
+
+.place-value-express_why {
+  display: none;
+}
+
+.place-value-location_updates {
   display: none;
 }
 
@@ -436,6 +468,16 @@ label small {
 
 #map.leaflet-container {
   font: 14px/1.5 "Proxima Nova", Arial, Helvetica, sans-serif;
+}
+
+/* =Support Button
+-------------------------------------------------------------- */
+
+.user-support label {
+  background: transparent url(images/thumbs-up-empty.svg) left center no-repeat scroll;
+}
+.user-support input[type=checkbox]:checked ~ label {
+  background-image: url(images/thumbs-up-filled.svg);
 }
 
 
