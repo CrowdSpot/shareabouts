@@ -259,6 +259,10 @@ a.close-btn {
   display: none;
 }
 
+.place-value-commutemode_other {
+  display: none;
+}
+
 .place-value-location_improvement {
   display: none;
 }

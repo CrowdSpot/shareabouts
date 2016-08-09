@@ -602,7 +602,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please type here..)
-    - prompt: _(Would you like carpool lanes extended on I-280?)
+    - prompt: _(Would you like carpool lanes extended on I-280?<br><i>(The carpool lanes is the yellow line on the map</i>)<br>)
       type: select
       sticky: true
       options:
@@ -680,8 +680,8 @@ survey:
 
   # Response config
   show_responses: true
-  response_name: _(comment)
-  response_plural_name: _(comments)
+  response_name: _(Comment)
+  response_plural_name: _(Comments)
   action_text: _(commented on)
   anonymous_name: _(Someone)
 
@@ -703,8 +703,8 @@ survey:
 support:
   submission_type: support
   submit_btn_text: _(Like)
-  response_name: _(like)
-  response_plural_name: _(likes)
+  response_name: _(Like)
+  response_plural_name: _(Likes)
   action_text: liked
   anonymous_name: _(Someone)
 
