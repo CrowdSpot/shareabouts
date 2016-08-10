@@ -141,7 +141,7 @@ place:
       name: location_type
       attrs:
         - key: required
-    - prompt: _(What is the name of this Business Operation Spot or Freight Issue Spot?)
+    - prompt: _(What is the name of this Spot?<br><strong><i>(This is a name that best describes the location)</i></strong>)
       type: text
       name: name
       attrs:
