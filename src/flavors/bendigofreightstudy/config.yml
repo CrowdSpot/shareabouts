@@ -628,7 +628,7 @@ place:
       optional: true
     - prompt: _(Business name)
       type: text
-      name: business name
+      name: business_name
       sticky: true
       optional: true
       attrs:

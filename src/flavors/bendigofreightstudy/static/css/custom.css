@@ -386,15 +386,39 @@ small {
   display: none;
 }
 
-.place-value-proportion_shift_to_modes {
+.place-value-location_receivedispatch {
+  display: none;
+}
+
+.place-value-waste_type {
+  display: none;
+}
+
+.place-value-waste_remove_frequency {
+  display: none;
+}
+
+.place-value-location_efficient_option1 {
+  display: none;
+}
+
+.place-value-location_efficient_option2 {
+  display: none;
+}
+
+.place-value-location_efficient_option3 {
+  display: none;
+}
+
+.place-value-efficient_other {
+  display: none;
+}
+
+.place-value-business_name {
   display: none;
 }
 
 .place-value-biggest_issues {
-  display: none;
-}
-
-.place-value-changes_fiveyrs {
   display: none;
 }
 
