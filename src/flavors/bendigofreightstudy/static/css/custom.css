@@ -447,33 +447,39 @@ small {
   display: block;
 }
 
-.place-form label[for=place-location_goods_type],
-  .place-form [name=location_goods_type]{
+
+
+
+.place-form label[for=place-location_receivedispatch],
+  .place-form [name=location_receivedispatch]{
   display: none;
 }
 
-.place-form.business label[for=place-location_goods_type],
-  .place-form.business [name=location_goods_type] {
+.place-form.business label[for=place-location_receivedispatch],
+  .place-form.business [name=location_receivedispatch] {
   display: block;
 }
 
-.place-form label[for=place-volume],
-  .place-form [name=volume]{
+
+
+
+
+
+.place-form label[for=place-location_goods_type_received],
+  .place-form [name=location_goods_type_received]{
   display: none;
 }
 
-.place-form.business label[for=place-volume],
-  .place-form.business [name=volume] {
+.place-form #fields-location_goods_type_received {
+  display: none;
+}
+
+.place-form.location_receivedispatch-receive label[for=place-location_goods_type_received],
+  .place-form.location_receivedispatch-receive [name=location_goods_type_received] {
   display: block;
 }
 
-.place-form label[for=place-location_freight_operator],
-  .place-form [name=location_freight_operator]{
-  display: none;
-}
-
-.place-form.business label[for=place-location_freight_operator],
-  .place-form.business [name=location_freight_operator] {
+.place-form.location_receivedispatch-receive #fields-location_goods_type_received {
   display: block;
 }
 
@@ -482,36 +488,111 @@ small {
   display: none;
 }
 
-.place-form.business label[for=place-inbound_origin],
-  .place-form.business [name=inbound_origin] {
-  display: block;
-}
-
-.place-form #fields-origin_facility_type {
+.place-form #fields-inbound_origin {
   display: none;
 }
 
-.place-form.business #fields-origin_facility_type {
+.place-form.location_receivedispatch-receive label[for=place-inbound_origin],
+  .place-form.location_receivedispatch-receive [name=inbound_origin] {
   display: block;
 }
 
-.place-form label[for=place-vehicle_type],
-  .place-form [name=vehicle_type]{
-  display: none;
-}
-
-.place-form.business label[for=place-vehicle_type],
-  .place-form.business [name=vehicle_type] {
+.place-form.location_receivedispatch-receive #fields-inbound_origin {
   display: block;
 }
 
-.place-form label[for=place-trips_vehicle],
-  .place-form [name=trips_vehicle]{
+
+
+
+
+.place-form label[for=place-location_goods_type_dispatched],
+  .place-form [name=location_goods_type_dispatched]{
   display: none;
 }
 
-.place-form.business label[for=place-trips_vehicle],
-  .place-form.business [name=trips_vehicle] {
+.place-form #fields-location_goods_type_dispatched {
+  display: none;
+}
+
+.place-form.location_receivedispatch-dispatch label[for=place-location_goods_type_dispatched],
+  .place-form.location_receivedispatch-dispatch [name=location_goods_type_dispatched] {
+  display: block;
+}
+
+.place-form.location_receivedispatch-dispatch #fields-location_goods_type_dispatched {
+  display: block;
+}
+
+
+
+.place-form label[for=place-outbound_origin],
+  .place-form [name=outbound_origin]{
+  display: none;
+}
+
+.place-form #fields-outbound_origin {
+  display: none;
+}
+
+.place-form.location_receivedispatch-dispatch label[for=place-outbound_origin],
+  .place-form.location_receivedispatch-dispatch [name=outbound_origin] {
+  display: block;
+}
+
+.place-form.location_receivedispatch-dispatch #fields-outbound_origin {
+  display: block;
+}
+
+
+
+
+.place-form.location_receivedispatch-bothreceivedispatch label[for=place-location_goods_type_received],
+  .place-form.location_receivedispatch-bothreceivedispatch [name=location_goods_type_received] {
+  display: block;
+}
+
+.place-form.location_receivedispatch-bothreceivedispatch #fields-location_goods_type_received {
+  display: block;
+}
+
+.place-form.location_receivedispatch-bothreceivedispatch label[for=place-inbound_origin],
+  .place-form.location_receivedispatch-bothreceivedispatch [name=inbound_origin] {
+  display: block;
+}
+
+.place-form.location_receivedispatch-bothreceivedispatch #fields-inbound_origin {
+  display: block;
+}
+
+.place-form.location_receivedispatch-bothreceivedispatch label[for=place-location_goods_type_dispatched],
+  .place-form.location_receivedispatch-bothreceivedispatch [name=location_goods_type_dispatched] {
+  display: block;
+}
+
+.place-form.location_receivedispatch-bothreceivedispatch #fields-location_goods_type_dispatched {
+  display: block;
+}
+
+.place-form.location_receivedispatch-bothreceivedispatch label[for=place-outbound_origin],
+  .place-form.location_receivedispatch-bothreceivedispatch [name=outbound_origin] {
+  display: block;
+}
+
+.place-form.location_receivedispatch-bothreceivedispatch #fields-outbound_origin {
+  display: block;
+}
+
+
+
+
+
+.place-form label[for=place-volume],
+  .place-form [name=volume]{
+  display: none;
+}
+
+.place-form.business label[for=place-volume],
+  .place-form.business [name=volume] {
   display: block;
 }
 
@@ -525,29 +606,72 @@ small {
   display: block;
 }
 
-
-
-
-
-.place-form label[for=place-goods_type_waste_other],
-  .place-form [name=goods_type_waste_other]{
+.place-form label[for=place-waste_type],
+  .place-form [name=waste_type]{
   display: none;
 }
 
-.place-form.location_goods_type-waste label[for=place-goods_type_waste_other],
-  .place-form.location_goods_type-waste [name=goods_type_waste_other] {
+.place-form.business label[for=place-waste_type],
+  .place-form.business [name=waste_type] {
   display: block;
 }
 
-.place-form label[for=place-goods_type_other],
-  .place-form [name=goods_type_other]{
+.place-form label[for=place-waste_remove_frequency],
+  .place-form [name=waste_remove_frequency]{
   display: none;
 }
 
-.place-form.location_goods_type-other label[for=place-goods_type_other],
-  .place-form.location_goods_type-other [name=goods_type_other] {
+.place-form.business label[for=place-waste_remove_frequency],
+  .place-form.business [name=waste_remove_frequency] {
   display: block;
 }
+
+.place-form label[for=place-location_freight_operator],
+  .place-form [name=location_freight_operator]{
+  display: none;
+}
+
+.place-form.business label[for=place-location_freight_operator],
+  .place-form.business [name=location_freight_operator] {
+  display: block;
+}
+
+
+.place-form label[for=place-vehicle_type],
+  .place-form [name=vehicle_type]{
+  display: none;
+}
+
+.place-form #fields-vehicle_type {
+  display: none;
+}
+
+.place-form.business label[for=place-vehicle_type],
+  .place-form.business [name=vehicle_type] {
+  display: block;
+}
+
+.place-form.business #fields-vehicle_type {
+  display: block;
+}
+
+.place-form label[for=place-trips_vehicle],
+  .place-form [name=trips_vehicle]{
+  display: none;
+}
+
+.place-form.business label[for=place-trips_vehicle],
+  .place-form.business [name=trips_vehicle] {
+  display: block;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -600,11 +724,6 @@ small {
   display: none;
 }
 
-.place-form label[for=place-route_idea],
-  .place-form [name=route_idea]{
-  display: none;
-}
-
 .place-form label[for=place-route_reason],
   .place-form [name=route_reason]{
   display: none;
@@ -622,16 +741,6 @@ small {
 
 .place-form.location_freight_operator-ownfleet label[for=place-route_description],
   .place-form.location_freight_operator-ownfleet [name=route_description] {
-  display: block;
-}
-
-.place-form.location_freight_operator-ownfleet label[for=place-route_idea],
-  .place-form.location_freight_operator-ownfleet [name=route_idea] {
-  display: block;
-}
-
-.place-form.location_freight_operator-both_ownandother label[for=place-route_idea],
-  .place-form.location_freight_operator-both_ownandother [name=route_idea] {
   display: block;
 }
 
@@ -656,17 +765,28 @@ small {
 }
 
 
-
-.place-form label[for=place-proportion_shift_to_modes],
-  .place-form [name=proportion_shift_to_modes]{
+.place-form label[for=place-efficient_other],
+  .place-form [name=efficient_other]{
   display: none;
 }
 
-
-.place-form.location_mode_shift-yess label[for=place-proportion_shift_to_modes],
-  .place-form.location_mode_shift-yess [name=proportion_shift_to_modes] {
+.place-form.location_efficient_option1-other_efficient1 label[for=place-efficient_other],
+  .place-form.location_efficient_option1-other_efficient1 [name=efficient_other] {
   display: block;
 }
+
+.place-form.location_efficient_option2-other_efficient2 label[for=place-efficient_other],
+  .place-form.location_efficient_option2-other_efficient2 [name=efficient_other] {
+  display: block;
+}
+
+.place-form.location_efficient_option3-other_efficient3 label[for=place-efficient_other],
+  .place-form.location_efficient_option3-other_efficient3 [name=efficient_other] {
+  display: block;
+}
+
+
+
 
 
 
