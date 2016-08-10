@@ -120,7 +120,7 @@ place:
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(Tell us about your freight operations in Bendigo)
+  title: _(Help us understand freight in Bendigo)
   action_text: _(added)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
@@ -129,7 +129,7 @@ place:
 
   items:
 
-    - prompt: _(Is this a Business Operation Spot or Freight Issue Spot?)
+    - prompt: _(Is this a Business Operation Spot or Freight Issue Spot?<br><strong><i>(Please start by first adding a 'Business Operation Spot')</i></strong><br>)
       type: select
       options:
         - label: _(Choose One)
@@ -159,10 +159,12 @@ place:
           value: congestion
         - label: _(Access)
           value: Access
-        - label: _(Road surface)
-          value: roadsurface
+        - label: _(Poor surface)
+          value: poorsurface
+        - label: _(Poor manoeuvrability)
+          value: poor manoeuvrability
         - label: _(Low clearance)
-          value: lowclearance
+          value: Low clearance
         - label: _(Other)
           value: other
       name: freight_issue
@@ -411,31 +413,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please list the name and number of freight operators you use)
-    - prompt: _(What is the main route/s used to carry this freight with your own fleet to this spot?)
-      type: textarea
-      name: route_description
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Western Highway)
-    - prompt: _(What is the main reason this route is taken?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Most direct)
-          value: Most direct
-        - label: _(Least congestion)
-          value: Least congestion
-        - label: _(Safest)
-          value: Safest
-        - label: _(Easiest to manoeuvre)
-          value: Easiest to manoeuvre
-        - label: _(Designated route)
-          value: Designated route
-      name: route_reason
-      optional: true
-    - prompt: _(What vehicle types are used to carry freight to this Spot?)
+    - prompt: _(What vehicle types are used to carry freight?)
       type: multi-checkbox
       checkboxes:
         - label: _(Cargo-bike)
@@ -458,7 +436,33 @@ place:
           value: B-double
         - label: _(Over-dimensional/over- mass vehicle)
           value: Over-dimensional/over- mass vehicle
+        - label: _(Don't know)
+          value: Dont's know
       name: vehicle_type
+      optional: true
+    - prompt: _(What is the main route/s used to carry this freight with your own fleet to this spot?)
+      type: textarea
+      name: route_description
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Western Highway)
+    - prompt: _(What is the main reason these route/s are chosen?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Most direct)
+          value: Most direct
+        - label: _(Least congestion)
+          value: Least congestion
+        - label: _(Safest)
+          value: Safest
+        - label: _(Easiest to manoeuvre)
+          value: Easiest to manoeuvre
+        - label: _(Designated route)
+          value: Designated route
+      name: route_reason
       optional: true
     - prompt: _(On average, how many freight vehicle trips per month are made to and from this location?)
       type: text
@@ -487,61 +491,152 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe..)
-    - prompt: _(Please explain further in the text box below?)
+    - prompt: _(What are the top three (any order) improvements that would make your operations more productive and/or efficient?<br>(<i>Please select from the options below</i>))
+      name: strategic
+      optional: true
+    - prompt: _(Option 1)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Skilled labour)
+          value: skilled labour
+        - label: _(Warehouse facility)
+          value: Warehouse facility
+        - label: _(Refrigerated storage facility)
+          value: refrigerated storage facility
+        - label: _(Driver rest stops/fatigue management centre)
+          value: driver rest stops/fatigue management centre
+        - label: _(Truck Wash)
+          value: Truck Wash
+        - label: _(Wireless internet coverage)
+          value: wireless internet coverage
+        - label: _(Alternative fuel stations)
+          value: alternative fuel stations
+        - label: _(Trailer exchange facility)
+          value: trailer exchange facility
+        - label: _(Better vehicle access approval)
+          value: better vehicle access approval
+        - label: _(More heavy vehicle parking)
+          value: more heavy vehicle parking
+        - label: _(More/improved loading zones)
+          value: more/improved loading zones
+        - label: _(Improved waste removal)
+          value: improved waste removal
+        - label: _(Freight routes protected from development)
+          value: freight routes protected from development
+        - label: _(Multi-modal freight terminal/hub)
+          value: multi-modal freight terminal/hub
+        - label: _(Other)
+          value: other_efficient1
+      name: location_efficient_option1
+      optional: true
+      sticky: true
+    - prompt: _(Option 2)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Skilled labour)
+          value: skilled labour
+        - label: _(Warehouse facility)
+          value: Warehouse facility
+        - label: _(Refrigerated storage facility)
+          value: refrigerated storage facility
+        - label: _(Driver rest stops/fatigue management centre)
+          value: driver rest stops/fatigue management centre
+        - label: _(Truck Wash)
+          value: Truck Wash
+        - label: _(Wireless internet coverage)
+          value: wireless internet coverage
+        - label: _(Alternative fuel stations)
+          value: alternative fuel stations
+        - label: _(Trailer exchange facility)
+          value: trailer exchange facility
+        - label: _(Better vehicle access approval)
+          value: better vehicle access approval
+        - label: _(More heavy vehicle parking)
+          value: more heavy vehicle parking
+        - label: _(More/improved loading zones)
+          value: more/improved loading zones
+        - label: _(Improved waste removal)
+          value: improved waste removal
+        - label: _(Freight routes protected from development)
+          value: freight routes protected from development
+        - label: _(Multi-modal freight terminal/hub)
+          value: multi-modal freight terminal/hub
+        - label: _(Other)
+          value: other_efficient2
+      name: location_efficient_option2
+      optional: true
+      sticky: true
+    - prompt: _(Option 3)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Skilled labour)
+          value: skilled labour
+        - label: _(Warehouse facility)
+          value: Warehouse facility
+        - label: _(Refrigerated storage facility)
+          value: refrigerated storage facility
+        - label: _(Driver rest stops/fatigue management centre)
+          value: driver rest stops/fatigue management centre
+        - label: _(Truck Wash)
+          value: Truck Wash
+        - label: _(Wireless internet coverage)
+          value: wireless internet coverage
+        - label: _(Alternative fuel stations)
+          value: alternative fuel stations
+        - label: _(Trailer exchange facility)
+          value: trailer exchange facility
+        - label: _(Better vehicle access approval)
+          value: better vehicle access approval
+        - label: _(More heavy vehicle parking)
+          value: more heavy vehicle parking
+        - label: _(More/improved loading zones)
+          value: more/improved loading zones
+        - label: _(Improved waste removal)
+          value: improved waste removal
+        - label: _(Freight routes protected from development)
+          value: freight routes protected from development
+        - label: _(Multi-modal freight terminal/hub)
+          value: multi-modal freight terminal/hub
+        - label: _(Other)
+          value: other_efficient3
+      name: location_efficient_option3
+      optional: true
+      sticky: true
+    - prompt: _(Please describe other improvements below.)
       type: textarea
-      name: changes_description
+      name: efficient_other
       optional: true
       sticky: true
       attrs:
         - key: placeholder
-          value: _(Please explain further..)
-    - prompt: _(If you have a potential future freight route idea, please describe this below..)
+          value: _(Please describe..)
+    - prompt: _(Do you have a potential future freight route idea? Please describe this below.)
       type: text
       name: route_idea
       optional: true
       attrs:
         - key: placeholder
           value: _(Western Highway)
-    - prompt: _(What option/s below are most required to make this business’s operations in Greater Bendigo more productive and efficient?)
-      type: multi-checkbox
-      checkboxes:
-        - label: _(Technological advances)
-          value: Technological advances_efficient
-        - label: _(Infrastructure provision)
-          value: Infrastructure provision_efficient
-        - label: _(Land/facility provision )
-          value: Land/facility provision_efficient
-        - label: _(Regulations)
-          value: Regulations_efficient
-        - label: _(Labour availability/skilling)
-          value: Labour availability/skilling_efficient
-        - label: _(Other)
-          value: Other_efficient
-      name: efficient
-      optional: true
-      sticky: true
-    - prompt: _(What is required to reduce the safety and amenity impacts associated with the movement of freight in Greater Bendigo:)
-      type: multi-checkbox
-      checkboxes:
-        - label: _(Technological advances)
-          value: Technological advances_safety
-        - label: _(Infrastructure provision)
-          value: Infrastructure provision_safety
-        - label: _(Land/facility provision )
-          value: Land/facility provision_safety
-        - label: _(Regulations)
-          value: Regulations_safety
-        - label: _(Labour availability/skilling)
-          value: Labour availability/skilling_safety
-        - label: _(Other)
-          value: Other_safety
-      name: safety
-      optional: true
-      sticky: true
     - prompt: _(<h4><b>Other details:</b></h4>)
       name: personal
       optional: true
-    - prompt: _(What is your name?)
+    - prompt: _(Business name)
+      type: text
+      name: business name
+      sticky: true
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Type name)
+        - key: size
+          value: 30
+    - prompt: _(Your name)
       type: text
       name: submitter_name
       sticky: true

@@ -765,17 +765,28 @@ small {
 }
 
 
-
-.place-form label[for=place-proportion_shift_to_modes],
-  .place-form [name=proportion_shift_to_modes]{
+.place-form label[for=place-efficient_other],
+  .place-form [name=efficient_other]{
   display: none;
 }
 
-
-.place-form.location_mode_shift-yess label[for=place-proportion_shift_to_modes],
-  .place-form.location_mode_shift-yess [name=proportion_shift_to_modes] {
+.place-form.location_efficient_option1-other_efficient1 label[for=place-efficient_other],
+  .place-form.location_efficient_option1-other_efficient1 [name=efficient_other] {
   display: block;
 }
+
+.place-form.location_efficient_option2-other_efficient2 label[for=place-efficient_other],
+  .place-form.location_efficient_option2-other_efficient2 [name=efficient_other] {
+  display: block;
+}
+
+.place-form.location_efficient_option3-other_efficient3 label[for=place-efficient_other],
+  .place-form.location_efficient_option3-other_efficient3 [name=efficient_other] {
+  display: block;
+}
+
+
+
 
 
 
