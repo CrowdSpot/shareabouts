@@ -109,7 +109,7 @@ place_types:
 
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
-  enabled: true
+  enabled: false
   # How often to refresh the activity list, in milliseconds.
   interval: 30000
 
@@ -227,83 +227,83 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(Dangerous goods)
-          value: Dangerous goods
+          value: Dangerous goods_received
         - label: _(Food (Non-refrigerated products))
-          value: Food(Non-refrigerated products)
+          value: Food(Non-refrigerated products)_received
         - label: _(General Freight)
-          value: General Freight
+          value: General Freight_received
         - label: _(Grain / Fodder/fertilizer)
-          value: Grain / Fodder/fertilizer
+          value: Grain / Fodder/fertilizer_received
         - label: _(Livestock)
-          value: Livestock
+          value: Livestock_received
         - label: _(Quarry and mining products)
-          value: Quarry and mining products
+          value: Quarry and mining products_received
         - label: _(Other bulk freight )
-          value: Other bulk freight
+          value: Other bulk freight_received
         - label: _(Sensitive Freight)
-          value: Sensitive Freight
+          value: Sensitive Freight_received
         - label: _(Steel and non-ferrous metals)
-          value: Steel and non-ferrous metals
+          value: Steel and non-ferrous metals_received
         - label: _(Waste material)
-          value: Waste
+          value: Waste_received
         - label: _(Other)
-          value: Other
+          value: Other_received
       name: location_goods_type_received
       optional: true
     - prompt: _(Please select cities or regions where this freight <strong>originates</strong>?)
       type: multi-checkbox
       checkboxes:
         - label: _(City of Greater Bendigo)
-          value: cogb
+          value: cogb_origin
         - label: _(Regional Victoria)
-          value: regional_vic
+          value: regional_vic_origin
         - label: _(Interstate regional locations)
-          value: interstate_regional
+          value: interstate_regional_origin
         - label: _(Melbourne)
-          value: melbourne
+          value: melbourne_origin
         - label: _(Adelaide)
-          value: adelaide
+          value: adelaide_origin
         - label: _(Sydney)
-          value: sydney
+          value: sydney_origin
         - label: _(Perth)
-          value: perth
+          value: perth_origin
         - label: _(Brisbane)
-          value: brisbane
+          value: brisbane_origin
         - label: _(Canberra)
-          value: canberra
+          value: canberra_origin
         - label: _(Darwin)
-          value: darwin
+          value: darwin_origin
         - label: _(Hobart)
-          value: hobart
+          value: hobart_origin
         - label: _(Overseas)
-          value: overseas
+          value: overseas_origin
       name: inbound_origin
       optional: true
     - prompt: _(Please select the 'types of freight' <strong>dispatched</strong> at this location?)
       type: multi-checkbox
       checkboxes:
         - label: _(Dangerous goods)
-          value: Dangerous goods
+          value: Dangerous goods_dispatched
         - label: _(Food (Non-refrigerated products))
-          value: Food(Non-refrigerated products)
+          value: Food(Non-refrigerated products)_dispatched
         - label: _(General Freight)
-          value: General Freight
+          value: General Freight_dispatched
         - label: _(Grain / Fodder/fertilizer)
-          value: Grain / Fodder/fertilizer
+          value: Grain / Fodder/fertilizer_dispatched
         - label: _(Livestock)
-          value: Livestock
+          value: Livestock_dispatched
         - label: _(Quarry and mining products)
-          value: Quarry and mining products
+          value: Quarry and mining products_dispatched
         - label: _(Other bulk freight )
-          value: Other bulk freight
+          value: Other bulk freight_dispatched
         - label: _(Sensitive Freight)
-          value: Sensitive Freight
+          value: Sensitive Freight_dispatched
         - label: _(Steel and non-ferrous metals)
-          value: Steel and non-ferrous metals
+          value: Steel and non-ferrous metals_dispatched
         - label: _(Waste material)
-          value: Waste
+          value: Waste_dispatched
         - label: _(Other)
-          value: Other
+          value: Other_dispatched
       name: location_goods_type_dispatched
       optional: true
     - prompt: _(Please select cities or regions where this freight is <strong>dispatched</strong> to?)
@@ -628,7 +628,7 @@ place:
       optional: true
     - prompt: _(Business name)
       type: text
-      name: business name
+      name: business_name
       sticky: true
       optional: true
       attrs:
