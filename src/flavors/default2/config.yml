@@ -73,7 +73,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/selectspotgood.svg
+          iconUrl: /static/css/images/spot-selected.svg
           shadowUrl: /static/css/images/marker-shadow.svg
           iconSize: [25, 41]
           shadowSize: [41, 41]
@@ -105,7 +105,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/selectspot.svg
+          iconUrl: /static/css/images/spot-selected.svg
           shadowUrl: /static/css/images/marker-shadow.svg
           iconSize: [25, 41]
           shadowSize: [41, 41]
