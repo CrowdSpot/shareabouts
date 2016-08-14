@@ -129,7 +129,7 @@ place:
 
   items:
 
-    - prompt: _(Is this a Business Operation Spot or Freight Issue Spot?<br><strong><i>(Please start by first adding a 'Business Operation Spot')</i></strong><br>)
+    - prompt: _(Is this your Business Operation Spot or Freight Issue Spot?<br><strong><i>(Please start by first adding a 'Business Operation Spot')</i></strong><br>)
       type: select
       options:
         - label: _(Choose One)
@@ -175,7 +175,7 @@ place:
       optional: true
       attrs:
         - key: placeholder
-          value: _(Please describe the issue here)
+          value: _(E.g. Unsafe intersection)
     - prompt: _(Which category best describes this business’s operations?)
       type: select
       options:
@@ -207,6 +207,8 @@ place:
           value: caryard
         - label: _(Aggregating/disaggregating freight)
           value: aggregatingordis
+        - label: _(Other)
+          value: other
       name: business_type
       optional: true
     - prompt: _(At this location do you... <br>1) Receive freight <br>2) Dispatch freight<br>3) Both receive and dispatch freight<br>)
@@ -230,12 +232,16 @@ place:
           value: Dangerous goods_received
         - label: _(Food (Non-refrigerated products))
           value: Food(Non-refrigerated products)_received
+        - label: _(Food - refrigirated)
+          value: Foodrefrigerated_received
         - label: _(General Freight)
           value: General Freight_received
         - label: _(Grain / Fodder/fertilizer)
           value: Grain / Fodder/fertilizer_received
         - label: _(Livestock)
           value: Livestock_received
+        - label: _(Buidling Products)
+          value: Buidlingproducts_received
         - label: _(Quarry and mining products)
           value: Quarry and mining products_received
         - label: _(Other bulk freight )
@@ -279,19 +285,23 @@ place:
           value: overseas_origin
       name: inbound_origin
       optional: true
-    - prompt: _(Please select the 'types of freight' <strong>dispatched</strong> at this location?)
+    - prompt: _(Please select the 'types of freight' <strong>dispatched</strong> from this location?)
       type: multi-checkbox
       checkboxes:
         - label: _(Dangerous goods)
           value: Dangerous goods_dispatched
         - label: _(Food (Non-refrigerated products))
           value: Food(Non-refrigerated products)_dispatched
+        - label: _(Food - refrigirated)
+          value: Foodrefrigerated_dispatched
         - label: _(General Freight)
           value: General Freight_dispatched
         - label: _(Grain / Fodder/fertilizer)
           value: Grain / Fodder/fertilizer_dispatched
         - label: _(Livestock)
           value: Livestock_dispatched
+        - label: _(Buidling Products)
+          value: Buidlingproducts_dispatched
         - label: _(Quarry and mining products)
           value: Quarry and mining products_dispatched
         - label: _(Other bulk freight )
@@ -382,7 +392,7 @@ place:
           value: 30
       name: waste_remove_frequency
       optional: true
-    - prompt: _(Please choose one of the following.. <br>1) We only operate your own fleet of freight vehicles<br>2) We only use a frieght operator<br>3) We use both our own vehicles and a freight operator)
+    - prompt: _(Please choose one of the following.. <br>1) We only operate our own fleet of freight vehicles<br>2) We only use a frieght operator<br>3) We use both our own vehicles and a freight operator)
       type: select
       options:
         - label: _(Choose One)
@@ -396,7 +406,7 @@ place:
       name: location_freight_operator
       sticky: true
       optional: true
-    - prompt: _(What proportion of your business’s inbound goods does your own fleet carry out? <br><strong>Please estimate percentage (%) of average monthly inbound freight task.</strong></br>)
+    - prompt: _(What percentage (%) of monthly freight task does your own fleet carry? <br><strong>Please estimate percentage (%) of your average monthly freight task.</strong></br>)
       type: text
       attrs:
         - key: placeholder
@@ -413,7 +423,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please list the name and number of freight operators you use)
-    - prompt: _(What vehicle types are used to carry freight?)
+    - prompt: _(Please select the vehicle types used to carry all freight to and from this location)
       type: multi-checkbox
       checkboxes:
         - label: _(Cargo-bike)
@@ -440,13 +450,13 @@ place:
           value: Dont's know
       name: vehicle_type
       optional: true
-    - prompt: _(What is the main route/s used to carry this freight with your own fleet to this spot?)
+    - prompt: _(Please list the main Greater Bendigo route/s your own vehicles use to carry freight to and from this location?)
       type: textarea
       name: route_description
       optional: true
       attrs:
         - key: placeholder
-          value: _(Western Highway)
+          value: _(Eg. Calder Hwy, Allies Rd, Loddon Valley Hwy)
     - prompt: _(What is the main reason these route/s are chosen?)
       type: select
       options:
@@ -491,7 +501,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe..)
-    - prompt: _(What are the top three (any order) improvements that would make your operations more productive and/or efficient?<br>(<i>Please select from the options below</i>))
+    - prompt: _(What are the top three (any order) improvements that would make your freight operations more productive and/or efficient?<br>(<i>Please select from the options below</i>))
       name: strategic
       optional: true
     - prompt: _(Option 1)
