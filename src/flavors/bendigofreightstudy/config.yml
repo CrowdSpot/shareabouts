@@ -345,14 +345,23 @@ place:
           value: overseas
       name: outbound_origin
       optional: true
-    - prompt: _(Please estimate the total average monthly volume (eg. tonnage or pallets) of freight moved to and from this location.)
+    - prompt: _(Please estimate the total average monthly volume (eg. tonnage or pallets) of freight <strong>moved to</strong> this location.)
       type: text
       attrs:
         - key: placeholder
           value: _(Eg. 20 pallets)
         - key: size
           value: 30
-      name: volume
+      name: volume_received
+      optional: true
+    - prompt: _(Please estimate the total average monthly volume (eg. tonnage or pallets) of freight <strong>moved from</strong> this location.)
+      type: text
+      attrs:
+        - key: placeholder
+          value: _(Eg. 20 pallets)
+        - key: size
+          value: 30
+      name: volume_dispatched
       optional: true
     - prompt: _(Are there critical times the business must receive this freight?)
       type: select
@@ -462,8 +471,8 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Most direct)
-          value: Most direct
+        - label: _(Most convenient)
+          value: Most convenient
         - label: _(Least congestion)
           value: Least congestion
         - label: _(Safest)
@@ -472,6 +481,10 @@ place:
           value: Easiest to manoeuvre
         - label: _(Designated route)
           value: Designated route
+        - label: _(Heavy vehicle security parking)
+          value: Heavy vehicle security parking
+        - label: _(Vehicle access approval process)
+          value: Vehicle access approval process
       name: route_reason
       optional: true
     - prompt: _(On average, how many freight vehicle trips per month are made to and from this location?)
@@ -632,7 +645,7 @@ place:
       optional: true
       attrs:
         - key: placeholder
-          value: _(Western Highway)
+          value: _(Eg. Direct access to livestock exchange)
     - prompt: _(<h4><b>Other details:</b></h4>)
       name: personal
       optional: true
@@ -656,28 +669,16 @@ place:
           value: _(Type name)
         - key: size
           value: 30
-    - prompt: _(Which best describes your role in the company?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Owner)
-          value: Owner
-        - label: _(Commercial Manager)
-          value: Commercial Manager
-        - label: _(Transport/logistics manager or dispatcher)
-          value: Transport/logistics manager or dispatcher
-        - label: _(Commercial Manager)
-          value: Commercial Manager
-        - label: _(Administration)
-          value: Administration
-        - label: _(Customer Support)
-          value: Customer Support
-        - label: _(Other)
-          value: Other
+    - prompt: _(What is your current role in this business?)
+      type: text
       name: role
       optional: true
       sticky: true
+      attrs:
+        - key: placeholder
+          value: _(E.g. Customer Service Officer, owner etc.)
+        - key: size
+          value: 30
     - prompt: _(Would you like to stay informed about this project?)
       type: select
       options:
