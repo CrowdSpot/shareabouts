@@ -312,7 +312,11 @@ small {
   display: none;
 }
 
-.place-value-volume {
+.place-value-volume_received {
+  display: none;
+}
+
+.place-value-volume_dispatched {
   display: none;
 }
 
@@ -604,15 +608,41 @@ small {
 
 
 
-.place-form label[for=place-volume],
-  .place-form [name=volume]{
+.place-form label[for=place-volume_received],
+  .place-form [name=volume_received]{
   display: none;
 }
 
-.place-form.business label[for=place-volume],
-  .place-form.business [name=volume] {
+.place-form.location_receivedispatch-receive label[for=place-volume_received],
+  .place-form.location_receivedispatch-receive [name=volume_received] {
   display: block;
 }
+
+.place-form label[for=place-volume_dispatched],
+  .place-form [name=volume_dispatched]{
+  display: none;
+}
+
+.place-form.location_receivedispatch-dispatch label[for=place-volume_dispatched],
+  .place-form.location_receivedispatch-dispatch [name=volume_dispatched] {
+  display: block;
+}
+
+.place-form.location_receivedispatch-bothreceivedispatch label[for=place-volume_received],
+  .place-form.location_receivedispatch-bothreceivedispatch [name=volume_received] {
+  display: block;
+}
+
+.place-form.location_receivedispatch-bothreceivedispatch label[for=place-volume_dispatched],
+  .place-form.location_receivedispatch-bothreceivedispatch [name=volume_dispatched] {
+  display: block;
+}
+
+
+
+
+
+
 
 .place-form label[for=place-location_crtical_times],
   .place-form [name=location_crtical_times]{
