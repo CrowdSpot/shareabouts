@@ -43,7 +43,7 @@
 
 .marker-cluster {
 	background-clip: padding-box;
-	border-radius: 20px;
+	border-radius: 50%;
 	}
 .marker-cluster div {
 	width: 30px;
@@ -52,8 +52,9 @@
 	margin-top: 5px;
 
 	text-align: center;
-	border-radius: 15px;
+	border-radius: 50%;
 	font: 12px "Proxima Nova", Arial, Helvetica, sans-serif;
+	color: red;
 	}
 .marker-cluster span {
 	line-height: 30px;
