@@ -49,22 +49,6 @@ a:visited {
   background-image: url("images/crowdspot-logo.svg");
   background-position: 0px 9px;
 }
-.user-support {
-  background-color: #434343;
-}
-.user-support:hover {
-  background-color: #ccc;
-}
-.user-support:hover label {
-  color: #222;
-  -webkit-transition: color 0.5s ease, background-color 0.5s ease;
-  transition: color 0.5s ease, background-color 0.5s ease;
-  background-color: transparent;
-}
-.user-support label {
-  line-height: 1.2;
-  color: #fff;
-}
 #site-header {
   border-top: #f70000 3px solid;
   background-color: #fff;
@@ -334,30 +318,107 @@ input:focus,
 textarea:focus {
   outline: none;
 }
-.user-support label {
-  background-image: url("images/heart-empty.svg");
-}
-.user-support input[type=checkbox]:checked ~ label {
-  background-image: url("images/heart.svg");
-}
 .promotion {
   float: none;
+  margin-left: 0;
 }
 .user-support {
-  padding: 1em;
+  background-image: none;
+  cursor: pointer;
+}
+.user-support .support-count {
+  margin-right: 0.5em;
 }
 .user-support label {
-  display: inline;
+  color: #fff;
+  background-image: none;
+  position: relative;
+  padding: 1em;
+  margin-right: 0;
+  text-align: center;
+  background-color: #f70000;
+  font-weight: 600;
+  -webkit-transition: box-shadow 0.5s ease, color 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
+  transition: box-shadow 0.5s ease, color 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
+  cursor: pointer;
+  border-radius: 2.5px;
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.user-support label:after {
+  content: "";
+  margin-left: 0.5em;
+  width: 18px;
+  height: 18px;
+  background-image: url("images/heart-empty.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.user-support:hover label {
+  background-color: #ff3a3a;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3) inset;
+}
+.user-support:hover label:after {
+  opacity: 1;
+}
+.user-support input[type=checkbox]:checked ~ label {
+  background-color: #dfdfdf;
+  background-image: none;
+  color: #222;
+}
+.user-support input[type=checkbox]:checked ~ label:hover {
+  background-color: #c0c0c0;
+}
+.user-support input[type=checkbox]:checked ~ label:after {
+  background-image: url("images/heart.svg");
+  opacity: 1;
+}
+.social {
+  border-radius: 2.5px;
+  overflow: hidden;
 }
 .sharing {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
+.sharing-title {
+  font-size: small;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
 .share-link {
   float: none;
   margin-left: 0;
-  margin-right: 1em;
+  width: 50%;
+}
+.share-link a {
+  width: 100%;
+  -webkit-transition: box-shadow 0.5s ease, background 0.5s ease;
+  transition: box-shadow 0.5s ease, background 0.5s ease;
+}
+.share-link a:hover {
+  box-shadow: 0px 1px 4px 0px rgba(34,34,34,0.3) inset;
+}
+.share-facebook a {
+  background: #385184 url("images/facebook-share.svg") center center no-repeat;
+}
+.share-facebook a:hover {
+  background-color: #4b6db1;
+}
+.share-twitter a {
+  background: #1da1f2 url("images/twitter-share.svg") center center no-repeat;
+}
+.share-twitter a:hover {
+  background-color: #4ab4f5;
 }
 
 /*# sourceMappingURL=custom.css.map */
