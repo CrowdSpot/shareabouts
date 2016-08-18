@@ -73,11 +73,11 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/selectspotgood.svg
-          shadowUrl: /static/css/images/marker-shadow.svg
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
+          iconUrl: /static/css/images/spot-selected.svg
+          shadowUrl: /static/css/images/master-pin-shadow.svg
+          iconSize: [85, 41]
+          shadowSize: [85, 41]
+          iconAnchor: [42, 42]
   unsafe:
     index: 1
     label: _(Unsafe Spot)
@@ -105,11 +105,11 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/selectspot.svg
-          shadowUrl: /static/css/images/marker-shadow.svg
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
+          iconUrl: /static/css/images/spot-selected.svg
+          shadowUrl: /static/css/images/master-pin-shadow.svg
+          iconSize: [85, 41]
+          shadowSize: [85, 41]
+          iconAnchor: [42, 42]
 
 
 activity:

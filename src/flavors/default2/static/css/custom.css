@@ -228,7 +228,7 @@ a.leaflet-control-layers-toggle:before,
   display: block;
   width: 27px;
   height: 41px;
-  background: transparent url("images/newspot.svg") 0 0 no-repeat scroll;
+  background: transparent url("images/spot-add.svg") 0 0 no-repeat scroll;
   position: relative;
   top: 3px;
   -webkit-transition: top 0.4s ease;
