@@ -341,7 +341,7 @@ place:
   location_item_name: location
 
   items:
-    - prompt: _(What is the name of this spot? (required))
+    - prompt: _(What is the name of this spot? <span class="required">(required)</span>)
       type: text
       name: name
       attrs:
@@ -350,7 +350,7 @@ place:
         - key: size
           value: 30
         - key: required
-    - prompt: _(What type of spot is this? (required))
+    - prompt: _(What type of spot is this? <span class="required">(required)</span>)
       type: select
       options:
         - label: _(Choose One)

@@ -462,6 +462,13 @@ label small {
 }
 
 
+/* =Colour for required text in survey
+-------------------------------------------------------------- */
+
+.required {
+  color: #FF0000;
+}
+
 /* =Hiding geolocator
 -------------------------------------------------------------- */
 
@@ -478,6 +485,21 @@ label small {
 }
 .user-support input[type=checkbox]:checked ~ label {
   background-image: url(images/thumbs-up-filled.svg);
+}
+
+/* =i280 logos in welcome page
+-------------------------------------------------------------- */
+
+.i280-welcome-logos {
+  margin-bottom: 1em;
+  text-align: right;
+}
+
+.i280-welcome-logos img {
+  height: 60px;
+  width: auto;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 
@@ -505,6 +527,11 @@ label small {
   }
 
 @media only screen and (min-width: 768px) {
+
+  .i280-welcome-logos {
+    float: right;
+    margin-left: 1em;
+  }
 
 }
 
