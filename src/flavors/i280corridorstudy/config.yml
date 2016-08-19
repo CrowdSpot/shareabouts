@@ -519,7 +519,7 @@ place:
       attrs:
         - key: accept
           value: image/*
-    - prompt: _(<h4><b>SURVEY</b></h4>)
+    - prompt: _(<h4>SURVEY</h4>)
       name: survey
       optional: true
     - prompt: _(What would you consider the most important area for improvement along I-280 Corridor?)
@@ -605,7 +605,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please type here..)
-    - prompt: _(Would you like carpool lanes extended on I-280? <i>(The carpool lanes is the yellow line on the map</i>)<br>)
+    - prompt: _(Would you like carpool lanes extended on I-280? <br><i class="prompt-info">(The carpool lanes is the yellow line on the map)</i><br>)
       type: select
       sticky: true
       options:
@@ -625,7 +625,7 @@ place:
         - key: placeholder
           value: _(Please type here..)
       name: carpool_why
-    - prompt: _(Would you like Express Lanes on I-280?<br><i>An express lane is a lane to be used by carpoolers, motorcyclists, and clean-air vehicles (with applicable decals) for free, AND single occupant vehicles that pay a toll with a FasTrak transponder.</i>)
+    - prompt: _(Would you like Express Lanes on I-280? <br><i class="prompt-info">An express lane is a lane to be used by carpoolers, motorcyclists, and clean-air vehicles (with applicable decals) for free, AND single occupant vehicles that pay a toll with a FasTrak transponder.</i><br>)
       type: select
       sticky: true
       options:

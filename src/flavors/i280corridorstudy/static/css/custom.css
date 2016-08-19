@@ -241,13 +241,30 @@ a.close-btn {
 
 /* =Existing Spots
 -------------------------------------------------------------- */
-small {
+
+#fields-survey {
+  display: none;
+}
+
+#place-form small {
   text-transform: none;
   display: none;
 }
 
+label {
+  display: inline-block;
+  margin-bottom: 0.5em;
+}
+
 #place-survey {
   display: none;
+}
+
+.prompt-info {
+  color: grey;
+  display: inline-block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .place-value-description:before {
