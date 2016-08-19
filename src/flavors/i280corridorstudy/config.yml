@@ -35,7 +35,7 @@ map:
   layers:
     # Raster Tile Layers
     # ==================
-    - url: https://api.mapbox.com/styles/v1/aisey/cis13ulp2000egpm14oyqq8tv/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWlzZXkiLCJhIjoiZVhQcWtnZyJ9.-YulcMjSuM7sQNxPYh26HQ
+    - url: https://api.mapbox.com/styles/v1/aisey/cio76ao69000ra5nkkrs4uuo4/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWlzZXkiLCJhIjoiZVhQcWtnZyJ9.-YulcMjSuM7sQNxPYh26HQ
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
       layer_control:
         type: baselayer
