@@ -519,6 +519,9 @@ place:
       attrs:
         - key: accept
           value: image/*
+    - prompt: _(<h4><b>SURVEY</b></h4>)
+      name: survey
+      optional: true
     - prompt: _(What would you consider the most important area for improvement along I-280 Corridor?)
       type: select
       sticky: true
@@ -602,7 +605,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please type here..)
-    - prompt: _(Would you like carpool lanes extended on I-280?<br><i>(The carpool lanes is the yellow line on the map</i>)<br>)
+    - prompt: _(Would you like carpool lanes extended on I-280? <i>(The carpool lanes is the yellow line on the map</i>)<br>)
       type: select
       sticky: true
       options:
@@ -612,7 +615,7 @@ place:
           value: yess
         - label: _(No)
           value: nope
-      name: carpool
+      name: location_carpool
       optional: true
     - prompt: _(Please explain why...)
       type: text
@@ -632,7 +635,7 @@ place:
           value: yess
         - label: _(No)
           value: nope
-      name: express
+      name: location_express
       optional: true
     - prompt: _(Please explain why...)
       type: text
