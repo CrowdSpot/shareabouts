@@ -8,7 +8,7 @@
 	background-size contain
 	background-position left center
 	width 284px
-	
+
 	+below('m')
 		width 180px
 
@@ -17,22 +17,50 @@
 	float left
 	margin-right 0
 	margin-left 0
-	
-.access 
+
+.access
 	font-size 1.1em
 
 	+below(60em)
 		margin 0
-	
+
 	li
+		display inline
+		min-width 160px
+
 		+below(60em)
 			padding-bottom 0
-		
+
+		ul
+			display block
+			visibility hidden
+			opacity 0
+			transform translateY(-10px)
+
+			transition-property opacity, transform, visibility
+			transition-duration .3s, .3s, 0s
+			transition-delay 0s, 0s, .3s
+			min-width 160px
+			position absolute
+			top 100%
+			left 0
+
+			li
+				transition transform .3s ease-in-out
+				transform translateY(-100px)
+
+
 		&:hover
-	
+
 			ul
-				display inline
-				background #ccc
+				display block
+				visibility visible
+				opacity 1
+				transform translateY(0px)
+
+				transition-delay 0s, 0s, 0s
+
+				background transparent
 				box-shadow 0 5px 10px -5px rgba(85, 85, 85, 0.5)
 				border none
 				border-top-right-radius 5px
@@ -40,19 +68,26 @@
 				border-bottom-right-radius 5px
 				margin -3px -60px 0 0
 				padding 3px 0 0 0
-				position absolute
-				top 100%
-				left 0
+
 				z-index 2
 				overflow hidden
-				width 160px
-				
-				a
-					text-align left
-			
-		.menu-item a:hover
-			background #464847
-			// background-color lighten(primary-color, 25%)
+
+				li
+					transform translateY(0)
+
+		// a
+		// 	text-align left
+
+		.menu-item
+			a
+				&:hover
+					background-color lighten(primary-color, 25%)
+					box-shadow button-shadow--hover
+					background #464847
+					// background-color lighten(primary-color, 25%)
+
+				&:focus
+					outline none
 
 #nav-btn
 	background #6f6f6f
@@ -78,7 +113,7 @@
 
 .list-toggle-nav
 	margin-right 0.5em
-	
+
 // .has-pages
 // 	#site-title
 // 		margin-left -0.75em

@@ -80,14 +80,51 @@ a:visited {
     margin: 0;
   }
 }
+.access li {
+  display: inline;
+  min-width: 160px;
+}
 @media only screen and (max-width: 60em) {
   .access li {
     padding-bottom: 0;
   }
 }
+.access li ul {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-transition-property: opacity, visibility, -webkit-transform;
+  transition-property: opacity, visibility, -webkit-transform;
+  transition-property: opacity, transform, visibility;
+  transition-property: opacity, transform, visibility, -webkit-transform;
+  -webkit-transition-duration: 0.3s, 0.3s, 0s;
+          transition-duration: 0.3s, 0.3s, 0s;
+  -webkit-transition-delay: 0s, 0s, 0.3s;
+          transition-delay: 0s, 0s, 0.3s;
+  min-width: 160px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+.access li ul li {
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+}
 .access li:hover ul {
-  display: inline;
-  background: #ccc;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition-delay: 0s, 0s, 0s;
+          transition-delay: 0s, 0s, 0s;
+  background: transparent;
   box-shadow: 0 5px 10px -5px rgba(85,85,85,0.5);
   border: none;
   border-top-right-radius: 5px;
@@ -95,18 +132,20 @@ a:visited {
   border-bottom-right-radius: 5px;
   margin: -3px -60px 0 0;
   padding: 3px 0 0 0;
-  position: absolute;
-  top: 100%;
-  left: 0;
   z-index: 2;
   overflow: hidden;
-  width: 160px;
 }
-.access li:hover ul a {
-  text-align: left;
+.access li:hover ul li {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 .access li .menu-item a:hover {
+  background-color: #ff3a3a;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3) inset;
   background: #464847;
+}
+.access li .menu-item a:focus {
+  outline: none;
 }
 #nav-btn {
   background: #6f6f6f;
@@ -188,6 +227,7 @@ a:visited {
 }
 a.close-btn {
   z-index: 1;
+  color: #222;
   background: #fff;
   box-shadow: none;
   right: 100%;
@@ -199,6 +239,7 @@ a.close-btn {
 @media only screen and (max-width: 60em) {
   a.close-btn {
     width: 60px;
+    box-shadow: 0px -4px 8px -4px rgba(34,34,34,0.2);
   }
 }
 a.close-btn:hover {
@@ -330,8 +371,12 @@ textarea:focus {
   outline: none;
 }
 .promotion {
-  float: none;
+  float: right;
+  min-width: 150px;
   margin-left: 0;
+}
+.place-list .promotion {
+  float: right;
 }
 .user-support {
   background-image: none;
