@@ -20,7 +20,16 @@ var Shareabouts = Shareabouts || {};
       // Init the map
       self.map = L.map(self.el, self.options.mapConfig.options);
       self.placeLayers = L.layerGroup();
-      // self.placeLayers = L.markerClusterGroup({showCoverageOnHover: false});
+      self.placeLayers = L.markerClusterGroup({
+        showCoverageOnHover: false,
+        spiderfyOnMaxZoom: true,
+        disableClusteringAtZoom: 18,
+        spiderLegPolylineOptions: {
+          weight: 2,
+          color: '#a13838',
+          opacity: 1
+        }
+      });
 
       self.mapLayers = { base: {}, overlay: {} };
 
