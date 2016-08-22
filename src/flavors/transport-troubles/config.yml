@@ -46,11 +46,11 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  safe:
+  trainspot:
     index: 0
-    label: _(Safe Spot)
+    label: _(Train Spot)
     rules:
-      - condition: '"{{location_type}}" === "safe" && {{map.zoom}} < 13 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "trainspot" && {{map.zoom}} < 13 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -60,16 +60,16 @@ place_types:
           opacity: 0.7
           fillOpacity: 0.5
 
-      - condition: '"{{location_type}}" === "safe" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "trainspot" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/radspotgood.svg
+          iconUrl: /static/css/images/train-spot.svg
           shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
-      - condition: '"{{location_type}}" === "safe" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "trainspot" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -78,11 +78,11 @@ place_types:
           iconSize: [85, 41]
           shadowSize: [85, 41]
           iconAnchor: [42, 42]
-  unsafe:
+  tramspot:
     index: 1
-    label: _(Unsafe Spot)
+    label: _(Tram Spot)
     rules:
-      - condition: '"{{location_type}}" === "unsafe" && {{map.zoom}} < 13 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "tramspot" && {{map.zoom}} < 13 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -92,16 +92,80 @@ place_types:
           opacity: 0.7
           fillOpacity: 0.5
 
-      - condition: '"{{location_type}}" === "unsafe" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "tramspot" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/radspot.svg
+          iconUrl: /static/css/images/tram-spot.svg
           shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
-      - condition: '"{{location_type}}" === "unsafe" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "tramspot" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/spot-selected.svg
+          shadowUrl: /static/css/images/master-pin-shadow.svg
+          iconSize: [85, 41]
+          shadowSize: [85, 41]
+          iconAnchor: [42, 42]
+  busspot:
+    index: 2
+    label: _(Bus Spot)
+    rules:
+      - condition: '"{{location_type}}" === "busspot" && {{map.zoom}} < 13 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#EC611A'
+          radius: 15
+          weight: 3
+          opacity: 0.7
+          fillOpacity: 0.5
+
+      - condition: '"{{location_type}}" === "busspot" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/bus-spot.svg
+          shadowUrl: /static/css/images/master-pin-shadow.svg
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "busspot" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/spot-selected.svg
+          shadowUrl: /static/css/images/master-pin-shadow.svg
+          iconSize: [85, 41]
+          shadowSize: [85, 41]
+          iconAnchor: [42, 42]
+  likespot:
+    index: 3
+    label: _(Like Spot)
+    rules:
+      - condition: '"{{location_type}}" === "likespot" && {{map.zoom}} < 13 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#EC611A'
+          radius: 15
+          weight: 3
+          opacity: 0.7
+          fillOpacity: 0.5
+
+      - condition: '"{{location_type}}" === "likespot" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/like-spot.svg
+          shadowUrl: /static/css/images/master-pin-shadow.svg
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "likespot" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -147,10 +211,14 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Safe Spot)
-          value: safe
-        - label: _(Unsafe Spot)
-          value: unsafe
+        - label: _(Train Spot)
+          value: trainspot
+        - label: _(Tram Spot)
+          value: tramspot
+        - label: _(Bus Spot)
+          value: busspot
+        - label: _(Like Spot)
+          value: likespot
       name: location_type
       attrs:
         - key: required
@@ -348,11 +416,17 @@ pages:
       - title: _(Show All)
         url: /filter/all
         external: true
-      - title: _(Safe Spots)
-        url: /filter/safe
+      - title: _(Train Spots)
+        url: /filter/trainspot
         external: true
-      - title: _(Unsafe Spots)
-        url: /filter/unsafe
+      - title: _(Tram Spots)
+        url: /filter/tramspot
+        external: true
+      - title: _(Bus Spots)
+        url: /filter/busspot
+        external: true
+      - title: _(Like Spots)
+        url: /filter/likespot
         external: true
 
 
