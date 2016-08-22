@@ -58,7 +58,7 @@ a:visited {
   background: url("images/logo.svg") no-repeat center;
   background-size: contain;
   background-position: left center;
-  width: 284px;
+  width: 320px;
 }
 @media only screen and (max-width: 800px) {
   #site-title {
