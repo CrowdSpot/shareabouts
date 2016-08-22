@@ -1,0 +1,55 @@
+.drag-marker-instructions,
+.drag-marker-warning
+	background-color primary-color
+	color #fff
+	text-shadow none
+
+.place-value-safety_rating
+	&:before
+		content "Safety rating: "
+		font-weight bold
+
+.place-value-description
+	&:before
+		content "Description: "
+		font-weight bold
+
+.place-value-rider_type
+	&:before
+		content "Rider type: "
+		font-weight bold
+
+#place-safety_rating
+	display none
+
+#fields-safety_rating
+	display none
+
+.place-form label[for=place-feel_safe],
+  .place-form [name=feel_safe]
+	display none
+
+.place-form.safe label[for=place-feel_safe],
+  .place-form.safe [name=feel_safe]
+	display block
+
+.place-form label[for=place-feel_unsafe],
+  .place-form [name=feel_unsafe]
+	display none
+
+.place-form.unsafe label[for=place-feel_unsafe],
+  .place-form.unsafe [name=feel_unsafe]
+	display block
+
+.place-form label[for=place-private-submitter_email],
+  .place-form [name=private-submitter_email]
+	display none
+
+.place-form.location_updates-yesplease label[for=place-private-submitter_email],
+  .place-form.location_updates-yesplease [name=private-submitter_email]
+	display block
+
+label
+	small
+		text-transform none
+		display none
