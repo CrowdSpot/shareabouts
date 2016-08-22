@@ -14,14 +14,26 @@
 	border-top 0
 	padding-top 1em
 	padding-bottom 0.5em
+	padding-left 25%
 	border-bottom none
 	box-shadow 0px 5px 5px -5px rgba(85, 85, 85, 0.5)
 	margin-left -5px
 	margin-right -5px
 
+	display flex
+	flex-direction column
+
+	cursor not-allowed
+
 	li
+		line-height 26px
+		margin-bottom 0.5em
 		display flex
 		align-items center
+
+		pointer-events none
+		user-select none
+
 
 	.image-wrapper
 		background-image url(images/legend-pin-background.jpg)
@@ -30,13 +42,17 @@
 		background-position center center
 		background-color lighten(grey, 75%)
 		box-shadow 0px 5px 5px -5px rgba(85, 85, 85, 0.5)
-		min-height 50px
-		min-width 50px
+		min-height 45px
+		min-width 45px
 		border-radius 50%
 		display flex
 		align-items center
 		justify-content center
 		margin-right 0.5em
+
+		img
+			max-height 26px
+			vertical-align middle
 
 .recent-points
 	border-bottom none

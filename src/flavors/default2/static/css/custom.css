@@ -187,18 +187,34 @@ a:visited {
   border-top: 0;
   padding-top: 1em;
   padding-bottom: 0.5em;
+  padding-left: 25%;
   border-bottom: none;
   box-shadow: 0px 5px 5px -5px rgba(85,85,85,0.5);
   margin-left: -5px;
   margin-right: -5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: not-allowed;
 }
 .legend li {
+  line-height: 26px;
+  margin-bottom: 0.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .legend .image-wrapper {
   background-image: url("images/legend-pin-background.jpg");
@@ -207,8 +223,8 @@ a:visited {
   background-position: center center;
   background-color: #dfdfdf;
   box-shadow: 0px 5px 5px -5px rgba(85,85,85,0.5);
-  min-height: 50px;
-  min-width: 50px;
+  min-height: 45px;
+  min-width: 45px;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -220,6 +236,10 @@ a:visited {
       -ms-flex-pack: center;
           justify-content: center;
   margin-right: 0.5em;
+}
+.legend .image-wrapper img {
+  max-height: 26px;
+  vertical-align: middle;
 }
 .recent-points {
   border-bottom: none;
@@ -340,18 +360,6 @@ a.leaflet-control-layers-toggle:before,
   background-color: #f70000;
   color: #fff;
   text-shadow: none;
-}
-.legend {
-  border-top: 0;
-  padding-bottom: 0.5em;
-}
-.legend li {
-  line-height: 26px;
-  margin-bottom: 0.5em;
-}
-.legend img {
-  max-height: 33px;
-  vertical-align: middle;
 }
 .place-value-safety_rating:before {
   content: "Safety rating: ";
