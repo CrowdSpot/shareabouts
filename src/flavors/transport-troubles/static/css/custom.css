@@ -75,6 +75,9 @@ a:visited {
 .access {
   font-size: 1.1em;
 }
+.list-view-active .access {
+  display: none;
+}
 @media only screen and (max-width: 60em) {
   .access {
     margin: 0;
