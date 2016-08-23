@@ -229,7 +229,12 @@ a.close-btn {
 
 /* =legend
 -------------------------------------------------------------- */
+.legend {
+  cursor: not-allowed;
+}
 .legend li {
+  pointer-events: none;
+  user-select: none;
   line-height: 26px;
 }
 
