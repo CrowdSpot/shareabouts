@@ -30,11 +30,11 @@ map:
       lat: -38.29368
       lng: 145.11107
     zoom: 14
-    minZoom: 11
-    maxZoom: 15
+    minZoom: 9
+    maxZoom: 18
     maxBounds: [ [-30.25446, 140.05489], [-40.35670, 150.20999] ]
   layers:
-    - url: http://{s}.tiles.mapbox.com/v3/aisey.a902d297/{z}/{x}/{y}.png
+    - url: https://api.mapbox.com/styles/v1/aisey/cio76ao69000ra5nkkrs4uuo4/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWlzZXkiLCJhIjoiZVhQcWtnZyJ9.-YulcMjSuM7sQNxPYh26HQ
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
     - url: http://{s}.tiles.mapbox.com/v3/aisey.bikepaths/{z}/{x}/{y}.png
       layer_control:
@@ -73,11 +73,11 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/selectspotgood.svg
-          shadowUrl: /static/css/images/marker-shadow.svg
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
+          iconUrl: /static/css/images/spot-selected.svg
+          shadowUrl: /static/css/images/master-pin-shadow.svg
+          iconSize: [85, 41]
+          shadowSize: [85, 41]
+          iconAnchor: [42, 42]
   unsafe:
     index: 1
     label: _(Unsafe Spot)
@@ -105,11 +105,11 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/selectspot.svg
-          shadowUrl: /static/css/images/marker-shadow.svg
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
+          iconUrl: /static/css/images/spot-selected.svg
+          shadowUrl: /static/css/images/master-pin-shadow.svg
+          iconSize: [85, 41]
+          shadowSize: [85, 41]
+          iconAnchor: [42, 42]
 
 
 activity:
@@ -346,7 +346,7 @@ pages:
   - title: _(Filter)
     pages:
       - title: _(Show All)
-        url: /
+        url: /filter/all
         external: true
       - title: _(Safe Spots)
         url: /filter/safe

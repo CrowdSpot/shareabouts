@@ -20,6 +20,7 @@ var Shareabouts = Shareabouts || {};
       // Init the map
       self.map = L.map(self.el, self.options.mapConfig.options);
       self.placeLayers = L.layerGroup();
+      // self.placeLayers = L.markerClusterGroup({showCoverageOnHover: false});
 
       self.mapLayers = { base: {}, overlay: {} };
 
