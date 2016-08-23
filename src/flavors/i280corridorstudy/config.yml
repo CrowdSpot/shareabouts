@@ -548,7 +548,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please type here..)
-    - prompt: _(Generally, what parts of I-280 take the longest time to travel?)
+    - prompt: _(Generally, what parts of I-280 take the longest wait time to travel?)
       type: select
       sticky: true
       options:
