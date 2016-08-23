@@ -256,7 +256,7 @@ a.close-btn {
   display: none;
 }
 
-label {
+#place-form label {
   display: inline-block;
   margin-bottom: 0.5em;
 }
