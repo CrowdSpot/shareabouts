@@ -31,7 +31,7 @@ map:
     zoom: 13
     minZoom: 13
     maxZoom: 18
-    maxBounds: [ [37.222421, -122.388970], [37.584295, -121.635218] ]
+    maxBounds: [ [37.268592, -122.308055], [37.466161, -121.771512] ]
   layers:
     # Raster Tile Layers
     # ==================
@@ -41,7 +41,7 @@ map:
         type: baselayer
         name: 'Streets'
       display: true
-    - url: http://{s}.tiles.mapbox.com/v3/aisey.0oh26a8c/{z}/{x}/{y}.png
+    - url: https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWlzZXkiLCJhIjoiZVhQcWtnZyJ9.-YulcMjSuM7sQNxPYh26HQ
       layer_control:
         type: baselayer
         name: 'Satellite'
@@ -548,7 +548,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please type here..)
-    - prompt: _(Generally, what parts of I-280 take the longest time to travel?)
+    - prompt: _(Generally, what parts of I-280 take the longest wait time to travel?)
       type: select
       sticky: true
       options:

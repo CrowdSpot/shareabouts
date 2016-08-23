@@ -229,7 +229,12 @@ a.close-btn {
 
 /* =legend
 -------------------------------------------------------------- */
+.legend {
+  cursor: not-allowed;
+}
 .legend li {
+  pointer-events: none;
+  user-select: none;
   line-height: 26px;
 }
 
@@ -251,7 +256,7 @@ a.close-btn {
   display: none;
 }
 
-label {
+#place-form label {
   display: inline-block;
   margin-bottom: 0.5em;
 }
@@ -312,7 +317,7 @@ label {
   display: none;
 }
 
-.place-value-express {
+.place-value-location_express {
   display: none;
 }
 
@@ -547,6 +552,10 @@ label small {
   width: auto;
   margin-left: 0.5em;
   margin-right: 0.5em;
+}
+
+.i280-layers-icon {
+  margin-bottom: -0.5em;
 }
 
 

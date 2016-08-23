@@ -112,7 +112,7 @@ var Shareabouts = Shareabouts || {};
               el: '#auth-nav-container',
               router: this.options.router
             })).render();
-      
+
       // add a legend of each point type and name
       var legendData = [];
       _.each(this.options.placeTypes, function(type) {
@@ -315,7 +315,7 @@ var Shareabouts = Shareabouts || {};
     onMapMoveEnd: function(evt) {
       var ll = this.mapView.map.getCenter(),
           zoom = this.mapView.map.getZoom();
-    
+
       this.$centerpoint.removeClass('dragging');
 
       // Never set the placeFormView's latLng until the user does it with a
@@ -429,16 +429,16 @@ var Shareabouts = Shareabouts || {};
       // If the map locatin is part of the url already
       if (zoom && lat && lng) {
         ll = L.latLng(parseFloat(lat), parseFloat(lng));
-        
+
         // Why defer? Good question. There is a mysterious race condition in
         // some cases where the view fails to set and the user is left in map
         // limbo. This condition is seemingly eliminated by defering the
         // execution of this step.
         _.defer(function() {
           self.mapView.map.setView(ll, parseInt(zoom, 10));
-        });        
+        });
       }
-    
+
       this.hidePanel();
       this.hideNewPin();
       this.destroyNewModels();
@@ -623,7 +623,7 @@ var Shareabouts = Shareabouts || {};
         }
       });
     },
-    
+
     // Keeps a cache of "sticky" form fields in memory. This cache is set when
     // the user submits a place or survey form, and is used to prepopulate both
     // forms. NOTE that the cache is shared between both forms, so, for example,
@@ -646,7 +646,7 @@ var Shareabouts = Shareabouts || {};
         }
       });
     },
-    
+
     render: function() {
       this.mapView.render();
     },
@@ -655,11 +655,13 @@ var Shareabouts = Shareabouts || {};
       this.listView.sort();
       // Show
       this.listView.$el.addClass('is-exposed');
+      $('body').addClass('list-view-active');
       $('.show-the-list').addClass('is-visuallyhidden');
       $('.show-the-map').removeClass('is-visuallyhidden');
     },
     hideListView: function() {
       this.listView.$el.removeClass('is-exposed');
+      $('body').removeClass('list-view-active');
       $('.show-the-list').removeClass('is-visuallyhidden');
       $('.show-the-map').addClass('is-visuallyhidden');
     },
