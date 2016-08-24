@@ -121,7 +121,7 @@ a:hover, a:active {
 #site-title {
   background: url('images/logo-bendigo-main.svg') no-repeat bottom right;
   background-size: auto 100%;
-  width: 320px;
+  width: 335px;
   height: 5em;
   text-indent: -133337px;
 }
@@ -150,7 +150,7 @@ a:hover, a:active {
   background-size: contain;
   position: absolute;
   right: 3em;
-  bottom: 0.75em;
+  top: 2.5em;
 }
 
 
@@ -888,7 +888,6 @@ label small {
 
 @media only screen and (min-width: 320px) and (max-width: 1024px) {
 
-
 .access li:last-child {
     display: none;
   }
@@ -910,4 +909,33 @@ label small {
 }
 
 @media only screen and (min-width: 1300px) {
+}
+
+@media only screen and (min-width: 60em) {
+
+  #pages-nav-container, #language-picker {
+    height: 100%;
+    float: left;
+    margin-right: -163px;
+    margin-left: 35px;
+  }
+
+  .access {
+    top: 65%;
+    margin: -1.125em 0 0 1.5em;
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+  #site-title {
+    width: 100%;
+    background-position: 44px;
+  }
+
+  .bendigo-header-logo-small {
+    display: none;
+  }
+
 }
