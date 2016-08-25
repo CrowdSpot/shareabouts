@@ -242,7 +242,7 @@ place:
           value: myki
         - label: _(Other)
           value: other
-      name: train_trouble
+      name: location_train_trouble
     - prompt: _(What is the 'Other' Train Trouble here? )
       type: text
       name: train_trouble_other
@@ -270,7 +270,7 @@ place:
           value: myki
         - label: _(Other)
           value: other
-      name: tram_trouble
+      name: location_tram_trouble
     - prompt: _(What is the 'Other' Tram Trouble here? )
       type: text
       name: tram_trouble_other
@@ -298,7 +298,7 @@ place:
           value: myki
         - label: _(Other)
           value: other
-      name: bus_trouble
+      name: location_bus_trouble
     - prompt: _(What is the 'Other' Bus Trouble here? )
       type: text
       name: bus_trouble_other
