@@ -243,13 +243,6 @@ place:
         - label: _(Other)
           value: other
       name: location_train_trouble
-    - prompt: _(What is the 'Other' Train Trouble here? )
-      type: text
-      name: train_trouble_other
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _('Other' issue here...)
     - prompt: _(What Tram Trouble is happening here?)
       type: select
       optional: true
@@ -271,13 +264,6 @@ place:
         - label: _(Other)
           value: other
       name: location_tram_trouble
-    - prompt: _(What is the 'Other' Tram Trouble here? )
-      type: text
-      name: tram_trouble_other
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _('Other' issue here...)
     - prompt: _(What Bus Trouble is happening here?)
       type: select
       optional: true
@@ -299,13 +285,6 @@ place:
         - label: _(Other)
           value: other
       name: location_bus_trouble
-    - prompt: _(What is the 'Other' Bus Trouble here? )
-      type: text
-      name: bus_trouble_other
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _('Other' issue here...)
     - prompt: _(Please tell us more about this spot..)
       type: textarea
       name: description
