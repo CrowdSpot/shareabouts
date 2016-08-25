@@ -338,11 +338,11 @@ a.leaflet-control-layers-toggle:before,
 }
 #centerpoint.newpin .marker {
   display: block;
-  width: 27px;
-  height: 41px;
+  width: 29px;
+  height: 42px;
   background: transparent url("images/spot-add.svg") 0 0 no-repeat scroll;
   position: relative;
-  top: 3px;
+  top: 2px;
   -webkit-transition: top 0.4s ease;
   transition: top 0.4s ease;
 }
