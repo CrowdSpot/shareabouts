@@ -27,8 +27,8 @@ map:
 
   options:
     center:
-      lat: -37.83406
-      lng: 144.95241
+      lat: -37.84951
+      lng: 144.94675
     zoom: 12
     minZoom: 10
     maxZoom: 18
