@@ -22,10 +22,11 @@ var Shareabouts = Shareabouts || {};
       self.placeLayers = L.layerGroup();
       self.placeLayers = L.markerClusterGroup({
         showCoverageOnHover: false,
-        // maxClusterRadius: 80,
-        // spiderfyOnMaxZoom: true,
+        maxClusterRadius: 100,
+        spiderfyOnMaxZoom: true,
+        zoomToBoundsOnClick: true,
         // animateAddingMarkers: true,
-        disableClusteringAtZoom: 17,
+        // disableClusteringAtZoom: 19,
         spiderLegPolylineOptions: {
           weight: 2,
           color: '#a13838',
