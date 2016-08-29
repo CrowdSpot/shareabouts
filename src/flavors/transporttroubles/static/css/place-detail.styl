@@ -1,0 +1,78 @@
+.drag-marker-instructions,
+.drag-marker-warning
+	background-color primary-color
+	color #fff
+	text-shadow none
+
+.place-value-safety_rating
+	&:before
+		content "Safety rating: "
+		font-weight bold
+
+.place-value-description
+	&:before
+		content "Description: "
+		font-weight bold
+
+.place-value-rider_type
+	&:before
+		content "Rider type: "
+		font-weight bold
+
+#place-safety_rating
+	display none
+
+#fields-safety_rating
+	display none
+
+
+.place-form label[for=place-location_train_trouble],
+.place-form [name=location_train_trouble]
+	display none
+
+.place-form.trainspot label[for=place-location_train_trouble],
+.place-form.trainspot [name=location_train_trouble]
+	display block
+
+
+.place-form label[for=place-location_tram_trouble],
+.place-form [name=location_tram_trouble]
+	display none
+
+.place-form.tramspot label[for=place-location_tram_trouble],
+.place-form.tramspot [name=location_tram_trouble]
+	display block
+
+
+.place-form label[for=place-location_bus_trouble],
+.place-form [name=location_bus_trouble]
+	display none
+
+.place-form.busspot label[for=place-location_bus_trouble],
+.place-form.busspot [name=location_bus_trouble]
+	display block
+
+label
+	small
+		text-transform none
+		display none
+
+.region-title
+	display block
+	margin-bottom 0.5em
+
+.large-screen-columns
+	margin-bottom 1em
+	padding-bottom 1em
+	box-shadow 0px 5px 5px -5px rgba(85, 85, 85, 0.5)
+
+	+above('m')
+		display flex
+		flex-wrap wrap
+
+	a
+		display block
+		margin-bottom 0.5em
+
+		+above('m')
+			width 50%
