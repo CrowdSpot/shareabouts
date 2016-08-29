@@ -26,7 +26,7 @@ var Shareabouts = Shareabouts || {};
         spiderfyOnMaxZoom: true,
         zoomToBoundsOnClick: true,
         // animateAddingMarkers: true,
-        // disableClusteringAtZoom: 19,
+        disableClusteringAtZoom: 17,
         spiderLegPolylineOptions: {
           weight: 2,
           color: '#a13838',
