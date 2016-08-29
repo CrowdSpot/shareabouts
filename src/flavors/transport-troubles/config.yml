@@ -21,8 +21,8 @@ map:
   geolocation_enabled: false
   geolocation_onload: false
 
-  geocoding_enabled: false
-  geocode_field_label: _(Enter the street name and suburb...)-34.017937, 140.973415
+  geocoding_enabled: true
+  geocode_field_label: _(Enter the street name and suburb...)
   geocode_bounding_box: [-36.147182, 142.819274, -37.275679, 145.676826]  # top, left, bottom, right
 
   options:
@@ -355,17 +355,6 @@ place:
           value: _(Type postcode here)
         - key: size
           value: 30
-    - prompt: _(Would you like to stay informed about this project?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Yes - please send updates)
-          value: yesplease
-        - label: _(No thanks - no emails please)
-          value: nothanks
-      name: location_updates
-      optional: true
     - prompt: _(Please type your email below)
       type: text
       sticky: true
