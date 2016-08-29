@@ -381,7 +381,7 @@ survey:
   form_link_text: _(Leave a Comment)
   submit_btn_text: _(Submit Comment)
   items:
-    - prompt: _(What do you think of this spot? Do you agree? Any advice or tips for this spot?)
+    - prompt: _(What do you think of this spot?)
       label: _(Comment)
       type: textarea
       name: comment
