@@ -3,7 +3,7 @@ select,
 input,
 textarea {
   color: #555;
-  font-family: "Proxima Nova", Arial, Helvetica, serif;
+  font-family: "Roboto", "Proxima Nova", Arial, Helvetica, sans-serif;
 }
 .btn,
 .btn:visited,
@@ -43,7 +43,7 @@ textarea {
 a,
 a:active,
 a:visited {
-  color: #0092d7;
+  color: #009640;
 }
 #powered-by a {
   background-image: url("images/crowdspot-logo.svg");
@@ -411,17 +411,36 @@ a.leaflet-control-layers-toggle:before,
 .place-form.busspot [name=location_bus_trouble] {
   display: block;
 }
-.place-form label[for=place-private-submitter_email],
-.place-form [name=private-submitter_email] {
-  display: none;
-}
-.place-form.location_updates-yesplease label[for=place-private-submitter_email],
-.place-form.location_updates-yesplease [name=private-submitter_email] {
-  display: block;
-}
 label small {
   text-transform: none;
   display: none;
+}
+.region-title {
+  display: block;
+  margin-bottom: 0.5em;
+}
+.large-screen-columns {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  box-shadow: 0px 5px 5px -5px rgba(85,85,85,0.5);
+}
+@media only screen and (min-width: 600px) {
+  .large-screen-columns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+.large-screen-columns a {
+  display: block;
+  margin-bottom: 0.5em;
+}
+@media only screen and (min-width: 600px) {
+  .large-screen-columns a {
+    width: 50%;
+  }
 }
 input:focus,
 textarea:focus {
@@ -475,7 +494,7 @@ textarea:focus {
   transition: opacity 0.5s ease;
 }
 .user-support:hover label {
-  background-color: #00f066;
+  background-color: #464847;
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3) inset;
 }
 .user-support:hover label:after {
@@ -529,6 +548,13 @@ textarea:focus {
 }
 .share-twitter a:hover {
   background-color: #4ab4f5;
+}
+.geocode-address-label:before {
+  border: 1px solid #fff;
+  border-width: 0.2em;
+}
+.geocode-address-label:after {
+  background-color: #fff;
 }
 
 /*# sourceMappingURL=custom.css.map */
