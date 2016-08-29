@@ -3,7 +3,7 @@ select,
 input,
 textarea {
   color: #555;
-  font-family: "Proxima Nova", Arial, Helvetica, serif;
+  font-family: "Roboto", "Proxima Nova", Arial, Helvetica, sans-serif;
 }
 .btn,
 .btn:visited,
@@ -409,14 +409,6 @@ a.leaflet-control-layers-toggle:before,
 }
 .place-form.busspot label[for=place-location_bus_trouble],
 .place-form.busspot [name=location_bus_trouble] {
-  display: block;
-}
-.place-form label[for=place-private-submitter_email],
-.place-form [name=private-submitter_email] {
-  display: none;
-}
-.place-form.location_updates-yesplease label[for=place-private-submitter_email],
-.place-form.location_updates-yesplease [name=private-submitter_email] {
   display: block;
 }
 label small {
