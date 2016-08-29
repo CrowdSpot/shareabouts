@@ -121,7 +121,7 @@ place:
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(Help us understand freight in Bendigo)
+  title: _(Tell us about freight in Bendigo)
   action_text: _(added)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
@@ -182,32 +182,30 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Farm)
-          value: farm
+        - label: _(Trade services)
+          value: trade services
         - label: _(Livestock exchange)
-          value: Livestock exchange
-        - label: _(Quarry or Mine)
-          value: Quarry or Mine
+          value: livestock exchange
+        - label: _(Agricultural enterprise)
+          value: agricultural enterprise
+        - label: _(Quarry or Mine enterprise)
+          value: quarry or Mine
         - label: _(Wholesale or Retail outlet)
-          value: Wholesale or Retail outlet
-        - label: _(Warehouse)
-          value: warehouse
-        - label: _(Processing or manufacturing)
+          value: wholesale or Retail outlet
+        - label: _(Warehousing)
+          value: warehousing
+        - label: _(Processing or manufacturing enterprise)
           value: processingormanufacturing
         - label: _(Education services)
           value: education
         - label: _(Health services)
           value: health
-        - label: _(Office)
-          value: office
+        - label: _(Other professional services)
+          value: other professional services
         - label: _(Gallery or Museum)
           value: gallery or museum
-        - label: _(Hospitality)
-          value: hospitality
-        - label: _(Car Yard)
-          value: caryard
-        - label: _(Aggregating/disaggregating freight)
-          value: aggregatingordis
+        - label: _(Accomodation/Hospitality services)
+          value: accom_hospitality
         - label: _(Other)
           value: other
       name: business_type
@@ -223,6 +221,8 @@ place:
           value: dispatch
         - label: _(Both receive and dispatch freight)
           value: bothreceivedispatch
+        - label: _(Don't receive nor dispatch any goods(i.e. freight))
+          value: dontreceivedispatch
       name: location_receivedispatch
       sticky: true
       optional: true
@@ -231,17 +231,17 @@ place:
       checkboxes:
         - label: _(Dangerous goods)
           value: Dangerous goods_received
-        - label: _(Food (Non-refrigerated products))
+        - label: _(Food (Non-refrigerated))
           value: Food(Non-refrigerated products)_received
-        - label: _(Food - refrigerated)
+        - label: _(Food (Refrigerated))
           value: Foodrefrigerated_received
         - label: _(General Freight)
           value: General Freight_received
-        - label: _(Grain / Fodder/fertilizer)
+        - label: _(Grain/Fodder/Fertilizer)
           value: Grain / Fodder/fertilizer_received
         - label: _(Livestock)
           value: Livestock_received
-        - label: _(Building Products)
+        - label: _(Building/Construction Products)
           value: Buidlingproducts_received
         - label: _(Quarry and mining products)
           value: Quarry and mining products_received
@@ -291,17 +291,17 @@ place:
       checkboxes:
         - label: _(Dangerous goods)
           value: Dangerous goods_dispatched
-        - label: _(Food (Non-refrigerated products))
+        - label: _(Food (Non-refrigerated))
           value: Food(Non-refrigerated products)_dispatched
-        - label: _(Food - refrigirated)
+        - label: _(Food (Refrigerated))
           value: Foodrefrigerated_dispatched
         - label: _(General Freight)
           value: General Freight_dispatched
-        - label: _(Grain / Fodder/fertilizer)
+        - label: _(Grain/Fodder/Fertilizer)
           value: Grain / Fodder/fertilizer_dispatched
         - label: _(Livestock)
           value: Livestock_dispatched
-        - label: _(Buidling Products)
+        - label: _(Buidling/Contruction Products)
           value: Buidlingproducts_dispatched
         - label: _(Quarry and mining products)
           value: Quarry and mining products_dispatched
@@ -346,7 +346,7 @@ place:
           value: overseas
       name: outbound_origin
       optional: true
-    - prompt: _(Please estimate the total average monthly volume (eg. tonnage or pallets) of freight <strong>moved to</strong> this location.)
+    - prompt: _(Please estimate the total average monthly volume (e.g. tonnage or pallets) of freight moved <strong>to</strong> this location.)
       type: text
       attrs:
         - key: placeholder
@@ -354,15 +354,6 @@ place:
         - key: size
           value: 30
       name: volume_received
-      optional: true
-    - prompt: _(Please estimate the total average monthly volume (eg. tonnage or pallets) of freight <strong>moved from</strong> this location.)
-      type: text
-      attrs:
-        - key: placeholder
-          value: _(Eg. 20 pallets)
-        - key: size
-          value: 30
-      name: volume_dispatched
       optional: true
     - prompt: _(Are there critical times the business must receive this freight?)
       type: select
@@ -373,16 +364,45 @@ place:
           value: nope
         - label: _(Yes)
           value: yess
-      name: location_crtical_times
+      name: location_crtical_times_receive
       optional: true
-    - prompt: _(Please comment on critical times during which this business must deliver to this location)
+    - prompt: _(Please comment on critical times during which freight must be received at this location)
       type: text
       attrs:
         - key: placeholder
-          value: _(Type here)
+          value: _(E.g. outside of standard business hours)
         - key: size
           value: 30
       name: crtical_times_description
+      optional: true
+    - prompt: _(Please estimate the total average monthly volume (e.g. tonnage or pallets) of freight moved <strong>from</strong> this location.)
+      type: text
+      attrs:
+        - key: placeholder
+          value: _(Eg. 20 pallets)
+        - key: size
+          value: 30
+      name: volume_dispatched
+      optional: true
+    - prompt: _(Are there critical times the business must dispatch this freight?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(No)
+          value: nope
+        - label: _(Yes)
+          value: yess
+      name: location_crtical_times_dispatch
+      optional: true
+    - prompt: _(Please comment on critical times during which freight must be received at this location)
+      type: text
+      attrs:
+        - key: placeholder
+          value: _(E.g. outside of standard business hours)
+        - key: size
+          value: 30
+      name: crtical_times_dispatch_description
       optional: true
     - prompt: _(What type of waste is removed from this location?)
       type: select
