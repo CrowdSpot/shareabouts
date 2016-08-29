@@ -3,7 +3,7 @@ select,
 input,
 textarea {
   color: #555;
-  font-family: "Proxima Nova", Arial, Helvetica, serif;
+  font-family: "Roboto", "Proxima Nova", Arial, Helvetica, sans-serif;
 }
 .btn,
 .btn:visited,
@@ -11,7 +11,7 @@ textarea {
   line-height: 1;
   padding: 0.65em;
   color: #fff;
-  background-color: #f70000;
+  background-color: #009640;
   box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
   font-weight: 600;
   border: 0;
@@ -21,13 +21,13 @@ textarea {
 .btn:hover,
 .btn:visited:hover,
 .btn:link:hover {
-  background-color: #ff3a3a;
+  background: #464847;
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3) inset;
 }
 .btn-primary,
 .btn-primary:visited,
 .btn-primary:link {
-  background-color: #f70000;
+  background-color: #009640;
   box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
   color: #fff;
   -webkit-transition: box-shadow 0.5s ease, background-color 0.5s ease;
@@ -37,21 +37,23 @@ textarea {
 .btn-secondary:visited,
 .btn-secondary:link {
   box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
-  background-color: #f70000;
+  background-color: #009640;
   color: #fff;
 }
 a,
 a:active,
 a:visited {
-  color: #0092d7;
+  color: #009640;
 }
 #powered-by a {
   background-image: url("images/crowdspot-logo.svg");
   background-position: 0px 4px;
 }
 #site-header {
-  border-top: #f70000 3px solid;
+  border-top: #009640 3px solid;
   background-color: #fff;
+  background-image: url("images/background-texture.png");
+  background-size: 117px 117px;
   box-shadow: 0 0px 10px rgba(85,85,85,0.5);
 }
 #site-title {
@@ -130,7 +132,6 @@ a:visited {
   background: transparent;
   box-shadow: 0 5px 10px -5px rgba(85,85,85,0.5);
   border: none;
-  border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin: -3px -60px 0 0;
@@ -143,7 +144,7 @@ a:visited {
           transform: translateY(0);
 }
 .access li .menu-item a:hover {
-  background-color: #ff3a3a;
+  background-color: #00f066;
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3) inset;
   background: #464847;
 }
@@ -181,6 +182,8 @@ a:visited {
   padding: 1em;
   color: #434343;
   background-color: #eaeaeb;
+  background-image: url("images/background-texture.png");
+  background-size: 117px 117px;
   box-shadow: 0px 0px 5px rgba(85,85,85,0.5);
 }
 .legend {
@@ -190,7 +193,7 @@ a:visited {
   border-top: 0;
   padding-top: 1em;
   padding-bottom: 0.5em;
-  padding-left: 25%;
+  padding-left: 15%;
   border-bottom: none;
   box-shadow: 0px 5px 5px -5px rgba(85,85,85,0.5);
   margin-left: -5px;
@@ -268,6 +271,8 @@ a:visited {
 }
 #ticker {
   background: #eaeaeb;
+  background-image: url("images/background-texture.png");
+  background-size: 117px 117px;
   box-shadow: 0px 0 10px rgba(85,85,85,0.5);
 }
 @media only screen and (min-width: 60em) {
@@ -333,11 +338,11 @@ a.leaflet-control-layers-toggle:before,
 }
 #centerpoint.newpin .marker {
   display: block;
-  width: 27px;
-  height: 41px;
+  width: 29px;
+  height: 42px;
   background: transparent url("images/spot-add.svg") 0 0 no-repeat scroll;
   position: relative;
-  top: 3px;
+  top: 2px;
   -webkit-transition: top 0.4s ease;
   transition: top 0.4s ease;
 }
@@ -360,7 +365,7 @@ a.leaflet-control-layers-toggle:before,
 }
 .drag-marker-instructions,
 .drag-marker-warning {
-  background-color: #f70000;
+  background-color: #009640;
   color: #fff;
   text-shadow: none;
 }
@@ -382,33 +387,60 @@ a.leaflet-control-layers-toggle:before,
 #fields-safety_rating {
   display: none;
 }
-.place-form label[for=place-feel_safe],
-.place-form [name=feel_safe] {
+.place-form label[for=place-location_train_trouble],
+.place-form [name=location_train_trouble] {
   display: none;
 }
-.place-form.safe label[for=place-feel_safe],
-.place-form.safe [name=feel_safe] {
+.place-form.trainspot label[for=place-location_train_trouble],
+.place-form.trainspot [name=location_train_trouble] {
   display: block;
 }
-.place-form label[for=place-feel_unsafe],
-.place-form [name=feel_unsafe] {
+.place-form label[for=place-location_tram_trouble],
+.place-form [name=location_tram_trouble] {
   display: none;
 }
-.place-form.unsafe label[for=place-feel_unsafe],
-.place-form.unsafe [name=feel_unsafe] {
+.place-form.tramspot label[for=place-location_tram_trouble],
+.place-form.tramspot [name=location_tram_trouble] {
   display: block;
 }
-.place-form label[for=place-private-submitter_email],
-.place-form [name=private-submitter_email] {
+.place-form label[for=place-location_bus_trouble],
+.place-form [name=location_bus_trouble] {
   display: none;
 }
-.place-form.location_updates-yesplease label[for=place-private-submitter_email],
-.place-form.location_updates-yesplease [name=private-submitter_email] {
+.place-form.busspot label[for=place-location_bus_trouble],
+.place-form.busspot [name=location_bus_trouble] {
   display: block;
 }
 label small {
   text-transform: none;
   display: none;
+}
+.region-title {
+  display: block;
+  margin-bottom: 0.5em;
+}
+.large-screen-columns {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  box-shadow: 0px 5px 5px -5px rgba(85,85,85,0.5);
+}
+@media only screen and (min-width: 600px) {
+  .large-screen-columns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+.large-screen-columns a {
+  display: block;
+  margin-bottom: 0.5em;
+}
+@media only screen and (min-width: 600px) {
+  .large-screen-columns a {
+    width: 50%;
+  }
 }
 input:focus,
 textarea:focus {
@@ -435,7 +467,7 @@ textarea:focus {
   padding: 1em;
   margin-right: 0;
   text-align: center;
-  background-color: #f70000;
+  background-color: #009640;
   font-weight: 600;
   -webkit-transition: box-shadow 0.5s ease, color 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
   transition: box-shadow 0.5s ease, color 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
@@ -462,7 +494,7 @@ textarea:focus {
   transition: opacity 0.5s ease;
 }
 .user-support:hover label {
-  background-color: #ff3a3a;
+  background-color: #464847;
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3) inset;
 }
 .user-support:hover label:after {
@@ -516,6 +548,13 @@ textarea:focus {
 }
 .share-twitter a:hover {
   background-color: #4ab4f5;
+}
+.geocode-address-label:before {
+  border: 1px solid #fff;
+  border-width: 0.2em;
+}
+.geocode-address-label:after {
+  background-color: #fff;
 }
 
 /*# sourceMappingURL=custom.css.map */

@@ -21,26 +21,20 @@ map:
   geolocation_enabled: false
   geolocation_onload: false
 
-  geocoding_enabled: false
+  geocoding_enabled: true
   geocode_field_label: _(Enter the street name and suburb...)
-  geocode_bounding_box: [-37.147182, 143.819274, -37.275679, 145.676826]  # top, left, bottom, right
+  geocode_bounding_box: [-36.147182, 142.819274, -37.275679, 145.676826]  # top, left, bottom, right
 
   options:
     center:
-      lat: -37.81504
-      lng: 144.95610
-    zoom: 14
-    minZoom: 9
+      lat: -37.84951
+      lng: 144.94675
+    zoom: 12
+    minZoom: 10
     maxZoom: 18
-    maxBounds: [ [-30.25446, 140.05489], [-40.35670, 150.20999] ]
+    maxBounds: [ [-39.133989, 141.033046], [-34.034093, 149.935271] ] # bottom, left, top, right
   layers:
     - url: https://api.mapbox.com/styles/v1/aisey/cis1cannd0002gpm4571a8gkw/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWlzZXkiLCJhIjoiZVhQcWtnZyJ9.-YulcMjSuM7sQNxPYh26HQ
-      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-    - url: http://{s}.tiles.mapbox.com/v3/aisey.03qrevbh/{z}/{x}/{y}.png
-      layer_control:
-        type: overlay
-        name: 'Train Lines'
-      display: false
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
 
 # The keys show up in the dropdown list when you are adding a new place
@@ -48,7 +42,7 @@ map:
 place_types:
   trainspot:
     index: 0
-    label: _(Train Spot)
+    label: _(Train Trouble Spot)
     rules:
       - condition: '"{{location_type}}" === "trainspot" && {{map.zoom}} < 13 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -80,7 +74,7 @@ place_types:
           iconAnchor: [42, 42]
   tramspot:
     index: 1
-    label: _(Tram Spot)
+    label: _(Tram Trouble Spot)
     rules:
       - condition: '"{{location_type}}" === "tramspot" && {{map.zoom}} < 13 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -112,7 +106,7 @@ place_types:
           iconAnchor: [42, 42]
   busspot:
     index: 2
-    label: _(Bus Spot)
+    label: _(Bus Trouble Spot)
     rules:
       - condition: '"{{location_type}}" === "busspot" && {{map.zoom}} < 13 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
@@ -206,52 +200,86 @@ place:
         - key: size
           value: 30
         - key: required
-    - prompt: _(Is this a 'Safe Spot' or 'Unsafe Spot'?)
+    - prompt: _(What type of Spot is this?)
       type: select
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Train Spot)
+        - label: _(Train Trouble Spot)
           value: trainspot
-        - label: _(Tram Spot)
+        - label: _(Tram Trouble Spot)
           value: tramspot
-        - label: _(Bus Spot)
+        - label: _(Bus Trouble Spot)
           value: busspot
         - label: _(Like Spot)
           value: likespot
       name: location_type
       attrs:
         - key: required
-    - prompt: _(<strong>Safety rating</strong>)
-      name: safety_rating
-      optional: true
-    - prompt: _(On a scale of 1-3 (<i>where 3 is most safe</i>), how safe do you feel at this Spot?)
+    - prompt: _(What Train Trouble is happening here?)
       type: select
       optional: true
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(3 - Does not get better than this!)
-          value: 3 - Does not get better than this!
-        - label: _(2 - Sweet ride)
-          value: 2 - Sweet ride
-        - label: _(1 - This is pretty good)
-          value: 1 - This is pretty good
-      name: feel_safe
-    - prompt: _(On a scale of 1-3 (<i>where 3 is most unsafe</i>), how unsafe do you feel at this Spot?)
+        - label: _(Running late)
+          value: running late
+        - label: _(Overcrowded)
+          value: overcrowded
+        - label: _(Skipped station)
+          value: skipped station
+        - label: _(Cancellation)
+          value: cancellation
+        - label: _(Lack of service)
+          value: lack of service
+        - label: _(Myki)
+          value: myki
+        - label: _(Other)
+          value: other
+      name: location_train_trouble
+    - prompt: _(What Tram Trouble is happening here?)
       type: select
       optional: true
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(3 - Just feared for my life!)
-          value: 3 - Just feared for my life!
-        - label: _(2 - Stress levels rising)
-          value: 2 - Stress levels rising
-        - label: _(1 - A bit tricky)
-          value: 1 - Oh...not good
-      name: feel_unsafe
-    - prompt: _(Why do you feel safe or unsafe here?<br><i>This will be visible to the public</i>)
+        - label: _(Running late)
+          value: running late
+        - label: _(Overcrowded)
+          value: overcrowded
+        - label: _(Skipped station)
+          value: skipped station
+        - label: _(Cancellation)
+          value: cancellation
+        - label: _(Lack of service)
+          value: lack of service
+        - label: _(Myki)
+          value: myki
+        - label: _(Other)
+          value: other
+      name: location_tram_trouble
+    - prompt: _(What Bus Trouble is happening here?)
+      type: select
+      optional: true
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Running late)
+          value: running late
+        - label: _(Overcrowded)
+          value: overcrowded
+        - label: _(Skipped station)
+          value: skipped station
+        - label: _(Cancellation)
+          value: cancellation
+        - label: _(Lack of service)
+          value: lack of service
+        - label: _(Myki)
+          value: myki
+        - label: _(Other)
+          value: other
+      name: location_bus_trouble
+    - prompt: _(Please tell us more about this spot..)
       type: textarea
       name: description
       optional: true
@@ -267,80 +295,7 @@ place:
       attrs:
         - key: accept
           value: image/*
-    - prompt: _(What is the main purpose you ride here?)
-      type: multi-checkbox
-      optional: true
-      checkboxes:
-        - label: _(Work)
-          value: Work
-        - label: _(Shopping)
-          value: Shopping
-        - label: _(School)
-          value: School
-        - label: _(Exercise)
-          value: Exercise
-        - label: _(Social)
-          value: Social
-        - label: _(All purposes)
-          value: all
-      name: purpose
-    - prompt: _(Please choose the option below that best describes your level of riding confidence?)
-      type: select
-      optional: true
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Very confident)
-          value: Very confident
-        - label: _(Confident but cautious)
-          value: Confident but cautious
-        - label: _(Not confident riding on the road)
-          value: Not confident riding on the road
-        - label: _(I want to ride more but am too concerned)
-          value: I want to ride more but am too concerned
-      name: rider_type
-      sticky: true
-    - prompt: _(Your age)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(< 14)
-          value: '<14'
-        - label: _(15-19)
-          value: 15-19
-        - label: _(20-24)
-          value: 20-24
-        - label: _(25-34)
-          value: 25-34
-        - label: _(35-44)
-          value: 35-44
-        - label: _(45-54)
-          value: 45-54
-        - label: _(55-64)
-          value: 55-64
-        - label: _(65-74)
-          value: 65-74
-        - label: _(>75)
-          value: '>75'
-      name: age
-      sticky: true
-      optional: true
-    - prompt: _(Your gender)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Male)
-          value: male
-        - label: _(Female)
-          value: female
-        - label: _(Other)
-          value: other
-      name: gender
-      sticky: true
-      optional: true
-    - prompt: _(Your name or username)
+    - prompt: _(Username)
       type: text
       name: submitter_name
       sticky: true
@@ -350,17 +305,56 @@ place:
           value: _(This name will be visible)
         - key: size
           value: 30
-    - prompt: _(Would you like to stay informed about this project?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Yes - please send updates)
-          value: yesplease
-        - label: _(No thanks - no emails please)
-          value: nothanks
-      name: location_updates
+    - prompt: _(First Name)
+      type: text
+      name: first_name
+      sticky: true
       optional: true
+      attrs:
+        - key: placeholder
+          value: _(This name will be hidden)
+        - key: size
+          value: 30
+    - prompt: _(Last Name)
+      type: text
+      name: last_name
+      sticky: true
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(This name will be hidden)
+        - key: size
+          value: 30
+    - prompt: _(Suburb)
+      type: text
+      name: suburb
+      sticky: true
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Type suburb here)
+        - key: size
+          value: 30
+    - prompt: _(Postcode)
+      type: text
+      name: last_name
+      sticky: true
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Type postcode here)
+        - key: size
+          value: 30
+    - prompt: _(Phone number)
+      type: number
+      name: last_name
+      sticky: true
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Type postcode here)
+        - key: size
+          value: 30
     - prompt: _(Please type your email below)
       type: text
       sticky: true
@@ -387,7 +381,7 @@ survey:
   form_link_text: _(Leave a Comment)
   submit_btn_text: _(Submit Comment)
   items:
-    - prompt: _(What do you think of this spot? Do you agree? Any advice or tips for this spot?)
+    - prompt: _(What do you think of this spot?)
       label: _(Comment)
       type: textarea
       name: comment

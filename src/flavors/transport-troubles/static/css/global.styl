@@ -1,6 +1,6 @@
 body, select, input, textarea
 	color #555
-	font-family "Proxima Nova", Arial, Helvetica, serif
+	font-family "Roboto", "Proxima Nova", Arial, Helvetica, sans-serif
 
 // #map
 // 	&.leaflet-container
@@ -22,7 +22,8 @@ button-shadow--hover = 0px 1px 4px 0px rgba(0, 0, 0, 0.3) inset
 	transition box-shadow 0.5s ease, background-color 0.5s ease
 
 	&:hover
-		background-color lighten(primary-color, 25%)
+		// background-color lighten(primary-color, 15%)
+		background #464847
 		box-shadow button-shadow--hover
 
 .btn-primary,
@@ -50,7 +51,7 @@ button-shadow--hover = 0px 1px 4px 0px rgba(0, 0, 0, 0.3) inset
 	// 	box-shadow 0px 0px 1px rgba(0, 0, 0, 0.2)
 
 a, a:active, a:visited
-	color #0092D7
+	color primary-color
 
 #powered-by a
 	background-image url(images/crowdspot-logo.svg)
