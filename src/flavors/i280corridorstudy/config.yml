@@ -31,18 +31,17 @@ map:
     zoom: 13
     minZoom: 13
     maxZoom: 18
-    maxBounds: [ [37.222421, -122.388970], [37.584295, -121.635218] ]
+    maxBounds: [ [37.268592, -122.308055], [37.466161, -121.771512] ]
   layers:
     # Raster Tile Layers
     # ==================
-    - url: http://{s}.tiles.mapbox.com/v3/aisey.01baka7i/{z}/{x}/{y}.png
+    - url: https://api.mapbox.com/styles/v1/aisey/cio76ao69000ra5nkkrs4uuo4/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWlzZXkiLCJhIjoiZVhQcWtnZyJ9.-YulcMjSuM7sQNxPYh26HQ
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-    - url: http://{s}.tiles.mapbox.com/v3/aisey.01baka7i/{z}/{x}/{y}.png
       layer_control:
         type: baselayer
         name: 'Streets'
       display: true
-    - url: http://{s}.tiles.mapbox.com/v3/aisey.0oh26a8c/{z}/{x}/{y}.png
+    - url: https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWlzZXkiLCJhIjoiZVhQcWtnZyJ9.-YulcMjSuM7sQNxPYh26HQ
       layer_control:
         type: baselayer
         name: 'Satellite'
@@ -91,11 +90,11 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/markers/marker-f39914.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
+          iconUrl: /static/css/images/spot-selected.svg
+          shadowUrl: /static/css/images/master-pin-shadow.svg
+          iconSize: [85, 41]
+          shadowSize: [85, 41]
+          iconAnchor: [42, 42]
   idea:
     index: 1
     label: _(Idea Spot)
@@ -313,11 +312,11 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/markers/marker-f95016.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
+          iconUrl: /static/css/images/spot-selected.svg
+          shadowUrl: /static/css/images/master-pin-shadow.svg
+          iconSize: [85, 41]
+          shadowSize: [85, 41]
+          iconAnchor: [42, 42]
 
 
 activity:
@@ -341,7 +340,7 @@ place:
   location_item_name: location
 
   items:
-    - prompt: _(What is the name of this spot? (required))
+    - prompt: _(What is the name of this spot? <span class="required">(required)</span>)
       type: text
       name: name
       attrs:
@@ -350,7 +349,7 @@ place:
         - key: size
           value: 30
         - key: required
-    - prompt: _(What type of spot is this? (required))
+    - prompt: _(What type of spot is this? <span class="required">(required)</span>)
       type: select
       options:
         - label: _(Choose One)
@@ -519,6 +518,9 @@ place:
       attrs:
         - key: accept
           value: image/*
+    - prompt: _(<h4>SURVEY</h4>)
+      name: survey
+      optional: true
     - prompt: _(What would you consider the most important area for improvement along I-280 Corridor?)
       type: select
       sticky: true
@@ -546,7 +548,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please type here..)
-    - prompt: _(Generally, what parts of I-280 take the longest time to travel?)
+    - prompt: _(Generally, what parts of I-280 take the longest wait time to travel?)
       type: select
       sticky: true
       options:
@@ -602,7 +604,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please type here..)
-    - prompt: _(Would you like carpool lanes extended on I-280?)
+    - prompt: _(Would you like carpool lanes extended on I-280? <br><i class="prompt-info">(The carpool lanes is the yellow line on the map)</i><br>)
       type: select
       sticky: true
       options:
@@ -612,7 +614,7 @@ place:
           value: yess
         - label: _(No)
           value: nope
-      name: carpool
+      name: location_carpool
       optional: true
     - prompt: _(Please explain why...)
       type: text
@@ -622,7 +624,7 @@ place:
         - key: placeholder
           value: _(Please type here..)
       name: carpool_why
-    - prompt: _(Would you like Express Lanes on I-280?<br><i>An express lane is a lane to be used by carpoolers, motorcyclists, and clean-air vehicles (with applicable decals) for free, AND single occupant vehicles that pay a toll with a FasTrak transponder.</i>)
+    - prompt: _(Would you like Express Lanes on I-280? <br><i class="prompt-info">An express lane is a lane to be used by carpoolers, motorcyclists, and clean-air vehicles (with applicable decals) for free, AND single occupant vehicles that pay a toll with a FasTrak transponder.</i><br>)
       type: select
       sticky: true
       options:
@@ -632,7 +634,7 @@ place:
           value: yess
         - label: _(No)
           value: nope
-      name: express
+      name: location_express
       optional: true
     - prompt: _(Please explain why...)
       type: text
@@ -680,8 +682,8 @@ survey:
 
   # Response config
   show_responses: true
-  response_name: _(comment)
-  response_plural_name: _(comments)
+  response_name: _(Comment)
+  response_plural_name: _(Comments)
   action_text: _(commented on)
   anonymous_name: _(Someone)
 
@@ -702,10 +704,10 @@ survey:
 
 support:
   submission_type: support
-  submit_btn_text: _(Support)
-  response_name: _(support)
-  response_plural_name: _(supports)
-  action_text: supported
+  submit_btn_text: _(Like)
+  response_name: _(Like)
+  response_plural_name: _(Likes)
+  action_text: liked
   anonymous_name: _(Someone)
 
 pages:
