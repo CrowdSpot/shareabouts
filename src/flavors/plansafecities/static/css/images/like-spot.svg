@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="31px" height="43px" viewBox="0 0 31 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>like-spot</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#B4ED50" offset="0%"></stop>
+            <stop stop-color="#429321" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="like-spot" transform="translate(0.000000, -0.033203)">
+            <g id="Group-3" transform="translate(0.500000, 0.500000)" fill="#FFFFFF">
+                <ellipse id="Oval-8" cx="15" cy="15" rx="15" ry="15"></ellipse>
+                <path d="M28.5,14 C28.5,6.54415588 22.4558441,0.5 15,0.5 C7.54415588,0.5 1.5,6.54415588 1.5,14 C1.5,20.236207 3.72846808,25.4848023 9.47469152,27.0350733 L15.4629657,41.5 L21.5386353,26.7181022 C26.7618095,24.8539738 28.5,19.8635375 28.5,14 Z" id="Path"></path>
+            </g>
+            <path d="M20.0386353,28.2181022 C25.2618095,26.3539738 29,21.3635375 29,15.5 C29,8.04415588 22.9558441,2 15.5,2 C8.04415588,2 2,8.04415588 2,15.5 C2,21.736207 6.22846808,26.9848023 11.9746915,28.5350733 L15.9629657,43 L20.0386353,28.2181022 Z M15.5,26 C21.2989899,26 26,21.2989899 26,15.5 C26,9.70101013 21.2989899,5 15.5,5 C9.70101013,5 5,9.70101013 5,15.5 C5,21.2989899 9.70101013,26 15.5,26 Z M10.4147276,13.1569715 L13.536048,16.2782919 L19.8143398,10 L22.2290675,12.4147276 L13.536048,21.1077471 L12.2858496,19.8575487 L8,15.5716991 L10.4147276,13.1569715 L10.4147276,13.1569715 Z" id="radspotgood" fill="url(#linearGradient-1)"></path>
+        </g>
+    </g>
+</svg>

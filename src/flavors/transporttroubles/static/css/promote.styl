@@ -1,0 +1,63 @@
+.promotion
+  float right
+  min-width 150px
+  margin-left 0
+
+.place-list
+
+  .promotion
+    float right
+
+.user-support
+  background-image none
+  cursor pointer
+
+  .support-count
+    margin-right 0.5em
+
+  label
+    color white
+    background-image none
+    padding 1em
+    margin-right 0
+    text-align center
+    background-color primary-color
+    font-weight 600
+    transition box-shadow 0.5s ease, color 0.5s ease, background-color 0.5s ease, opacity 0.5s ease
+    cursor pointer
+    border-radius 2.5px
+    box-shadow button-shadow
+    display flex
+    justify-content center
+
+    &:after
+      content ""
+      margin-left 0.5em
+      width 18px
+      height 18px
+      background-image url(images/heart-empty.svg)
+      background-repeat no-repeat
+      background-position center center
+      opacity 0.5
+      transition opacity 0.5s ease
+
+  &:hover
+
+    label
+      background-color #464847
+      box-shadow button-shadow--hover
+
+      &:after
+        opacity 1
+
+  input[type=checkbox]:checked ~ label
+    background-color lighten(grey, 75%)
+    background-image none
+    color black
+
+    &:hover
+      background-color lighten(grey, 50%)
+
+    &:after
+      background-image url(images/heart.svg)
+      opacity 1

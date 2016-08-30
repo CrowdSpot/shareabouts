@@ -2,10 +2,14 @@
 {% load i18n %}
 
 {% block site-title %}
-<a href="/">{{ config.app.name }}</a>
+<a href="http://bikespot.org.au/">{{ config.app.name }}</a>
 {% endblock %}
 
 {% block meta %}
+
+<link rel="stylesheet" type="text/css" href="/static/css/MarkerCluster.css">
+<link rel="stylesheet" type="text/css" href="/static/css/MarkerCluster.Default.css">
+
   {% if place %}
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
@@ -42,6 +46,7 @@
   This will place content at the top of the side bar
  -->
 {% block sidebar %}
+<div class="spot-type-title">Spot Types</div>
 {% endblock %}
 
 <!--
@@ -68,6 +73,6 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
 </script>
+
 {% endblock %}
