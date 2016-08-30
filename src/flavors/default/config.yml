@@ -172,10 +172,12 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Safe Spot)
-          value: safe
-        - label: _(Unsafe Spot)
-          value: unsafe
+        - label: _(Like Spot)
+          value: like
+        - label: _(Issue Spot)
+          value: issue
+        - label: _(Idea Spot)
+          value: idea
       name: location_type
       attrs:
         - key: required
