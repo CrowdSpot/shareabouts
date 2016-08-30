@@ -20,19 +20,19 @@ var Shareabouts = Shareabouts || {};
       // Init the map
       self.map = L.map(self.el, self.options.mapConfig.options);
       self.placeLayers = L.layerGroup();
-      self.placeLayers = L.markerClusterGroup({
-        showCoverageOnHover: false,
-        maxClusterRadius: 100,
-        spiderfyOnMaxZoom: true,
-        zoomToBoundsOnClick: true,
-        // animateAddingMarkers: true,
-        disableClusteringAtZoom: 17,
-        spiderLegPolylineOptions: {
-          weight: 2,
-          color: '#a13838',
-          opacity: 1
-        }
-      });
+      // self.placeLayers = L.markerClusterGroup({
+      //   showCoverageOnHover: false,
+      //   maxClusterRadius: 100,
+      //   spiderfyOnMaxZoom: true,
+      //   zoomToBoundsOnClick: true,
+      //   // animateAddingMarkers: true,
+      //   disableClusteringAtZoom: 17,
+      //   spiderLegPolylineOptions: {
+      //     weight: 2,
+      //     color: '#a13838',
+      //     opacity: 1
+      //   }
+      // });
 
       self.mapLayers = { base: {}, overlay: {} };
 
