@@ -183,7 +183,7 @@ place:
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(Tell us about where you feel safe or unsafe riding...)
+  title: _(Tell us about your Transport Trouble..)
   action_text: _(added)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
@@ -322,7 +322,7 @@ place:
       optional: true
       attrs:
         - key: placeholder
-          value: _(This name will be hidden)
+          value: _(This will be hidden)
         - key: size
           value: 30
     - prompt: _(Suburb)
@@ -352,7 +352,7 @@ place:
       optional: true
       attrs:
         - key: placeholder
-          value: _(Type postcode here)
+          value: _(Type phone number here)
         - key: size
           value: 30
     - prompt: _(Please type your email below)
