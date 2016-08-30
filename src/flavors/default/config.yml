@@ -1,11 +1,11 @@
 # Settings for the app
 app:
   # HTML Title
-  title: FinnSpot!
+  title: CrowdSpot Demo
   # Header name
-  name: FinnSpot!
+  name: CrowdSpot Demo
   # Meta description that will show up in Google search results
-  meta_description: _(Crowdsourcing perceptions of bike safety. How do riders perceptions of safety in Melbourne compare to crashes?)
+  meta_description: _(CrowdSpot creates custom maps that allow people to give input on geogrpahic locations. Use it to collect data in a social, engaging process.)
 
   # When the map loads, existing places will be loaded in chunks. By default,
   # the size of the chunks will be a reasonable default dictated by the API
@@ -18,7 +18,7 @@ app:
 
 # Settings for map and layer configs
 map:
-  geolocation_enabled: false
+  geolocation_enabled: true
   geolocation_onload: false
 
   geocoding_enabled: false
@@ -27,20 +27,13 @@ map:
 
   options:
     center:
-      lat: -38.29368
-      lng: 145.11107
-    zoom: 14
-    minZoom: 9
-    maxZoom: 18
-    maxBounds: [ [-30.25446, 140.05489], [-40.35670, 150.20999] ]
+      lat: -37.813239
+      lng: 144.964431
+    zoom: 13
+    minZoom: 5
+    maxZoom: 15
   layers:
     - url: https://api.mapbox.com/styles/v1/aisey/cio76ao69000ra5nkkrs4uuo4/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWlzZXkiLCJhIjoiZVhQcWtnZyJ9.-YulcMjSuM7sQNxPYh26HQ
-      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-    - url: http://{s}.tiles.mapbox.com/v3/aisey.bikepaths/{z}/{x}/{y}.png
-      layer_control:
-        type: overlay
-        name: 'Bike Lanes'
-      display: false
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
 
 # The keys show up in the dropdown list when you are adding a new place
