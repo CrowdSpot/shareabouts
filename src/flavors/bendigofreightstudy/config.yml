@@ -166,6 +166,8 @@ place:
           value: poor manoeuvrability
         - label: _(Low clearance)
           value: Low clearance
+        - label: _(Safety)
+          value: Safety 
         - label: _(Other)
           value: other
       name: freight_issue
@@ -210,7 +212,7 @@ place:
           value: other
       name: business_type
       optional: true
-    - prompt: _(At this location do you... <br>1) Receive freight <br>2) Dispatch freight<br>3) Both receive and dispatch freight<br>)
+    - prompt: _(At this location do you..)
       type: select
       options:
         - label: _(Choose One)
@@ -355,6 +357,15 @@ place:
           value: 30
       name: volume_received
       optional: true
+    - prompt: _(Please estimate the total average monthly volume (e.g. tonnage or pallets) of freight moved <strong>from</strong> this location.)
+      type: text
+      attrs:
+        - key: placeholder
+          value: _(Eg. 20 pallets)
+        - key: size
+          value: 30
+      name: volume_dispatched
+      optional: true
     - prompt: _(Are there critical times the business must receive this freight?)
       type: select
       options:
@@ -373,16 +384,7 @@ place:
           value: _(E.g. outside of standard business hours)
         - key: size
           value: 30
-      name: crtical_times_description
-      optional: true
-    - prompt: _(Please estimate the total average monthly volume (e.g. tonnage or pallets) of freight moved <strong>from</strong> this location.)
-      type: text
-      attrs:
-        - key: placeholder
-          value: _(Eg. 20 pallets)
-        - key: size
-          value: 30
-      name: volume_dispatched
+      name: crtical_times_receive_description
       optional: true
     - prompt: _(Are there critical times the business must dispatch this freight?)
       type: select
@@ -395,7 +397,7 @@ place:
           value: yess
       name: location_crtical_times_dispatch
       optional: true
-    - prompt: _(Please comment on critical times during which freight must be received at this location)
+    - prompt: _(Please comment on critical times during which freight must be dispatched at this location)
       type: text
       attrs:
         - key: placeholder
@@ -405,10 +407,8 @@ place:
       name: crtical_times_dispatch_description
       optional: true
     - prompt: _(What type of waste is removed from this location?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
+      type: multi-checkbox
+      checkboxes:
         - label: _(Agricultural waste)
           value: Agricultural waste
         - label: _(Animal by-products)
@@ -441,32 +441,44 @@ place:
           value: Packaging waste
         - label: _(Recyclable waste)
           value: Recyclable waste
+        - label: _(None)
+          value: none
+        - label: _(Other)
+          value: other
       name: waste_type
       optional: true
-    - prompt: _(On average, how many times per month is waste removed?)
-      type: text
-      attrs:
-        - key: placeholder
-          value: _(Eg. 6 times per month)
-        - key: size
-          value: 30
-      name: waste_remove_frequency
-      optional: true
-    - prompt: _(Please choose one of the following.. <br>1) We only operate our own fleet of freight vehicles<br>2) We only use a freight operator<br>3) We use both our own vehicles and a freight operator)
+    - prompt: _(On average, how many times per month is waste removed? (exclusing kerbside collections))
       type: select
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Only use our own fleet)
+        - label: _(Daily)
+          value: daily
+        - label: _(Weekly)
+          value: weekly
+        - label: _(Fornightly)
+          value: fortnightly
+        - label: _(Monthly)
+          value: monthly
+        - label: _(Other)
+          value: other
+      name: waste_remove_frequency
+      optional: true
+    - prompt: _(Please choose one of the following..)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(We only operate our own fleet of freight vehicles)
           value: ownfleet
-        - label: _(Only use other freight operators)
+        - label: _(We only use a freight operator)
           value: useotheroperators
-        - label: _(Both our own fleet and other freight operators)
+        - label: _(We use both our own vehicles and a freight operator)
           value: both_ownandother
       name: location_freight_operator
       sticky: true
       optional: true
-    - prompt: _(What percentage (%) of monthly freight task does your own fleet carry? <br><strong>Please estimate percentage (%) of your average monthly freight task.</strong></br>)
+    - prompt: _(What percentage (%) of monthly freight task does your own fleet carry?)
       type: select
       options:
         - label: _(Choose One)
@@ -483,7 +495,7 @@ place:
           value: 76%-100%
       name: proportion_ownfleet
       optional: true
-    - prompt: _(Please list the name and contact details of the freight company you contract to?)
+    - prompt: _(Please list the name and contact details of the freight company or companies you contract to?<br><i>This information is required for Phase 2 of the Study. Company details will be kept strictly confidential.</i>)
       type: textarea
       name: other_freight_operators
       optional: true
@@ -491,7 +503,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please list the name and number of freight operators you use)
-    - prompt: _(Please select the vehicle types used to carry all freight to and from this location)
+    - prompt: _(Please select vehicle types used to carry all freight to and from this location)
       type: multi-checkbox
       checkboxes:
         - label: _(Cargo-bike)
@@ -532,33 +544,60 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Most convenient)
-          value: Most convenient
-        - label: _(Least congestion)
+        - label: _(Least Congested)
           value: Least congestion
         - label: _(Safest)
           value: Safest
         - label: _(Easiest to manoeuvre)
           value: Easiest to manoeuvre
-        - label: _(Designated route)
+        - label: _(Designated Route)
           value: Designated route
       name: route_reason
       optional: true
-    - prompt: _(On average, how many freight vehicle trips per month are made to and from this location?)
+    - prompt: _(On average, how many freight vehicle trips per month are made to and/or from this location?)
       type: text
       name: trips_vehicle
       optional: true
       attrs:
         - key: placeholder
           value: _(please type the number only)
-    - prompt: _(What is the monthly average percentage (%) of underutilised loading space on this business’s inbound freight fleet vehicles?)
-      type: text
-      attrs:
-        - key: placeholder
-          value: _(Eg. 20%)
-        - key: size
-          value: 30
-      name: underutilisation
+    - prompt: _(Please estimate the monthly average percentage (%) of underutilised loading space on this business’s <strong>inbound</strong> freight fleet vehicles?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(0%)
+          value: 0%
+        - label: _(1%-10%)
+          value: 1%-10%
+        - label: _(11%- 25%)
+          value: 11%- 25%
+        - label: _(26%-50%)
+          value: 26%-50%
+        - label: _(51%-75%)
+          value: 51%-75%
+        - label: _(76%-100%)
+          value: 76%-100%
+      name: underutilisation_inbound
+      optional: true
+    - prompt: _(Please estimate the monthly average percentage (%) of underutilised loading space on this business’s <strong>outbound</strong> freight fleet vehicles?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(0%)
+          value: 0%
+        - label: _(1%-10%)
+          value: 1%-10%
+        - label: _(11%- 25%)
+          value: 11%- 25%
+        - label: _(26%-50%)
+          value: 26%-50%
+        - label: _(51%-75%)
+          value: 51%-75%
+        - label: _(76%-100%)
+          value: 76%-100%
+      name: underutilisation_outbound
       optional: true
     - prompt: _(<h4><b>Help us identify future freight opportunities</b></h4>)
       name: strategic
@@ -583,8 +622,6 @@ place:
           value: skilled labour
         - label: _(Safety)
           value: safety
-        - label: _(Insufficient loading bays)
-          value: insufficient loading bays
         - label: _(Warehouse facility)
           value: warehouse facility
         - label: _(Refrigerated storage facility)
@@ -595,12 +632,16 @@ place:
           value: truck Wash
         - label: _(Wireless internet coverage)
           value: wireless internet coverage
-        - label: _(Alternative fuel stations)
+        - label: _(Mobile-based freight  brokerage (Like ‘Uber’ for freight))
+          value: mobile-based freight  brokerage (Like ‘Uber’ for freight)
+        - label: _(Autonomous vehicles)
+          value: autonomous vehicles
+        - label: _(Alternative fuel stations (CNG, Electric vehicle charging / changeover))
           value: alternative fuel stations
         - label: _(Trailer exchange facility)
           value: trailer exchange facility
-        - label: _(Vehicle access approval process)
-          value: vehicle access approval process
+        - label: _(Better vehicle access approval process)
+          value: better vehicle access approval process
         - label: _(Heavy vehicle security parking)
           value: heavy vehicle security parking
         - label: _(More/improved loading zones)
@@ -609,8 +650,8 @@ place:
           value: improved waste removal
         - label: _(Freight routes protected from development)
           value: freight routes protected from development
-        - label: _(Multi-modal freight terminal/hub)
-          value: multi-modal freight terminal/hub
+        - label: _(Freight terminal/hub)
+          value: freight terminal/hub
         - label: _(Other)
           value: other_efficient1
       name: location_efficient_option1
@@ -625,8 +666,6 @@ place:
           value: skilled labour
         - label: _(Safety)
           value: safety
-        - label: _(Insufficient loading bays)
-          value: insufficient loading bays
         - label: _(Warehouse facility)
           value: warehouse facility
         - label: _(Refrigerated storage facility)
@@ -637,12 +676,16 @@ place:
           value: truck Wash
         - label: _(Wireless internet coverage)
           value: wireless internet coverage
-        - label: _(Alternative fuel stations)
+        - label: _(Mobile-based freight  brokerage (Like ‘Uber’ for freight))
+          value: mobile-based freight  brokerage (Like ‘Uber’ for freight)
+        - label: _(Autonomous vehicles)
+          value: autonomous vehicles
+        - label: _(Alternative fuel stations (CNG, Electric vehicle charging / changeover))
           value: alternative fuel stations
         - label: _(Trailer exchange facility)
           value: trailer exchange facility
-        - label: _(Vehicle access approval process)
-          value: vehicle access approval process
+        - label: _(Better vehicle access approval process)
+          value: better vehicle access approval process
         - label: _(Heavy vehicle security parking)
           value: heavy vehicle security parking
         - label: _(More/improved loading zones)
@@ -651,8 +694,8 @@ place:
           value: improved waste removal
         - label: _(Freight routes protected from development)
           value: freight routes protected from development
-        - label: _(Multi-modal freight terminal/hub)
-          value: multi-modal freight terminal/hub
+        - label: _(Freight terminal/hub)
+          value: freight terminal/hub
         - label: _(Other)
           value: other_efficient2
       name: location_efficient_option2
@@ -667,8 +710,6 @@ place:
           value: skilled labour
         - label: _(Safety)
           value: safety
-        - label: _(Insufficient loading bays)
-          value: insufficient loading bays
         - label: _(Warehouse facility)
           value: warehouse facility
         - label: _(Refrigerated storage facility)
@@ -679,12 +720,16 @@ place:
           value: truck Wash
         - label: _(Wireless internet coverage)
           value: wireless internet coverage
-        - label: _(Alternative fuel stations)
+        - label: _(Mobile-based freight  brokerage (Like ‘Uber’ for freight))
+          value: mobile-based freight  brokerage (Like ‘Uber’ for freight)
+        - label: _(Autonomous vehicles)
+          value: autonomous vehicles
+        - label: _(Alternative fuel stations (CNG, Electric vehicle charging / changeover))
           value: alternative fuel stations
         - label: _(Trailer exchange facility)
           value: trailer exchange facility
-        - label: _(Vehicle access approval process)
-          value: vehicle access approval process
+        - label: _(Better vehicle access approval process)
+          value: better vehicle access approval process
         - label: _(Heavy vehicle security parking)
           value: heavy vehicle security parking
         - label: _(More/improved loading zones)
@@ -693,8 +738,8 @@ place:
           value: improved waste removal
         - label: _(Freight routes protected from development)
           value: freight routes protected from development
-        - label: _(Multi-modal freight terminal/hub)
-          value: multi-modal freight terminal/hub
+        - label: _(Freight terminal/hub)
+          value: freight terminal/hub
         - label: _(Other)
           value: other_efficient3
       name: location_efficient_option3
@@ -728,7 +773,7 @@ place:
           value: _(Type name)
         - key: size
           value: 30
-    - prompt: _(Your name)
+    - prompt: _(Your name (optional))
       type: text
       name: submitter_name
       sticky: true
