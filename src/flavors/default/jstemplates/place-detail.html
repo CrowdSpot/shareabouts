@@ -2,22 +2,25 @@
 
         <header class="place-header clearfix">
           {{#if thanks}}
-              <h3 class="thanks">Thank you for sharing your Spot!</h3> 
-            <h5>If you would like to continue to be involved, you can: 
-	            <ul>
-		            <li>Add another spot by clicking the ‘Add a Spot’ button</li>
-		            <li>Comment on other the spots on the map</li>
-		            <li>Vote on spots by clicking the 'support' button</li>
-		            <li>Share your spot via Twitter or Facebook</li>
+
+            <h3 class="thanks">Thank you for sharing your Spot!</h3>
+
+            <p>If you would like to continue to be involved, you can: </p>
+
+            <ul>
+	            <li>Add another spot by clicking the ‘Add a Spot’ button</li>
+	            <li>Comment on other the spots on the map</li>
+	            <li>Vote on spots by clicking the 'support' button</li>
+	            <li>Share your spot via Twitter or Facebook</li>
 		        </ul>
+
 		        <p>Thank you!</p>
-		        <h2>Your Spot details:</h2>
-		    </h5>
-		     
-		     
+
+		        <h3>Your Spot details:</h3>
+
           {{/if}}
-          
-          <h1>{{ name }}</h1>
+
+          <h3>{{ name }}</h3>
           <span class="place-submission-details">
             {{#_}}<strong class="point-submitter">
               {{#if submitter.avatar_url }}
