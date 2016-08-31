@@ -167,7 +167,7 @@ place:
         - label: _(Low clearance)
           value: Low clearance
         - label: _(Safety)
-          value: Safety 
+          value: Safety
         - label: _(Other)
           value: other
       name: freight_issue
@@ -223,10 +223,7 @@ place:
           value: dispatch
         - label: _(Both receive and dispatch freight)
           value: bothreceivedispatch
-        - label: _(Don't receive nor dispatch any goods(i.e. freight))
-          value: dontreceivedispatch
       name: location_receivedispatch
-      sticky: true
       optional: true
     - prompt: _(Please select the 'types of freight' <strong>received</strong> at this location?)
       type: multi-checkbox
@@ -397,7 +394,7 @@ place:
           value: yess
       name: location_crtical_times_dispatch
       optional: true
-    - prompt: _(Please comment on critical times during which freight must be dispatched at this location)
+    - prompt: _(Please comment on critical times during which freight must be dispatched from this location)
       type: text
       attrs:
         - key: placeholder
@@ -532,7 +529,7 @@ place:
           value: Dont's know
       name: vehicle_type
       optional: true
-    - prompt: _(Please list the main Greater Bendigo route/s your own vehicles use to carry freight to and from this location?)
+    - prompt: _(Please list the main Greater Bendigo route/s your own vehicles use to carry freight to and/or from this location?)
       type: textarea
       name: route_description
       optional: true
@@ -757,6 +754,7 @@ place:
       type: text
       name: route_idea
       optional: true
+      sticky: true
       attrs:
         - key: placeholder
           value: _(Eg. Direct access to livestock exchange)
