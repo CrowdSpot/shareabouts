@@ -246,7 +246,7 @@ place:
     - prompt: _(Please tell us more about this spot..)
       type: textarea
       name: description
-      optional: true
+      optional: false
       attrs:
         - key: placeholder
           value: _(Please describe...)

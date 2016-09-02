@@ -394,6 +394,9 @@ a.leaflet-control-layers-toggle:before,
 #fields-safety_rating {
   display: none;
 }
+.required-field-label {
+  color: #d13f19;
+}
 .place-form label[for=place-location_train_trouble],
 .place-form [name=location_train_trouble] {
   display: none;
