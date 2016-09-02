@@ -27,12 +27,12 @@ map:
 
   options:
     center:
-      lat: -37.84951
-      lng: 144.94675
-    zoom: 12
-    minZoom: 10
+      lat: -37.82233
+      lng: 144.95996
+    zoom: 13
+    minZoom: 8
     maxZoom: 18
-    maxBounds: [ [-39.133989, 141.033046], [-34.034093, 149.935271] ] # bottom, left, top, right
+    maxBounds: [ [-39.300, 140.798], [-33.930, 150.100] ] # bottom, left, top, right
   layers:
     - url: https://api.mapbox.com/styles/v1/aisey/cis1cannd0002gpm4571a8gkw/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWlzZXkiLCJhIjoiZVhQcWtnZyJ9.-YulcMjSuM7sQNxPYh26HQ
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
