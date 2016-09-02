@@ -369,6 +369,13 @@ a.leaflet-control-layers-toggle:before,
   color: #fff;
   text-shadow: none;
 }
+.place-header h3 {
+  line-height: 1;
+  margin-bottom: 0;
+}
+.spot-name-and-type {
+  margin-bottom: 1em;
+}
 .place-value-safety_rating:before {
   content: "Safety rating: ";
   font-weight: bold;

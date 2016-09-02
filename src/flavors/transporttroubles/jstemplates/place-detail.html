@@ -2,7 +2,7 @@
 
         <header class="place-header clearfix">
           {{#if thanks}}
-              <h3 class="thanks">Thank you for sharing your Spot!</h3>
+            <h3 class="thanks">Thank you for sharing your Spot!</h3>
             <p>If you would like to continue to be involved, you can: </p>
 	            <ul>
 		            <li>Add another spot by clicking the ‘Add a Spot’ button</li>
@@ -18,30 +18,39 @@
 
           <h3>{{ name }}</h3>
           <span class="place-submission-details">
-            {{#_}}<strong class="point-submitter">
-              {{#if submitter.avatar_url }}
-                <img src="{{ submitter.avatar_url }}" class="avatar" />
-              {{^}}
-                <img src="{{ STATIC_URL }}/css/images/user-50.png" class="avatar" />
+
+            {{#_}}
+
+              <div class="spot-name-and-type">
+
+                <strong class="point-submitter">
+                  {{#if submitter.avatar_url }}
+                    <img src="{{ submitter.avatar_url }}" class="avatar" />
+                  {{^}}
+                    <img src="{{ STATIC_URL }}/css/images/user-50.png" class="avatar" />
+                  {{/if}}
+                  {{#if submitter.name }}
+                    {{ submitter.name }}
+                  {{^}}
+                    {{#if submitter_name }}
+                      {{ submitter_name }}
+                    {{^}}
+                      {{ anonymous_name }}
+                    {{/if}}
+                  {{/if}}
+                </strong>
+
+                {{ action_text }} this {{ place_type_label location_type}}
+
+              </div>
+
+              {{#if region}}
+                in {{ region }}
               {{/if}}
-              {{#if submitter.name }}
-                {{ submitter.name }}
-              {{^}}
-                {{#if submitter_name }}
-                  {{ submitter_name }}
-                {{^}}
-                  {{ anonymous_name }}
-                {{/if}}
-              {{/if}}
-            </strong> {{ action_text }} this {{ place_type_label location_type}}
 
-            {{#if region}}
-              in {{ region }}
-            {{/if}}{{/_}}
+            {{/_}}
 
-            <time datetime="{{ created_datetime }}" class="response-date"><a href="/place/{{ id }}">{{ fromnow created_datetime }}</a></time>
-
-            <span class="survey-count">{{ survey_count }} {{ survey_label_by_count }}</span>
+            <time datetime="{{ created_datetime }}" class="response-date"><a href="/place/{{ id }}">{{ fromnow created_datetime }} - {{ survey_count }} {{ survey_label_by_count }}</a></time>
 
             {{^if survey_config}}
             <a href="/place/{{ id }}" class="view-on-map-btn btn btn-small">View On Map</a>
@@ -51,17 +60,24 @@
         </header>
 
         <section class="place-items {{location_type_class}}">
+
           {{# attachments }}
-          <div class="place-item place-item-attachment place-attachment-{{ name }}">
-            <img src="{{ file }}" class="place-value place-value-{{ name }}" alt="{{ name }}">
-          </div>
+
+            <div class="place-item place-item-attachment place-attachment-{{ name }}">
+              <img src="{{ file }}" class="place-value place-value-{{ name }}" alt="{{ name }}">
+            </div>
+
           {{/ attachments }}
+
           {{#each_place_item "submitter_name" "name" "location_type"}}
-          <div class="place-item place-item-{{ name }}">
-            <span class="place-label place-label-{{ name }}">{{ label }}</span>
-            <p class="place-value place-value-{{ name }}">{{nlToBr value }}</p>
-          </div>
+
+            <div class="place-item place-item-{{ name }}">
+              <span class="place-label place-label-{{ name }}">{{ label }}</span>
+              <p class="place-value place-value-{{ name }}">{{nlToBr value }}</p>
+            </div>
+
           {{/each_place_item }}
+          
         </section>
 
         {{#unless thanks}}

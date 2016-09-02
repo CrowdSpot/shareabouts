@@ -187,19 +187,19 @@ place:
         - label: _(Choose One)
           value: ''
         - label: _(Running late)
-          value: running late
+          value: Running Late
         - label: _(Overcrowded)
-          value: overcrowded
+          value: Overcrowded
         - label: _(Skipped station)
-          value: skipped station
+          value: Skipped station
         - label: _(Cancellation)
-          value: cancellation
+          value: Cancellation
         - label: _(Lack of service)
-          value: lack of service
+          value: Lack of service
         - label: _(Myki)
-          value: myki
+          value: Myki
         - label: _(Other)
-          value: other
+          value: Other
       name: location_train_trouble
     - prompt: _(What Tram Trouble is happening here?)
       type: select
@@ -208,19 +208,19 @@ place:
         - label: _(Choose One)
           value: ''
         - label: _(Running late)
-          value: running late
+          value: Running late
         - label: _(Overcrowded)
-          value: overcrowded
+          value: Overcrowded
         - label: _(Skipped station)
-          value: skipped station
+          value: Skipped station
         - label: _(Cancellation)
-          value: cancellation
+          value: Cancellation
         - label: _(Lack of service)
-          value: lack of service
+          value: Lack of service
         - label: _(Myki)
-          value: myki
+          value: Myki
         - label: _(Other)
-          value: other
+          value: Other
       name: location_tram_trouble
     - prompt: _(What Bus Trouble is happening here?)
       type: select
@@ -229,19 +229,19 @@ place:
         - label: _(Choose One)
           value: ''
         - label: _(Running late)
-          value: running late
+          value: Running late
         - label: _(Overcrowded)
-          value: overcrowded
+          value: Overcrowded
         - label: _(Skipped station)
-          value: skipped station
+          value: Skipped station
         - label: _(Cancellation)
-          value: cancellation
+          value: Cancellation
         - label: _(Lack of service)
-          value: lack of service
+          value: Lack of service
         - label: _(Myki)
-          value: myki
+          value: Myki
         - label: _(Other)
-          value: other
+          value: Other
       name: location_bus_trouble
     - prompt: _(Please tell us more about this spot..)
       type: textarea
