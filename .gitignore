@@ -32,3 +32,4 @@ src/project/config.yml
 
 # sqlite database
 *.db
+custom.css.map
