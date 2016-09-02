@@ -379,20 +379,20 @@ a.leaflet-control-layers-toggle:before,
 #fields-safety_rating {
   display: none;
 }
-.place-form label[for=place-feel_safe],
-.place-form [name=feel_safe] {
+.place-form label[for=place-safe_feel],
+.place-form [name=safe_feel] {
   display: none;
 }
-.place-form.safe label[for=place-feel_safe],
-.place-form.safe [name=feel_safe] {
+.place-form.safe label[for=place-safe_feel],
+.place-form.safe [name=safe_feel] {
   display: block;
 }
-.place-form label[for=place-feel_unsafe],
-.place-form [name=feel_unsafe] {
+.place-form label[for=place-unsafe_feel],
+.place-form [name=unsafe_feel] {
   display: none;
 }
-.place-form.unsafe label[for=place-feel_unsafe],
-.place-form.unsafe [name=feel_unsafe] {
+.place-form.unsafe label[for=place-unsafe_feel],
+.place-form.unsafe [name=unsafe_feel] {
   display: block;
 }
 .place-form label[for=place-private-submitter_email],
