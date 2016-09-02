@@ -44,17 +44,8 @@ place_types:
     index: 0
     label: _(Train Trouble Spot)
     rules:
-      - condition: '"{{location_type}}" === "trainspot" && {{map.zoom}} < 13 && {{layer.focused}} === false'
-        # Display landmarks as circles (vectors) when zoomed out
 
-        style:
-          color: '#45BA00'
-          radius: 15
-          weight: 3
-          opacity: 0.7
-          fillOpacity: 0.5
-
-      - condition: '"{{location_type}}" === "trainspot" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "trainspot" && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -76,17 +67,8 @@ place_types:
     index: 1
     label: _(Tram Trouble Spot)
     rules:
-      - condition: '"{{location_type}}" === "tramspot" && {{map.zoom}} < 13 && {{layer.focused}} === false'
-        # Display landmarks as circles (vectors) when zoomed out
 
-        style:
-          color: '#EC611A'
-          radius: 15
-          weight: 3
-          opacity: 0.7
-          fillOpacity: 0.5
-
-      - condition: '"{{location_type}}" === "tramspot" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "tramspot" && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -108,17 +90,8 @@ place_types:
     index: 2
     label: _(Bus Trouble Spot)
     rules:
-      - condition: '"{{location_type}}" === "busspot" && {{map.zoom}} < 13 && {{layer.focused}} === false'
-        # Display landmarks as circles (vectors) when zoomed out
 
-        style:
-          color: '#EC611A'
-          radius: 15
-          weight: 3
-          opacity: 0.7
-          fillOpacity: 0.5
-
-      - condition: '"{{location_type}}" === "busspot" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "busspot" && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -140,17 +113,8 @@ place_types:
     index: 3
     label: _(Like Spot)
     rules:
-      - condition: '"{{location_type}}" === "likespot" && {{map.zoom}} < 13 && {{layer.focused}} === false'
-        # Display landmarks as circles (vectors) when zoomed out
 
-        style:
-          color: '#EC611A'
-          radius: 15
-          weight: 3
-          opacity: 0.7
-          fillOpacity: 0.5
-
-      - condition: '"{{location_type}}" === "likespot" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "likespot" && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
