@@ -364,7 +364,6 @@ place:
           value: bike
         - label: _(Bus Issue Spot)
           value: bus
-
         - label: _(Car Issue Spot)
           value: car
       name: location_type
