@@ -256,10 +256,10 @@ small {
   display: none;
 }
 
-label {
+/*#place-survey label {
   display: inline-block;
   margin-bottom: 0.5em;
-}
+}*/
 
 #place-survey {
   display: none;
