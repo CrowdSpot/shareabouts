@@ -251,12 +251,12 @@ a.close-btn {
   display: none;
 }
 
-#place-form small {
+small {
   text-transform: none;
   display: none;
 }
 
-#place-form label {
+label {
   display: inline-block;
   margin-bottom: 0.5em;
 }
