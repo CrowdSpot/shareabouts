@@ -567,4 +567,8 @@ textarea:focus {
   background-color: #fff;
 }
 
+.response-value-private-submitter_email_comment {
+  display: none;
+}
+
 /*# sourceMappingURL=custom.css.map */

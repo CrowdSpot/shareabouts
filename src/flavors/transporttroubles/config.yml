@@ -362,6 +362,16 @@ survey:
     - prompt: _(Your Name)
       type: text
       name: submitter_name
+    - prompt: _(Please type your email below)
+      type: email
+      sticky: true
+      name: private-submitter_email_comment
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Email address)
+        - key: size
+          value: 30
 
 support:
   submission_type: support
