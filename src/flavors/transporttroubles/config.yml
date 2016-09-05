@@ -386,6 +386,45 @@ pages:
       - title: _(Like Spots)
         url: /filter/likespot
         external: true
+  - title: _(Regions)
+    pages:
+      - title: _(Melbourne CBD)
+        url: /16/-37.81378/144.95881
+        external: true
+      - title: _(Melbourne Metropolitan)
+        url: /11/-37.93797/145.05730
+        external: true
+      - title: _(Western Metropolitan)
+        url: /12/-37.87038/144.71535
+        external: true
+      - title: _(Northern Metropolitan)
+        url: /13/-37.73224/144.94520
+        external: true
+      - title: _(Eastern Metropolitan)
+        url: /12/-37.77112/145.18467
+        external: true
+      - title: _(Southern Metropolitan)
+        url: /11/-38.09809/145.12047
+        external: true
+      - title: _(Regional Victoria)
+        url: /10/-37.81384/144.96273
+        external: true
+      - title: _(Barwon South West)
+        url: /10/-38.05188/143.55698
+        external: true
+      - title: _(Grampians)
+        url: /10/-37.50809/143.56934
+        external: true
+      - title: _(Loddon Malle)
+        url: /10/-36.89774/144.00742
+        external: true
+      - title: _(Hume)
+        url: /10/-37.06449/145.15686
+        external: true
+      - title: _(Gippsland)
+        url: /10/-38.17505/145.93826
+        external: true
+
 
 
 notifications:
