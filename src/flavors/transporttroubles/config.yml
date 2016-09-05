@@ -299,16 +299,18 @@ place:
           value: _(Type suburb here)
         - key: size
           value: 30
-    - prompt: _(Postcode)
+    - prompt: _(Postcode (1000 - 9999))
       type: text
       name: last_name
       sticky: true
       optional: true
       attrs:
         - key: placeholder
-          value: _(Type postcode here)
+          value: _(Type postcode here 1000 - 9999)
         - key: size
           value: 30
+        - key: pattern
+          value: ^([1-9][0-9][0-9][0-9])$
     - prompt: _(Phone number)
       type: number
       name: last_name
@@ -320,7 +322,7 @@ place:
         - key: size
           value: 30
     - prompt: _(Please type your email below)
-      type: text
+      type: email
       sticky: true
       name: private-submitter_email
       optional: true
