@@ -1,36 +1,38 @@
+/*globals L Backbone _ */
+
 var Shareabouts = Shareabouts || {};
 
-(function(S, A, $, console){
+(function(S, $, console){
   S.MapView = Backbone.View.extend({
     events: {
-      'click .locate-me': 'geolocate'
+      'click .locate-me': 'onClickGeolocate'
     },
     initialize: function() {
       var self = this,
           i, layerModel,
-          // Base layer config is optional, default to Mapbox Streets
-          baseLayerConfig = _.extend({
-            url: 'http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png',
-            attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-          }, self.options.mapConfig.base_layer),
-          baseLayer = L.tileLayer(baseLayerConfig.url, baseLayerConfig);
+          logUserZoom = function() {
+            S.Util.log('USER', 'map', 'zoom', self.map.getBounds().toBBoxString(), self.map.getZoom());
+          },
+          logUserPan = function(evt) {
+            S.Util.log('USER', 'map', 'drag', self.map.getBounds().toBBoxString(), self.map.getZoom());
+          };
 
       // Init the map
       self.map = L.map(self.el, self.options.mapConfig.options);
       self.placeLayers = L.layerGroup();
-      self.map.addLayer(baseLayer);
 
-      // Cache additional vector layer views
-      self.argoLayerViews = {};
-
-      // Init all of the vector layer views
-      argoConfigs = new Backbone.Collection(self.options.mapConfig.layers);
-      argoConfigs.each(function(model, i) {
-        if (model.get('type') !== 'tile') {
-          self.argoLayerViews[model.get('id')] = new A.LayerView({
-            map: self.map,
-            model: model
-          });
+      // Add layers defined in the config file
+      _.each(self.options.mapConfig.layers, function(config){
+        // type is required by Argo for fetching data, so it's a pretty good
+        // Argo indicator. Argo is this by the way: https://github.com/openplans/argo/
+        if (config.type && config.type === 'mapbox') {
+          if (!config.accessToken) { config.accessToken = S.bootstrapped.mapboxToken; }
+          L.mapboxGL(config).addTo(self.map);
+        } else if (config.type) {
+          L.argo(config.url, config).addTo(self.map);
+        } else {
+          // Assume a tile layer
+          L.tileLayer(config.url, config).addTo(self.map);
         }
       });
 
@@ -42,21 +44,45 @@ var Shareabouts = Shareabouts || {};
         self.initGeolocation();
       }
 
-      _.each(self.options.mapConfig.layers, function(layerConfig){
-        var layer = L.tileLayer(layerConfig.url, layerConfig);
-        self.map.addLayer(layer);
-      });
-
       self.map.addLayer(self.placeLayers);
 
       // Init the layer view cache
       this.layerViews = {};
+
+      self.map.on('dragend', logUserPan);
+      $(self.map.zoomControl._zoomInButton).click(logUserZoom);
+      $(self.map.zoomControl._zoomOutButton).click(logUserZoom);
+
+      self.map.on('zoomend', function(evt) {
+        S.Util.log('APP', 'zoom', self.map.getZoom());
+      });
+
+      self.map.on('moveend', function(evt) {
+        S.Util.log('APP', 'center-lat', self.map.getCenter().lat);
+        S.Util.log('APP', 'center-lng', self.map.getCenter().lng);
+
+        $(S).trigger('mapmoveend', [evt]);
+      });
+
+      self.map.on('dragend', function(evt) {
+        $(S).trigger('mapdragend', [evt]);
+      });
 
       // Bind data events
       self.collection.on('reset', self.render, self);
       self.collection.on('add', self.addLayerView, self);
       self.collection.on('remove', self.removeLayerView, self);
     },
+    reverseGeocodeMapCenter: _.debounce(function() {
+      var center = this.map.getCenter();
+      S.Util.MapQuest.reverseGeocode(center, {
+        success: function(data) {
+          var locationsData = data.results[0].locations;
+          // S.Util.console.log('Reverse geocoded center: ', data);
+          $(S).trigger('reversegeocode', [locationsData[0]]);
+        }
+      });
+    }, 1000),
     render: function() {
       var self = this;
 
@@ -108,8 +134,8 @@ var Shareabouts = Shareabouts || {};
 
       // Add the geolocation control link
       this.$('.leaflet-top.leaflet-right').append(
-        '<div class="leaflet-control">' +
-          '<a href="#" class="locate-me"><span>Locate Me</span></a>' +
+        '<div class="leaflet-control leaflet-bar">' +
+          '<a href="#" class="locate-me"></a>' +
         '</div>'
       );
 
@@ -122,11 +148,12 @@ var Shareabouts = Shareabouts || {};
         this.geolocate();
       }
     },
-    geolocate: function(evt) {
-      if (evt) {
-        evt.preventDefault();
-      }
-
+    onClickGeolocate: function(evt) {
+      evt.preventDefault();
+      S.Util.log('USER', 'map', 'geolocate', this.map.getBounds().toBBoxString(), this.map.getZoom());
+      this.geolocate();
+    },
+    geolocate: function() {
       this.map.locate();
     },
     addLayerView: function(model) {
@@ -135,13 +162,41 @@ var Shareabouts = Shareabouts || {};
         router: this.options.router,
         map: this.map,
         placeLayers: this.placeLayers,
-        placeTypes: this.options.placeTypes
+        placeTypes: this.options.placeTypes,
+        mapView: this
       });
     },
     removeLayerView: function(model) {
       this.layerViews[model.cid].remove();
       delete this.layerViews[model.cid];
+    },
+    zoomInOn: function(latLng) {
+      this.map.setView(latLng, this.options.mapConfig.options.maxZoom || 17);
+    },
+
+    filter: function(locationType) {
+      var self = this;
+      console.log('filter the map', arguments);
+      this.locationTypeFilter = locationType;
+      this.collection.each(function(model) {
+        var modelLocationType = model.get('location_type');
+
+        if (modelLocationType &&
+            modelLocationType.toUpperCase() === locationType.toUpperCase()) {
+          self.layerViews[model.cid].show();
+        } else {
+          self.layerViews[model.cid].hide();
+        }
+      });
+    },
+
+    clearFilter: function() {
+      var self = this;
+      this.locationTypeFilter = null;
+      this.collection.each(function(model) {
+        self.layerViews[model.cid].render();
+      });
     }
   });
 
-})(Shareabouts, Argo, jQuery, Shareabouts.Util.console);
+})(Shareabouts, jQuery, Shareabouts.Util.console);

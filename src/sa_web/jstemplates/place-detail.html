@@ -1,46 +1,54 @@
         {{> place-detail-promotion-bar }}
 
         <header class="place-header clearfix">
-          {{# thanks}}
-            <h5 class="thanks">Thanks for sharing! Your 
-              {{# place_type_label }}
-                {{ place_type_label }}
-              {{/ place_type_label}}
-              {{^ place_type_label }}place{{/ place_type_label}}
-              has been added to the map.
-            </h5>
-          {{/thanks}}
-          
-          <h1>{{ name }}</h1>
+          <h1>{{#if name }}{{ name }}{{^}}{{>location-string location }}{{/if}}</h1>
           <span class="place-submission-details">
             {{#_}}<strong class="point-submitter">
-              {{ submitter_name }}
-            </strong> added this {{# place_type_label }}{{ place_type_label }}{{/ place_type_label}}
-                                 {{^ place_type_label }}place{{/ place_type_label}}
-            {{#region}}
-              in {{ region }}
-            {{/region}}{{/_}}
+              {{#if submitter.avatar_url }}
+                <img src="{{ submitter.avatar_url }}" class="avatar" />
+              {{^}}
+                <img src="{{ STATIC_URL }}css/images/user-50.png" class="avatar" />
+              {{/if}}
+              {{#if submitter.name }}
+                {{ submitter.name }}
+              {{^}}
+                {{#if submitter_name }}
+                  {{ submitter_name }}
+                {{^}}
+                  {{ anonymous_name }}
+                {{/if}}
+              {{/if}}
+            </strong> {{ action_text }} this {{ place_type_label location_type}}
 
-            <time datetime="{{ created_datetime }}" class="response-date">{{ pretty_created_datetime }}</time>.
+            {{#if region}}
+              in {{ region }}
+            {{/if}}{{/_}}
+
+            <time datetime="{{ created_datetime }}" class="response-date"><a href="/place/{{ id }}">{{ fromnow created_datetime }}</a></time>
+
+            <span class="survey-count">{{ survey_count }} {{ survey_label_by_count }}</span>
+
+            {{^if survey_config}}
+            <a href="/place/{{ id }}" class="view-on-map-btn btn btn-small">{{#_}}View On Map{{/_}}</a>
+            {{/if}}
+
           </span>
         </header>
 
-        <section class="place-items {{place_type_class}}">
+        <section class="place-items">
           {{# attachments }}
-          <div class="place-item place-attachment-{{ name }}">
-            <img src="{{ url }}" class="place-value place-value-{{ name }}" alt="{{ name }}">
+          <div class="place-item place-item-attachment place-attachment-{{ name }}">
+            <img src="{{ file }}" class="place-value place-value-{{ name }}" alt="{{ name }}">
           </div>
           {{/ attachments }}
-          {{# items }}
+          {{#each_place_item "submitter_name" "name" "location_type"}}
           <div class="place-item place-item-{{ name }}">
             <span class="place-label place-label-{{ name }}">{{ label }}</span>
-            <p class="place-value place-value-{{ name }}">{{ #autolink }}{{ value }}{{ /autolink }}</p>
+            <p class="place-value place-value-{{ name }}">{{nlToBr value }}</p>
           </div>
-          {{/ items }}
+          {{/each_place_item }}
         </section>
-        
-        {{^thanks}}
-          {{#survey_config}}
-          <section class="survey"></section>
-          {{/survey_config}}
-        {{/thanks}}
+
+        {{#if survey_config}}
+        <section class="survey" id="survey"></section>
+        {{/if}}

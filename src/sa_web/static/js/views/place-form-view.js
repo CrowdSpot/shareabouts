@@ -1,3 +1,5 @@
+/*globals _ Spinner Handlebars Backbone jQuery Gatekeeper */
+
 var Shareabouts = Shareabouts || {};
 
 (function(S, $, console){
@@ -6,7 +8,7 @@ var Shareabouts = Shareabouts || {};
     events: {
       'submit form': 'onSubmit',
       'change input[type="file"]': 'onInputFileChange',
-      'change select[name=location_type]': 'onLocationTypeChange'
+      'change [data-group-required]': 'onRequiredOptionButtonChange'
     },
     initialize: function(){
       S.TemplateHelpers.overridePlaceTypeConfig(this.options.placeConfig.items,
@@ -19,10 +21,13 @@ var Shareabouts = Shareabouts || {};
     render: function(){
       // Augment the model data with place types for the drop down
       var data = _.extend({
-        place_config: this.options.placeConfig
-      }, this.model.toJSON());
-      
-      this.$el.html(ich['place-form'](data));
+        place_config: this.options.placeConfig,
+        user_token: this.options.userToken,
+        current_user: S.currentUser
+      }, S.stickyFieldValues, this.model.toJSON());
+
+      this.$el.html(Handlebars.templates['place-form'](data));
+      this.updatedRequiredOptionButtons();
       return this;
     },
     remove: function() {
@@ -30,40 +35,36 @@ var Shareabouts = Shareabouts || {};
     },
     onError: function(model, res) {
       // TODO handle model errors!
-      console.log('oh no errors!!', JSON.stringify(model), JSON.stringify(res));
+      console.log('oh no errors!!', model, res);
+    },
+    // This is called from the app view
+    setLatLng: function(latLng) {
+      this.center = latLng;
+      this.$('.drag-marker-instructions, .drag-marker-warning').addClass('is-visuallyhidden');
+    },
+    setLocation: function(location) {
+      this.location = location;
     },
     // Get the attributes from the form
     getAttrs: function() {
       var attrs = {},
-          center = this.options.appView.getCenter();
+          locationAttr = this.options.placeConfig.location_item_name,
+          $form = this.$('form');
 
       // Get values from the form
-      _.each(this.$('form').serializeArray(), function(item, i) {
-        attrs[item.name] = item.value;
-      });
+      attrs = S.Util.getAttrs($form);
 
       // Get the location attributes from the map
-      attrs.location = {
-        lat: center.lat,
-        lng: center.lng
+      attrs.geometry = {
+        type: 'Point',
+        coordinates: [this.center.lng, this.center.lat]
       };
 
+      if (this.location && locationAttr) {
+        attrs[locationAttr] = this.location;
+      }
+
       return attrs;
-    },
-    // update the form with a class indicating the location type
-    onLocationTypeChange: function(evt) {
-      var self = this, $form = self.$('form');
-      var lt_config = _.find(self.options.placeConfig.items, function(item) {
-        return item.name === 'location_type'
-      });
-      
-      // remove any existing classes
-      _.each(lt_config.options, function(option) {
-        $form.removeClass(S.Util.classify(option));
-      });
-      
-      // add the new class
-      $form.addClass(S.Util.classify($(evt.target).val()));
     },
     onInputFileChange: function(evt) {
       var self = this,
@@ -80,7 +81,7 @@ var Shareabouts = Shareabouts || {};
                 data = {
                   name: fieldName,
                   blob: blob,
-                  url: canvas.toDataURL('image/jpeg')
+                  file: canvas.toDataURL('image/jpeg')
                 };
 
             attachment = self.model.attachmentCollection.find(function(model) {
@@ -101,34 +102,72 @@ var Shareabouts = Shareabouts || {};
         });
       }
     },
-    onSubmit: function(evt) {
+    updatedRequiredOptionButtons: function(optionButtons) {
+      var groupNames = []
+
+      this.$(optionButtons || '[data-group-required]').each(function(index, btn) {
+        groupNames.push($(btn).attr('name'));
+      });
+
+      _.chain(groupNames).uniq().each(function(groupName) {
+        var groupOptions = this.$('[name="' + groupName + '"]');
+        if (groupOptions.is(':checked')) {
+          groupOptions.removeAttr('required');
+        } else {
+          groupOptions.attr('required', 'required');
+        }
+      }, this);
+    },
+    onRequiredOptionButtonChange: function(evt) {
+      this.updatedRequiredOptionButtons(evt.currentTarget)
+    },
+    onSubmit: Gatekeeper.onValidSubmit(function(evt) {
+      // Make sure that the center point has been set after the form was
+      // rendered. If not, this is a good indication that the user neglected
+      // to move the map to set it in the correct location.
+      if (!this.center) {
+        this.$('.drag-marker-instructions').addClass('is-visuallyhidden');
+        this.$('.drag-marker-warning').removeClass('is-visuallyhidden');
+
+        // Scroll to the top of the panel if desktop
+        this.$el.parent('article').scrollTop(0);
+        // Scroll to the top of the window, if mobile
+        window.scrollTo(0, 0);
+        return;
+      }
+
       var router = this.options.router,
           model = this.model,
           // Should not include any files
           attrs = this.getAttrs(),
-          $fileInputs;
+          $button = this.$('[name="save-place-btn"]'),
+          spinner, $fileInputs;
 
       evt.preventDefault();
-      
-      // simple required validation
-      var errors = '';
-      _.each(this.options.placeConfig.items, function(item) {
-        if (! item.optional && ! attrs[item.name]) {
-          errors = errors + item.prompt + " is required. ";
-        }
-      });
-      if (errors)
-        return alert(errors);
-      
+
+      $button.attr('disabled', 'disabled');
+      spinner = new Spinner(S.smallSpinnerOptions).spin(this.$('.form-spinner')[0]);
+
+      S.Util.log('USER', 'new-place', 'submit-place-btn-click');
+
+      S.Util.setStickyFields(attrs, S.Config.survey.items, S.Config.place.items);
+
       // Save and redirect
       this.model.save(attrs, {
         success: function() {
-          S.justSubmitted = true;
+          S.Util.log('USER', 'new-place', 'successfully-add-place');
           router.navigate('/place/' + model.id, {trigger: true});
+        },
+        error: function() {
+          S.Util.log('USER', 'new-place', 'fail-to-add-place');
+        },
+        complete: function() {
+          $button.removeAttr('disabled');
+          spinner.stop();
         },
         wait: true
       });
-    }
+    })
   });
 
-})(Shareabouts, jQuery, Shareabouts.Util.console);
+}(Shareabouts, jQuery, Shareabouts.Util.console));

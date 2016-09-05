@@ -1,22 +1,25 @@
-<li class="menu-item{{# slug }} internal-menu-item menu-item-{{ slug }}{{/ slug }}">
+<li class="menu-item{{#if slug }}{{#unless pages }} internal-menu-item{{/unless }} menu-item-{{ slug }}{{/if }}">
+  {{#if pages }}
 
-  {{# external }}
-    <a href="{{ url }}">{{ title }}</a>
-  {{/ external }}
+    <a class="btn btn-block btn-secondary">{{ title }}</a>
+    <ul>
+    {{# pages }}
+      {{> pages-nav-item }}
+    {{/ pages }}
+    </ul>
 
-  {{^ external }}
-    {{# slug }}
-      <a href="/page/{{ slug }}">{{ title }}</a>
-    {{/ slug }}
-    {{^ slug }}
-      <a>{{ title }}</a>
-    {{/ slug }}
-  {{/ external }}
+  {{else}}
 
-  <ul>
-  {{# sub_pages }}
-    {{> pages-nav-item }}
-  {{/ sub_pages }}
-  </ul>
+    {{#if external }}
+      <a class="btn btn-block btn-secondary" href="{{ url }}">{{ title }}</a>
+    {{else }}
+      {{#if slug }}
+        <a class="btn btn-block btn-secondary" href="/page/{{ slug }}">{{ title }}</a>
+      {{else }}
+        <a class="btn btn-block btn-secondary">{{ title }}</a>
+      {{/if }}
+    {{/if }}
+
+  {{/if }}
 
 </li>
