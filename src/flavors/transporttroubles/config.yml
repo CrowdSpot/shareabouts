@@ -259,7 +259,7 @@ place:
       attrs:
         - key: accept
           value: image/*
-    - prompt: _(Username)
+    - prompt: _(Username (Letters only))
       type: text
       name: submitter_name
       sticky: true
@@ -269,7 +269,9 @@ place:
           value: _(This name will be visible)
         - key: size
           value: 30
-    - prompt: _(First Name)
+        - key: pattern
+          value: ^[a-zA-Z]+$
+    - prompt: _(First Name (Letters only))
       type: text
       name: first_name
       sticky: true
@@ -279,7 +281,9 @@ place:
           value: _(This name will be hidden)
         - key: size
           value: 30
-    - prompt: _(Last Name)
+        - key: pattern
+          value: ^[a-zA-Z]+$
+    - prompt: _(Last Name (Letters only))
       type: text
       name: last_name
       sticky: true
@@ -289,6 +293,8 @@ place:
           value: _(This will be hidden)
         - key: size
           value: 30
+        - key: pattern
+          value: ^[a-zA-Z]+$
     - prompt: _(Suburb)
       type: text
       name: suburb
