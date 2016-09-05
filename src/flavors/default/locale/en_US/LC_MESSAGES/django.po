@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-05 15:27-0500\n"
+"POT-Creation-Date: 2015-07-27 12:00+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "Enter the street name and suburb..."
+msgstr ""
+
 msgid ""
-"Shareabouts is a mapping tool to gather crowd sourced public input. Use it "
-"to collect suggested locations and comments in a social, engaging process."
+"CrowdSpot creates custom maps that allow people to give input on geogrpahic "
+"locations. Use it to collect data in a social, engaging process."
 msgstr ""
 
 msgid "Someone"
 msgstr ""
 
-msgid "Support This!"
+msgid "support"
+msgstr ""
+
+msgid "Support"
+msgstr ""
+
+msgid "supports"
 msgstr ""
 
 msgid "comments"
@@ -46,47 +55,326 @@ msgstr ""
 msgid "comment"
 msgstr ""
 
+msgid "Show the Map"
+msgstr ""
+
 msgid "Submit"
 msgstr ""
 
-msgid "created"
+msgid "What do you think about Transport in the City of Perth?"
 msgstr ""
 
-msgid "Tell us more..."
+msgid "What is the name of this spot?"
 msgstr ""
 
-msgid "Location Name"
+msgid "Street, Intersection, Park, Landmark, etc."
 msgstr ""
 
-msgid "Location Type"
+msgid "What type of spot is this?"
 msgstr ""
 
-msgid "Landmark"
+msgid "Choose One"
 msgstr ""
 
-msgid "Park"
+msgid "Idea Spot"
 msgstr ""
 
-msgid "School"
+msgid "Like Spot"
 msgstr ""
 
-msgid "Name"
+msgid "Walk Issue Spot"
 msgstr ""
 
-msgid "Description"
+msgid "Bike Issue Spot"
 msgstr ""
 
-msgid "Description..."
+msgid "Bus Issue Spot"
 msgstr ""
 
-msgid "Add a Place"
+msgid "Train Issue Spot"
+msgstr ""
+
+msgid "Car Issue Spot"
+msgstr ""
+
+msgid "Boat Issue Spot"
+msgstr ""
+
+msgid "What is the issue at this walking spot?"
+msgstr ""
+
+msgid "Poorly maintained footpaths"
+msgstr ""
+
+msgid "No crossing facilities"
+msgstr ""
+
+msgid "Limited time to cross at signal"
+msgstr ""
+
+msgid "Unattractive walking route"
+msgstr ""
+
+msgid "Limited or no wayfinding signage"
+msgstr ""
+
+msgid "Poor lighting"
+msgstr ""
+
+msgid "Limited or no footpaths"
+msgstr ""
+
+msgid "Limited or no disability access"
+msgstr ""
+
+msgid "Limited shelter"
+msgstr ""
+
+msgid "Limited seating"
+msgstr ""
+
+msgid "Other"
+msgstr ""
+
+msgid "What is the  issue at this bike spot?"
+msgstr ""
+
+msgid "No bicycle lanes"
+msgstr ""
+
+msgid "Unsafe bicycle lanes"
+msgstr ""
+
+msgid "Bicycle lane ends unexpectedly"
+msgstr ""
+
+msgid "Lack of wayfinding or signage"
+msgstr ""
+
+msgid "Bicycle lane blocked"
+msgstr ""
+
+msgid "High risk of car dooring"
+msgstr ""
+
+msgid "Limited or no bicycle parking"
+msgstr ""
+
+msgid "What is the issue at this bus spot?"
+msgstr ""
+
+msgid "No stop within walking distance"
+msgstr ""
+
+msgid "Poor waiting facilities at stop"
+msgstr ""
+
+msgid "Feel unsafe at stop or station"
+msgstr ""
+
+msgid "Limited footpath access to stop"
+msgstr ""
+
+msgid "Infrequent services"
+msgstr ""
+
+msgid "Unreliable scheduling"
+msgstr ""
+
+msgid "Too expensive to use"
+msgstr ""
+
+msgid "No capacity during the peak"
+msgstr ""
+
+msgid "What is the issue at this train spot?"
+msgstr ""
+
+msgid "Limited or no park and ride"
+msgstr ""
+
+msgid "It is expensive to use"
+msgstr ""
+
+msgid "What is the issue at this car spot?"
+msgstr ""
+
+msgid "Congestion"
+msgstr ""
+
+msgid "Emissions"
+msgstr ""
+
+msgid "Noise"
+msgstr ""
+
+msgid "Speeding traffic"
+msgstr ""
+
+msgid "Heavy traffic (trucks)"
+msgstr ""
+
+msgid "What is the issue at this boat spot?"
+msgstr ""
+
+msgid "Poor waiting facilities"
+msgstr ""
+
+msgid "Feel unsafe"
+msgstr ""
+
+msgid "What transport mode does this Like Spot best relate to?"
+msgstr ""
+
+msgid "Walking"
+msgstr ""
+
+msgid "Bike"
+msgstr ""
+
+msgid "Bus"
+msgstr ""
+
+msgid "Train"
+msgstr ""
+
+msgid "Car"
+msgstr ""
+
+msgid "Boat"
+msgstr ""
+
+msgid "What transport mode does this Idea Spot best relate to?"
+msgstr ""
+
+msgid "If 'other', please type below"
+msgstr ""
+
+msgid "'Other' issue here..."
+msgstr ""
+
+msgid "Please tell us more about this spot?"
+msgstr ""
+
+msgid "Please describe the issue, what you like or idea for this spot..."
+msgstr ""
+
+msgid "If possible, please try adding an image of this spot"
+msgstr ""
+
+msgid "Add Image"
+msgstr ""
+
+msgid "How old are you?"
+msgstr ""
+
+msgid "< 14"
+msgstr ""
+
+msgid "15-19"
+msgstr ""
+
+msgid "20-24"
+msgstr ""
+
+msgid "25-34"
+msgstr ""
+
+msgid "35-44"
+msgstr ""
+
+msgid "45-54"
+msgstr ""
+
+msgid "55-64"
+msgstr ""
+
+msgid "65-74"
+msgstr ""
+
+msgid ">75"
+msgstr ""
+
+msgid "Your gender"
+msgstr ""
+
+msgid "Male"
+msgstr ""
+
+msgid "Female"
+msgstr ""
+
+msgid "What is our connection to the City of Perth"
+msgstr ""
+
+msgid "I live here"
+msgstr ""
+
+msgid "I work here"
+msgstr ""
+
+msgid "I visit here"
+msgstr ""
+
+msgid "Type name"
+msgstr ""
+
+msgid "Your name"
+msgstr ""
+
+msgid "Your email"
+msgstr ""
+
+msgid "Email address"
+msgstr ""
+
+msgid "Add a Spot"
+msgstr ""
+
+msgid "added"
+msgstr ""
+
+msgid "List All Spots"
+msgstr ""
+
+msgid "Walking Issue Spot"
+msgstr ""
+
+msgid "Council Boundary"
 msgstr ""
 
 msgid "About"
 msgstr ""
 
-msgid "Why Shareabouts?"
+msgid "FAQs"
 msgstr ""
 
-msgid "Features"
+msgid "Show All"
+msgstr ""
+
+msgid "Idea Spots"
+msgstr ""
+
+msgid "Like Spots"
+msgstr ""
+
+msgid "Walk Spots"
+msgstr ""
+
+msgid "Bike Spots"
+msgstr ""
+
+msgid "Bus Spots"
+msgstr ""
+
+msgid "Train Spots"
+msgstr ""
+
+msgid "Car Spots"
+msgstr ""
+
+msgid "Boat Spots"
+msgstr ""
+
+msgid "Filter"
 msgstr ""

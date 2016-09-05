@@ -2,15 +2,25 @@
 
         <header class="place-header clearfix">
           {{#if thanks}}
-              <h2 class="thanks">Thank you!</h2>
-              <p>If this business operates from more than one location WITHIN Grater Bendigo, please use more than one “Business Operation Spot” to tell us about freight.</p>
-              <p>If you would like to tell us about more than one issue along the Bendigo Freight Network then please use as many “Freight Issues Spot(s)" as required.</p>
-              <p>We appreciate your input and thank you again for taking the time to do the survey. </p>
 
+            <h3 class="thanks">Thank you for sharing your Spot!</h3>
+
+            <p>If you would like to continue to be involved, you can: </p>
+
+            <ul>
+	            <li>Add another spot by clicking the ‘Add a Spot’ button</li>
+	            <li>Comment on other the spots on the map</li>
+	            <li>Vote on spots by clicking the 'support' button</li>
+	            <li>Share your spot via Twitter or Facebook</li>
+		        </ul>
+
+		        <p>Thank you!</p>
+
+		        <h3>Your Spot details:</h3>
 
           {{/if}}
 
-          <h1>{{ name }}</h1>
+          <h3>{{ name }}</h3>
           <span class="place-submission-details">
             {{#_}}<strong class="point-submitter">
               {{#if submitter.avatar_url }}

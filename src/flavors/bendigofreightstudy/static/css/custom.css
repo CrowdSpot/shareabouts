@@ -40,7 +40,7 @@ yellow #FCC94E
 
 
 CrowdSpot Red #FF1609
-CrowdSpot Green #45BA00
+CrowdSpot Green #2BAB6E
 CrowdSpot Grey (text) #585A59
 */
 
@@ -59,7 +59,7 @@ CrowdSpot Grey (text) #585A59
 .btn-primary,
 .btn-primary:visited,
 .btn-primary:link {
-  background-color: #45BA00;
+  background-color: #2BAB6E;
   color: #fff;
 }
 .btn-primary:hover {
@@ -68,12 +68,12 @@ CrowdSpot Grey (text) #585A59
 .btn-secondary,
 .btn-secondary:visited,
 .btn-secondary:link {
-/*  background-color: #ccc;*/
-/*  color: #007fbf;*/
+  background-color: #2BAB6E;
+  color: white;
 }
 .btn-secondary:hover {
-/*  background-color: #007fbf;*/
-/*  color: #fff;*/
+  background-color: #575958;
+  color: white;
 }
 
 /* Links */
@@ -93,19 +93,21 @@ a:hover, a:active {
 
 #site-header {
   border-top: #B0291B 3px solid;
-}
-
-#site-header {
-  background-color: #ffffff;
-  box-shadow: 0 5px 10px rgba(85, 85, 85, 0.5), inset 0 -3px 0
+  border-top: none;
+  border-bottom: none;
+  padding: 0 0.5em;
+  background: #B7D141 url('images/logo-bendigo-header-background.svg') repeat-x;
+  background-position: -8px top;
+  background-size: auto 5em;
+  box-shadow: 0 5px 10px rgba(85, 85, 85, 0.5)
 }
 
 .access li:hover > ul,
   .access li:hover > form > ul {
     display: block;
     background: #ccc;
-    box-shadow: -0.25em 0.25em 0 rgba(0,0,0,0.1);
-    border: 3px solid rgba(0,0,0,0.05);
+    box-shadow: none;
+    border: none;
     border-radius: 0;
     margin: -3px -60px 0 0;
     padding: 3px 0 0 0;
@@ -117,10 +119,10 @@ a:hover, a:active {
   }
 
 #site-title {
-  background: url('images/bendigo_freight_header.png') no-repeat
-center;
-  background-size: contain;
-  width: 340px;
+  background: url('images/logo-bendigo-main.svg') no-repeat bottom right;
+  background-size: auto 100%;
+  width: 335px;
+  height: 5em;
   text-indent: -133337px;
 }
 
@@ -141,13 +143,18 @@ center;
   font-size: 1.1em;
 }
 
-
-#pages-nav-container, #language-picker {
-  height: 100%;
-  float: left;
-  margin-right: -163px;
-  margin-left: 35px;
+.bendigo-header-logo-small {
+  width: 100px;
+  height: 25px;
+  background: url('images/logo-bendigo-small.svg') no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 3em;
+  top: 2.5em;
 }
+
+
+
 
 
 /* Navigation Button */
@@ -221,7 +228,7 @@ a.close-btn {
 .list-toggle-btn,
   .list-toggle-btn:visited,
   .list-toggle-btn:link {
-    background-color: #45BA00;
+    background-color: #2BAB6E;
  }
 
 .list-toggle-btn:hover {
@@ -344,7 +351,19 @@ small {
   display: none;
 }
 
-.place-value-location_crtical_times {
+.place-value-location_crtical_times_receive {
+  display: none;
+}
+
+.place-value-crtical_times_receive_description {
+  display: none;
+}
+
+.place-value-location_crtical_times_dispatch {
+  display: none;
+}
+
+.place-value-crtical_times_dispatch_description {
   display: none;
 }
 
@@ -376,7 +395,11 @@ small {
   display: none;
 }
 
-.place-value-underutilisation {
+.place-value-underutilisation_inbound {
+  display: none;
+}
+
+.place-value-underutilisation_outbound {
   display: none;
 }
 
@@ -644,23 +667,89 @@ small {
 
 
 
-.place-form label[for=place-location_crtical_times],
-  .place-form [name=location_crtical_times]{
+.place-form label[for=place-location_crtical_times_receive],
+  .place-form [name=location_crtical_times_receive]{
   display: none;
 }
 
-.place-form.business label[for=place-location_crtical_times],
-  .place-form.business [name=location_crtical_times] {
+.place-form label[for=place-crtical_times_receive_description],
+  .place-form [name=crtical_times_receive_description]{
+  display: none;
+}
+
+.place-form.location_receivedispatch-receive label[for=place-location_crtical_times_receive],
+  .place-form.location_receivedispatch-receive [name=location_crtical_times_receive] {
   display: block;
 }
+
+.place-form.location_crtical_times_receive-yess label[for=place-crtical_times_receive_description],
+  .place-form.location_crtical_times_receive-yess [name=crtical_times_receive_description] {
+  display: block;
+}
+
+
+
+
+.place-form label[for=place-location_crtical_times_dispatch],
+  .place-form [name=location_crtical_times_dispatch]{
+  display: none;
+}
+
+.place-form label[for=place-crtical_times_dispatch_description],
+  .place-form [name=crtical_times_dispatch_description]{
+  display: none;
+}
+
+.place-form.location_receivedispatch-dispatch label[for=place-location_crtical_times_dispatch],
+  .place-form.location_receivedispatch-dispatch [name=location_crtical_times_dispatch] {
+  display: block;
+}
+
+.place-form.location_crtical_times_dispatch-yess label[for=place-crtical_times_dispatch_description],
+  .place-form.location_crtical_times_dispatch-yess [name=crtical_times_dispatch_description] {
+  display: block;
+}
+
+
+
+
+.place-form.location_receivedispatch-bothreceivedispatch label[for=place-location_crtical_times_receive],
+  .place-form.location_receivedispatch-bothreceivedispatch [name=location_crtical_times_receive] {
+  display: block;
+}
+
+.place-form.location_receivedispatch-bothreceivedispatch label[for=place-location_crtical_times_dispatch],
+  .place-form.location_receivedispatch-bothreceivedispatch [name=location_crtical_times_dispatch] {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .place-form label[for=place-waste_type],
   .place-form [name=waste_type]{
   display: none;
 }
 
+.place-form #fields-waste_type {
+  display: none;
+}
+
 .place-form.business label[for=place-waste_type],
   .place-form.business [name=waste_type] {
+  display: block;
+}
+
+.place-form.business #fields-waste_type {
   display: block;
 }
 
@@ -777,8 +866,13 @@ small {
   display: none;
 }
 
-.place-form label[for=place-underutilisation],
-  .place-form [name=underutilisation]{
+.place-form label[for=place-underutilisation_inbound],
+  .place-form [name=underutilisation_inbound]{
+  display: none;
+}
+
+.place-form label[for=place-underutilisation_outbound],
+  .place-form [name=underutilisation_outbound]{
   display: none;
 }
 
@@ -802,13 +896,23 @@ small {
   display: block;
 }
 
-.place-form.location_freight_operator-both_ownandother label[for=place-underutilisation],
-  .place-form.location_freight_operator-both_ownandother [name=underutilisation] {
+.place-form.location_freight_operator-both_ownandother label[for=place-underutilisation_inbound],
+  .place-form.location_freight_operator-both_ownandother [name=underutilisation_inbound] {
   display: block;
 }
 
-.place-form.location_freight_operator-ownfleet label[for=place-underutilisation],
-  .place-form.location_freight_operator-ownfleet [name=underutilisation] {
+.place-form.location_freight_operator-ownfleet label[for=place-underutilisation_inbound],
+  .place-form.location_freight_operator-ownfleet [name=underutilisation_inbound] {
+  display: block;
+}
+
+.place-form.location_freight_operator-both_ownandother label[for=place-underutilisation_outbound],
+  .place-form.location_freight_operator-both_ownandother [name=underutilisation_outbound] {
+  display: block;
+}
+
+.place-form.location_freight_operator-ownfleet label[for=place-underutilisation_outbound],
+  .place-form.location_freight_operator-ownfleet [name=underutilisation_outbound] {
   display: block;
 }
 
@@ -881,7 +985,6 @@ label small {
 
 @media only screen and (min-width: 320px) and (max-width: 1024px) {
 
-
 .access li:last-child {
     display: none;
   }
@@ -903,4 +1006,33 @@ label small {
 }
 
 @media only screen and (min-width: 1300px) {
+}
+
+@media only screen and (min-width: 60em) {
+
+  #pages-nav-container, #language-picker {
+    height: 100%;
+    float: left;
+    margin-right: -163px;
+    margin-left: 35px;
+  }
+
+  .access {
+    top: 65%;
+    margin: -1.125em 0 0 1.5em;
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+  #site-title {
+    width: 100%;
+    background-position: 44px;
+  }
+
+  .bendigo-header-logo-small {
+    display: none;
+  }
+
 }

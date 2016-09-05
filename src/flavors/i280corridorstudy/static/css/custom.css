@@ -229,7 +229,12 @@ a.close-btn {
 
 /* =legend
 -------------------------------------------------------------- */
+.legend {
+  cursor: not-allowed;
+}
 .legend li {
+  pointer-events: none;
+  user-select: none;
   line-height: 26px;
 }
 
@@ -241,6 +246,31 @@ a.close-btn {
 
 /* =Existing Spots
 -------------------------------------------------------------- */
+
+#fields-survey {
+  display: none;
+}
+
+small {
+  text-transform: none;
+  display: none;
+}
+
+/*#place-survey label {
+  display: inline-block;
+  margin-bottom: 0.5em;
+}*/
+
+#place-survey {
+  display: none;
+}
+
+.prompt-info {
+  color: grey;
+  display: inline-block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
 
 .place-value-description:before {
   content: "Description: ";
@@ -279,7 +309,7 @@ a.close-btn {
   display: none;
 }
 
-.place-value-carpool {
+.place-value-location_carpool {
   display: none;
 }
 
@@ -287,7 +317,7 @@ a.close-btn {
   display: none;
 }
 
-.place-value-express {
+.place-value-location_express {
   display: none;
 }
 
@@ -440,6 +470,28 @@ a.close-btn {
 }
 
 
+.place-form label[for=place-carpool_why],
+  .place-form [name=carpool_why]{
+  display: none;
+}
+
+.place-form.location_carpool-nope label[for=place-carpool_why],
+  .place-form.location_carpool-nope [name=carpool_why] {
+  display: block;
+}
+
+
+.place-form label[for=place-express_why],
+  .place-form [name=express_why]{
+  display: none;
+}
+
+.place-form.location_express-nope label[for=place-express_why],
+  .place-form.location_express-nope [name=express_why] {
+  display: block;
+}
+
+
 
 .place-form label[for=place-private-submitter_email],
   .place-form [name=private-submitter_email]{
@@ -462,6 +514,13 @@ label small {
 }
 
 
+/* =Colour for required text in survey
+-------------------------------------------------------------- */
+
+.required {
+  color: #FF0000;
+}
+
 /* =Hiding geolocator
 -------------------------------------------------------------- */
 
@@ -478,6 +537,25 @@ label small {
 }
 .user-support input[type=checkbox]:checked ~ label {
   background-image: url(images/thumbs-up-filled.svg);
+}
+
+/* =i280 logos in welcome page
+-------------------------------------------------------------- */
+
+.i280-welcome-logos {
+  margin-bottom: 1em;
+  text-align: right;
+}
+
+.i280-welcome-logos img {
+  height: 60px;
+  width: auto;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.i280-layers-icon {
+  margin-bottom: -0.5em;
 }
 
 
@@ -505,6 +583,11 @@ label small {
   }
 
 @media only screen and (min-width: 768px) {
+
+  .i280-welcome-logos {
+    float: right;
+    margin-left: 1em;
+  }
 
 }
 
