@@ -452,6 +452,9 @@ label small {
     width: 50%;
   }
 }
+.response-value-private-submitter_email_comment {
+  display: none;
+}
 input:focus,
 textarea:focus {
   outline: none;
@@ -576,10 +579,6 @@ textarea:focus {
 }
 .geocode-address-label:after {
   background-color: #fff;
-}
-
-.response-value-private-submitter_email_comment {
-  display: none;
 }
 
 /*# sourceMappingURL=custom.css.map */
