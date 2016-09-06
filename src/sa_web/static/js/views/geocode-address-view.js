@@ -24,8 +24,8 @@ var Shareabouts = Shareabouts || {};
           $address = this.$('.geocode-address-field'),
           address = $address.val(),
           geocodingEngine = this.options.mapConfig.geocoding_engine || 'MapQuest',
-          hint = this.options.mapConfig.geocode_bounding_box ||
-                 this.options.mapConfig.geocode_hint;
+          bounding_box = this.options.mapConfig.geocode_bounding_box,
+          hint = this.options.mapConfig.geocode_hint;
 
       // Show the spinner
       self.$('.geocode-spinner').removeClass('is-hidden');
@@ -35,7 +35,7 @@ var Shareabouts = Shareabouts || {};
         new Spinner(S.smallSpinnerOptions).spin(this.$('.geocode-spinner')[0]);
       }
 
-      S.Util[geocodingEngine].geocode(address, hint, {
+      S.Util[geocodingEngine].geocode(address, hint, bounding_box, {
         success: function(data) {
           var locationsData = data.results[0].locations;
 

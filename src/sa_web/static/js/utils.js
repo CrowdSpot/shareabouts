@@ -393,7 +393,7 @@ var Shareabouts = Shareabouts || {};
         return data;
       },
 
-      geocode: function(location, hint, options) {
+      geocode: function(location, hint, bounding_box, options) {
         var mapboxToken = S.bootstrapped.mapboxToken,
             originalSuccess = options && options.success,
             transformedResultsSuccess = function(data) {
@@ -409,10 +409,14 @@ var Shareabouts = Shareabouts || {};
         options.dataType = 'json';
         options.cache = true;
         // https://api.mapbox.com/geocoding/v5/mapbox.places/White%20House%2C%201600%20Pennsylvania%20Ave%20NW%2C%20Washington%2C%20DC%2020500.json?country=us&proximity=38.8977%2C%2077.0365&bbox=-77.15%2C38.75%2C-76.9%2C39.1&types=poi&autocomplete=true&access_token=pk.eyJ1IjoiYWlzZXkiLCJhIjoiZVhQcWtnZyJ9.-YulcMjSuM7sQNxPYh26HQ
-        options.url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(location) + '.json?country=au&types=poi&autocomplete=true&access_token=' + mapboxToken;
-        // if (hint) {
-        //   options.url += '&proximity=' + hint.join(',');
-        // }
+        options.url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(location) + '.json?autocomplete=false';
+        if (hint) {
+          options.url += '&proximity=' + hint.join(',');
+        }
+        if (bounding_box) {
+          options.url += '&bbox=' + bounding_box.join(',');
+        }
+        options.url += '&access_token=' + mapboxToken;
         options.success = transformedResultsSuccess;
         $.ajax(options);
       },
@@ -428,7 +432,7 @@ var Shareabouts = Shareabouts || {};
         options = options || {};
         options.dataType = 'json';
         options.cache = true;
-        options.url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + lng + ',' + lat + '.json?country=au&types=poi&autocomplete=true&access_token=' + mapboxToken;
+        options.url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + lng + ',' + lat + '.json?access_token=' + mapboxToken;
         $.ajax(options);
       }
     }
