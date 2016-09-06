@@ -310,7 +310,7 @@ place:
           value: 30
     - prompt: _(Postcode (1000 - 9999))
       type: text
-      name: last_name
+      name: postcode
       sticky: true
       optional: true
       attrs:
@@ -322,7 +322,7 @@ place:
           value: ^([1-9][0-9][0-9][0-9])$
     - prompt: _(Phone number)
       type: number
-      name: last_name
+      name: phone
       sticky: true
       optional: true
       attrs:
