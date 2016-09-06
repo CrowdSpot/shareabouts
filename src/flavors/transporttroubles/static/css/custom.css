@@ -455,6 +455,12 @@ label small {
 .response-value-private-submitter_email_comment {
   display: none;
 }
+.place-items .place-item {
+  display: none;
+}
+.place-items .place-item.place-item-description {
+  display: block;
+}
 input:focus,
 textarea:focus {
   outline: none;
