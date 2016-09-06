@@ -62,6 +62,14 @@ var Shareabouts = Shareabouts || {};
     setAddress: function(location) {
       var $address = this.$('.geocode-address-field');
       $address.val(location).change();
+
+      // auto fill the spot name if enabled
+
+      if (this.options.mapConfig.geocode_auto_populate_spot_name) {
+        var $placename = $('#place-name');
+        $placename.val(location).change();
+      }
+
     }
   });
 
