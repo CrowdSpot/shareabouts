@@ -49,7 +49,7 @@ var Shareabouts = Shareabouts || {};
         if (!_.contains(filteredRoutes, route)) {
           this.clearLocationTypeFilter();
         }
-      }, this);    
+      }, this);
 
       this.loading = true;
       this.collection = new S.PlaceCollection([]);
@@ -106,7 +106,7 @@ var Shareabouts = Shareabouts || {};
         // If there's a filter applied, actually go to that filtered route.
         this.navigate('/filter/' + this.appView.mapView.locationTypeFilter, {trigger: false});
       }
-        
+
       this.appView.viewMap(zoom, lat, lng);
     },
 
@@ -127,7 +127,7 @@ var Shareabouts = Shareabouts || {};
     showList: function() {
       this.appView.showListView();
     },
-    
+
     isMapRoute: function(fragment) {
       // This is a little hacky. I attempted to use Backbone.history.handlers,
       // but there is currently no way to map the route, at this point
@@ -135,7 +135,7 @@ var Shareabouts = Shareabouts || {};
       // in the future.
       return (fragment === '' || (fragment.indexOf('place') === -1 &&
         fragment.indexOf('page') === -1 &&
-        fragment.indexOf('list') === -1));  
+        fragment.indexOf('list') === -1));
     },
 
     getFilteredRoutes: function() {
@@ -180,9 +180,9 @@ var Shareabouts = Shareabouts || {};
       } else {
         // If the filter is 'all', we're unsetting the filter.
         this.appView.mapView.clearFilter();
-        if (this.appView.listView) {
-          this.appView.listView.clearFilters();
-        }
+        // if (this.appView.listView) {
+        //   this.appView.listView.clearFilters();
+        // }
 
         $filterIndicator
           .removeClass()
