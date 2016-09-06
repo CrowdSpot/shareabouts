@@ -21,7 +21,7 @@ map:
   geolocation_enabled: false
   geolocation_onload: false
 
-  geocoding_enabled: false
+  geocoding_enabled: true
   geocoding_engine: 'Mapbox'
   geocode_field_label: _(Enter the street name and suburb...)
   geocode_bounding_box: [ 140.798, -39.300, 150.100, -33.930 ]  # minX, minY, maxX, maxY or top, left, bottom, right
