@@ -559,6 +559,17 @@ textarea:focus {
 .share-twitter a:hover {
   background-color: #4ab4f5;
 }
+#geocode-address-bar {
+  padding: 0.5em;
+}
+@media only screen and (min-width: 60em) {
+  .activity-enabled #map-container {
+    top: 8.2em;
+  }
+  .geocoding-enabled #content {
+    top: 8.2em;
+  }
+}
 .geocode-address-label:before {
   border: 1px solid #fff;
   border-width: 0.2em;
