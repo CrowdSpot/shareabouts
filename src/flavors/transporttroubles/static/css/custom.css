@@ -566,7 +566,7 @@ textarea:focus {
   padding: 0.5em;
 }
 @media only screen and (min-width: 60em) {
-  .activity-enabled #map-container {
+  .geocoding-enabled #map-container {
     top: 8.2em;
   }
   .geocoding-enabled #content {
