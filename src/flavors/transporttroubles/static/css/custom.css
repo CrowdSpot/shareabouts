@@ -565,6 +565,13 @@ textarea:focus {
 #geocode-address-bar {
   padding: 0.5em;
 }
+#geocode-address-bar .error {
+  background-color: #eea12f;
+  box-shadow: 2px 2px 0 #eea12f, 2px -2px 0 #eea12f, -2px 2px 0 #eea12f, -2px -2px 0 #eea12f;
+}
+#geocode-address-bar .error+ form {
+  box-shadow: 2px 2px 0 #eea12f, 2px -2px 0 #eea12f, -2px 2px 0 #eea12f, -2px -2px 0 #eea12f;
+}
 @media only screen and (min-width: 60em) {
   .geocoding-enabled #map-container {
     top: 8.2em;
@@ -579,6 +586,9 @@ textarea:focus {
 }
 .geocode-address-label:after {
   background-color: #fff;
+}
+.geocode-spinner {
+  padding: 0 0.5em;
 }
 
 /*# sourceMappingURL=custom.css.map */

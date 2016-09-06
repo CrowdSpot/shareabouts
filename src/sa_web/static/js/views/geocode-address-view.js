@@ -37,7 +37,13 @@ var Shareabouts = Shareabouts || {};
 
       S.Util[geocodingEngine].geocode(address, hint, bounding_box, {
         success: function(data) {
-          var locationsData = data.results[0].locations;
+          console.log(data.results[0]);
+          if (data.results[0] !== undefined) {
+            var locationsData = data.results[0].locations;
+          } else {
+            var locationsData = 0;
+          }
+
 
           // console.log('Geocoded data: ', data);
           if (locationsData.length > 0) {
@@ -45,10 +51,12 @@ var Shareabouts = Shareabouts || {};
 
             // TODO: This might make more sense if the view itself was the
             //       event's target.
+            self.$('.geocode-spinner').addClass('is-hidden');
             $(S).trigger('geocode', [locationsData[0]]);
           } else {
             // TODO: Show some feedback that we couldn't geocode.
-            console.error('Woah, no location found for ', data.results[0].providedLocation.location, data);
+            self.$('.geocode-spinner').addClass('is-hidden');
+            console.error('Woah, no location found for ', locationsData, data);
             self.$('.error').removeClass('is-hidden').hide().fadeIn().html('Could not find that location.');
           }
         },
