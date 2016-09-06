@@ -458,7 +458,10 @@ label small {
 .place-items .place-item {
   display: none;
 }
-.place-items .place-item.place-item-description {
+.place-items .place-item.place-item-description,
+.place-items .place-item.place-item-location_train_trouble,
+.place-items .place-item.place-item-location_tram_trouble,
+.place-items .place-item.place-item-location_bus_trouble {
   display: block;
 }
 input:focus,
