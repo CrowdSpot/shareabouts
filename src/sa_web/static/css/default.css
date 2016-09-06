@@ -11,7 +11,7 @@
 }
 
 .recent-points .avatar {
-  display: none;	
+  display: none;
 }
 
 .point-submitter .avatar {
@@ -475,7 +475,7 @@ a.logout-btn {
   text-decoration: none;
   text-transform: none;
 }
-  
+
 
 /* =Map
 -------------------------------------------------------------- */
@@ -779,7 +779,7 @@ a.close-btn span {
 .user-support:hover label {
   background-color: #585A59;
   color: #fff;
-  
+
 }
 .support-count {
 }
@@ -1019,13 +1019,13 @@ ul.recent-points {
   padding-left: 15px;
 }
 
-.legend .image-wrapper { 
+.legend .image-wrapper {
   min-width: 80px;
   display: inline-block;
   text-align: center;
 }
 
-.legend img { 
+.legend img {
   max-height: 40px;
   vertical-align: middle;
 }
@@ -1235,6 +1235,15 @@ input.geocode-address-field:focus {
 #geocode-address-bar .error.is-hidden + form {
   box-shadow: none;
   margin-bottom: 0;
+}
+
+.geocode-spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 2em;
+  background-color: #6f6f6f;
 }
 
 
@@ -1510,7 +1519,7 @@ a.close-unsupported-overlay {
   }
 
 
-  
+
   /* Map*/
   #map-container {
     position: absolute;

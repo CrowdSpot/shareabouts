@@ -22,6 +22,7 @@ map:
   geolocation_onload: false
 
   geocoding_enabled: true
+  geocoding_engine: 'Mapbox'
   geocode_field_label: _(Enter the street name and suburb...)
   geocode_bounding_box: [-36.147182, 142.819274, -37.275679, 145.676826]  # top, left, bottom, right
 
