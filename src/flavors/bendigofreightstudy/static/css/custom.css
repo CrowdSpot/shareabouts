@@ -459,6 +459,12 @@ small {
   display: none;
 }
 
+/* fix for long selects */
+
+select {
+  width: 100%;
+}
+
 /* =Hiding questions in new forms
 -------------------------------------------------------------- */
 
