@@ -258,16 +258,22 @@ a.close-btn {
 
 #centerpoint.newpin .marker {
   display: block;
-  width: 27px;
-  height: 41px;
-  background: transparent url(images/spot-add.svg) 0 0 no-repeat scroll;
+  width: 55px;
+  height: 80px;
+  background: transparent url(images/spot-add.svg) center bottom no-repeat scroll;
+  background-size: contain;
   position: relative;
-  top: 3px;
+  top: -38px;
+  left: -16px;
   -webkit-transition: top 0.4s ease;
   -moz-transition: top 0.4s ease;
   -o-transition: top 0.4s ease;
   -ms-transition: top 0.4s ease;
   transition: top 0.4s ease;
+}
+
+#centerpoint.newpin.dragging .marker {
+  top: -50px;
 }
 
 #centerpoint.newpin .x {
@@ -278,6 +284,8 @@ a.close-btn {
 #centerpoint.newpin .shadow {
   background:  transparent url(images/master-pin-shadow.svg) -29px 2px no-repeat scroll;
   width: 100px;
+  left: -2px;
+  top: -2px;
 }
 #centerpoint.newpin.dragging .shadow {
   background: transparent url(images/master-pin-shadow.svg) -20px -2px no-repeat scroll;
