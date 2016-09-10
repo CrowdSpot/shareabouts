@@ -994,6 +994,28 @@ label small {
 -------------------------------------------------------------- */
 
 
+#geocode-address-bar .error {
+  background-color: #2BAB6E;
+  box-shadow: 2px 2px 0 #2BAB6E, 2px -2px 0 #2BAB6E, -2px 2px 0 #2BAB6E, -2px -2px 0 #2BAB6E;
+}
+#geocode-address-bar .error+ form {
+  box-shadow: 2px 2px 0 #2BAB6E, 2px -2px 0 #2BAB6E, -2px 2px 0 #2BAB6E, -2px -2px 0 #2BAB6E;
+}
+
+.geocode-spinner {
+  padding: 0 0.5em;
+}
+
+.geocode-address-label:before {
+  border: 1px solid #fff;
+  border-width: 0.2em;
+}
+.geocode-address-label:after {
+  background-color: #fff;
+}
+
+
+
 
 
 
