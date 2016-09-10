@@ -1,0 +1,29 @@
+#geocode-address-bar
+  padding 0.5em
+
+  .error
+    background-color #EEA12F
+    box-shadow: 2px 2px 0 #EEA12F, 2px -2px 0 #EEA12F, -2px 2px 0 #EEA12F, -2px -2px 0 #EEA12F;
+
+    &+ form
+      box-shadow: 2px 2px 0 #EEA12F, 2px -2px 0 #EEA12F, -2px 2px 0 #EEA12F, -2px -2px 0 #EEA12F;
+
++above(60em)
+
+  .geocoding-enabled #map-container
+    top 8.2em
+
+  .geocoding-enabled #content
+    top 8.2em
+
+.geocode-address-label
+
+  &:before
+    border white
+    border-width 0.2em
+
+  &:after
+    background-color white
+
+.geocode-spinner
+  padding 0 0.5em
