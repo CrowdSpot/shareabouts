@@ -334,11 +334,6 @@ var Shareabouts = Shareabouts || {};
       evt.preventDefault();
       S.Util.log('USER', 'map', 'new-place-btn-click');
       this.options.router.navigate('/place/new', {trigger: true});
-      
-      // Scroll to the top of the panel if desktop
-      $('article').scrollTop(0);
-      // Scroll to the top of the window, if mobile
-      window.scrollTo(0, 0);
     },
     onClickClosePanelBtn: function(evt) {
       evt.preventDefault();
@@ -452,6 +447,11 @@ var Shareabouts = Shareabouts || {};
     newPlace: function() {
       // Called by the router
       this.collection.add({});
+      
+      // Scroll to the top of the panel if desktop
+      $('article').scrollTop(0);
+      // Scroll to the top of the window, if mobile
+      window.scrollTo(0, 0);
     },
     viewPlace: function(model, responseId, zoom) {
       var self = this,
