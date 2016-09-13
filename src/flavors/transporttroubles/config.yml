@@ -33,7 +33,7 @@ map:
       lat: -37.82233
       lng: 144.95996
     zoom: 13
-    minZoom: 8
+    minZoom: 7
     maxZoom: 18
     maxBounds: [ [-39.300, 140.798], [-33.930, 150.100] ] # bottom, left, top, right
   layers:
