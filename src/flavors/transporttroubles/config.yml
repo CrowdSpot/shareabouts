@@ -278,7 +278,7 @@ place:
       type: text
       name: first_name
       sticky: true
-      optional: true
+      optional: false
       attrs:
         - key: placeholder
           value: _(This name will be hidden)
@@ -286,6 +286,7 @@ place:
           value: 30
         - key: pattern
           value: ^[a-zA-Z]+$
+        - key: required
     - prompt: _(Last Name (Letters only))
       type: text
       name: last_name
@@ -334,12 +335,13 @@ place:
       type: email
       sticky: true
       name: private-submitter_email
-      optional: true
+      optional: false
       attrs:
         - key: placeholder
           value: _(Email address)
         - key: size
           value: 30
+        - key: required
 
 survey:
   submission_type: comments
