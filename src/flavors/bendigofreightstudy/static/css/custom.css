@@ -246,6 +246,8 @@ a.close-btn {
   background-color: #2BAB6E;
   color: #fff;
   text-shadow: none;
+  padding: 2em 2em 3em;
+  font-size: 1.5em;
 }
 .drag-marker-warning {
   background-color: #FF1609;
