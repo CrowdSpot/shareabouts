@@ -146,15 +146,6 @@ place:
       name: location_type
       attrs:
         - key: required
-    - prompt: _(What is the name of this Spot? (required)<br><strong><i>(This is a name that best describes the location)</i></strong>)
-      type: text
-      name: name
-      attrs:
-        - key: placeholder
-          value: _(Eg. David Storage - Junortoun Warehouse)
-        - key: size
-          value: 30
-        - key: required
     - prompt: _(What is the freight issue at this spot?)
       type: select
       options:
