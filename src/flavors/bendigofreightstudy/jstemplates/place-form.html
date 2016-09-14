@@ -1,11 +1,11 @@
-<p class="drag-marker-instructions">Drag the map to position the <img src="/static/css/images/spot-add.svg"/> at your location.</p>
+<p class="drag-marker-instructions">Choose your location by moving the map to position the marker <img src="/static/css/images/spot-add.svg"/></p>
 <p class="drag-marker-warning is-visuallyhidden">It looks like you didn't set your location yet. Please drag the map to your location.</p>
 
-<h4 class="">{{ place_config.title }}</h4>
+<h4 class="place-title is-visuallyhidden">{{ place_config.title }}</h4>
 
 <p>{{ place_config.help_text }}</p>
 
-<form id="place-form" class="place-form clearfix">
+<form id="place-form" class="place-form clearfix is-visuallyhidden">
 
   <fieldset>
     <input type="hidden" name="visible" value="on">
