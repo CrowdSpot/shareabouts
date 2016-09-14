@@ -33,7 +33,7 @@ map:
       lat: -37.82233
       lng: 144.95996
     zoom: 13
-    minZoom: 8
+    minZoom: 7
     maxZoom: 18
     maxBounds: [ [-39.300, 140.798], [-33.930, 150.100] ] # bottom, left, top, right
   layers:
@@ -262,42 +262,55 @@ place:
       attrs:
         - key: accept
           value: image/*
-    - prompt: _(Username (Letters only))
+    - prompt: _(Username)
       type: text
       name: submitter_name
       sticky: true
       optional: true
       attrs:
         - key: placeholder
-          value: _(This name will be visible)
+          value: _(This name will be visible (Letters only))
         - key: size
           value: 30
         - key: pattern
           value: ^[a-zA-Z]+$
-    - prompt: _(First Name (Letters only))
+        - key: oninvalid
+          value: this.setCustomValidity('Letters only')
+        - key: onchange
+          value: this.setCustomValidity('')
+    - prompt: _(First Name)
       type: text
       name: first_name
       sticky: true
-      optional: true
+      optional: false
       attrs:
         - key: placeholder
-          value: _(This name will be hidden)
+          value: _(This name will be hidden (Letters only))
         - key: size
           value: 30
         - key: pattern
           value: ^[a-zA-Z]+$
-    - prompt: _(Last Name (Letters only))
+        - key: required
+        - key: oninvalid
+          value: this.setCustomValidity('Letters only')
+        - key: onchange
+          value: this.setCustomValidity('')
+    - prompt: _(Last Name)
       type: text
       name: last_name
       sticky: true
       optional: true
       attrs:
         - key: placeholder
-          value: _(This will be hidden)
+          value: _(This will be hidden (Letters only))
         - key: size
           value: 30
         - key: pattern
           value: ^[a-zA-Z]+$
+        - key: oninvalid
+          value: this.setCustomValidity('Letters only')
+        - key: onchange
+          value: this.setCustomValidity('')
     - prompt: _(Suburb)
       type: text
       name: suburb
@@ -308,18 +321,22 @@ place:
           value: _(Type suburb here)
         - key: size
           value: 30
-    - prompt: _(Postcode (1000 - 9999))
+    - prompt: _(Postcode)
       type: text
       name: postcode
       sticky: true
       optional: true
       attrs:
         - key: placeholder
-          value: _(Type postcode here 1000 - 9999)
+          value: _(Type postcode here (1000 - 9999))
         - key: size
           value: 30
         - key: pattern
           value: ^([1-9][0-9][0-9][0-9])$
+        - key: oninvalid
+          value: this.setCustomValidity('1000 - 9999')
+        - key: onchange
+          value: this.setCustomValidity('')
     - prompt: _(Phone number)
       type: number
       name: phone
@@ -334,12 +351,13 @@ place:
       type: email
       sticky: true
       name: private-submitter_email
-      optional: true
+      optional: false
       attrs:
         - key: placeholder
           value: _(Email address)
         - key: size
           value: 30
+        - key: required
 
 survey:
   submission_type: comments
