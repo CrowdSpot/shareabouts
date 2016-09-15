@@ -247,6 +247,7 @@ a.close-btn {
   color: #fff;
   text-shadow: none;
   padding: 2em 2em 3em;
+  margin-bottom: 2em;
   font-size: 1.5em;
 }
 .drag-marker-warning {
@@ -1004,6 +1005,9 @@ label small {
 -------------------------------------------------------------- */
 
 
+#geocode-address-bar {
+  margin-top: 0;
+}
 #geocode-address-bar .error {
   background-color: #2BAB6E;
   box-shadow: 2px 2px 0 #2BAB6E, 2px -2px 0 #2BAB6E, -2px 2px 0 #2BAB6E, -2px -2px 0 #2BAB6E;
