@@ -243,9 +243,11 @@ a.close-btn {
 /* Drag Marker Instructions (for adding a new place) */
 .drag-marker-instructions,
 .drag-marker-warning {
-  background-color: #3E74BF;
+  background-color: #2BAB6E;
   color: #fff;
   text-shadow: none;
+  padding: 2em 2em 3em;
+  font-size: 1.5em;
 }
 .drag-marker-warning {
   background-color: #FF1609;
@@ -258,16 +260,22 @@ a.close-btn {
 
 #centerpoint.newpin .marker {
   display: block;
-  width: 27px;
-  height: 41px;
-  background: transparent url(images/spot-add.svg) 0 0 no-repeat scroll;
+  width: 55px;
+  height: 80px;
+  background: transparent url(images/spot-add.svg) center bottom no-repeat scroll;
+  background-size: contain;
   position: relative;
-  top: 3px;
+  top: -38px;
+  left: -16px;
   -webkit-transition: top 0.4s ease;
   -moz-transition: top 0.4s ease;
   -o-transition: top 0.4s ease;
   -ms-transition: top 0.4s ease;
   transition: top 0.4s ease;
+}
+
+#centerpoint.newpin.dragging .marker {
+  top: -50px;
 }
 
 #centerpoint.newpin .x {
@@ -278,6 +286,8 @@ a.close-btn {
 #centerpoint.newpin .shadow {
   background:  transparent url(images/master-pin-shadow.svg) -29px 2px no-repeat scroll;
   width: 100px;
+  left: -2px;
+  top: -2px;
 }
 #centerpoint.newpin.dragging .shadow {
   background: transparent url(images/master-pin-shadow.svg) -20px -2px no-repeat scroll;
@@ -312,6 +322,14 @@ small {
 }
 
 .place-value-business_type {
+  display: none;
+}
+
+.place-value-freight_issue {
+  display: none;
+}
+
+.place-value-issue_description {
   display: none;
 }
 
@@ -457,6 +475,12 @@ small {
 
 .place-value-location_updates {
   display: none;
+}
+
+/* fix for long selects */
+
+select {
+  width: 100%;
 }
 
 /* =Hiding questions in new forms
@@ -978,6 +1002,28 @@ label small {
 
 /* =Media Queries
 -------------------------------------------------------------- */
+
+
+#geocode-address-bar .error {
+  background-color: #2BAB6E;
+  box-shadow: 2px 2px 0 #2BAB6E, 2px -2px 0 #2BAB6E, -2px 2px 0 #2BAB6E, -2px -2px 0 #2BAB6E;
+}
+#geocode-address-bar .error+ form {
+  box-shadow: 2px 2px 0 #2BAB6E, 2px -2px 0 #2BAB6E, -2px 2px 0 #2BAB6E, -2px -2px 0 #2BAB6E;
+}
+
+.geocode-spinner {
+  padding: 0 0.5em;
+}
+
+.geocode-address-label:before {
+  border: 1px solid #fff;
+  border-width: 0.2em;
+}
+.geocode-address-label:after {
+  background-color: #fff;
+}
+
 
 
 

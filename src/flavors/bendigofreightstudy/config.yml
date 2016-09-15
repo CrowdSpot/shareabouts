@@ -21,9 +21,13 @@ map:
   geolocation_enabled: false
   geolocation_onload: false
 
-  geocoding_enabled: false
+  geocoding_enabled: true
+  geocoding_engine: 'Mapbox'
   geocode_field_label: _(Enter the street name and suburb...)
-  geocode_bounding_box: [-37.147182, 143.819274, -36.275278, 144.98657200000002]  # top, left, bottom, right
+  geocode_bounding_box: [ 140.798, -39.300, 150.100, -33.930 ]  # minX, minY, maxX, maxY or top, left, bottom, right
+  geocode_hint: [145, -38]
+  geocode_auto_populate_spot_name: true
+
 
   options:
     center:
@@ -70,7 +74,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/spot-selected.svg
+          iconUrl: /static/css/images/master-pin-green-warehouse.svg
           shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           shadowSize: [85, 41]
@@ -102,7 +106,7 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/spot-selected.svg
+          iconUrl: /static/css/images/master-pin-red-flag.svg
           shadowUrl: /static/css/images/master-pin-shadow.svg
           iconSize: [85, 41]
           shadowSize: [85, 41]
@@ -141,15 +145,6 @@ place:
           value: issue
       name: location_type
       attrs:
-        - key: required
-    - prompt: _(What is the name of this Spot? (required)<br><strong><i>(This is a name that best describes the location)</i></strong>)
-      type: text
-      name: name
-      attrs:
-        - key: placeholder
-          value: _(Eg. David Storage - Junortoun Warehouse)
-        - key: size
-          value: 30
         - key: required
     - prompt: _(What is the freight issue at this spot?)
       type: select

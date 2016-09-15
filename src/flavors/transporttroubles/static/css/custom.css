@@ -575,11 +575,11 @@ textarea:focus {
   padding: 0.5em;
 }
 #geocode-address-bar .error {
-  background-color: #eea12f;
-  box-shadow: 2px 2px 0 #eea12f, 2px -2px 0 #eea12f, -2px 2px 0 #eea12f, -2px -2px 0 #eea12f;
+  background-color: #f11717;
+  box-shadow: 2px 2px 0 #f11717, 2px -2px 0 #f11717, -2px 2px 0 #f11717, -2px -2px 0 #f11717;
 }
 #geocode-address-bar .error+ form {
-  box-shadow: 2px 2px 0 #eea12f, 2px -2px 0 #eea12f, -2px 2px 0 #eea12f, -2px -2px 0 #eea12f;
+  box-shadow: 2px 2px 0 #f11717, 2px -2px 0 #f11717, -2px 2px 0 #f11717, -2px -2px 0 #f11717;
 }
 @media only screen and (min-width: 60em) {
   .geocoding-enabled #map-container {
