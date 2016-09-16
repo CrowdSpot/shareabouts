@@ -31,7 +31,7 @@ map:
       lng: 144.97061
     zoom: 13
     minZoom: 5
-    maxZoom: 15
+    maxZoom: 18
   layers:
     - url: https://api.mapbox.com/styles/v1/aisey/cio76ao69000ra5nkkrs4uuo4/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWlzZXkiLCJhIjoiZVhQcWtnZyJ9.-YulcMjSuM7sQNxPYh26HQ
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
@@ -39,70 +39,59 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  safe:
+  happy:
     index: 0
-    label: _(Safe Spot)
+    label: _(Happy Spot)
     rules:
-      - condition: '"{{location_type}}" === "safe" && {{map.zoom}} < 13 && {{layer.focused}} === false'
-        # Display landmarks as circles (vectors) when zoomed out
 
-        style:
-          color: '#45BA00'
-          radius: 15
-          weight: 3
-          opacity: 0.7
-          fillOpacity: 0.5
-
-      - condition: '"{{location_type}}" === "safe" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "happy" && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/like-spot.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          iconAnchor: [42, 42]
+          iconUrl: /static/css/images/markers/plan-marker-happy.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [27, 41]
+          iconAnchor: [12, 42]
+          shadowSize: [38, 20]
+          shadowAnchor: [0, 21]
 
-      - condition: '"{{location_type}}" === "safe" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "happy" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/spot-selected.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          shadowSize: [85, 41]
-          iconAnchor: [42, 42]
-  unsafe:
+          iconUrl: /static/css/images/markers/plan-marker-happy.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [46, 70]
+          iconAnchor: [21, 70]
+          shadowSize: [60, 32]
+          shadowAnchor: [0, 32]
+
+  sad:
     index: 1
-    label: _(Unsafe Spot)
+    label: _(Sad Spot)
     rules:
-      - condition: '"{{location_type}}" === "unsafe" && {{map.zoom}} < 13 && {{layer.focused}} === false'
-        # Display landmarks as circles (vectors) when zoomed out
 
-        style:
-          color: '#EC611A'
-          radius: 15
-          weight: 3
-          opacity: 0.7
-          fillOpacity: 0.5
-
-      - condition: '"{{location_type}}" === "unsafe" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "sad" && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/bad-spot.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          iconAnchor: [42, 42]
+          iconUrl: /static/css/images/markers/plan-marker-sad.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [27, 41]
+          iconAnchor: [12, 42]
+          shadowSize: [38, 20]
+          shadowAnchor: [0, 21]
 
-      - condition: '"{{location_type}}" === "unsafe" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "sad" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/spot-selected.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          shadowSize: [85, 41]
-          iconAnchor: [42, 42]
+          iconUrl: /static/css/images/markers/plan-marker-sad.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [46, 70]
+          iconAnchor: [21, 70]
+          shadowSize: [60, 32]
+          shadowAnchor: [0, 32]
 
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
@@ -134,31 +123,36 @@ place:
         - key: size
           value: 30
         - key: required
-    - prompt: _(Is this a 'Safe Spot' or 'Unsafe Spot'?)
+    - prompt: _(Is this a 'Happy Spot' or 'Sad Spot'?)
       type: select
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Safe Spot)
-          value: safe
-        - label: _(Unsafe Spot)
-          value: unsafe
+        - label: _(Happy Spot)
+          value: happy
+        - label: _(Sad Spot)
+          value: sad
       name: location_type
       attrs:
         - key: required
-    - prompt: _(How do you feel at this Safe Spot?)
+    - prompt: _(How do you feel at this Happy Spot?)
       type: select
       options:
         - label: _(Choose One)
           value: ''
         - label: _(Relaxed)
           value: relaxed
-        - label: _(Happy)
-          value: happy
-        - label: _(Secure)
-          value: secure
-      name: safe_feel
-    - prompt: _(How do you feel at this Unsafe Spot?)
+        - label: _(Excited)
+          value: excited
+        - label: _(Satisfied)
+          value: satisfied
+        - label: _(Trust)
+          value: trust
+        - label: _(Love)
+          value: love
+      name: happy_feel
+      optional: true
+    - prompt: _(How do you feel at this Sad Spot?)
       type: select
       options:
         - label: _(Choose One)
@@ -167,9 +161,14 @@ place:
           value: scared
         - label: _(Angry)
           value: angry
-        - label: _(Sad)
-          value: sad
-      name: unsafe_feel
+        - label: _(Frustrated)
+          value: frustrated
+        - label: _(Disgust)
+          value: disgust
+        - label: _(Creepy)
+          value: creepy
+      name: sad_feel
+      optional: true
     - prompt: _(Please tell us more about this spot if you want. This could be a story or experience you might like to share.)
       type: textarea
       name: description
@@ -177,7 +176,6 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe...)
-        - key: required
     - prompt: _(You can add an image of this spot if you have one)
       inputfile_label: _(Add Image)
       type: file
@@ -193,7 +191,6 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe...)
-        - key: required
     - prompt: _(Your name or username)
       type: text
       name: submitter_name
