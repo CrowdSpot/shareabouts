@@ -52,7 +52,7 @@ place_types:
           shadowUrl: /static/css/images/markers/master-pin-shadow.svg
           iconSize: [27, 41]
           iconAnchor: [12, 42]
-          shadowSize: [38, 20]
+          shadowSize: [34, 17]
           shadowAnchor: [0, 21]
 
       - condition: '"{{location_type}}" === "happy" && {{layer.focused}} === true'
@@ -79,7 +79,7 @@ place_types:
           shadowUrl: /static/css/images/markers/master-pin-shadow.svg
           iconSize: [27, 41]
           iconAnchor: [12, 42]
-          shadowSize: [38, 20]
+          shadowSize: [34, 17]
           shadowAnchor: [0, 21]
 
       - condition: '"{{location_type}}" === "sad" && {{layer.focused}} === true'
