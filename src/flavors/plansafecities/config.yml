@@ -135,6 +135,8 @@ place:
       name: location_type
       attrs:
         - key: required
+        - key: class
+          value: graphic-selector
     - prompt: _(How do you feel at this Happy Spot?)
       type: select
       options:
