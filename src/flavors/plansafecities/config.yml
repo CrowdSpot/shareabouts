@@ -171,6 +171,40 @@ place:
           value: creepy
       name: sad_feel
       optional: true
+    - prompt: _(Emojis)
+      type: multi-checkbox
+      name: emojis
+      optional: true
+      checkboxes:
+        - label: _(Relaxed)
+          value: relaxed
+        - label: _(Excited)
+          value: excited
+        - label: _(Satisfied)
+          value: satisfied
+        - label: _(Trust)
+          value: trust
+        - label: _(Love)
+          value: love
+        - label: _(Scared)
+          value: scared
+        - label: _(Angry)
+          value: angry
+        - label: _(Frustrated)
+          value: frustrated
+        - label: _(Disgust)
+          value: disgust
+        - label: _(Creepy)
+          value: creepy
+    # - prompt: _(Spot Kind)
+    #   type: multi-radio
+    #   name: spotkind
+    #   optional: true
+    #   radios:
+    #     - label: _(Happy)
+    #       value: happy
+    #     - label: _(Sad)
+    #       value: sad
     - prompt: _(Please tell us more about this spot if you want. This could be a story or experience you might like to share.)
       type: textarea
       name: description
