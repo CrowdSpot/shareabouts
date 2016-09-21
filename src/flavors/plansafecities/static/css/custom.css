@@ -514,5 +514,67 @@ textarea:focus {
 .share-twitter a:hover {
   background-color: #4ab4f5;
 }
+#fields-emojis {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+#fields-emojis label[for=place-emojis] {
+  display: none;
+}
+#fields-emojis label.multi-checkbox {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  background-size: cover;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+#fields-emojis label.multi-checkbox:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+#fields-emojis label.multi-checkbox input[type=checkbox]:after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  color: #222;
+}
+#fields-emojis label.multi-checkbox[for=multi-checkbox-relaxed] {
+  background-image: url("images/emojis/emoji-relaxed.svg");
+}
+#fields-emojis label.multi-checkbox[for=multi-checkbox-excited] {
+  background-image: url("images/emojis/emoji-excited.svg");
+}
+#fields-emojis label.multi-checkbox[for=multi-checkbox-satisfied] {
+  background-image: url("images/emojis/emoji-satisfied.svg");
+}
+#fields-emojis label.multi-checkbox[for=multi-checkbox-trust] {
+  background-image: url("images/emojis/emoji-trust.svg");
+}
+#fields-emojis label.multi-checkbox[for=multi-checkbox-love] {
+  background-image: url("images/emojis/emoji-love.svg");
+}
+#fields-emojis label.multi-checkbox[for=multi-checkbox-scared] {
+  background-image: url("images/emojis/emoji-scared.svg");
+}
+#fields-emojis label.multi-checkbox[for=multi-checkbox-angry] {
+  background-image: url("images/emojis/emoji-angry.svg");
+}
+#fields-emojis label.multi-checkbox[for=multi-checkbox-frustrated] {
+  background-image: url("images/emojis/emoji-frustrated.svg");
+}
+#fields-emojis label.multi-checkbox[for=multi-checkbox-disgust] {
+  background-image: url("images/emojis/emoji-disgust.svg");
+}
+#fields-emojis label.multi-checkbox[for=multi-checkbox-creepy] {
+  background-image: url("images/emojis/emoji-creepy.svg");
+}
 
 /*# sourceMappingURL=custom.css.map */
