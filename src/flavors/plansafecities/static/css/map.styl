@@ -4,11 +4,13 @@
 	&.newpin
 		.marker
 			display block
-			width 29px
-			height 41px
-			background transparent url(images/spot-add.svg) 0 0 no-repeat scroll
+			width 46px
+			height 63px
+			background transparent url(images/markers/plan-marker-new.svg) 0 0 no-repeat scroll
+			background-size cover
 			position relative
-			top 3px
+			top -18px
+			left -9px
 			transition top 0.4s ease
 		.x
 			background  transparent url(images/x.svg) 0 0 no-repeat scroll;
@@ -21,6 +23,8 @@
 		&.dragging
 			.shadow
 				background  transparent url(images/master-pin-shadow.svg) -20px -2px no-repeat scroll;
+			.marker
+				top -40px
 
 #add-place-btn-container
 	+above(60em)

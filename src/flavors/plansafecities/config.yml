@@ -50,8 +50,8 @@ place_types:
         icon:
           iconUrl: /static/css/images/markers/plan-marker-happy.svg
           shadowUrl: /static/css/images/markers/master-pin-shadow.svg
-          iconSize: [27, 41]
-          iconAnchor: [12, 42]
+          iconSize: [27, 37]
+          iconAnchor: [12, 40]
           shadowSize: [34, 17]
           shadowAnchor: [0, 21]
 
@@ -61,8 +61,8 @@ place_types:
         icon:
           iconUrl: /static/css/images/markers/plan-marker-happy.svg
           shadowUrl: /static/css/images/markers/master-pin-shadow.svg
-          iconSize: [46, 70]
-          iconAnchor: [21, 70]
+          iconSize: [46, 63]
+          iconAnchor: [23, 63]
           shadowSize: [60, 32]
           shadowAnchor: [0, 32]
 
@@ -77,8 +77,8 @@ place_types:
         icon:
           iconUrl: /static/css/images/markers/plan-marker-sad.svg
           shadowUrl: /static/css/images/markers/master-pin-shadow.svg
-          iconSize: [27, 41]
-          iconAnchor: [12, 42]
+          iconSize: [27, 37]
+          iconAnchor: [12, 40]
           shadowSize: [34, 17]
           shadowAnchor: [0, 21]
 
@@ -88,8 +88,8 @@ place_types:
         icon:
           iconUrl: /static/css/images/markers/plan-marker-sad.svg
           shadowUrl: /static/css/images/markers/master-pin-shadow.svg
-          iconSize: [46, 70]
-          iconAnchor: [21, 70]
+          iconSize: [46, 63]
+          iconAnchor: [23, 63]
           shadowSize: [60, 32]
           shadowAnchor: [0, 32]
 

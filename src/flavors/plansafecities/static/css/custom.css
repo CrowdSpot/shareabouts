@@ -330,11 +330,13 @@ a.leaflet-control-layers-toggle:before,
 }
 #centerpoint.newpin .marker {
   display: block;
-  width: 29px;
-  height: 41px;
-  background: transparent url("images/spot-add.svg") 0 0 no-repeat scroll;
+  width: 46px;
+  height: 63px;
+  background: transparent url("images/markers/plan-marker-new.svg") 0 0 no-repeat scroll;
+  background-size: cover;
   position: relative;
-  top: 3px;
+  top: -18px;
+  left: -9px;
   -webkit-transition: top 0.4s ease;
   transition: top 0.4s ease;
 }
@@ -349,6 +351,9 @@ a.leaflet-control-layers-toggle:before,
 }
 #centerpoint.newpin.dragging .shadow {
   background: transparent url("images/master-pin-shadow.svg") -20px -2px no-repeat scroll;
+}
+#centerpoint.newpin.dragging .marker {
+  top: -40px;
 }
 @media only screen and (min-width: 60em) {
   #add-place-btn-container {
