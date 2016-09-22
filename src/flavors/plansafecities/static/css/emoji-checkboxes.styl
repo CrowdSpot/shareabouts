@@ -1,10 +1,10 @@
-#fields-emojis
+.multi-checkboxes
   display flex
   flex-wrap wrap
   justify-content center
 
-  label[for=place-emojis]
-    display none
+  &> label
+    display block
 
   input[type=checkbox]
     display none
@@ -98,3 +98,21 @@
 
     &[for=multi-checkbox-creepy]:before
       background-image url('images/emojis/emoji-creepy.svg')
+
+
+#fields-happy_feel, .multi-checkbox-happy_feel, #fields-sad_feel, .multi-checkbox-sad_feel
+	display none
+
+.place-form
+  
+  &.happy
+    #fields-happy_feel
+      display block
+    .multi-checkbox-happy_feel
+      display flex
+
+  &.sad
+    #fields-sad_feel
+      display block
+    .multi-checkbox-sad_feel
+      display flex

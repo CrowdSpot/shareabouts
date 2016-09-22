@@ -138,42 +138,8 @@ place:
         - key: class
           value: graphic-selector
     - prompt: _(How do you feel at this Happy Spot?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Relaxed)
-          value: relaxed
-        - label: _(Excited)
-          value: excited
-        - label: _(Satisfied)
-          value: satisfied
-        - label: _(Trust)
-          value: trust
-        - label: _(Love)
-          value: love
-      name: happy_feel
-      optional: true
-    - prompt: _(How do you feel at this Sad Spot?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Scared)
-          value: scared
-        - label: _(Angry)
-          value: angry
-        - label: _(Frustrated)
-          value: frustrated
-        - label: _(Disgust)
-          value: disgust
-        - label: _(Creepy)
-          value: creepy
-      name: sad_feel
-      optional: true
-    - prompt: _(Emojis)
       type: multi-checkbox
-      name: emojis
+      name: happy_feel
       optional: true
       checkboxes:
         - label: _(Relaxed)
@@ -186,6 +152,11 @@ place:
           value: trust
         - label: _(Love)
           value: love
+    - prompt: _(How do you feel at this Sad Spot?)
+      type: multi-checkbox
+      name: sad_feel
+      optional: true
+      checkboxes:
         - label: _(Scared)
           value: scared
         - label: _(Angry)

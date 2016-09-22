@@ -72,10 +72,12 @@
               {{/is_file}}
 
               {{#is_multi_checkbox}}
+                <div class="multi-checkboxes multi-checkbox-{{ name }}">
                 {{#checkboxes}}
                   <input type="checkbox" id="multi-checkbox-{{value}}" name="{{value}}" value="1">
                   <label class="multi-checkbox" for="multi-checkbox-{{value}}">{{{label}}}</label>
                 {{/checkboxes}}
+                </div>
               {{/is_multi_checkbox}}
 
               {{#if help_text }}
