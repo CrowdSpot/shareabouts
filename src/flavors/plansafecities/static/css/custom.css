@@ -520,60 +520,115 @@ textarea:focus {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 #fields-emojis label[for=place-emojis] {
   display: none;
 }
-#fields-emojis label.multi-checkbox {
-  width: 40px;
-  height: 40px;
-  overflow: hidden;
-  background-size: cover;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  transition: -webkit-transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-  cursor: pointer;
+#fields-emojis input[type=checkbox] {
+  display: none;
 }
-#fields-emojis label.multi-checkbox:hover {
+#fields-emojis input[type=checkbox]:checked +label.multi-checkbox:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+#fields-emojis label.multi-checkbox {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 1em;
+  position: relative;
+}
+@media only screen {
+  #fields-emojis label.multi-checkbox {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 300px) {
+  #fields-emojis label.multi-checkbox {
+    width: 33.333333333333336%;
+  }
+}
+@media only screen and (min-width: 400px) {
+  #fields-emojis label.multi-checkbox {
+    width: 20%;
+  }
+}
+@media only screen and (min-width: 800px) {
+  #fields-emojis label.multi-checkbox {
+    width: 20%;
+  }
+}
+#fields-emojis label.multi-checkbox:before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-transition: box-shadow 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 0 auto 0.5em;
+}
+#fields-emojis label.multi-checkbox:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  margin-right: -45px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  background: no-repeat center center;
+  background-size: cover;
+  background-image: url("images/checkbox-tick.svg");
+  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+#fields-emojis label.multi-checkbox:hover:before {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
-#fields-emojis label.multi-checkbox input[type=checkbox]:after {
-  content: "";
-  display: block;
-  width: 100px;
-  height: 100px;
-  color: #222;
-}
-#fields-emojis label.multi-checkbox[for=multi-checkbox-relaxed] {
+#fields-emojis label.multi-checkbox[for=multi-checkbox-relaxed]:before {
   background-image: url("images/emojis/emoji-relaxed.svg");
 }
-#fields-emojis label.multi-checkbox[for=multi-checkbox-excited] {
+#fields-emojis label.multi-checkbox[for=multi-checkbox-excited]:before {
   background-image: url("images/emojis/emoji-excited.svg");
 }
-#fields-emojis label.multi-checkbox[for=multi-checkbox-satisfied] {
+#fields-emojis label.multi-checkbox[for=multi-checkbox-satisfied]:before {
   background-image: url("images/emojis/emoji-satisfied.svg");
 }
-#fields-emojis label.multi-checkbox[for=multi-checkbox-trust] {
+#fields-emojis label.multi-checkbox[for=multi-checkbox-trust]:before {
   background-image: url("images/emojis/emoji-trust.svg");
 }
-#fields-emojis label.multi-checkbox[for=multi-checkbox-love] {
+#fields-emojis label.multi-checkbox[for=multi-checkbox-love]:before {
   background-image: url("images/emojis/emoji-love.svg");
 }
-#fields-emojis label.multi-checkbox[for=multi-checkbox-scared] {
+#fields-emojis label.multi-checkbox[for=multi-checkbox-scared]:before {
   background-image: url("images/emojis/emoji-scared.svg");
 }
-#fields-emojis label.multi-checkbox[for=multi-checkbox-angry] {
+#fields-emojis label.multi-checkbox[for=multi-checkbox-angry]:before {
   background-image: url("images/emojis/emoji-angry.svg");
 }
-#fields-emojis label.multi-checkbox[for=multi-checkbox-frustrated] {
+#fields-emojis label.multi-checkbox[for=multi-checkbox-frustrated]:before {
   background-image: url("images/emojis/emoji-frustrated.svg");
 }
-#fields-emojis label.multi-checkbox[for=multi-checkbox-disgust] {
+#fields-emojis label.multi-checkbox[for=multi-checkbox-disgust]:before {
   background-image: url("images/emojis/emoji-disgust.svg");
 }
-#fields-emojis label.multi-checkbox[for=multi-checkbox-creepy] {
+#fields-emojis label.multi-checkbox[for=multi-checkbox-creepy]:before {
   background-image: url("images/emojis/emoji-creepy.svg");
 }
 
