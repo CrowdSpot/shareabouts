@@ -74,6 +74,23 @@ var Shareabouts = Shareabouts || {};
             value.push(item.name);
 
           }
+          if(configItem.is_multi_radio &&
+             configItem.radios.filter(function(radio) {
+               return radio.name == item.name;
+             }).length > 0
+          ) {
+
+            // This field belongs to a multi-radio, values are to be submitted in a list.
+            name = configItem.name;
+
+            if(attrs.hasOwnProperty(name)) {
+              value = attrs[name];
+            } else {
+              value = new Array();
+            }
+            value.push(item.name);
+
+          }
         });
 
         attrs[name] = value;
