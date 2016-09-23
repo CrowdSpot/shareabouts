@@ -407,6 +407,9 @@ pages:
     slug: welcome
     name: overview
     start_page: true
+  - title: _(FAQs)
+    slug: why
+    name: why
 
   - title: _(Filter)
     pages:
