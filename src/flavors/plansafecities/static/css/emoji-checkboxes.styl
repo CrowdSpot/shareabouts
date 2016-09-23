@@ -22,7 +22,7 @@
     text-align center
     width 100%
     margin 0
-    margin-bottom 1em
+    // margin-bottom 1em
     position relative
 
     +above('xs')
@@ -99,20 +99,35 @@
     &[for=multi-checkbox-creepy]:before
       background-image url('images/emojis/emoji-creepy.svg')
 
-
-#fields-happy_feel, .multi-checkbox-happy_feel, #fields-sad_feel, .multi-checkbox-sad_feel
-	display none
+#fields-happy_feel, #fields-sad_feel
+  display none
+  opacity 0
 
 .place-form
-  
   &.happy
     #fields-happy_feel
       display block
-    .multi-checkbox-happy_feel
-      display flex
-
+      animation showEmojis 0.5s ease-in-out forwards
   &.sad
     #fields-sad_feel
       display block
-    .multi-checkbox-sad_feel
-      display flex
+      animation showEmojis 0.5s ease-in-out forwards
+
+@keyframes showEmojis
+  0%
+    display block
+  1%
+    opacity 0
+  100%
+    opacity 1
+    display block
+
+@keyframes hideEmojis
+  0%
+    opacity 1
+    display block
+
+  99%
+    opacity 0
+  100%
+    display block

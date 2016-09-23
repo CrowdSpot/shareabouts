@@ -47,7 +47,7 @@ a:visited {
 }
 #powered-by a {
   background-image: url("images/crowdspot-logo.svg");
-  background-position: 0px 9px;
+  background-position: 0px 4px;
 }
 #site-header {
   border-top: #015395 3px solid;
@@ -360,41 +360,167 @@ a.leaflet-control-layers-toggle:before,
     bottom: 1.5em;
   }
 }
+.place-title {
+  margin-bottom: 2em;
+}
 .drag-marker-instructions,
 .drag-marker-warning {
   background-color: #015395;
   color: #fff;
   text-shadow: none;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  margin-bottom: 4em;
+  position: absolute;
+  top: 50%;
+  left: 1em;
+  right: 1em;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
-.place-value-safety_rating:before {
-  content: "Safety rating: ";
-  font-weight: bold;
+.show-form-warnings {
+  -webkit-animation: show-form-warnings 0.3s ease-in-out forwards;
+          animation: show-form-warnings 0.3s ease-in-out forwards;
 }
-.place-value-description:before {
-  content: "Description: ";
-  font-weight: bold;
+.hide-form-warnings {
+  -webkit-animation: hide-form-warnings 0.3s ease-in-out forwards;
+          animation: hide-form-warnings 0.3s ease-in-out forwards;
 }
-.place-value-rider_type:before {
-  content: "Rider type: ";
-  font-weight: bold;
+.place-form-container {
+  opacity: 0;
 }
-#place-safety_rating {
-  display: none;
-}
-#fields-safety_rating {
-  display: none;
-}
-.place-form label[for=place-private-submitter_email],
-.place-form [name=private-submitter_email] {
-  display: none;
-}
-.place-form.location_updates-yesplease label[for=place-private-submitter_email],
-.place-form.location_updates-yesplease [name=private-submitter_email] {
-  display: block;
+.show-form-item {
+  opacity: 0;
+  -webkit-animation: show-form-items 0.2s 0.5s ease-in-out forwards;
+          animation: show-form-items 0.2s 0.5s ease-in-out forwards;
 }
 label small {
   text-transform: none;
   display: none;
+}
+.place-form-section.file,
+.place-form-section.select {
+  text-align: center;
+}
+.place-form-section.text,
+.place-form-section.textarea,
+.place-form-section.file,
+.place-form-section .multi-checkboxes,
+.place-form-section.select {
+  padding-bottom: 3em;
+  box-shadow: 0px 1px 2px -2px rgba(34,34,34,0.5);
+  border-bottom: 1px solid rgba(217,217,214,0.5);
+  margin-bottom: 3em;
+}
+.place-form-section.text label,
+.place-form-section.textarea label,
+.place-form-section.file label,
+.place-form-section .multi-checkboxes label,
+.place-form-section.select label {
+  display: block;
+  margin-bottom: 1em;
+}
+.multi-checkbox label {
+  display: block;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.place-form input[type=text],
+.place-form input[type=email],
+.place-form textarea {
+  border: none;
+  padding: 1em;
+  border-radius: 3px;
+  box-shadow: 0 0 10px -5px rgba(34,34,34,0.5) inset;
+  background-color: rgba(217,217,214,0.5);
+}
+@-webkit-keyframes show-form-warnings {
+  0% {
+    display: block;
+    opacity: 0;
+    -webkit-transform: translateX(-100px) translateY(-50%);
+            transform: translateX(-100px) translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0) translateY(-50%);
+            transform: translateX(0) translateY(-50%);
+  }
+}
+@keyframes show-form-warnings {
+  0% {
+    display: block;
+    opacity: 0;
+    -webkit-transform: translateX(-100px) translateY(-50%);
+            transform: translateX(-100px) translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0) translateY(-50%);
+            transform: translateX(0) translateY(-50%);
+  }
+}
+@-webkit-keyframes hide-form-warnings {
+  99% {
+    -webkit-transform: translateX(-100px) translateY(-50%);
+            transform: translateX(-100px) translateY(-50%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes hide-form-warnings {
+  99% {
+    -webkit-transform: translateX(-100px) translateY(-50%);
+            transform: translateX(-100px) translateY(-50%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@-webkit-keyframes show-form-items {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes show-form-items {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@-webkit-keyframes hide-form-items {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes hide-form-items {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 input:focus,
 textarea:focus {
@@ -528,7 +654,6 @@ textarea:focus {
   text-align: center;
   width: 100%;
   margin: 0;
-  margin-bottom: 1em;
   position: relative;
 }
 @media only screen {
@@ -621,26 +746,67 @@ textarea:focus {
   background-image: url("images/emojis/emoji-creepy.svg");
 }
 #fields-happy_feel,
-.multi-checkbox-happy_feel,
-#fields-sad_feel,
-.multi-checkbox-sad_feel {
+#fields-sad_feel {
   display: none;
+  opacity: 0;
 }
 .place-form.happy #fields-happy_feel {
   display: block;
-}
-.place-form.happy .multi-checkbox-happy_feel {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  -webkit-animation: showEmojis 0.5s ease-in-out forwards;
+          animation: showEmojis 0.5s ease-in-out forwards;
 }
 .place-form.sad #fields-sad_feel {
   display: block;
+  -webkit-animation: showEmojis 0.5s ease-in-out forwards;
+          animation: showEmojis 0.5s ease-in-out forwards;
 }
-.place-form.sad .multi-checkbox-sad_feel {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+@-webkit-keyframes showEmojis {
+  0% {
+    display: block;
+  }
+  1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+@keyframes showEmojis {
+  0% {
+    display: block;
+  }
+  1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+@-webkit-keyframes hideEmojis {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: block;
+  }
+}
+@keyframes hideEmojis {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=custom.css.map */
