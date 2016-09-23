@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40 (33762) - http://www.bohemiancoding.com/sketch -->
+    <title>checkbox-tick</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="checkbox-tick">
+            <circle id="Oval-2" fill="#FFFFFF" cx="20.6445312" cy="20.8475626" r="20"></circle>
+            <path d="M20.6445312,0.8475626 C9.59453125,0.8475626 0.64453125,9.7975626 0.64453125,20.8475626 C0.64453125,31.8875626 9.59453125,40.8475626 20.6445312,40.8475626 C31.6845312,40.8475626 40.6445312,31.8875626 40.6445312,20.8475626 C40.6445312,9.7975626 31.6845312,0.8475626 20.6445312,0.8475626 L20.6445312,0.8475626 Z M16.6445312,30.8475626 L6.64453125,20.8475626 L9.47453125,18.0175626 L16.6445312,25.1875626 L31.8145313,10.0175626 L34.6445312,12.8475626 L16.6445312,30.8475626 L16.6445312,30.8475626 Z" id="Page-1" fill="#4DAF46"></path>
+        </g>
+    </g>
+</svg>

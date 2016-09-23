@@ -1,0 +1,133 @@
+.multi-checkboxes
+  display flex
+  flex-wrap wrap
+  justify-content center
+
+  &> label
+    display block
+
+  input[type=checkbox]
+    display none
+
+    &:checked
+
+      +label.multi-checkbox
+        // &:before
+        //   box-shadow 0 0 0px 4px rgba(#4EAF46, 1)
+        &:after
+          opacity 1
+          transform scale(1)
+
+  label.multi-checkbox
+    text-align center
+    width 100%
+    margin 0
+    // margin-bottom 1em
+    position relative
+
+    +above('xs')
+      width (100/2)%
+
+    +above(300px)
+      width (100/3)%
+
+    +above('s')
+      width 20%
+
+    +above('l')
+      width 20%
+
+    &:before
+      content ""
+      display block
+      width 60px
+      height 60px
+      background-size 80% 80%
+      background-repeat no-repeat
+      background-position center center
+      transition transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out
+      cursor pointer
+      border-radius 50%
+      margin 0 auto 0.5em
+
+    &:after
+      content ""
+      position absolute
+      top 0
+      right 50%
+      margin-right -45px
+      transform scale(0)
+      opacity 0
+      width 20px
+      height 20px
+      background no-repeat center center
+      background-size cover
+      background-image url('images/checkbox-tick.svg')
+      transition transform 0.2s ease-in-out, opacity 0.2s ease-in-out
+
+    &:hover
+      &:before
+        transform scale(1.2)
+
+    &[for=multi-checkbox-relaxed]:before
+      background-image url('images/emojis/emoji-relaxed.svg')
+
+    &[for=multi-checkbox-excited]:before
+      background-image url('images/emojis/emoji-excited.svg')
+
+    &[for=multi-checkbox-satisfied]:before
+      background-image url('images/emojis/emoji-satisfied.svg')
+
+    &[for=multi-checkbox-trust]:before
+      background-image url('images/emojis/emoji-trust.svg')
+
+    &[for=multi-checkbox-love]:before
+      background-image url('images/emojis/emoji-love.svg')
+
+    &[for=multi-checkbox-scared]:before
+      background-image url('images/emojis/emoji-scared.svg')
+
+    &[for=multi-checkbox-angry]:before
+      background-image url('images/emojis/emoji-angry.svg')
+
+    &[for=multi-checkbox-frustrated]:before
+      background-image url('images/emojis/emoji-frustrated.svg')
+
+    &[for=multi-checkbox-disgust]:before
+      background-image url('images/emojis/emoji-disgust.svg')
+
+    &[for=multi-checkbox-creepy]:before
+      background-image url('images/emojis/emoji-creepy.svg')
+
+#fields-happy_feel, #fields-sad_feel
+  display none
+  opacity 0
+
+.place-form
+  &.happy
+    #fields-happy_feel
+      display block
+      animation showEmojis 0.5s ease-in-out forwards
+  &.sad
+    #fields-sad_feel
+      display block
+      animation showEmojis 0.5s ease-in-out forwards
+
+@keyframes showEmojis
+  0%
+    display block
+  1%
+    opacity 0
+  100%
+    opacity 1
+    display block
+
+@keyframes hideEmojis
+  0%
+    opacity 1
+    display block
+
+  99%
+    opacity 0
+  100%
+    display block
