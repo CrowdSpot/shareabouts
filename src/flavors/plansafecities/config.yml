@@ -123,20 +123,17 @@ place:
         - key: size
           value: 30
         - key: required
-    - prompt: _(Is this a 'Happy Spot' or 'Sad Spot'?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Happy Spot)
-          value: happy
-        - label: _(Sad Spot)
-          value: sad
+    - prompt: _(Spot Kind)
+      type: multi-radio
       name: location_type
       attrs:
         - key: required
         - key: class
-          value: graphic-selector
+      radios:
+        - label: _(Happy Spot)
+          value: happy
+        - label: _(Sad Spot)
+          value: sad
     - prompt: _(How do you feel at this Happy Spot?)
       type: select
       options:
@@ -196,15 +193,6 @@ place:
           value: disgust
         - label: _(Creepy)
           value: creepy
-    # - prompt: _(Spot Kind)
-    #   type: multi-radio
-    #   name: spotkind
-    #   optional: true
-    #   radios:
-    #     - label: _(Happy)
-    #       value: happy
-    #     - label: _(Sad)
-    #       value: sad
     - prompt: _(Please tell us more about this spot if you want. This could be a story or experience you might like to share.)
       type: textarea
       name: description
