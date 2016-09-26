@@ -9,7 +9,7 @@ var Shareabouts = Shareabouts || {};
       'submit form': 'onSubmit',
       'change input[type="file"]': 'onInputFileChange',
       'change select': 'onSelectChange',
-      'change radio': 'onRadioChange'
+      'change input[type=radio]': 'onSelectChange'
     },
     initialize: function(){
       S.TemplateHelpers.overridePlaceTypeConfig(this.options.placeConfig.items,
@@ -124,31 +124,12 @@ var Shareabouts = Shareabouts || {};
         prefix = S.Util.classify(selectName) + '-';
       }
 
-      // remove any existing classes
+      // remove any existing classes from both options and radios
       _.each(selectConfig.options, function(option) {
         $form.removeClass(prefix + S.Util.classify(option.value));
       });
-
-      // add the new class
-      $form.addClass(prefix + S.Util.classify($(evt.target).val()));
-    },
-    // update the form with a class indicating the location type
-    onRadioChange: function(evt) {
-      var self = this, $form = self.$('form');
-      var selectName = $(evt.target).attr('name');
-      var selectConfig = _.find(self.options.placeConfig.items, function(item) {
-        return item.name === selectName;
-      });
-
-      var prefix = '';
-
-      if (selectName !== 'location_type') {
-        prefix = S.Util.classify(selectName) + '-';
-      }
-
-      // remove any existing classes
-      _.each(selectConfig.options, function(option) {
-        $form.removeClass(prefix + S.Util.classify(option.value));
+      _.each(selectConfig.radios, function(radio) {
+        $form.removeClass(prefix + S.Util.classify(radio.value));
       });
 
       // add the new class
