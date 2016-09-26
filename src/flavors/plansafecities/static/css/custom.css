@@ -747,8 +747,7 @@ textarea:focus {
 }
 #fields-happy_feel,
 #fields-sad_feel {
-  display: none;
-  opacity: 0;
+  opacity: 0.5;
 }
 .place-form.happy #fields-happy_feel {
   display: block;
@@ -765,7 +764,7 @@ textarea:focus {
     display: block;
   }
   1% {
-    opacity: 0;
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
@@ -777,7 +776,7 @@ textarea:focus {
     display: block;
   }
   1% {
-    opacity: 0;
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
@@ -790,7 +789,7 @@ textarea:focus {
     display: block;
   }
   99% {
-    opacity: 0;
+    opacity: 0.5;
   }
   100% {
     display: block;
@@ -802,7 +801,7 @@ textarea:focus {
     display: block;
   }
   99% {
-    opacity: 0;
+    opacity: 0.5;
   }
   100% {
     display: block;
