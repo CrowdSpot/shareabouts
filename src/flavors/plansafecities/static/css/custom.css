@@ -47,7 +47,7 @@ a:visited {
 }
 #powered-by a {
   background-image: url("images/crowdspot-logo.svg");
-  background-position: 0px 9px;
+  background-position: 0px 4px;
 }
 #site-header {
   border-top: #015395 3px solid;
@@ -361,7 +361,8 @@ a.leaflet-control-layers-toggle:before,
   }
 }
 .place-title {
-  margin-bottom: 2em;
+  margin-top: 3em;
+  margin-bottom: 3em;
   text-align: center;
 }
 .drag-marker-instructions,
@@ -390,11 +391,12 @@ a.leaflet-control-layers-toggle:before,
 }
 .show-form-item {
   opacity: 0;
-  -webkit-animation: show-form-items 0.2s 0.5s ease-in-out forwards;
-          animation: show-form-items 0.2s 0.5s ease-in-out forwards;
+  -webkit-animation: show-form-items 0.3s 0.4s ease-in-out forwards;
+          animation: show-form-items 0.3s 0.4s ease-in-out forwards;
 }
 label small {
   text-transform: none;
+  font-size: 1em;
   display: none;
 }
 .place-form-section.file,
@@ -405,27 +407,29 @@ label small {
 .place-form-section.textarea,
 .place-form-section.file,
 .place-form-section .multi-checkboxes,
+.place-form-section .multi-radios,
 .place-form-section.select {
   position: relative;
-  padding-bottom: 3em;
-  box-shadow: 0px 1px 2px -2px rgba(34,34,34,0.5);
+  padding-bottom: 4em;
+  box-shadow: 0px 8px 8px -8px rgba(34,34,34,0.5);
   border-bottom: 1px solid rgba(217,217,214,0.5);
-  margin-bottom: 3em;
+  margin-bottom: 4em;
 }
 .place-form-section.text:after,
 .place-form-section.textarea:after,
 .place-form-section.file:after,
 .place-form-section .multi-checkboxes:after,
+.place-form-section .multi-radios:after,
 .place-form-section.select:after {
   content: "";
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   background: #fff;
   border-bottom: 1px solid #d9d9d6;
   border-right: 1px solid #d9d9d6;
   position: absolute;
   left: 50%;
-  bottom: -11px;
+  bottom: -14px;
   -webkit-transform: translateX(-50%) rotate(45deg);
           transform: translateX(-50%) rotate(45deg);
 }
@@ -433,12 +437,15 @@ label small {
 .place-form-section.textarea label,
 .place-form-section.file label,
 .place-form-section .multi-checkboxes label,
+.place-form-section .multi-radios label,
 .place-form-section.select label {
   display: block;
   margin: 1em 0;
 }
 .multi-checkbox label,
-.multi-radio label {
+.multi-radio label,
+.textarea label,
+.text label {
   display: block;
   text-align: center;
   margin-bottom: 1em;
@@ -451,16 +458,44 @@ label small {
   border-radius: 3px;
   box-shadow: 0 0 10px -5px rgba(34,34,34,0.5) inset;
   background-color: rgba(217,217,214,0.5);
+  text-align: center;
 }
 #fields-location_type {
   margin-bottom: 3em;
+}
+.place-form #fields-time,
+.place-form #fields-description,
+.place-form #fields-my_image,
+.place-form #fields-description_ideas,
+.place-form #fields-submitter_name,
+.place-form #fields-private-submitter_email,
+.place-form #save-place-btn {
+  display: none;
+}
+.place-form.happy #fields-time,
+.place-form.sad #fields-time,
+.place-form.happy #fields-description,
+.place-form.sad #fields-description,
+.place-form.happy #fields-my_image,
+.place-form.sad #fields-my_image,
+.place-form.happy #fields-description_ideas,
+.place-form.sad #fields-description_ideas,
+.place-form.happy #fields-submitter_name,
+.place-form.sad #fields-submitter_name,
+.place-form.happy #fields-private-submitter_email,
+.place-form.sad #fields-private-submitter_email,
+.place-form.happy #save-place-btn,
+.place-form.sad #save-place-btn {
+  display: block;
+  -webkit-animation: showFormElements 0.3s ease-in-out forwards;
+          animation: showFormElements 0.3s ease-in-out forwards;
 }
 @-webkit-keyframes show-form-warnings {
   0% {
     display: block;
     opacity: 0;
-    -webkit-transform: translateX(-100px);
-            transform: translateX(-100px);
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
   }
   100% {
     opacity: 1;
@@ -472,8 +507,8 @@ label small {
   0% {
     display: block;
     opacity: 0;
-    -webkit-transform: translateX(-100px);
-            transform: translateX(-100px);
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
   }
   100% {
     opacity: 1;
@@ -483,8 +518,8 @@ label small {
 }
 @-webkit-keyframes hide-form-warnings {
   99% {
-    -webkit-transform: translateX(-100px);
-            transform: translateX(-100px);
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
     opacity: 0;
   }
   100% {
@@ -494,8 +529,8 @@ label small {
 }
 @keyframes hide-form-warnings {
   99% {
-    -webkit-transform: translateX(-100px);
-            transform: translateX(-100px);
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
     opacity: 0;
   }
   100% {
@@ -506,8 +541,8 @@ label small {
 @-webkit-keyframes show-form-items {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-100px);
-            transform: translateX(-100px);
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
   }
   100% {
     opacity: 1;
@@ -518,8 +553,8 @@ label small {
 @keyframes show-form-items {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-100px);
-            transform: translateX(-100px);
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
   }
   100% {
     opacity: 1;
@@ -543,32 +578,24 @@ label small {
     opacity: 0;
   }
 }
-@-webkit-keyframes arrowAnimation {
+@-webkit-keyframes showFormElements {
   0% {
-    -webkit-transform: translateX(-50%) rotate(45deg);
-            transform: translateX(-50%) rotate(45deg);
-  }
-  50% {
-    -webkit-transform: translateX(-50%) translateY(-10px) rotate(45deg);
-            transform: translateX(-50%) translateY(-10px) rotate(45deg);
+    opacity: 0;
+    display: block;
   }
   100% {
-    -webkit-transform: translateX(-50%) rotate(45deg);
-            transform: translateX(-50%) rotate(45deg);
+    opacity: 1;
+    display: block;
   }
 }
-@keyframes arrowAnimation {
+@keyframes showFormElements {
   0% {
-    -webkit-transform: translateX(-50%) rotate(45deg);
-            transform: translateX(-50%) rotate(45deg);
-  }
-  50% {
-    -webkit-transform: translateX(-50%) translateY(-10px) rotate(45deg);
-            transform: translateX(-50%) translateY(-10px) rotate(45deg);
+    opacity: 0;
+    display: block;
   }
   100% {
-    -webkit-transform: translateX(-50%) rotate(45deg);
-            transform: translateX(-50%) rotate(45deg);
+    opacity: 1;
+    display: block;
   }
 }
 input:focus,
@@ -813,6 +840,23 @@ textarea:focus {
   -webkit-animation: hideSadEmojis 0.5s ease-in-out forwards;
           animation: hideSadEmojis 0.5s ease-in-out forwards;
 }
+.place-form #fields-location_type {
+  position: relative;
+}
+.place-form #fields-location_type:after {
+  content: "Select Happy or Sad to continue";
+  position: absolute;
+  left: 50%;
+  bottom: -8em;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+.place-form.happy #fields-location_type:after,
+.place-form.sad #fields-location_type:after {
+  opacity: 0;
+}
 .place-form.happy #fields-happy_feel {
   -webkit-animation: showHappyEmojis 0.5s ease-in-out forwards;
           animation: showHappyEmojis 0.5s ease-in-out forwards;
@@ -830,11 +874,11 @@ textarea:focus {
           animation: hideHappyEmojis 0.5s ease-in-out forwards;
 }
 #fields-time {
-  margin-top: 22em;
+  margin-top: 24em;
 }
 @media only screen and (min-width: 400px) {
   #fields-time {
-    margin-top: 17em;
+    margin-top: 21em;
   }
 }
 @-webkit-keyframes showHappyEmojis {

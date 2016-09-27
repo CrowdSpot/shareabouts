@@ -1,6 +1,6 @@
 .place-title
-	// margin-top 2em
-	margin-bottom 2em
+	margin-top 3em
+	margin-bottom 3em
 	text-align center
 
 .drag-marker-instructions,
@@ -17,18 +17,22 @@
 	left 1em
 	right 1em
 
+	// +above(960px)
+	// 	top 50%
+	// 	transform translateY(-50%)
+
 @keyframes show-form-warnings
 	0%
 		display block
 		opacity 0
-		transform translateX(-100px)
+		transform translateY(-100px)
 	100%
 		opacity 1
 		transform translateX(0)
 
 @keyframes hide-form-warnings
 	99%
-		transform translateX(-100px)
+		transform translateY(-100px)
 		opacity 0
 	100%
 		opacity 0
@@ -43,7 +47,7 @@
 @keyframes show-form-items
 	0%
 		opacity 0
-		transform translateX(-100px)
+		transform translateY(-100px)
 	100%
 		opacity 1
 		transform translateX(0)
@@ -59,7 +63,7 @@
 
 .show-form-item
 	opacity 0
-	animation show-form-items 0.2s 0.5s ease-in-out forwards
+	animation show-form-items 0.3s 0.4s ease-in-out forwards
 
 // .place-form label[for=place-private-submitter_email],
 //   .place-form [name=private-submitter_email]
@@ -72,6 +76,7 @@
 label
 	small
 		text-transform none
+		font-size 1em
 		display none
 
 .place-form-section
@@ -79,39 +84,30 @@ label
 	&.file, &.select
 		text-align center
 
-	&.text, &.textarea, &.file, .multi-checkboxes, &.select
+	&.text, &.textarea, &.file, .multi-checkboxes, .multi-radios, &.select
 		position relative
-		padding-bottom 3em
-		box-shadow 0px 1px 2px -2px rgba(black, 0.5)
+		padding-bottom 4em
+		box-shadow 0px 8px 8px -8px rgba(black, 0.5)
 		border-bottom 1px solid rgba(tertiary-color, 0.5)
-		margin-bottom 3em
+		margin-bottom 4em
 
 		&:after
 			content ""
-			width 20px
-			height 20px
+			width 25px
+			height 25px
 			background white
 			border-bottom 1px solid tertiary-color
 			border-right 1px solid tertiary-color
 			position absolute
 			left 50%
-			bottom -11px
+			bottom -14px
 			transform translateX(-50%) rotate(45deg)
-			// animation arrowAnimation 2s ease-in-out infinite
 
 		label
 			display block
 			margin 1em 0
 
-@keyframes arrowAnimation
-	0%
-		transform translateX(-50%) rotate(45deg)
-	50%
-		transform translateX(-50%) translateY(-10px) rotate(45deg)
-	100%
-		transform translateX(-50%) rotate(45deg)
-
-.multi-checkbox, .multi-radio
+.multi-checkbox, .multi-radio, .textarea, .text
 	label
 		display block
 		text-align center
@@ -124,6 +120,25 @@ label
 		border-radius 3px
 		box-shadow 0 0 10px -5px rgba(black, 0.5) inset
 		background-color rgba(tertiary-color, 0.5)
+		text-align center
 
 #fields-location_type
 	margin-bottom 3em
+
+.place-form
+
+	#fields-time, #fields-description, #fields-my_image, #fields-description_ideas, #fields-submitter_name, #fields-private-submitter_email, #save-place-btn
+		display none
+
+	&.happy, &.sad
+		#fields-time, #fields-description, #fields-my_image, #fields-description_ideas, #fields-submitter_name, #fields-private-submitter_email, #save-place-btn
+			display block
+			animation showFormElements 0.3s ease-in-out forwards
+
+@keyframes showFormElements
+	0%
+		opacity 0
+		display block
+	100%
+		opacity 1
+		display block

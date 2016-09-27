@@ -130,9 +130,9 @@ place:
         - key: required
         - key: class
       radios:
-        - label: _(Happy Spot)
+        - label: _(Happy)
           value: happy
-        - label: _(Sad Spot)
+        - label: _(Sad)
           value: sad
     - prompt: _(How do you feel at this Happy Spot?)
       type: multi-checkbox
@@ -170,11 +170,11 @@ place:
       attrs:
         - key: required
       radios:
-        - label: _(Day Spot)
+        - label: _(Day)
           value: day
-        - label: _(Night Spot)
+        - label: _(Night)
           value: night
-        - label: _(Any time)
+        - label: _(Both)
           value: anytime
     - prompt: _(Please tell us more about this spot if you want. This could be a story or experience you might like to share.)
       type: textarea

@@ -116,6 +116,24 @@
 
 .place-form
 
+  #fields-location_type
+    position relative
+
+    &:after
+      content "Select Happy or Sad to continue"
+      position absolute
+      left 50%
+      bottom -8em
+      transform translateX(-50%)
+      transition opacity 0.2s ease-in-out
+
+  &.happy, &.sad
+
+    #fields-location_type
+
+      &:after
+        opacity 0
+
   &.happy
 
     #fields-happy_feel
@@ -123,6 +141,7 @@
 
     #fields-sad_feel
       animation hideSadEmojis 0.5s ease-in-out forwards
+
   &.sad
 
     #fields-sad_feel
@@ -162,7 +181,7 @@
     transform translateX(100%)
 
 #fields-time
-  margin-top 22em
+  margin-top 24em
 
   +above('s')
-    margin-top 17em
+    margin-top 21em
