@@ -176,7 +176,7 @@ place:
           value: night
         - label: _(Both)
           value: anytime
-    - prompt: _(Please tell us more about this spot if you want. This could be a story or experience you might like to share.)
+    - prompt: _(Please tell us more about this spot if you want. This could be a story or experience you might like to share. Also, if you have any <strong>ideas</strong> to improve this spot, please decribe them below.)
       type: textarea
       name: description
       optional: true
@@ -191,13 +191,6 @@ place:
       attrs:
         - key: accept
           value: image/*
-    - prompt: _(If you have any <strong>ideas</strong> to improve this spot, please decribe them below.)
-      type: textarea
-      name: description_ideas
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Please describe...)
     - prompt: _(Your name or username)
       type: text
       name: submitter_name
