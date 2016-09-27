@@ -1,9 +1,9 @@
 # Settings for the app
 app:
   # HTML Title
-  title: Plan Safe Cities
+  title: Free to Be
   # Header name
-  name: Plan Safe Cities
+  name: Free to Be
   # Meta description that will show up in Google search results
   meta_description: _(Crowdsourcing perceptions of safety in the city of Melbourne)
 
