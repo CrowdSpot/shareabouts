@@ -8,7 +8,8 @@ var Shareabouts = Shareabouts || {};
     events: {
       'submit form': 'onSubmit',
       'change input[type="file"]': 'onInputFileChange',
-      'change select': 'onSelectChange'
+      'change select': 'onSelectChange',
+      'change input[type=radio]': 'onSelectChange'
     },
     initialize: function(){
       S.TemplateHelpers.overridePlaceTypeConfig(this.options.placeConfig.items,
@@ -108,9 +109,12 @@ var Shareabouts = Shareabouts || {};
         prefix = S.Util.classify(selectName) + '-';
       }
 
-      // remove any existing classes
+      // remove any existing classes from both options and radios
       _.each(selectConfig.options, function(option) {
         $form.removeClass(prefix + S.Util.classify(option.value));
+      });
+      _.each(selectConfig.radios, function(radio) {
+        $form.removeClass(prefix + S.Util.classify(radio.value));
       });
 
       // add the new class

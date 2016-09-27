@@ -361,7 +361,9 @@ a.leaflet-control-layers-toggle:before,
   }
 }
 .place-title {
-  margin-bottom: 2em;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  text-align: center;
 }
 .drag-marker-instructions,
 .drag-marker-warning {
@@ -372,11 +374,9 @@ a.leaflet-control-layers-toggle:before,
   padding-bottom: 3em;
   margin-bottom: 4em;
   position: absolute;
-  top: 50%;
+  top: 1em;
   left: 1em;
   right: 1em;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 .show-form-warnings {
   -webkit-animation: show-form-warnings 0.3s ease-in-out forwards;
@@ -391,11 +391,12 @@ a.leaflet-control-layers-toggle:before,
 }
 .show-form-item {
   opacity: 0;
-  -webkit-animation: show-form-items 0.2s 0.5s ease-in-out forwards;
-          animation: show-form-items 0.2s 0.5s ease-in-out forwards;
+  -webkit-animation: show-form-items 0.3s 0.4s ease-in-out forwards;
+          animation: show-form-items 0.3s 0.4s ease-in-out forwards;
 }
 label small {
   text-transform: none;
+  font-size: 1em;
   display: none;
 }
 .place-form-section.file,
@@ -406,21 +407,45 @@ label small {
 .place-form-section.textarea,
 .place-form-section.file,
 .place-form-section .multi-checkboxes,
+.place-form-section .multi-radios,
 .place-form-section.select {
-  padding-bottom: 3em;
-  box-shadow: 0px 1px 2px -2px rgba(34,34,34,0.5);
+  position: relative;
+  padding-bottom: 4em;
+  box-shadow: 0px 8px 8px -8px rgba(34,34,34,0.5);
   border-bottom: 1px solid rgba(217,217,214,0.5);
-  margin-bottom: 3em;
+  margin-bottom: 4em;
+}
+.place-form-section.text:after,
+.place-form-section.textarea:after,
+.place-form-section.file:after,
+.place-form-section .multi-checkboxes:after,
+.place-form-section .multi-radios:after,
+.place-form-section.select:after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-bottom: 1px solid #d9d9d6;
+  border-right: 1px solid #d9d9d6;
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
 }
 .place-form-section.text label,
 .place-form-section.textarea label,
 .place-form-section.file label,
 .place-form-section .multi-checkboxes label,
+.place-form-section .multi-radios label,
 .place-form-section.select label {
   display: block;
-  margin-bottom: 1em;
+  margin: 1em 0;
 }
-.multi-checkbox label {
+.multi-checkbox label,
+.multi-radio label,
+.textarea label,
+.text label {
   display: block;
   text-align: center;
   margin-bottom: 1em;
@@ -433,37 +458,68 @@ label small {
   border-radius: 3px;
   box-shadow: 0 0 10px -5px rgba(34,34,34,0.5) inset;
   background-color: rgba(217,217,214,0.5);
+  text-align: center;
+}
+#fields-location_type {
+  margin-bottom: 3em;
+}
+.place-form #fields-time,
+.place-form #fields-description,
+.place-form #fields-my_image,
+.place-form #fields-description_ideas,
+.place-form #fields-submitter_name,
+.place-form #fields-private-submitter_email,
+.place-form #save-place-btn {
+  display: none;
+}
+.place-form.happy #fields-time,
+.place-form.sad #fields-time,
+.place-form.happy #fields-description,
+.place-form.sad #fields-description,
+.place-form.happy #fields-my_image,
+.place-form.sad #fields-my_image,
+.place-form.happy #fields-description_ideas,
+.place-form.sad #fields-description_ideas,
+.place-form.happy #fields-submitter_name,
+.place-form.sad #fields-submitter_name,
+.place-form.happy #fields-private-submitter_email,
+.place-form.sad #fields-private-submitter_email,
+.place-form.happy #save-place-btn,
+.place-form.sad #save-place-btn {
+  display: block;
+  -webkit-animation: showFormElements 0.3s ease-in-out forwards;
+          animation: showFormElements 0.3s ease-in-out forwards;
 }
 @-webkit-keyframes show-form-warnings {
   0% {
     display: block;
     opacity: 0;
-    -webkit-transform: translateX(-100px) translateY(-50%);
-            transform: translateX(-100px) translateY(-50%);
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateX(0) translateY(-50%);
-            transform: translateX(0) translateY(-50%);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 @keyframes show-form-warnings {
   0% {
     display: block;
     opacity: 0;
-    -webkit-transform: translateX(-100px) translateY(-50%);
-            transform: translateX(-100px) translateY(-50%);
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateX(0) translateY(-50%);
-            transform: translateX(0) translateY(-50%);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 @-webkit-keyframes hide-form-warnings {
   99% {
-    -webkit-transform: translateX(-100px) translateY(-50%);
-            transform: translateX(-100px) translateY(-50%);
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
     opacity: 0;
   }
   100% {
@@ -473,8 +529,8 @@ label small {
 }
 @keyframes hide-form-warnings {
   99% {
-    -webkit-transform: translateX(-100px) translateY(-50%);
-            transform: translateX(-100px) translateY(-50%);
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
     opacity: 0;
   }
   100% {
@@ -485,8 +541,8 @@ label small {
 @-webkit-keyframes show-form-items {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-100px);
-            transform: translateX(-100px);
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
   }
   100% {
     opacity: 1;
@@ -497,8 +553,8 @@ label small {
 @keyframes show-form-items {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-100px);
-            transform: translateX(-100px);
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
   }
   100% {
     opacity: 1;
@@ -520,6 +576,26 @@ label small {
   }
   100% {
     opacity: 0;
+  }
+}
+@-webkit-keyframes showFormElements {
+  0% {
+    opacity: 0;
+    display: block;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+@keyframes showFormElements {
+  0% {
+    opacity: 0;
+    display: block;
+  }
+  100% {
+    opacity: 1;
+    display: block;
   }
 }
 input:focus,
@@ -653,7 +729,7 @@ textarea:focus {
 .multi-checkboxes label.multi-checkbox {
   text-align: center;
   width: 100%;
-  margin: 0;
+  margin: 0.5em 0;
   position: relative;
 }
 @media only screen {
@@ -668,19 +744,21 @@ textarea:focus {
 }
 @media only screen and (min-width: 400px) {
   .multi-checkboxes label.multi-checkbox {
-    width: 20%;
+    margin: 0.5em 2.5%;
+    width: 15%;
   }
 }
 @media only screen and (min-width: 800px) {
   .multi-checkboxes label.multi-checkbox {
-    width: 20%;
+    margin: 0.5em 2.5%;
+    width: 15%;
   }
 }
 .multi-checkboxes label.multi-checkbox:before {
   content: "";
   display: block;
-  width: 60px;
-  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
   background-size: 80% 80%;
   background-repeat: no-repeat;
   background-position: center center;
@@ -690,7 +768,6 @@ textarea:focus {
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
   cursor: pointer;
   border-radius: 50%;
-  margin: 0 auto 0.5em;
 }
 .multi-checkboxes label.multi-checkbox:after {
   content: "";
@@ -745,68 +822,255 @@ textarea:focus {
 .multi-checkboxes label.multi-checkbox[for=multi-checkbox-creepy]:before {
   background-image: url("images/emojis/emoji-creepy.svg");
 }
-#fields-happy_feel,
+#fields-happy_feel {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-animation: hideHappyEmojis 0.5s ease-in-out forwards;
+          animation: hideHappyEmojis 0.5s ease-in-out forwards;
+}
 #fields-sad_feel {
-  display: none;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-animation: hideSadEmojis 0.5s ease-in-out forwards;
+          animation: hideSadEmojis 0.5s ease-in-out forwards;
+}
+.place-form #fields-location_type {
+  position: relative;
+}
+.place-form #fields-location_type:after {
+  content: "Select Happy or Sad to continue";
+  position: absolute;
+  left: 50%;
+  bottom: -8em;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+.place-form.happy #fields-location_type:after,
+.place-form.sad #fields-location_type:after {
   opacity: 0;
 }
 .place-form.happy #fields-happy_feel {
-  display: block;
-  -webkit-animation: showEmojis 0.5s ease-in-out forwards;
-          animation: showEmojis 0.5s ease-in-out forwards;
+  -webkit-animation: showHappyEmojis 0.5s ease-in-out forwards;
+          animation: showHappyEmojis 0.5s ease-in-out forwards;
+}
+.place-form.happy #fields-sad_feel {
+  -webkit-animation: hideSadEmojis 0.5s ease-in-out forwards;
+          animation: hideSadEmojis 0.5s ease-in-out forwards;
 }
 .place-form.sad #fields-sad_feel {
+  -webkit-animation: showSadEmojis 0.5s ease-in-out forwards;
+          animation: showSadEmojis 0.5s ease-in-out forwards;
+}
+.place-form.sad #fields-happy_feel {
+  -webkit-animation: hideHappyEmojis 0.5s ease-in-out forwards;
+          animation: hideHappyEmojis 0.5s ease-in-out forwards;
+}
+#fields-time {
+  margin-top: 24em;
+}
+@media only screen and (min-width: 400px) {
+  #fields-time {
+    margin-top: 21em;
+  }
+}
+@-webkit-keyframes showHappyEmojis {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes showHappyEmojis {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@-webkit-keyframes hideHappyEmojis {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    opacity: 0.5;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+@keyframes hideHappyEmojis {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    opacity: 0.5;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes showSadEmojis {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes showSadEmojis {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@-webkit-keyframes hideSadEmojis {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    opacity: 0.5;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+@keyframes hideSadEmojis {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    opacity: 0.5;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+.multi-radios {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.multi-radios> label {
   display: block;
-  -webkit-animation: showEmojis 0.5s ease-in-out forwards;
-          animation: showEmojis 0.5s ease-in-out forwards;
 }
-@-webkit-keyframes showEmojis {
-  0% {
-    display: block;
-  }
-  1% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    display: block;
-  }
+.multi-radios input[type=radio] {
+  display: none;
 }
-@keyframes showEmojis {
-  0% {
-    display: block;
-  }
-  1% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    display: block;
+.multi-radios input[type=radio]:checked +label.multi-radio:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.multi-radios label.multi-radio {
+  text-align: center;
+  width: 100%;
+  margin: 0.5em 0;
+  position: relative;
+}
+@media only screen {
+  .multi-radios label.multi-radio {
+    width: 50%;
   }
 }
-@-webkit-keyframes hideEmojis {
-  0% {
-    opacity: 1;
-    display: block;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    display: block;
+@media only screen and (min-width: 300px) {
+  .multi-radios label.multi-radio {
+    width: 33.333333333333336%;
   }
 }
-@keyframes hideEmojis {
-  0% {
-    opacity: 1;
-    display: block;
+@media only screen and (min-width: 400px) {
+  .multi-radios label.multi-radio {
+    margin: 0.5em 2.5%;
+    width: 15%;
   }
-  99% {
-    opacity: 0;
+}
+@media only screen and (min-width: 800px) {
+  .multi-radios label.multi-radio {
+    margin: 0.5em 2.5%;
+    width: 15%;
   }
-  100% {
-    display: block;
-  }
+}
+.multi-radios label.multi-radio:before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-transition: box-shadow 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 0 auto 0.5em;
+}
+.multi-radios label.multi-radio:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  margin-right: -45px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  background: no-repeat center center;
+  background-size: cover;
+  background-image: url("images/checkbox-tick.svg");
+  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+.multi-radios label.multi-radio:hover:before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.multi-radios label.multi-radio[for=multi-radio-happy]:before {
+  background-image: url("images/emojis/emoji-happy.svg");
+}
+.multi-radios label.multi-radio[for=multi-radio-sad]:before {
+  background-image: url("images/emojis/emoji-sad.svg");
+}
+.multi-radios label.multi-radio[for=multi-radio-day]:before {
+  background-image: url("images/emojis/emoji-day.svg");
+}
+.multi-radios label.multi-radio[for=multi-radio-night]:before {
+  background-image: url("images/emojis/emoji-night.svg");
+}
+.multi-radios label.multi-radio[for=multi-radio-anytime]:before {
+  background-image: url("images/emojis/emoji-anytime.svg");
 }
 
 /*# sourceMappingURL=custom.css.map */

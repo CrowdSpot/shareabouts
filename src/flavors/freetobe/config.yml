@@ -1,9 +1,9 @@
 # Settings for the app
 app:
   # HTML Title
-  title: Plan Safe Cities
+  title: Free to Be
   # Header name
-  name: Plan Safe Cities
+  name: Free to Be
   # Meta description that will show up in Google search results
   meta_description: _(Crowdsourcing perceptions of safety in the city of Melbourne)
 
@@ -106,7 +106,7 @@ place:
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(Tell us about safety in Melbourne...)
+  title: _(Tell us about you experience)
   action_text: _(added)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
@@ -114,29 +114,26 @@ place:
   location_item_name: location
 
   items:
-    - prompt: _(What is the name of this spot?)
-      type: text
-      name: name
-      attrs:
-        - key: placeholder
-          value: _(Street, Park, Landmark, etc.)
-        - key: size
-          value: 30
-        - key: required
-    - prompt: _(Is this a 'Happy Spot' or 'Sad Spot'?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Happy Spot)
-          value: happy
-        - label: _(Sad Spot)
-          value: sad
+    # - prompt: _(What is the name of this spot?)
+    #   type: text
+    #   name: name
+    #   attrs:
+    #     - key: placeholder
+    #       value: _(Street, Park, Landmark, etc.)
+    #     - key: size
+    #       value: 30
+    #     - key: required
+    - prompt: _(Did you have a happy or sad experience?)
+      type: multi-radio
       name: location_type
       attrs:
         - key: required
         - key: class
-          value: graphic-selector
+      radios:
+        - label: _(Happy)
+          value: happy
+        - label: _(Sad)
+          value: sad
     - prompt: _(How do you feel at this Happy Spot?)
       type: multi-checkbox
       name: happy_feel
@@ -167,16 +164,19 @@ place:
           value: disgust
         - label: _(Creepy)
           value: creepy
-    # - prompt: _(Spot Kind)
-    #   type: multi-radio
-    #   name: spotkind
-    #   optional: true
-    #   radios:
-    #     - label: _(Happy)
-    #       value: happy
-    #     - label: _(Sad)
-    #       value: sad
-    - prompt: _(Please tell us more about this spot if you want. This could be a story or experience you might like to share.)
+    - prompt: _(What time does this experience relate to?)
+      type: multi-radio
+      name: time
+      attrs:
+        - key: required
+      radios:
+        - label: _(Day)
+          value: day
+        - label: _(Night)
+          value: night
+        - label: _(Both)
+          value: anytime
+    - prompt: _(Please tell us more about this spot if you want. This could be a story or experience you might like to share. Also, if you have any <strong>ideas</strong> to improve this spot, please decribe them below.)
       type: textarea
       name: description
       optional: true
@@ -191,13 +191,6 @@ place:
       attrs:
         - key: accept
           value: image/*
-    - prompt: _(If you have any <strong>ideas</strong> to improve this spot, please decribe them below.)
-      type: textarea
-      name: description_ideas
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Please describe...)
     - prompt: _(Your name or username)
       type: text
       name: submitter_name
