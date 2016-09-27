@@ -83,10 +83,12 @@
                 {{/is_multi_checkbox}}
 
                 {{#is_multi_radio}}
+                  <span class="multi-radios multi-radio-{{name}}">
                   {{#radios}}
                     <input type="radio" id="multi-radio-{{value}}" name="{{../name}}" value="{{value}}">
                     <label class="multi-radio" for="multi-radio-{{value}}">{{{label}}}</label>
                   {{/radios}}
+                  </span>
                 {{/is_multi_radio}}
 
                 {{#if help_text }}

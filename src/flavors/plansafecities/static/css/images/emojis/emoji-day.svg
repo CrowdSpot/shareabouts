@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>emoji-day</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="32" cy="32" r="32"></circle>
+        <polygon id="path-3" points="8.935 11.96 17 11.96 17 0.369 0.87 0.369 0.87 6.1645 0.87 11.96"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="emoji-day">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+            <g id="Page-1" mask="url(#mask-2)">
+                <polygon id="Fill-1" fill="#EF8A45" points="0 64 64 64 64 0 0 0"></polygon>
+                <polygon id="Fill-3" fill-opacity="0.5" fill="#F9B04E" points="28.25 0 30 28 34 28 35.75 0"></polygon>
+                <polygon id="Fill-5" fill-opacity="0.5" fill="#F9B04E" points="46.848 0 37.04 28.604 40.736 30.14 56.48 0"></polygon>
+                <polygon id="Fill-7" fill-opacity="0.5" fill="#F9B04E" points="64 8.415 43.31 31.857 46.14 34.687 64 18.93"></polygon>
+                <g id="Group-11" transform="translate(47.000000, 29.000000)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <g id="Clip-10"></g>
+                    <polygon id="Fill-9" fill-opacity="0.5" fill="#F9B04E" mask="url(#mask-4)" points="17 0.369 0.87 8.27 2.405 11.96 17.005 6.95"></polygon>
+                </g>
+                <polygon id="Fill-12" fill-opacity="0.5" fill="#F9B04E" points="23.264 30.14 26.959 28.604 17.15 0 7.518 0"></polygon>
+                <polygon id="Fill-14" fill-opacity="0.5" fill="#F9B04E" points="0 18.93 17.857 34.686 20.686 31.857 0 8.414"></polygon>
+                <polygon id="Fill-16" fill-opacity="0.5" fill="#F9B04E" points="0 35.952 14.604 40.959 16.14 37.26 0 29.367"></polygon>
+                <g id="Group-38" transform="translate(0.000000, 13.000000)">
+                    <polygon id="Fill-18" fill="#F9B04E" points="0 35.875 14 35 14 31 0 30.13"></polygon>
+                    <path d="M57.348,25.652 C57.348,39.65131 45.99931,51 32,51 C18.00069,51 6.652,39.65131 6.652,25.652 C6.652,11.65269 18.00069,0.304 32,0.304 C45.99931,0.304 57.348,11.65269 57.348,25.652 L57.348,25.652 Z" id="Fill-20" fill="#FFC466"></path>
+                    <path d="M48,32.738 L64,32.738 L64,51 L44,51 L44,36.738 C44,34.537 45.8,32.738 48,32.738" id="Fill-21" fill="#62727A"></path>
+                    <path d="M60.8,36 L61.2,36 C61.639,36 62,36.436 62,36.967 L62,50.9969978 L60,50.9969978 L60,36.967 C60,36.436 60.36,36 60.8,36" id="Fill-22" fill="#D0D0D0"></path>
+                    <path d="M55.8,36 L56.2,36 C56.639,36 57,36.436 57,36.967 L57,50.9969978 L55,50.9969978 L55,36.967 C55,36.436 55.36,36 55.8,36" id="Fill-23" fill="#D0D0D0"></path>
+                    <polygon id="Fill-24" fill="#62727A" points="51.31 32.858 62.33 32.858 62.33 29.994002 51.31 29.994002"></polygon>
+                    <polygon id="Fill-25" fill="#62727A" points="0 30.11 13.14 30.11 13.14 24.888 0 27.888"></polygon>
+                    <polygon id="Fill-26" fill="#62727A" points="0 51 13 51 13 30 0 30"></polygon>
+                    <path d="M9.5,38 C9.5,38.549 9.05,39 8.5,39 L5.5,39 C4.95,39 4.5,38.549 4.5,38 L4.5,36 C4.5,35.449 4.95,35 5.5,35 L8.5,35 C9.05,35 9.5,35.449 9.5,36 L9.5,38" id="Fill-27" fill="#ED4C5C"></path>
+                    <path d="M9.5,46 C9.5,46.549 9.05,47 8.5,47 L5.5,47 C4.95,47 4.5,46.549 4.5,46 L4.5,44 C4.5,43.449001 4.95,43 5.5,43 L8.5,43 C9.05,43 9.5,43.449001 9.5,44 L9.5,46" id="Fill-28" fill="#ED4C5C"></path>
+                    <polygon id="Fill-29" fill="#3E4347" points="50 25 50 21 44 19 44 8 42 8 42 19 36 21 36 25 33 25 33 17.32 23 6 13 17.32 13 51 33 51 53 51 53 25"></polygon>
+                    <path d="M41.5,32 C41.5,32.549 41.05,33 40.5,33 L37.5,33 C36.95,33 36.5,32.549 36.5,32 L36.5,30 C36.5,29.449 36.95,29 37.5,29 L40.5,29 C41.05,29 41.5,29.449 41.5,30 L41.5,32" id="Fill-30" fill="#6ADBC6"></path>
+                    <path d="M49.5,40 C49.5,40.549 49.05,41 48.5,41 L45.5,41 C44.95,41 44.5,40.549 44.5,40 L44.5,38 C44.5,37.449 44.95,37 45.5,37 L48.5,37 C49.05,37 49.5,37.449 49.5,38 L49.5,40" id="Fill-31" fill="#6ADBC6"></path>
+                    <path d="M41.5,48 C41.5,48.549 41.05,49 40.5,49 L37.5,49 C36.95,49 36.5,48.549 36.5,48 L36.5,46 C36.5,45.449001 36.95,45 37.5,45 L40.5,45 C41.05,45 41.5,45.449001 41.5,46 L41.5,48" id="Fill-32" fill="#6ADBC6"></path>
+                    <path d="M49.5,48 C49.5,48.549 49.05,49 48.5,49 L45.5,49 C44.95,49 44.5,48.549 44.5,48 L44.5,46 C44.5,45.449001 44.95,45 45.5,45 L48.5,45 C49.05,45 49.5,45.449001 49.5,46 L49.5,48" id="Fill-33" fill="#6ADBC6"></path>
+                    <path d="M30,30 C30,30.549 29.55,31 29,31 L17,31 C16.45,31 16,30.549 16,30 L16,28 C16,27.449 16.45,27 17,27 L29,27 C29.55,27 30,27.449 30,28 L30,30" id="Fill-34" fill="#FFDD7D"></path>
+                    <path d="M30,46 C30,46.549 29.55,47 29,47 L17,47 C16.45,47 16,46.549 16,46 L16,44 C16,43.449001 16.45,43 17,43 L29,43 C29.55,43 30,43.449001 30,44 L30,46" id="Fill-35" fill="#FFDD7D"></path>
+                    <path d="M30,22 C30,22.549 29.55,23 29,23 L17,23 C16.45,23 16,22.549 16,22 L16,20 C16,19.449 16.45,19 17,19 L29,19 C29.55,19 30,19.449 30,20 L30,22" id="Fill-36" fill="#FFDD7D"></path>
+                    <path d="M30,38 C30,38.549 29.55,39 29,39 L17,39 C16.45,39 16,38.549 16,38 L16,36 C16,35.449 16.45,35 17,35 L29,35 C29.55,35 30,35.449 30,36 L30,38" id="Fill-37" fill="#FFDD7D"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
