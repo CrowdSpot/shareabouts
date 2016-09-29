@@ -71,6 +71,10 @@ var Shareabouts = Shareabouts || {};
           },
           success: function() {
             S.Util.log('USER', 'place', 'successfully-support', self.collection.options.placeModel.getLoggingDetails());
+
+            // Visitor added support.
+            _paq.push(['trackGoal', 3]);
+            console.log('Visitor added support');
           },
           error: function() {
             self.getSupportStatus(self.options.userToken).destroy();
