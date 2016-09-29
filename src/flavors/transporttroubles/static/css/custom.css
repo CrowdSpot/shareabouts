@@ -49,6 +49,9 @@ a:visited {
   background-image: url("images/crowdspot-logo.svg");
   background-position: 0px 4px;
 }
+.small-intro-text {
+  font-size: 13px;
+}
 #site-header {
   border-top: #009640 3px solid;
   background-color: #fff;
