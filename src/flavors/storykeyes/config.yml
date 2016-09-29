@@ -749,3 +749,13 @@ pages:
 notifications:
   on_new_place: true
   submitter_email_field: private-submitter_email
+
+languages:
+  - code: en
+    label: English
+
+  - code: es
+    label: Español
+
+  - code: vi
+    label: tiếng Việt
