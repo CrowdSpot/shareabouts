@@ -104,14 +104,14 @@
   opacity 0
   position absolute
   width 100%
-  transform translateX(-100%)
+  transform translateY(-50px)
   animation hideHappyEmojis 0.5s ease-in-out forwards
 
 #fields-sad_feel
   opacity 0
   position absolute
   width 100%
-  transform translateX(100%)
+  transform translateY(-50px)
   animation hideSadEmojis 0.5s ease-in-out forwards
 
 .place-form
@@ -151,34 +151,42 @@
       animation hideHappyEmojis 0.5s ease-in-out forwards
 
 @keyframes showHappyEmojis
-  from
+  0%
+    display block
+  1%
     opacity 0
-  to
+  100%
     opacity 1
-    transform translateX(0)
+    transform translateY(0)
 
 @keyframes hideHappyEmojis
-  from
+  0%
     opacity 1
-    transform translateX(0)
-  to
-    opacity 0.5
-    transform translateX(-100%)
+    transform translateY(0)
+  99%
+    opacity 0
+    transform translateY(-50px)
+  100%
+    display none
 
 @keyframes showSadEmojis
-  from
+  0%
+    display block
+  1%
     opacity 0
-  to
+  100%
     opacity 1
-    transform translateX(0)
+    transform translateY(0)
 
 @keyframes hideSadEmojis
-  from
+  0%
     opacity 1
-    transform translateX(0)
-  to
-    opacity 0.5
-    transform translateX(100%)
+    transform translateY(0)
+  99%
+    opacity 0
+    transform translateY(-50px)
+  100%
+    display none
 
 #fields-time
   margin-top 24em
