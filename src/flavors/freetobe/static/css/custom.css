@@ -388,6 +388,7 @@ a.leaflet-control-layers-toggle:before,
 }
 .place-form-container {
   opacity: 0;
+  max-width: 100%;
 }
 .show-form-item {
   opacity: 0;
@@ -826,8 +827,8 @@ textarea:focus {
   opacity: 0;
   position: absolute;
   width: 100%;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
   -webkit-animation: hideHappyEmojis 0.5s ease-in-out forwards;
           animation: hideHappyEmojis 0.5s ease-in-out forwards;
 }
@@ -835,8 +836,8 @@ textarea:focus {
   opacity: 0;
   position: absolute;
   width: 100%;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
   -webkit-animation: hideSadEmojis 0.5s ease-in-out forwards;
           animation: hideSadEmojis 0.5s ease-in-out forwards;
 }
@@ -882,91 +883,115 @@ textarea:focus {
   }
 }
 @-webkit-keyframes showHappyEmojis {
-  from {
+  0% {
+    display: block;
+  }
+  1% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 @keyframes showHappyEmojis {
-  from {
+  0% {
+    display: block;
+  }
+  1% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 @-webkit-keyframes hideHappyEmojis {
-  from {
+  0% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
-  to {
-    opacity: 0.5;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+  99% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  100% {
+    display: none;
   }
 }
 @keyframes hideHappyEmojis {
-  from {
+  0% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
-  to {
-    opacity: 0.5;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+  99% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  100% {
+    display: none;
   }
 }
 @-webkit-keyframes showSadEmojis {
-  from {
+  0% {
+    display: block;
+  }
+  1% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 @keyframes showSadEmojis {
-  from {
+  0% {
+    display: block;
+  }
+  1% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 @-webkit-keyframes hideSadEmojis {
-  from {
+  0% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
-  to {
-    opacity: 0.5;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+  99% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  100% {
+    display: none;
   }
 }
 @keyframes hideSadEmojis {
-  from {
+  0% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
-  to {
-    opacity: 0.5;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+  99% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  100% {
+    display: none;
   }
 }
 .multi-radios {
