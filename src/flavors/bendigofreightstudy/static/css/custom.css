@@ -338,14 +338,6 @@ small {
   display: none;
 }
 
-.place-value-volume_received {
-  display: none;
-}
-
-.place-value-volume_dispatched {
-  display: none;
-}
-
 .place-value-suburb {
   display: none;
 }
@@ -406,23 +398,11 @@ small {
   display: none;
 }
 
-.place-value-route_idea {
-  display: none;
-}
-
-.place-value-route_reason {
-  display: none;
-}
-
 .place-value-underutilisation_inbound {
   display: none;
 }
 
 .place-value-underutilisation_outbound {
-  display: none;
-}
-
-.place-value-route_description {
   display: none;
 }
 
@@ -487,51 +467,15 @@ select {
 /* =Hiding questions in new forms
 -------------------------------------------------------------- */
 
-.place-form label[for=place-freight_issue],
-  .place-form [name=freight_issue]{
+.place-form label[for=place-business_type_other],
+  .place-form [name=business_type_other]{
   display: none;
 }
 
-.place-form.issue label[for=place-freight_issue],
-  .place-form.issue [name=freight_issue] {
+.place-form.location_business_type-other label[for=place-business_type_other],
+  .place-form.location_business_type-other [name=business_type_other] {
   display: block;
 }
-
-.place-form label[for=place-issue_description],
-  .place-form [name=issue_description]{
-  display: none;
-}
-
-.place-form.issue label[for=place-issue_description],
-  .place-form.issue [name=issue_description] {
-  display: block;
-}
-
-.place-form label[for=place-business_type],
-  .place-form [name=business_type]{
-  display: none;
-}
-
-.place-form.business label[for=place-business_type],
-  .place-form.business [name=business_type] {
-  display: block;
-}
-
-
-
-
-.place-form label[for=place-location_receivedispatch],
-  .place-form [name=location_receivedispatch]{
-  display: none;
-}
-
-.place-form.business label[for=place-location_receivedispatch],
-  .place-form.business [name=location_receivedispatch] {
-  display: block;
-}
-
-
-
 
 
 
@@ -655,43 +599,6 @@ select {
 
 
 
-
-.place-form label[for=place-volume_received],
-  .place-form [name=volume_received]{
-  display: none;
-}
-
-.place-form.location_receivedispatch-receive label[for=place-volume_received],
-  .place-form.location_receivedispatch-receive [name=volume_received] {
-  display: block;
-}
-
-.place-form label[for=place-volume_dispatched],
-  .place-form [name=volume_dispatched]{
-  display: none;
-}
-
-.place-form.location_receivedispatch-dispatch label[for=place-volume_dispatched],
-  .place-form.location_receivedispatch-dispatch [name=volume_dispatched] {
-  display: block;
-}
-
-.place-form.location_receivedispatch-bothreceivedispatch label[for=place-volume_received],
-  .place-form.location_receivedispatch-bothreceivedispatch [name=volume_received] {
-  display: block;
-}
-
-.place-form.location_receivedispatch-bothreceivedispatch label[for=place-volume_dispatched],
-  .place-form.location_receivedispatch-bothreceivedispatch [name=volume_dispatched] {
-  display: block;
-}
-
-
-
-
-
-
-
 .place-form label[for=place-location_crtical_times_receive],
   .place-form [name=location_crtical_times_receive]{
   display: none;
@@ -699,6 +606,10 @@ select {
 
 .place-form label[for=place-crtical_times_receive_description],
   .place-form [name=crtical_times_receive_description]{
+  display: none;
+}
+
+.place-form #fields-crtical_times_receive_description {
   display: none;
 }
 
@@ -712,6 +623,9 @@ select {
   display: block;
 }
 
+.place-form.location_crtical_times_receive-yess #fields-crtical_times_receive_description {
+  display: block;
+}
 
 
 
@@ -725,6 +639,10 @@ select {
   display: none;
 }
 
+.place-form #fields-crtical_times_dispatch_description {
+  display: none;
+}
+
 .place-form.location_receivedispatch-dispatch label[for=place-location_crtical_times_dispatch],
   .place-form.location_receivedispatch-dispatch [name=location_crtical_times_dispatch] {
   display: block;
@@ -735,6 +653,9 @@ select {
   display: block;
 }
 
+.place-form.location_crtical_times_dispatch-yess #fields-crtical_times_dispatch_description {
+  display: block;
+}
 
 
 
@@ -753,86 +674,20 @@ select {
 
 
 
-
-
-
-
-
-
-
-.place-form label[for=place-waste_type],
-  .place-form [name=waste_type]{
+.place-form label[for=place-vehicles_ownfleet],
+  .place-form [name=vehicles_ownfleet]{
   display: none;
 }
 
-.place-form #fields-waste_type {
-  display: none;
-}
-
-.place-form.business label[for=place-waste_type],
-  .place-form.business [name=waste_type] {
+.place-form.location_freight_operator-ownfleet label[for=place-vehicles_ownfleet],
+  .place-form.location_freight_operator-ownfleet [name=vehicles_ownfleet] {
   display: block;
 }
 
-.place-form.business #fields-waste_type {
+.place-form.location_freight_operator-both_ownandother label[for=place-vehicles_ownfleet],
+  .place-form.location_freight_operator-both_ownandother [name=vehicles_ownfleet] {
   display: block;
 }
-
-.place-form label[for=place-waste_remove_frequency],
-  .place-form [name=waste_remove_frequency]{
-  display: none;
-}
-
-.place-form.business label[for=place-waste_remove_frequency],
-  .place-form.business [name=waste_remove_frequency] {
-  display: block;
-}
-
-.place-form label[for=place-location_freight_operator],
-  .place-form [name=location_freight_operator]{
-  display: none;
-}
-
-.place-form.business label[for=place-location_freight_operator],
-  .place-form.business [name=location_freight_operator] {
-  display: block;
-}
-
-
-.place-form label[for=place-vehicle_type],
-  .place-form [name=vehicle_type]{
-  display: none;
-}
-
-.place-form #fields-vehicle_type {
-  display: none;
-}
-
-.place-form.business label[for=place-vehicle_type],
-  .place-form.business [name=vehicle_type] {
-  display: block;
-}
-
-.place-form.business #fields-vehicle_type {
-  display: block;
-}
-
-.place-form label[for=place-trips_vehicle],
-  .place-form [name=trips_vehicle]{
-  display: none;
-}
-
-.place-form.business label[for=place-trips_vehicle],
-  .place-form.business [name=trips_vehicle] {
-  display: block;
-}
-
-
-
-
-
-
-
 
 
 
@@ -881,45 +736,80 @@ select {
 
 
 
-.place-form label[for=place-route_description],
-  .place-form [name=route_description]{
-  display: none;
-}
-
-.place-form label[for=place-route_reason],
-  .place-form [name=route_reason]{
-  display: none;
-}
 
 .place-form label[for=place-underutilisation_inbound],
   .place-form [name=underutilisation_inbound]{
   display: none;
 }
 
+.place-form label[for=place-underutilisation_inbound_origin],
+  .place-form [name=underutilisation_inbound_origin]{
+  display: none;
+}
+
+.place-form #fields-underutilisation_inbound_origin {
+  display: none;
+}
+
+.place-form.location_freight_operator-ownfleet label[for=place-underutilisation_inbound_origin],
+  .place-form.location_freight_operator-ownfleet [name=underutilisation_inbound_origin] {
+  display: block;
+}
+
+.place-form.location_freight_operator-ownfleet #fields-underutilisation_inbound_origin {
+  display: block;
+}
+
+.place-form.location_freight_operator-both_ownandother label[for=place-underutilisation_inbound_origin],
+  .place-form.location_freight_operator-both_ownandother [name=underutilisation_inbound_origin] {
+  display: block;
+}
+
+.place-form.location_freight_operator-both_ownandother #fields-underutilisation_inbound_origin {
+  display: block;
+}
+
+
+
+
+
 .place-form label[for=place-underutilisation_outbound],
   .place-form [name=underutilisation_outbound]{
   display: none;
 }
 
-.place-form.location_freight_operator-both_ownandother label[for=place-route_description],
-  .place-form.location_freight_operator-both_ownandother [name=route_description] {
+.place-form label[for=place-underutilisation_inbound_destination],
+  .place-form [name=underutilisation_inbound_destination]{
+  display: none;
+}
+
+.place-form #fields-underutilisation_inbound_destination {
+  display: none;
+}
+
+
+.place-form.location_freight_operator-ownfleet label[for=place-underutilisation_inbound_destination],
+  .place-form.location_freight_operator-ownfleet [name=underutilisation_inbound_destination] {
   display: block;
 }
 
-.place-form.location_freight_operator-ownfleet label[for=place-route_description],
-  .place-form.location_freight_operator-ownfleet [name=route_description] {
+.place-form.location_freight_operator-ownfleet #fields-underutilisation_inbound_destination {
   display: block;
 }
 
-.place-form.location_freight_operator-both_ownandother label[for=place-route_reason],
-  .place-form.location_freight_operator-both_ownandother [name=route_reason] {
+.place-form.location_freight_operator-both_ownandother label[for=place-underutilisation_inbound_destination],
+  .place-form.location_freight_operator-both_ownandother [name=underutilisation_inbound_destination] {
   display: block;
 }
 
-.place-form.location_freight_operator-ownfleet label[for=place-route_reason],
-  .place-form.location_freight_operator-ownfleet [name=route_reason] {
+.place-form.location_freight_operator-both_ownandother #fields-underutilisation_inbound_destination {
   display: block;
 }
+
+
+
+
+
 
 .place-form.location_freight_operator-both_ownandother label[for=place-underutilisation_inbound],
   .place-form.location_freight_operator-both_ownandother [name=underutilisation_inbound] {
@@ -942,27 +832,113 @@ select {
 }
 
 
-.place-form label[for=place-efficient_other],
-  .place-form [name=efficient_other]{
+
+
+
+.place-form label[for=place-location_issues_yes_no],
+  .place-form [name=location_issues_yes_no]{
   display: none;
 }
 
-.place-form.location_efficient_option1-other_efficient1 label[for=place-efficient_other],
-  .place-form.location_efficient_option1-other_efficient1 [name=efficient_other] {
+.place-form.location_freight_operator-ownfleet label[for=place-location_issues_yes_no],
+  .place-form.location_freight_operator-ownfleet [name=location_issues_yes_no] {
   display: block;
 }
 
-.place-form.location_efficient_option2-other_efficient2 label[for=place-efficient_other],
-  .place-form.location_efficient_option2-other_efficient2 [name=efficient_other] {
+.place-form.location_freight_operator-both_ownandother label[for=place-location_issues_yes_no],
+  .place-form.location_freight_operator-both_ownandother [name=location_issues_yes_no] {
   display: block;
 }
 
-.place-form.location_efficient_option3-other_efficient3 label[for=place-efficient_other],
-  .place-form.location_efficient_option3-other_efficient3 [name=efficient_other] {
+.place-form label[for=place-freight_issues],
+  .place-form [name=freight_issues]{
+  display: none;
+}
+
+.place-form #fields-freight_issues {
+  display: none;
+}
+
+.place-form.location_issues_yes_no-yess label[for=place-freight_issues],
+  .place-form.location_issues_yes_no-yess [name=freight_issues] {
+  display: block;
+}
+
+.place-form.location_issues_yes_no-yess #fields-freight_issues {
   display: block;
 }
 
 
+
+.place-form label[for=place-location_route_issues_yes_no],
+  .place-form [name=location_route_issues_yes_no]{
+  display: none;
+}
+
+.place-form.location_freight_operator-ownfleet label[for=place-location_route_issues_yes_no],
+  .place-form.location_freight_operator-ownfleet [name=location_route_issues_yes_no] {
+  display: block;
+}
+
+.place-form.location_freight_operator-both_ownandother label[for=place-location_route_issues_yes_no],
+  .place-form.location_freight_operator-both_ownandother [name=location_route_issues_yes_no] {
+  display: block;
+}
+
+
+.place-form label[for=place-route_issues],
+  .place-form [name=route_issues]{
+  display: none;
+}
+
+.place-form.location_route_issues_yes_no-yess label[for=place-route_issues],
+  .place-form.location_route_issues_yes_no-yess [name=route_issues] {
+  display: block;
+}
+
+
+.place-form label[for=place-waste_remove_frequency_other],
+  .place-form [name=waste_remove_frequency_other]{
+  display: none;
+}
+
+.place-form.location_waste_remove_frequency-other label[for=place-waste_remove_frequency_other],
+  .place-form.location_waste_remove_frequency-other [name=waste_remove_frequency_other] {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+.place-form label[for=place-backloading_like],
+  .place-form [name=backloading_like]{
+  display: none;
+}
+
+.place-form.location_backloading-yess label[for=place-backloading_like],
+  .place-form.location_backloading-yess [name=backloading_like] {
+  display: block;
+}
+
+
+
+
+
+.place-form label[for=place-anythingelse],
+  .place-form [name=anythingelse]{
+  display: none;
+}
+
+.place-form.location_anythingelse-yess label[for=place-anythingelse],
+  .place-form.location_anythingelse-yess [name=anythingelse] {
+  display: block;
+}
 
 
 
