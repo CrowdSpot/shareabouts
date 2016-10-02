@@ -88,7 +88,7 @@ activity:
 
 place:
   adding_supported: true
-  add_button_label: _(Add a Spot)
+  add_button_label: _(Add a Business Operation Spot)
   # Labels for the buttons that toggle the map and list views
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
