@@ -190,6 +190,9 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe..)
+    - prompt: _(The next series of questions ask about freight <strong>received or dispatched</strong> at this location since 1 January 2016:</h5>)
+      name: received_dispatched_heading
+      optional: true
     - prompt: _(At this location do you..)
       type: select
       options:
@@ -373,6 +376,9 @@ place:
           value: Seasonally
       name: crtical_times_dispatch_description
       optional: true
+    - prompt: _(The next series of questions ask about <strong>freight vehicle movement</strong> to and from this location, made on a monthly basis:</h5>)
+      name: movement_heading
+      optional: true
     - prompt: _(On average, how many <strong>freight trips per month</strong> are made to and from this location?)
       type: text
       name: trips_vehicle
@@ -408,6 +414,9 @@ place:
         - label: _(Don't know)
           value: Dont's know
       name: vehicle_type
+      optional: true
+    - prompt: _(The next series of questions ask about the <strong>fleet used to carry your freight</strong>:)
+      name: fleet_heading
       optional: true
     - prompt: _(Please <strong>choose one</strong> of the following..)
       type: select
@@ -578,6 +587,9 @@ place:
       name: backloading_like
       optional: true
       sticky: true
+    - prompt: _(The next series of questions ask about <strong>transport issues experienced by your own freight fleet</strong> in Greater Bendigo</i>:)
+      name: fleetissues_heading
+      optional: true
     - prompt: _(Does your freight fleet experience any transport issues in the <strong>last kilometre of travel</strong> to this location?)
       type: select
       options:
@@ -608,7 +620,7 @@ place:
         - label: _(Road Safety)
           value: Road Safety
         - label: _(Other)
-          value: other
+          value: other_transportissues
       name: freight_issues
       optional: true
     - prompt: _(Does your freight fleet experience any transport issues along the Greater Bendigo <strong>designated freight route network</strong>? )
@@ -631,6 +643,9 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe)
+    - prompt: _(The next series of questions ask about freight movements associated with <strong>removal of waste from this location</strong>:)
+      name: waste_heading
+      optional: true
     - prompt: _(What type of waste is removed from this location?)
       type: multi-checkbox
       checkboxes:
@@ -663,7 +678,7 @@ place:
         - label: _(None)
           value: none
         - label: _(Other)
-          value: other
+          value: other_waste
       name: waste_type
       optional: true
     - prompt: _(On average, how many times per month is waste removed? (exclusing kerbside collections))
@@ -691,12 +706,8 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe)
-
-
-
-
-    - prompt: _(<h4><b>Future freight opportunities</b></h4>)
-      name: strategic
+    - prompt: _(The next series of questions <strong>future freight opportunities</strong>:)
+      name: opportunities_heading
       optional: true
     - prompt: _(What are <strong>the improvements</strong> that would make your freight operations more productive and/or efficient?<br><i>Select as many as relevant to your business</i>)
       type: multi-checkbox
