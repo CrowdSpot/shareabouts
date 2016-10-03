@@ -314,11 +314,27 @@ small {
   display: none;
 }
 
-#place-strategic {
+#place-opportunities_heading {
   display: none;
 }
 
-#place-personal {
+#place-received_dispatched_heading {
+  display: none;
+}
+
+#place-movement_heading {
+  display: none;
+}
+
+#place-fleet_heading {
+  display: none;
+}
+
+#place-fleetissues_heading {
+  display: none;
+}
+
+#place-waste_heading {
   display: none;
 }
 
@@ -833,6 +849,17 @@ select {
 
 
 
+
+
+.place-form label[for=place-fleetissues_heading],
+  .place-form [name=fleetissues_heading]{
+  display: none;
+}
+
+.place-form.location_freight_operator-ownfleet label[for=place-fleetissues_heading],
+  .place-form.location_freight_operator-ownfleet [name=fleetissues_heading] {
+  display: block;
+}
 
 
 .place-form label[for=place-location_issues_yes_no],
