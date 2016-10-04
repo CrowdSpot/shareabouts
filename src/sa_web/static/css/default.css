@@ -1198,7 +1198,7 @@ input.geocode-address-field:focus {
   left: 0;
   height: 1em;
   width: 1em;
-  border: 0.2em solid #FF1609;
+  border: 0.2em solid #fff;
   border-radius: 2em;
   margin: -0.25em 0 0 -0.25em;
 }
@@ -1208,7 +1208,7 @@ input.geocode-address-field:focus {
   height: 0.75em;
   width: 0.25em;
   margin: 0.125em 0 0 0.375em;
-  background-color: #FF1609;
+  background-color: #fff;
   -webkit-transform: rotate(-45deg);
      -moz-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
@@ -1216,12 +1216,12 @@ input.geocode-address-field:focus {
           transform: rotate(-45deg);
 }
 #geocode-address-bar .error {
-  background-color: #BF6083;
+  background-color: #FF1609;
   color: #fff;
   line-height: 1.75;
   margin: 0;
   padding: 0.25em 0.5em;
-  box-shadow: 2px 2px 0 #BF6083, 2px -2px 0 #BF6083, -2px 2px 0 #BF6083, -2px -2px 0 #BF6083;
+  box-shadow: 2px 2px 0 #FF1609, 2px -2px 0 #FF1609, -2px 2px 0 #FF1609, -2px -2px 0 #FF1609;
   position: absolute;
   top: 3em;
   right: 0.5em;
@@ -1243,6 +1243,7 @@ input.geocode-address-field:focus {
   left: 0;
   height: 100%;
   width: 2em;
+  padding: 0 0.5em;
   background-color: #6f6f6f;
 }
 
@@ -1280,7 +1281,7 @@ input.geocode-address-field:focus {
 
 
 a.shareabouts-logo {
-  font-family: 'Proxima nova', cursive;
+  font-family: sans-serif;
   font-weight: bold;
   font-size: 1.325em;
   color: #646464;

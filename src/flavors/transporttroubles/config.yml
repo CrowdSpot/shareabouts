@@ -53,19 +53,22 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/train-spot.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          iconAnchor: [42, 42]
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [30, 41]
+          iconAnchor: [13, 42]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
 
       - condition: '"{{location_type}}" === "trainspot" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
           iconUrl: /static/css/images/spot-selected.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          shadowSize: [85, 41]
-          iconAnchor: [42, 42]
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [30, 41]
+          iconAnchor: [13, 42]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
   tramspot:
     index: 1
     label: _(Tram Trouble Spot)
@@ -76,19 +79,22 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/tram-spot.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          iconAnchor: [42, 42]
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [30, 41]
+          iconAnchor: [13, 42]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
 
       - condition: '"{{location_type}}" === "tramspot" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
           iconUrl: /static/css/images/spot-selected.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          shadowSize: [85, 41]
-          iconAnchor: [42, 42]
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [30, 41]
+          iconAnchor: [13, 42]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
   busspot:
     index: 2
     label: _(Bus Trouble Spot)
@@ -99,19 +105,22 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/bus-spot.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          iconAnchor: [42, 42]
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [30, 41]
+          iconAnchor: [13, 42]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
 
       - condition: '"{{location_type}}" === "busspot" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
           iconUrl: /static/css/images/spot-selected.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          shadowSize: [85, 41]
-          iconAnchor: [42, 42]
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [30, 41]
+          iconAnchor: [13, 42]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
   likespot:
     index: 3
     label: _(Like Spot)
@@ -122,19 +131,22 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/like-spot.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          iconAnchor: [42, 42]
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [30, 41]
+          iconAnchor: [13, 42]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
 
       - condition: '"{{location_type}}" === "likespot" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
           iconUrl: /static/css/images/spot-selected.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          shadowSize: [85, 41]
-          iconAnchor: [42, 42]
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [30, 41]
+          iconAnchor: [13, 42]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
 
 
 activity:
@@ -407,6 +419,9 @@ pages:
     slug: welcome
     name: overview
     start_page: true
+  - title: _(FAQs)
+    slug: why
+    name: why
 
   - title: _(Filter)
     pages:

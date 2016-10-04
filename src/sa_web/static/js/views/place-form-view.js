@@ -8,7 +8,8 @@ var Shareabouts = Shareabouts || {};
     events: {
       'submit form': 'onSubmit',
       'change input[type="file"]': 'onInputFileChange',
-      'change select': 'onSelectChange'
+      'change select': 'onSelectChange',
+      'change input[type=radio]': 'onSelectChange'
     },
     initialize: function(){
       S.TemplateHelpers.overridePlaceTypeConfig(this.options.placeConfig.items,
@@ -24,7 +25,7 @@ var Shareabouts = Shareabouts || {};
         place_config: this.options.placeConfig,
         user_token: this.options.userToken,
         current_user: S.currentUser
-      }, S.stickyFieldValues, this.model.toJSON());	
+      }, S.stickyFieldValues, this.model.toJSON());
 
       this.$el.html(Handlebars.templates['place-form'](data));
       return this;
@@ -74,6 +75,23 @@ var Shareabouts = Shareabouts || {};
             value.push(item.name);
 
           }
+          if(configItem.is_multi_radio &&
+             configItem.radios.filter(function(radio) {
+               return radio.name == item.name;
+             }).length > 0
+          ) {
+
+            // This field belongs to a multi-radio, values are to be submitted in a list.
+            name = configItem.name;
+
+            if(attrs.hasOwnProperty(name)) {
+              value = attrs[name];
+            } else {
+              value = new Array();
+            }
+            value.push(item.name);
+
+          }
         });
 
         attrs[name] = value;
@@ -99,18 +117,21 @@ var Shareabouts = Shareabouts || {};
       var selectConfig = _.find(self.options.placeConfig.items, function(item) {
         return item.name === selectName;
       });
-      
+
       var prefix = '';
-      
+
       if (selectName !== 'location_type') {
         prefix = S.Util.classify(selectName) + '-';
       }
-      
-      // remove any existing classes
+
+      // remove any existing classes from both options and radios
       _.each(selectConfig.options, function(option) {
         $form.removeClass(prefix + S.Util.classify(option.value));
       });
-      
+      _.each(selectConfig.radios, function(radio) {
+        $form.removeClass(prefix + S.Util.classify(radio.value));
+      });
+
       // add the new class
       $form.addClass(prefix + S.Util.classify($(evt.target).val()));
     },
@@ -178,7 +199,7 @@ var Shareabouts = Shareabouts || {};
       spinner = new Spinner(S.smallSpinnerOptions).spin(this.$('.form-spinner')[0]);
 
       S.Util.log('USER', 'new-place', 'submit-place-btn-click');
-      
+
       this.options.appView.setStickyFields(attrs, S.Config.survey.items, S.Config.place.items);
 
       // simple required validation
@@ -197,6 +218,10 @@ var Shareabouts = Shareabouts || {};
           S.Util.log('USER', 'new-place', 'successfully-add-place');
           S.justSubmitted = true;
           router.navigate('/place/' + model.id, {trigger: true});
+
+          // Visitor added spot.
+          _paq.push(['trackGoal', 1]);
+          console.log('Visitor added spot');
         },
         error: function() {
           S.Util.log('USER', 'new-place', 'fail-to-add-place');

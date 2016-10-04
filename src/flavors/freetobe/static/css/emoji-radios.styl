@@ -1,0 +1,86 @@
+.multi-radios
+  display flex
+  flex-wrap wrap
+  justify-content center
+
+  &> label
+    display block
+
+  input[type=radio]
+    display none
+
+    &:checked
+
+      +label.multi-radio
+        // &:before
+        //   box-shadow 0 0 0px 4px rgba(#4EAF46, 1)
+        &:after
+          opacity 1
+          transform scale(1)
+
+  label.multi-radio
+    text-align center
+    width 100%
+    margin 0.5em 0
+    position relative
+
+    +above('xs')
+      width (100/2)%
+
+    +above(300px)
+      width (100/3)%
+
+    +above('s')
+      margin 0.5em 2.5%
+      width 15%
+
+    +above('l')
+      margin 0.5em 2.5%
+      width 15%
+
+    &:before
+      content ""
+      display block
+      width 60px
+      height 60px
+      background-size 80% 80%
+      background-repeat no-repeat
+      background-position center center
+      transition transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out
+      cursor pointer
+      border-radius 50%
+      margin 0 auto 0.5em
+
+    &:after
+      content ""
+      position absolute
+      top 0
+      right 50%
+      margin-right -45px
+      transform scale(0)
+      opacity 0
+      width 20px
+      height 20px
+      background no-repeat center center
+      background-size cover
+      background-image url('images/checkbox-tick.svg')
+      transition transform 0.2s ease-in-out, opacity 0.2s ease-in-out
+
+    &:hover
+      &:before
+        transform scale(1.2)
+
+    &[for=multi-radio-happy]:before
+      background-image url('images/emojis/emoji-happy.svg')
+
+    &[for=multi-radio-sad]:before
+      background-image url('images/emojis/emoji-sad.svg')
+
+    &[for=multi-radio-day]:before
+      background-image url('images/emojis/emoji-day.svg')
+
+    &[for=multi-radio-night]:before
+      background-image url('images/emojis/emoji-night.svg')
+
+    &[for=multi-radio-anytime]:before
+      background-image url('images/emojis/emoji-anytime.svg')

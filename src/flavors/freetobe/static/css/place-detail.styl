@@ -1,0 +1,145 @@
+.place-title
+	margin-top 3em
+	margin-bottom 3em
+	text-align center
+
+.drag-marker-instructions,
+.drag-marker-warning
+	background-color primary-color
+	color #fff
+	text-shadow none
+	padding-top 3em
+	padding-bottom 3em
+	margin-bottom 4em
+
+	position absolute
+	top 1em
+	left 1em
+	right 1em
+
+	// +above(960px)
+	// 	top 50%
+	// 	transform translateY(-50%)
+
+@keyframes show-form-warnings
+	0%
+		display block
+		opacity 0
+		transform translateY(-100px)
+	100%
+		opacity 1
+		transform translateX(0)
+
+@keyframes hide-form-warnings
+	99%
+		transform translateY(-100px)
+		opacity 0
+	100%
+		opacity 0
+		display none
+
+.show-form-warnings
+	animation show-form-warnings 0.3s ease-in-out forwards
+
+.hide-form-warnings
+	animation hide-form-warnings 0.3s ease-in-out forwards
+
+@keyframes show-form-items
+	0%
+		opacity 0
+		transform translateY(-100px)
+	100%
+		opacity 1
+		transform translateX(0)
+
+@keyframes hide-form-items
+	0%
+		opacity 1
+	100%
+		opacity 0
+
+.place-form-container
+	opacity 0
+	max-width 100%
+
+.show-form-item
+	opacity 0
+	animation show-form-items 0.3s 0.4s ease-in-out forwards
+
+// .place-form label[for=place-private-submitter_email],
+//   .place-form [name=private-submitter_email]
+// 	display none
+//
+// .place-form.location_updates-yesplease label[for=place-private-submitter_email],
+//   .place-form.location_updates-yesplease [name=private-submitter_email]
+// 	display block
+
+label
+	small
+		text-transform none
+		font-size 1em
+		display none
+
+.place-form-section
+
+	&.file, &.select
+		text-align center
+
+	&.text, &.textarea, &.file, .multi-checkboxes, .multi-radios, &.select
+		position relative
+		padding-bottom 4em
+		box-shadow 0px 8px 8px -8px rgba(black, 0.5)
+		border-bottom 1px solid rgba(tertiary-color, 0.5)
+		margin-bottom 4em
+
+		&:after
+			content ""
+			width 25px
+			height 25px
+			background white
+			border-bottom 1px solid tertiary-color
+			border-right 1px solid tertiary-color
+			position absolute
+			left 50%
+			bottom -14px
+			transform translateX(-50%) rotate(45deg)
+
+		label
+			display block
+			margin 1em 0
+
+.multi-checkbox, .multi-radio, .textarea, .text
+	label
+		display block
+		text-align center
+		margin-bottom 1em
+
+.place-form
+	input[type=text], input[type=email], textarea
+		border none
+		padding 1em
+		border-radius 3px
+		box-shadow 0 0 10px -5px rgba(black, 0.5) inset
+		background-color rgba(tertiary-color, 0.5)
+		text-align center
+
+#fields-location_type
+	margin-bottom 3em
+
+.place-form
+
+	#fields-time, #fields-description, #fields-my_image, #fields-description_ideas, #fields-submitter_name, #fields-private-submitter_email, #save-place-btn
+		display none
+
+	&.happy, &.sad
+		#fields-time, #fields-description, #fields-my_image, #fields-description_ideas, #fields-submitter_name, #fields-private-submitter_email, #save-place-btn
+			display block
+			animation showFormElements 0.3s ease-in-out forwards
+
+@keyframes showFormElements
+	0%
+		opacity 0
+		display block
+	100%
+		opacity 1
+		display block

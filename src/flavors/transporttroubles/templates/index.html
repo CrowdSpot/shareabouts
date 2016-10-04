@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block site-title %}
-<a href="http://bikespot.org.au/">{{ config.app.name }}</a>
+<a href="/page/welcome">{{ config.app.name }}</a>
 {% endblock %}
 
 {% block meta %}
@@ -73,5 +73,23 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.transporttroubles.crowdspot.com.au","*.transporttroubles.crowdspotmap.com"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  _paq.push(['enableHeartBeatTimer']);
+  (function() {
+    var u="//piwik.sturm.com.au/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '24']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//piwik.sturm.com.au/piwik.php?idsite=24" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
 
 {% endblock %}
