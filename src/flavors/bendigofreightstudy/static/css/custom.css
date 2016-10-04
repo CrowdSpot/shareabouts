@@ -861,6 +861,11 @@ select {
   display: block;
 }
 
+.place-form.location_freight_operator-both_ownandother label[for=place-fleetissues_heading],
+  .place-form.location_freight_operator-both_ownandother [name=fleetissues_heading] {
+  display: block;
+}
+
 
 .place-form label[for=place-location_issues_yes_no],
   .place-form [name=location_issues_yes_no]{
@@ -981,6 +986,34 @@ select {
 .place-form.location_updates-yesplease label[for=place-private-submitter_email],
   .place-form.location_updates-yesplease [name=private-submitter_email] {
   display: block;
+}
+
+[for$=heading] {
+  /*border-top: 2px solid;*/
+  padding: 1em 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: block;
+  text-align: center;
+  font-size: 1.1em;
+  color: #2BAB6E;
+  position: relative;
+  box-shadow: 0 0 0px 2px #2BAB6E;
+  /*background-color: #B7D141;*/
+  border-radius: 0.325em;
+}
+
+[for$=heading]:after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-bottom: 2px solid #2BAB6E;
+  border-right: 2px solid #2BAB6E;
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translateX(-50%) rotate(45deg);
 }
 
 

@@ -190,9 +190,12 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe..)
-    - prompt: _(The next series of questions ask about freight <strong>received or dispatched</strong> at this location since 1 January 2016:</h5>)
+    - prompt: _(The next series of questions ask about freight <strong>received or dispatched</strong> at this location since 1 January 2016:)
       name: received_dispatched_heading
       optional: true
+      attrs:
+        - key: class
+          value: section-heading
     - prompt: _(At this location do you..)
       type: select
       options:
@@ -379,6 +382,9 @@ place:
     - prompt: _(The next series of questions ask about <strong>freight vehicle movement</strong> to and from this location, made on a monthly basis:</h5>)
       name: movement_heading
       optional: true
+      attrs:
+        - key: class
+          value: section-heading
     - prompt: _(On average, how many <strong>freight trips per month</strong> are made to and from this location?)
       type: text
       name: trips_vehicle
@@ -418,6 +424,9 @@ place:
     - prompt: _(The next series of questions ask about the <strong>fleet used to carry your freight</strong>:)
       name: fleet_heading
       optional: true
+      attrs:
+        - key: class
+          value: section-heading
     - prompt: _(Please <strong>choose one</strong> of the following..)
       type: select
       options:
@@ -590,6 +599,9 @@ place:
     - prompt: _(The next series of questions ask about <strong>transport issues experienced by your own freight fleet</strong> in Greater Bendigo</i>:)
       name: fleetissues_heading
       optional: true
+      attrs:
+        - key: class
+          value: section-heading
     - prompt: _(Does your freight fleet experience any transport issues in the <strong>last kilometre of travel</strong> to this location?)
       type: select
       options:
@@ -646,6 +658,9 @@ place:
     - prompt: _(The next series of questions ask about freight movements associated with <strong>removal of waste from this location</strong>:)
       name: waste_heading
       optional: true
+      attrs:
+        - key: class
+          value: section-heading
     - prompt: _(What type of waste is removed from this location?)
       type: multi-checkbox
       checkboxes:
@@ -709,6 +724,9 @@ place:
     - prompt: _(The next series of questions <strong>future freight opportunities</strong>:)
       name: opportunities_heading
       optional: true
+      attrs:
+        - key: class
+          value: section-heading
     - prompt: _(What are <strong>the improvements</strong> that would make your freight operations more productive and/or efficient?<br><i>Select as many as relevant to your business</i>)
       type: multi-checkbox
       checkboxes:
