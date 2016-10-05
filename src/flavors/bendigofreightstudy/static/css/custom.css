@@ -474,6 +474,59 @@ small {
   display: none;
 }
 
+
+
+
+.place-value-morethanonelocation {
+  display: none;
+}
+
+.place-value-location_business_type {
+  display: none;
+}
+
+.place-value-vehicles_ownfleet{
+  display: none;
+}
+
+.place-value-location_backloading_like{
+  display: none;
+}
+
+.place-value-changes_location_issues_yes_no{
+  display: none;
+}
+
+.place-value-location_route_yes_no {
+  display: none;
+}
+
+.place-value-route_issues {
+  display: none;
+}
+
+.place-value-location_waste_remove_frequency {
+  display: none;
+}
+
+.place-value-location_anythingelse {
+  display: none;
+}
+
+.place-value-anythingelse {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
 /* fix for long selects */
 
 select {

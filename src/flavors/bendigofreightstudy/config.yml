@@ -290,13 +290,13 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(During standard business hours)
-          value: During standard business hours
+          value: During standard business hours_receive
         - label: _(Outside of standard business hours)
-          value: Outside of standard business hours
+          value: Outside of standard business hours_receive
         - label: _(Both during and outside of standard business hours)
-          value: Both during and outside of standard business hours
+          value: Both during and outside of standard business hours_receive
         - label: _(Seasonally)
-          value: Seasonally
+          value: Seasonally_receive
       name: crtical_times_receive_description
       optional: true
     - prompt: _(Please select the 'types of freight' <strong>dispatched</strong> from this location?<br><i>Select as many as relevant to your business</i>)
@@ -378,13 +378,13 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(During standard business hours)
-          value: During standard business hours
+          value: During standard business hours_dispatch
         - label: _(Outside of standard business hours)
-          value: Outside of standard business hours
+          value: Outside of standard business hours_dispatch
         - label: _(Both during and outside of standard business hours)
-          value: Both during and outside of standard business hours
+          value: Both during and outside of standard business hours_dispatch
         - label: _(Seasonally)
-          value: Seasonally
+          value: Seasonally_dispatch
       name: crtical_times_dispatch_description
       optional: true
     - prompt: _(The next series of questions ask about <strong>freight vehicle movement</strong> to and from this location, made on a monthly basis:</h5>)
@@ -507,29 +507,29 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(City of Greater Bendigo)
-          value: cogb
+          value: cogb_originates
         - label: _(Regional Victoria)
-          value: regional_vic
+          value: regional_vic_originates
         - label: _(Interstate regional locations)
-          value: interstate_regional
+          value: interstate_regional_originates
         - label: _(Melbourne)
-          value: melbourne
+          value: melbourne_originates
         - label: _(Adelaide)
-          value: adelaide
+          value: adelaide_originates
         - label: _(Sydney)
-          value: sydney
+          value: sydney_originates
         - label: _(Perth)
-          value: perth
+          value: perth_originates
         - label: _(Brisbane)
-          value: brisbane
+          value: brisbane_originates
         - label: _(Canberra)
-          value: canberra
+          value: canberra_originates
         - label: _(Darwin)
-          value: darwin
+          value: darwin_originates
         - label: _(Hobart)
-          value: hobart
+          value: hobart_originates
         - label: _(Overseas)
-          value: overseas
+          value: overseas_originates
       name: underutilisation_inbound_origin
       optional: true
     - prompt: _(Please estimate the monthly average percentage (%) of underutilised loading space on <strong>your outbound vehicles</strong>?<br> <i>i.e vehicles heading <strong>out of Greater Bendigo</strong></i>)
@@ -557,29 +557,29 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(City of Greater Bendigo)
-          value: cogb
+          value: cogb_destination
         - label: _(Regional Victoria)
-          value: regional_vic
+          value: regional_vic_destination
         - label: _(Interstate regional locations)
-          value: interstate_regional
+          value: interstate_regional_destination
         - label: _(Melbourne)
-          value: melbourne
+          value: melbourne_destination
         - label: _(Adelaide)
-          value: adelaide
+          value: adelaide_destination
         - label: _(Sydney)
-          value: sydney
+          value: sydney_destination
         - label: _(Perth)
-          value: perth
+          value: perth_destination
         - label: _(Brisbane)
-          value: brisbane
+          value: brisbane_destination
         - label: _(Canberra)
-          value: canberra
+          value: canberra_destination
         - label: _(Darwin)
-          value: darwin
+          value: darwin_destination
         - label: _(Hobart)
-          value: hobart
+          value: hobart_destination
         - label: _(Overseas)
-          value: overseas
+          value: overseas_destination
       name: underutilisation_inbound_destination
       optional: true
     - prompt: _(Do you maximise your fleet’s efficiency by <strong>‘backloading’</strong>?)
