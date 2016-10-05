@@ -953,8 +953,8 @@ select {
   display: none;
 }
 
-.place-form.location_backloading-yess label[for=place-backloading_like],
-  .place-form.location_backloading-yess [name=backloading_like] {
+.place-form.location_backloading-nope label[for=place-backloading_like],
+  .place-form.location_backloading-nope [name=backloading_like] {
   display: block;
 }
 
