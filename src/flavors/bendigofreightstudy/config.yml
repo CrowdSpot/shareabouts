@@ -212,8 +212,12 @@ place:
     - prompt: _(Please select the 'types of freight' <strong>received</strong> at this location?<br><i>Select as many as relevant to your business</i>)
       type: multi-checkbox
       checkboxes:
+        - label: _(Buidling/Contruction Products)
+          value: Buidlingproducts_received
         - label: _(Dangerous goods)
           value: Dangerous goods_received
+        - label: _(Equipment)
+          value: Equipment_received
         - label: _(Food (Non-refrigerated))
           value: Food(Non-refrigerated products)_received
         - label: _(Food (Refrigerated))
@@ -234,6 +238,8 @@ place:
           value: Sensitive Freight_received
         - label: _(Steel and non-ferrous metals)
           value: Steel and non-ferrous metals_received
+        - label: _(Vehicles)
+          value: Vechiles_received
         - label: _(Waste material)
           value: Waste_received
         - label: _(Other)
@@ -301,7 +307,7 @@ place:
         - label: _(Dangerous goods)
           value: Dangerous goods_dispatched
         - label: _(Equipment)
-          value: Equipment
+          value: Equipment_received
         - label: _(Food (Non-refrigerated))
           value: Food(Non-refrigerated products)_dispatched
         - label: _(Food (Refrigerated))
@@ -320,6 +326,8 @@ place:
           value: Sensitive Freight_dispatched
         - label: _(Steel and non-ferrous metals)
           value: Steel and non-ferrous metals_dispatched
+        - label: _(Vehicles)
+          value: Vechiles_dispatched
         - label: _(Waste material)
           value: Waste_dispatched
         - label: _(Other)
@@ -441,7 +449,7 @@ place:
       name: location_freight_operator
       sticky: true
       optional: true
-    - prompt: _(<strong>If possible</strong>, please list the name and contact details of the freight company or companies you contract to<br><i>This information is required for Phase 2 of the Study. Company details will be kept strictly confidential.</i>)
+    - prompt: _(<strong>If possible</strong>, please list the name and contact details of the freight company or companies you contract to:<br><i>This information will be reconciled with an existing database of freight operators and will be used to survey these businesses as part of Phase 2 of the Study.</i></br>)
       type: textarea
       name: other_freight_operators
       optional: true
@@ -524,7 +532,7 @@ place:
           value: overseas
       name: underutilisation_inbound_origin
       optional: true
-    - prompt: _(Please estimate the monthly average percentage (%) of underutilised loading space <strong>your outbound vehicles</strong>?<br> <i>i.e vehicles heading <strong>out of Greater Bendigo</strong></i>)
+    - prompt: _(Please estimate the monthly average percentage (%) of underutilised loading space on <strong>your outbound vehicles</strong>?<br> <i>i.e vehicles heading <strong>out of Greater Bendigo</strong></i>)
       type: select
       options:
         - label: _(Choose One)
@@ -541,6 +549,8 @@ place:
           value: 51%-75%
         - label: _(76%-100%)
           value: 76%-100%
+        - label: _(Not applicable)
+          value: Not applicable
       name: underutilisation_outbound
       optional: true
     - prompt: _(If greater than 0%, please select cities or regions this underutilised loading space is <strong>destined for</strong>?)
@@ -661,7 +671,7 @@ place:
       attrs:
         - key: class
           value: section-heading
-    - prompt: _(What type of waste is removed from this location?)
+    - prompt: _(What <strong>type of waste</strong> is removed from this location?)
       type: multi-checkbox
       checkboxes:
         - label: _(Agricultural waste)
@@ -696,7 +706,7 @@ place:
           value: other_waste
       name: waste_type
       optional: true
-    - prompt: _(On average, how many times per month is waste removed? (exclusing kerbside collections))
+    - prompt: _(On average, <strong>how often</strong> is waste removed? (exclusing kerbside collections))
       type: select
       options:
         - label: _(Choose One)
@@ -721,7 +731,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe)
-    - prompt: _(The next series of questions <strong>future freight opportunities</strong>:)
+    - prompt: _(The next series of questions ask about <strong>future freight opportunities</strong>:)
       name: opportunities_heading
       optional: true
       attrs:
