@@ -474,6 +474,10 @@ small {
   display: none;
 }
 
+.place-value-locationbackloading {
+  display: none;
+}
+
 
 
 
@@ -489,15 +493,15 @@ small {
   display: none;
 }
 
-.place-value-location_backloading_like{
+.place-value-backloading_like{
   display: none;
 }
 
-.place-value-changes_location_issues_yes_no{
+.place-value-location_issues_yes_no{
   display: none;
 }
 
-.place-value-location_route_yes_no {
+.place-value-location_route_issues_yes_no {
   display: none;
 }
 
