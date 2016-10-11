@@ -1281,7 +1281,7 @@ input.geocode-address-field:focus {
 
 
 a.shareabouts-logo {
-  font-family: 'Proxima nova', cursive;
+  font-family: sans-serif;
   font-weight: bold;
   font-size: 1.325em;
   color: #646464;

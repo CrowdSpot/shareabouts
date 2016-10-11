@@ -344,6 +344,7 @@ var Shareabouts = Shareabouts || {};
       } else {
         this.options.router.navigate('/', {trigger: true});
       }
+      window.scrollTo(0, 0);
     },
     // This gets called for every model that gets added to the place
     // collection, not just new ones.
@@ -447,6 +448,11 @@ var Shareabouts = Shareabouts || {};
     newPlace: function() {
       // Called by the router
       this.collection.add({});
+
+      // Scroll to the top of the panel if desktop
+      $('article').scrollTop(0);
+      // Scroll to the top of the window, if mobile
+      window.scrollTo(0, 0);
     },
     viewPlace: function(model, responseId, zoom) {
       var self = this,

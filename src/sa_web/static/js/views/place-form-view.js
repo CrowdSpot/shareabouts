@@ -218,6 +218,10 @@ var Shareabouts = Shareabouts || {};
           S.Util.log('USER', 'new-place', 'successfully-add-place');
           S.justSubmitted = true;
           router.navigate('/place/' + model.id, {trigger: true});
+
+          // Visitor added spot.
+          _paq.push(['trackGoal', 1]);
+          console.log('Visitor added spot');
         },
         error: function() {
           S.Util.log('USER', 'new-place', 'fail-to-add-place');
