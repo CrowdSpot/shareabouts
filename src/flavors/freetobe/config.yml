@@ -175,8 +175,8 @@ place:
           value: Day
         - label: _(Night)
           value: Night
-        - label: _(Both)
-          value: All times
+        - label: _(Anytime)
+          value: Anytime
     - prompt: _(Please tell us more about this spot if you want. This could be a story or experience you might like to share. Also, if you have any <strong>ideas</strong> to improve this spot, please decribe them below.)
       type: textarea
       name: description

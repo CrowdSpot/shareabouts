@@ -1127,13 +1127,13 @@ textarea:focus {
 .multi-radios label.multi-radio[for=multi-radio-sad]:before {
   background-image: url("images/emojis/emoji-sad.svg");
 }
-.multi-radios label.multi-radio[for=multi-radio-day]:before {
+.multi-radios label.multi-radio[for=multi-radio-Day]:before {
   background-image: url("images/emojis/emoji-day.svg");
 }
-.multi-radios label.multi-radio[for=multi-radio-night]:before {
+.multi-radios label.multi-radio[for=multi-radio-Night]:before {
   background-image: url("images/emojis/emoji-night.svg");
 }
-.multi-radios label.multi-radio[for=multi-radio-anytime]:before {
+.multi-radios label.multi-radio[for=multi-radio-Anytime]:before {
   background-image: url("images/emojis/emoji-anytime.svg");
 }
 
