@@ -2,7 +2,7 @@ body,
 select,
 input,
 textarea {
-  color: #555;
+  color: #243c4b;
   font-family: "Proxima Nova", Arial, Helvetica, serif;
 }
 .btn,
@@ -10,8 +10,8 @@ textarea {
 .btn:link {
   line-height: 1;
   padding: 0.65em;
-  color: #fff;
-  background-color: #243c4b;
+  color: #ef008c;
+  background-color: #d5f2f9;
   box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
   font-weight: 600;
   border: 0;
@@ -21,15 +21,15 @@ textarea {
 .btn:hover,
 .btn:visited:hover,
 .btn:link:hover {
-  background-color: #44728e;
+  background-color: #82d7ed;
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3) inset;
 }
 .btn-primary,
 .btn-primary:visited,
 .btn-primary:link {
-  background-color: #243c4b;
+  background-color: #d5f2f9;
   box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
-  color: #fff;
+  color: #ef008c;
   -webkit-transition: box-shadow 0.5s ease, background-color 0.5s ease;
   transition: box-shadow 0.5s ease, background-color 0.5s ease;
 }
@@ -37,20 +37,20 @@ textarea {
 .btn-secondary:visited,
 .btn-secondary:link {
   box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
-  background-color: #243c4b;
-  color: #fff;
+  background-color: #d5f2f9;
+  color: #ef008c;
 }
 a,
 a:active,
 a:visited {
-  color: #0092d7;
+  color: #58cae7;
 }
 #powered-by a {
   background-image: url("images/crowdspot-logo.svg");
   background-position: 0px 4px;
 }
 #site-header {
-  border-top: #243c4b 3px solid;
+  border-top: #58cae7 3px solid;
   background-color: #fff;
   box-shadow: 0 0px 10px rgba(85,85,85,0.5);
 }
@@ -140,7 +140,7 @@ a:visited {
           transform: translateY(0);
 }
 .access li .menu-item a:hover {
-  background-color: #44728e;
+  background-color: #82d7ed;
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3) inset;
   background: #464847;
 }
@@ -190,8 +190,8 @@ a:visited {
   font-weight: bold;
   text-align: center;
   padding: 1em;
-  color: #434343;
-  background-color: #eaeaeb;
+  color: #ef008c;
+  background-color: #d5f2f9;
   box-shadow: 0px 0px 5px rgba(85,85,85,0.5);
 }
 .legend {
@@ -378,6 +378,12 @@ a.leaflet-control-layers-toggle:before,
 .btn-primary:visited,
 .btn-primary:link {
   background-color: #ef008c;
+  color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:visited:hover,
+.btn-primary:link:hover {
+  background-color: #ff26a5;
 }
 .place-title {
   margin-top: 3em;
@@ -386,8 +392,8 @@ a.leaflet-control-layers-toggle:before,
 }
 .drag-marker-instructions,
 .drag-marker-warning {
-  background-color: #243c4b;
-  color: #fff;
+  background-color: #d5f2f9;
+  color: #ef008c;
   text-shadow: none;
   padding-top: 3em;
   padding-bottom: 3em;
@@ -431,8 +437,8 @@ label small {
 .place-form-section.select {
   position: relative;
   padding-bottom: 4em;
-  box-shadow: 0px 8px 8px -8px rgba(34,34,34,0.5);
-  border-bottom: 1px solid rgba(217,217,214,0.5);
+  box-shadow: 0px 8px 8px -8px rgba(36,60,75,0.5);
+  border-bottom: 1px solid rgba(36,60,75,0.5);
   margin-bottom: 4em;
 }
 .place-form-section.text:after,
@@ -445,8 +451,8 @@ label small {
   width: 25px;
   height: 25px;
   background: #fff;
-  border-bottom: 1px solid #d9d9d6;
-  border-right: 1px solid #d9d9d6;
+  border-bottom: 1px solid #243c4b;
+  border-right: 1px solid #243c4b;
   position: absolute;
   left: 50%;
   bottom: -14px;
@@ -476,8 +482,8 @@ label small {
   border: none;
   padding: 1em;
   border-radius: 3px;
-  box-shadow: 0 0 10px -5px rgba(34,34,34,0.5) inset;
-  background-color: rgba(217,217,214,0.5);
+  box-shadow: 0 0 10px -5px rgba(36,60,75,0.8) inset;
+  background-color: #d5f2f9;
   text-align: center;
 }
 #fields-location_type {
@@ -522,8 +528,16 @@ label small {
 .place-value-time:before {
   content: "Time: ";
 }
+.place-value-happy_feel:before {
+  content: "Happy Feelings: ";
+}
+.place-value-sad_feel:before {
+  content: "Sad Feelings: ";
+}
 .place-item-age,
-.place-item-gender {
+.place-item-gender,
+.place-value-sad_feel,
+.place-value-happy_feel {
   display: none;
 }
 @-webkit-keyframes show-form-warnings {
@@ -659,7 +673,7 @@ textarea:focus {
   padding: 1em;
   margin-right: 0;
   text-align: center;
-  background-color: #243c4b;
+  background-color: #58cae7;
   font-weight: 600;
   -webkit-transition: box-shadow 0.5s ease, color 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
   transition: box-shadow 0.5s ease, color 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
@@ -686,7 +700,7 @@ textarea:focus {
   transition: opacity 0.5s ease;
 }
 .user-support:hover label {
-  background-color: #44728e;
+  background-color: #82d7ed;
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3) inset;
 }
 .user-support:hover label:after {
