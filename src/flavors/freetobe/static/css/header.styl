@@ -4,10 +4,10 @@
 	box-shadow 0 0px 10px rgba(85, 85, 85, 0.5)
 
 #site-title
-	background url('images/plan-logo.svg') no-repeat center
+	background url('images/freetobelogo.png') no-repeat center
 	background-size contain
 	background-position left center
-	width 284px
+	width 160px
 
 	+below('m')
 		width 180px
@@ -117,3 +117,18 @@
 // .has-pages
 // 	#site-title
 // 		margin-left -0.75em
+
+
+.plan-header-logo-small {
+	width: 200px;
+	height: 50px;
+	background: url(images/plan-logo.svg) no-repeat;
+	background-size: contain;
+	position: absolute;
+	right: 1em;
+	top: 0.8em;
+
+	+below(959px) {
+		width 120px;
+	}
+}
