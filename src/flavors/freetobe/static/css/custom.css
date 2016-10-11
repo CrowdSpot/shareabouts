@@ -516,6 +516,9 @@ label small {
   -webkit-animation: showFormElements 0.3s ease-in-out forwards;
           animation: showFormElements 0.3s ease-in-out forwards;
 }
+.place-items {
+  display: none;
+}
 @-webkit-keyframes show-form-warnings {
   0% {
     display: block;
