@@ -30,7 +30,7 @@ def spit_to_file(data, outfile, exclude=[]):
     elif isinstance(data, basestring):
         msg = parse_msg(data)
         if msg is not None:
-            outfile.write('_(r"""' + msg + '""")\n')
+            outfile.write('_(r"""' + msg.encode('utf-8') + '""")\n')
 
 def parse_msg(s):
     s = s.strip()

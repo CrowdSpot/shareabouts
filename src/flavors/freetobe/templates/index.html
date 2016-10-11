@@ -62,7 +62,7 @@
 {% block includes %}
 
 <script type="text/javascript">
-  
+
 </script>
 
 <!-- Google analytics -->
@@ -79,5 +79,23 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.freetobe.crowdspot.com.au","*.freetobe.crowdspotmap.com"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  _paq.push(['enableHeartBeatTimer']);
+  (function() {
+    var u="//piwik.sturm.com.au/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '26']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//piwik.sturm.com.au/piwik.php?idsite=26" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
 
 {% endblock %}

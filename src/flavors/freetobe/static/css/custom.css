@@ -486,6 +486,8 @@ label small {
 .place-form #fields-time,
 .place-form #fields-description,
 .place-form #fields-my_image,
+.place-form #fields-age,
+.place-form #fields-gender,
 .place-form #fields-description_ideas,
 .place-form #fields-submitter_name,
 .place-form #fields-private-submitter_email,
@@ -498,6 +500,10 @@ label small {
 .place-form.sad #fields-description,
 .place-form.happy #fields-my_image,
 .place-form.sad #fields-my_image,
+.place-form.happy #fields-age,
+.place-form.sad #fields-age,
+.place-form.happy #fields-gender,
+.place-form.sad #fields-gender,
 .place-form.happy #fields-description_ideas,
 .place-form.sad #fields-description_ideas,
 .place-form.happy #fields-submitter_name,
@@ -843,6 +849,7 @@ textarea:focus {
   background-image: url("images/emojis/emoji-creepy.svg");
 }
 #fields-happy_feel {
+  display: none;
   opacity: 0;
   position: absolute;
   width: 100%;
@@ -852,6 +859,7 @@ textarea:focus {
           animation: hideHappyEmojis 0.5s ease-in-out forwards;
 }
 #fields-sad_feel {
+  display: none;
   opacity: 0;
   position: absolute;
   width: 100%;
@@ -878,6 +886,7 @@ textarea:focus {
   opacity: 0;
 }
 .place-form.happy #fields-happy_feel {
+  display: block;
   -webkit-animation: showHappyEmojis 0.5s ease-in-out forwards;
           animation: showHappyEmojis 0.5s ease-in-out forwards;
 }
@@ -886,6 +895,7 @@ textarea:focus {
           animation: hideSadEmojis 0.5s ease-in-out forwards;
 }
 .place-form.sad #fields-sad_feel {
+  display: block;
   -webkit-animation: showSadEmojis 0.5s ease-in-out forwards;
           animation: showSadEmojis 0.5s ease-in-out forwards;
 }

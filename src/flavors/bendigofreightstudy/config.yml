@@ -79,38 +79,6 @@ place_types:
           iconSize: [85, 41]
           shadowSize: [85, 41]
           iconAnchor: [42, 42]
-  issue:
-    index: 2
-    label: _(Freight Issue Spot)
-    rules:
-      - condition: '"{{location_type}}" === "issue" && {{map.zoom}} < 12 && {{layer.focused}} === false'
-        # Display landmarks as circles (vectors) when zoomed out
-
-        style:
-          color: '#EC611A'
-          radius: 5
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.7
-
-      - condition: '"{{location_type}}" === "issue" && {{map.zoom}} >= 12 && {{layer.focused}} === false'
-        # Display landmarks as icons when zoomed in
-
-        icon:
-          iconUrl: /static/css/images/master-pin-red-flag.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          iconAnchor: [42, 42]
-
-      - condition: '"{{location_type}}" === "issue" && {{layer.focused}} === true'
-        # Display landmarks as icons when zoomed in
-
-        icon:
-          iconUrl: /static/css/images/master-pin-red-flag.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          shadowSize: [85, 41]
-          iconAnchor: [42, 42]
 
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
@@ -120,7 +88,7 @@ activity:
 
 place:
   adding_supported: true
-  add_button_label: _(Add a Spot)
+  add_button_label: _(Add a Business Operation Spot)
   # Labels for the buttons that toggle the map and list views
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
@@ -134,79 +102,100 @@ place:
 
   items:
 
-    - prompt: _(Is this your Business Operation Spot or Freight Issue Spot? (required)<br><strong><i>(Please start by first adding a 'Business Operation Spot')</i></strong><br>)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Business Operation Spot)
-          value: business
-        - label: _(Freight Issue Spot)
-          value: issue
-      name: location_type
-      attrs:
-        - key: required
-    - prompt: _(What is the freight issue at this spot?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Congestion)
-          value: congestion
-        - label: _(Access)
-          value: Access
-        - label: _(Poor surface)
-          value: poorsurface
-        - label: _(Poor manoeuvrability)
-          value: poor manoeuvrability
-        - label: _(Low clearance)
-          value: Low clearance
-        - label: _(Safety)
-          value: Safety
-        - label: _(Other)
-          value: other
-      name: freight_issue
-      optional: true
-    - prompt: _(Please tell us more about the freight issue at this spot.)
-      type: textarea
-      name: issue_description
+    - prompt: _(Your name (optional))
+      type: text
+      name: submitter_name
+      sticky: true
       optional: true
       attrs:
         - key: placeholder
-          value: _(E.g. Unsafe intersection)
-    - prompt: _(Which category best describes this business’s operations?)
+          value: _(Type name)
+        - key: size
+          value: 30
+    - prompt: _(What is your current role in this business?)
+      type: text
+      name: role
+      optional: true
+      sticky: true
+      attrs:
+        - key: placeholder
+          value: _(E.g. Customer Service Officer, owner etc.)
+        - key: size
+          value: 30
+    - prompt: _(What is the name of your business <strong>at this location?</strong>)
+      type: text
+      name: business_name
+      sticky: true
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Bob’s furniture warehouse)
+        - key: size
+          value: 30
+    - type: hidden
+      name: location_type
+      attrs:
+        - key: value
+          value: business
+    - prompt: _(Does your business operate from more than one location <strong>in Greater Bendigo?</strong>)
       type: select
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Trade services)
-          value: trade services
-        - label: _(Livestock exchange)
-          value: livestock exchange
-        - label: _(Agricultural enterprise)
-          value: agricultural enterprise
-        - label: _(Quarry or Mine enterprise)
-          value: quarry or Mine
-        - label: _(Wholesale or Retail outlet)
-          value: wholesale or Retail outlet
-        - label: _(Warehousing)
-          value: warehousing
-        - label: _(Processing or manufacturing enterprise)
-          value: processingormanufacturing
-        - label: _(Education services)
-          value: education
-        - label: _(Health services)
-          value: health
-        - label: _(Other professional services)
-          value: other professional services
-        - label: _(Gallery or Museum)
-          value: gallery or museum
+        - label: _(No)
+          value: nope
+        - label: _(Yes)
+          value: yess
+      name: morethanonelocation
+      optional: true
+    - prompt: _(Which category <strong>best describes</strong> this business’s operations?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
         - label: _(Accomodation/Hospitality services)
           value: accom_hospitality
+        - label: _(Agricultural enterprise)
+          value: agricultural enterprise
+        - label: _(Car yard)
+          value: Car yard
+        - label: _(Education services)
+          value: education
+        - label: _(Gallery or Museum)
+          value: gallery or museum
+        - label: _(Health services)
+          value: health
+        - label: _(Livestock exchange)
+          value: livestock exchange
+        - label: _(Other professional services)
+          value: other professional services
+        - label: _(Processing or manufacturing enterprise)
+          value: processingormanufacturing
+        - label: _(Quarry or Mine enterprise)
+          value: quarry or Mine
+        - label: _(Trade services)
+          value: trade services
+        - label: _(Warehousing)
+          value: warehousing
+        - label: _(Wholesale or Retail outlet)
+          value: wholesale or Retail outlet
         - label: _(Other)
           value: other
-      name: business_type
+      name: location_business_type
       optional: true
+    - prompt: _(Please describe 'Other' below)
+      type: text
+      name: business_type_other
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Please describe..)
+    - prompt: _(The next series of questions ask about freight <strong>received or dispatched</strong> at this location since 1 January 2016:)
+      name: received_dispatched_heading
+      optional: true
+      attrs:
+        - key: class
+          value: section-heading
     - prompt: _(At this location do you..)
       type: select
       options:
@@ -220,11 +209,15 @@ place:
           value: bothreceivedispatch
       name: location_receivedispatch
       optional: true
-    - prompt: _(Please select the 'types of freight' <strong>received</strong> at this location?)
+    - prompt: _(Please select the 'types of freight' <strong>received</strong> at this location?<br><i>Select as many as relevant to your business</i>)
       type: multi-checkbox
       checkboxes:
+        - label: _(Buidling/Contruction Products)
+          value: Buidlingproducts_received
         - label: _(Dangerous goods)
           value: Dangerous goods_received
+        - label: _(Equipment)
+          value: Equipment_received
         - label: _(Food (Non-refrigerated))
           value: Food(Non-refrigerated products)_received
         - label: _(Food (Refrigerated))
@@ -245,13 +238,15 @@ place:
           value: Sensitive Freight_received
         - label: _(Steel and non-ferrous metals)
           value: Steel and non-ferrous metals_received
+        - label: _(Vehicles)
+          value: Vechiles_received
         - label: _(Waste material)
           value: Waste_received
         - label: _(Other)
           value: Other_received
       name: location_goods_type_received
       optional: true
-    - prompt: _(Please select cities or regions where this freight <strong>originates</strong>?)
+    - prompt: _(Please select cities or regions where this freight <strong>originates</strong>?<br><i>Select as many as relevant to your business</i>)
       type: multi-checkbox
       checkboxes:
         - label: _(City of Greater Bendigo)
@@ -280,11 +275,39 @@ place:
           value: overseas_origin
       name: inbound_origin
       optional: true
-    - prompt: _(Please select the 'types of freight' <strong>dispatched</strong> from this location?)
+    - prompt: _(Are there critical times the business must <strong>receive</strong> this freight?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(No)
+          value: nope
+        - label: _(Yes)
+          value: yess
+      name: location_crtical_times_receive
+      optional: true
+    - prompt: _(Please select times when freight is <strong>received</strong>?<br><i>Select as many as relevant to your business</i>)
       type: multi-checkbox
       checkboxes:
+        - label: _(During standard business hours)
+          value: During standard business hours_receive
+        - label: _(Outside of standard business hours)
+          value: Outside of standard business hours_receive
+        - label: _(Both during and outside of standard business hours)
+          value: Both during and outside of standard business hours_receive
+        - label: _(Seasonally)
+          value: Seasonally_receive
+      name: crtical_times_receive_description
+      optional: true
+    - prompt: _(Please select the 'types of freight' <strong>dispatched</strong> from this location?<br><i>Select as many as relevant to your business</i>)
+      type: multi-checkbox
+      checkboxes:
+        - label: _(Buidling/Contruction Products)
+          value: Buidlingproducts_dispatched
         - label: _(Dangerous goods)
           value: Dangerous goods_dispatched
+        - label: _(Equipment)
+          value: Equipment_received
         - label: _(Food (Non-refrigerated))
           value: Food(Non-refrigerated products)_dispatched
         - label: _(Food (Refrigerated))
@@ -295,8 +318,6 @@ place:
           value: Grain / Fodder/fertilizer_dispatched
         - label: _(Livestock)
           value: Livestock_dispatched
-        - label: _(Buidling/Contruction Products)
-          value: Buidlingproducts_dispatched
         - label: _(Quarry and mining products)
           value: Quarry and mining products_dispatched
         - label: _(Other bulk freight )
@@ -305,13 +326,15 @@ place:
           value: Sensitive Freight_dispatched
         - label: _(Steel and non-ferrous metals)
           value: Steel and non-ferrous metals_dispatched
+        - label: _(Vehicles)
+          value: Vechiles_dispatched
         - label: _(Waste material)
           value: Waste_dispatched
         - label: _(Other)
           value: Other_dispatched
       name: location_goods_type_dispatched
       optional: true
-    - prompt: _(Please select cities or regions where this freight is <strong>dispatched</strong> to?)
+    - prompt: _(Please select cities or regions where this freight is <strong>dispatched</strong> to?<br><i>Select as many as relevant to your business</i>)
       type: multi-checkbox
       checkboxes:
         - label: _(City of Greater Bendigo)
@@ -340,45 +363,7 @@ place:
           value: overseas
       name: outbound_origin
       optional: true
-    - prompt: _(Please estimate the total average monthly volume (e.g. tonnage or pallets) of freight moved <strong>to</strong> this location.)
-      type: text
-      attrs:
-        - key: placeholder
-          value: _(Eg. 20 pallets)
-        - key: size
-          value: 30
-      name: volume_received
-      optional: true
-    - prompt: _(Please estimate the total average monthly volume (e.g. tonnage or pallets) of freight moved <strong>from</strong> this location.)
-      type: text
-      attrs:
-        - key: placeholder
-          value: _(Eg. 20 pallets)
-        - key: size
-          value: 30
-      name: volume_dispatched
-      optional: true
-    - prompt: _(Are there critical times the business must receive this freight?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(No)
-          value: nope
-        - label: _(Yes)
-          value: yess
-      name: location_crtical_times_receive
-      optional: true
-    - prompt: _(Please comment on critical times during which freight must be received at this location)
-      type: text
-      attrs:
-        - key: placeholder
-          value: _(E.g. outside of standard business hours)
-        - key: size
-          value: 30
-      name: crtical_times_receive_description
-      optional: true
-    - prompt: _(Are there critical times the business must dispatch this freight?)
+    - prompt: _(Are there critical times the business must <strong>dispatch</strong> this freight?)
       type: select
       options:
         - label: _(Choose One)
@@ -389,113 +374,33 @@ place:
           value: yess
       name: location_crtical_times_dispatch
       optional: true
-    - prompt: _(Please comment on critical times during which freight must be dispatched from this location)
-      type: text
-      attrs:
-        - key: placeholder
-          value: _(E.g. outside of standard business hours)
-        - key: size
-          value: 30
-      name: crtical_times_dispatch_description
-      optional: true
-    - prompt: _(What type of waste is removed from this location?)
+    - prompt: _(Please select times when freight is <strong>dispatched</strong>?<br><i>Select as many as relevant to your business</i>)
       type: multi-checkbox
       checkboxes:
-        - label: _(Agricultural waste)
-          value: Agricultural waste
-        - label: _(Animal by-products)
-          value: Animal by-products
-        - label: _(Bulky waste)
-          value: Bulky waste
-        - label: _(Chemical waste)
-          value: Chemical waste
-        - label: _(Construction and demolition waste)
-          value: Construction and demolition waste
-        - label: _(Electronic waste)
-          value: Electronic waste
-        - label: _(Food waste)
-          value: Food waste
-        - label: _(Green waste)
-          value: Green waste
-        - label: _(Hazardous waste)
-          value: Hazardous waste
-        - label: _(Industrial waste)
-          value: Industrial waste
-        - label: _(Liquid waste)
-          value: Liquid waste
-        - label: _(Medical waste)
-          value: Medical waste
-        - label: _(Mineral waste)
-          value: Mineral waste
-        - label: _(Mixed waste)
-          value: Mixed waste
-        - label: _(Packaging waste)
-          value: Packaging waste
-        - label: _(Recyclable waste)
-          value: Recyclable waste
-        - label: _(None)
-          value: none
-        - label: _(Other)
-          value: other
-      name: waste_type
+        - label: _(During standard business hours)
+          value: During standard business hours_dispatch
+        - label: _(Outside of standard business hours)
+          value: Outside of standard business hours_dispatch
+        - label: _(Both during and outside of standard business hours)
+          value: Both during and outside of standard business hours_dispatch
+        - label: _(Seasonally)
+          value: Seasonally_dispatch
+      name: crtical_times_dispatch_description
       optional: true
-    - prompt: _(On average, how many times per month is waste removed? (exclusing kerbside collections))
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Daily)
-          value: daily
-        - label: _(Weekly)
-          value: weekly
-        - label: _(Fornightly)
-          value: fortnightly
-        - label: _(Monthly)
-          value: monthly
-        - label: _(Other)
-          value: other
-      name: waste_remove_frequency
+    - prompt: _(The next series of questions ask about <strong>freight vehicle movement</strong> to and from this location, made on a monthly basis:</h5>)
+      name: movement_heading
       optional: true
-    - prompt: _(Please choose one of the following..)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(We only operate our own fleet of freight vehicles)
-          value: ownfleet
-        - label: _(We only use a freight operator)
-          value: useotheroperators
-        - label: _(We use both our own vehicles and a freight operator)
-          value: both_ownandother
-      name: location_freight_operator
-      sticky: true
+      attrs:
+        - key: class
+          value: section-heading
+    - prompt: _(On average, how many <strong>freight trips per month</strong> are made to and from this location?)
+      type: text
+      name: trips_vehicle
       optional: true
-    - prompt: _(What percentage (%) of monthly freight task does your own fleet carry?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(1%-10%)
-          value: 1%-10%
-        - label: _(11%- 25%)
-          value: 11%- 25%
-        - label: _(26%-50%)
-          value: 26%-50%
-        - label: _(51%-75%)
-          value: 51%-75%
-        - label: _(76%-100%)
-          value: 76%-100%
-      name: proportion_ownfleet
-      optional: true
-    - prompt: _(Please list the name and contact details of the freight company or companies you contract to?<br><i>This information is required for Phase 2 of the Study. Company details will be kept strictly confidential.</i>)
-      type: textarea
-      name: other_freight_operators
-      optional: true
-      sticky: true
       attrs:
         - key: placeholder
-          value: _(Please list the name and number of freight operators you use)
-    - prompt: _(Please select vehicle types used to carry all freight to and from this location)
+          value: _(please type the number only)
+    - prompt: _(Please select <strong>vehicle</strong> types used to carry all freight to and from this location)
       type: multi-checkbox
       checkboxes:
         - label: _(Cargo-bike)
@@ -524,36 +429,60 @@ place:
           value: Dont's know
       name: vehicle_type
       optional: true
-    - prompt: _(Please list the main Greater Bendigo route/s your own vehicles use to carry freight to and/or from this location?)
-      type: textarea
-      name: route_description
+    - prompt: _(The next series of questions ask about the <strong>fleet used to carry your freight</strong>:)
+      name: fleet_heading
       optional: true
       attrs:
-        - key: placeholder
-          value: _(Eg. Calder Hwy, Allies Rd, Loddon Valley Hwy)
-    - prompt: _(What is the main reason these route/s are chosen?)
+        - key: class
+          value: section-heading
+    - prompt: _(Please <strong>choose one</strong> of the following..)
       type: select
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Least Congested)
-          value: Least congestion
-        - label: _(Safest)
-          value: Safest
-        - label: _(Easiest to manoeuvre)
-          value: Easiest to manoeuvre
-        - label: _(Designated Route)
-          value: Designated route
-      name: route_reason
+        - label: _(We only use a freight operator)
+          value: useotheroperators
+        - label: _(We only operate our own fleet of freight vehicles)
+          value: ownfleet
+        - label: _(We use both our own vehicles and a freight operator)
+          value: both_ownandother
+      name: location_freight_operator
+      sticky: true
       optional: true
-    - prompt: _(On average, how many freight vehicle trips per month are made to and/or from this location?)
-      type: text
-      name: trips_vehicle
+    - prompt: _(<strong>If possible</strong>, please list the name and contact details of the freight company or companies you contract to:<br><i>This information will be reconciled with an existing database of freight operators and will be used to survey these businesses as part of Phase 2 of the Study.</i></br>)
+      type: textarea
+      name: other_freight_operators
       optional: true
+      sticky: true
       attrs:
         - key: placeholder
-          value: _(please type the number only)
-    - prompt: _(Please estimate the monthly average percentage (%) of underutilised loading space on this business’s <strong>inbound</strong> freight fleet vehicles?)
+          value: _(Please list the name and number of freight operators you use)
+    - prompt: _(What percentage (%) of your monthly freight task, in terms of vehicle trips to and from this location, does <strong>your own fleet carry</strong>?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(1%-10%)
+          value: 1%-10%
+        - label: _(11%- 25%)
+          value: 11%- 25%
+        - label: _(26%-50%)
+          value: 26%-50%
+        - label: _(51%-75%)
+          value: 51%-75%
+        - label: _(76%-100%)
+          value: 76%-100%
+      name: proportion_ownfleet
+      optional: true
+    - prompt: _(How many vehicles are there <strong>in your own</strong> freight fleet?)
+      type: text
+      name: vehicles_ownfleet
+      optional: true
+      sticky: true
+      attrs:
+        - key: placeholder
+          value: _(How many vehicles?)
+    - prompt: _(Please estimate the monthly average percentage (%) of underutilised loading space on <strong>your inbound vehicles</strong>?<br> <i>i.e vehicles heading <strong>into Greater Bendigo</strong></i>)
       type: select
       options:
         - label: _(Choose One)
@@ -570,9 +499,40 @@ place:
           value: 51%-75%
         - label: _(76%-100%)
           value: 76%-100%
+        - label: _(Not applicable)
+          value: Not applicable
       name: underutilisation_inbound
       optional: true
-    - prompt: _(Please estimate the monthly average percentage (%) of underutilised loading space on this business’s <strong>outbound</strong> freight fleet vehicles?)
+    - prompt: _(If greater than 0%, please select cities or regions this underutilised loading space <strong>originates in</strong>?)
+      type: multi-checkbox
+      checkboxes:
+        - label: _(City of Greater Bendigo)
+          value: cogb_originates
+        - label: _(Regional Victoria)
+          value: regional_vic_originates
+        - label: _(Interstate regional locations)
+          value: interstate_regional_originates
+        - label: _(Melbourne)
+          value: melbourne_originates
+        - label: _(Adelaide)
+          value: adelaide_originates
+        - label: _(Sydney)
+          value: sydney_originates
+        - label: _(Perth)
+          value: perth_originates
+        - label: _(Brisbane)
+          value: brisbane_originates
+        - label: _(Canberra)
+          value: canberra_originates
+        - label: _(Darwin)
+          value: darwin_originates
+        - label: _(Hobart)
+          value: hobart_originates
+        - label: _(Overseas)
+          value: overseas_originates
+      name: underutilisation_inbound_origin
+      optional: true
+    - prompt: _(Please estimate the monthly average percentage (%) of underutilised loading space on <strong>your outbound vehicles</strong>?<br> <i>i.e vehicles heading <strong>out of Greater Bendigo</strong></i>)
       type: select
       options:
         - label: _(Choose One)
@@ -589,155 +549,236 @@ place:
           value: 51%-75%
         - label: _(76%-100%)
           value: 76%-100%
+        - label: _(Not applicable)
+          value: Not applicable
       name: underutilisation_outbound
       optional: true
-    - prompt: _(<h4><b>Help us identify future freight opportunities</b></h4>)
-      name: strategic
+    - prompt: _(If greater than 0%, please select cities or regions this underutilised loading space is <strong>destined for</strong>?)
+      type: multi-checkbox
+      checkboxes:
+        - label: _(City of Greater Bendigo)
+          value: cogb_destination
+        - label: _(Regional Victoria)
+          value: regional_vic_destination
+        - label: _(Interstate regional locations)
+          value: interstate_regional_destination
+        - label: _(Melbourne)
+          value: melbourne_destination
+        - label: _(Adelaide)
+          value: adelaide_destination
+        - label: _(Sydney)
+          value: sydney_destination
+        - label: _(Perth)
+          value: perth_destination
+        - label: _(Brisbane)
+          value: brisbane_destination
+        - label: _(Canberra)
+          value: canberra_destination
+        - label: _(Darwin)
+          value: darwin_destination
+        - label: _(Hobart)
+          value: hobart_destination
+        - label: _(Overseas)
+          value: overseas_destination
+      name: underutilisation_inbound_destination
       optional: true
-    - prompt: _(What are the top three issues affecting your operations in Greater Bendigo?)
+    - prompt: _(Do you maximise your fleet’s efficiency by <strong>‘backloading’</strong>?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(No)
+          value: nope
+        - label: _(Yes)
+          value: yess
+      name: location_backloading
+      optional: true
+      sticky: true
+    - prompt: _(Would you like to maximise your fleet’s efficiency by <strong>‘backloading’</strong>?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(No)
+          value: nope
+        - label: _(Yes)
+          value: yess
+      name: backloading_like
+      optional: true
+      sticky: true
+    - prompt: _(The next series of questions ask about <strong>transport issues experienced by your own freight fleet</strong> in Greater Bendigo</i>:)
+      name: fleetissues_heading
+      optional: true
+      attrs:
+        - key: class
+          value: section-heading
+    - prompt: _(Does your freight fleet experience any transport issues in the <strong>last kilometre of travel</strong> to this location?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(No)
+          value: nope
+        - label: _(Yes)
+          value: yess
+      name: location_issues_yes_no
+      optional: true
+      sticky: true
+    - prompt: _(Please select your fleet transport issues<br><i>Select as many as relevant to your business</i>)
+      type: multi-checkbox
+      checkboxes:
+        - label: _(Access)
+          value: Access
+        - label: _(Inadequate loading zones)
+          value: Inadequate loading zones
+        - label: _(Inadequate parking)
+          value: Inadequate parking
+        - label: _(Low clearance)
+          value: Low clearance
+        - label: _(Poor maneuverability)
+          value: Poor maneuverability
+        - label: _(Poor Surface)
+          value: Poor Surface
+        - label: _(Road Safety)
+          value: Road Safety
+        - label: _(Other)
+          value: other_transportissues
+      name: freight_issues
+      optional: true
+    - prompt: _(Does your freight fleet experience any transport issues along the Greater Bendigo <strong>designated freight route network</strong>? )
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(No)
+          value: nope
+        - label: _(Yes)
+          value: yess
+      name: location_route_issues_yes_no
+      optional: true
+      sticky: true
+    - prompt: _(Please describe designated freight route issues.)
       type: textarea
-      name: biggest_issues
+      name: route_issues
       optional: true
       sticky: true
       attrs:
         - key: placeholder
-          value: _(Please describe..)
-    - prompt: _(What are the top three (any order) improvements that would make your freight operations more productive and/or efficient?<br>(<i>Please select from the options below</i>))
-      name: strategic
+          value: _(Please describe)
+    - prompt: _(The next series of questions ask about freight movements associated with <strong>removal of waste from this location</strong>:)
+      name: waste_heading
       optional: true
-    - prompt: _(Option 1)
+      attrs:
+        - key: class
+          value: section-heading
+    - prompt: _(What <strong>type of waste</strong> is removed from this location?)
+      type: multi-checkbox
+      checkboxes:
+        - label: _(Agricultural waste)
+          value: Agricultural waste
+        - label: _(Animal by-products)
+          value: Animal by-products
+        - label: _(Chemical waste)
+          value: Chemical waste
+        - label: _(Construction and demolition waste)
+          value: Construction and demolition waste
+        - label: _(Electronic waste)
+          value: Electronic waste
+        - label: _(Hazardous waste)
+          value: Hazardous waste
+        - label: _(Industrial waste)
+          value: Industrial waste
+        - label: _(Liquid waste)
+          value: Liquid waste
+        - label: _(Medical waste)
+          value: Medical waste
+        - label: _(Mixed waste)
+          value: Mixed waste
+        - label: _(Organic/Green waste)
+          value: organic_green
+        - label: _(Packaging waste)
+          value: Packaging waste
+        - label: _(Recyclable waste)
+          value: Recyclable waste
+        - label: _(None)
+          value: none
+        - label: _(Other)
+          value: other_waste
+      name: waste_type
+      optional: true
+    - prompt: _(On average, <strong>how often</strong> is waste removed? (exclusing kerbside collections))
       type: select
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Skilled labour)
-          value: skilled labour
-        - label: _(Safety)
-          value: safety
-        - label: _(Warehouse facility)
-          value: warehouse facility
-        - label: _(Refrigerated storage facility)
-          value: refrigerated storage facility
-        - label: _(Driver rest stops/fatigue management centre)
-          value: driver rest stops/fatigue management centre
-        - label: _(Truck Wash)
-          value: truck Wash
-        - label: _(Wireless internet coverage)
-          value: wireless internet coverage
-        - label: _(Mobile-based freight  brokerage (Like ‘Uber’ for freight))
-          value: mobile-based freight  brokerage (Like ‘Uber’ for freight)
-        - label: _(Autonomous vehicles)
-          value: autonomous vehicles
+        - label: _(Daily)
+          value: daily
+        - label: _(Weekly)
+          value: weekly
+        - label: _(Fornightly)
+          value: fortnightly
+        - label: _(Monthly)
+          value: monthly
+        - label: _(Other)
+          value: other
+      name: location_waste_remove_frequency
+      optional: true
+    - prompt: _(Please describe 'Other' below)
+      type: text
+      name: waste_remove_frequency_other
+      optional: true
+      sticky: true
+      attrs:
+        - key: placeholder
+          value: _(Please describe)
+    - prompt: _(The next series of questions ask about <strong>future freight opportunities</strong>:)
+      name: opportunities_heading
+      optional: true
+      attrs:
+        - key: class
+          value: section-heading
+    - prompt: _(What are <strong>the improvements</strong> that would make your freight operations more productive and/or efficient?<br><i>Select as many as relevant to your business</i>)
+      type: multi-checkbox
+      checkboxes:
         - label: _(Alternative fuel stations (CNG, Electric vehicle charging / changeover))
           value: alternative fuel stations
-        - label: _(Trailer exchange facility)
-          value: trailer exchange facility
+        - label: _(Autonomous vehicles)
+          value: autonomous vehicles
         - label: _(Better vehicle access approval process)
           value: better vehicle access approval process
-        - label: _(Heavy vehicle security parking)
-          value: heavy vehicle security parking
-        - label: _(More/improved loading zones)
-          value: more/improved loading zones
-        - label: _(Improved waste removal)
-          value: improved waste removal
+        - label: _(Bio-security truck wash)
+          value: Bio-security truck wash
+        - label: _(Driver rest stops/fatigue management centre)
+          value: driver rest stops/fatigue management centre
         - label: _(Freight routes protected from development)
           value: freight routes protected from development
         - label: _(Freight terminal/hub)
           value: freight terminal/hub
-        - label: _(Other)
-          value: other_efficient1
-      name: location_efficient_option1
-      optional: true
-      sticky: true
-    - prompt: _(Option 2)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Skilled labour)
-          value: skilled labour
-        - label: _(Safety)
-          value: safety
-        - label: _(Warehouse facility)
-          value: warehouse facility
-        - label: _(Refrigerated storage facility)
-          value: refrigerated storage facility
-        - label: _(Driver rest stops/fatigue management centre)
-          value: driver rest stops/fatigue management centre
-        - label: _(Truck Wash)
-          value: truck Wash
-        - label: _(Wireless internet coverage)
-          value: wireless internet coverage
-        - label: _(Mobile-based freight  brokerage (Like ‘Uber’ for freight))
-          value: mobile-based freight  brokerage (Like ‘Uber’ for freight)
-        - label: _(Autonomous vehicles)
-          value: autonomous vehicles
-        - label: _(Alternative fuel stations (CNG, Electric vehicle charging / changeover))
-          value: alternative fuel stations
-        - label: _(Trailer exchange facility)
-          value: trailer exchange facility
-        - label: _(Better vehicle access approval process)
-          value: better vehicle access approval process
         - label: _(Heavy vehicle security parking)
           value: heavy vehicle security parking
-        - label: _(More/improved loading zones)
-          value: more/improved loading zones
         - label: _(Improved waste removal)
           value: improved waste removal
-        - label: _(Freight routes protected from development)
-          value: freight routes protected from development
-        - label: _(Freight terminal/hub)
-          value: freight terminal/hub
-        - label: _(Other)
-          value: other_efficient2
-      name: location_efficient_option2
-      optional: true
-      sticky: true
-    - prompt: _(Option 3)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Skilled labour)
-          value: skilled labour
-        - label: _(Safety)
-          value: safety
-        - label: _(Warehouse facility)
-          value: warehouse facility
-        - label: _(Refrigerated storage facility)
-          value: refrigerated storage facility
-        - label: _(Driver rest stops/fatigue management centre)
-          value: driver rest stops/fatigue management centre
-        - label: _(Truck Wash)
-          value: truck Wash
-        - label: _(Wireless internet coverage)
-          value: wireless internet coverage
         - label: _(Mobile-based freight  brokerage (Like ‘Uber’ for freight))
           value: mobile-based freight  brokerage (Like ‘Uber’ for freight)
-        - label: _(Autonomous vehicles)
-          value: autonomous vehicles
-        - label: _(Alternative fuel stations (CNG, Electric vehicle charging / changeover))
-          value: alternative fuel stations
-        - label: _(Trailer exchange facility)
-          value: trailer exchange facility
-        - label: _(Better vehicle access approval process)
-          value: better vehicle access approval process
-        - label: _(Heavy vehicle security parking)
-          value: heavy vehicle security parking
         - label: _(More/improved loading zones)
           value: more/improved loading zones
-        - label: _(Improved waste removal)
-          value: improved waste removal
-        - label: _(Freight routes protected from development)
-          value: freight routes protected from development
-        - label: _(Freight terminal/hub)
-          value: freight terminal/hub
+        - label: _(Refrigerated storage facility)
+          value: refrigerated storage facility
+        - label: _(Road Safety)
+          value: road safety
+        - label: _(Skilled labour)
+          value: skilled labour
+        - label: _(Trailer exchange facility)
+          value: trailer exchange facility
+        - label: _(Warehouse facility)
+          value: warehouse facility
+        - label: _(Wireless internet coverage)
+          value: wireless internet coverage
         - label: _(Other)
-          value: other_efficient3
-      name: location_efficient_option3
+          value: other_improvements
+      name: improvements
       optional: true
-      sticky: true
-    - prompt: _(Please describe other improvements below.)
+    - prompt: _(If you have any other improvements, please describe them below.)
       type: textarea
       name: efficient_other
       optional: true
@@ -745,47 +786,26 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe..)
-    - prompt: _(Do you have a potential future freight route idea? Please describe this below.)
-      type: text
-      name: route_idea
+    - prompt: _(Is there anything else you would like to tell us about <strong>freight or your business operations</strong> in Greater Bendigo?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Yes)
+          value: yess
+        - label: _(No)
+          value: nope
+      name: location_anythingelse
+      optional: true
+      sticky: true
+    - prompt: _(Please describe this below.)
+      type: textarea
+      name: anythingelse
       optional: true
       sticky: true
       attrs:
         - key: placeholder
-          value: _(Eg. Direct access to livestock exchange)
-    - prompt: _(<h4><b>Other details:</b></h4>)
-      name: personal
-      optional: true
-    - prompt: _(Business name)
-      type: text
-      name: business_name
-      sticky: true
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Type name)
-        - key: size
-          value: 30
-    - prompt: _(Your name (optional))
-      type: text
-      name: submitter_name
-      sticky: true
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Type name)
-        - key: size
-          value: 30
-    - prompt: _(What is your current role in this business?)
-      type: text
-      name: role
-      optional: true
-      sticky: true
-      attrs:
-        - key: placeholder
-          value: _(E.g. Customer Service Officer, owner etc.)
-        - key: size
-          value: 30
+          value: _(Please describe...)
     - prompt: _(Would you like to stay informed about this project?)
       type: select
       options:

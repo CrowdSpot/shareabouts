@@ -104,6 +104,10 @@ var Shareabouts = Shareabouts || {};
           // Clear the form
           $form.get(0).reset();
           S.Util.log('USER', 'place', 'successfully-reply', self.collection.options.placeModel.getLoggingDetails());
+
+          // Visitor added comment.
+          _paq.push(['trackGoal', 2]);
+          console.log('Visitor added comment');
         },
         error: function() {
           S.Util.log('USER', 'place', 'fail-to-reply', self.collection.options.placeModel.getLoggingDetails());

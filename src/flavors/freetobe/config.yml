@@ -18,7 +18,7 @@ app:
 
 # Settings for map and layer configs
 map:
-  geolocation_enabled: false
+  geolocation_enabled: true
   geolocation_onload: false
 
   geocoding_enabled: false
@@ -30,8 +30,9 @@ map:
       lat: -37.81840
       lng: 144.97061
     zoom: 13
-    minZoom: 5
+    minZoom: 12
     maxZoom: 18
+    maxBounds: [ [-37.95177804684794, 144.6947479248047], [-37.666429212090605, 145.22964477539062] ]
   layers:
     - url: https://api.mapbox.com/styles/v1/aisey/ciszmxng8000c2wpc4doeoc7k/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWlzZXkiLCJhIjoiZVhQcWtnZyJ9.-YulcMjSuM7sQNxPYh26HQ
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
@@ -106,7 +107,7 @@ place:
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(Tell us about you experience)
+  title: _(How do you feel at this location?)
   action_text: _(added)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
@@ -123,7 +124,7 @@ place:
     #     - key: size
     #       value: 30
     #     - key: required
-    - prompt: _(Did you have a happy or sad experience?)
+    - prompt: _(Is this a Happy or Sad Spot?)
       type: multi-radio
       name: location_type
       attrs:
@@ -134,7 +135,7 @@ place:
           value: happy
         - label: _(Sad)
           value: sad
-    - prompt: _(How do you feel at this Happy Spot?)
+    - prompt: _(How do you feel at this Happy Spot?<br><i>Select as many as you like</i>)
       type: multi-checkbox
       name: happy_feel
       optional: true
@@ -149,7 +150,7 @@ place:
           value: trust
         - label: _(Love)
           value: love
-    - prompt: _(How do you feel at this Sad Spot?)
+    - prompt: _(How do you feel at this Sad Spot?<br><i>Select as many as you like</i>)
       type: multi-checkbox
       name: sad_feel
       optional: true
@@ -164,7 +165,7 @@ place:
           value: disgust
         - label: _(Creepy)
           value: creepy
-    - prompt: _(What time does this experience relate to?)
+    - prompt: _(What time of day do you feel like this here?)
       type: multi-radio
       name: time
       attrs:
