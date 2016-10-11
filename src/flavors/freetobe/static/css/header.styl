@@ -18,11 +18,20 @@
 	margin-right 0
 	margin-left 0
 
+	+below(60em)
+		padding-top 0.5em
+		float none
+		clear both
+
 .access
 	font-size 1.1em
 
 	+below(60em)
 		margin 0
+
+		&.is-exposed
+			float none
+			clear both
 
 	li
 		display inline

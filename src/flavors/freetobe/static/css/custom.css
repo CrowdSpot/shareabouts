@@ -72,12 +72,24 @@ a:visited {
   margin-right: 0;
   margin-left: 0;
 }
+@media only screen and (max-width: 60em) {
+  #pages-nav-container,
+  #language-picker {
+    padding-top: 0.5em;
+    float: none;
+    clear: both;
+  }
+}
 .access {
   font-size: 1.1em;
 }
 @media only screen and (max-width: 60em) {
   .access {
     margin: 0;
+  }
+  .access.is-exposed {
+    float: none;
+    clear: both;
   }
 }
 .access li {
