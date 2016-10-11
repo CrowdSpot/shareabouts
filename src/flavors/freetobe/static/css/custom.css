@@ -516,7 +516,14 @@ label small {
   -webkit-animation: showFormElements 0.3s ease-in-out forwards;
           animation: showFormElements 0.3s ease-in-out forwards;
 }
-.place-items {
+.place-value-description:before {
+  content: "Description: ";
+}
+.place-value-time:before {
+  content: "Time: ";
+}
+.place-item-age,
+.place-item-gender {
   display: none;
 }
 @-webkit-keyframes show-form-warnings {
