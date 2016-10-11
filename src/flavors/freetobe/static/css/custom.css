@@ -11,7 +11,7 @@ textarea {
   line-height: 1;
   padding: 0.65em;
   color: #fff;
-  background-color: #015395;
+  background-color: #243c4b;
   box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
   font-weight: 600;
   border: 0;
@@ -21,13 +21,13 @@ textarea {
 .btn:hover,
 .btn:visited:hover,
 .btn:link:hover {
-  background-color: #0285ee;
+  background-color: #44728e;
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3) inset;
 }
 .btn-primary,
 .btn-primary:visited,
 .btn-primary:link {
-  background-color: #015395;
+  background-color: #243c4b;
   box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
   color: #fff;
   -webkit-transition: box-shadow 0.5s ease, background-color 0.5s ease;
@@ -37,7 +37,7 @@ textarea {
 .btn-secondary:visited,
 .btn-secondary:link {
   box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
-  background-color: #015395;
+  background-color: #243c4b;
   color: #fff;
 }
 a,
@@ -50,15 +50,15 @@ a:visited {
   background-position: 0px 4px;
 }
 #site-header {
-  border-top: #015395 3px solid;
+  border-top: #243c4b 3px solid;
   background-color: #fff;
   box-shadow: 0 0px 10px rgba(85,85,85,0.5);
 }
 #site-title {
-  background: url("images/plan-logo.svg") no-repeat center;
+  background: url("images/freetobelogo.png") no-repeat center;
   background-size: contain;
   background-position: left center;
-  width: 284px;
+  width: 160px;
 }
 @media only screen and (max-width: 800px) {
   #site-title {
@@ -140,7 +140,7 @@ a:visited {
           transform: translateY(0);
 }
 .access li .menu-item a:hover {
-  background-color: #0285ee;
+  background-color: #44728e;
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3) inset;
   background: #464847;
 }
@@ -170,6 +170,20 @@ a:visited {
 }
 .list-toggle-nav {
   margin-right: 0.5em;
+}
+.plan-header-logo-small {
+  width: 200px;
+  height: 50px;
+  background: url("images/plan-logo.svg") no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 1em;
+  top: 0.8em;
+}
+@media only screen and (max-width: 959px) {
+  .plan-header-logo-small {
+    width: 120px;
+  }
 }
 .spot-type-title {
   font-size: 1.1em;
@@ -360,6 +374,11 @@ a.leaflet-control-layers-toggle:before,
     bottom: 1.5em;
   }
 }
+.btn-primary,
+.btn-primary:visited,
+.btn-primary:link {
+  background-color: #ef008c;
+}
 .place-title {
   margin-top: 3em;
   margin-bottom: 3em;
@@ -367,7 +386,7 @@ a.leaflet-control-layers-toggle:before,
 }
 .drag-marker-instructions,
 .drag-marker-warning {
-  background-color: #015395;
+  background-color: #243c4b;
   color: #fff;
   text-shadow: none;
   padding-top: 3em;
@@ -624,7 +643,7 @@ textarea:focus {
   padding: 1em;
   margin-right: 0;
   text-align: center;
-  background-color: #015395;
+  background-color: #243c4b;
   font-weight: 600;
   -webkit-transition: box-shadow 0.5s ease, color 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
   transition: box-shadow 0.5s ease, color 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
@@ -651,7 +670,7 @@ textarea:focus {
   transition: opacity 0.5s ease;
 }
 .user-support:hover label {
-  background-color: #0285ee;
+  background-color: #44728e;
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3) inset;
 }
 .user-support:hover label:after {
