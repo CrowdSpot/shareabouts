@@ -191,6 +191,26 @@ place:
       attrs:
         - key: accept
           value: image/*
+    - prompt: _(Your age)
+      type: text
+      name: age
+      sticky: true
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Type here...)
+        - key: size
+          value: 30
+    - prompt: _(Your gender)
+      type: text
+      name: gender
+      sticky: true
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Type here...)
+        - key: size
+          value: 30
     - prompt: _(Your name or username)
       type: text
       name: submitter_name
