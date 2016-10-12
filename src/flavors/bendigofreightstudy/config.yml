@@ -88,7 +88,7 @@ activity:
 
 place:
   adding_supported: true
-  add_button_label: _(Add a Business Operation Spot)
+  add_button_label: _(Add Your Business Operation Spot)
   # Labels for the buttons that toggle the map and list views
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
@@ -218,9 +218,9 @@ place:
           value: Dangerous goods_received
         - label: _(Equipment)
           value: Equipment_received
-        - label: _(Food (Non-refrigerated))
+        - label: _(Food and beverage (Non-refrigerated))
           value: Food(Non-refrigerated products)_received
-        - label: _(Food (Refrigerated))
+        - label: _(Food and beverage (Refrigerated))
           value: Foodrefrigerated_received
         - label: _(General Freight)
           value: General Freight_received
@@ -228,8 +228,6 @@ place:
           value: Grain / Fodder/fertilizer_received
         - label: _(Livestock)
           value: Livestock_received
-        - label: _(Building/Construction Products)
-          value: Buidlingproducts_received
         - label: _(Quarry and mining products)
           value: Quarry and mining products_received
         - label: _(Other bulk freight )
@@ -253,8 +251,8 @@ place:
           value: cogb_origin
         - label: _(Regional Victoria)
           value: regional_vic_origin
-        - label: _(Interstate regional locations)
-          value: interstate_regional_origin
+        - label: _(Other mainland regional locations)
+          value: othermainland_regional_origin
         - label: _(Melbourne)
           value: melbourne_origin
         - label: _(Adelaide)
@@ -269,8 +267,8 @@ place:
           value: canberra_origin
         - label: _(Darwin)
           value: darwin_origin
-        - label: _(Hobart)
-          value: hobart_origin
+        - label: _(Tasmania)
+          value: Tasmania_origin
         - label: _(Overseas)
           value: overseas_origin
       name: inbound_origin
@@ -308,9 +306,9 @@ place:
           value: Dangerous goods_dispatched
         - label: _(Equipment)
           value: Equipment_received
-        - label: _(Food (Non-refrigerated))
+        - label: _(Food and beverage (Non-refrigerated))
           value: Food(Non-refrigerated products)_dispatched
-        - label: _(Food (Refrigerated))
+        - label: _(Food and beverage (Refrigerated))
           value: Foodrefrigerated_dispatched
         - label: _(General Freight)
           value: General Freight_dispatched
@@ -341,8 +339,8 @@ place:
           value: cogb
         - label: _(Regional Victoria)
           value: regional_vic
-        - label: _(Interstate regional locations)
-          value: interstate_regional
+        - label: _(Other mainland regional locations)
+          value: othermainland_regional
         - label: _(Melbourne)
           value: melbourne
         - label: _(Adelaide)
@@ -357,8 +355,8 @@ place:
           value: canberra
         - label: _(Darwin)
           value: darwin
-        - label: _(Hobart)
-          value: hobart
+        - label: _(Tasmania)
+          value: Tasmania
         - label: _(Overseas)
           value: overseas
       name: outbound_origin
@@ -507,29 +505,29 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(City of Greater Bendigo)
-          value: cogb
+          value: cogb_underutilised_origin
         - label: _(Regional Victoria)
-          value: regional_vic
-        - label: _(Interstate regional locations)
-          value: interstate_regional
+          value: regional_vic_underutilised_origin
+        - label: _(Other mainland regional locations)
+          value: othermainland_regional_underutilised_origin
         - label: _(Melbourne)
-          value: melbourne
+          value: melbourne_underutilised_origin
         - label: _(Adelaide)
-          value: adelaide
+          value: adelaide_underutilised_origin
         - label: _(Sydney)
-          value: sydney
+          value: sydney_underutilised_origin
         - label: _(Perth)
-          value: perth
+          value: perth_underutilised_origin
         - label: _(Brisbane)
-          value: brisbane
+          value: brisbane_underutilised_origin
         - label: _(Canberra)
-          value: canberra
+          value: canberra_underutilised_origin
         - label: _(Darwin)
-          value: darwin
-        - label: _(Hobart)
-          value: hobart
+          value: darwin_underutilised_origin
+        - label: _(Tasmania)
+          value: tasmania_underutilised_origin
         - label: _(Overseas)
-          value: overseas
+          value: overseas_underutilised_origin
       name: underutilisation_inbound_origin
       optional: true
     - prompt: _(Please estimate the monthly average percentage (%) of underutilised loading space on <strong>your outbound vehicles</strong>?<br> <i>i.e vehicles heading <strong>out of Greater Bendigo</strong></i>)
@@ -557,30 +555,30 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(City of Greater Bendigo)
-          value: cogb
+          value: cogb_underutilisation_destination
         - label: _(Regional Victoria)
-          value: regional_vic
-        - label: _(Interstate regional locations)
-          value: interstate_regional
+          value: regional_vic_underutilisation_destination
+        - label: _(Other mainland regional locations)
+          value: othermainland_regional_underutilisation_destination
         - label: _(Melbourne)
-          value: melbourne
+          value: melbourne_underutilisation_destination
         - label: _(Adelaide)
-          value: adelaide
+          value: adelaide_underutilisation_destination
         - label: _(Sydney)
-          value: sydney
+          value: sydney_underutilisation_destination
         - label: _(Perth)
-          value: perth
+          value: perth_underutilisation_destination
         - label: _(Brisbane)
-          value: brisbane
+          value: brisbane_underutilisation_destination
         - label: _(Canberra)
-          value: canberra
+          value: canberra_underutilisation_destination
         - label: _(Darwin)
-          value: darwin
-        - label: _(Hobart)
-          value: hobart
+          value: darwin_underutilisation_destination
+        - label: _(Tasmania)
+          value: tasmania_underutilisation_destination
         - label: _(Overseas)
-          value: overseas
-      name: underutilisation_inbound_destination
+          value: overseas_underutilisation_destination
+      name: underutilisation_outbound_destination
       optional: true
     - prompt: _(Do you maximise your fleet’s efficiency by <strong>‘backloading’</strong>?)
       type: select
@@ -637,10 +635,12 @@ place:
           value: Low clearance
         - label: _(Poor maneuverability)
           value: Poor maneuverability
-        - label: _(Poor Surface)
-          value: Poor Surface
-        - label: _(Road Safety)
-          value: Road Safety
+        - label: _(Poor signage)
+          value: Poor signage  
+        - label: _(Poor surface)
+          value: Poor surface
+        - label: _(Road safety)
+          value: Road safety
         - label: _(Other)
           value: other_transportissues
       name: freight_issues
