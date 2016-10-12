@@ -14,40 +14,44 @@ button-shadow--hover = 0px 1px 4px 0px rgba(0, 0, 0, 0.3) inset
 .btn:link
 	line-height 1.00
 	padding 0.65em
-	color #EF008C
-	background-color lighten(#58CAE7, 75%)
+	color white
+	background-color #243C4B
 	box-shadow button-shadow
 	font-weight 600
 	border 0
 	transition box-shadow 0.5s ease, background-color 0.5s ease, color 0.5s ease
 
 	&:hover
-		background-color lighten(primary-color, 25%)
+		background-color lighten(#243C4B, 30%)
+		color white
 		box-shadow button-shadow--hover
 
 .btn-primary,
 .btn-primary:visited,
 .btn-primary:link
-	background-color lighten(#58CAE7, 75%)
+	background-color #243C4B
 	box-shadow button-shadow
-	color #EF008C
+	color white
 	transition box-shadow 0.5s ease, background-color 0.5s ease, color 0.5s ease
 
 	// &.submit-btn
 	// 	box-shadow button-shadow
 
-	// &:hover
+	&:hover
 	// 	box-shadow 0px 0px 1px rgba(0, 0, 0, 0.2)
+		background-color lighten(#243C4B, 30%)
+		color white
 
 .btn-secondary,
 .btn-secondary:visited,
 .btn-secondary:link
 	box-shadow button-shadow
-	background-color lighten(#58CAE7, 75%)
-	color #EF008C
+	background-color #243C4B
+	color white
 
 	&:hover
 	// 	box-shadow 0px 0px 1px rgba(0, 0, 0, 0.2)
+		background-color lighten(#243C4B, 30%)
 		color white
 
 a, a:active, a:visited
