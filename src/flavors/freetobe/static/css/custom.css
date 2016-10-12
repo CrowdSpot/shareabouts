@@ -15,8 +15,8 @@ textarea {
   box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
   font-weight: 600;
   border: 0;
-  -webkit-transition: box-shadow 0.5s ease, background-color 0.5s ease;
-  transition: box-shadow 0.5s ease, background-color 0.5s ease;
+  -webkit-transition: box-shadow 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+  transition: box-shadow 0.5s ease, background-color 0.5s ease, color 0.5s ease;
 }
 .btn:hover,
 .btn:visited:hover,
@@ -30,8 +30,8 @@ textarea {
   background-color: #d5f2f9;
   box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
   color: #ef008c;
-  -webkit-transition: box-shadow 0.5s ease, background-color 0.5s ease;
-  transition: box-shadow 0.5s ease, background-color 0.5s ease;
+  -webkit-transition: box-shadow 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+  transition: box-shadow 0.5s ease, background-color 0.5s ease, color 0.5s ease;
 }
 .btn-secondary,
 .btn-secondary:visited,
@@ -40,10 +40,20 @@ textarea {
   background-color: #d5f2f9;
   color: #ef008c;
 }
+.btn-secondary:hover,
+.btn-secondary:visited:hover,
+.btn-secondary:link:hover {
+  color: #fff;
+}
 a,
 a:active,
 a:visited {
-  color: #58cae7;
+  color: #ef008c;
+}
+a:hover,
+a:active:hover,
+a:visited:hover {
+  color: #ff78c7;
 }
 #powered-by a {
   background-image: url("images/crowdspot-logo.svg");
@@ -141,7 +151,6 @@ a:visited {
   background: transparent;
   box-shadow: 0 5px 10px -5px rgba(85,85,85,0.5);
   border: none;
-  border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin: -3px -60px 0 0;
@@ -156,7 +165,6 @@ a:visited {
 .access li .menu-item a:hover {
   background-color: #82d7ed;
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3) inset;
-  background: #464847;
 }
 .access li .menu-item a:focus {
   outline: none;
@@ -204,8 +212,8 @@ a:visited {
   font-weight: bold;
   text-align: center;
   padding: 1em;
-  color: #ef008c;
-  background-color: #d5f2f9;
+  color: #fff;
+  background-color: #243c4b;
   box-shadow: 0px 0px 5px rgba(85,85,85,0.5);
 }
 .legend {
@@ -271,7 +279,7 @@ a:visited {
 }
 .recent-points {
   border-bottom: none;
-  background-color: #fff;
+  background-color: #eefafd;
 }
 .recent-points a {
   color: #585a59;
@@ -292,7 +300,7 @@ a:visited {
   box-shadow: inset 0 5px 10px -5px rgba(85,85,85,0.5);
 }
 #ticker {
-  background: #eaeaeb;
+  background: #eefafd;
   box-shadow: 0px 0 10px rgba(85,85,85,0.5);
 }
 @media only screen and (min-width: 60em) {
@@ -397,7 +405,8 @@ a.leaflet-control-layers-toggle:before,
 .btn-primary:hover,
 .btn-primary:visited:hover,
 .btn-primary:link:hover {
-  background-color: #ff26a5;
+  background-color: #ff5cbc;
+  color: #243c4b;
 }
 .place-title {
   margin-top: 3em;
