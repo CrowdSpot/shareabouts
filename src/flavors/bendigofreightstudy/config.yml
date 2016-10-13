@@ -126,12 +126,13 @@ place:
       type: text
       name: business_name
       sticky: true
-      optional: true
+      optional: false
       attrs:
         - key: placeholder
           value: _(Bob’s furniture warehouse)
         - key: size
           value: 30
+        - key: required
     - type: hidden
       name: location_type
       attrs:
@@ -146,8 +147,10 @@ place:
           value: nope
         - label: _(Yes)
           value: yess
+      attrs:
+        - key: required
       name: morethanonelocation
-      optional: true
+      optional: false
     - prompt: _(Which category <strong>best describes</strong> this business’s operations?)
       type: select
       options:
@@ -447,7 +450,7 @@ place:
       name: location_freight_operator
       sticky: true
       optional: true
-    - prompt: _(<strong>If possible</strong>, please list the name and contact details of the freight company or companies you contract to:<br><i>This information will be reconciled with an existing database of freight operators and will be used to survey these businesses as part of Phase 2 of the Study.</i></br>)
+    - prompt: _(<strong>If possible</strong>, please list the name and contact details of the freight company or companies you contract to (optional):<br><i>This information will be reconciled with an existing database of freight operators and will be used to survey these businesses as part of Phase 2 of the Study.</i></br>)
       type: textarea
       name: other_freight_operators
       optional: true
