@@ -26,16 +26,15 @@ map:
 
   options:
     center:
-      lat: 37.335603
-      lng: -122.036311
-    zoom: 13
-    minZoom: 13
+      lat: 37.327406
+      lng: -121.862120
+    zoom: 15
+    minZoom: 14
     maxZoom: 18
-    maxBounds: [ [37.268592, -122.308055], [37.466161, -121.771512] ]
   layers:
     # Raster Tile Layers
     # ==================
-    - url: https://api.mapbox.com/styles/v1/aisey/cio76ao69000ra5nkkrs4uuo4/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWlzZXkiLCJhIjoiZVhQcWtnZyJ9.-YulcMjSuM7sQNxPYh26HQ
+    - url: https://api.mapbox.com/styles/v1/crowdspot1/ciu7sqrnh000s2inrmhv53arq/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY3Jvd2RzcG90MSIsImEiOiIwTFItekZ3In0.M_0CqFroH04TUc-K1_CHXQ
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
       layer_control:
         type: baselayer
@@ -95,72 +94,8 @@ place_types:
           iconSize: [85, 41]
           shadowSize: [85, 41]
           iconAnchor: [42, 42]
-  idea:
-    index: 1
-    label: _(Idea Spot)
-    rules:
-      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} < 14 && {{layer.focused}} === false'
-        # Display landmarks as circles (vectors) when zoomed out
-
-        style:
-          color: '#FDCB14'
-          radius: 5
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.7
-
-      - condition: '"{{location_type}}" === "idea" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
-        # Display landmarks as icons when zoomed in
-
-        icon:
-          iconUrl: /static/css/images/idea-spot.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          iconAnchor: [42, 42]
-
-      - condition: '"{{location_type}}" === "idea" && {{layer.focused}} === true'
-        # Display landmarks as icons when zoomed in
-
-        icon:
-          iconUrl: /static/css/images/spot-selected.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          shadowSize: [85, 41]
-          iconAnchor: [42, 42]
-  like:
-    index: 2
-    label: _(Like Spot)
-    rules:
-      - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 14 && {{layer.focused}} === false'
-        # Display landmarks as circles (vectors) when zoomed out
-
-        style:
-          color: '#45BA00'
-          radius: 5
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.7
-
-      - condition: '"{{location_type}}" === "like" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
-        # Display landmarks as icons when zoomed in
-
-        icon:
-          iconUrl: /static/css/images/like-spot.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          iconAnchor: [42, 42]
-
-      - condition: '"{{location_type}}" === "like" && {{layer.focused}} === true'
-        # Display landmarks as icons when zoomed in
-
-        icon:
-          iconUrl: /static/css/images/spot-selected.svg
-          shadowUrl: /static/css/images/master-pin-shadow.svg
-          iconSize: [85, 41]
-          shadowSize: [85, 41]
-          iconAnchor: [42, 42]
   walk:
-    index: 3
+    index: 1
     label: _(Walking Issue Spot)
     rules:
       - condition: '"{{location_type}}" === "walk" && {{map.zoom}} < 14 && {{layer.focused}} === false'
@@ -191,7 +126,7 @@ place_types:
           shadowSize: [85, 41]
           iconAnchor: [42, 42]
   bike:
-    index: 4
+    index: 2
     label: _(Bike Issue Spot)
     rules:
       - condition: '"{{location_type}}" === "bike" && {{map.zoom}} < 14 && {{layer.focused}} === false'
@@ -223,7 +158,7 @@ place_types:
           shadowSize: [85, 41]
           iconAnchor: [42, 42]
   bus:
-    index: 5
+    index: 3
     label: _(Bus Issue Spot)
     rules:
       - condition: '"{{location_type}}" === "bus" && {{map.zoom}} < 14 && {{layer.focused}} === false'
@@ -255,7 +190,7 @@ place_types:
           shadowSize: [85, 41]
           iconAnchor: [42, 42]
   car:
-    index: 6
+    index: 4
     label: _(Car Issue Spot)
     rules:
       - condition: '"{{location_type}}" === "car" && {{map.zoom}} < 14 && {{layer.focused}} === false'
@@ -278,6 +213,38 @@ place_types:
           iconAnchor: [42, 42]
 
       - condition: '"{{location_type}}" === "car" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/spot-selected.svg
+          shadowUrl: /static/css/images/master-pin-shadow.svg
+          iconSize: [85, 41]
+          shadowSize: [85, 41]
+          iconAnchor: [42, 42]
+  like:
+    index: 5
+    label: _(Like Spot)
+    rules:
+      - condition: '"{{location_type}}" === "like" && {{map.zoom}} < 14 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#45BA00'
+          radius: 5
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 0.7
+
+      - condition: '"{{location_type}}" === "like" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/like-spot.svg
+          shadowUrl: /static/css/images/master-pin-shadow.svg
+          iconSize: [85, 41]
+          iconAnchor: [42, 42]
+
+      - condition: '"{{location_type}}" === "like" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -332,7 +299,7 @@ place:
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(Thank you for taking the time to tell us what improvements you would like to see on Santa Clara County’s southern segment of I-280.)
+  title: _(Thank you for taking the time to contribute to the map.)
   action_text: _(added)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
@@ -354,10 +321,6 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Idea Spot)
-          value: idea
-        - label: _(Like Spot)
-          value: like
         - label: _(Walk Issue Spot)
           value: walk
         - label: _(Bike Issue Spot)
@@ -366,6 +329,8 @@ place:
           value: bus
         - label: _(Car Issue Spot)
           value: car
+        - label: _(Like Spot)
+          value: like
       name: location_type
       attrs:
         - key: required
@@ -374,47 +339,37 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Poorly maintained footpaths)
-          value: Poorly maintained footpaths
-        - label: _(No crossing facilities)
-          value: No crossing facilities
-        - label: _(Limited time to cross at signal)
-          value: Limited time to cross at signal
-        - label: _(Unattractive walking route)
-          value: Unattractive walking route
-        - label: _(Limited or no wayfinding signage)
-          value: Limited or no wayfinding signage
-        - label: _(Poor access for disabilities)
-          value: Poor access for disabilities
-        - label: _(Poor lighting)
-          value: Poor Lighting
-        - label: _(Limited or no footpaths)
-          value: Limited or no footpaths
-        - label: _(Unsafe)
-          value: Unsafe
+        - label: _(Make it safer to walk)
+          value: Makeitsafertowalk
+        - label: _(Make it easier to cross the street)
+          value: Makeiteasiertocrossthestreet
+        - label: _(Vehicle speeds to fast)
+          value: Vehiclespeedstofast
+        - label: _(Maintenance issue)
+          value: Maintenanceissue
+        - label: _(Need more trees and landscaping)
+          value: Needmoretreesandlandscaping
         - label: _(Other)
           value: Other
       name: location_walk_issue
       optional: true
-    - prompt: _(What is the  issue at this bike spot?)
+    - prompt: _(What is the issue at this bike spot?)
       type: select
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(No bicycle lanes)
-          value: No bicycle lanes
-        - label: _(Unsafe bicycle lanes)
-          value: Unsafe bicycle lanes
-        - label: _(Bicycle lane ends)
-          value: Bicycle lane ends
-        - label: _(Lack of wayfinding or signage)
-          value: Lack of wayfinding or signage
-        - label: _(Bicycle lane blocked)
-          value: Bicycle lane blocked
-        - label: _(High risk of collision)
-          value: High risk of collision)
-        - label: _(Limited or no bicycle parking)
-          value: Limited or no bicycle parking
+        - label: _(Make it safer to bike)
+          value: Makeitsafertobike
+        - label: _(Vehicle speeds to fast)
+          value: Vehiclespeedstofast
+        - label: _(Add or improve bike lane)
+          value: Addorimprovebikelane
+        - label: _(Separate bikes more from cars)
+          value: Separatebikesmorefromcars
+        - label: _(Maintenance issue)
+          value: Maintenanceissue
+        - label: _(Add bike parking)
+          value: Addbikeparking
         - label: _(Other)
           value: Other
       name: location_bike_issue
@@ -424,18 +379,14 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(No stop within walking distance)
-          value: No stop within walking distance
-        - label: _(Poor waiting facilities at stop)
-          value: Poor waiting facilities at stop
-        - label: _(Unsafe stop or station)
-          value: Unsafe stop or station
-        - label: _(Infrequent services)
-          value: Infrequent services
-        - label: _(Unreliable scheduling)
-          value: Unreliable scheduling
-        - label: _(No capacity during the peak)
-          value: No capacity during the peak
+        - label: _(Improve facilities at this bus stop)
+          value: Improvefacilitiesatthisbusstop
+        - label: _(Make it easier/safer to get to this stop)
+          value: Makeiteasiersafertogettothisstop
+        - label: _(Make the bus more frequent)
+          value: Makethebusmorefrequent
+        - label: _(Maintenance issue)
+          value: Maintenanceissue
         - label: _(Other)
           value: Other
       name: location_bus_issue
@@ -445,55 +396,32 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Congestion)
-          value: Congestion
-        - label: _(Unsafe)
-          value: Unsafe
-        - label: _(Noise)
-          value: Noise
-        - label: _(Speeding traffic)
-          value: Speeding traffic
-        - label: _(Ramp metering)
-          value: Ramp metering
-        - label: _(Heavy traffic (trucks))
-          value: Heavy traffic
+        - label: _(Make it safer to drive)
+          value: Makeitsafertodrive
+        - label: _(Vehicle speeds too fast)
+          value: Vehiclespeedstoofast
+        - label: _(Maintenance issue)
+          value: Maintenanceissue
         - label: _(Other)
           value: Other
       name: location_car_issue
       optional: true
-    - prompt: _(What transport mode does this Like Spot best relate to?)
+    - prompt: _(What option best describes what you like about this spot?)
       type: select
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Walking)
-          value: Walking Like Spot
-        - label: _(Bike)
-          value: Bike Like Spot
-        - label: _(Bus)
-          value: Bus Like Spot
-        - label: _(Car)
-          value: Car Like Spot
-        - label: _(Other)
-          value: other
-      name: like_mode
-      optional: true
-    - prompt: _(What transport mode does this Idea Spot best relate to?)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Walking)
-          value: Walking Idea!
-        - label: _(Bike)
-          value: Bike Idea!
-        - label: _(Bus)
-          value: Bus Idea!
-        - label: _(Car)
-          value: Car Idea!
-        - label: _(Other)
-          value: other
-      name: idea_mode
+        - label: _(This is my favorite place to visit/shop)
+          value: Thisismyfavoriteplacetovisitshop
+        - label: _(I like walking here)
+          value: Ilikewalkinghere
+        - label: _(I like biking here)
+          value: Ilikebikinghere
+        - label: _(I like taking the bus here)
+          value: Iliketakingthebushere
+        - label: _(I like driving here)
+          value: Ilikedrivinghere
+      name: like_options
       optional: true
     - prompt: _(If 'other', please type below)
       type: text
@@ -502,7 +430,7 @@ place:
       attrs:
         - key: placeholder
           value: _('Other' issue here...)
-    - prompt: _(Please tell us more about this spot?)
+    - prompt: _(Please tell us more about this spot)
       type: textarea
       name: description
       optional: true
@@ -520,129 +448,78 @@ place:
     - prompt: _(<h4>SURVEY</h4>)
       name: survey
       optional: true
-    - prompt: _(What would you consider the most important area for improvement along I-280 Corridor?)
+    - prompt: _(How many times do you visit the Story-Keyes corridor in a typical month?)
       type: select
       sticky: true
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Freeway improvements)
-          value: Freeway improvements
-        - label: _(Local roadway improvements)
-          value: Local roadway improvements
-        - label: _(Bike and pedestrian)
-          value: Bike and pedestrian
-        - label: _(Transit service)
-          value: Transit service
-        - label: _(Noise abatement)
-          value: Noise abatement
+        - label: _(Once a month)
+          value: Once a month
+        - label: _(One a week)
+          value: One a week
+        - label: _(More than once a week)
+          value: More than once a week
+        - label: _(Everyday)
+          value: Everyday
+      name: frequency
+      optional: true
+    - prompt: _(How do you travel along the Story-Keyes corridor? )
+      type: multi-checkbox
+      sticky: true
+      checkboxes:
+        - label: _(Walk)
+          value: walk
+        - label: _(Bike)
+          value: bike
+        - label: _(Drive alone)
+          value: Drive alone
+        - label: _(Carpool/vanpool)
+          value: carvanpool
+        - label: _(Bus)
+          value: bus
+      name: travel_method
+      optional: true
+    - prompt: _(What is your favourite part of the Story-Keyes corridor?)
+      type: textarea
+      name: favourite_part
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Please type here..)
+    - prompt: _(What has the greatest need for improvement on the Story-Keyes corridor?)
+      type: select
+      sticky: true
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Pedestrian safety)
+          value: Pedestrian safety
+        - label: _(Pedestrian convenience)
+          value: Pedestrian convenience
+        - label: _(Bicycle safety)
+          value: Bicycle safety
+        - label: _(Bicycle convenience)
+          value: Bicycle convenience
+        - label: _(Bus stops)
+          value: Bus stops
+        - label: _(Crossings to bus stops)
+          value: Crossings to bus stops
+        - label: _(Driving safety)
+          value: Driving safety
+        - label: _(Gathering places)
+          value: Gathering places
         - label: _(Other)
           value: Other
-      name: location_improvement
+      name: location_greatestimprovement
       optional: true
-    - prompt: _(Please detail the other area for improvement)
+    - prompt: _(Please specify 'Other' below..)
       type: text
       name: improvement_other
       optional: true
       attrs:
         - key: placeholder
           value: _(Please type here..)
-    - prompt: _(Generally, what parts of I-280 take the longest wait time to travel?)
-      type: select
-      sticky: true
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Freeway)
-          value: Freeway
-        - label: _(Ramps)
-          value: Ramps
-        - label: _(Intersections at the freeway ramps)
-          value: Intersections at the freeway ramps
-        - label: _(Transit service)
-          value: Transit service
-        - label: _(Specify Zip Code or City)
-          value: Specifyziporcity
-        - label: _(Other)
-          value: Other
-      name: location_congestion_parts
-      optional: true
-    - prompt: _(Please specify below..)
-      type: text
-      name: congestion_parts_other
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Please type here..)
-    - prompt: _(How do you travel along the I-280 corridor?)
-      type: select
-      sticky: true
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Walk)
-          value: walk
-        - label: _(Bike)
-          value: bike
-        - label: _(Public transit)
-          value: Publictransit
-        - label: _(Carpool)
-          value: carpool
-        - label: _(Vanpool)
-          value: Vanpool
-        - label: _(Drive alone)
-          value: Drivealone
-        - label: _(Other)
-          value: Other
-      name: location_commutemode
-      optional: true
-    - prompt: _(If other, please detail below..)
-      type: text
-      name: commutemode_other
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Please type here..)
-    - prompt: _(Would you like carpool lanes extended on I-280? <br><i class="prompt-info">(The carpool lanes is the yellow line on the map)</i><br>)
-      type: select
-      sticky: true
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Yes)
-          value: yess
-        - label: _(No)
-          value: nope
-      name: location_carpool
-      optional: true
-    - prompt: _(Please explain why...)
-      type: text
-      sticky: true
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Please type here..)
-      name: carpool_why
-    - prompt: _(Would you like Express Lanes on I-280? <br><i class="prompt-info">An express lane is a lane to be used by carpoolers, motorcyclists, and clean-air vehicles (with applicable decals) for free, AND single occupant vehicles that pay a toll with a FasTrak transponder.</i><br>)
-      type: select
-      sticky: true
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Yes)
-          value: yess
-        - label: _(No)
-          value: nope
-      name: location_express
-      optional: true
-    - prompt: _(Please explain why...)
-      type: text
-      sticky: true
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Please type here..)
-      name: express_why
     - prompt: _(Your name)
       type: text
       name: submitter_name

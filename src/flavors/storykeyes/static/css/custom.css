@@ -81,7 +81,7 @@ CrowdSpot Grey (text) #585A59
   }
 
 #site-title {
-  background: url('images/i280study.jpg') no-repeat
+  background: url('images/XXXXXX.jpg') no-repeat
 center;
   background-size: contain;
   width: 440px;
@@ -305,27 +305,31 @@ small {
   display: none;
 }
 
-.place-value-location_congestion_parts {
+.place-value-location_greatestimprovement {
   display: none;
 }
 
-.place-value-congestion_parts_other {
+.place-value-improvement_other {
   display: none;
 }
 
-.place-value-location_carpool {
+.place-value-frequency {
   display: none;
 }
 
-.place-value-carpool_why {
+.place-value-travel_method {
   display: none;
 }
 
-.place-value-location_express {
+.place-value-favourite_part {
   display: none;
 }
 
-.place-value-express_why {
+.place-value-location_greatestimprovement {
+  display: none;
+}
+
+.place-value-improvement_other {
   display: none;
 }
 
@@ -378,6 +382,21 @@ small {
   display: block;
 }
 
+.place-form label[for=place-like_options],
+  .place-form [name=like_options]{
+  display: none;
+}
+
+.place-form.like label[for=place-like_options],
+  .place-form.like [name=like_options] {
+  display: block;
+}
+
+
+
+
+
+
 
 
 .place-form label[for=place-issue_other],
@@ -409,25 +428,6 @@ small {
 }
 
 
-.place-form label[for=place-like_mode],
-  .place-form [name=like_mode]{
-  display: none;
-}
-
-.place-form.like label[for=place-like_mode],
-  .place-form.like [name=like_mode] {
-  display: block;
-}
-
-.place-form label[for=place-idea_mode],
-  .place-form [name=idea_mode]{
-  display: none;
-}
-
-.place-form.idea label[for=place-idea_mode],
-  .place-form.idea [name=idea_mode] {
-  display: block;
-}
 
 
 
@@ -444,56 +444,16 @@ small {
 }
 
 
-.place-form label[for=place-congestion_parts_other],
-  .place-form [name=congestion_parts_other]{
+.place-form label[for=place-improvement_other],
+  .place-form [name=improvement_other]{
   display: none;
 }
 
-.place-form.location_congestion_parts-specifyziporcity label[for=place-congestion_parts_other],
-  .place-form.location_congestion_parts-specifyziporcity [name=congestion_parts_other] {
+.place-form.location_greatestimprovement-other label[for=place-improvement_other],
+  .place-form.location_greatestimprovement-other [name=improvement_other] {
   display: block;
 }
 
-.place-form.location_congestion_parts-other label[for=place-congestion_parts_other],
-  .place-form.location_congestion_parts-other [name=congestion_parts_other] {
-  display: block;
-}
-
-
-
-
-
-.place-form label[for=place-commutemode_other],
-  .place-form [name=commutemode_other]{
-  display: none;
-}
-
-.place-form.location_commutemode-other label[for=place-commutemode_other],
-  .place-form.location_commutemode-other [name=commutemode_other] {
-  display: block;
-}
-
-
-.place-form label[for=place-carpool_why],
-  .place-form [name=carpool_why]{
-  display: none;
-}
-
-.place-form.location_carpool-nope label[for=place-carpool_why],
-  .place-form.location_carpool-nope [name=carpool_why] {
-  display: block;
-}
-
-
-.place-form label[for=place-express_why],
-  .place-form [name=express_why]{
-  display: none;
-}
-
-.place-form.location_express-nope label[for=place-express_why],
-  .place-form.location_express-nope [name=express_why] {
-  display: block;
-}
 
 
 
