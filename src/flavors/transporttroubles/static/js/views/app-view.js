@@ -344,6 +344,7 @@ var Shareabouts = Shareabouts || {};
       } else {
         this.options.router.navigate('/', {trigger: true});
       }
+      window.scrollTo(0, 0);
     },
     // This gets called for every model that gets added to the place
     // collection, not just new ones.

@@ -13,12 +13,12 @@ app:
   # places_page_size: 100
 
   # Optional. List view is supported by default. Set to false to disable.
-  # list_enabled: false
+  list_enabled: false
 
 
 # Settings for map and layer configs
 map:
-  geolocation_enabled: false
+  geolocation_enabled: true
   geolocation_onload: false
 
   geocoding_enabled: false
@@ -30,8 +30,9 @@ map:
       lat: -37.81840
       lng: 144.97061
     zoom: 13
-    minZoom: 5
+    minZoom: 12
     maxZoom: 18
+    maxBounds: [ [-37.95177804684794, 144.6947479248047], [-37.666429212090605, 145.22964477539062] ]
   layers:
     - url: https://api.mapbox.com/styles/v1/aisey/ciszmxng8000c2wpc4doeoc7k/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWlzZXkiLCJhIjoiZVhQcWtnZyJ9.-YulcMjSuM7sQNxPYh26HQ
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
@@ -106,7 +107,7 @@ place:
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(Tell us about you experience)
+  title: _(How do you feel at this location?)
   action_text: _(added)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
@@ -123,7 +124,7 @@ place:
     #     - key: size
     #       value: 30
     #     - key: required
-    - prompt: _(Did you have a happy or sad experience?)
+    - prompt: _(Is this a Happy or Sad Spot?)
       type: multi-radio
       name: location_type
       attrs:
@@ -134,7 +135,7 @@ place:
           value: happy
         - label: _(Sad)
           value: sad
-    - prompt: _(How do you feel at this Happy Spot?)
+    - prompt: _(How do you feel at this Happy Spot?<br><i>Select as many as you like</i>)
       type: multi-checkbox
       name: happy_feel
       optional: true
@@ -149,7 +150,7 @@ place:
           value: trust
         - label: _(Love)
           value: love
-    - prompt: _(How do you feel at this Sad Spot?)
+    - prompt: _(How do you feel at this Sad Spot?<br><i>Select as many as you like</i>)
       type: multi-checkbox
       name: sad_feel
       optional: true
@@ -164,18 +165,18 @@ place:
           value: disgust
         - label: _(Creepy)
           value: creepy
-    - prompt: _(What time does this experience relate to?)
+    - prompt: _(What time of day do you feel like this here?)
       type: multi-radio
       name: time
       attrs:
         - key: required
       radios:
         - label: _(Day)
-          value: day
+          value: Day
         - label: _(Night)
-          value: night
-        - label: _(Both)
-          value: anytime
+          value: Night
+        - label: _(Anytime)
+          value: Anytime
     - prompt: _(Please tell us more about this spot if you want. This could be a story or experience you might like to share. Also, if you have any <strong>ideas</strong> to improve this spot, please decribe them below.)
       type: textarea
       name: description
@@ -191,6 +192,26 @@ place:
       attrs:
         - key: accept
           value: image/*
+    - prompt: _(Your age)
+      type: text
+      name: age
+      sticky: true
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Type here...)
+        - key: size
+          value: 30
+    - prompt: _(Your gender)
+      type: text
+      name: gender
+      sticky: true
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Type here...)
+        - key: size
+          value: 30
     - prompt: _(Your name or username)
       type: text
       name: submitter_name

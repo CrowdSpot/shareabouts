@@ -5,8 +5,8 @@
 
 .drag-marker-instructions,
 .drag-marker-warning
-	background-color primary-color
-	color #fff
+	background-color lighten(#58CAE7, 75%)
+	color #EF008C
 	text-shadow none
 	padding-top 3em
 	padding-bottom 3em
@@ -88,8 +88,8 @@ label
 	&.text, &.textarea, &.file, .multi-checkboxes, .multi-radios, &.select
 		position relative
 		padding-bottom 4em
-		box-shadow 0px 8px 8px -8px rgba(black, 0.5)
-		border-bottom 1px solid rgba(tertiary-color, 0.5)
+		box-shadow 0px 8px 8px -8px rgba(#243C4B, 0.5)
+		border-bottom 1px solid rgba(#243C4B, 0.5)
 		margin-bottom 4em
 
 		&:after
@@ -97,8 +97,8 @@ label
 			width 25px
 			height 25px
 			background white
-			border-bottom 1px solid tertiary-color
-			border-right 1px solid tertiary-color
+			border-bottom 1px solid #243C4B
+			border-right 1px solid #243C4B
 			position absolute
 			left 50%
 			bottom -14px
@@ -119,8 +119,8 @@ label
 		border none
 		padding 1em
 		border-radius 3px
-		box-shadow 0 0 10px -5px rgba(black, 0.5) inset
-		background-color rgba(tertiary-color, 0.5)
+		box-shadow 0 0 10px -5px rgba(#243C4B, 0.8) inset
+		background-color lighten(#58CAE7, 75%)
 		text-align center
 
 #fields-location_type
@@ -128,11 +128,11 @@ label
 
 .place-form
 
-	#fields-time, #fields-description, #fields-my_image, #fields-description_ideas, #fields-submitter_name, #fields-private-submitter_email, #save-place-btn
+	#fields-time, #fields-description, #fields-my_image, #fields-age, #fields-gender, #fields-description_ideas, #fields-submitter_name, #fields-private-submitter_email, #save-place-btn
 		display none
 
 	&.happy, &.sad
-		#fields-time, #fields-description, #fields-my_image, #fields-description_ideas, #fields-submitter_name, #fields-private-submitter_email, #save-place-btn
+		#fields-time, #fields-description, #fields-my_image, #fields-age, #fields-gender, #fields-description_ideas, #fields-submitter_name, #fields-private-submitter_email, #save-place-btn
 			display block
 			animation showFormElements 0.3s ease-in-out forwards
 
@@ -143,3 +143,22 @@ label
 	100%
 		opacity 1
 		display block
+
+.place-value-description
+	&:before
+		content "Description: "
+
+.place-value-time
+	&:before
+		content "Time: "
+
+.place-value-happy_feel
+	&:before
+		content "Happy Feelings: "
+
+.place-value-sad_feel
+	&:before
+		content "Sad Feelings: "
+
+.place-item-age, .place-item-gender, .place-value-sad_feel, .place-value-happy_feel
+	display none

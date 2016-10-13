@@ -1,13 +1,13 @@
 #site-header
-	border-top primary-color 3px solid
+	border-top #58CAE7 3px solid
 	background-color #ffffff
 	box-shadow 0 0px 10px rgba(85, 85, 85, 0.5)
 
 #site-title
-	background url('images/plan-logo.svg') no-repeat center
+	background url('images/freetobelogo.png') no-repeat center
 	background-size contain
 	background-position left center
-	width 284px
+	width 160px
 
 	+below('m')
 		width 180px
@@ -18,11 +18,20 @@
 	margin-right 0
 	margin-left 0
 
+	+below(60em)
+		padding-top 0.5em
+		float none
+		clear both
+
 .access
 	font-size 1.1em
 
 	+below(60em)
 		margin 0
+
+		&.is-exposed
+			float none
+			clear both
 
 	li
 		display inline
@@ -30,6 +39,8 @@
 
 		+below(60em)
 			padding-bottom 0
+			display block
+			margin-bottom 0.5em
 
 		ul
 			display block
@@ -117,3 +128,18 @@
 // .has-pages
 // 	#site-title
 // 		margin-left -0.75em
+
+
+.plan-header-logo-small {
+	width: 200px;
+	height: 50px;
+	background: url(images/plan-logo.svg) no-repeat;
+	background-size: contain;
+	position: absolute;
+	right: 1em;
+	top: 0.8em;
+
+	+below(959px) {
+		width 120px;
+	}
+}

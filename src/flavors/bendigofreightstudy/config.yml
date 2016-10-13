@@ -88,7 +88,7 @@ activity:
 
 place:
   adding_supported: true
-  add_button_label: _(Add a Spot)
+  add_button_label: _(Add a Business Operation Spot)
   # Labels for the buttons that toggle the map and list views
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
@@ -190,6 +190,12 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe..)
+    - prompt: _(The next series of questions ask about freight <strong>received or dispatched</strong> at this location since 1 January 2016:)
+      name: received_dispatched_heading
+      optional: true
+      attrs:
+        - key: class
+          value: section-heading
     - prompt: _(At this location do you..)
       type: select
       options:
@@ -206,8 +212,12 @@ place:
     - prompt: _(Please select the 'types of freight' <strong>received</strong> at this location?<br><i>Select as many as relevant to your business</i>)
       type: multi-checkbox
       checkboxes:
+        - label: _(Buidling/Contruction Products)
+          value: Buidlingproducts_received
         - label: _(Dangerous goods)
           value: Dangerous goods_received
+        - label: _(Equipment)
+          value: Equipment_received
         - label: _(Food (Non-refrigerated))
           value: Food(Non-refrigerated products)_received
         - label: _(Food (Refrigerated))
@@ -228,6 +238,8 @@ place:
           value: Sensitive Freight_received
         - label: _(Steel and non-ferrous metals)
           value: Steel and non-ferrous metals_received
+        - label: _(Vehicles)
+          value: Vechiles_received
         - label: _(Waste material)
           value: Waste_received
         - label: _(Other)
@@ -278,13 +290,13 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(During standard business hours)
-          value: During standard business hours
+          value: During standard business hours_receive
         - label: _(Outside of standard business hours)
-          value: Outside of standard business hours
+          value: Outside of standard business hours_receive
         - label: _(Both during and outside of standard business hours)
-          value: Both during and outside of standard business hours
+          value: Both during and outside of standard business hours_receive
         - label: _(Seasonally)
-          value: Seasonally
+          value: Seasonally_receive
       name: crtical_times_receive_description
       optional: true
     - prompt: _(Please select the 'types of freight' <strong>dispatched</strong> from this location?<br><i>Select as many as relevant to your business</i>)
@@ -295,7 +307,7 @@ place:
         - label: _(Dangerous goods)
           value: Dangerous goods_dispatched
         - label: _(Equipment)
-          value: Equipment
+          value: Equipment_received
         - label: _(Food (Non-refrigerated))
           value: Food(Non-refrigerated products)_dispatched
         - label: _(Food (Refrigerated))
@@ -314,6 +326,8 @@ place:
           value: Sensitive Freight_dispatched
         - label: _(Steel and non-ferrous metals)
           value: Steel and non-ferrous metals_dispatched
+        - label: _(Vehicles)
+          value: Vechiles_dispatched
         - label: _(Waste material)
           value: Waste_dispatched
         - label: _(Other)
@@ -364,15 +378,21 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(During standard business hours)
-          value: During standard business hours
+          value: During standard business hours_dispatch
         - label: _(Outside of standard business hours)
-          value: Outside of standard business hours
+          value: Outside of standard business hours_dispatch
         - label: _(Both during and outside of standard business hours)
-          value: Both during and outside of standard business hours
+          value: Both during and outside of standard business hours_dispatch
         - label: _(Seasonally)
-          value: Seasonally
+          value: Seasonally_dispatch
       name: crtical_times_dispatch_description
       optional: true
+    - prompt: _(The next series of questions ask about <strong>freight vehicle movement</strong> to and from this location, made on a monthly basis:</h5>)
+      name: movement_heading
+      optional: true
+      attrs:
+        - key: class
+          value: section-heading
     - prompt: _(On average, how many <strong>freight trips per month</strong> are made to and from this location?)
       type: text
       name: trips_vehicle
@@ -409,6 +429,12 @@ place:
           value: Dont's know
       name: vehicle_type
       optional: true
+    - prompt: _(The next series of questions ask about the <strong>fleet used to carry your freight</strong>:)
+      name: fleet_heading
+      optional: true
+      attrs:
+        - key: class
+          value: section-heading
     - prompt: _(Please <strong>choose one</strong> of the following..)
       type: select
       options:
@@ -423,7 +449,7 @@ place:
       name: location_freight_operator
       sticky: true
       optional: true
-    - prompt: _(<strong>If possible</strong>, please list the name and contact details of the freight company or companies you contract to<br><i>This information is required for Phase 2 of the Study. Company details will be kept strictly confidential.</i>)
+    - prompt: _(<strong>If possible</strong>, please list the name and contact details of the freight company or companies you contract to:<br><i>This information will be reconciled with an existing database of freight operators and will be used to survey these businesses as part of Phase 2 of the Study.</i></br>)
       type: textarea
       name: other_freight_operators
       optional: true
@@ -481,32 +507,32 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(City of Greater Bendigo)
-          value: cogb
+          value: cogb_originates
         - label: _(Regional Victoria)
-          value: regional_vic
+          value: regional_vic_originates
         - label: _(Interstate regional locations)
-          value: interstate_regional
+          value: interstate_regional_originates
         - label: _(Melbourne)
-          value: melbourne
+          value: melbourne_originates
         - label: _(Adelaide)
-          value: adelaide
+          value: adelaide_originates
         - label: _(Sydney)
-          value: sydney
+          value: sydney_originates
         - label: _(Perth)
-          value: perth
+          value: perth_originates
         - label: _(Brisbane)
-          value: brisbane
+          value: brisbane_originates
         - label: _(Canberra)
-          value: canberra
+          value: canberra_originates
         - label: _(Darwin)
-          value: darwin
+          value: darwin_originates
         - label: _(Hobart)
-          value: hobart
+          value: hobart_originates
         - label: _(Overseas)
-          value: overseas
+          value: overseas_originates
       name: underutilisation_inbound_origin
       optional: true
-    - prompt: _(Please estimate the monthly average percentage (%) of underutilised loading space <strong>your outbound vehicles</strong>?<br> <i>i.e vehicles heading <strong>out of Greater Bendigo</strong></i>)
+    - prompt: _(Please estimate the monthly average percentage (%) of underutilised loading space on <strong>your outbound vehicles</strong>?<br> <i>i.e vehicles heading <strong>out of Greater Bendigo</strong></i>)
       type: select
       options:
         - label: _(Choose One)
@@ -523,35 +549,37 @@ place:
           value: 51%-75%
         - label: _(76%-100%)
           value: 76%-100%
+        - label: _(Not applicable)
+          value: Not applicable
       name: underutilisation_outbound
       optional: true
     - prompt: _(If greater than 0%, please select cities or regions this underutilised loading space is <strong>destined for</strong>?)
       type: multi-checkbox
       checkboxes:
         - label: _(City of Greater Bendigo)
-          value: cogb
+          value: cogb_destination
         - label: _(Regional Victoria)
-          value: regional_vic
+          value: regional_vic_destination
         - label: _(Interstate regional locations)
-          value: interstate_regional
+          value: interstate_regional_destination
         - label: _(Melbourne)
-          value: melbourne
+          value: melbourne_destination
         - label: _(Adelaide)
-          value: adelaide
+          value: adelaide_destination
         - label: _(Sydney)
-          value: sydney
+          value: sydney_destination
         - label: _(Perth)
-          value: perth
+          value: perth_destination
         - label: _(Brisbane)
-          value: brisbane
+          value: brisbane_destination
         - label: _(Canberra)
-          value: canberra
+          value: canberra_destination
         - label: _(Darwin)
-          value: darwin
+          value: darwin_destination
         - label: _(Hobart)
-          value: hobart
+          value: hobart_destination
         - label: _(Overseas)
-          value: overseas
+          value: overseas_destination
       name: underutilisation_inbound_destination
       optional: true
     - prompt: _(Do you maximise your fleet’s efficiency by <strong>‘backloading’</strong>?)
@@ -578,6 +606,12 @@ place:
       name: backloading_like
       optional: true
       sticky: true
+    - prompt: _(The next series of questions ask about <strong>transport issues experienced by your own freight fleet</strong> in Greater Bendigo</i>:)
+      name: fleetissues_heading
+      optional: true
+      attrs:
+        - key: class
+          value: section-heading
     - prompt: _(Does your freight fleet experience any transport issues in the <strong>last kilometre of travel</strong> to this location?)
       type: select
       options:
@@ -608,7 +642,7 @@ place:
         - label: _(Road Safety)
           value: Road Safety
         - label: _(Other)
-          value: other
+          value: other_transportissues
       name: freight_issues
       optional: true
     - prompt: _(Does your freight fleet experience any transport issues along the Greater Bendigo <strong>designated freight route network</strong>? )
@@ -631,7 +665,13 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe)
-    - prompt: _(What type of waste is removed from this location?)
+    - prompt: _(The next series of questions ask about freight movements associated with <strong>removal of waste from this location</strong>:)
+      name: waste_heading
+      optional: true
+      attrs:
+        - key: class
+          value: section-heading
+    - prompt: _(What <strong>type of waste</strong> is removed from this location?)
       type: multi-checkbox
       checkboxes:
         - label: _(Agricultural waste)
@@ -663,10 +703,10 @@ place:
         - label: _(None)
           value: none
         - label: _(Other)
-          value: other
+          value: other_waste
       name: waste_type
       optional: true
-    - prompt: _(On average, how many times per month is waste removed? (exclusing kerbside collections))
+    - prompt: _(On average, <strong>how often</strong> is waste removed? (exclusing kerbside collections))
       type: select
       options:
         - label: _(Choose One)
@@ -691,13 +731,12 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe)
-
-
-
-
-    - prompt: _(<h4><b>Future freight opportunities</b></h4>)
-      name: strategic
+    - prompt: _(The next series of questions ask about <strong>future freight opportunities</strong>:)
+      name: opportunities_heading
       optional: true
+      attrs:
+        - key: class
+          value: section-heading
     - prompt: _(What are <strong>the improvements</strong> that would make your freight operations more productive and/or efficient?<br><i>Select as many as relevant to your business</i>)
       type: multi-checkbox
       checkboxes:

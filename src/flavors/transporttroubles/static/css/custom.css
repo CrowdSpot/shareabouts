@@ -49,6 +49,9 @@ a:visited {
   background-image: url("images/crowdspot-logo.svg");
   background-position: 0px 4px;
 }
+.small-intro-text {
+  font-size: 13px;
+}
 #site-header {
   border-top: #009640 3px solid;
   background-color: #fff;
@@ -74,6 +77,14 @@ a:visited {
   margin-right: 0;
   margin-left: 0;
 }
+@media only screen and (max-width: 60em) {
+  #pages-nav-container,
+  #language-picker {
+    padding-top: 0.5em;
+    float: none;
+    clear: both;
+  }
+}
 .access {
   font-size: 1.1em;
 }
@@ -84,6 +95,10 @@ a:visited {
   .access {
     margin: 0;
   }
+  .access.is-exposed {
+    float: none;
+    clear: both;
+  }
 }
 .access li {
   display: inline;
@@ -92,6 +107,8 @@ a:visited {
 @media only screen and (max-width: 60em) {
   .access li {
     padding-bottom: 0;
+    display: block;
+    margin-bottom: 0.5em;
   }
 }
 .access li ul {
@@ -573,6 +590,11 @@ textarea:focus {
 }
 #geocode-address-bar {
   padding: 0.5em;
+}
+@media only screen and (max-width: 60em) {
+  #geocode-address-bar {
+    margin-top: 0;
+  }
 }
 #geocode-address-bar .error {
   background-color: #f11717;
