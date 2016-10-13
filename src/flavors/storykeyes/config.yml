@@ -614,12 +614,6 @@ pages:
       - title: _(Show None)
         url: /filter/nospots
         external: true
-      - title: _(Idea Spots)
-        url: /filter/idea
-        external: true
-      - title: _(Like Spots)
-        url: /filter/like
-        external: true
       - title: _(Walk Spots)
         url: /filter/walk
         external: true
@@ -632,6 +626,9 @@ pages:
       - title: _(Car Spots)
         url: /filter/car
         external: true
+      - title: _(Like Spots)
+        url: /filter/like
+        external: true    
 
 notifications:
   on_new_place: true
