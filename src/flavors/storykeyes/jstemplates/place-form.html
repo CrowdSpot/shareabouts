@@ -80,6 +80,15 @@
         {{/checkboxes}}
       {{/is_multi_checkbox}}
 
+      {{#is_multi_radio}}
+        {{#radios}}
+          <br>
+          <input type="radio" id="multi-radio-{{value}}" name="{{../name}}" value="{{value}}">
+          <label class="multi-radio" for="multi-radio-{{value}}">{{{label}}}</label>
+        {{/radios}}
+      {{/is_multi_radio}}
+
+
       {{#if help_text }}
       <div class="help-text place-{{ name }}-help-text">{{ help_text }}</div>
       {{/if}}
