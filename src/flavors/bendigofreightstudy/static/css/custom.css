@@ -418,7 +418,7 @@ small {
   display: none;
 }
 
-.place-value-underutilisation_outbound {
+.place-value-underutilisation_outbound_destination {
   display: none;
 }
 
@@ -747,6 +747,14 @@ select {
 
 
 
+
+
+
+
+
+
+
+
 .place-form label[for=place-vehicles_ownfleet],
   .place-form [name=vehicles_ownfleet]{
   display: none;
@@ -824,6 +832,38 @@ select {
   display: none;
 }
 
+
+
+
+
+.place-form label[for=place-underutilisation_outbound],
+  .place-form [name=underutilisation_outbound]{
+  display: none;
+}
+
+.place-form label[for=place-underutilisation_outbound_destination],
+  .place-form [name=underutilisation_outbound_destination]{
+  display: none;
+}
+
+
+
+.place-form #fields-underutilisation_outbound_destination {
+  display: none;
+}
+
+
+.place-form label[for=place-location_backloading],
+  .place-form [name=location_backloading]{
+  display: none;
+}
+
+
+
+
+
+
+
 .place-form.location_freight_operator-ownfleet label[for=place-underutilisation_inbound_origin],
   .place-form.location_freight_operator-ownfleet [name=underutilisation_inbound_origin] {
   display: block;
@@ -846,19 +886,29 @@ select {
 
 
 
-.place-form label[for=place-underutilisation_outbound],
-  .place-form [name=underutilisation_outbound]{
-  display: none;
+
+.place-form.location_freight_operator-ownfleet label[for=place-underutilisation_outbound_destination],
+  .place-form.location_freight_operator-ownfleet [name=underutilisation_outbound_destination] {
+  display: block;
 }
 
-.place-form label[for=place-underutilisation_inbound_destination],
-  .place-form [name=underutilisation_inbound_destination]{
-  display: none;
+.place-form.location_freight_operator-ownfleet #fields-underutilisation_outbound_destination {
+  display: block;
 }
 
-.place-form #fields-underutilisation_inbound_destination {
-  display: none;
+.place-form.location_freight_operator-both_ownandother label[for=place-underutilisation_outbound_destination],
+  .place-form.location_freight_operator-both_ownandother [name=underutilisation_outbound_destination] {
+  display: block;
 }
+
+.place-form.location_freight_operator-both_ownandother #fields-underutilisation_outbound_destination {
+  display: block;
+}
+
+
+
+
+
 
 
 .place-form.location_freight_operator-ownfleet label[for=place-underutilisation_inbound_destination],
@@ -884,6 +934,9 @@ select {
 
 
 
+
+
+
 .place-form.location_freight_operator-both_ownandother label[for=place-underutilisation_inbound],
   .place-form.location_freight_operator-both_ownandother [name=underutilisation_inbound] {
   display: block;
@@ -903,6 +956,33 @@ select {
   .place-form.location_freight_operator-ownfleet [name=underutilisation_outbound] {
   display: block;
 }
+
+
+
+
+
+
+.place-form.location_freight_operator-both_ownandother label[for=place-location_backloading],
+  .place-form.location_freight_operator-both_ownandother [name=location_backloading] {
+  display: block;
+}
+
+.place-form.location_freight_operator-ownfleet label[for=place-location_backloading],
+  .place-form.location_freight_operator-ownfleet [name=location_backloading] {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
