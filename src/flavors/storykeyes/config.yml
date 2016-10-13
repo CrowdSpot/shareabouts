@@ -340,6 +340,16 @@ place:
   location_item_name: location
 
   items:
+    - prompt: _(What time does this experience relate to?)
+      type: multi-radio
+      name: time
+      radios:
+        - label: _(Day Spot)
+          value: day
+        - label: _(Night Spot)
+          value: night
+        - label: _(Any time)
+          value: anytime
     - prompt: _(What is the name of this spot? <span class="required">(required)</span>)
       type: text
       name: name
