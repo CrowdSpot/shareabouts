@@ -82,10 +82,9 @@
 
       {{#is_multi_radio}}
         {{#radios}}
-          <div class="multi-radio-container">
-            <input type="radio" id="multi-radio-{{value}}" name="{{../name}}" value="{{value}}">
-            <label class="multi-radio" for="multi-radio-{{value}}">{{{label}}}</label>
-          </div>
+          <br>
+          <input type="radio" id="multi-radio-{{value}}" name="{{../name}}" value="{{value}}">
+          <label class="multi-radio" for="multi-radio-{{value}}">{{{label}}}</label>
         {{/radios}}
       {{/is_multi_radio}}
 
