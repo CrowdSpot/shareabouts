@@ -76,7 +76,7 @@
                 {{#is_multi_checkbox}}
                   <span class="multi-checkboxes multi-checkbox-{{ name }}">
                   {{#checkboxes}}
-                    <input type="checkbox" id="multi-checkbox-{{value}}" name="{{value}}" value="1">
+                    <input type="checkbox" id="multi-checkbox-{{value}}" name="{{value}}" value="{{value}}" {{#attrs}} {{ key }}="{{ value }}"{{/attrs}}>
                     <label class="multi-checkbox" for="multi-checkbox-{{value}}">{{{label}}}</label>
                   {{/checkboxes}}
                 </span>
@@ -85,7 +85,7 @@
                 {{#is_multi_radio}}
                   <span class="multi-radios multi-radio-{{name}}">
                   {{#radios}}
-                    <input type="radio" id="multi-radio-{{value}}" name="{{../name}}" value="{{value}}">
+                    <input type="radio" id="multi-radio-{{value}}" name="{{../name}}" value="{{value}}" {{#attrs}} {{ key }}="{{ value }}"{{/attrs}}>
                     <label class="multi-radio" for="multi-radio-{{value}}">{{{label}}}</label>
                   {{/radios}}
                   </span>

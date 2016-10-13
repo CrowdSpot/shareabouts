@@ -168,15 +168,30 @@ place:
     - prompt: _(What time of day do you feel like this here?)
       type: multi-radio
       name: time
-      attrs:
-        - key: required
+      optional: false
       radios:
         - label: _(Day)
           value: Day
+          attrs:
+          - key: oninvalid
+            value: this.setCustomValidity('Select a Time')
+          - key: onchange
+            value: this.setCustomValidity('')
         - label: _(Night)
           value: Night
+          attrs:
+            - key: required
+            - key: oninvalid
+              value: this.setCustomValidity('Select a Time')
+            - key: onchange
+              value: this.setCustomValidity('')
         - label: _(Anytime)
           value: Anytime
+          attrs:
+            - key: oninvalid
+              value: this.setCustomValidity('Select a Time')
+            - key: onchange
+              value: this.setCustomValidity('')
     - prompt: _(Please tell us more about this spot if you want. This could be a story or experience you might like to share. Also, if you have any <strong>ideas</strong> to improve this spot, please decribe them below.)
       type: textarea
       name: description
@@ -202,6 +217,12 @@ place:
           value: _(Type here...)
         - key: size
           value: 30
+        - key: pattern
+          value: ^([1-9][0-9])$
+        - key: oninvalid
+          value: this.setCustomValidity('Check your age')
+        - key: onchange
+          value: this.setCustomValidity('')
     - prompt: _(Your gender)
       type: text
       name: gender
