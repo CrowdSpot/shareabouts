@@ -1,6 +1,6 @@
-        {{> place-detail-promotion-bar }}
+        <div class="place-detail-promotional-bar {{location_type_class}}">{{> place-detail-promotion-bar }}</div>
 
-        <header class="place-header clearfix">
+        <header class="place-header {{location_type_class}} clearfix">
           {{#if thanks}}
 
             <h3 class="thanks">Thank you for sharing your Spot!</h3>
@@ -76,6 +76,6 @@
 
         {{#unless thanks}}
         {{#if survey_config}}
-        <section class="survey" id="survey"></section>
+        <section class="survey {{location_type_class}}" id="survey"></section>
         {{/if}}
         {{/unless}}
