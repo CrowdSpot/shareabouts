@@ -592,6 +592,16 @@ label small {
   font-size: 2em;
   vertical-align: middle;
 }
+.freespot .place-item-happy_feel,
+.freespot .place-item-sad_feel,
+.freespot .place-item-time {
+  display: none;
+}
+.freespot.survey,
+.freespot.place-detail-promotional-bar,
+.freespot.place-header {
+  display: none;
+}
 @-webkit-keyframes show-form-warnings {
   0% {
     display: block;
