@@ -500,6 +500,20 @@ label small {
   text-align: center;
   margin-bottom: 1em;
 }
+.text input,
+.email input,
+.text textarea,
+.email textarea {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.text #place-age,
+.email #place-age,
+.text #place-gender,
+.email #place-gender {
+  max-width: 160px;
+}
 .place-form input[type=text],
 .place-form input[type=email],
 .place-form textarea {
@@ -957,7 +971,7 @@ textarea:focus {
           animation: hideHappyEmojis 0.5s ease-in-out forwards;
 }
 #fields-time {
-  margin-top: 24em;
+  margin-top: 26em;
 }
 @media only screen and (min-width: 400px) {
   #fields-time {
