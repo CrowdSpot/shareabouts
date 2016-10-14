@@ -1089,8 +1089,6 @@ textarea:focus {
   position: relative;
   width: 1px;
   height: 1px;
-  -webkit-transform: translateX(55px) translateY(100px);
-          transform: translateX(55px) translateY(100px);
 }
 .multi-radios input[type=radio]:checked +label.multi-radio:after {
   opacity: 1;
@@ -1105,12 +1103,12 @@ textarea:focus {
 }
 @media only screen {
   .multi-radios label.multi-radio {
-    width: 50%;
+    width: 49%;
   }
 }
 @media only screen and (min-width: 300px) {
   .multi-radios label.multi-radio {
-    width: 33.333333333333336%;
+    width: 32.333333333333336%;
   }
 }
 @media only screen and (min-width: 400px) {
