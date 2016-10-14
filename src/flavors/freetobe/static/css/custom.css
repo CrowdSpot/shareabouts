@@ -564,6 +564,11 @@ label small {
 .place-value-happy_feel {
   display: none;
 }
+.required-field-label {
+  color: #ef008c;
+  font-size: 2em;
+  vertical-align: middle;
+}
 @-webkit-keyframes show-form-warnings {
   0% {
     display: block;
