@@ -326,11 +326,14 @@ pages:
       - title: _(Show All)
         url: /filter/all
         external: true
-      - title: _(Safe Spots)
-        url: /filter/safe
+      - title: _(Happy Spots)
+        url: /filter/happy
         external: true
-      - title: _(Unsafe Spots)
-        url: /filter/unsafe
+      - title: _(Sad Spots)
+        url: /filter/sad
+        external: true
+      - title: _(Free Spots)
+        url: /filter/freespot
         external: true
 
 

@@ -569,6 +569,13 @@ label small {
   -webkit-animation: showFormElements 0.3s ease-in-out forwards;
           animation: showFormElements 0.3s ease-in-out forwards;
 }
+.place-form.sad .email:after {
+  content: "If sharing this experience has been upsetting in any way, here are some people you can talk to: Your GP; 1800 Respect: 1800 737 732; Centre Against Sexual Assault: 03 9635 3610; Kids Helpline: 1800 55 1800. To report something that has happened, call the Police on 000.";
+  display: block;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 .place-value-description:before {
   content: "Description: ";
 }
