@@ -494,7 +494,8 @@ label small {
 .multi-checkbox label,
 .multi-radio label,
 .textarea label,
-.text label {
+.text label,
+.email label {
   display: block;
   text-align: center;
   margin-bottom: 1em;
