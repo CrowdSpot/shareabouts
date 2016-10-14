@@ -93,6 +93,32 @@ place_types:
           iconAnchor: [23, 63]
           shadowSize: [60, 32]
           shadowAnchor: [0, 32]
+  freespot:
+    index: 2
+    label: _(Free Spot)
+    rules:
+
+      - condition: '"{{location_type}}" === "freespot" && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/plan-marker-free.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [27, 37]
+          iconAnchor: [12, 40]
+          shadowSize: [34, 17]
+          shadowAnchor: [0, 21]
+
+      - condition: '"{{location_type}}" === "freespot" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/plan-marker-free.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [46, 63]
+          iconAnchor: [23, 63]
+          shadowSize: [60, 32]
+          shadowAnchor: [0, 32]
 
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
@@ -107,7 +133,7 @@ place:
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(How do you feel at this location?)
+  title: _(Tell us about this spot)
   action_text: _(added)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
@@ -124,7 +150,7 @@ place:
     #     - key: size
     #       value: 30
     #     - key: required
-    - prompt: _(Is this a Happy or Sad Spot?)
+    - prompt: _(How do you feel here?)
       type: multi-radio
       name: location_type
       attrs:
@@ -135,6 +161,8 @@ place:
           value: happy
         - label: _(Sad)
           value: sad
+        - label: _(Free Spot)
+          value: freespot
     - prompt: _(How do you feel at this Happy Spot?<br><i>Select as many as you like</i>)
       type: multi-checkbox
       name: happy_feel
@@ -165,7 +193,7 @@ place:
           value: disgust
         - label: _(Creepy)
           value: creepy
-    - prompt: _(What time of day do you feel like this here?)
+    - prompt: _(What time do you feel like this here?)
       type: multi-radio
       name: time
       optional: false
@@ -173,25 +201,15 @@ place:
         - label: _(Day)
           value: Day
           attrs:
-          - key: oninvalid
-            value: this.setCustomValidity('Select a Time')
-          - key: onchange
-            value: this.setCustomValidity('')
+            - key: required
+            - key: oninvalid
+              value: this.setCustomValidity('Select a Time')
+            - key: onchange
+              value: this.setCustomValidity('')
         - label: _(Night)
           value: Night
-          attrs:
-          - key: required
-          - key: oninvalid
-            value: this.setCustomValidity('Select a Time')
-          - key: onchange
-            value: this.setCustomValidity('')
         - label: _(Anytime)
           value: Anytime
-          attrs:
-          - key: oninvalid
-            value: this.setCustomValidity('Select a Time')
-          - key: onchange
-            value: this.setCustomValidity('')
     - prompt: _(Please tell us more about this spot if you want. This could be a story or experience you might like to share. Also, if you have any <strong>ideas</strong> to improve this spot, please decribe them below.)
       type: textarea
       name: description
@@ -199,7 +217,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Please describe...)
-    - prompt: _(You can add an image of this spot if you have one)
+    - prompt: _(You can add an image of this spot. You can upload it from your phone.)
       inputfile_label: _(Add Image)
       type: file
       name: my_image
@@ -211,29 +229,35 @@ place:
       type: text
       name: age
       sticky: true
-      optional: true
+      optional: false
       attrs:
         - key: placeholder
           value: _(Type here...)
         - key: size
           value: 30
+        - key: required
         - key: pattern
           value: ^([1-9][0-9])$
         - key: oninvalid
-          value: this.setCustomValidity('Check your age')
+          value: this.setCustomValidity('Check your age. This field is required and must be between 0 and 99.')
         - key: onchange
           value: this.setCustomValidity('')
     - prompt: _(Your gender)
       type: text
       name: gender
       sticky: true
-      optional: true
+      optional: false
       attrs:
+        - key: required
         - key: placeholder
           value: _(Type here...)
         - key: size
           value: 30
-    - prompt: _(Your name or username)
+        - key: oninvalid
+          value: this.setCustomValidity('Your gender is required.')
+        - key: onchange
+          value: this.setCustomValidity('')
+    - prompt: _(Your name)
       type: text
       name: submitter_name
       sticky: true
@@ -243,8 +267,8 @@ place:
           value: _(This name will be visible)
         - key: size
           value: 30
-    - prompt: _(Please type your email below)
-      type: text
+    - prompt: _(Please give us your email address to keep up to date with how your stories are used. We will keep it private.)
+      type: email
       sticky: true
       name: private-submitter_email
       optional: true
@@ -253,6 +277,10 @@ place:
           value: _(Email address)
         - key: size
           value: 30
+        - key: oninvalid
+          value: this.setCustomValidity('Please check your email.')
+        - key: onchange
+          value: this.setCustomValidity('')
 
 survey:
   submission_type: comments

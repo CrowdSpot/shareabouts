@@ -25,7 +25,7 @@
                   <label for="place-{{ name }}">{{{ prompt }}} {{# optional }}<small>({{#_}}optional{{/_}})</small>{{/ optional }}</label>
                   {{/is_submitter_name}}
                 {{^}}
-                <label for="place-{{ name }}">{{{ prompt }}} {{# optional }}<small>({{#_}}optional{{/_}})</small>{{/ optional }}</label>
+                <label for="place-{{ name }}">{{{ prompt }}} {{# optional }}<small>({{#_}}optional{{/_}})</small>{{/ optional }}{{#if optional }}{{else}}<span class="required-field-label">*</span>{{/if}}</label>
                 {{/is_authenticated}}
 
 

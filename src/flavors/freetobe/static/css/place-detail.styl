@@ -108,11 +108,21 @@ label
 			display block
 			margin 1em 0
 
-.multi-checkbox, .multi-radio, .textarea, .text
+.multi-checkbox, .multi-radio, .textarea, .text, .email
 	label
 		display block
 		text-align center
 		margin-bottom 1em
+
+.text, .email
+
+	input, textarea
+		max-width 400px
+		margin-left auto
+		margin-right auto
+
+	#place-age, #place-gender
+		max-width 160px
 
 .place-form
 	input[type=text], input[type=email], textarea
@@ -131,7 +141,7 @@ label
 	#fields-time, #fields-description, #fields-my_image, #fields-age, #fields-gender, #fields-description_ideas, #fields-submitter_name, #fields-private-submitter_email, #save-place-btn
 		display none
 
-	&.happy, &.sad
+	&.happy, &.sad, &.freespot
 		#fields-time, #fields-description, #fields-my_image, #fields-age, #fields-gender, #fields-description_ideas, #fields-submitter_name, #fields-private-submitter_email, #save-place-btn
 			display block
 			animation showFormElements 0.3s ease-in-out forwards
@@ -162,3 +172,8 @@ label
 
 .place-item-age, .place-item-gender, .place-value-sad_feel, .place-value-happy_feel
 	display none
+
+.required-field-label
+	color #EF008C
+	font-size 2em
+	vertical-align middle

@@ -11,7 +11,7 @@
     position relative
     width 1px
     height 1px
-    transform translateX(55px) translateY(100px)
+    // transform translateX(55px) translateY(100px)
 
     &:checked
 
@@ -29,10 +29,10 @@
     position relative
 
     +above('xs')
-      width (100/2)%
+      width ((100/2) - 1)%
 
     +above(300px)
-      width (100/3)%
+      width ((100/3) - 1)%
 
     +above('s')
       margin 0.5em 2.5%
@@ -79,6 +79,9 @@
 
     &[for=multi-radio-sad]:before
       background-image url('images/emojis/emoji-sad.svg')
+
+    &[for=multi-radio-freespot]:before
+      background-image url('images/markers/plan-marker-free.svg')
 
     &[for=multi-radio-Day]:before
       background-image url('images/emojis/emoji-day.svg')
