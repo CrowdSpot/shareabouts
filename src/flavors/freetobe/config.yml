@@ -93,6 +93,32 @@ place_types:
           iconAnchor: [23, 63]
           shadowSize: [60, 32]
           shadowAnchor: [0, 32]
+  freespot:
+    index: 2
+    label: _(Free Spot)
+    rules:
+
+      - condition: '"{{location_type}}" === "freespot" && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/plan-marker-free.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [27, 37]
+          iconAnchor: [12, 40]
+          shadowSize: [34, 17]
+          shadowAnchor: [0, 21]
+
+      - condition: '"{{location_type}}" === "freespot" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/plan-marker-free.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [46, 63]
+          iconAnchor: [23, 63]
+          shadowSize: [60, 32]
+          shadowAnchor: [0, 32]
 
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
@@ -135,6 +161,8 @@ place:
           value: happy
         - label: _(Sad)
           value: sad
+        - label: _(Free Spot)
+          value: freespot
     - prompt: _(How do you feel at this Happy Spot?<br><i>Select as many as you like</i>)
       type: multi-checkbox
       name: happy_feel

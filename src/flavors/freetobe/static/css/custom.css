@@ -540,22 +540,31 @@ label small {
 }
 .place-form.happy #fields-time,
 .place-form.sad #fields-time,
+.place-form.freespot #fields-time,
 .place-form.happy #fields-description,
 .place-form.sad #fields-description,
+.place-form.freespot #fields-description,
 .place-form.happy #fields-my_image,
 .place-form.sad #fields-my_image,
+.place-form.freespot #fields-my_image,
 .place-form.happy #fields-age,
 .place-form.sad #fields-age,
+.place-form.freespot #fields-age,
 .place-form.happy #fields-gender,
 .place-form.sad #fields-gender,
+.place-form.freespot #fields-gender,
 .place-form.happy #fields-description_ideas,
 .place-form.sad #fields-description_ideas,
+.place-form.freespot #fields-description_ideas,
 .place-form.happy #fields-submitter_name,
 .place-form.sad #fields-submitter_name,
+.place-form.freespot #fields-submitter_name,
 .place-form.happy #fields-private-submitter_email,
 .place-form.sad #fields-private-submitter_email,
+.place-form.freespot #fields-private-submitter_email,
 .place-form.happy #save-place-btn,
-.place-form.sad #save-place-btn {
+.place-form.sad #save-place-btn,
+.place-form.freespot #save-place-btn {
   display: block;
   -webkit-animation: showFormElements 0.3s ease-in-out forwards;
           animation: showFormElements 0.3s ease-in-out forwards;
@@ -1186,6 +1195,9 @@ textarea:focus {
 }
 .multi-radios label.multi-radio[for=multi-radio-sad]:before {
   background-image: url("images/emojis/emoji-sad.svg");
+}
+.multi-radios label.multi-radio[for=multi-radio-freespot]:before {
+  background-image: url("images/markers/plan-marker-free.svg");
 }
 .multi-radios label.multi-radio[for=multi-radio-Day]:before {
   background-image: url("images/emojis/emoji-day.svg");
