@@ -975,7 +975,8 @@ textarea:focus {
   transition: opacity 0.2s ease-in-out;
 }
 .place-form.happy #fields-location_type:after,
-.place-form.sad #fields-location_type:after {
+.place-form.sad #fields-location_type:after,
+.place-form.freespot #fields-location_type:after {
   opacity: 0;
 }
 .place-form.happy #fields-happy_feel {
