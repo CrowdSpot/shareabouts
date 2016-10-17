@@ -644,8 +644,8 @@ place:
     - prompt: _(Please select your fleet transport issues<br><i>Select as many as relevant to your business</i>)
       type: multi-checkbox
       checkboxes:
-        - label: _(Access for larger vehicles)
-          value: Access for larger vehicles
+        - label: _(Access)
+          value: Access
         - label: _(Inadequate loading zones)
           value: Inadequate loading zones
         - label: _(Inadequate parking)
@@ -759,6 +759,8 @@ place:
     - prompt: _(What are <strong>the improvements</strong> that would make your freight operations more productive and/or efficient?<br><i>Select as many as relevant to your business</i>)
       type: multi-checkbox
       checkboxes:
+        - label: _(Access for larger vehicles)
+          value: Access for larger vehicles
         - label: _(Alternative fuel stations (CNG, Electric vehicle charging / changeover))
           value: alternative fuel stations
         - label: _(Autonomous vehicles)
