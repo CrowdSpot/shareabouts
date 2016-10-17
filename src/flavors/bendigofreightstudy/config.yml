@@ -215,7 +215,7 @@ place:
     - prompt: _(Please select the 'types of freight' <strong>received</strong> at this location?<br><i>Select as many as relevant to your business</i>)
       type: multi-checkbox
       checkboxes:
-        - label: _(Buidling/Contruction Products)
+        - label: _(Buidling/Contruction products)
           value: Buidlingproducts_received
         - label: _(Dangerous goods)
           value: Dangerous goods_received
@@ -225,7 +225,7 @@ place:
           value: Food(Non-refrigerated products)_received
         - label: _(Food and beverage (Refrigerated))
           value: Foodrefrigerated_received
-        - label: _(General Freight)
+        - label: _(General freight)
           value: General Freight_received
         - label: _(Grain/Fodder/Fertilizer)
           value: Grain / Fodder/fertilizer_received
@@ -235,7 +235,7 @@ place:
           value: Quarry and mining products_received
         - label: _(Other bulk freight )
           value: Other bulk freight_received
-        - label: _(Sensitive Freight)
+        - label: _(Sensitive freight)
           value: Sensitive Freight_received
         - label: _(Steel and non-ferrous metals)
           value: Steel and non-ferrous metals_received
@@ -252,24 +252,28 @@ place:
       checkboxes:
         - label: _(City of Greater Bendigo)
           value: cogb_origin
-        - label: _(Regional Victoria)
-          value: regional_vic_origin
-        - label: _(Other mainland regional locations)
-          value: othermainland_regional_origin
         - label: _(Melbourne)
           value: melbourne_origin
-        - label: _(Adelaide)
-          value: adelaide_origin
-        - label: _(Sydney)
-          value: sydney_origin
-        - label: _(Perth)
-          value: perth_origin
-        - label: _(Brisbane)
-          value: brisbane_origin
-        - label: _(Canberra)
-          value: canberra_origin
-        - label: _(Darwin)
-          value: darwin_origin
+        - label: _(Northern Victoria)
+          value: northernvic_origin
+        - label: _(Southern Victoria)
+          value: southernvic_origin
+        - label: _(Western Victoria (includes Geelong))
+          value: westernvic_origin
+        - label: _(Eastern Vic)
+          value: easternvic_origin
+        - label: _(South Australia)
+          value: sa_origin
+        - label: _(New South Wales)
+          value: nsw_origin
+        - label: _(Western Australia)
+          value: wa_origin
+        - label: _(Queensland)
+          value: qld_origin
+        - label: _(Australian Capital Territory)
+          value: act_origin
+        - label: _(Northern Territory)
+          value: nt_origin
         - label: _(Tasmania)
           value: Tasmania_origin
         - label: _(Overseas)
@@ -303,7 +307,7 @@ place:
     - prompt: _(Please select the 'types of freight' <strong>dispatched</strong> from this location?<br><i>Select as many as relevant to your business</i>)
       type: multi-checkbox
       checkboxes:
-        - label: _(Buidling/Contruction Products)
+        - label: _(Buidling/Contruction products)
           value: Buidlingproducts_dispatched
         - label: _(Dangerous goods)
           value: Dangerous goods_dispatched
@@ -313,7 +317,7 @@ place:
           value: Food(Non-refrigerated products)_dispatched
         - label: _(Food and beverage (Refrigerated))
           value: Foodrefrigerated_dispatched
-        - label: _(General Freight)
+        - label: _(General freight)
           value: General Freight_dispatched
         - label: _(Grain/Fodder/Fertilizer)
           value: Grain / Fodder/fertilizer_dispatched
@@ -323,7 +327,7 @@ place:
           value: Quarry and mining products_dispatched
         - label: _(Other bulk freight )
           value: Other bulk freight_dispatched
-        - label: _(Sensitive Freight)
+        - label: _(Sensitive freight)
           value: Sensitive Freight_dispatched
         - label: _(Steel and non-ferrous metals)
           value: Steel and non-ferrous metals_dispatched
@@ -339,30 +343,34 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(City of Greater Bendigo)
-          value: cogb
-        - label: _(Regional Victoria)
-          value: regional_vic
-        - label: _(Other mainland regional locations)
-          value: othermainland_regional
+          value: cogb_destination
         - label: _(Melbourne)
-          value: melbourne
-        - label: _(Adelaide)
-          value: adelaide
-        - label: _(Sydney)
-          value: sydney
-        - label: _(Perth)
-          value: perth
-        - label: _(Brisbane)
-          value: brisbane
-        - label: _(Canberra)
-          value: canberra
-        - label: _(Darwin)
-          value: darwin
+          value: melbourne_destination
+        - label: _(Northern Victoria)
+          value: northernvic_destination
+        - label: _(Southern Victoria)
+          value: southernvic_destination
+        - label: _(Western Victoria (includes Geelong))
+          value: westernvic_destination
+        - label: _(Eastern Vic)
+          value: easternvic_destination
+        - label: _(South Australia)
+          value: sa_destination
+        - label: _(New South Wales)
+          value: nsw_destination
+        - label: _(Western Australia)
+          value: wa_destination
+        - label: _(Queensland)
+          value: qld_destination
+        - label: _(Australian Capital Territory)
+          value: act_destination
+        - label: _(Northern Territory)
+          value: nt_destination
         - label: _(Tasmania)
-          value: Tasmania
+          value: Tasmania_destination
         - label: _(Overseas)
-          value: overseas
-      name: outbound_origin
+          value: overseas_destination
+      name: outbound_destination
       optional: true
     - prompt: _(Are there critical times the business must <strong>dispatch</strong> this freight?)
       type: select
@@ -509,26 +517,30 @@ place:
       checkboxes:
         - label: _(City of Greater Bendigo)
           value: cogb_underutilised_origin
-        - label: _(Regional Victoria)
-          value: regional_vic_underutilised_origin
-        - label: _(Other mainland regional locations)
-          value: othermainland_regional_underutilised_origin
         - label: _(Melbourne)
           value: melbourne_underutilised_origin
-        - label: _(Adelaide)
-          value: adelaide_underutilised_origin
-        - label: _(Sydney)
-          value: sydney_underutilised_origin
-        - label: _(Perth)
-          value: perth_underutilised_origin
-        - label: _(Brisbane)
-          value: brisbane_underutilised_origin
-        - label: _(Canberra)
-          value: canberra_underutilised_origin
-        - label: _(Darwin)
-          value: darwin_underutilised_origin
+        - label: _(Northern Victoria)
+          value: northernvic_underutilised_origin
+        - label: _(Southern Victoria)
+          value: southernvic_underutilised_origin
+        - label: _(Western Victoria (includes Geelong))
+          value: westernvic_underutilised_origin
+        - label: _(Eastern Vic)
+          value: easternvic_underutilised_origin
+        - label: _(South Australia)
+          value: sa_underutilised_origin
+        - label: _(New South Wales)
+          value: nsw_underutilised_origin
+        - label: _(Western Australia)
+          value: wa_underutilised_origin
+        - label: _(Queensland)
+          value: qld_underutilised_origin
+        - label: _(Australian Capital Territory)
+          value: act_underutilised_origin
+        - label: _(Northern Territory)
+          value: nt_underutilised_origin
         - label: _(Tasmania)
-          value: tasmania_underutilised_origin
+          value: Tasmania_underutilised_origin
         - label: _(Overseas)
           value: overseas_underutilised_origin
       name: underutilisation_inbound_origin
@@ -558,29 +570,33 @@ place:
       type: multi-checkbox
       checkboxes:
         - label: _(City of Greater Bendigo)
-          value: cogb_underutilisation_destination
-        - label: _(Regional Victoria)
-          value: regional_vic_underutilisation_destination
-        - label: _(Other mainland regional locations)
-          value: othermainland_regional_underutilisation_destination
+          value: cogb_underutilised_destination
         - label: _(Melbourne)
-          value: melbourne_underutilisation_destination
-        - label: _(Adelaide)
-          value: adelaide_underutilisation_destination
-        - label: _(Sydney)
-          value: sydney_underutilisation_destination
-        - label: _(Perth)
-          value: perth_underutilisation_destination
-        - label: _(Brisbane)
-          value: brisbane_underutilisation_destination
-        - label: _(Canberra)
-          value: canberra_underutilisation_destination
-        - label: _(Darwin)
-          value: darwin_underutilisation_destination
+          value: melbourne_underutilised_destination
+        - label: _(Northern Victoria)
+          value: northernvic_underutilised_destination
+        - label: _(Southern Victoria)
+          value: southernvic_underutilised_destination
+        - label: _(Western Victoria (includes Geelong))
+          value: westernvic_underutilised_destination
+        - label: _(Eastern Vic)
+          value: easternvic_underutilised_destination
+        - label: _(South Australia)
+          value: sa_underutilised_destination
+        - label: _(New South Wales)
+          value: nsw_underutilised_destination
+        - label: _(Western Australia)
+          value: wa_underutilised_destination
+        - label: _(Queensland)
+          value: qld_underutilised_destination
+        - label: _(Australian Capital Territory)
+          value: act_underutilised_destination
+        - label: _(Northern Territory)
+          value: nt_underutilised_destination
         - label: _(Tasmania)
-          value: tasmania_underutilisation_destination
+          value: Tasmania_underutilised_destination
         - label: _(Overseas)
-          value: overseas_underutilisation_destination
+          value: overseas_underutilised_destination
       name: underutilisation_outbound_destination
       optional: true
     - prompt: _(Do you maximise your fleet’s efficiency by <strong>‘backloading’</strong>?)
@@ -628,8 +644,8 @@ place:
     - prompt: _(Please select your fleet transport issues<br><i>Select as many as relevant to your business</i>)
       type: multi-checkbox
       checkboxes:
-        - label: _(Access)
-          value: Access
+        - label: _(Access for larger vehicles)
+          value: Access for larger vehicles
         - label: _(Inadequate loading zones)
           value: Inadequate loading zones
         - label: _(Inadequate parking)
