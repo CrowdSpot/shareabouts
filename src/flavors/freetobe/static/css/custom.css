@@ -609,6 +609,9 @@ label small {
 .freespot.place-detail-promotional-bar {
   display: none;
 }
+.freespot .place-item-attachment {
+  margin-bottom: 1em;
+}
 @-webkit-keyframes show-form-warnings {
   0% {
     display: block;
