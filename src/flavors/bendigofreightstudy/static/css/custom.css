@@ -418,6 +418,14 @@ small {
   display: none;
 }
 
+.place-value-underutilisation_inbound_origin {
+  display: none;
+}
+
+.place-value-underutilisation_outbound {
+  display: none;
+}
+
 .place-value-underutilisation_outbound_destination {
   display: none;
 }
@@ -431,18 +439,6 @@ small {
 }
 
 .place-value-waste_remove_frequency {
-  display: none;
-}
-
-.place-value-location_efficient_option1 {
-  display: none;
-}
-
-.place-value-location_efficient_option2 {
-  display: none;
-}
-
-.place-value-location_efficient_option3 {
   display: none;
 }
 
@@ -612,21 +608,21 @@ select {
 
 
 
-.place-form label[for=place-outbound_origin],
-  .place-form [name=outbound_origin]{
+.place-form label[for=place-outbound_destination],
+  .place-form [name=outbound_destination]{
   display: none;
 }
 
-.place-form #fields-outbound_origin {
+.place-form #fields-outbound_destination {
   display: none;
 }
 
-.place-form.location_receivedispatch-dispatch label[for=place-outbound_origin],
-  .place-form.location_receivedispatch-dispatch [name=outbound_origin] {
+.place-form.location_receivedispatch-dispatch label[for=place-outbound_destination],
+  .place-form.location_receivedispatch-dispatch [name=outbound_destination] {
   display: block;
 }
 
-.place-form.location_receivedispatch-dispatch #fields-outbound_origin {
+.place-form.location_receivedispatch-dispatch #fields-outbound_destination {
   display: block;
 }
 
@@ -660,12 +656,12 @@ select {
   display: block;
 }
 
-.place-form.location_receivedispatch-bothreceivedispatch label[for=place-outbound_origin],
-  .place-form.location_receivedispatch-bothreceivedispatch [name=outbound_origin] {
+.place-form.location_receivedispatch-bothreceivedispatch label[for=place-outbound_destination],
+  .place-form.location_receivedispatch-bothreceivedispatch [name=outbound_destination] {
   display: block;
 }
 
-.place-form.location_receivedispatch-bothreceivedispatch #fields-outbound_origin {
+.place-form.location_receivedispatch-bothreceivedispatch #fields-outbound_destination {
   display: block;
 }
 
