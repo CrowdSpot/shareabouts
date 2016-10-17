@@ -141,15 +141,15 @@ place:
   location_item_name: location
 
   items:
-    - prompt: _(What is the name of this spot?)
-      type: text
-      name: name
-      attrs:
-        - key: placeholder
-          value: _(Spot name ...)
-        - key: size
-          value: 30
-        - key: required
+    # - prompt: _(What is the name of this spot?)
+    #   type: text
+    #   name: name
+    #   attrs:
+    #     - key: placeholder
+    #       value: _(Spot name ...)
+    #     - key: size
+    #       value: 30
+    #     - key: required
     - prompt: _(How do you feel here?)
       type: multi-radio
       name: location_type
@@ -161,8 +161,8 @@ place:
           value: happy
         - label: _(Sad)
           value: sad
-        - label: _(Free Spot)
-          value: freespot
+        # - label: _(Free Spot)
+        #   value: freespot
     - prompt: _(How do you feel at this Happy Spot?<br><i>Select as many as you like</i>)
       type: multi-checkbox
       name: happy_feel
