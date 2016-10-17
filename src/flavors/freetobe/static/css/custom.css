@@ -601,12 +601,12 @@ label small {
 }
 .freespot .place-item-happy_feel,
 .freespot .place-item-sad_feel,
-.freespot .place-item-time {
+.freespot .place-item-time,
+.freespot .place-submission-details {
   display: none;
 }
 .freespot.survey,
-.freespot.place-detail-promotional-bar,
-.freespot.place-header {
+.freespot.place-detail-promotional-bar {
   display: none;
 }
 @-webkit-keyframes show-form-warnings {
