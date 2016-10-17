@@ -406,7 +406,7 @@ a.leaflet-control-layers-toggle:before,
 .btn-primary:visited:hover,
 .btn-primary:link:hover {
   background-color: #ff5cbc;
-  color: #243c4b;
+  color: #fff;
 }
 .place-title {
   margin-top: 3em;
