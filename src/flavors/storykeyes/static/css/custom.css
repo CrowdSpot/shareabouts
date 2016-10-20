@@ -345,8 +345,8 @@ small {
   display: none;
 }
 
-.place-form.walk label[for=place-location_walk_issue],
-  .place-form.walk [name=location_walk_issue] {
+.place-form.pedestrian label[for=place-location_walk_issue],
+  .place-form.pedestrian [name=location_walk_issue] {
   display: block;
 }
 
@@ -356,8 +356,8 @@ small {
   display: none;
 }
 
-.place-form.bike label[for=place-location_bike_issue],
-  .place-form.bike [name=location_bike_issue] {
+.place-form.bicycle label[for=place-location_bike_issue],
+  .place-form.bicycle [name=location_bike_issue] {
   display: block;
 }
 
@@ -367,8 +367,8 @@ small {
   display: none;
 }
 
-.place-form.bus label[for=place-location_bus_issue],
-  .place-form.bus [name=location_bus_issue] {
+.place-form.buses label[for=place-location_bus_issue],
+  .place-form.buses [name=location_bus_issue] {
   display: block;
 }
 

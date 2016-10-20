@@ -94,11 +94,11 @@ place_types:
           iconSize: [85, 41]
           shadowSize: [85, 41]
           iconAnchor: [42, 42]
-  walk:
+  pedestrian:
     index: 1
-    label: _(Walking Issue Spot)
+    label: _(Pedestrian Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "walk" && {{map.zoom}} < 14 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "pedestrian" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
         style:
           color: '#FF1609'
@@ -107,7 +107,7 @@ place_types:
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "walk" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "pedestrian" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -125,11 +125,11 @@ place_types:
           iconSize: [85, 41]
           shadowSize: [85, 41]
           iconAnchor: [42, 42]
-  bike:
+  bicycle:
     index: 2
     label: _(Bike Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "bike" && {{map.zoom}} < 14 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "bicycle" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -139,7 +139,7 @@ place_types:
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "bike" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "bicycle" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -148,7 +148,7 @@ place_types:
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
-      - condition: '"{{location_type}}" === "bike" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "bicycle" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -157,11 +157,11 @@ place_types:
           iconSize: [85, 41]
           shadowSize: [85, 41]
           iconAnchor: [42, 42]
-  bus:
+  buses:
     index: 3
     label: _(Bus Issue Spot)
     rules:
-      - condition: '"{{location_type}}" === "bus" && {{map.zoom}} < 14 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "buses" && {{map.zoom}} < 14 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -171,7 +171,7 @@ place_types:
           opacity: 0.9
           fillOpacity: 0.7
 
-      - condition: '"{{location_type}}" === "bus" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "buses" && {{map.zoom}} >= 14 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -180,7 +180,7 @@ place_types:
           iconSize: [85, 41]
           iconAnchor: [42, 42]
 
-      - condition: '"{{location_type}}" === "bus" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "buses" && {{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -322,7 +322,7 @@ place:
       name: name
       attrs:
         - key: placeholder
-          value: _(Street, Intersection, Park, Landmark, etc.)
+          value: _(Intersection, block, landmark, etc.)
         - key: size
           value: 30
         - key: required
@@ -331,12 +331,12 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Walk Issue Spot)
-          value: walk
+        - label: _(Pedestrian Issue Spot)
+          value: pedestrian
         - label: _(Bike Issue Spot)
-          value: bike
+          value: bicycle
         - label: _(Bus Issue Spot)
-          value: bus
+          value: buses
         - label: _(Car Issue Spot)
           value: car
         - label: _(Like Spot)
@@ -344,21 +344,21 @@ place:
       name: location_type
       attrs:
         - key: required
-    - prompt: _(What is the issue at this walking spot?)
+    - prompt: _(What is the issue at this pedestrian spot?)
       type: select
       options:
         - label: _(Choose One)
           value: ''
         - label: _(Make it safer to walk)
-          value: Makeitsafertowalk
+          value: Make it safer to walk
         - label: _(Make it easier to cross the street)
-          value: Makeiteasiertocrossthestreet
+          value: Make it easier to cross the street
         - label: _(Vehicle speeds to fast)
-          value: Vehiclespeedstofast
+          value: Vehicle speeds too fast
         - label: _(Maintenance issue)
-          value: Maintenanceissue
+          value: Maintenance issue
         - label: _(Need more trees and landscaping)
-          value: Needmoretreesandlandscaping
+          value: Need more trees and landscaping
         - label: _(Other)
           value: Other
       name: location_walk_issue
@@ -368,18 +368,18 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Make it safer to bike)
-          value: Makeitsafertobike
+        - label: _(Make it safer to ride)
+          value: Make it safer to ride
         - label: _(Vehicle speeds to fast)
-          value: Vehiclespeedstofast
-        - label: _(Add or improve bike lane)
-          value: Addorimprovebikelane
-        - label: _(Separate bikes more from cars)
-          value: Separatebikesmorefromcars
+          value: Vehicle speeds too fast
+        - label: _(Add or improve bike lanes)
+          value: Add or improve bike lanes
+        - label: _(Separate bikes from cars)
+          value: Separate bikes more from cars
         - label: _(Maintenance issue)
-          value: Maintenanceissue
+          value: Maintenance issue
         - label: _(Add bike parking)
-          value: Addbikeparking
+          value: Add bike parking
         - label: _(Other)
           value: Other
       name: location_bike_issue
@@ -390,13 +390,13 @@ place:
         - label: _(Choose One)
           value: ''
         - label: _(Improve facilities at this bus stop)
-          value: Improvefacilitiesatthisbusstop
+          value: Improve facilities at this bus stop
         - label: _(Make it easier/safer to get to this stop)
-          value: Makeiteasiersafertogettothisstop
+          value: Make it easier/safer to get to this stop
         - label: _(Make the bus more frequent)
-          value: Makethebusmorefrequent
+          value: Make the bus more frequent
         - label: _(Maintenance issue)
-          value: Maintenanceissue
+          value: Maintenance issue
         - label: _(Other)
           value: Other
       name: location_bus_issue
@@ -409,9 +409,9 @@ place:
         - label: _(Make it safer to drive)
           value: Makeitsafertodrive
         - label: _(Vehicle speeds too fast)
-          value: Vehiclespeedstoofast
+          value: Vehicle speeds too fast
         - label: _(Maintenance issue)
-          value: Maintenanceissue
+          value: Maintenance issue
         - label: _(Other)
           value: Other
       name: location_car_issue
@@ -422,15 +422,15 @@ place:
         - label: _(Choose One)
           value: ''
         - label: _(This is my favorite place to visit/shop)
-          value: Thisismyfavoriteplacetovisitshop
+          value: This is my favorite place to visit/shop
         - label: _(I like walking here)
-          value: Ilikewalkinghere
+          value: I like walking here
         - label: _(I like biking here)
-          value: Ilikebikinghere
+          value: I like biking here
         - label: _(I like taking the bus here)
-          value: Iliketakingthebushere
+          value: I like taking the bus here
         - label: _(I like driving here)
-          value: Ilikedrivinghere
+          value: I like driving here
       name: like_options
       optional: true
     - prompt: _(If 'other', please type below)
@@ -464,6 +464,8 @@ place:
       options:
         - label: _(Choose One)
           value: ''
+        - label: _(Less than once a month)
+          value: Less than once a month
         - label: _(Once a month)
           value: Once a month
         - label: _(One a week)
@@ -540,7 +542,7 @@ place:
           value: _(Type name)
         - key: size
           value: 30
-    - prompt: _(Would you like to be notified of the Community Meeting date and location discussing the I-280 Corridor Study?)
+    - prompt: _(Would you like to be notified of Community Meeting dates and locations?)
       type: select
       options:
         - label: _(Choose One)
@@ -614,21 +616,21 @@ pages:
       - title: _(Show None)
         url: /filter/nospots
         external: true
-      - title: _(Walk Spots)
-        url: /filter/walk
+      - title: _(Pedestrian Spots)
+        url: /filter/pedestrian
         external: true
       - title: _(Bike Spots)
-        url: /filter/bike
+        url: /filter/bicycle
         external: true
       - title: _(Bus Spots)
-        url: /filter/bus
+        url: /filter/buses
         external: true
       - title: _(Car Spots)
         url: /filter/car
         external: true
       - title: _(Like Spots)
         url: /filter/like
-        external: true    
+        external: true
 
 notifications:
   on_new_place: true
