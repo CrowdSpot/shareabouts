@@ -349,10 +349,10 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Make it safer to walk)
-          value: Make it safer to walk
-        - label: _(Make it easier to cross the street)
-          value: Make it easier to cross the street
+        - label: _(It feels unsafe to walk here)
+          value: It feels unsafe to walk here
+        - label: _(It’s difficult to cross here)
+          value: It’s difficult to cross here
         - label: _(Vehicle speeds too fast)
           value: Vehicle speeds too fast
         - label: _(Maintenance issue)
@@ -368,18 +368,18 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Make it safer to ride)
-          value: Make it safer to ride
+        - label: _(It feels unsafe to ride here)
+          value: It feels unsafe to ride here
         - label: _(Vehicle speeds too fast)
           value: Vehicle speeds too fast
-        - label: _(Add or improve bike lanes)
-          value: Add or improve bike lanes
+        - label: _(Need better bike options here)
+          value: Need better bike options here
         - label: _(Separate bikes from cars)
           value: Separate bikes more from cars
         - label: _(Maintenance issue)
           value: Maintenance issue
-        - label: _(Add bike parking)
-          value: Add bike parking
+        - label: _(Need bike parking here)
+          value: Need bike parking here
         - label: _(Other)
           value: Other
       name: location_bike_issue
@@ -406,8 +406,8 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(Make it safer to drive)
-          value: Makeitsafertodrive
+        - label: _(It feels unsafe to drive here)
+          value: It feels unsafe to drive here
         - label: _(Vehicle speeds too fast)
           value: Vehicle speeds too fast
         - label: _(Maintenance issue)
