@@ -59,25 +59,30 @@ var Shareabouts = Shareabouts || {};
     },
 
     isSupported: function(userAgent) {
-      if(typeof userAgent.browser === 'undefined' ) {
-        console.log('browser not defined');
-      } else {
-        console.log('browser defined');
-        switch (userAgent.browser.name) {
-          case 'Chrome':
-          case 'Firefox':
-          case 'Safari':
-          case undefined:
-          case 'ChromeiOS':
-            return true;
-          case 'Microsoft Internet Explorer':
-            var firstDot = userAgent.browser.version.indexOf('.'),
-                major = parseInt(userAgent.browser.version.substr(0, firstDot), 10);
+      // Mobile Safari UIWebViews may not register as a recognized user agent,
+      // so just assume that browsers that we understand are new and should be
+      // supported.
+      var recognized = (userAgent &&
+                        userAgent.browser &&
+                        userAgent.browser.name &&
+                        userAgent.browser.version);
+      if (!recognized) {
+        return true;
+      }
 
-            if (major > 7) {
-              return true;
-            }
-        }
+      switch (userAgent.browser.name) {
+        case 'Chrome':
+        case 'Firefox':
+        case 'Safari':
+        case 'ChromeiOS':
+          return true;
+        case 'Microsoft Internet Explorer':
+          var firstDot = userAgent.browser.version.indexOf('.'),
+              major = parseInt(userAgent.browser.version.substr(0, firstDot), 10);
+
+          if (major > 7) {
+            return true;
+          }
       }
 
       return false;
