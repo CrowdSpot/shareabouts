@@ -353,7 +353,7 @@ place:
           value: Make it safer to walk
         - label: _(Make it easier to cross the street)
           value: Make it easier to cross the street
-        - label: _(Vehicle speeds to fast)
+        - label: _(Vehicle speeds too fast)
           value: Vehicle speeds too fast
         - label: _(Maintenance issue)
           value: Maintenance issue
@@ -370,7 +370,7 @@ place:
           value: ''
         - label: _(Make it safer to ride)
           value: Make it safer to ride
-        - label: _(Vehicle speeds to fast)
+        - label: _(Vehicle speeds too fast)
           value: Vehicle speeds too fast
         - label: _(Add or improve bike lanes)
           value: Add or improve bike lanes
