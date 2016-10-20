@@ -41,6 +41,8 @@ var Shareabouts = Shareabouts || {};
     setLatLng: function(latLng) {
       this.center = latLng;
       this.$('.drag-marker-instructions, .drag-marker-warning').addClass('is-visuallyhidden');
+      this.$('.place-title, .place-form').removeClass('is-visuallyhidden');
+
     },
     setLocation: function(location) {
       this.location = location;
