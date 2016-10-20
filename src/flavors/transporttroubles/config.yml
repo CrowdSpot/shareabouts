@@ -63,10 +63,10 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/spot-selected.svg
+          iconUrl: /static/css/images/train-spot.svg
           shadowUrl: /static/css/images/markers/master-pin-shadow.svg
-          iconSize: [30, 41]
-          iconAnchor: [13, 42]
+          iconSize: [50, 70]
+          iconAnchor: [22, 70]
           shadowSize: [41, 41]
           shadowAnchor: [-2, 32]
   tramspot:
@@ -89,10 +89,10 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/spot-selected.svg
+          iconUrl: /static/css/images/tram-spot.svg
           shadowUrl: /static/css/images/markers/master-pin-shadow.svg
-          iconSize: [30, 41]
-          iconAnchor: [13, 42]
+          iconSize: [50, 70]
+          iconAnchor: [22, 70]
           shadowSize: [41, 41]
           shadowAnchor: [-2, 32]
   busspot:
@@ -115,10 +115,10 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/spot-selected.svg
+          iconUrl: /static/css/images/bus-spot.svg
           shadowUrl: /static/css/images/markers/master-pin-shadow.svg
-          iconSize: [30, 41]
-          iconAnchor: [13, 42]
+          iconSize: [50, 70]
+          iconAnchor: [22, 70]
           shadowSize: [41, 41]
           shadowAnchor: [-2, 32]
   likespot:
@@ -141,10 +141,10 @@ place_types:
         # Display landmarks as icons when zoomed in
 
         icon:
-          iconUrl: /static/css/images/spot-selected.svg
+          iconUrl: /static/css/images/like-spot.svg
           shadowUrl: /static/css/images/markers/master-pin-shadow.svg
-          iconSize: [30, 41]
-          iconAnchor: [13, 42]
+          iconSize: [50, 70]
+          iconAnchor: [22, 70]
           shadowSize: [41, 41]
           shadowAnchor: [-2, 32]
 
@@ -281,15 +281,9 @@ place:
       optional: true
       attrs:
         - key: placeholder
-          value: _(This name will be visible (Letters only))
+          value: _(This name will be visible)
         - key: size
           value: 30
-        - key: pattern
-          value: ^[a-zA-Z]+$
-        - key: oninvalid
-          value: this.setCustomValidity('Letters only')
-        - key: onchange
-          value: this.setCustomValidity('')
     - prompt: _(First Name)
       type: text
       name: first_name
@@ -297,16 +291,9 @@ place:
       optional: false
       attrs:
         - key: placeholder
-          value: _(This name will be hidden (Letters only))
+          value: _(This name will be hidden)
         - key: size
           value: 30
-        - key: pattern
-          value: ^[a-zA-Z]+$
-        - key: required
-        - key: oninvalid
-          value: this.setCustomValidity('Letters only')
-        - key: onchange
-          value: this.setCustomValidity('')
     - prompt: _(Last Name)
       type: text
       name: last_name
@@ -337,7 +324,7 @@ place:
       type: text
       name: postcode
       sticky: true
-      optional: true
+      optional: false
       attrs:
         - key: placeholder
           value: _(Type postcode here (1000 - 9999))
