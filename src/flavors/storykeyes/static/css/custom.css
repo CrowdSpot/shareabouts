@@ -115,6 +115,14 @@ center;
 
 #language-picker {
   float: right;
+  position: absolute;
+  top: 0px;
+  right: 18px;
+}
+
+#language-picker .access {
+  display: block;
+
 }
 
 
@@ -531,6 +539,7 @@ label small {
 
   .list-toggle-nav {
     margin: -1.125em 0.5em 0 0.5em;
+    margin-right: 149px;
   }
 
 
