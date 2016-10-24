@@ -370,10 +370,12 @@ place:
           value: ''
         - label: _(It feels unsafe to ride here)
           value: It feels unsafe to ride here
+        - label: _(Need better bike options)
+          value: Need better bike options
         - label: _(Vehicle speeds too fast)
           value: Vehicle speeds too fast
-        - label: _(Need better bike options here)
-          value: Need better bike options here
+        - label: _(Add or improve bike lane)
+          value: Add or improve bike lane  
         - label: _(Separate bikes from cars)
           value: Separate bikes more from cars
         - label: _(Maintenance issue)
@@ -492,7 +494,7 @@ place:
           value: bus
       name: travel_method
       optional: true
-    - prompt: _(What is your favourite part of the Story-Keyes corridor?)
+    - prompt: _(What is your favorite part of the Story-Keyes corridor?)
       type: textarea
       name: favourite_part
       optional: true
