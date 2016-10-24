@@ -23,7 +23,7 @@ map:
 
   geocoding_enabled: true
   geocoding_engine: 'Mapbox'
-  geocode_field_label: _(Enter the street name and suburb...)
+  geocode_field_label: _(Search for 'street name' and/or 'suburb' for best results...)
   geocode_bounding_box: [ 140.798, -39.300, 150.100, -33.930 ]  # minX, minY, maxX, maxY or top, left, bottom, right
   geocode_hint: [145, -38]
   geocode_auto_populate_spot_name: true
