@@ -1,0 +1,316 @@
+# Settings for the app
+app:
+  # HTML Title
+  title: Parramatta Bike Plan
+  # Header name
+  name: Parramatta Bike Plan
+  # Meta description that will show up in Google search results
+  meta_description: _(Crowdsourcing perceptions of public transport in Victoria.)
+
+  # When the map loads, existing places will be loaded in chunks. By default,
+  # the size of the chunks will be a reasonable default dictated by the API
+  # server. If you would like to override the chunk size, use this setting:
+  # places_page_size: 100
+
+  # Optional. List view is supported by default. Set to false to disable.
+  # list_enabled: false
+
+
+# Settings for map and layer configs
+map:
+  geolocation_enabled: true
+  geolocation_onload: false
+
+  geocoding_enabled: false
+  geocoding_engine: 'Mapbox'
+  geocode_field_label: _(Enter the street name and suburb...)
+  geocode_bounding_box: [ 140.798, -39.300, 150.100, -33.930 ]  # minX, minY, maxX, maxY or top, left, bottom, right
+  geocode_hint: [145, -38]
+  geocode_auto_populate_spot_name: true
+
+  options:
+    center:
+      lat: -33.816708
+      lng: 151.003354
+    zoom: 14
+    minZoom: 10
+    maxZoom: 18
+  layers:
+    - url: https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY3Jvd2RzcG90MSIsImEiOiIwTFItekZ3In0.M_0CqFroH04TUc-K1_CHXQ
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+
+# The keys show up in the dropdown list when you are adding a new place
+# The values map the place type to map icons (defined below).
+place_types:
+  bikeissuespot:
+    index: 0
+    label: _(Bike Issue Spot)
+    rules:
+
+      - condition: '"{{location_type}}" === "bikeissuespot" && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/train-spot.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [30, 41]
+          iconAnchor: [13, 42]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
+
+      - condition: '"{{location_type}}" === "bikeissuespot" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/train-spot.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [50, 70]
+          iconAnchor: [22, 70]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
+  bikeideaspot:
+    index: 1
+    label: _(Bike Idea Spot)
+    rules:
+
+      - condition: '"{{location_type}}" === "bikeideaspot" && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/tram-spot.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [30, 41]
+          iconAnchor: [13, 42]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
+
+      - condition: '"{{location_type}}" === "bikeideaspot" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/tram-spot.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [50, 70]
+          iconAnchor: [22, 70]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
+  bikelikespot:
+    index: 2
+    label: _(Bike Like Spot)
+    rules:
+
+      - condition: '"{{location_type}}" === "bikelikespot" && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/like-spot.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [30, 41]
+          iconAnchor: [13, 42]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
+
+      - condition: '"{{location_type}}" === "bikelikespot" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/like-spot.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [50, 70]
+          iconAnchor: [22, 70]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
+
+
+activity:
+  # Optional. Activity is supported by default. Set to false to disable.
+  enabled: true
+  # How often to refresh the activity list, in milliseconds.
+  interval: 30000
+
+place:
+  adding_supported: true
+  add_button_label: _(Add a Spot)
+  # Labels for the buttons that toggle the map and list views
+  show_list_button_label: _(List All Spots)
+  show_map_button_label: _(Show the Map)
+  action_text: _(added)
+  title: _(Tell us about your Transport Trouble..)
+  action_text: _(added)
+  anonymous_name: _(Someone)
+  submit_button_label: _(Submit)
+
+  location_item_name: location
+
+  items:
+    - prompt: _(What is the name of this spot?)
+      type: text
+      name: name
+      attrs:
+        - key: placeholder
+          value: _(Street, Park, Landmark, etc.)
+        - key: size
+          value: 30
+        - key: required
+    - prompt: _(What type of Spot is this?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Bike Issue Spot)
+          value: bikeissuespot
+        - label: _(Bike Idea Spot)
+          value: bikeideaspot
+        - label: _(Bike Like Spot)
+          value: bikelikespot
+      name: location_type
+      attrs:
+        - key: required
+    - prompt: _(What is the bike issue at this spot?)
+      type: select
+      optional: true
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(No bicycle lanes)
+          value: No bicycle lanes
+        - label: _(Unsafe bicycle lanes)
+          value: Unsafe bicycle lanes
+        - label: _(Bicycle lane ends unexpectedly)
+          value: Bicycle lane ends unexpectedly
+        - label: _(Lack of wayfinding or signage)
+          value: Lack of wayfinding or signage
+        - label: _(Bicycle lane blocked)
+          value: Bicycle lane blocked
+        - label: _(High risk of car dooring)
+          value: High risk of car dooring)
+        - label: _(Limited or no bicycle parking)
+          value: Limited or no bicycle parking
+        - label: _(Other)
+          value: Other
+      name: location_bikeissue
+    - prompt: _(Please tell us more about this spot..)
+      type: textarea
+      name: description
+      optional: false
+      attrs:
+        - key: placeholder
+          value: _(Please describe...)
+        - key: required
+    - prompt: _(Please add an image of this spot if you have one)
+      inputfile_label: _(Add Image)
+      type: file
+      name: my_image
+      optional: true
+      attrs:
+        - key: accept
+          value: image/*
+    - prompt: _(Your name)
+      type: text
+      name: submitter_name
+      sticky: true
+      optional: false
+      attrs:
+        - key: placeholder
+          value: _(This name will be visible)
+        - key: size
+          value: 30
+    - prompt: _(You postcode)
+      type: text
+      name: postcode
+      sticky: true
+      optional: false
+      attrs:
+        - key: placeholder
+          value: _(Type postcode here (1000 - 9999))
+        - key: size
+          value: 30
+        - key: pattern
+          value: ^([1-9][0-9][0-9][0-9])$
+        - key: oninvalid
+          value: this.setCustomValidity('1000 - 9999')
+        - key: onchange
+          value: this.setCustomValidity('')
+    - prompt: _(Please type your email below)
+      type: email
+      sticky: true
+      name: private-submitter_email
+      optional: false
+      attrs:
+        - key: placeholder
+          value: _(Email address)
+        - key: size
+          value: 30
+        - key: required
+
+survey:
+  submission_type: comments
+
+  # Response config
+  show_responses: true
+  response_name: _(comment)
+  response_plural_name: _(comments)
+  action_text: _(commented on)
+  anonymous_name: _(Someone)
+
+  # Survey form config
+  title: _(Leave a Comment)
+  form_link_text: _(Leave a Comment)
+  submit_btn_text: _(Submit Comment)
+  items:
+    - prompt: _(What do you think of this spot?)
+      label: _(Comment)
+      type: textarea
+      name: comment
+      attrs:
+        - key: required
+    - prompt: _(Your Name)
+      type: text
+      name: submitter_name
+    - prompt: _(Please type your email below)
+      type: email
+      sticky: true
+      name: private-submitter_email_comment
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(Email address)
+        - key: size
+          value: 30
+
+support:
+  submission_type: support
+  submit_btn_text: _(Support)
+  response_name: _(support)
+  response_plural_name: _(supports)
+  action_text: supported
+  anonymous_name: _(Someone)
+
+pages:
+  - title: _(Welcome)
+    slug: welcome
+    name: overview
+    start_page: true
+  - title: _(FAQs)
+    slug: why
+    name: why
+
+  - title: _(Filter)
+    pages:
+      - title: _(Show All)
+        url: /filter/all
+        external: true
+      - title: _(Bike Issue Spots)
+        url: /filter/bikeissuespot
+        external: true
+      - title: _(Bike Idea Spots)
+        url: /filter/bikeideaspot
+        external: true
+      - title: _(Bike Like Spots)
+        url: /filter/bikelikespot
+        external: true
+
+
+notifications:
+  on_new_place: true
+  submitter_email_field: private-submitter_email
