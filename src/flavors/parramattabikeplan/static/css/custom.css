@@ -54,10 +54,11 @@ a:visited {
 }
 #site-header {
   border-top: #17206b 3px solid;
+  background-color: #fff;
   box-shadow: 0 0px 10px rgba(85,85,85,0.5);
 }
 #site-title {
-  background: url("images/parramattercitylogo.jpg") no-repeat center;
+  background: url("images/parramattercitylogo.gif") no-repeat center;
   background-size: contain;
   background-position: left center;
   width: 320px;
@@ -195,8 +196,7 @@ a:visited {
   text-align: center;
   padding: 1em;
   color: #434343;
-  background-color: #eaeaeb;
-  background-image: url("images/background-texture.png");
+  background-color: #fff;
   background-size: 117px 117px;
   box-shadow: 0px 0px 5px rgba(85,85,85,0.5);
 }
@@ -285,7 +285,6 @@ a:visited {
 }
 #ticker {
   background: #eaeaeb;
-  background-image: url("images/background-texture.png");
   background-size: 117px 117px;
   box-shadow: 0px 0 10px rgba(85,85,85,0.5);
 }
@@ -390,23 +389,9 @@ a.leaflet-control-layers-toggle:before,
 .spot-name-and-type {
   margin-bottom: 1em;
 }
-.place-value-safety_rating:before {
-  content: "Safety rating: ";
-  font-weight: bold;
-}
 .place-value-description:before {
   content: "Description: ";
   font-weight: bold;
-}
-.place-value-rider_type:before {
-  content: "Rider type: ";
-  font-weight: bold;
-}
-#place-safety_rating {
-  display: none;
-}
-#fields-safety_rating {
-  display: none;
 }
 .required-field-label {
   color: #d13f19;
@@ -457,9 +442,7 @@ label small {
   display: none;
 }
 .place-items .place-item.place-item-description,
-.place-items .place-item.place-item-location_train_trouble,
-.place-items .place-item.place-item-location_tram_trouble,
-.place-items .place-item.place-item-location_bus_trouble {
+.place-items .place-item.place-item-location_bikeissue {
   display: block;
 }
 input:focus,
