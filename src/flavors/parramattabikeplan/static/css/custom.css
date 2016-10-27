@@ -11,7 +11,7 @@ textarea {
   line-height: 1;
   padding: 0.65em;
   color: #fff;
-  background-color: #009640;
+  background-color: #17206b;
   box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
   font-weight: 600;
   border: 0;
@@ -27,7 +27,7 @@ textarea {
 .btn-primary,
 .btn-primary:visited,
 .btn-primary:link {
-  background-color: #009640;
+  background-color: #17206b;
   box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
   color: #fff;
   -webkit-transition: box-shadow 0.5s ease, background-color 0.5s ease;
@@ -37,13 +37,13 @@ textarea {
 .btn-secondary:visited,
 .btn-secondary:link {
   box-shadow: 0px 0px 0px rgba(0,0,0,0.4) inset;
-  background-color: #009640;
+  background-color: #17206b;
   color: #fff;
 }
 a,
 a:active,
 a:visited {
-  color: #009640;
+  color: #17206b;
 }
 #powered-by a {
   background-image: url("images/crowdspot-logo.svg");
@@ -53,14 +53,11 @@ a:visited {
   font-size: 13px;
 }
 #site-header {
-  border-top: #009640 3px solid;
-  background-color: #fff;
-  background-image: url("images/xxxxxxxx.png");
-  background-size: 117px 117px;
+  border-top: #17206b 3px solid;
   box-shadow: 0 0px 10px rgba(85,85,85,0.5);
 }
 #site-title {
-  background: url("images/xxxxxxx.svg") no-repeat center;
+  background: url("images/parramattercitylogo.jpg") no-repeat center;
   background-size: contain;
   background-position: left center;
   width: 320px;
@@ -161,7 +158,7 @@ a:visited {
           transform: translateY(0);
 }
 .access li .menu-item a:hover {
-  background-color: #00f066;
+  background-color: #2837b9;
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3) inset;
   background: #464847;
 }
@@ -382,7 +379,7 @@ a.leaflet-control-layers-toggle:before,
 }
 .drag-marker-instructions,
 .drag-marker-warning {
-  background-color: #009640;
+  background-color: #17206b;
   color: #fff;
   text-shadow: none;
 }
@@ -490,7 +487,7 @@ textarea:focus {
   padding: 1em;
   margin-right: 0;
   text-align: center;
-  background-color: #009640;
+  background-color: #17206b;
   font-weight: 600;
   -webkit-transition: box-shadow 0.5s ease, color 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
   transition: box-shadow 0.5s ease, color 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
