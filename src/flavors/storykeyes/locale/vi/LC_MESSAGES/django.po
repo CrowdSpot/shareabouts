@@ -341,7 +341,7 @@ msgid "Please type your email below"
 msgstr ""
 
 msgid "Add a Spot"
-msgstr "Add a Spot in Vietnamese"
+msgstr ""
 
 msgid "added"
 msgstr ""
