@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-27 02:22-0400\n"
+"POT-Creation-Date: 2016-10-27 21:24+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,309 +16,680 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: jstemplates/place-detail-promotion-bar.html:1
+msgid "Recommend on Facebook"
+msgstr ""
+
+#: jstemplates/place-detail-promotion-bar.html:2
+msgid "Tweet This"
+msgstr ""
+
+#: jstemplates/place-detail.html:1
+msgid ""
+"<strong class=\"point-submitter\">\n"
+"              {{#if submitter.avatar_url }}\n"
+"                <img src=\"{{ submitter.avatar_url }}\" class=\"avatar\" />\n"
+"              {{^}}\n"
+"                <img src=\"{{ STATIC_URL }}/css/images/user-50.png\" class="
+"\"avatar\" />\n"
+"              {{/if}}\n"
+"              {{#if submitter.name }}\n"
+"                {{ submitter.name }}\n"
+"              {{^}}\n"
+"                {{#if submitter_name }}\n"
+"                  {{ submitter_name }}\n"
+"                {{^}}\n"
+"                  {{ anonymous_name }}\n"
+"                {{/if}}\n"
+"              {{/if}}\n"
+"            </strong> {{ action_text }} this {{ place_type_label "
+"location_type}}\n"
+"\n"
+"            {{#if region}}\n"
+"              in {{ region }}\n"
+"            {{/if}}"
+msgstr ""
+
+#: jstemplates/place-detail.html:21
+msgid "Add another spot by clicking the ‘Add a Spot’ button"
+msgstr ""
+
+#: jstemplates/place-detail.html:22
+msgid "Comment or 'Like' other the spots on the map"
+msgstr ""
+
+#: jstemplates/place-detail.html:23
+msgid "If you would like to continue to be involved, you can:"
+msgstr ""
+
+#: jstemplates/place-detail.html:24
+msgid "Share spots via Twitter or Facebook"
+msgstr ""
+
+#: jstemplates/place-detail.html:25 /tmp/tmp20AQUe.py:26
+msgid "Thank you for taking the time to contribute to the map."
+msgstr ""
+
+#: jstemplates/place-detail.html:26
+msgid "Thank you!"
+msgstr ""
+
+#: jstemplates/place-detail.html:27
+msgid "Your Spot details:"
+msgstr ""
+
+#: jstemplates/place-form.html:1
+msgid "Drag the map to position the "
+msgstr ""
+
+#: jstemplates/place-form.html:2
+msgid ""
+"It looks like you didn't set your location yet. Please drag the map to your "
+"location."
+msgstr ""
+
+#: jstemplates/place-form.html:3
+msgid "Log Out"
+msgstr ""
+
+#: jstemplates/place-form.html:4
+msgid ""
+"Or sign in with <a class=\"auth-inline twitter-btn\" href=\"/users/login/"
+"twitter/\">Twitter</a> <a class=\"auth-inline facebook-btn\" href=\"/users/"
+"login/facebook/\">Facebook</a>"
+msgstr ""
+
+#: jstemplates/place-form.html:5
+msgid "Sorry, your browser doesn't support file uploads."
+msgstr ""
+
+#: jstemplates/place-form.html:6 jstemplates/pages/why.html:19
+msgid "at your location."
+msgstr ""
+
+#: jstemplates/place-form.html:7
+msgid "optional"
+msgstr ""
+
+#: jstemplates/pages/overview.html:1
+msgid "For more information: "
+msgstr ""
+
+#: jstemplates/pages/overview.html:2
+msgid "Get started!"
+msgstr ""
+
+#: jstemplates/pages/overview.html:3
+msgid "How can the Story-Keyes Corridor be improved?"
+msgstr ""
+
+#: jstemplates/pages/overview.html:4
+msgid ""
+"Save the date! VTA and the City of San Jose invite you to the first of three "
+"community meetings, on November 17, 2016 from 6-8PM in the Okayama Room at "
+"Leininger Center (1300 Senter Rd, San Jose, CA 95112)."
+msgstr ""
+
+#: jstemplates/pages/overview.html:5
+msgid ""
+"The goal of the Study is to make the corridor safer and easier to use for "
+"pedestrians, bicyclists, and transit riders, while still serving drivers. "
+"VTA and the City are working with residents and other stakeholders to gather "
+"input and make recommendations for the corridor."
+msgstr ""
+
+#: jstemplates/pages/overview.html:6
+msgid ""
+"The survey will be open for responses until December 9, 2016. If you have "
+"comments or questions about the Story-Keyes Corridor Complete Streets Study, "
+"please call VTA’s Community Outreach Department at (408) 321-7575, (TTY) for "
+"the hearing-impaired (408) 321-2330, or e-mail us at "
+msgstr ""
+
+#: jstemplates/pages/overview.html:7
+msgid ""
+"VTA, in partnership with the City of San Jose, is preparing the Story-Keyes "
+"Corridor Complete Streets Study, covering Willow Street, Keyes Street and "
+"Story Road for over 4 miles from State Route 87 to Capitol Expressway."
+msgstr ""
+
+#: jstemplates/pages/overview.html:8
+msgid ""
+"You are invited to share with us what pedestrian, bicycle, transit and "
+"roadway issues and improvements you would like to point out along the "
+"corridor by completing this map survey."
+msgstr ""
+
+#: jstemplates/pages/why.html:1
+msgid "1. How do I add a spot?"
+msgstr ""
+
+#: jstemplates/pages/why.html:2
+msgid "2. Can I view the bike lanes and VTA Bus Route 25  on the map?"
+msgstr ""
+
+#: jstemplates/pages/why.html:3
+msgid "3. What if I make a mistake or want to change something?"
+msgstr ""
+
+#: jstemplates/pages/why.html:4
+msgid "4. What is the gray shaded area and can I place a spot in this area?"
+msgstr ""
+
+#: jstemplates/pages/why.html:5
+msgid ""
+"5. Am I required to provide my name and email address to complete the survey?"
+msgstr ""
+
+#: jstemplates/pages/why.html:6
+msgid "6. How will my personal information be used?"
+msgstr ""
+
+#: jstemplates/pages/why.html:7 /tmp/tmp20AQUe.py:117
+msgid "Add a Spot"
+msgstr ""
+
+#: jstemplates/pages/why.html:8
+msgid "Click the big green "
+msgstr ""
+
+#: jstemplates/pages/why.html:9
+msgid "Complete the form that pops up and press submit."
+msgstr ""
+
+#: jstemplates/pages/why.html:10
+msgid "Drag the map to position the"
+msgstr ""
+
+#: jstemplates/pages/why.html:11
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: jstemplates/pages/why.html:12
+msgid "If you need to change something, email CrowdSpot"
+msgstr ""
+
+#: jstemplates/pages/why.html:13
+msgid "Privacy Policy"
+msgstr ""
+
+#: jstemplates/pages/why.html:14
+msgid ""
+"The gray shaded area is outside of the Story-Keyes Corridor Complete Streets "
+"Study area. You can add a spot in the gray shaded area, but it may not be "
+"addressed in the study. The study will primarily focus on comments made "
+"within the first 100 feet."
+msgstr ""
+
+#: jstemplates/pages/why.html:15
+msgid "To add a spot to the map, follow these steps:"
+msgstr ""
+
+#: jstemplates/pages/why.html:16
+msgid ""
+"Yes, you can toggle the bike lane and VTA Bus Route 25 layers on/off via the "
+"layer button "
+msgstr ""
+
+#: jstemplates/pages/why.html:17
+msgid ""
+"You are not required to provide your name or email address to the complete "
+"the survey. However, if you are interested in receiving updates about the "
+"Story-Keyes Corridor Complete Streets Study your contact information will "
+"allow us to keep you informed."
+msgstr ""
+
+#: jstemplates/pages/why.html:18
+msgid ""
+"Your privacy is important. The information being requested is collected by "
+"CrowdSpot and will be used and held in accordance with CrowdSpot’s"
+msgstr ""
+
+#: jstemplates/pages/why.html:20
+msgid "button."
+msgstr ""
+
+#: jstemplates/pages/why.html:21
+msgid "for help."
+msgstr ""
+
+#: jstemplates/pages/why.html:22
+msgid "in the top left of the map. This layer is from Open Street Map."
+msgstr ""
+
+#: templates/base.html:106
+#, python-format
+msgid ""
+"\n"
+"        Oops, %(config.app.name)s needs JavaScript to work properly.\n"
+"        "
+msgstr ""
+
+#: templates/base.html:111
+#, python-format
+msgid ""
+"\n"
+"        %(config.app.name)s is great but it needs something called "
+"JavaScript to work\n"
+"        properly. But fear not, it's really easy to turn on. Click\n"
+"        <a href=\"http://enable-javascript.com/\" target=\"_blank\">here</a> "
+"for simple instructions!\n"
+"        "
+msgstr ""
+
+#: templates/base.html:125
+msgid ""
+"We can't connect to the server at the moment. Hang tight while we re-"
+"establish communication."
+msgstr ""
+
+#: templates/base.html:131
+msgid "Close"
+msgstr ""
+
+#: templates/index.html:52
+msgid "Powered by"
+msgstr ""
+
+#: /tmp/tmp20AQUe.py:1
 msgid "Enter the street name and suburb..."
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:2
 msgid ""
 "CrowdSpot creates custom maps that allow people to collaborate on giving "
 "input for geographic locations. Use it to collect data in a social, engaging "
 "process."
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:3 /tmp/tmp20AQUe.py:23 /tmp/tmp20AQUe.py:120
 msgid "Someone"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:4 /tmp/tmp20AQUe.py:5
 msgid "Like"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:6
 msgid "Likes"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:7 /tmp/tmp20AQUe.py:31
 msgid "Pedestrian Issue Spot"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:8
 msgid "No spots"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:9 /tmp/tmp20AQUe.py:32
 msgid "Bike Issue Spot"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:10 /tmp/tmp20AQUe.py:35
 msgid "Like Spot"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:11 /tmp/tmp20AQUe.py:33
 msgid "Bus Issue Spot"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:12 /tmp/tmp20AQUe.py:34
 msgid "Car Issue Spot"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:13
 msgid "MAP LEGEND"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:14
 msgid "Comments"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:15
 msgid "commented on"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:16 /tmp/tmp20AQUe.py:22
 msgid "Leave a Comment"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:17 /tmp/tmp20AQUe.py:18 /tmp/tmp20AQUe.py:20
+#: /tmp/tmp20AQUe.py:21
 msgid "Comment"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:19
 msgid "Your Name"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:24
 msgid "Show the Map"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:25
 msgid "Submit"
 msgstr ""
 
-msgid "Thank you for taking the time to contribute to the map."
-msgstr ""
-
+#: /tmp/tmp20AQUe.py:27
 msgid ""
 "What is the name of this spot? <span class=\"required\">(required)</span>"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:28
 msgid "Intersection, block, landmark, etc."
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:29
 msgid "What type of spot is this? <span class=\"required\">(required)</span>"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:30 /tmp/tmp20AQUe.py:37 /tmp/tmp20AQUe.py:45
+#: /tmp/tmp20AQUe.py:55 /tmp/tmp20AQUe.py:62 /tmp/tmp20AQUe.py:68
+#: /tmp/tmp20AQUe.py:82 /tmp/tmp20AQUe.py:97 /tmp/tmp20AQUe.py:112
 msgid "Choose One"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:36
 msgid "What is the issue at this pedestrian spot?"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:38
 msgid "It feels unsafe to walk here"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:39
 msgid "It’s difficult to cross here"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:40 /tmp/tmp20AQUe.py:48 /tmp/tmp20AQUe.py:64
 msgid "Vehicle speeds too fast"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:41 /tmp/tmp20AQUe.py:51 /tmp/tmp20AQUe.py:59
+#: /tmp/tmp20AQUe.py:65
 msgid "Maintenance issue"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:42
 msgid "Need more trees and landscaping"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:43 /tmp/tmp20AQUe.py:53 /tmp/tmp20AQUe.py:60
+#: /tmp/tmp20AQUe.py:66 /tmp/tmp20AQUe.py:106
 msgid "Other"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:44
 msgid "What is the issue at this bike spot?"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:46
 msgid "It feels unsafe to ride here"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:47
 msgid "Need better bike options"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:49
 msgid "Add or improve bike lane"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:50
 msgid "Separate bikes from cars"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:52
 msgid "Need bike parking here"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:54
 msgid "What is the issue at this bus spot?"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:56
 msgid "Improve facilities at this bus stop"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:57
 msgid "Make it easier/safer to get to this stop"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:58
 msgid "Make the bus more frequent"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:61
 msgid "What is the issue at this car spot?"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:63
 msgid "It feels unsafe to drive here"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:67
 msgid "What option best describes what you like about this spot?"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:69
 msgid "This is my favorite place to visit/shop"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:70
 msgid "I like walking here"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:71
 msgid "I like biking here"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:72
 msgid "I like taking the bus here"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:73
 msgid "I like driving here"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:74
 msgid "If 'other', please type below"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:75
 msgid "'Other' issue here..."
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:76
 msgid "Please tell us more about this spot"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:77
 msgid "Please describe the issue, what you like or idea for this spot..."
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:78
 msgid "If possible, please try adding an image of this spot"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:79
 msgid "Add Image"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:80
 msgid "<h4>SURVEY</h4>"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:81
 msgid ""
 "How many times do you visit the Story-Keyes corridor in a typical month?"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:83
 msgid "Less than once a month"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:84
 msgid "Once a month"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:85
 msgid "One a week"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:86
 msgid "More than once a week"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:87
 msgid "Everyday"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:88
 msgid "Walk"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:89
 msgid "Bike"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:90
 msgid "Drive alone"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:91
 msgid "Carpool/vanpool"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:92
 msgid "Bus"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:93
 msgid "How do you travel along the Story-Keyes corridor? "
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:94
 msgid "What is your favorite part of the Story-Keyes corridor?"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:95 /tmp/tmp20AQUe.py:108
 msgid "Please type here.."
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:96
 msgid "What has the greatest need for improvement on the Story-Keyes corridor?"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:98
 msgid "Pedestrian safety"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:99
 msgid "Pedestrian convenience"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:100
 msgid "Bicycle safety"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:101
 msgid "Bicycle convenience"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:102
 msgid "Bus stops"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:103
 msgid "Crossings to bus stops"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:104
 msgid "Driving safety"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:105
 msgid "Gathering places"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:107
 msgid "Please specify 'Other' below.."
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:109
 msgid "Type name"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:110
 msgid "Your name"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:111
 msgid "Would you like to be notified of Community Meeting dates and locations?"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:113
 msgid "Yes"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:114
 msgid "No"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:115
 msgid "Email address"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:116
 msgid "Please type your email below"
 msgstr ""
 
-msgid "Add a Spot"
-msgstr ""
-
+#: /tmp/tmp20AQUe.py:118
 msgid "added"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:119
 msgid "List All Spots"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:121
 msgid "Welcome"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:122
 msgid "FAQs"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:123
 msgid "Show All"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:124
 msgid "Show None"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:125
 msgid "Pedestrian Spots"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:126
 msgid "Bike Spots"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:127
 msgid "Bus Spots"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:128
 msgid "Car Spots"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:129
 msgid "Like Spots"
 msgstr ""
 
+#: /tmp/tmp20AQUe.py:130
 msgid "Filter"
 msgstr ""
