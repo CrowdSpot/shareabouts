@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-28 22:03-0400\n"
+"POT-Creation-Date: 2016-10-27 02:22-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,22 +36,19 @@ msgstr ""
 msgid "Likes"
 msgstr ""
 
+msgid "Pedestrian Issue Spot"
+msgstr ""
+
 msgid "No spots"
+msgstr ""
+
+msgid "Bike Issue Spot"
 msgstr ""
 
 msgid "Like Spot"
 msgstr ""
 
 msgid "Bus Issue Spot"
-msgstr ""
-
-msgid "Idea Spot"
-msgstr ""
-
-msgid "Walking Issue Spot"
-msgstr ""
-
-msgid "Bike Issue Spot"
 msgstr ""
 
 msgid "Car Issue Spot"
@@ -81,16 +78,14 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-msgid ""
-"Thank you for taking the time to tell us what improvements you would like to "
-"see on Santa Clara County’s southern segment of I-280."
+msgid "Thank you for taking the time to contribute to the map."
 msgstr ""
 
 msgid ""
 "What is the name of this spot? <span class=\"required\">(required)</span>"
 msgstr ""
 
-msgid "Street, Intersection, Park, Landmark, etc."
+msgid "Intersection, block, landmark, etc."
 msgstr ""
 
 msgid "What type of spot is this? <span class=\"required\">(required)</span>"
@@ -99,121 +94,79 @@ msgstr ""
 msgid "Choose One"
 msgstr ""
 
-msgid "Walk Issue Spot"
+msgid "What is the issue at this pedestrian spot?"
 msgstr ""
 
-msgid "What is the issue at this walking spot?"
+msgid "It feels unsafe to walk here"
 msgstr ""
 
-msgid "Poorly maintained footpaths"
+msgid "It’s difficult to cross here"
 msgstr ""
 
-msgid "No crossing facilities"
+msgid "Vehicle speeds too fast"
 msgstr ""
 
-msgid "Limited time to cross at signal"
+msgid "Maintenance issue"
 msgstr ""
 
-msgid "Unattractive walking route"
-msgstr ""
-
-msgid "Limited or no wayfinding signage"
-msgstr ""
-
-msgid "Poor access for disabilities"
-msgstr ""
-
-msgid "Poor lighting"
-msgstr ""
-
-msgid "Limited or no footpaths"
-msgstr ""
-
-msgid "Unsafe"
+msgid "Need more trees and landscaping"
 msgstr ""
 
 msgid "Other"
 msgstr ""
 
-msgid "What is the  issue at this bike spot?"
+msgid "What is the issue at this bike spot?"
 msgstr ""
 
-msgid "No bicycle lanes"
+msgid "It feels unsafe to ride here"
 msgstr ""
 
-msgid "Unsafe bicycle lanes"
+msgid "Need better bike options"
 msgstr ""
 
-msgid "Bicycle lane ends"
+msgid "Add or improve bike lane"
 msgstr ""
 
-msgid "Lack of wayfinding or signage"
+msgid "Separate bikes from cars"
 msgstr ""
 
-msgid "Bicycle lane blocked"
-msgstr ""
-
-msgid "High risk of collision"
-msgstr ""
-
-msgid "Limited or no bicycle parking"
+msgid "Need bike parking here"
 msgstr ""
 
 msgid "What is the issue at this bus spot?"
 msgstr ""
 
-msgid "No stop within walking distance"
+msgid "Improve facilities at this bus stop"
 msgstr ""
 
-msgid "Poor waiting facilities at stop"
+msgid "Make it easier/safer to get to this stop"
 msgstr ""
 
-msgid "Unsafe stop or station"
-msgstr ""
-
-msgid "Infrequent services"
-msgstr ""
-
-msgid "Unreliable scheduling"
-msgstr ""
-
-msgid "No capacity during the peak"
+msgid "Make the bus more frequent"
 msgstr ""
 
 msgid "What is the issue at this car spot?"
 msgstr ""
 
-msgid "Congestion"
+msgid "It feels unsafe to drive here"
 msgstr ""
 
-msgid "Noise"
+msgid "What option best describes what you like about this spot?"
 msgstr ""
 
-msgid "Speeding traffic"
+msgid "This is my favorite place to visit/shop"
 msgstr ""
 
-msgid "Ramp metering"
+msgid "I like walking here"
 msgstr ""
 
-msgid "Heavy traffic (trucks)"
+msgid "I like biking here"
 msgstr ""
 
-msgid "What transport mode does this Like Spot best relate to?"
+msgid "I like taking the bus here"
 msgstr ""
 
-msgid "Walking"
-msgstr ""
-
-msgid "Bike"
-msgstr ""
-
-msgid "Bus"
-msgstr ""
-
-msgid "Car"
-msgstr ""
-
-msgid "What transport mode does this Idea Spot best relate to?"
+msgid "I like driving here"
 msgstr ""
 
 msgid "If 'other', please type below"
@@ -222,7 +175,7 @@ msgstr ""
 msgid "'Other' issue here..."
 msgstr ""
 
-msgid "Please tell us more about this spot?"
+msgid "Please tell us more about this spot"
 msgstr ""
 
 msgid "Please describe the issue, what you like or idea for this spot..."
@@ -238,89 +191,76 @@ msgid "<h4>SURVEY</h4>"
 msgstr ""
 
 msgid ""
-"What would you consider the most important area for improvement along I-280 "
-"Corridor?"
+"How many times do you visit the Story-Keyes corridor in a typical month?"
 msgstr ""
 
-msgid "Freeway improvements"
+msgid "Less than once a month"
 msgstr ""
 
-msgid "Local roadway improvements"
+msgid "Once a month"
 msgstr ""
 
-msgid "Bike and pedestrian"
+msgid "One a week"
 msgstr ""
 
-msgid "Transit service"
+msgid "More than once a week"
 msgstr ""
 
-msgid "Noise abatement"
-msgstr ""
-
-msgid "Please detail the other area for improvement"
-msgstr ""
-
-msgid "Please type here.."
-msgstr ""
-
-msgid "Generally, what parts of I-280 take the longest wait time to travel?"
-msgstr ""
-
-msgid "Freeway"
-msgstr ""
-
-msgid "Ramps"
-msgstr ""
-
-msgid "Intersections at the freeway ramps"
-msgstr ""
-
-msgid "Specify Zip Code or City"
-msgstr ""
-
-msgid "Please specify below.."
-msgstr ""
-
-msgid "How do you travel along the I-280 corridor?"
+msgid "Everyday"
 msgstr ""
 
 msgid "Walk"
 msgstr ""
 
-msgid "Public transit"
-msgstr ""
-
-msgid "Carpool"
-msgstr ""
-
-msgid "Vanpool"
+msgid "Bike"
 msgstr ""
 
 msgid "Drive alone"
 msgstr ""
 
-msgid "If other, please detail below.."
+msgid "Carpool/vanpool"
 msgstr ""
 
-msgid ""
-"Would you like carpool lanes extended on I-280? <br><i class=\"prompt-info"
-"\">(The carpool lanes is the yellow line on the map)</i><br>"
+msgid "Bus"
 msgstr ""
 
-msgid "Yes"
+msgid "How do you travel along the Story-Keyes corridor? "
 msgstr ""
 
-msgid "No"
+msgid "What is your favorite part of the Story-Keyes corridor?"
 msgstr ""
 
-msgid "Please explain why..."
+msgid "Please type here.."
 msgstr ""
 
-msgid ""
-"Would you like Express Lanes on I-280? <br><i class=\"prompt-info\">An "
-"express lane is a lane to be used by carpoolers, motorcyclists, and clean-"
-"air vehicles (with applicable decals) for free, AND single occupant vehicles "
-"that pay a toll with a FasTrak transponder.</i><br>"
+msgid "What has the greatest need for improvement on the Story-Keyes corridor?"
+msgstr ""
+
+msgid "Pedestrian safety"
+msgstr ""
+
+msgid "Pedestrian convenience"
+msgstr ""
+
+msgid "Bicycle safety"
+msgstr ""
+
+msgid "Bicycle convenience"
+msgstr ""
+
+msgid "Bus stops"
+msgstr ""
+
+msgid "Crossings to bus stops"
+msgstr ""
+
+msgid "Driving safety"
+msgstr ""
+
+msgid "Gathering places"
+msgstr ""
+
+msgid "Please specify 'Other' below.."
 msgstr ""
 
 msgid "Type name"
@@ -329,9 +269,13 @@ msgstr ""
 msgid "Your name"
 msgstr ""
 
-msgid ""
-"Would you like to be notified of the Community Meeting date and location "
-"discussing the I-280 Corridor Study?"
+msgid "Would you like to be notified of Community Meeting dates and locations?"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
 msgstr ""
 
 msgid "Email address"
@@ -361,13 +305,7 @@ msgstr ""
 msgid "Show None"
 msgstr ""
 
-msgid "Idea Spots"
-msgstr ""
-
-msgid "Like Spots"
-msgstr ""
-
-msgid "Walk Spots"
+msgid "Pedestrian Spots"
 msgstr ""
 
 msgid "Bike Spots"
@@ -377,6 +315,9 @@ msgid "Bus Spots"
 msgstr ""
 
 msgid "Car Spots"
+msgstr ""
+
+msgid "Like Spots"
 msgstr ""
 
 msgid "Filter"
