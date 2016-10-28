@@ -36,7 +36,7 @@ map:
     minZoom: 10
     maxZoom: 18
   layers:
-    - url: https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY3Jvd2RzcG90MSIsImEiOiIwTFItekZ3In0.M_0CqFroH04TUc-K1_CHXQ
+    - url: https://api.mapbox.com/styles/v1/crowdspot1/ciutbaa7i00fu2iqop6l0hsp7/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY3Jvd2RzcG90MSIsImEiOiIwTFItekZ3In0.M_0CqFroH04TUc-K1_CHXQ
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
 
 # The keys show up in the dropdown list when you are adding a new place
@@ -135,7 +135,7 @@ place:
   show_list_button_label: _(List All Spots)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(Tell us about your Transport Trouble..)
+  title: _(Tell us about riding a bike in Parramatta..)
   action_text: _(added)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
