@@ -1,0 +1,137 @@
+#site-header
+	border-top primary-color 3px solid
+	background-color #ffffff
+	// background-image url(images/xxxxxxxx.png)
+	// background-size 117px 117px
+	box-shadow 0 0px 10px rgba(85, 85, 85, 0.5)
+
+#site-title
+	background url('images/parramattercitylogo.gif') no-repeat center
+	background-size contain
+	background-position left center
+	width 320px
+
+	+below('m')
+		width 180px
+
+#pages-nav-container, #language-picker
+	height 100%
+	float left
+	margin-right 0
+	margin-left 0
+
+	+below(60em)
+		padding-top 0.5em
+		float none
+		clear both
+
+.access
+	font-size 1.1em
+
+	.list-view-active &
+		display none
+
+	+below(60em)
+		margin 0
+
+		&.is-exposed
+			float none
+			clear both
+
+	li
+		display inline
+		min-width 160px
+
+		+below(60em)
+			padding-bottom 0
+			display block
+			margin-bottom 0.5em
+
+		ul
+			display block
+			visibility hidden
+			opacity 0
+			transform translateY(-10px)
+
+			transition opacity, transform, visibility
+			transition-duration .3s, .3s, 0s
+			transition-delay 0s, 0s, .3s
+			min-width 160px
+			position absolute
+			top 100%
+			left 0
+
+			li
+				transition transform .3s ease-in-out
+				transform translateY(-100px)
+
+
+		&:hover
+
+			ul
+				display block
+				visibility visible
+				opacity 1
+				transform translateY(0px)
+
+				transition-delay 0s, 0s, 0s
+
+				background transparent
+				box-shadow 0 5px 10px -5px rgba(85, 85, 85, 0.5)
+				border none
+				// border-top-left-radius 5px
+				// border-top-right-radius 5px
+				border-bottom-left-radius 5px
+				border-bottom-right-radius 5px
+				margin -3px -60px 0 0
+				padding 3px 0 0 0
+
+				z-index 2
+				overflow hidden
+
+				li
+					transform translateY(0)
+
+		// a
+		// 	text-align left
+
+		.menu-item
+			a
+
+				&:hover
+					background-color lighten(primary-color, 25%)
+					box-shadow button-shadow--hover
+					background #464847
+					// background-color lighten(primary-color, 25%)
+
+				&:focus
+					outline none
+
+#nav-btn
+	background #6f6f6f
+	color #bbb
+	font-size 2em
+	line-height 0.7
+	text-decoration none
+	text-align center
+	text-shadow none
+	float left
+	width .8em
+	padding 8px 7px
+	position absolute
+	border-radius 2.5px
+	left 0.25em
+	top 8px
+
++between('xs', 'l')
+	.access
+		li
+			&:last-child
+				display none
+
+.list-toggle-nav
+	margin-right 0.5em
+
+// .has-pages
+// 	#site-title
+// 		margin-left -0.75em
