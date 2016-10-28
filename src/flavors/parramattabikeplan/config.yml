@@ -5,7 +5,7 @@ app:
   # Header name
   name: Parramatta Bike Plan
   # Meta description that will show up in Google search results
-  meta_description: _(Crowdsourcing perceptions of public transport in Victoria.)
+  meta_description: _(Crowdsourcing bicycle feedback in Parramatta)
 
   # When the map loads, existing places will be loaded in chunks. By default,
   # the size of the chunks will be a reasonable default dictated by the API
@@ -30,11 +30,12 @@ map:
 
   options:
     center:
-      lat: -33.816708
-      lng: 151.003354
-    zoom: 14
+      lat: -33.795979
+      lng: 151.026369
+    zoom: 13
     minZoom: 10
     maxZoom: 18
+    maxBounds: [ [-33.92022, 150.84332], [-33.69992, 151.18183] ]
   layers:
     - url: https://api.mapbox.com/styles/v1/crowdspot1/ciutbaa7i00fu2iqop6l0hsp7/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY3Jvd2RzcG90MSIsImEiOiIwTFItekZ3In0.M_0CqFroH04TUc-K1_CHXQ
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
@@ -205,17 +206,45 @@ place:
       attrs:
         - key: accept
           value: image/*
-    - prompt: _(Your name)
-      type: text
-      name: submitter_name
+    - prompt: _(Your gender)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Male)
+          value: male
+        - label: _(Female)
+          value: female
+        - label: _(Other)
+          value: other
+      name: gender
       sticky: true
-      optional: false
-      attrs:
-        - key: placeholder
-          value: _(This name will be visible)
-        - key: size
-          value: 30
-    - prompt: _(You postcode)
+      optional: true
+    - prompt: _(Your age)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(14-17)
+          value: 14-17
+        - label: _(18-24)
+          value: 18-24
+        - label: _(25-34)
+          value: 25-34
+        - label: _(35-49)
+          value: 35-49
+        - label: _(50-59)
+          value: 50-59
+        - label: _(60-69)
+          value: 60-69
+        - label: _(70-84)
+          value: 70-84
+        - label: _(85+)
+          value: 85+
+      name: age
+      sticky: true
+      optional: true
+    - prompt: _(Your postcode)
       type: text
       name: postcode
       sticky: true
@@ -231,11 +260,33 @@ place:
           value: this.setCustomValidity('1000 - 9999')
         - key: onchange
           value: this.setCustomValidity('')
+    - prompt: _(Your name)
+      type: text
+      name: submitter_name
+      sticky: true
+      optional: true
+      attrs:
+        - key: placeholder
+          value: _(This name will be visible)
+        - key: size
+          value: 30      
+    - prompt: _(Would you like to stay informed about this project?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Yes please)
+          value: yesplease
+        - label: _(No thanks)
+          value: nothanks
+      name: location_updates
+      optional: true
+      sticky: true
     - prompt: _(Please type your email below)
       type: email
       sticky: true
       name: private-submitter_email
-      optional: false
+      optional: true
       attrs:
         - key: placeholder
           value: _(Email address)

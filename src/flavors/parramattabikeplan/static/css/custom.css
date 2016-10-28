@@ -404,6 +404,14 @@ a.leaflet-control-layers-toggle:before,
 .place-form.bikeissuespot [name=location_bikeissue] {
   display: block;
 }
+.place-form label[for=place-private-submitter_email],
+.place-form [name=private-submitter_email] {
+  display: none;
+}
+.place-form.location_updates-yesplease label[for=place-private-submitter_email],
+.place-form.location_updates-yesplease [name=private-submitter_email] {
+  display: block;
+}
 label small {
   text-transform: none;
   display: none;
