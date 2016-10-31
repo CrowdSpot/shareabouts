@@ -269,7 +269,7 @@ place:
         - key: placeholder
           value: _(This name will be visible)
         - key: size
-          value: 30      
+          value: 30
     - prompt: _(Would you like to stay informed about this project?)
       type: select
       options:
@@ -292,7 +292,6 @@ place:
           value: _(Email address)
         - key: size
           value: 30
-        - key: required
 
 survey:
   submission_type: comments
