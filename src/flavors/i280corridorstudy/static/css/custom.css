@@ -36,6 +36,10 @@ CrowdSpot Grey (text) #585A59
   border: 0;
 }
 
+.btn.btn-block.btn-large.close-btn {
+  background-color: #A3C0DD;
+}
+
 .btn-primary,
 .btn-primary:visited,
 .btn-primary:link {
