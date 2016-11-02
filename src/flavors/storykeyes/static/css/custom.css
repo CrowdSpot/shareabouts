@@ -81,11 +81,21 @@ CrowdSpot Grey (text) #585A59
   }
 
 #site-title {
-  background: url('images/XXXXXX.jpg') no-repeat
+  /*background: url('images/XXXXXX.jpg') no-repeat
 center;
-  background-size: contain;
-  width: 440px;
-  text-indent: -133337px;
+  background-size: contain;*/
+  /*width: 250px;*/
+  width: 130px;
+  min-height: 42px;
+  /*text-indent: -133337px;*/
+  background: none;
+  text-indent: 0;
+
+}
+
+#site-title a:link, #site-title a:visited {
+  font-size: 1em;
+  line-height: 1;
 }
 
 .site-name {
@@ -97,9 +107,9 @@ center;
   top: -0.6em;
 }
 
-.has-pages #site-title {
+/*.has-pages #site-title {
   margin-left: -0.75em;
-}
+}*/
 
 .access {
   font-size: 1.1em;
@@ -214,7 +224,7 @@ a.close-btn {
 
 #centerpoint.newpin .marker {
   display: block;
-  width: 27px;
+  width: 29px;
   height: 41px;
   background: transparent url(images/spot-add.svg) 0 0 no-repeat scroll;
   position: relative;
@@ -228,7 +238,7 @@ a.close-btn {
 
 #centerpoint.newpin .x {
   background: transparent url(images/x.svg) 0 0 no-repeat scroll;
-  width 20px;
+  width 22px;
   height 15px;
 }
 #centerpoint.newpin .shadow {
@@ -540,6 +550,15 @@ label small {
   .list-toggle-nav {
     margin: -1.125em 0.5em 0 0.5em;
     margin-right: 149px;
+  }
+
+  #site-title {
+    width: 250px;
+  }
+
+  #site-title a:link, #site-title a:visited {
+    font-size: 1.85em;
+    line-height: 1;
   }
 
 
