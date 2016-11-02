@@ -31,6 +31,7 @@ map:
     zoom: 15
     minZoom: 14
     maxZoom: 18
+    maxBounds: [ [37.29944, -121.91674], [37.36980, -121.78984] ]
   layers:
     # Raster Tile Layers
     # ==================
@@ -375,7 +376,7 @@ place:
         - label: _(Vehicle speeds too fast)
           value: Vehicle speeds too fast
         - label: _(Add or improve bike lane)
-          value: Add or improve bike lane  
+          value: Add or improve bike lane
         - label: _(Separate bikes from cars)
           value: Separate bikes more from cars
         - label: _(Maintenance issue)
