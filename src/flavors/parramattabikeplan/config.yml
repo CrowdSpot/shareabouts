@@ -69,34 +69,8 @@ place_types:
           iconAnchor: [22, 70]
           shadowSize: [41, 41]
           shadowAnchor: [-2, 32]
-  bikeideaspot:
-    index: 1
-    label: _(Bike Idea Spot)
-    rules:
-
-      - condition: '"{{location_type}}" === "bikeideaspot" && {{layer.focused}} === false'
-        # Display landmarks as icons when zoomed in
-
-        icon:
-          iconUrl: /static/css/images/markers/bikeideaspot.svg
-          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
-          iconSize: [30, 41]
-          iconAnchor: [13, 42]
-          shadowSize: [41, 41]
-          shadowAnchor: [-2, 32]
-
-      - condition: '"{{location_type}}" === "bikeideaspot" && {{layer.focused}} === true'
-        # Display landmarks as icons when zoomed in
-
-        icon:
-          iconUrl: /static/css/images/markers/bikeideaspot.svg
-          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
-          iconSize: [50, 70]
-          iconAnchor: [22, 70]
-          shadowSize: [41, 41]
-          shadowAnchor: [-2, 32]
   bikelikespot:
-    index: 2
+    index: 1
     label: _(Bike Like Spot)
     rules:
 
@@ -116,6 +90,32 @@ place_types:
 
         icon:
           iconUrl: /static/css/images/markers/bikelikespot.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [50, 70]
+          iconAnchor: [22, 70]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
+  bikecrashspot:
+    index: 2
+    label: _(Bike Crash Spot)
+    rules:
+
+      - condition: '"{{location_type}}" === "bikecrashspot" && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/bikeideaspot.svg
+          shadowUrl: /static/css/images/markers/master-pin-shadow.svg
+          iconSize: [30, 41]
+          iconAnchor: [13, 42]
+          shadowSize: [41, 41]
+          shadowAnchor: [-2, 32]
+
+      - condition: '"{{location_type}}" === "bikecrashspot" && {{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/bikeideaspot.svg
           shadowUrl: /static/css/images/markers/master-pin-shadow.svg
           iconSize: [50, 70]
           iconAnchor: [22, 70]
@@ -160,10 +160,10 @@ place:
           value: ''
         - label: _(Bike Issue Spot)
           value: bikeissuespot
-        - label: _(Bike Idea Spot)
-          value: bikeideaspot
         - label: _(Bike Like Spot)
           value: bikelikespot
+        - label: _(Bike Crash Spot)
+          value: bikecrashspot
       name: location_type
       attrs:
         - key: required
@@ -190,7 +190,44 @@ place:
         - label: _(Other)
           value: Other
       name: location_bikeissue
-    - prompt: _(Please tell us more about this spot..)
+    - prompt: _(Have you ever had 'near miss' experience at this spot?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Yes)
+          value: yess
+        - label: _(No)
+          value: nope
+      name: nearmiss
+      optional: true
+    - prompt: _(What is the bike issue at this spot?)
+      type: select
+      optional: true
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Serious (hospitalised))
+          value: serious
+        - label: _(Moderate (minor injuries))
+          value: moderate
+        - label: _(Minor (no injuries))
+          value: minor
+      name: location_bikecrash
+    - prompt: _(Was this crash recorded by the police?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Yes)
+          value: yess
+        - label: _(No)
+          value: nope
+        - label: _(Don't know)
+          value: unsure
+      name: recorded
+      optional: true
+    - prompt: _(Please tell us more about your experience at this spot..)
       type: textarea
       name: description
       optional: false
@@ -198,6 +235,23 @@ place:
         - key: placeholder
           value: _(Please describe...)
         - key: required
+    - prompt: _(What is the main purpose you ride here?)
+      type: multi-checkbox
+      optional: true
+      checkboxes:
+        - label: _(Work)
+          value: Work
+        - label: _(Shopping)
+          value: Shopping
+        - label: _(School)
+          value: School
+        - label: _(Exercise)
+          value: Exercise
+        - label: _(Social)
+          value: Social
+        - label: _(All purposes)
+          value: all
+      name: purpose    
     - prompt: _(Please add an image of this spot if you have one)
       inputfile_label: _(Add Image)
       type: file

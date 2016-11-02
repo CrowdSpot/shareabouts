@@ -404,6 +404,30 @@ a.leaflet-control-layers-toggle:before,
 .place-form.bikeissuespot [name=location_bikeissue] {
   display: block;
 }
+.place-form label[for=place-nearmiss],
+.place-form [name=nearmiss] {
+  display: none;
+}
+.place-form.bikeissuespot label[for=place-nearmiss],
+.place-form.bikeissuespot [name=nearmiss] {
+  display: block;
+}
+.place-form label[for=place-location_bikecrash],
+.place-form [name=location_bikecrash] {
+  display: none;
+}
+.place-form.bikecrashspot label[for=place-location_bikecrash],
+.place-form.bikecrashspot [name=location_bikecrash] {
+  display: block;
+}
+.place-form label[for=place-recorded],
+.place-form [name=recorded] {
+  display: none;
+}
+.place-form.bikecrashspot label[for=place-recorded],
+.place-form.bikecrashspot [name=recorded] {
+  display: block;
+}
 .place-form label[for=place-private-submitter_email],
 .place-form [name=private-submitter_email] {
   display: none;
