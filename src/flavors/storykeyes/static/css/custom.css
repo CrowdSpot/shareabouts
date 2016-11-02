@@ -224,7 +224,7 @@ a.close-btn {
 
 #centerpoint.newpin .marker {
   display: block;
-  width: 27px;
+  width: 29px;
   height: 41px;
   background: transparent url(images/spot-add.svg) 0 0 no-repeat scroll;
   position: relative;
@@ -238,7 +238,7 @@ a.close-btn {
 
 #centerpoint.newpin .x {
   background: transparent url(images/x.svg) 0 0 no-repeat scroll;
-  width 20px;
+  width 22px;
   height 15px;
 }
 #centerpoint.newpin .shadow {
