@@ -1,9 +1,9 @@
 # Settings for the app
 app:
   # HTML Title
-  title: Story Keyes Study
+  title: Story Keyes Corridor Survey
   # Header name
-  name: Story Keyes Study
+  name: Story Keyes Corridor Survey
   # Meta description that will show up in Google search results
   meta_description: _(CrowdSpot creates custom maps that allow people to collaborate on giving input for geographic locations. Use it to collect data in a social, engaging process.)
 
