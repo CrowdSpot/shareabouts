@@ -236,9 +236,11 @@ place:
           value: _(Please describe...)
         - key: required
     - prompt: _(What is the main purpose you ride here?)
-      type: multi-checkbox
+      type: select
       optional: true
-      checkboxes:
+      options:
+        - label: _(Choose One)
+          value: ''
         - label: _(Work)
           value: Work
         - label: _(Shopping)
@@ -251,7 +253,7 @@ place:
           value: Social
         - label: _(All purposes)
           value: all
-      name: purpose    
+      name: purpose
     - prompt: _(Please add an image of this spot if you have one)
       inputfile_label: _(Add Image)
       type: file
